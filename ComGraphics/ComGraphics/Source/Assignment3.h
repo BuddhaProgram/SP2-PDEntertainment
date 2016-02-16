@@ -140,9 +140,9 @@ public:
 	virtual void Exit();
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
-	void RenderSkybox();
 
-	void RenderSpaceObj();
+	void RenderScene1();
+    void RenderScene2();
 
 	void BikeControls(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
@@ -167,6 +167,9 @@ private:
 	float AsteroidRotateF;
 	float AsteroidMove;
 	float AsteroidMoveS;
+
+    //variables for scene changer
+    int numScene;
 };
 
 #endif
