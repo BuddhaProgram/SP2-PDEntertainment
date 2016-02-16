@@ -37,6 +37,8 @@ class Assignment3 : public Scene
 		GEO_ASTEROID1,
 		GEO_ASTEROID2,
 
+        GEO_GHOST1,
+
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE
@@ -170,6 +172,21 @@ private:
 
     //variables for scene changer
     int numScene;
+
+    //ghost chase test variables
+    float Ghost1X;
+    float Ghost1Y;
+    float Ghost1Z;
+    bool SpawnGhost;
+
+    float TargetDetectX;
+    float TargetDetectZ;
+    float timeCount;
+    void checkTarget();
+    void moveGhost(double dt);
+
+    Vector3 start ;
+    Vector3 end;
 };
 
 #endif

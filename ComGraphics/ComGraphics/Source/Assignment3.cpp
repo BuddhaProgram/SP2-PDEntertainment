@@ -134,6 +134,9 @@ void Assignment3::Init()
 	meshList[GEO_ASTEROID2] = MeshBuilder::GenerateOBJ("Asteroid2", "OBJ//Asteroid2.obj");
 	meshList[GEO_ASTEROID2]->textureID = LoadTGA("Image//Asteroid1.tga");
 
+    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//GhostPlaceholder.obj");
+    meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Ghostplaceholder.tga");
+
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 4.0f / 3.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
@@ -141,6 +144,16 @@ void Assignment3::Init()
     //scene changer inits.............
     numScene = 1;
     //scene changer init end.............
+
+    //ghost test variables
+    Ghost1X = 0;
+    Ghost1Y = 6;
+    Ghost1Z = 15;
+    SpawnGhost = false;
+
+    TargetDetectX = 0;
+    TargetDetectZ = 0;
+    timeCount = 0;
 }
 
 static float LSPEED = 10.f;
@@ -149,6 +162,12 @@ static std::stringstream framerate;
 float RotateX = 0.0f;
 bool b_LockSwing = false;
 bool b_LockSwingDebounce = false;
+
+void Assignment3::checkTarget()
+{
+    TargetDetectX = camera.position.x;
+    TargetDetectZ = camera.position.z;
+}
 
 void Assignment3::Reset()
 {
@@ -229,6 +248,20 @@ void Assignment3::Update(double dt)
         numScene = 1;
     }
     //scenechanger end.................
+
+    //jumpscare test
+    if (Application::IsKeyPressed('J'))
+    {
+        SpawnGhost = true;
+    }
+
+    if (SpawnGhost)
+    {
+        moveGhost(dt);
+    }
+
+    
+
 }
 
 void Assignment3::RenderMesh(Mesh*mesh, bool enableLight)
@@ -612,6 +645,14 @@ void Assignment3::Render()
     if (numScene == 2)
     {
         RenderScene2();
+    }
+
+    if (SpawnGhost)
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(Ghost1X, Ghost1Y, Ghost1Z);
+        RenderMesh(meshList[GEO_GHOST1], true);
+        modelStack.PopMatrix();
     }
 
 	RenderMesh(meshList[GEO_AXES], false);

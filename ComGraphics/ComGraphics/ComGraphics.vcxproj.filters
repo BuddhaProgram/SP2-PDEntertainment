@@ -51,6 +51,9 @@
     <ClCompile Include="Source\Assignment3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\moveGhost.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
