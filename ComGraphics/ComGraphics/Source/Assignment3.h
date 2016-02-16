@@ -30,6 +30,13 @@ class Assignment3 : public Scene
 		GEO_LIGHTBALL,
 		GEO_TEXT,
 		GEO_MOUNTTEXT,
+
+		GEO_EARTH,
+		GEO_MOON,
+		GEO_PLANET,
+		GEO_ASTEROID1,
+		GEO_ASTEROID2,
+
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE
@@ -134,6 +141,9 @@ public:
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderSkybox();
+
+	void RenderSpaceObj();
+
 	void BikeControls(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
@@ -151,6 +161,12 @@ private:
 	MS modelStack, viewStack, projectionStack;
 
 	Light light[1];
+
+	float PlanetRotate;
+	float AsteroidRotate;
+	float AsteroidRotateF;
+	float AsteroidMove;
+	float AsteroidMoveS;
 };
 
 #endif
