@@ -98,29 +98,24 @@ void Assignment3::Init()
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
 	//Initialize camera settings
-	camera.Init(Vector3(0, 7.5f, 0), Vector3(1, 10, 0), Vector3(0, 1, 0));
+	camera.Init(Vector3(0, 10, 0), Vector3(1, 10, 0), Vector3(0, 1, 0));
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("lightball", Color(1, 1, 1), 10, 20);
 
-	meshList[GEO_BOTTOM] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1));
-	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//Tron.tga");
-
-	meshList[GEO_TOP] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1));
-	meshList[GEO_TOP]->textureID = LoadTGA("Image//Tron.tga");
-
-	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1));
-	meshList[GEO_FRONT]->textureID = LoadTGA("Image//Tron.tga");
-
-	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1));
-	meshList[GEO_BACK]->textureID = LoadTGA("Image//Tron.tga");
-
-	meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1));
-	meshList[GEO_LEFT]->textureID = LoadTGA("Image//Tron.tga");
-
-	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1));
-	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//Tron.tga");
+    meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1));
+    meshList[GEO_FRONT]->textureID = LoadTGA("Image//SkyBox1_front.tga");
+    meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1));
+    meshList[GEO_LEFT]->textureID = LoadTGA("Image//SkyBox1_left.tga");
+    meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1));
+    meshList[GEO_RIGHT]->textureID = LoadTGA("Image//SkyBox1_right.tga");
+    meshList[GEO_TOP] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1));
+    meshList[GEO_TOP]->textureID = LoadTGA("Image//SkyBox1_up.tga");
+    meshList[GEO_BOTTOM] = MeshBuilder::GenerateQuad("SkyBox1_down", Color(1, 1, 1));
+    meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//SkyBox1_down.tga");
+    meshList[GEO_BACK] = MeshBuilder::GenerateQuad("SkyBox1_back", Color(1, 1, 1));
+    meshList[GEO_BACK]->textureID = LoadTGA("Image//SkyBox1_back.tga");
 
 	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
 	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
@@ -145,10 +140,28 @@ void Assignment3::Init()
 	meshList[GEO_PORTRAIT] = MeshBuilder::GenerateOBJ("Portrait", "OBJ//Portrait.obj");
 	meshList[GEO_PORTRAIT]->textureID = LoadTGA("Image//Scream.tga");
 
+=======
+    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//GhostPlaceholder.obj");
+    meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Ghostplaceholder.tga");
+>>>>>>> origin/master
 
 	Mtx44 projection;
-	projection.SetToPerspective(45.0f, 4.0f / 3.0f, 0.1f, 10000.0f);
+	projection.SetToPerspective(45.0f, 4.0f / 3.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
+
+    //scene changer inits.............
+    numScene = 1;
+    //scene changer init end.............
+
+    //ghost test variables
+    Ghost1X = 0;
+    Ghost1Y = 6;
+    Ghost1Z = 15;
+    SpawnGhost = false;
+
+    TargetDetectX = 0;
+    TargetDetectZ = 0;
+    timeCount = 0;
 }
 
 static float LSPEED = 10.f;
@@ -158,6 +171,12 @@ float RotateX = 0.0f;
 bool b_LockSwing = false;
 bool b_LockSwingDebounce = false;
 bool start_Animation = false;
+
+void Assignment3::checkTarget()
+{
+    TargetDetectX = camera.position.x;
+    TargetDetectZ = camera.position.z;
+}
 
 void Assignment3::Reset()
 {
@@ -170,12 +189,12 @@ void Assignment3::Reset()
 void Assignment3::Update(double dt)
 {
 	framerate << "Framerate: " << 1 / dt;
-
-
-	if (Application::IsKeyPressed(VK_LBUTTON) && b_LockSwing == false && b_LockSwingDebounce == false)
+	
+	if (Application::IsKeyPressed(VK_LBUTTON) && b_LockSwing == false && b_LockSwingDebounce == false && PlayerStat::instance()->stamina>=20)
 	{
 		b_LockSwing = true;
 		b_LockSwingDebounce = true;
+		PlayerStat::instance()->stamina-=20;
 	}
 
 	if (b_LockSwingDebounce == true)
@@ -227,6 +246,31 @@ void Assignment3::Update(double dt)
 
 
 	Reset();
+
+    //scene changer codes..............
+    if (Application::IsKeyPressed('P'))
+    {
+        numScene = 2;
+    }
+    if (Application::IsKeyPressed('O'))
+    {
+        numScene = 1;
+    }
+    //scenechanger end.................
+
+    //jumpscare test
+    if (Application::IsKeyPressed('J'))
+    {
+        SpawnGhost = true;
+    }
+
+    if (SpawnGhost)
+    {
+        moveGhost(dt);
+    }
+
+    
+
 }
 
 
@@ -274,58 +318,139 @@ void Assignment3::RenderMesh(Mesh*mesh, bool enableLight)
 	}
 }
 
-void Assignment3::RenderSkybox()
+
+void Assignment3::RenderScene1()
 {
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 0, -500);
+    modelStack.Scale(10, 10, 10);
+    modelStack.Rotate(PlanetRotate, 0, 1, 0);
+    RenderMesh(meshList[GEO_EARTH], false); // Earth
+    modelStack.PushMatrix();
+    modelStack.Translate(10, 0, 0);
+    modelStack.Rotate(PlanetRotate, 0, 1, 0);
+    RenderMesh(meshList[GEO_MOON], false); // Moon
+    modelStack.PopMatrix();
+    modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-		modelStack.Translate(0, 0, 0);
-		modelStack.Scale(5001, 5001, 5001);
-		RenderMesh(meshList[GEO_BOTTOM], true);
-	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-		modelStack.Translate(0, 5000, 0);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Rotate(180, 1, 0, 0);
-		modelStack.Scale(5001, 5001, 5001);
-		RenderMesh(meshList[GEO_TOP], false);
-	modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 0, 50);
+    modelStack.Rotate(PlanetRotate, 0, 1, 0);
+    RenderMesh(meshList[GEO_PLANET], false); // Planet
+    modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-		modelStack.Translate(0, 2500, 2500);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Rotate(-90, 1, 0, 0);
-		modelStack.Scale(5001, 5001, 5001);
-		RenderMesh(meshList[GEO_LEFT], false);
-	modelStack.PopMatrix();
+    //Asteroids
+    modelStack.PushMatrix();
+    modelStack.Translate(AsteroidMove - 50, 0, 0);
+    modelStack.Rotate(AsteroidRotate, 0, 0, 1);
+    RenderMesh(meshList[GEO_ASTEROID1], false);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(AsteroidMove, 6, AsteroidMove + 10);
+    modelStack.Rotate(AsteroidRotate, 0, 0, 1);
+    RenderMesh(meshList[GEO_ASTEROID1], false);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(0, -AsteroidMove, AsteroidMove + 10);
+    modelStack.Rotate(AsteroidRotate, 0, 0, 1);
+    RenderMesh(meshList[GEO_ASTEROID1], false);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(0, AsteroidMoveS + 23, AsteroidMoveS - 56);
+    modelStack.Rotate(AsteroidRotateF, 0, 0, 1);
+    RenderMesh(meshList[GEO_ASTEROID1], false);
+    modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-		modelStack.Translate(0, 2500, -2500);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Rotate(90, 1, 0, 0);
-		modelStack.Scale(5001, 5001, 5001);
-		RenderMesh(meshList[GEO_RIGHT], false);
-	modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(-AsteroidMove, -AsteroidMove, 0);
+    modelStack.Rotate(AsteroidRotate, 0, 0, 1);
+    RenderMesh(meshList[GEO_ASTEROID2], false);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(-AsteroidMoveS, AsteroidMoveS, AsteroidMoveS);
+    modelStack.Rotate(AsteroidRotate, 0, 0, 1);
+    RenderMesh(meshList[GEO_ASTEROID2], false);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(-AsteroidMoveS, -AsteroidMoveS + 40, AsteroidMoveS - 36);
+    modelStack.Rotate(AsteroidRotateF, 0, 0, 1);
+    RenderMesh(meshList[GEO_ASTEROID2], false);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(AsteroidMoveS, AsteroidMoveS + 32, -AsteroidMoveS - 98);
+    modelStack.Rotate(AsteroidRotateF, 1, 0, 1);
+    RenderMesh(meshList[GEO_ASTEROID2], false);
+    modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(-AsteroidMoveS - 36, 0, AsteroidMoveS + 11);
+    modelStack.Rotate(AsteroidRotateF, 0, 1, 0);
+    RenderMesh(meshList[GEO_ASTEROID2], false);
+    modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-		modelStack.Translate(2500, 2500, 0);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Rotate(180, 1, 0, 0);
-		modelStack.Scale(5001, 5001, 5001);
-		RenderMesh(meshList[GEO_BACK], false);
-	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-		modelStack.Translate(-2500, 2500, 0);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Rotate(0, 1, 0, 0);
-		modelStack.Scale(5001, 5001, 5001);
-		RenderMesh(meshList[GEO_FRONT], false);
-	modelStack.PopMatrix();
+    //skybox..................................................................................
+    modelStack.PushMatrix();//skybox start
+    modelStack.Scale(500, 500, 500);
+
+
+    //front
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 0, -10);
+    modelStack.Rotate(90, 1, 0, 0);
+    modelStack.Scale(20, 0, 20);
+    RenderMesh(meshList[GEO_FRONT], false);
+    modelStack.PopMatrix();
+
+    //right
+    modelStack.PushMatrix();
+    modelStack.Translate(10, 0, 0);
+    modelStack.Rotate(90, 0, 0, 1);
+    modelStack.Rotate(-90, 0, 1, 0);
+    modelStack.Scale(20, 0, 20);
+    RenderMesh(meshList[GEO_RIGHT], false);
+    modelStack.PopMatrix();
+
+    //left
+    modelStack.PushMatrix();
+    modelStack.Translate(-10, 0, 0);
+    modelStack.Rotate(-90, 0, 0, 1);
+    modelStack.Rotate(90, 0, 1, 0);
+    modelStack.Scale(20, 0, 20);
+    RenderMesh(meshList[GEO_LEFT], false);
+    modelStack.PopMatrix();
+
+    //back
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 0, 10);
+    modelStack.Rotate(-90, 1, 0, 0);
+    modelStack.Rotate(180, 0, 1, 0);
+    modelStack.Scale(20, 0, 20);
+    RenderMesh(meshList[GEO_BACK], false);
+    modelStack.PopMatrix();
+
+    //bottom
+    modelStack.PushMatrix();
+    modelStack.Translate(0, -10, 0);
+    modelStack.Scale(20, 0, 20);
+    RenderMesh(meshList[GEO_BOTTOM], false);
+    modelStack.PopMatrix();
+
+    //top
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 10, 0);
+    modelStack.Rotate(180, 0, 0, 1);
+    modelStack.Scale(20, 0, 20);
+    RenderMesh(meshList[GEO_TOP], false);
+    modelStack.PopMatrix();
+
+    modelStack.PopMatrix();//skybox end
+
 }
 
-void Assignment3::RenderSpaceObj()
+void Assignment3::RenderScene2()
 {
+<<<<<<< HEAD
 
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, -500);
@@ -338,6 +463,65 @@ void Assignment3::RenderSpaceObj()
 	RenderMesh(meshList[GEO_MOON], false); // Moon
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
+=======
+>>>>>>> origin/master
+
+    //skybox..................................................................................
+    modelStack.PushMatrix();//skybox start
+    modelStack.Scale(500, 500, 500);
+
+
+    //front
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 0, -10);
+    modelStack.Rotate(90, 1, 0, 0);
+    modelStack.Scale(20, 0, 20);
+    RenderMesh(meshList[GEO_FRONT], false);
+    modelStack.PopMatrix();
+
+    //right
+    modelStack.PushMatrix();
+    modelStack.Translate(10, 0, 0);
+    modelStack.Rotate(90, 0, 0, 1);
+    modelStack.Rotate(-90, 0, 1, 0);
+    modelStack.Scale(20, 0, 20);
+    RenderMesh(meshList[GEO_RIGHT], false);
+    modelStack.PopMatrix();
+
+    //left
+    modelStack.PushMatrix();
+    modelStack.Translate(-10, 0, 0);
+    modelStack.Rotate(-90, 0, 0, 1);
+    modelStack.Rotate(90, 0, 1, 0);
+    modelStack.Scale(20, 0, 20);
+    RenderMesh(meshList[GEO_LEFT], false);
+    modelStack.PopMatrix();
+
+    //back
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 0, 10);
+    modelStack.Rotate(-90, 1, 0, 0);
+    modelStack.Rotate(180, 0, 1, 0);
+    modelStack.Scale(20, 0, 20);
+    RenderMesh(meshList[GEO_BACK], false);
+    modelStack.PopMatrix();
+
+    //bottom
+    modelStack.PushMatrix();
+    modelStack.Translate(0, -10, 0);
+    modelStack.Scale(20, 0, 20);
+    RenderMesh(meshList[GEO_BOTTOM], false);
+    modelStack.PopMatrix();
+
+    //top
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 10, 0);
+    modelStack.Rotate(180, 0, 0, 1);
+    modelStack.Scale(20, 0, 20);
+    RenderMesh(meshList[GEO_TOP], false);
+    modelStack.PopMatrix();
+
+    modelStack.PopMatrix();//skybox end
 
 
 	modelStack.PushMatrix();
@@ -419,6 +603,8 @@ void Assignment3::RenderSpaceObj()
 	modelStack.PopMatrix();
 
 
+=======
+>>>>>>> origin/master
 }
 
 void Assignment3::RenderText(Mesh* mesh, std::string text, Color color)
@@ -448,6 +634,7 @@ void Assignment3::RenderText(Mesh* mesh, std::string text, Color color)
 	glBindTexture(GL_TEXTURE_2D, 0);
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 	glEnable(GL_DEPTH_TEST);
+
 }
 
 void Assignment3::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
@@ -552,13 +739,28 @@ void Assignment3::Render()
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
-	RenderSkybox();
-	RenderSpaceObj();
 
 	modelStack.PushMatrix();
 	modelStack.Rotate(90, 1, 0, 0);
 	RenderModelOnScreen(meshList[GEO_PICKAXE], 15, RotateX, 4, 0);
 	modelStack.PopMatrix();
+
+    if (numScene == 1)
+    {
+        RenderScene1();
+    }
+    if (numScene == 2)
+    {
+        RenderScene2();
+    }
+
+    if (SpawnGhost)
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(Ghost1X, Ghost1Y, Ghost1Z);
+        RenderMesh(meshList[GEO_GHOST1], true);
+        modelStack.PopMatrix();
+    }
 
 	RenderMesh(meshList[GEO_AXES], false);
 	RenderTextOnScreen(meshList[GEO_TEXT], framerate.str(), Color(0, 1, 0), 2, 0, 0);

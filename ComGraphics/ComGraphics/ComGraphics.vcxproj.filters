@@ -51,7 +51,14 @@
     <ClCompile Include="Source\Assignment3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Source\OBJAnimation.cpp">
+=======
+    <ClCompile Include="source\moveGhost.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PlayerStat.cpp">
+>>>>>>> origin/master
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -98,7 +105,11 @@
     <ClInclude Include="Source\Assignment3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Source\OBJAnimation.h">
+=======
+    <ClInclude Include="Source\PlayerStat.h">
+>>>>>>> origin/master
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

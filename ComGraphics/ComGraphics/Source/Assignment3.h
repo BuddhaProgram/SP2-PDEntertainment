@@ -7,7 +7,11 @@
 #include "Mesh.h"
 #include "MatrixStack.h"
 #include "Light.h"
+<<<<<<< HEAD
 #include "OBJAnimation.h"
+=======
+#include "PlayerStat.h"
+>>>>>>> origin/master
 
 class Assignment3 : public Scene
 {
@@ -38,10 +42,14 @@ class Assignment3 : public Scene
 		GEO_ASTEROID1,
 		GEO_ASTEROID2,
 
+<<<<<<< HEAD
 		GEO_MAINDOORLEFT,
 		GEO_MAINDOORRIGHT,
 		GEO_RUBBLE,
 		GEO_PORTRAIT,
+=======
+        GEO_GHOST1,
+>>>>>>> origin/master
 
 		NUM_GEOMETRY,
 	};
@@ -146,9 +154,9 @@ public:
 	virtual void Exit();
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
-	void RenderSkybox();
 
-	void RenderSpaceObj();
+	void RenderScene1();
+    void RenderScene2();
 
 	void BikeControls(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
@@ -169,7 +177,33 @@ private:
 
 	Light light[1];
 
+<<<<<<< HEAD
 	
+=======
+	float PlanetRotate;
+	float AsteroidRotate;
+	float AsteroidRotateF;
+	float AsteroidMove;
+	float AsteroidMoveS;
+
+    //variables for scene changer
+    int numScene;
+
+    //ghost chase test variables
+    float Ghost1X;
+    float Ghost1Y;
+    float Ghost1Z;
+    bool SpawnGhost;
+
+    float TargetDetectX;
+    float TargetDetectZ;
+    float timeCount;
+    void checkTarget();
+    void moveGhost(double dt);
+
+    Vector3 start ;
+    Vector3 end;
+>>>>>>> origin/master
 };
 
 #endif

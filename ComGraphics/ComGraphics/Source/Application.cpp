@@ -6,10 +6,9 @@
 
 #include "Assignment3.h"
 
-GLFWwindow* m_window;
 const unsigned char FPS = 60; // FPS of this game
 const unsigned int frameTime = 1000 / FPS; // time for each frame
-
+GLFWwindow* m_window;
 //Define an error callback
 static void error_callback(int error, const char* description)
 {
@@ -45,7 +44,6 @@ void resize_callback(GLFWwindow* window, int w, int h)
 
 void Application::Init()
 {
-
 	//Initialize GLFW
 	if (!glfwInit())
 	{
@@ -61,7 +59,7 @@ void Application::Init()
 
 
 	//Create a window and create its OpenGL context
-	m_window = glfwCreateWindow(800, 600, "Computer Graphics", NULL, NULL);
+	m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", NULL, NULL);
 
 	//If the window couldn't be created
 	if (!m_window)
