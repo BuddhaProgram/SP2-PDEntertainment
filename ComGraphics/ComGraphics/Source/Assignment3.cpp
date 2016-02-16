@@ -181,10 +181,11 @@ void Assignment3::Update(double dt)
 {
 	framerate << "Framerate: " << 1 / dt;
 	
-	if (Application::IsKeyPressed(VK_LBUTTON) && b_LockSwing == false && b_LockSwingDebounce == false)
+	if (Application::IsKeyPressed(VK_LBUTTON) && b_LockSwing == false && b_LockSwingDebounce == false && PlayerStat::instance()->stamina>=20)
 	{
 		b_LockSwing = true;
 		b_LockSwingDebounce = true;
+		PlayerStat::instance()->stamina-=20;
 	}
 
 	if (b_LockSwingDebounce == true)

@@ -2,7 +2,7 @@
 
 void Assignment3::moveGhost(double dt)
 {
-    timeCount += ((float)(dt) * 2);
+    timeCount += ((float)(dt) * 5);
     if (timeCount >= 1)
     {
         checkTarget();
@@ -16,7 +16,7 @@ void Assignment3::moveGhost(double dt)
     float distance = sqrt(Ghost1X * TargetDetectX + Ghost1Y * camera.position.y + TargetDetectZ * Ghost1Z);
     Vector3 direction = toNorm.Normalize();
 
-    ghost += direction * (float)(20 * dt);
+    ghost += direction * (float)(100 * dt);
 
     Ghost1X = ghost.x;
     Ghost1Z = ghost.z;

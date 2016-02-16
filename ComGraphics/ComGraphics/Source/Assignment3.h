@@ -7,6 +7,7 @@
 #include "Mesh.h"
 #include "MatrixStack.h"
 #include "Light.h"
+#include "PlayerStat.h"
 
 class Assignment3 : public Scene
 {
