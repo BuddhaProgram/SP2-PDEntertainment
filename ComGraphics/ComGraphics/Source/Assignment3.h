@@ -7,6 +7,7 @@
 #include "Mesh.h"
 #include "MatrixStack.h"
 #include "Light.h"
+#include "OBJAnimation.h"
 
 class Assignment3 : public Scene
 {
@@ -36,6 +37,11 @@ class Assignment3 : public Scene
 		GEO_PLANET,
 		GEO_ASTEROID1,
 		GEO_ASTEROID2,
+
+		GEO_MAINDOORLEFT,
+		GEO_MAINDOORRIGHT,
+		GEO_RUBBLE,
+		GEO_PORTRAIT,
 
 		NUM_GEOMETRY,
 	};
@@ -157,16 +163,13 @@ private:
 	unsigned m_parameters[U_TOTAL];
 
 	Camera3 camera;
+	Animation anima;
 
 	MS modelStack, viewStack, projectionStack;
 
 	Light light[1];
 
-	float PlanetRotate;
-	float AsteroidRotate;
-	float AsteroidRotateF;
-	float AsteroidMove;
-	float AsteroidMoveS;
+	
 };
 
 #endif
