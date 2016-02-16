@@ -11,6 +11,7 @@
 #include "Utility.h"
 #include <sstream>
 
+
 Assignment3::Assignment3()
 {
 
@@ -162,6 +163,7 @@ void Assignment3::Init()
     TargetDetectX = 0;
     TargetDetectZ = 0;
     timeCount = 0;
+	SlotIndex = 1;
 }
 
 static float LSPEED = 10.f;
@@ -189,6 +191,10 @@ void Assignment3::Reset()
 void Assignment3::Update(double dt)
 {
 	framerate << "Framerate: " << 1 / dt;
+	if (Application::IsKeyPressed('J'))
+	{
+		Inventory.SlotOne = ToolUI(ToolUI::Pickaxe);
+	}
 	
 	if (Application::IsKeyPressed(VK_LBUTTON) && b_LockSwing == false && b_LockSwingDebounce == false && PlayerStat::instance()->stamina>=20)
 	{
@@ -683,7 +689,7 @@ void Assignment3::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, 
 	glEnable(GL_DEPTH_TEST);
 }
 
-void Assignment3::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y)
+void Assignment3::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z)
 {
 	Mtx44 ortho;
 	ortho.SetToOrtho(0, 80, 0, 60, -50, 50); //size of screen UI
@@ -694,7 +700,7 @@ void Assignment3::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, floa
 	modelStack.PushMatrix();
 	modelStack.LoadIdentity(); //Reset modelStack
 	modelStack.Scale(size, size, size);
-	modelStack.Translate(x, y, 0);
+	modelStack.Translate(x, y, z);
 	modelStack.Rotate(Rotate, 1, 0, 0);
 
 	RenderMesh(mesh, true);
@@ -740,10 +746,19 @@ void Assignment3::Render()
 	}
 
 
-	modelStack.PushMatrix();
-	modelStack.Rotate(90, 1, 0, 0);
-	RenderModelOnScreen(meshList[GEO_PICKAXE], 15, RotateX, 4, 0);
-	modelStack.PopMatrix();
+	if (Inventory.GetToolType(SlotIndex) == ToolUI::Pickaxe)
+	{
+		modelStack.PushMatrix();
+		modelStack.Rotate(90, 1, 0, 0);
+		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, RotateX, 4, 0, 0);
+		modelStack.PopMatrix();
+	}
+
+	if (Inventory.GetToolType(SlotIndex) == ToolUI::Torchlight)
+	{
+
+	}
+
 
     if (numScene == 1)
     {

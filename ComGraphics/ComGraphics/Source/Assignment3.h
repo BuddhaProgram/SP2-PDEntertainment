@@ -11,6 +11,10 @@
 #include "OBJAnimation.h"
 =======
 #include "PlayerStat.h"
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
+#include "ToolSection.h"
 >>>>>>> origin/master
 
 class Assignment3 : public Scene
@@ -161,7 +165,7 @@ private:
 	void BikeControls(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y);
+	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z);
 	void RenderTrail(double dt);
 
 	unsigned m_vertexArrayID;
@@ -177,9 +181,6 @@ private:
 
 	Light light[1];
 
-<<<<<<< HEAD
-	
-=======
 	float PlanetRotate;
 	float AsteroidRotate;
 	float AsteroidRotateF;
@@ -203,7 +204,12 @@ private:
 
     Vector3 start ;
     Vector3 end;
->>>>>>> origin/master
+
+	ToolSection Inventory;
+	ToolUI::ToolType Tool;
+
+	int SlotIndex;
+
 };
 
 #endif

@@ -52,12 +52,25 @@
       <Filter>Source Files</Filter>
     </ClCompile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClCompile Include="Source\OBJAnimation.cpp">
 =======
+=======
+<<<<<<< Updated upstream
+>>>>>>> origin/master
     <ClCompile Include="source\moveGhost.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\PlayerStat.cpp">
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
+=======
+    <ClCompile Include="Source\ToolUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ToolSection.cpp">
+>>>>>>> Stashed changes
 >>>>>>> origin/master
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -106,9 +119,20 @@
       <Filter>Header Files</Filter>
     </ClInclude>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClInclude Include="Source\OBJAnimation.h">
 =======
     <ClInclude Include="Source\PlayerStat.h">
+>>>>>>> origin/master
+=======
+<<<<<<< Updated upstream
+    <ClInclude Include="Source\PlayerStat.h">
+=======
+    <ClInclude Include="Source\ToolUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ToolSection.h">
+>>>>>>> Stashed changes
 >>>>>>> origin/master
       <Filter>Header Files</Filter>
     </ClInclude>

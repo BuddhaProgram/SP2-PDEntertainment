@@ -27,6 +27,8 @@
     <ClCompile Include="Source\PlayerStat.cpp" />
 >>>>>>> origin/master
     <ClCompile Include="Source\shader.cpp" />
+    <ClCompile Include="Source\ToolSection.cpp" />
+    <ClCompile Include="Source\ToolUI.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +49,8 @@
 >>>>>>> origin/master
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\shader.hpp" />
+    <ClInclude Include="Source\ToolSection.h" />
+    <ClInclude Include="Source\ToolUI.h" />
     <ClInclude Include="Source\Utility.h" />
     <ClInclude Include="Source\Vertex.h" />
   </ItemGroup>
