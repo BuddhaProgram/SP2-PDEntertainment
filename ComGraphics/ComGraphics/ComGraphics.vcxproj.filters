@@ -51,10 +51,17 @@
     <ClCompile Include="Source\Assignment3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
     <ClCompile Include="source\moveGhost.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\PlayerStat.cpp">
+=======
+    <ClCompile Include="Source\ToolUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ToolSection.cpp">
+>>>>>>> Stashed changes
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -101,7 +108,14 @@
     <ClInclude Include="Source\Assignment3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
     <ClInclude Include="Source\PlayerStat.h">
+=======
+    <ClInclude Include="Source\ToolUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ToolSection.h">
+>>>>>>> Stashed changes
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

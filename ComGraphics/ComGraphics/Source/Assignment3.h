@@ -8,6 +8,7 @@
 #include "MatrixStack.h"
 #include "Light.h"
 #include "PlayerStat.h"
+#include "ToolSection.h"
 
 class Assignment3 : public Scene
 {
@@ -150,7 +151,7 @@ private:
 	void BikeControls(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y);
+	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z);
 	void RenderTrail(double dt);
 
 	unsigned m_vertexArrayID;
@@ -188,6 +189,12 @@ private:
 
     Vector3 start ;
     Vector3 end;
+
+	ToolSection Inventory;
+	ToolUI::ToolType Tool;
+
+	int SlotIndex;
+
 };
 
 #endif
