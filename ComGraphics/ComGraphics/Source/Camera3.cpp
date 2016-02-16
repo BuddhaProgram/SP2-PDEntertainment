@@ -3,8 +3,8 @@
 #include "Mtx44.h"
 #include "Assignment3.h"
 
+float regenDelay = 6.f;
 extern GLFWwindow* m_window;
-
 Camera3::Camera3()
 {
 }
@@ -26,21 +26,22 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 	right.y = 0;
 	right.Normalize();
 	this->up = defaultUp = right.Cross(view).Normalized();
+	glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 }
 
 void Camera3::CameraRotation(double dt, float CAMERASPEED)
 {
-	int Width;
-	int Height;
+	int width, height;
 
-	glfwGetWindowSize(m_window, &Width, &Height);
+	glfwGetWindowSize(m_window, &width, &height);
 
-	POINT p;
-	GetCursorPos(&p);
-	SetCursorPos(Width / 2.0f, Height / 2.0f);
+	double xpos, ypos;
 
-	rotationY -= (p.x - Width / 2.0f) / (1.0f / CAMERASPEED);
-	rotationX -= (p.y - Height / 2.0f) / (1.0f / CAMERASPEED);
+	glfwGetCursorPos(m_window, &xpos, &ypos);
+	glfwSetCursorPos(m_window, width / 2.0f, height / 2.0f);
+
+	rotationY -= ((float)xpos - width / 2.0f) / (1.0f / CAMERASPEED);
+	rotationX -= ((float)ypos - height / 2.0f) / (1.0f / CAMERASPEED);
 
 	if (rotationX > 50.0f)
 	{
@@ -84,6 +85,13 @@ void Camera3::HumanControl()
 	{
 		position.x += sin(Math::DegreeToRadian(rotationY));
 		position.z += cos(Math::DegreeToRadian(rotationY));
+
+		if (Application::IsKeyPressed(VK_LSHIFT) && PlayerStat::instance()->stamina != 0)
+		{
+			position.x += 2*sin(Math::DegreeToRadian(rotationY));
+			position.z += 2*cos(Math::DegreeToRadian(rotationY));
+			PlayerStat::instance()->stamina -= .5f;
+		}
 	}
 
 	if (Application::IsKeyPressed('S'))
@@ -119,6 +127,28 @@ void Camera3::Update(double dt)
 
 	HumanControl();
 	CameraRotation(dt, 0.2f);
+
+	if (PlayerStat::instance()->stamina <= 0)
+	{
+		PlayerStat::instance()->stamina = 0;
+		if (regenDelay > 0)
+		{
+			regenDelay -= (float)dt;
+		}
+		if (regenDelay <= 0)
+		{
+			PlayerStat::instance()->stamina += 10 * (float)dt;
+		}
+	}
+	else
+	{
+		PlayerStat::instance()->stamina += 10 * (float)dt;
+		regenDelay = 6.f;
+	}
+	if (PlayerStat::instance()->stamina > 100)
+	{
+		PlayerStat::instance()->stamina = 100;
+	}
 
 	Reset();
 }
