@@ -20,12 +20,9 @@
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mesh.cpp" />
     <ClCompile Include="Source\MeshBuilder.cpp" />
-<<<<<<< HEAD
     <ClCompile Include="Source\OBJAnimation.cpp" />
-=======
     <ClCompile Include="source\moveGhost.cpp" />
     <ClCompile Include="Source\PlayerStat.cpp" />
->>>>>>> origin/master
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\ToolSection.cpp" />
     <ClCompile Include="Source\ToolUI.cpp" />
@@ -42,11 +39,8 @@
     <ClInclude Include="Source\Material.h" />
     <ClInclude Include="Source\Mesh.h" />
     <ClInclude Include="Source\MeshBuilder.h" />
-<<<<<<< HEAD
     <ClInclude Include="Source\OBJAnimation.h" />
-=======
     <ClInclude Include="Source\PlayerStat.h" />
->>>>>>> origin/master
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\shader.hpp" />
     <ClInclude Include="Source\ToolSection.h" />
