@@ -181,10 +181,6 @@ void Assignment3::checkTarget()
 
 void Assignment3::Reset()
 {
-	if (Application::IsKeyPressed('R'))
-	{
-
-	}
 }
 
 void Assignment3::Update(double dt)
@@ -204,7 +200,7 @@ void Assignment3::Update(double dt)
 
 	if (b_LockSwingDebounce == true)
 	{
-		RotateX -= 180.0f * dt;
+		RotateX -= 180.0f * (float)dt;
 
 		if (RotateX <= -45.0f)
 		{
@@ -215,7 +211,7 @@ void Assignment3::Update(double dt)
 
 	if (b_LockSwingDebounce == false && b_LockSwing == true && RotateX <= 0.0f)
 	{
-		RotateX += 180.0f * dt;
+		RotateX += 180.0f * (float)dt;
 
 		if (RotateX >= 0.0f)
 		{
@@ -250,7 +246,7 @@ void Assignment3::Update(double dt)
 	}
 
 
-	Reset();
+	//Reset();
 
     //scene changer codes..............
     if (Application::IsKeyPressed('P'))
