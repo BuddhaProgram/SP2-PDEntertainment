@@ -25,7 +25,6 @@ public:
 
 	float rotationX;
 	float rotationY;
-	float targetZoom;
 	void CameraRotation(double dt, float CAMERASPEED);
 	float MarginofError = 5.f;
 };

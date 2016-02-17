@@ -19,7 +19,7 @@ public:
 
     //functions
     void checkPlayerPos();
-    void move(double dt);
+    void move(double dt, int movespeed);
 
     //global variables for use in entire project
     bool Spawn;

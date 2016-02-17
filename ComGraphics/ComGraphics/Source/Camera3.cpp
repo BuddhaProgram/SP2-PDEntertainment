@@ -17,7 +17,6 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 {
 	rotationX = 0;
 	rotationY = 0;
-	targetZoom = 200.0f;
 
 	this->position = defaultPosition = pos;
 	this->target = defaultTarget = target;
@@ -39,7 +38,6 @@ void Camera3::CameraRotation(double dt, float CAMERASPEED)
 
 	glfwGetCursorPos(m_window, &xpos, &ypos);
 	glfwSetCursorPos(m_window, width / 2.0f, height / 2.0f);
-
 	rotationY -= ((float)xpos - width / 2.0f) / (1.0f / CAMERASPEED);
 	rotationX -= ((float)ypos - height / 2.0f) / (1.0f / CAMERASPEED);
 
@@ -109,7 +107,7 @@ void Camera3::Reset()
 void Camera3::Update(double dt)
 { 
 	view = (target - position).Normalized();
-	right = view.Cross(up);
+	right = view.Cross(defaultUp);
 	right.y = 0;
 	right.Normalize();
 	this->up = right.Cross(view).Normalized();
