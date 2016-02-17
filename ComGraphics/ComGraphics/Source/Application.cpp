@@ -9,6 +9,8 @@
 const unsigned char FPS = 60; // FPS of this game
 const unsigned int frameTime = 1000 / FPS; // time for each frame
 GLFWwindow* m_window;
+int Application::mouse_scroll = 0;
+
 //Define an error callback
 static void error_callback(int error, const char* description)
 {
@@ -30,6 +32,7 @@ bool Application::IsKeyPressed(unsigned short key)
 
 Application::Application()
 {
+
 }
 
 Application::~Application()
@@ -41,6 +44,10 @@ void resize_callback(GLFWwindow* window, int w, int h)
 	glViewport(0, 0, w, h); //update opengl the new window size
 }
 
+void scroll_callback(GLFWwindow *m_window, double xoffset, double yoffset)
+{
+	Application::mouse_scroll = (int)yoffset;
+}
 
 void Application::Init()
 {
@@ -60,9 +67,8 @@ void Application::Init()
 
 	//Create a window and create its OpenGL context
 	//m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
-	m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", NULL, NULL);
-    //m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
-
+	m_window = glfwCreateWindow(800, 600, "Computer Graphics", NULL, NULL);
+	glfwSetScrollCallback(m_window, scroll_callback);
 
 	//If the window couldn't be created
 	if (!m_window)
@@ -108,6 +114,13 @@ void Application::Run()
 		scene->Render();
 		//Swap buffers
 		glfwSwapBuffers(m_window);
+
+		if (Application::IsKeyPressed(WM_MOUSEWHEEL))
+			glfwSetScrollCallback(m_window, scroll_callback);
+
+		else
+			Application::mouse_scroll = 0;
+
 		//Get and organize events, like keyboard and mouse input, window resizing, etc...
 		glfwPollEvents();
         m_timer.waitUntil(frameTime);       // Frame rate limiter. Limits each frame to a specified time in ms.   

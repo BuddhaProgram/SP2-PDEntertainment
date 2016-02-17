@@ -16,7 +16,7 @@ public:
 	void Run();
 	void Exit();
 	static bool IsKeyPressed(unsigned short key);
-	//bool IsKeyPressed(unsigned short key);
+	static int mouse_scroll;
 private:
 
 	//Declare a window object

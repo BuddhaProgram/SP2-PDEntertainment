@@ -17,7 +17,4 @@ public:
 
 	float camX, camY, camZ;
 };
-
-
-
 #endif
