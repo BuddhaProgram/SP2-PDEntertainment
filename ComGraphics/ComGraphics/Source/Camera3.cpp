@@ -94,6 +94,7 @@ void Camera3::HumanControl()
 		}
 	}
 
+
 	if (Application::IsKeyPressed('S'))
 	{
 		position.x -= sin(Math::DegreeToRadian(rotationY));
