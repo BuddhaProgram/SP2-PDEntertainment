@@ -476,97 +476,14 @@ void Assignment3::RenderScene1()
 
 void Assignment3::RenderScene2()
 {
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, -500);
-	modelStack.Scale(10, 10, 10);
-	modelStack.Rotate(anima.PlanetRotate, 0, 1, 0);
-	RenderMesh(meshList[GEO_EARTH], false); // Earth
-	modelStack.PushMatrix();
-	modelStack.Translate(10, 0, 0);
-	modelStack.Rotate(anima.PlanetRotate, 0, 1, 0);
-	RenderMesh(meshList[GEO_MOON], false); // Moon
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 0, 90);
+    modelStack.Rotate(180, 0, 1, 0);
+    modelStack.Scale(6, 6, 4);
+    RenderMesh(meshList[GEO_FACILITYOUT], true);
+    modelStack.PopMatrix();
 
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 50);
-	modelStack.Rotate(anima.PlanetRotate, 0, 1, 0);
-	RenderMesh(meshList[GEO_PLANET], false); // Planet
-	modelStack.PopMatrix();
-
-	//Asteroids
-	modelStack.PushMatrix();
-	modelStack.Translate(anima.AsteroidMove - 50, 0, 0);
-	modelStack.Rotate(anima.AsteroidRotate, 0, 0, 1);
-	RenderMesh(meshList[GEO_ASTEROID1], false);
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Translate(anima.AsteroidMove, 6, anima.AsteroidMove + 10);
-	modelStack.Rotate(anima.AsteroidRotate, 0, 0, 1);
-	RenderMesh(meshList[GEO_ASTEROID1], false);
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Translate(0, -anima.AsteroidMove, anima.AsteroidMove + 10);
-	modelStack.Rotate(anima.AsteroidRotate, 0, 0, 1);
-	RenderMesh(meshList[GEO_ASTEROID1], false);
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Translate(0, anima.AsteroidMoveS + 23, anima.AsteroidMoveS - 56);
-	modelStack.Rotate(anima.AsteroidRotateF, 0, 0, 1);
-	RenderMesh(meshList[GEO_ASTEROID1], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(-anima.AsteroidMove, -anima.AsteroidMove, 0);
-	modelStack.Rotate(anima.AsteroidRotate, 0, 0, 1);
-	RenderMesh(meshList[GEO_ASTEROID2], false);
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Translate(-anima.AsteroidMoveS, anima.AsteroidMoveS, anima.AsteroidMoveS);
-	modelStack.Rotate(anima.AsteroidRotate, 0, 0, 1);
-	RenderMesh(meshList[GEO_ASTEROID2], false);
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Translate(-anima.AsteroidMoveS, -anima.AsteroidMoveS + 40, anima.AsteroidMoveS - 36);
-	modelStack.Rotate(anima.AsteroidRotateF, 0, 0, 1);
-	RenderMesh(meshList[GEO_ASTEROID2], false);
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Translate(anima.AsteroidMoveS, anima.AsteroidMoveS + 32, -anima.AsteroidMoveS - 98);
-	modelStack.Rotate(anima.AsteroidRotateF, 1, 0, 1);
-	RenderMesh(meshList[GEO_ASTEROID2], false);
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Translate(-anima.AsteroidMoveS - 36, 0, anima.AsteroidMoveS + 11);
-	modelStack.Rotate(anima.AsteroidRotateF, 0, 1, 0);
-	RenderMesh(meshList[GEO_ASTEROID2], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(2, 0, 0);
-	modelStack.Rotate(anima.OpenDoorL, 0, 1, 0);
-	RenderMesh(meshList[GEO_MAINDOORLEFT], false);
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Translate(-2, 0, 0);
-	modelStack.Rotate(anima.OpenDoorR, 0, 1, 0);
-	RenderMesh(meshList[GEO_MAINDOORRIGHT], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0, anima.RubbleCollapse, 0);
-	modelStack.Translate(0, 10, -2);
-	RenderMesh(meshList[GEO_RUBBLE], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(0, anima.PortraitDrop, 0);
-	modelStack.Translate(0, 5, -20);
-	modelStack.Rotate(anima.PortraitFall, 1, 0, 0);
-	RenderMesh(meshList[GEO_PORTRAIT], false);
-	modelStack.PopMatrix();
-
+    RenderPlanetFloor();
     RenderSkyBox();
 
 
