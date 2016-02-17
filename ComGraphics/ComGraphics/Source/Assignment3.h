@@ -6,6 +6,7 @@
 #include "Vector3.h"
 #include "Mesh.h"
 #include "MatrixStack.h"
+#include "Tools.h"
 #include "Light.h"
 #include "OBJAnimation.h"
 #include "PlayerStat.h"
@@ -23,12 +24,6 @@ class Assignment3 : public Scene
         GEO_FRONT,
         GEO_BACK,
         GEO_QUAD,
-        GEO_BIKE,
-        GEO_TRAIL,
-        GEO_OBSTACLE,
-        GEO_JUMPOBSTACLE,
-        GEO_GANTRY,
-        GEO_GANTRY2,
         GEO_PICKAXE,
         GEO_LIGHTBALL,
         GEO_TEXT,
@@ -150,6 +145,7 @@ public:
 	virtual void Render();
 	virtual void Reset();
 	virtual void Exit();
+	
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 
@@ -159,11 +155,6 @@ private:
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z);
-
-	bool proximitycheck(float smallx, float largex, float smallz, float largez);
-	bool WithinArea(float smallx, float largex, float smallz, float largez);
-	bool Interacting(float smallx, float largex, float smallz, float largez);
-	void Collision(float smallx, float largex, float smallz, float largez);
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
@@ -205,7 +196,7 @@ private:
 
 	ToolSection Inventory;
 	ToolUI::ToolType Tool;
-
+	float FPS;
 	int SlotIndex;
 
 };

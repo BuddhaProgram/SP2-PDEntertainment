@@ -14,7 +14,6 @@
 
 Assignment3::Assignment3()
 {
-
 }
 
 Assignment3::~Assignment3()
@@ -146,7 +145,7 @@ void Assignment3::Init()
 
 
 	Mtx44 projection;
-	projection.SetToPerspective(45.0f, 4.0f / 3.f, 0.1f, 10000.f);
+	projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
     //scene changer inits.............
@@ -166,7 +165,6 @@ void Assignment3::Init()
 }
 
 static float LSPEED = 10.f;
-static std::stringstream framerate;
 
 float RotateX = 0.0f;
 bool b_LockSwing = false;
@@ -183,54 +181,9 @@ void Assignment3::Reset()
 {
 }
 
-bool Assignment3::proximitycheck(float smallx, float largex, float smallz, float largez)
-{
-	//this function checks if the camera is close to a side of the object
-	bool result = false;
-	if ((camera.position.x >= smallx - 2.f) && (camera.position.x <= smallx) && (camera.position.z >= smallz) && (camera.position.z <= largez)){ result = true; }
-	if ((camera.position.x <= largex + 2.f) && (camera.position.x >= largex) && (camera.position.z >= smallz) && (camera.position.z <= largez)){ result = true; }
-	if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz - 2.f) && (camera.position.z <= smallz)){ result = true; }
-	if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez + 2.f) && (camera.position.z >= largez)){ result = true; }
-	return result;
-}
-
-bool Assignment3::WithinArea(float smallx, float largex, float smallz, float largez)
-{//checks if camera is within a certain area of the room.
-	if ((camera.position.x > smallx)
-		&&
-		(camera.position.x < largex)
-		&&
-		(camera.position.z > smallz)
-		&&
-		(camera.position.z < largez)
-		)
-	{
-		return true;
-	}
-	return false;
-}
-
-bool Assignment3::Interacting(float smallx, float largex, float smallz, float largez)
-{
-	if (proximitycheck(smallx, largex, smallz, largez) == true && Application::IsKeyPressed('E'))
-	{
-		return true;
-	}
-	return false;
-}
-
-void Assignment3::Collision(float smallx, float largex, float smallz, float largez)
-{
-	if ((camera.position.x > smallx) && (camera.position.x<largex) && (camera.position.z > smallz) && (camera.position.z<smallz + 3.f)){ camera.position.z = smallz; }
-	if ((camera.position.x > smallx) && (camera.position.x<largex) && (camera.position.z < largez) && (camera.position.z>largez - 3.f)){ camera.position.z = largez; }
-	if ((camera.position.z > smallz) && (camera.position.z<largez) && (camera.position.x > smallx) && (camera.position.x<smallx + 3.f)){ camera.position.x = smallx; }
-	if ((camera.position.z > smallz) && (camera.position.z<largez) && (camera.position.x < largex) && (camera.position.x>largex - 3.f)){ camera.position.x = largex; }
-	//accounts for possible velocity of objects and clipping through camera.
-}
-
 void Assignment3::Update(double dt)
 {
-	framerate << "Framerate: " << 1 / dt;
+	FPS = 1.f / (float)dt;
 	if (Application::IsKeyPressed('J'))
 	{
 		Inventory.SlotOne = ToolUI(ToolUI::Pickaxe);
@@ -705,7 +658,7 @@ void Assignment3::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, 
 	for (unsigned i = 0; i < text.length(); ++i)
 	{
 		Mtx44 characterSpacing;
-		characterSpacing.SetToTranslation(i * 1.0f + 0.5f, 0.5f, 0); //1.0f is the spacing of each character, you may change this value
+		characterSpacing.SetToTranslation(i * 0.5f + 0.5f, 0.5f, 0); //1.0f is the spacing of each character, you may change this value
 		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
 		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
@@ -788,7 +741,7 @@ void Assignment3::Render()
 
 	if (Inventory.GetToolType(SlotIndex) == ToolUI::Torchlight)
 	{
-
+		//benny pls
 	}
 
 
@@ -811,8 +764,10 @@ void Assignment3::Render()
     }
 
 	RenderMesh(meshList[GEO_AXES], false);
-	RenderTextOnScreen(meshList[GEO_TEXT], framerate.str(), Color(0, 1, 0), 2, 0, 0);
-	framerate.str("");
+	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 0);
+	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 1);
+	RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 2);
+	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.82f, 7);
 }
 
 void Assignment3::Exit()
