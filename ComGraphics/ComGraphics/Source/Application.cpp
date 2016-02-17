@@ -59,13 +59,10 @@ void Application::Init()
 
 
 	//Create a window and create its OpenGL context
-<<<<<<< HEAD
-	m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
-=======
-	//m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", NULL, NULL);
-    m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
+	//m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
+	m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", NULL, NULL);
+    //m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
 
->>>>>>> origin/master
 
 	//If the window couldn't be created
 	if (!m_window)

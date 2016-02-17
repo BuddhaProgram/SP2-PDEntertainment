@@ -35,10 +35,12 @@ class Assignment3 : public Scene
         GEO_ASTEROID1,
         GEO_ASTEROID2,
 
-		GEO_MAINDOORLEFT,
-		GEO_MAINDOORRIGHT,
-		GEO_RUBBLE,
-		GEO_PORTRAIT,
+        GEO_MAINDOORLEFT,
+        GEO_MAINDOORRIGHT,
+        GEO_RUBBLE,
+        GEO_PORTRAIT,
+
+        GEO_PLANETFLOOR,
 
         GEO_GHOST1,
 
@@ -146,11 +148,15 @@ public:
 	virtual void Reset();
 	virtual void Exit();
 	
+    Camera3 camera;
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 
 	void RenderScene1();
     void RenderScene2();
+    void RenderPlanetFloor();
+
+    void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
 
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
@@ -162,7 +168,7 @@ private:
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
 
-	Camera3 camera;
+	
 	Animation anima;
 
 	MS modelStack, viewStack, projectionStack;
@@ -195,6 +201,7 @@ private:
     HostileMob Ghost;
     float FPS;
 	int SlotIndex;
+    float mobTimeCount;
 
 };
 

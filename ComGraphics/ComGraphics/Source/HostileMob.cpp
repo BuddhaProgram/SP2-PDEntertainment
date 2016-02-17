@@ -1,5 +1,6 @@
-#include "Assignment3.h"
+
 #include "HostileMob.h"
+
 
 HostileMob::HostileMob()
 {
@@ -26,33 +27,22 @@ HostileMob::~HostileMob()
 }
 
 
-void HostileMob::checkTarget()
-{
-    TargetDetectX = camera.position.x;
-    TargetDetectZ = camera.position.z;
-}
+
 
 void HostileMob::move(double dt)
 {
-    mobTimeCount += ((float)(dt) * 5);
-    if (mobTimeCount >= 1)
-    {
-    checkTarget();
-    mobTimeCount = 0;
-    }
-    
+   //note: target detect x and y is player position, its function is in assignment3.cpp
     Vector3 start = Vector3(MobPosX, MobPosY, MobPosZ);
-    Vector3 end = Vector3(TargetDetectX, camera.position.y, TargetDetectZ);
+    Vector3 end = Vector3(TargetDetectX, 15, TargetDetectZ);
     Vector3 toNorm = end - start;
     Vector3 mob = start;
 
-    float distance = sqrt(MobPosX * TargetDetectX + MobPosY * camera.position.y + TargetDetectZ * MobPosZ);
+    float distance = sqrt(MobPosX * TargetDetectX + MobPosY * 15 + TargetDetectZ * MobPosZ);
     Vector3 direction = toNorm.Normalize();
 
-    mob += direction * (float)(100 * dt);
+    mob += direction * (float)(1000 * dt);
 
     MobPosX = mob.x;
     MobPosZ = mob.z;
-
     //MobRotateY = -camera.target.z;
 }

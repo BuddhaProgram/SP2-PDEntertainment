@@ -143,6 +143,9 @@ void Assignment3::Init()
     meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//GhostPlaceholder.obj");
     meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Ghostplaceholder.tga");
 
+    meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateOBJ("planet floor", "OBJ//PlanetGround.obj");
+    meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetGround.tga");
+
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
@@ -168,6 +171,17 @@ void Assignment3::Reset()
 {
 }
 
+void Assignment3::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 1 )
+{
+    mobTimeCount += (((float)(dt)* checkRate) / lessenSpeed);
+    if (mobTimeCount >= 1)
+    {
+        Ghost.TargetDetectX = camera.position.x;
+        Ghost.TargetDetectZ = camera.position.z;
+        mobTimeCount = 0;
+    }
+   
+}
 void Assignment3::Update(double dt)
 {
 	FPS = 1.f / (float)dt;
@@ -252,6 +266,7 @@ void Assignment3::Update(double dt)
 
     if (Ghost.Spawn)
     {
+        checkPlayerPos(dt,1,5);
         Ghost.move(dt);
     }
 }
@@ -300,75 +315,65 @@ void Assignment3::RenderMesh(Mesh*mesh, bool enableLight)
 	}
 }
 
+void Assignment3::RenderPlanetFloor()
+{
+    //floor
+    modelStack.PushMatrix();
+    modelStack.PushMatrix();
+    modelStack.Translate(-7.4, 0, -7.4);
+    for (int a = 0, z = 1; a < 20; a++, z++)
+    {
+        for (int i = 0, x = 1; i < 20; i++, x++)
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(x * 7.4, 0, z * 7.4);
+           // modelStack.Scale(1.5, 1, 1.5);
+            RenderMesh(meshList[GEO_PLANETFLOOR], true);
+            modelStack.PopMatrix();
+        }
+    }
+    modelStack.PopMatrix();
+    for (int a = 0, z = -1.5; a < 20; a++, z--)
+    {
+        for (int i = 0, x = 0.5; i < 20; i++, x++)
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(x * 7.4, 0, z *7.4);
+            //modelStack.Scale(1.5, 1, 1.5);
+            RenderMesh(meshList[GEO_PLANETFLOOR], true);
+            modelStack.PopMatrix();
+        }
+    }
+    for (int a = 0, z = 0.5; a < 20; a++, z++)
+    {
+        for (int i = 0, x = -1.5; i < 20; i++, x--)
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(x * 7.4, 0, z *7.4);
+            //modelStack.Scale(1.5, 1, 1.5);
+            RenderMesh(meshList[GEO_PLANETFLOOR], true);
+            modelStack.PopMatrix();
+
+        }
+    }
+    for (int a = 0, z = -1.5; a < 20; a++, z--)
+    {
+        for (int i = 0, x = -1.5; i < 20; i++, x--)
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(x * 7.4, 0, z *7.4);
+           // modelStack.Scale(1.5, 1, 1.5);
+            RenderMesh(meshList[GEO_PLANETFLOOR], true);
+            modelStack.PopMatrix();
+
+        }
+    }
+    modelStack.PopMatrix();
+}
+
 void Assignment3::RenderScene1()
 {
-    modelStack.PushMatrix();
-    modelStack.Translate(0, 0, -500);
-    modelStack.Scale(10, 10, 10);
-	modelStack.Rotate(anima.PlanetRotate, 0, 1, 0);
-    RenderMesh(meshList[GEO_EARTH], false); // Earth
-    modelStack.PushMatrix();
-    modelStack.Translate(10, 0, 0);
-	modelStack.Rotate(anima.PlanetRotate, 0, 1, 0);
-    RenderMesh(meshList[GEO_MOON], false); // Moon
-    modelStack.PopMatrix();
-    modelStack.PopMatrix();
-
-
-    modelStack.PushMatrix();
-    modelStack.Translate(0, 0, 50);
-	modelStack.Rotate(anima.PlanetRotate, 0, 1, 0);
-    RenderMesh(meshList[GEO_PLANET], false); // Planet
-    modelStack.PopMatrix();
-
-    //Asteroids
-    modelStack.PushMatrix();
-    modelStack.Translate(anima.AsteroidMove - 50, 0, 0);
-	modelStack.Rotate(anima.AsteroidRotate, 0, 0, 1);
-    RenderMesh(meshList[GEO_ASTEROID1], false);
-    modelStack.PopMatrix();
-    modelStack.PushMatrix();
-	modelStack.Translate(anima.AsteroidMove, 6, anima.AsteroidMove + 10);
-	modelStack.Rotate(anima.AsteroidRotate, 0, 0, 1);
-    RenderMesh(meshList[GEO_ASTEROID1], false);
-    modelStack.PopMatrix();
-    modelStack.PushMatrix();
-	modelStack.Translate(0, -anima.AsteroidMove, anima.AsteroidMove + 10);
-	modelStack.Rotate(anima.AsteroidRotate, 0, 0, 1);
-    RenderMesh(meshList[GEO_ASTEROID1], false);
-    modelStack.PopMatrix();
-    modelStack.PushMatrix();
-	modelStack.Translate(0, anima.AsteroidMoveS + 23, anima.AsteroidMoveS - 56);
-	modelStack.Rotate(anima.AsteroidRotateF, 0, 0, 1);
-    RenderMesh(meshList[GEO_ASTEROID1], false);
-    modelStack.PopMatrix();
-
-    modelStack.PushMatrix();
-	modelStack.Translate(-anima.AsteroidMove, -anima.AsteroidMove, 0);
-	modelStack.Rotate(anima.AsteroidRotate, 0, 0, 1);
-    RenderMesh(meshList[GEO_ASTEROID2], false);
-    modelStack.PopMatrix();
-    modelStack.PushMatrix();
-	modelStack.Translate(-anima.AsteroidMoveS, anima.AsteroidMoveS, anima.AsteroidMoveS);
-	modelStack.Rotate(anima.AsteroidRotate, 0, 0, 1);
-    RenderMesh(meshList[GEO_ASTEROID2], false);
-    modelStack.PopMatrix();
-    modelStack.PushMatrix();
-	modelStack.Translate(-anima.AsteroidMoveS, -anima.AsteroidMoveS + 40, anima.AsteroidMoveS - 36);
-	modelStack.Rotate(anima.AsteroidRotateF, 0, 0, 1);
-    RenderMesh(meshList[GEO_ASTEROID2], false);
-    modelStack.PopMatrix();
-    modelStack.PushMatrix();
-	modelStack.Translate(anima.AsteroidMoveS, anima.AsteroidMoveS + 32, -anima.AsteroidMoveS - 98);
-	modelStack.Rotate(anima.AsteroidRotateF, 1, 0, 1);
-    RenderMesh(meshList[GEO_ASTEROID2], false);
-    modelStack.PopMatrix();
-    modelStack.PushMatrix();
-	modelStack.Translate(-anima.AsteroidMoveS - 36, 0, anima.AsteroidMoveS + 11);
-	modelStack.Rotate(anima.AsteroidRotateF, 0, 1, 0);
-    RenderMesh(meshList[GEO_ASTEROID2], false);
-    modelStack.PopMatrix();
-
+    RenderPlanetFloor();
 
     //skybox..................................................................................
     modelStack.PushMatrix();//skybox start
