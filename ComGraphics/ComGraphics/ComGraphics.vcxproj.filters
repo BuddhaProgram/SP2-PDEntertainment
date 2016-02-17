@@ -1,169 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Shader">
-      <UniqueIdentifier>{77b8cca2-8bb1-4dd3-875c-f8acc90b9c99}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="Source\Assignment3.cpp" />
+    <ClCompile Include="Source\Camera.cpp" />
+    <ClCompile Include="Source\Camera3.cpp" />
+    <ClCompile Include="Source\LoadOBJ.cpp" />
+    <ClCompile Include="Source\LoadTGA.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Mesh.cpp" />
+    <ClCompile Include="Source\MeshBuilder.cpp" />
+    <ClCompile Include="source\moveGhost.cpp" />
+    <ClCompile Include="Source\PlayerStat.cpp" />
+    <ClCompile Include="Source\shader.cpp" />
+    <ClCompile Include="Source\ToolSection.cpp" />
+    <ClCompile Include="Source\ToolUI.cpp" />
+    <ClCompile Include="Source\Utility.cpp" />
+    <ClCompile Include="Source\Application.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\shader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mesh.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\MeshBuilder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Utility.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\LoadTGA.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\LoadOBJ.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Camera3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Assignment3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <ClCompile Include="Source\OBJAnimation.cpp">
-=======
-=======
-<<<<<<< Updated upstream
->>>>>>> origin/master
-    <ClCompile Include="source\moveGhost.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\PlayerStat.cpp">
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
-=======
-    <ClCompile Include="Source\ToolUI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ToolSection.cpp">
->>>>>>> Stashed changes
->>>>>>> origin/master
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="Source\Application.h" />
+    <ClInclude Include="Source\Assignment3.h" />
+    <ClInclude Include="Source\Camera.h" />
+    <ClInclude Include="Source\Camera3.h" />
+    <ClInclude Include="Source\Light.h" />
+    <ClInclude Include="Source\LoadOBJ.h" />
+    <ClInclude Include="Source\LoadTGA.h" />
+    <ClInclude Include="Source\Material.h" />
+    <ClInclude Include="Source\Mesh.h" />
+    <ClInclude Include="Source\MeshBuilder.h" />
+    <ClInclude Include="Source\PlayerStat.h" />
+    <ClInclude Include="Source\Scene.h" />
+    <ClInclude Include="Source\shader.hpp" />
+    <ClInclude Include="Source\ToolSection.h" />
+    <ClInclude Include="Source\ToolUI.h" />
+    <ClInclude Include="Source\Utility.h" />
+    <ClInclude Include="Source\Vertex.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Scene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\shader.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mesh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\MeshBuilder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Vertex.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Light.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Material.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Utility.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\LoadTGA.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\LoadOBJ.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Camera3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Assignment3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <ClInclude Include="Source\OBJAnimation.h">
-=======
-    <ClInclude Include="Source\PlayerStat.h">
->>>>>>> origin/master
-=======
-<<<<<<< Updated upstream
-    <ClInclude Include="Source\PlayerStat.h">
-=======
-    <ClInclude Include="Source\ToolUI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ToolSection.h">
->>>>>>> Stashed changes
->>>>>>> origin/master
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Shader\SimpleFragmentShader.fragmentshader">
-      <Filter>Shader</Filter>
-    </None>
-    <None Include="Shader\SimpleVertexShader.vertexshader">
-      <Filter>Shader</Filter>
-    </None>
-    <None Include="Shader\Shading.fragmentshader">
-      <Filter>Shader</Filter>
-    </None>
-    <None Include="Shader\Shading.vertexshader">
-      <Filter>Shader</Filter>
-    </None>
-    <None Include="Shader\TransformVertexShader.vertexshader">
-      <Filter>Shader</Filter>
-    </None>
-    <None Include="Shader\LightSource.fragmentshader">
-      <Filter>Shader</Filter>
-    </None>
-    <None Include="Shader\Texture.fragmentshader">
-      <Filter>Shader</Filter>
-    </None>
-    <None Include="Shader\Texture.vertexshader">
-      <Filter>Shader</Filter>
-    </None>
-    <None Include="Shader\Text.fragmentshader">
-      <Filter>Shader</Filter>
-    </None>
+    <None Include="Shader\LightSource.fragmentshader" />
+    <None Include="Shader\Shading.fragmentshader" />
+    <None Include="Shader\Shading.vertexshader" />
+    <None Include="Shader\SimpleFragmentShader.fragmentshader" />
+    <None Include="Shader\SimpleVertexShader.vertexshader" />
+    <None Include="Shader\Text.fragmentshader" />
+    <None Include="Shader\Texture.fragmentshader" />
+    <None Include="Shader\Texture.vertexshader" />
+    <None Include="Shader\TransformVertexShader.vertexshader" />
   </ItemGroup>
 </Project>
