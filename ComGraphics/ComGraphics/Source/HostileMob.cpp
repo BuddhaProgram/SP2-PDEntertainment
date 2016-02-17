@@ -40,7 +40,7 @@ void HostileMob::move(double dt)
     float distance = sqrt(MobPosX * TargetDetectX + MobPosY * 15 + TargetDetectZ * MobPosZ);
     Vector3 direction = toNorm.Normalize();
 
-    mob += direction * (float)(1000 * dt);
+    mob += direction * (float)(200 * dt);
 
     MobPosX = mob.x;
     MobPosZ = mob.z;

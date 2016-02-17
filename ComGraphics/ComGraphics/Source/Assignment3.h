@@ -41,6 +41,7 @@ class Assignment3 : public Scene
         GEO_PORTRAIT,
 
         GEO_PLANETFLOOR,
+        GEO_FACILITYOUT,
 
         GEO_GHOST1,
 
@@ -154,6 +155,7 @@ private:
 
 	void RenderScene1();
     void RenderScene2();
+    void RenderSkyBox();
     void RenderPlanetFloor();
 
     void checkPlayerPos(double dt, int checkRate, int lessenSpeed);

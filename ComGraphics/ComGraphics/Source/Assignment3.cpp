@@ -146,6 +146,9 @@ void Assignment3::Init()
     meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateOBJ("planet floor", "OBJ//PlanetGround.obj");
     meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetGround.tga");
 
+    meshList[GEO_FACILITYOUT] = MeshBuilder::GenerateOBJ("FacilityOut", "OBJ//FacilityOUT.obj");
+    meshList[GEO_FACILITYOUT]->textureID = LoadTGA("Image//FacilityOUT.tga");
+
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
@@ -265,7 +268,7 @@ void Assignment3::Update(double dt)
     }
     if (Ghost.Spawn)
     {
-        checkPlayerPos(dt,1,5);
+        checkPlayerPos(dt,5,1);
         Ghost.move(dt);
     }
 }
@@ -369,12 +372,8 @@ void Assignment3::RenderPlanetFloor()
     }
     modelStack.PopMatrix();
 }
-
-void Assignment3::RenderScene1()
+void Assignment3::RenderSkyBox()
 {
-    RenderPlanetFloor();
-
-    //skybox..................................................................................
     modelStack.PushMatrix();//skybox start
     modelStack.Scale(500, 500, 500);
 
@@ -430,6 +429,31 @@ void Assignment3::RenderScene1()
     modelStack.PopMatrix();
 
     modelStack.PopMatrix();//skybox end
+}
+
+void Assignment3::RenderScene1()
+{
+   
+    modelStack.PushMatrix();
+    modelStack.Translate(0,0,-90);
+    modelStack.Scale(6, 6, 4);
+    RenderMesh(meshList[GEO_FACILITYOUT], true);
+    modelStack.PopMatrix();
+
+    RenderPlanetFloor();
+    RenderSkyBox();
+
+    //Mobs
+    //ghost test
+    if (Ghost.Spawn)
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(Ghost.MobPosX, Ghost.MobPosY, Ghost.MobPosZ);
+        //modelStack.Rotate(MobRotateY, 0, 1, 0);
+        RenderMesh(meshList[GEO_GHOST1], true);
+        modelStack.PopMatrix();
+    }
+    
 
 }
 
@@ -448,64 +472,6 @@ void Assignment3::RenderScene2()
 	RenderMesh(meshList[GEO_MOON], false); // Moon
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
-
-
-    //skybox..................................................................................
-    modelStack.PushMatrix();//skybox start
-    modelStack.Scale(500, 500, 500);
-
-
-    //front
-    modelStack.PushMatrix();
-    modelStack.Translate(0, 0, -10);
-    modelStack.Rotate(90, 1, 0, 0);
-    modelStack.Scale(20, 0, 20);
-    RenderMesh(meshList[GEO_FRONT], false);
-    modelStack.PopMatrix();
-
-    //right
-    modelStack.PushMatrix();
-    modelStack.Translate(10, 0, 0);
-    modelStack.Rotate(90, 0, 0, 1);
-    modelStack.Rotate(-90, 0, 1, 0);
-    modelStack.Scale(20, 0, 20);
-    RenderMesh(meshList[GEO_RIGHT], false);
-    modelStack.PopMatrix();
-
-    //left
-    modelStack.PushMatrix();
-    modelStack.Translate(-10, 0, 0);
-    modelStack.Rotate(-90, 0, 0, 1);
-    modelStack.Rotate(90, 0, 1, 0);
-    modelStack.Scale(20, 0, 20);
-    RenderMesh(meshList[GEO_LEFT], false);
-    modelStack.PopMatrix();
-
-    //back
-    modelStack.PushMatrix();
-    modelStack.Translate(0, 0, 10);
-    modelStack.Rotate(-90, 1, 0, 0);
-    modelStack.Rotate(180, 0, 1, 0);
-    modelStack.Scale(20, 0, 20);
-    RenderMesh(meshList[GEO_BACK], false);
-    modelStack.PopMatrix();
-
-    //bottom
-    modelStack.PushMatrix();
-    modelStack.Translate(0, -10, 0);
-    modelStack.Scale(20, 0, 20);
-    RenderMesh(meshList[GEO_BOTTOM], false);
-    modelStack.PopMatrix();
-
-    //top
-    modelStack.PushMatrix();
-    modelStack.Translate(0, 10, 0);
-    modelStack.Rotate(180, 0, 0, 1);
-    modelStack.Scale(20, 0, 20);
-    RenderMesh(meshList[GEO_TOP], false);
-    modelStack.PopMatrix();
-
-    modelStack.PopMatrix();//skybox end
 
 
 	modelStack.PushMatrix();
@@ -585,6 +551,8 @@ void Assignment3::RenderScene2()
 	modelStack.Rotate(anima.PortraitFall, 1, 0, 0);
 	RenderMesh(meshList[GEO_PORTRAIT], false);
 	modelStack.PopMatrix();
+
+    RenderSkyBox();
 
 
 }
@@ -745,14 +713,7 @@ void Assignment3::Render()
         RenderScene2();
     }
 
-    if (Ghost.Spawn)
-    {
-        modelStack.PushMatrix();
-        modelStack.Translate(Ghost.MobPosX,Ghost.MobPosY, Ghost.MobPosZ);
-        //modelStack.Rotate(MobRotateY, 0, 1, 0);
-        RenderMesh(meshList[GEO_GHOST1], true);
-        modelStack.PopMatrix();
-    }
+    
 
 	RenderMesh(meshList[GEO_AXES], false);
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 0);
