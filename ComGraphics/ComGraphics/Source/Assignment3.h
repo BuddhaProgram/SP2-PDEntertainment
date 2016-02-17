@@ -7,7 +7,9 @@
 #include "Mesh.h"
 #include "MatrixStack.h"
 #include "Light.h"
+#include "OBJAnimation.h"
 #include "PlayerStat.h"
+#include "ToolSection.h"
 
 class Assignment3 : public Scene
 {
@@ -37,6 +39,11 @@ class Assignment3 : public Scene
         GEO_PLANET,
         GEO_ASTEROID1,
         GEO_ASTEROID2,
+
+		GEO_MAINDOORLEFT,
+		GEO_MAINDOORRIGHT,
+		GEO_RUBBLE,
+		GEO_PORTRAIT,
 
         GEO_GHOST1,
 
@@ -152,7 +159,7 @@ private:
 	void BikeControls(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y);
+	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z);
 	void RenderTrail(double dt);
 
 	unsigned m_vertexArrayID;
@@ -162,6 +169,7 @@ private:
 	unsigned m_parameters[U_TOTAL];
 
 	Camera3 camera;
+	Animation anima;
 
 	MS modelStack, viewStack, projectionStack;
 
@@ -191,6 +199,12 @@ private:
 
     Vector3 start ;
     Vector3 end;
+
+	ToolSection Inventory;
+	ToolUI::ToolType Tool;
+
+	int SlotIndex;
+
 };
 
 #endif

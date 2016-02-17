@@ -103,16 +103,6 @@ void Camera3::HumanControl()
 
 void Camera3::Reset()
 {
-	if (Application::IsKeyPressed('R'))
-	{
-		position = defaultPosition;
-		target = rotationX = rotationY = 0;
-		up = defaultUp;
-
-		rotationX = 0;
-		rotationY = 0;
-		targetZoom = 200.0f;
-	}
 }
 
 void Camera3::Update(double dt)
