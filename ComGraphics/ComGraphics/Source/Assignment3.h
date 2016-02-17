@@ -49,6 +49,8 @@ class Assignment3 : public Scene
 
         //player related
         GEO_HEALTH,
+
+
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE
@@ -184,6 +186,13 @@ private:
     //variables for scene changer
     int numScene;
 
+    //sceneStart
+
+    //scene 1
+
+    //scene 2
+
+    //sce
     //ghost chase test variables
     float Ghost1X;
     float Ghost1Y;
