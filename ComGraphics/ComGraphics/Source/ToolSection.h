@@ -15,7 +15,6 @@ class ToolSection
 		bool CheckForDoubleTool(ToolUI::ToolType DoubleTool);
 
 		std::list<ToolUI> TotalTools;
-		ToolUI SlotOne, SlotTwo, SlotThree, SlotFour;
 };
 
 #endif

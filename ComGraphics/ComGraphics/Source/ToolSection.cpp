@@ -2,15 +2,10 @@
 
 ToolSection::ToolSection()
 {
-	SlotOne = ToolUI(ToolUI::Empty);
-	SlotTwo = ToolUI(ToolUI::Empty);
-	SlotThree = ToolUI(ToolUI::Empty);
-	SlotFour = ToolUI(ToolUI::Empty);
-	
-	TotalTools.push_back(SlotOne);
-	TotalTools.push_back(SlotTwo);
-	TotalTools.push_back(SlotThree);
-	TotalTools.push_back(SlotFour);
+	for (int i = 0; i < 4; ++i)
+	{
+		TotalTools.push_back(ToolUI(ToolUI::Empty));
+	}
 }
 
 ToolSection::~ToolSection()
@@ -48,19 +43,24 @@ bool ToolSection::CheckForDoubleTool(ToolUI::ToolType DoubleTool)
 
 ToolUI::ToolType ToolSection::GetToolType(int SlotNumber)
 {
+	std::list<ToolUI>::iterator it = TotalTools.begin();
 	switch (SlotNumber)
 	{
 	case 1:
-		return SlotOne.tool;
+
+		return it->tool;
 		break;
 	case 2:
-		return SlotTwo.tool;
+		std::advance(it, 1);
+		return it->tool;
 		break;
 	case 3:
-		return SlotThree.tool;
+		std::advance(it, 2);
+		return it->tool;
 		break;
 	case 4:
-		return SlotFour.tool;
+		std::advance(it, 3);
+		return it->tool;
 		break;
 	}
 }

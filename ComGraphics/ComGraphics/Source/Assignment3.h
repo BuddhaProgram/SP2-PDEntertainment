@@ -5,7 +5,6 @@
 #include "Camera3.h"
 #include "Vector3.h"
 #include "Mesh.h"
-#include "Misc.h"
 #include "MatrixStack.h"
 #include "Light.h"
 #include "OBJAnimation.h"
@@ -17,32 +16,33 @@ class Assignment3 : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
-        GEO_AXES,
-        GEO_BOTTOM,
-        GEO_TOP,
-        GEO_LEFT,
-        GEO_RIGHT,
-        GEO_FRONT,
-        GEO_BACK,
-        GEO_QUAD,
-        GEO_PICKAXE,
-        GEO_LIGHTBALL,
-        GEO_TEXT,
-        GEO_MOUNTTEXT,
+		GEO_AXES,
+		GEO_BOTTOM,
+		GEO_TOP,
+		GEO_LEFT,
+		GEO_RIGHT,
+		GEO_FRONT,
+		GEO_BACK,
+		GEO_QUAD,
+		GEO_PICKAXE,
+		GEO_LIGHTBALL,
+		GEO_TEXT,
+		GEO_MOUNTTEXT,
 
-        GEO_EARTH,
-        GEO_MOON,
-        GEO_PLANET,
-        GEO_ASTEROID1,
-        GEO_ASTEROID2,
+		GEO_EARTH,
+		GEO_MOON,
+		GEO_PLANET,
+		GEO_ASTEROID1,
+		GEO_ASTEROID2,
 
-        GEO_MAINDOORLEFT,
-        GEO_MAINDOORRIGHT,
-        GEO_RUBBLE,
-        GEO_PORTRAIT,
+		GEO_MAINDOORLEFT,
+		GEO_MAINDOORRIGHT,
+		GEO_RUBBLE,
+		GEO_PORTRAIT,
 
-        GEO_PLANETFLOOR,
-        GEO_FACILITYOUT,
+
+		// Tools Interface
+		GEO_TOOLUI,
 
         GEO_GHOST1,
 
@@ -73,66 +73,6 @@ class Assignment3 : public Scene
 		U_LIGHT0_COSINNER,
 		U_LIGHT0_EXPONENT,
 
-		U_LIGHT1_POSITION,
-		U_LIGHT1_COLOR,
-		U_LIGHT1_POWER,
-		U_LIGHT1_KC,
-		U_LIGHT1_KL,
-		U_LIGHT1_KQ,
-		U_LIGHT1_TYPE,
-		U_LIGHT1_SPOTDIRECTION,
-		U_LIGHT1_COSCUTOFF,
-		U_LIGHT1_COSINNER,
-		U_LIGHT1_EXPONENT,
-
-		U_LIGHT2_POSITION,
-		U_LIGHT2_COLOR,
-		U_LIGHT2_POWER,
-		U_LIGHT2_KC,
-		U_LIGHT2_KL,
-		U_LIGHT2_KQ,
-		U_LIGHT2_TYPE,
-		U_LIGHT2_SPOTDIRECTION,
-		U_LIGHT2_COSCUTOFF,
-		U_LIGHT2_COSINNER,
-		U_LIGHT2_EXPONENT,
-
-		U_LIGHT3_POSITION,
-		U_LIGHT3_COLOR,
-		U_LIGHT3_POWER,
-		U_LIGHT3_KC,
-		U_LIGHT3_KL,
-		U_LIGHT3_KQ,
-		U_LIGHT3_TYPE,
-		U_LIGHT3_SPOTDIRECTION,
-		U_LIGHT3_COSCUTOFF,
-		U_LIGHT3_COSINNER,
-		U_LIGHT3_EXPONENT,
-
-		U_LIGHT4_POSITION,
-		U_LIGHT4_COLOR,
-		U_LIGHT4_POWER,
-		U_LIGHT4_KC,
-		U_LIGHT4_KL,
-		U_LIGHT4_KQ,
-		U_LIGHT4_TYPE,
-		U_LIGHT4_SPOTDIRECTION,
-		U_LIGHT4_COSCUTOFF,
-		U_LIGHT4_COSINNER,
-		U_LIGHT4_EXPONENT,
-
-		U_LIGHT5_POSITION,
-		U_LIGHT5_COLOR,
-		U_LIGHT5_POWER,
-		U_LIGHT5_KC,
-		U_LIGHT5_KL,
-		U_LIGHT5_KQ,
-		U_LIGHT5_TYPE,
-		U_LIGHT5_SPOTDIRECTION,
-		U_LIGHT5_COSCUTOFF,
-		U_LIGHT5_COSINNER,
-		U_LIGHT5_EXPONENT,
-
 		U_NUMLIGHTS,
 		U_COLOR_TEXTURE_ENABLED,
 		U_COLOR_TEXTURE,
@@ -150,23 +90,17 @@ public:
 	virtual void Reset();
 	virtual void Exit();
 	
-    Camera3 camera;
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 
 	void RenderScene1();
     void RenderScene2();
-    void RenderSkyBox();
-    void RenderPlanetFloor();
 
-    void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
-	void checkPlayerPosMisc();
-	
+	void ToolsUI();
+	void UpdateToolSlot();
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z);
-
-	void Collision(float smallx, float largex, float smallz, float largez);
+	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z, bool LightYN);
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
@@ -174,10 +108,8 @@ private:
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
 
-	
+	Camera3 camera;
 	Animation anima;
-
-	misc Misc;
 
 	MS modelStack, viewStack, projectionStack;
 
@@ -209,8 +141,6 @@ private:
     HostileMob Ghost;
     float FPS;
 	int SlotIndex;
-    float mobTimeCount;
-	float rotateY;
 
 };
 

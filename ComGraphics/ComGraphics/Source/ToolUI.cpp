@@ -12,5 +12,5 @@ ToolUI::ToolUI(ToolType tool)
 
 ToolUI::~ToolUI()
 {
-
+	
 }
