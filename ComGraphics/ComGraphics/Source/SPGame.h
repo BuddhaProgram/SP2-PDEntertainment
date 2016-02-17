@@ -1,5 +1,5 @@
-#ifndef ASSIGNMENT3_H
-#define ASSIGNMENT3_H
+#ifndef SPGame_H
+#define SPGame_H
 
 #include "Scene.h"
 #include "Camera3.h"
@@ -13,7 +13,7 @@
 #include "ToolSection.h"
 #include "HostileMob.h"
 
-class Assignment3 : public Scene
+class SPGame : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
@@ -85,8 +85,8 @@ class Assignment3 : public Scene
 		U_TOTAL,
 	};
 public:
-	Assignment3();
-	~Assignment3();
+	SPGame();
+	~SPGame();
 
 	virtual void Init();
 	virtual void Update(double dt);

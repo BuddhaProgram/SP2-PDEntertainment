@@ -1,8 +1,8 @@
-#include "Assignment3.h"
+#include "SPGame.h"
 
 
 //renders the default sky box
-void Assignment3::RenderSkyBox()
+void SPGame::RenderSkyBox()
 {
     //skybox..................................................................................
     modelStack.PushMatrix();//skybox start
@@ -63,7 +63,7 @@ void Assignment3::RenderSkyBox()
 }
 
 //renders planetfloor
-void Assignment3::RenderPlanetFloor()
+void SPGame::RenderPlanetFloor()
 {
     modelStack.PushMatrix();
     modelStack.PushMatrix();
@@ -118,7 +118,7 @@ void Assignment3::RenderPlanetFloor()
 }
 
 //renders facility floor
-void Assignment3::RenderFacilityFloor()
+void SPGame::RenderFacilityFloor()
 {
     modelStack.PushMatrix();
     modelStack.Translate(camera.position.x, 0, camera.position.z);//move the floor with the player
@@ -176,7 +176,7 @@ void Assignment3::RenderFacilityFloor()
 
 
 // renders the Starting level
-void Assignment3::RenderSceneStart()
+void SPGame::RenderSceneStart()
 {
     //basic renders
     RenderPlanetFloor();
@@ -203,7 +203,7 @@ void Assignment3::RenderSceneStart()
 }
 
 //render the exit level
-void Assignment3::RenderSceneEnd()
+void SPGame::RenderSceneEnd()
 {
     //basic renders
     RenderPlanetFloor();
@@ -227,7 +227,7 @@ void Assignment3::RenderSceneEnd()
     }
 }
 
-void Assignment3::RenderLevel1()
+void SPGame::RenderLevel1()
 {
     //basic renders
     RenderFacilityFloor();
@@ -246,11 +246,11 @@ void Assignment3::RenderLevel1()
     }
 }
 
-void Assignment3::RenderGhost1()
+void SPGame::RenderGhost1()
 {
     modelStack.PushMatrix();
     modelStack.Translate(Ghost.MobPosX, Ghost.MobPosY, Ghost.MobPosZ);
-    //modelStack.Rotate(MobRotateY, 0, 1, 0);
+    modelStack.Rotate(RotateY, 0, 1, 0);
     RenderMesh(meshList[GEO_GHOST1], true);
     modelStack.PopMatrix();
 }

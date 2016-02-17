@@ -1,4 +1,4 @@
-#include "Assignment3.h"
+#include "SPGame.h"
 #include "GL\glew.h"
 
 #include "shader.hpp"
@@ -12,15 +12,15 @@
 #include <sstream>
 
 
-Assignment3::Assignment3()
+SPGame::SPGame()
 {
 }
 
-Assignment3::~Assignment3()
+SPGame::~SPGame()
 {
 }
 
-void Assignment3::Init()
+void SPGame::Init()
 {
 	// Init VBO here
 
@@ -177,11 +177,11 @@ bool b_LockSwingDebounce = false;
 bool start_Animation = false;
 
 
-void Assignment3::Reset()
+void SPGame::Reset()
 {
 }
 
-void Assignment3::Collision(float smallx, float largex, float smallz, float largez)
+void SPGame::Collision(float smallx, float largex, float smallz, float largez)
 {
 	if ((camera.position.x > smallx) && (camera.position.x<largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 3.f)){ camera.position.z = smallz; }
 	if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z>largez - 3.f)){ camera.position.z = largez; }
@@ -190,7 +190,7 @@ void Assignment3::Collision(float smallx, float largex, float smallz, float larg
 }
 //accounts for possible velocity of objects and clipping through camera.
 
-void Assignment3::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 1)
+void SPGame::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 1)
 {
 	mobTimeCount += (((float)(dt)* checkRate) / lessenSpeed);
 	if (mobTimeCount >= 1)
@@ -201,14 +201,14 @@ void Assignment3::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed =
 	}
 }
 
-void Assignment3::checkPlayerPosMisc()
+void SPGame::checkPlayerPosMisc()
 {
 	Misc.camX = camera.position.x;
 	Misc.camY = camera.position.y;
 	Misc.camZ = camera.position.z;
 }
 
-void Assignment3::ToolsUI()
+void SPGame::ToolsUI()
 {
 	if (camera.position.x >= 100.0f && camera.position.x <= 110.0f && camera.position.z >= 100.0f && camera.position.z <= 110.0f)
 	{
@@ -216,7 +216,7 @@ void Assignment3::ToolsUI()
 	}
 }
 
-void Assignment3::UpdateToolSlot()
+void SPGame::UpdateToolSlot()
 {
 	if (Application::mouse_scroll > 0)
 	{
@@ -239,7 +239,7 @@ void Assignment3::UpdateToolSlot()
 	}
 }
 
-void Assignment3::Update(double dt)
+void SPGame::Update(double dt)
 {
 	FPS = 1.f / (float)dt;	
 
@@ -346,7 +346,7 @@ void Assignment3::Update(double dt)
 
 
 
-void Assignment3::RenderMesh(Mesh*mesh, bool enableLight)
+void SPGame::RenderMesh(Mesh*mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
 
@@ -395,7 +395,7 @@ void Assignment3::RenderMesh(Mesh*mesh, bool enableLight)
 
 
 
-void Assignment3::RenderText(Mesh* mesh, std::string text, Color color)
+void SPGame::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -425,7 +425,7 @@ void Assignment3::RenderText(Mesh* mesh, std::string text, Color color)
 
 }
 
-void Assignment3::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
+void SPGame::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -471,7 +471,7 @@ void Assignment3::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, 
 	glEnable(GL_DEPTH_TEST);
 }
 
-void Assignment3::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z, bool LightYN)
+void SPGame::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z, bool LightYN)
 {
 	Mtx44 ortho;
 	ortho.SetToOrtho(0, 80, 0, 60, -50, 50); //size of screen UI
@@ -492,7 +492,7 @@ void Assignment3::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, floa
 	modelStack.PopMatrix();
 }
 
-void Assignment3::Render()
+void SPGame::Render()
 {
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -568,7 +568,7 @@ void Assignment3::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.82f, 7);
 }
 
-void Assignment3::Exit()
+void SPGame::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);

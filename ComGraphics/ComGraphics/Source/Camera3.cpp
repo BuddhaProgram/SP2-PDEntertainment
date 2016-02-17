@@ -1,7 +1,7 @@
 #include "Camera3.h"
 #include "Application.h"
 #include "Mtx44.h"
-#include "Assignment3.h"
+#include "SPGame.h"
 
 float regenDelay = 6.f;
 extern GLFWwindow* m_window;
