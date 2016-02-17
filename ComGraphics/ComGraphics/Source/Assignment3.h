@@ -10,6 +10,7 @@
 #include "OBJAnimation.h"
 #include "PlayerStat.h"
 #include "ToolSection.h"
+#include "HostileMob.h"
 
 class Assignment3 : public Scene
 {
@@ -196,24 +197,14 @@ private:
     //scene 2
 
     //sce
-    //ghost chase test variables
-    float Ghost1X;
-    float Ghost1Y;
-    float Ghost1Z;
-    float rotateYGhost;
-    bool SpawnGhost;
-
-    float TargetDetectX;
-    float TargetDetectZ;
-    float timeCount;
-    void checkTarget();
-    void moveGhost(double dt);
+   
 
     Vector3 start ;
     Vector3 end;
 
 	ToolSection Inventory;
 	ToolUI::ToolType Tool;
+    HostileMob Ghost;
 
 	int SlotIndex;
 

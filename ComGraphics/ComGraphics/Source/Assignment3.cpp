@@ -153,15 +153,7 @@ void Assignment3::Init()
     numScene = 1;
     //scene changer init end.............
 
-    //ghost test variables
-    Ghost1X = 0;
-    Ghost1Y = 6;
-    Ghost1Z = 15;
-    SpawnGhost = false;
-
-    TargetDetectX = 0;
-    TargetDetectZ = 0;
-    timeCount = 0;
+    
 	SlotIndex = 1;
 }
 
@@ -173,11 +165,6 @@ bool b_LockSwing = false;
 bool b_LockSwingDebounce = false;
 bool start_Animation = false;
 
-void Assignment3::checkTarget()
-{
-    TargetDetectX = camera.position.x;
-    TargetDetectZ = camera.position.z;
-}
 
 void Assignment3::Reset()
 {
@@ -304,15 +291,15 @@ void Assignment3::Update(double dt)
     }
     //scenechanger end.................
 
-    //jumpscare test
+    //ghost
     if (Application::IsKeyPressed('J'))
     {
-        SpawnGhost = true;
+        Ghost.Spawn = true;
     }
 
-    if (SpawnGhost)
+    if (Ghost.Spawn)
     {
-        moveGhost(dt);
+        Ghost.move(dt);
     }
 }
 
@@ -801,11 +788,11 @@ void Assignment3::Render()
         RenderScene2();
     }
 
-    if (SpawnGhost)
+    if (Ghost.Spawn)
     {
         modelStack.PushMatrix();
-        modelStack.Translate(Ghost1X, Ghost1Y, Ghost1Z);
-        //modelStack.Rotate(rotateYGhost, 0, 1, 0);
+        modelStack.Translate(Ghost.MobPosX,Ghost.MobPosY, Ghost.MobPosZ);
+        //modelStack.Rotate(MobRotateY, 0, 1, 0);
         RenderMesh(meshList[GEO_GHOST1], true);
         modelStack.PopMatrix();
     }
