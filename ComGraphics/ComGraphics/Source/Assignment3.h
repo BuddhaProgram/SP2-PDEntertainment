@@ -10,6 +10,7 @@
 #include "OBJAnimation.h"
 #include "PlayerStat.h"
 #include "ToolSection.h"
+#include "HostileMob.h"
 
 class Assignment3 : public Scene
 {
@@ -23,12 +24,6 @@ class Assignment3 : public Scene
         GEO_FRONT,
         GEO_BACK,
         GEO_QUAD,
-        GEO_BIKE,
-        GEO_TRAIL,
-        GEO_OBSTACLE,
-        GEO_JUMPOBSTACLE,
-        GEO_GANTRY,
-        GEO_GANTRY2,
         GEO_PICKAXE,
         GEO_LIGHTBALL,
         GEO_TEXT,
@@ -150,6 +145,7 @@ public:
 	virtual void Render();
 	virtual void Reset();
 	virtual void Exit();
+	
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 
@@ -159,11 +155,6 @@ private:
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z);
-
-	bool proximitycheck(float smallx, float largex, float smallz, float largez);
-	bool WithinArea(float smallx, float largex, float smallz, float largez);
-	bool Interacting(float smallx, float largex, float smallz, float largez);
-	void Collision(float smallx, float largex, float smallz, float largez);
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
@@ -187,25 +178,22 @@ private:
     //variables for scene changer
     int numScene;
 
-    //ghost chase test variables
-    float Ghost1X;
-    float Ghost1Y;
-    float Ghost1Z;
-    float rotateYGhost;
-    bool SpawnGhost;
+    //sceneStart
 
-    float TargetDetectX;
-    float TargetDetectZ;
-    float timeCount;
-    void checkTarget();
-    void moveGhost(double dt);
+    //scene 1
+
+    //scene 2
+
+    //sce
+   
 
     Vector3 start ;
     Vector3 end;
 
 	ToolSection Inventory;
 	ToolUI::ToolType Tool;
-
+    HostileMob Ghost;
+    float FPS;
 	int SlotIndex;
 
 };

@@ -21,9 +21,10 @@
     <ClCompile Include="Source\Mesh.cpp" />
     <ClCompile Include="Source\MeshBuilder.cpp" />
     <ClCompile Include="Source\OBJAnimation.cpp" />
-    <ClCompile Include="source\moveGhost.cpp" />
+    <ClCompile Include="source\HostileMob.cpp" />
     <ClCompile Include="Source\PlayerStat.cpp" />
     <ClCompile Include="Source\shader.cpp" />
+    <ClCompile Include="Source\Tools.cpp" />
     <ClCompile Include="Source\ToolSection.cpp" />
     <ClCompile Include="Source\ToolUI.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
@@ -39,10 +40,12 @@
     <ClInclude Include="Source\Material.h" />
     <ClInclude Include="Source\Mesh.h" />
     <ClInclude Include="Source\MeshBuilder.h" />
+    <ClInclude Include="Source\HostileMob.h" />
     <ClInclude Include="Source\OBJAnimation.h" />
     <ClInclude Include="Source\PlayerStat.h" />
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\shader.hpp" />
+    <ClInclude Include="Source\Tools.h" />
     <ClInclude Include="Source\ToolSection.h" />
     <ClInclude Include="Source\ToolUI.h" />
     <ClInclude Include="Source\Utility.h" />
