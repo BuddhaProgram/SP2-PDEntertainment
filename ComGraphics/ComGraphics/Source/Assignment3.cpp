@@ -3,7 +3,6 @@
 
 #include "shader.hpp"
 #include "Mtx44.h"
-
 #include "Application.h"
 #include "MeshBuilder.h"
 
@@ -221,6 +220,8 @@ void Assignment3::Update(double dt)
 			b_LockSwing = false;
 		}
 	}
+
+	std::cout << Misc.hitting(-10, 10, -10, 10);
 
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
@@ -719,6 +720,7 @@ void Assignment3::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 0);
 	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 1);
 	RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 2);
+	RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.82f, 7);
 }
 
