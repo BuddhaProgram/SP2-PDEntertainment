@@ -46,8 +46,10 @@
     <ClCompile Include="Source\Utility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\HostileMob.cpp">
     <ClCompile Include="Source\Tools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\HostileMob.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -106,11 +108,10 @@
     <ClInclude Include="Source\Vertex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-
-    <ClInclude Include="Source\HostileMob.h">
-
     <ClInclude Include="Source\Tools.h">
-
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\HostileMob.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

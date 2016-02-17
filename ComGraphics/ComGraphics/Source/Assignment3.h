@@ -193,7 +193,7 @@ private:
 	ToolSection Inventory;
 	ToolUI::ToolType Tool;
     HostileMob Ghost;
-
+    float FPS;
 	int SlotIndex;
 
 };
