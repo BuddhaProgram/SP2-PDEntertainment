@@ -248,7 +248,6 @@ void Assignment3::Update(double dt)
 		anima.Portraits(dt);
 	}
 
-
 	//Reset();
 
     //scene changer codes..............
