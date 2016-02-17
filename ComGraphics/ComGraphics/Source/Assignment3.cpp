@@ -765,6 +765,7 @@ void Assignment3::Render()
     {
         modelStack.PushMatrix();
         modelStack.Translate(Ghost1X, Ghost1Y, Ghost1Z);
+        //modelStack.Rotate(rotateYGhost, 0, 1, 0);
         RenderMesh(meshList[GEO_GHOST1], true);
         modelStack.PopMatrix();
     }
