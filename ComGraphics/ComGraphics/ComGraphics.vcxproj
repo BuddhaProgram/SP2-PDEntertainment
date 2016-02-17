@@ -23,6 +23,7 @@
     <ClCompile Include="Source\OBJAnimation.cpp" />
     <ClCompile Include="source\HostileMob.cpp" />
     <ClCompile Include="Source\PlayerStat.cpp" />
+    <ClCompile Include="source\Renders.cpp" />
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\Misc.cpp" />
     <ClCompile Include="Source\ToolSection.cpp" />

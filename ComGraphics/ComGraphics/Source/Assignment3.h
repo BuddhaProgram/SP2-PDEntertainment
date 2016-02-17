@@ -42,6 +42,7 @@ class Assignment3 : public Scene
 		GEO_PORTRAIT,
 
 		GEO_PLANETFLOOR,
+        GEO_FACILITYFLOOR,
 		GEO_FACILITYOUT,
 
 		// Tools Interface
@@ -97,18 +98,30 @@ public:
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 
-	void RenderScene1();
-    void RenderScene2();
+    //scene renders
+	void RenderSceneStart();
+    void RenderSceneEnd();
+    void RenderLevel1();
 	void RenderSkyBox();
 	void RenderPlanetFloor();
+    void RenderFacilityFloor();
+
+    //mob renders
+    void RenderGhost1();
+
+    //render functions 
+    void RenderText(Mesh* mesh, std::string text, Color color);
+    void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
+    void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z, bool LightYN);
+    //checks
 	void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
 	void checkPlayerPosMisc();
+    void Collision(float smallx, float largex, float smallz, float largez);
+
 	void ToolsUI();
 	void UpdateToolSlot();
-	void RenderText(Mesh* mesh, std::string text, Color color);
-	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z, bool LightYN);
-	void Collision(float smallx, float largex, float smallz, float largez);
+
+	
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
