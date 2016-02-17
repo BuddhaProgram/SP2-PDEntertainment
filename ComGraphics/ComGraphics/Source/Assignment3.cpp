@@ -173,6 +173,15 @@ void Assignment3::Reset()
 {
 }
 
+void Assignment3::Collision(float smallx, float largex, float smallz, float largez)
+{
+	if ((camera.position.x > smallx) && (camera.position.x<largex) && (camera.position.z > smallz) && (camera.position.z<smallz + 3.f)){ camera.position.z = smallz; }
+	if ((camera.position.x > smallx) && (camera.position.x<largex) && (camera.position.z < largez) && (camera.position.z>largez - 3.f)){ camera.position.z = largez; }
+	if ((camera.position.z > smallz) && (camera.position.z<largez) && (camera.position.x > smallx) && (camera.position.x<smallx + 3.f)){ camera.position.x = smallx; }
+	if ((camera.position.z > smallz) && (camera.position.z<largez) && (camera.position.x < largex) && (camera.position.x>largex - 3.f)){ camera.position.x = largex; }
+	//accounts for possible velocity of objects and clipping through camera.
+}
+
 void Assignment3::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 1 )
 {
     mobTimeCount += (((float)(dt)* checkRate) / lessenSpeed);
@@ -184,13 +193,26 @@ void Assignment3::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed =
     }
    
 }
+
+void Assignment3::checkPlayerPosMisc()
+{
+	Misc.camX = camera.position.x;
+	Misc.camY = camera.position.y;
+	Misc.camZ = camera.position.z;
+}
+
 void Assignment3::Update(double dt)
 {
+	checkPlayerPosMisc();
+	Ghost.MobRotateY += (float)(500 * dt);
+
 	FPS = 1.f / (float)dt;
 	if (Application::IsKeyPressed('J'))
 	{
 		Inventory.SlotOne = ToolUI(ToolUI::Pickaxe);
 	}
+
+	Collision(-150, 150, -105, -70);
 	
 	if (Application::IsKeyPressed(VK_LBUTTON) && b_LockSwing == false && b_LockSwingDebounce == false && PlayerStat::instance()->stamina>=20)
 	{
@@ -220,8 +242,6 @@ void Assignment3::Update(double dt)
 			b_LockSwing = false;
 		}
 	}
-
-	std::cout << Misc.hitting(-10, 10, -10, 10);
 
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
@@ -270,7 +290,7 @@ void Assignment3::Update(double dt)
     if (Ghost.Spawn)
     {
         checkPlayerPos(dt,5,1);
-        Ghost.move(dt);
+        Ghost.move(dt, 50);
     }
 }
 
@@ -368,16 +388,15 @@ void Assignment3::RenderPlanetFloor()
            // modelStack.Scale(1.5, 1, 1.5);
             RenderMesh(meshList[GEO_PLANETFLOOR], true);
             modelStack.PopMatrix();
-
         }
     }
     modelStack.PopMatrix();
 }
+
 void Assignment3::RenderSkyBox()
 {
     modelStack.PushMatrix();//skybox start
     modelStack.Scale(500, 500, 500);
-
 
     //front
     modelStack.PushMatrix();
@@ -434,7 +453,6 @@ void Assignment3::RenderSkyBox()
 
 void Assignment3::RenderScene1()
 {
-   
     modelStack.PushMatrix();
     modelStack.Translate(0,0,-90);
     modelStack.Scale(6, 6, 4);
@@ -450,18 +468,15 @@ void Assignment3::RenderScene1()
     {
         modelStack.PushMatrix();
         modelStack.Translate(Ghost.MobPosX, Ghost.MobPosY, Ghost.MobPosZ);
-        //modelStack.Rotate(MobRotateY, 0, 1, 0);
+        modelStack.Rotate(Ghost.MobRotateY, 0, 1, 0);
         RenderMesh(meshList[GEO_GHOST1], true);
         modelStack.PopMatrix();
     }
-    
-
+ 
 }
 
 void Assignment3::RenderScene2()
 {
-
-
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 0, -500);
 	modelStack.Scale(10, 10, 10);
@@ -721,6 +736,7 @@ void Assignment3::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 1);
 	RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 2);
 	RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 3);
+	RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 4);
 	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.82f, 7);
 }
 

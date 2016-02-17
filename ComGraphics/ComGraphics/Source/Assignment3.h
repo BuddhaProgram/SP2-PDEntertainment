@@ -5,6 +5,7 @@
 #include "Camera3.h"
 #include "Vector3.h"
 #include "Mesh.h"
+#include "Misc.h"
 #include "MatrixStack.h"
 #include "Light.h"
 #include "OBJAnimation.h"
@@ -159,10 +160,13 @@ private:
     void RenderPlanetFloor();
 
     void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
-
+	void checkPlayerPosMisc();
+	
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z);
+
+	void Collision(float smallx, float largex, float smallz, float largez);
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
@@ -172,6 +176,8 @@ private:
 
 	
 	Animation anima;
+
+	misc Misc;
 
 	MS modelStack, viewStack, projectionStack;
 
@@ -204,6 +210,7 @@ private:
     float FPS;
 	int SlotIndex;
     float mobTimeCount;
+	float rotateY;
 
 };
 

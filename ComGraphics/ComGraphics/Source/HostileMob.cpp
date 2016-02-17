@@ -6,7 +6,7 @@ HostileMob::HostileMob()
 {
     //global variables for use in entire project
     Spawn = false;
-    MobRotateY;
+    MobRotateY=0;
 
     //mob position variables
     MobPosX = 0;
@@ -29,7 +29,7 @@ HostileMob::~HostileMob()
 
 
 
-void HostileMob::move(double dt)
+void HostileMob::move(double dt, int movespeed)
 {
    //note: target detect x and y is player position, its function is in assignment3.cpp
     Vector3 start = Vector3(MobPosX, MobPosY, MobPosZ);
@@ -40,7 +40,7 @@ void HostileMob::move(double dt)
     float distance = sqrt(MobPosX * TargetDetectX + MobPosY * 15 + TargetDetectZ * MobPosZ);
     Vector3 direction = toNorm.Normalize();
 
-    mob += direction * (float)(200 * dt);
+    mob += direction * (float)(movespeed * dt);
 
     MobPosX = mob.x;
     MobPosZ = mob.z;
