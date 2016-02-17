@@ -1,50 +1,152 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Source\Assignment3.cpp" />
-    <ClCompile Include="Source\Camera.cpp" />
-    <ClCompile Include="Source\Camera3.cpp" />
-    <ClCompile Include="Source\LoadOBJ.cpp" />
-    <ClCompile Include="Source\LoadTGA.cpp" />
-    <ClCompile Include="Source\main.cpp" />
-    <ClCompile Include="Source\Mesh.cpp" />
-    <ClCompile Include="Source\MeshBuilder.cpp" />
-    <ClCompile Include="source\moveGhost.cpp" />
-    <ClCompile Include="Source\PlayerStat.cpp" />
-    <ClCompile Include="Source\shader.cpp" />
-    <ClCompile Include="Source\ToolSection.cpp" />
-    <ClCompile Include="Source\ToolUI.cpp" />
-    <ClCompile Include="Source\Utility.cpp" />
-    <ClCompile Include="Source\Application.cpp" />
+    <ClCompile Include="Source\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Assignment3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Camera3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LoadOBJ.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LoadTGA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MeshBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\moveGhost.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\OBJAnimation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PlayerStat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ToolSection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ToolUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Application.h" />
-    <ClInclude Include="Source\Assignment3.h" />
-    <ClInclude Include="Source\Camera.h" />
-    <ClInclude Include="Source\Camera3.h" />
-    <ClInclude Include="Source\Light.h" />
-    <ClInclude Include="Source\LoadOBJ.h" />
-    <ClInclude Include="Source\LoadTGA.h" />
-    <ClInclude Include="Source\Material.h" />
-    <ClInclude Include="Source\Mesh.h" />
-    <ClInclude Include="Source\MeshBuilder.h" />
-    <ClInclude Include="Source\PlayerStat.h" />
-    <ClInclude Include="Source\Scene.h" />
-    <ClInclude Include="Source\shader.hpp" />
-    <ClInclude Include="Source\ToolSection.h" />
-    <ClInclude Include="Source\ToolUI.h" />
-    <ClInclude Include="Source\Utility.h" />
-    <ClInclude Include="Source\Vertex.h" />
+    <ClInclude Include="Source\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Assignment3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Camera3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LoadOBJ.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LoadTGA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MeshBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\OBJAnimation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PlayerStat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\shader.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ToolSection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ToolUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Shader\LightSource.fragmentshader" />
-    <None Include="Shader\Shading.fragmentshader" />
-    <None Include="Shader\Shading.vertexshader" />
-    <None Include="Shader\SimpleFragmentShader.fragmentshader" />
-    <None Include="Shader\SimpleVertexShader.vertexshader" />
-    <None Include="Shader\Text.fragmentshader" />
-    <None Include="Shader\Texture.fragmentshader" />
-    <None Include="Shader\Texture.vertexshader" />
-    <None Include="Shader\TransformVertexShader.vertexshader" />
+    <None Include="Shader\LightSource.fragmentshader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shader\Shading.fragmentshader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shader\Shading.vertexshader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shader\SimpleFragmentShader.fragmentshader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shader\SimpleVertexShader.vertexshader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shader\Text.fragmentshader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shader\Texture.fragmentshader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shader\Texture.vertexshader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shader\TransformVertexShader.vertexshader">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{2ef4648d-878f-4a6b-9052-a53cdce94cd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6363982a-f663-452c-98cb-ad198ac405e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{18dca351-782e-4129-bbd5-dcc21ee02083}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{678b4be8-efe4-4ae2-8190-3369b5c273d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
