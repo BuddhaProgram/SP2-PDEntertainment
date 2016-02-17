@@ -5,6 +5,7 @@
 #include "Camera3.h"
 #include "Vector3.h"
 #include "Mesh.h"
+#include "Misc.h"
 #include "MatrixStack.h"
 #include "Light.h"
 #include "OBJAnimation.h"
@@ -40,6 +41,8 @@ class Assignment3 : public Scene
 		GEO_RUBBLE,
 		GEO_PORTRAIT,
 
+		GEO_PLANETFLOOR,
+		GEO_FACILITYOUT,
 
 		// Tools Interface
 		GEO_TOOLUI,
@@ -90,17 +93,22 @@ public:
 	virtual void Reset();
 	virtual void Exit();
 	
+	Camera3 camera;
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 
 	void RenderScene1();
     void RenderScene2();
-
+	void RenderSkyBox();
+	void RenderPlanetFloor();
+	void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
+	void checkPlayerPosMisc();
 	void ToolsUI();
 	void UpdateToolSlot();
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z, bool LightYN);
+	void Collision(float smallx, float largex, float smallz, float largez);
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
@@ -108,7 +116,6 @@ private:
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
 
-	Camera3 camera;
 	Animation anima;
 
 	MS modelStack, viewStack, projectionStack;
@@ -139,9 +146,12 @@ private:
 	ToolSection Inventory;
 	ToolUI::ToolType Tool;
     HostileMob Ghost;
+	misc Misc;
     float FPS;
 	int SlotIndex;
 
+	float mobTimeCount;
+	float RotateY;
 };
 
 #endif
