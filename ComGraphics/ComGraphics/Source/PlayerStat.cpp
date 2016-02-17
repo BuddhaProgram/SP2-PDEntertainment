@@ -2,7 +2,7 @@
 
 PlayerStat::PlayerStat()
 {
-	hp = 100;
+	PlayerStat::instance()->hp = 100;
 	PlayerStat::instance()->stamina = 100;
 }
 

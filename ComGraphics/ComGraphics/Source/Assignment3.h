@@ -7,40 +7,43 @@
 #include "Mesh.h"
 #include "MatrixStack.h"
 #include "Light.h"
+#include "OBJAnimation.h"
 #include "PlayerStat.h"
 #include "ToolSection.h"
+#include "HostileMob.h"
 
 class Assignment3 : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
-		GEO_AXES,
-		GEO_BOTTOM,
-		GEO_TOP,
-		GEO_LEFT,
-		GEO_RIGHT,
-		GEO_FRONT,
-		GEO_BACK,
-		GEO_QUAD,
-		GEO_BIKE,
-		GEO_TRAIL,
-		GEO_OBSTACLE,
-		GEO_JUMPOBSTACLE,
-		GEO_GANTRY,
-		GEO_GANTRY2,
-		GEO_PICKAXE,
-		GEO_LIGHTBALL,
-		GEO_TEXT,
-		GEO_MOUNTTEXT,
+        GEO_AXES,
+        GEO_BOTTOM,
+        GEO_TOP,
+        GEO_LEFT,
+        GEO_RIGHT,
+        GEO_FRONT,
+        GEO_BACK,
+        GEO_QUAD,
+        GEO_PICKAXE,
+        GEO_LIGHTBALL,
+        GEO_TEXT,
+        GEO_MOUNTTEXT,
 
-		GEO_EARTH,
-		GEO_MOON,
-		GEO_PLANET,
-		GEO_ASTEROID1,
-		GEO_ASTEROID2,
+        GEO_EARTH,
+        GEO_MOON,
+        GEO_PLANET,
+        GEO_ASTEROID1,
+        GEO_ASTEROID2,
+
+		GEO_MAINDOORLEFT,
+		GEO_MAINDOORRIGHT,
+		GEO_RUBBLE,
+		GEO_PORTRAIT,
 
         GEO_GHOST1,
 
+        //player related
+        GEO_HEALTH,
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE
@@ -142,17 +145,16 @@ public:
 	virtual void Render();
 	virtual void Reset();
 	virtual void Exit();
+	
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 
 	void RenderScene1();
     void RenderScene2();
 
-	void BikeControls(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z);
-	void RenderTrail(double dt);
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
@@ -161,6 +163,7 @@ private:
 	unsigned m_parameters[U_TOTAL];
 
 	Camera3 camera;
+	Animation anima;
 
 	MS modelStack, viewStack, projectionStack;
 
@@ -175,23 +178,21 @@ private:
     //variables for scene changer
     int numScene;
 
-    //ghost chase test variables
-    float Ghost1X;
-    float Ghost1Y;
-    float Ghost1Z;
-    bool SpawnGhost;
+    //sceneStart
 
-    float TargetDetectX;
-    float TargetDetectZ;
-    float timeCount;
-    void checkTarget();
-    void moveGhost(double dt);
+    //scene 1
+
+    //scene 2
+
+    //sce
+   
 
     Vector3 start ;
     Vector3 end;
 
 	ToolSection Inventory;
 	ToolUI::ToolType Tool;
+    HostileMob Ghost;
 
 	int SlotIndex;
 
