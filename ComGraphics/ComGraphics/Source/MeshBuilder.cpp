@@ -481,19 +481,19 @@ Mesh* MeshBuilder::GenerateCylinder(const std::string& meshName, Color color, un
 	vertex_buffer_data.push_back(v);
 
 	//btm lid
-	for (int slice = 0; slice < numSlice + 1; ++slice)
+	for (unsigned slice = 0; slice < numSlice + 1; ++slice)
 	{
 		index_buffer_data.push_back(2 * (numSlice + 1));
 		index_buffer_data.push_back(2 * slice);
 	}
 	//center
-	for (int slice = 0; slice < numSlice + 1; ++slice)
+	for (unsigned slice = 0; slice < numSlice + 1; ++slice)
 	{
 		index_buffer_data.push_back(2 * slice);
 		index_buffer_data.push_back(2 * (slice)+1);
 	}
 	// top lid
-	for (int slice = 0; slice < numSlice + 1; ++slice)
+	for (unsigned slice = 0; slice < numSlice + 1; ++slice)
 	{
 		index_buffer_data.push_back(2 * slice + 1);
 		index_buffer_data.push_back(2 * (numSlice + 1) + 1);
