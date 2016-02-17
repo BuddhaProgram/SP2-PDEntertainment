@@ -249,7 +249,6 @@ void Assignment3::Update(double dt)
     {
         Ghost.Spawn = true;
     }
-
     if (Ghost.Spawn)
     {
         Ghost.move(dt);
