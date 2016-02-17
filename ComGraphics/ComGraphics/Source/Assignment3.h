@@ -158,11 +158,14 @@ private:
 	void RenderScene1();
     void RenderScene2();
 
-	void BikeControls(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z);
-	void RenderTrail(double dt);
+
+	bool proximitycheck(float smallx, float largex, float smallz, float largez);
+	bool WithinArea(float smallx, float largex, float smallz, float largez);
+	bool Interacting(float smallx, float largex, float smallz, float largez);
+	void Collision(float smallx, float largex, float smallz, float largez);
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
