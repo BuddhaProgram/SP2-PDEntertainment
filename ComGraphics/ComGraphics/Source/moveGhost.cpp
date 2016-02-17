@@ -20,4 +20,5 @@ void Assignment3::moveGhost(double dt)
 
     Ghost1X = ghost.x;
     Ghost1Z = ghost.z;
+    //rotateYGhost = -camera.target.z;
 }

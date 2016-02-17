@@ -13,33 +13,35 @@ class Assignment3 : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
-		GEO_AXES,
-		GEO_BOTTOM,
-		GEO_TOP,
-		GEO_LEFT,
-		GEO_RIGHT,
-		GEO_FRONT,
-		GEO_BACK,
-		GEO_QUAD,
-		GEO_BIKE,
-		GEO_TRAIL,
-		GEO_OBSTACLE,
-		GEO_JUMPOBSTACLE,
-		GEO_GANTRY,
-		GEO_GANTRY2,
-		GEO_PICKAXE,
-		GEO_LIGHTBALL,
-		GEO_TEXT,
-		GEO_MOUNTTEXT,
+        GEO_AXES,
+        GEO_BOTTOM,
+        GEO_TOP,
+        GEO_LEFT,
+        GEO_RIGHT,
+        GEO_FRONT,
+        GEO_BACK,
+        GEO_QUAD,
+        GEO_BIKE,
+        GEO_TRAIL,
+        GEO_OBSTACLE,
+        GEO_JUMPOBSTACLE,
+        GEO_GANTRY,
+        GEO_GANTRY2,
+        GEO_PICKAXE,
+        GEO_LIGHTBALL,
+        GEO_TEXT,
+        GEO_MOUNTTEXT,
 
-		GEO_EARTH,
-		GEO_MOON,
-		GEO_PLANET,
-		GEO_ASTEROID1,
-		GEO_ASTEROID2,
+        GEO_EARTH,
+        GEO_MOON,
+        GEO_PLANET,
+        GEO_ASTEROID1,
+        GEO_ASTEROID2,
 
         GEO_GHOST1,
 
+        //player related
+        GEO_HEALTH,
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE
@@ -178,6 +180,7 @@ private:
     float Ghost1X;
     float Ghost1Y;
     float Ghost1Z;
+    float rotateYGhost;
     bool SpawnGhost;
 
     float TargetDetectX;
