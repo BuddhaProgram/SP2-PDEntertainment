@@ -167,6 +167,9 @@ void SPGame::Init()
 
     
 	SlotIndex = 1;
+
+	// All Switches Debounce Key
+	f_SwitchDebounce = 0.0f;
 }
 
 static float LSPEED = 10.f;
@@ -239,6 +242,55 @@ void SPGame::MouseScrollToolSlot()
 	}
 }
 
+void SPGame::PuzzleOneSwitchCheck(double dt)
+{
+	f_SwitchDebounce += dt;
+	if (Application::IsKeyPressed('5') && f_SwitchDebounce > 0.5f)
+	{
+		if (Switches.b_PuzzleOneSwitchOne == false)
+			Switches.b_PuzzleOneSwitchOne = true;
+
+		else
+			Switches.b_PuzzleOneSwitchOne = false;
+
+		if (Switches.b_PuzzleOneSwitchTwo == false)
+			Switches.b_PuzzleOneSwitchTwo = true;
+
+		else
+			Switches.b_PuzzleOneSwitchTwo = false;
+
+		f_SwitchDebounce = 0.0f;
+	}
+
+	if (Application::IsKeyPressed('6') && f_SwitchDebounce > 0.5f)
+	{
+		if (Switches.b_PuzzleOneSwitchOne == false)
+			Switches.b_PuzzleOneSwitchOne = true;
+
+		else
+			Switches.b_PuzzleOneSwitchOne = false;
+
+		f_SwitchDebounce = 0.0f;
+	}
+
+	if (Application::IsKeyPressed('7') && f_SwitchDebounce > 0.5f)
+	{
+		if (Switches.b_PuzzleOneSwitchOne == false)
+			Switches.b_PuzzleOneSwitchOne = true;
+
+		else
+			Switches.b_PuzzleOneSwitchOne = false;
+
+		if (Switches.b_PuzzleOneSwitchThree == false)
+			Switches.b_PuzzleOneSwitchThree = true;
+
+		else
+			Switches.b_PuzzleOneSwitchThree = false;
+
+		f_SwitchDebounce = 0.0f;
+	}
+}
+
 void SPGame::Update(double dt)
 {
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
@@ -248,6 +300,11 @@ void SPGame::Update(double dt)
 	Ghost.MobRotateY += (float)(500 * dt);
 	worldspin += (float)(dt);
 
+	PuzzleOneSwitchCheck(dt);
+	Switches.SwitchPuzzleOne(Switches.b_PuzzleOneSwitchOne, Switches.b_PuzzleOneSwitchTwo, Switches.b_PuzzleOneSwitchThree);
+	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
+
+	std::cout << Switches.b_PuzzleOneSwitchOne << " " << Switches.b_PuzzleOneSwitchTwo << " " << Switches.b_PuzzleOneSwitchThree << std::endl;
 
 	if (numScene == 1)
 	{

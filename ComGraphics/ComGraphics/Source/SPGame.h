@@ -6,6 +6,7 @@
 #include "Vector3.h"
 #include "Mesh.h"
 #include "Misc.h"
+#include "SwitchLightPuzzle.h"
 #include "MatrixStack.h"
 #include "Light.h"
 #include "OBJAnimation.h"
@@ -118,6 +119,9 @@ private:
 	void checkPlayerPosMisc();
     void Collision(float smallx, float largex, float smallz, float largez);
 
+	// Switches Functions for puzzles
+	void PuzzleOneSwitchCheck(double dt);
+	float f_SwitchDebounce;
 
 	// Tool UI functions
 	void ToolsUI();
@@ -162,6 +166,8 @@ private:
 	ToolUI::ToolType Tool;
     HostileMob Ghost;
 	misc Misc;
+	SwitchLightPuzzle Switches;
+
     float FPS;
 	int SlotIndex;
 
