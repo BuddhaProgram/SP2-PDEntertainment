@@ -7,7 +7,7 @@ void SPGame::RenderSkyBox()
     //skybox..................................................................................
     modelStack.PushMatrix();//skybox start
     modelStack.Scale(500, 500, 500);
-
+	modelStack.Rotate(worldspin, 0, 1, 0);
 
     //front
     modelStack.PushMatrix();
