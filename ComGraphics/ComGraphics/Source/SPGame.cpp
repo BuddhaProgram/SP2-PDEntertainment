@@ -75,11 +75,11 @@ void SPGame::Init()
 	light[0].type = Light::LIGHT_SPOT;
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 3.0f;
+	light[0].power = 1.0f;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(45));
+	light[0].cosCutoff = cos(Math::DegreeToRadian(15));
 	light[0].cosInner = cos(Math::DegreeToRadian(1));
 	light[0].exponent = 3.f;
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
@@ -143,16 +143,13 @@ void SPGame::Init()
 	meshList[GEO_TOOLUI] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//ToolUI.obj");
 	meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIUnselected.tga");
 
-	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateOBJ("planet floor", "OBJ//PlanetGround.obj");
-	meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetGround.tga");
+	meshList[GEO_FLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
+	meshList[GEO_FLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
 
 	meshList[GEO_FACILITYOUT] = MeshBuilder::GenerateOBJ("FacilityOut", "OBJ//FacilityOUT.obj");
 	meshList[GEO_FACILITYOUT]->textureID = LoadTGA("Image//FacilityOUT.tga");
 
     //change to correct textured quad later
-    meshList[GEO_FACILITYFLOOR] = MeshBuilder::GenerateOBJ("facility floor", "OBJ//PlanetGround.obj");
-    meshList[GEO_FACILITYFLOOR]->textureID = LoadTGA("Image//InsideFLOOR.tga");
-
 	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
 	meshList[GEO_RHAND]->textureID = LoadTGA("Image//RightHand.tga");
 	meshList[GEO_LHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//LeftHand.obj");
@@ -597,23 +594,22 @@ void SPGame::Render()
 		modelStack.PopMatrix();
 	}
 
-	if (Inventory.GetToolType(SlotIndex) == ToolUI::Torchlight)
-	{
-		//benny pls
-	}
-
+	RenderFloor();
 
     if (numScene == 1)
     {
+		meshList[GEO_FLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
         RenderSceneStart();
     }
     if (numScene == 2)
     {
+		meshList[GEO_FLOOR]->textureID = LoadTGA("Image//InsideFLOOR.tga");
         RenderLevel1();
     }
 
     if (numScene == 3)
     {
+		meshList[GEO_FLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
         RenderSceneEnd();
     }
 
@@ -625,13 +621,13 @@ void SPGame::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 4);
 	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.82f, 7);
 
-	modelStack.PushMatrix();
-	RenderModelOnScreen(meshList[GEO_RHAND], 15, RotateX, 4.5, 0, -1, false);
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//RenderModelOnScreen(meshList[GEO_RHAND], 15, RotateX, 4.5, 0, -1, false);
+	//modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	RenderModelOnScreen(meshList[GEO_LHAND], 15, RotateX, 0.75, 0, -1, false);
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//RenderModelOnScreen(meshList[GEO_LHAND], 15, RotateX, 0.75, 0, -1, false);
+	//modelStack.PopMatrix();
 }
 
 void SPGame::Exit()
