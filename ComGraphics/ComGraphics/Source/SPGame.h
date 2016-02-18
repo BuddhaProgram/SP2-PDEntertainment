@@ -141,6 +141,8 @@ private:
 	float AsteroidMove;
 	float AsteroidMoveS;
 
+	float worldspin;
+
     //variables for scene changer
     int numScene;
 

@@ -246,6 +246,8 @@ void SPGame::Update(double dt)
 	FPS = 1.f / (float)dt;	
 	checkPlayerPosMisc();
 	Ghost.MobRotateY += (float)(500 * dt);
+	worldspin += (float)(dt);
+
 
 	if (numScene == 1)
 	{
