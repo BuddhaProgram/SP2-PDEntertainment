@@ -121,7 +121,7 @@ void SPGame::RenderPlanetFloor()
 void SPGame::RenderFacilityFloor()
 {
     modelStack.PushMatrix();
-    modelStack.Translate(camera.position.x, 0, camera.position.z);//move the floor with the player
+    
 
     modelStack.PushMatrix();
     modelStack.Translate(-7.4, 0, -7.4);
@@ -230,8 +230,11 @@ void SPGame::RenderSceneEnd()
 void SPGame::RenderLevel1()
 {
     //basic renders
-    RenderFacilityFloor();
-    RenderSkyBox();
+	modelStack.PushMatrix();
+	modelStack.Translate(camera.position.x, 0, camera.position.z);//move the floor with the player
+	RenderFacilityFloor();
+	modelStack.PopMatrix();
+	RenderSkyBox();
 
     //structure renders
 

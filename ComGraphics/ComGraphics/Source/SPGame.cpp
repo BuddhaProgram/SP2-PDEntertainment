@@ -72,17 +72,17 @@ void SPGame::Init()
 
 	glUseProgram(m_programID);
 
-	light[0].type = Light::LIGHT_POINT;
-	light[0].position.Set(37.5, 35, 100);
+	light[0].type = Light::LIGHT_SPOT;
+	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 3.0;
+	light[0].power = 1.0;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(45));
-	light[0].cosInner = cos(Math::DegreeToRadian(30));
+	light[0].cosCutoff = cos(Math::DegreeToRadian(10));
+	light[0].cosInner = cos(Math::DegreeToRadian(1));
 	light[0].exponent = 3.f;
-	light[0].spotDirection.Set(0.0f, 1.0f, 0.0f);
+	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 
 	// Pass information
 	glUniform1i(m_parameters[U_NUMLIGHTS], 1);
@@ -241,13 +241,17 @@ void SPGame::UpdateToolSlot()
 
 void SPGame::Update(double dt)
 {
+	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
+	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 	FPS = 1.f / (float)dt;	
-
 	checkPlayerPosMisc();
 	Ghost.MobRotateY += (float)(500 * dt);
 
-	Collision(-150, 150, -105, -70);
-
+	if (numScene == 1)
+	{
+		Collision(-150, 150, -105, -70);
+	}
+	
 	ToolsUI();
 	UpdateToolSlot();
 
@@ -342,10 +346,6 @@ void SPGame::Update(double dt)
     }
 }
 
-
-
-
-
 void SPGame::RenderMesh(Mesh*mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -389,11 +389,6 @@ void SPGame::RenderMesh(Mesh*mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
-
-
-
-
-
 
 void SPGame::RenderText(Mesh* mesh, std::string text, Color color)
 {
@@ -557,7 +552,6 @@ void SPGame::Render()
     {
         RenderSceneEnd();
     }
-
 
 	RenderMesh(meshList[GEO_AXES], false);
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 0);
