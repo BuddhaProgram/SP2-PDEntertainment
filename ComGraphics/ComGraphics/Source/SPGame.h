@@ -42,8 +42,7 @@ class SPGame : public Scene
 		GEO_RUBBLE,
 		GEO_PORTRAIT,
 
-		GEO_PLANETFLOOR,
-        GEO_FACILITYFLOOR,
+		GEO_FLOOR,
 		GEO_FACILITYOUT,
 
 		GEO_LHAND,
@@ -99,7 +98,6 @@ public:
 	virtual void Exit();
 	
 	Camera3 camera;
-
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 
@@ -108,9 +106,7 @@ private:
     void RenderSceneEnd();
     void RenderLevel1();
 	void RenderSkyBox();
-	void RenderPlanetFloor();
-    void RenderFacilityFloor();
-	void RenderCutScene(); 
+	void RenderFloor();
 
     //mob renders
     void RenderGhost1();
@@ -161,7 +157,7 @@ private:
 
     //scene 2
 
-    //sce
+    //scene 3
    
 
     Vector3 start ;
@@ -177,7 +173,6 @@ private:
 	int SlotIndex;
 
 	float mobTimeCount;
-	float RotateY;
 };
 
 #endif
