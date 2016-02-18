@@ -143,14 +143,10 @@ void SPGame::Init()
 	meshList[GEO_TOOLUI] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//ToolUI.obj");
 	meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIUnselected.tga");
 
-	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateOBJ("planet floor", "OBJ//PlanetGround.obj");
-	meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetGround.tga");
+	meshList[GEO_FLOOR] = MeshBuilder::GenerateOBJ("planet floor", "OBJ//PlanetGround.obj");
+	meshList[GEO_FLOOR]->textureID = LoadTGA("Image//PlanetGround.tga");
 	meshList[GEO_FACILITYOUT] = MeshBuilder::GenerateOBJ("FacilityOut", "OBJ//FacilityOUT.obj");
 	meshList[GEO_FACILITYOUT]->textureID = LoadTGA("Image//FacilityOUT.tga");
-
-    //change to correct textured quad later
-    meshList[GEO_FACILITYFLOOR] = MeshBuilder::GenerateOBJ("facility floor", "OBJ//PlanetGround.obj");
-    meshList[GEO_FACILITYFLOOR]->textureID = LoadTGA("Image//PlanetGround.tga");
 
 	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
 	meshList[GEO_RHAND]->textureID = LoadTGA("Image//RightHand.tga");
@@ -248,7 +244,7 @@ void SPGame::MouseScrollToolSlot()
 
 void SPGame::PuzzleOneSwitchCheck(double dt)
 {
-	f_SwitchDebounce += dt;
+	f_SwitchDebounce += (float)dt;
 	if (Application::IsKeyPressed('5') && f_SwitchDebounce > 0.5f)
 	{
 		if (Switches.b_PuzzleOneSwitchOne == false)
@@ -297,11 +293,14 @@ void SPGame::PuzzleOneSwitchCheck(double dt)
 
 void SPGame::Update(double dt)
 {
+
+	//light spotlight
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
+
+
 	FPS = 1.f / (float)dt;	
 	checkPlayerPosMisc();
-	Ghost.MobRotateY += (float)(500 * dt);
 	worldspin += (float)(dt);
 
 	PuzzleOneSwitchCheck(dt);
@@ -318,7 +317,7 @@ void SPGame::Update(double dt)
 	ToolsUI();
 	MouseScrollToolSlot();
 
-	if (Application::IsKeyPressed(VK_LBUTTON) && b_LockSwing == false && b_LockSwingDebounce == false && PlayerStat::instance()->stamina>=20)
+	if ((Application::IsKeyPressed(VK_LBUTTON) && b_LockSwing == false && b_LockSwingDebounce == false && PlayerStat::instance()->stamina>=20))
 	{
 		b_LockSwing = true;
 		b_LockSwingDebounce = true;
@@ -362,51 +361,32 @@ void SPGame::Update(double dt)
 	anima.OBJAnimation(dt);
 	anima.OpenMainDoor(dt);
 
-	if (Ghost.Spawn)
-	{
-		checkPlayerPos(dt, 5, 1);
-		Ghost.move(dt, 50);
-	}
-
-	/*if (camera.position.z <= -1 && camera.position.x <= 1 && camera.position.x >= -1)
-	{
-		start_Animation = true;
-	}
-
-	if (start_Animation)
-	{
-		anima.Portraits(dt);
-	}
-*/
-
-
     //scene changer codes..............
-    if (Application::IsKeyPressed('P'))
-    {
-        numScene =3;
-        
-    }
-    if (Application::IsKeyPressed('O'))
-    {
-        numScene =2;
-       
-    }
     if (Application::IsKeyPressed('I'))
     {
         numScene = 1;
-
+    }
+    if (Application::IsKeyPressed('O'))
+    {
+        numScene = 2;
+    }
+    if (Application::IsKeyPressed('P'))
+    {
+        numScene = 3;
     }
     //scenechanger end.................
 
-    //ghost
+    //ghost spawning condition
     if (Application::IsKeyPressed('J'))
     {
         Ghost.Spawn = true;
     }
-    if (Ghost.Spawn)
-    {
-        Ghost.move(dt, 50);
-    }
+	if (Ghost.Spawn) // check player + movement
+	{
+		checkPlayerPos(dt, 5, 1);
+		Ghost.move(dt, 50);
+	}
+	//ghost end
 }
 
 void SPGame::RenderMesh(Mesh*mesh, bool enableLight)
@@ -596,23 +576,33 @@ void SPGame::Render()
 		modelStack.PopMatrix();
 	}
 
-	if (Inventory.GetToolType(SlotIndex) == ToolUI::Torchlight)
+	else
 	{
-		//benny pls
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_RHAND], 15, 0, 4.5, 0, -1, false);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_LHAND], 15, 0, 0.75, 0, -1, false);
+		modelStack.PopMatrix();
 	}
 
+	RenderFloor();
 
     if (numScene == 1)
     {
+		meshList[GEO_FLOOR]->textureID = LoadTGA("Image//PlanetGround.tga");
         RenderSceneStart();
     }
     if (numScene == 2)
     {
+		meshList[GEO_FLOOR]->textureID = LoadTGA("Image//InsideFLOOR.tga");
         RenderLevel1();
     }
 
     if (numScene == 3)
     {
+		meshList[GEO_FLOOR]->textureID = LoadTGA("Image//PlanetGround.tga");
         RenderSceneEnd();
     }
 
@@ -623,14 +613,6 @@ void SPGame::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 4);
 	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.82f, 7);
-
-	modelStack.PushMatrix();
-	RenderModelOnScreen(meshList[GEO_RHAND], 15, RotateX, 4.5, 0, -1, false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	RenderModelOnScreen(meshList[GEO_LHAND], 15, RotateX, 0.75, 0, -1, false);
-	modelStack.PopMatrix();
 }
 
 void SPGame::Exit()
