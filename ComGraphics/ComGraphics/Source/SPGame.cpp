@@ -143,8 +143,13 @@ void SPGame::Init()
 	meshList[GEO_TOOLUI] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//ToolUI.obj");
 	meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIUnselected.tga");
 
-	meshList[GEO_FLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
-	meshList[GEO_FLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
+	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
+	meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
+
+	meshList[GEO_FACILITYFLOOR] = MeshBuilder::GenerateQuad("Facility Floor", Color(0.623f, 0.467f, 0.467f));
+	meshList[GEO_FACILITYFLOOR]->material.kAmbient.Set(0.3f, 0.3f, 0.3f);
+	meshList[GEO_FACILITYFLOOR]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
+	meshList[GEO_FACILITYFLOOR]->material.kSpecular.Set(1, 1, 1);
 
 	meshList[GEO_FACILITYOUT] = MeshBuilder::GenerateOBJ("FacilityOut", "OBJ//FacilityOUT.obj");
 	meshList[GEO_FACILITYOUT]->textureID = LoadTGA("Image//FacilityOUT.tga");
@@ -598,18 +603,18 @@ void SPGame::Render()
 
     if (numScene == 1)
     {
-		meshList[GEO_FLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
+		meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
         RenderSceneStart();
     }
     if (numScene == 2)
     {
-		meshList[GEO_FLOOR]->textureID = LoadTGA("Image//InsideFLOOR.tga");
+		meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//InsideFLOOR.tga");
         RenderLevel1();
     }
 
     if (numScene == 3)
     {
-		meshList[GEO_FLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
+		meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
         RenderSceneEnd();
     }
 

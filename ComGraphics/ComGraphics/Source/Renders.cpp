@@ -72,9 +72,9 @@ void SPGame::RenderFloor()
 			for (int z = -950; z < 1000; z += 100)
 			{
 				modelStack.PushMatrix();
-				modelStack.Translate(x, 0, z);
-				modelStack.Scale(100, 1, 100);
-				RenderMesh(meshList[GEO_FLOOR], true);
+					modelStack.Translate(x, 0, z);
+					modelStack.Scale(100, 1, 100);
+					RenderMesh(meshList[GEO_PLANETFLOOR], true);
 				modelStack.PopMatrix();
 			}
 		}	
@@ -84,8 +84,8 @@ void SPGame::RenderFloor()
 	{
 		modelStack.PushMatrix();
 			modelStack.Translate(camera.position.x, 0, camera.position.z);
-			modelStack.Scale(10, 1, 10);
-			RenderMesh(meshList[GEO_FLOOR], true);
+			modelStack.Scale(300, 1, 300);
+			RenderMesh(meshList[GEO_FACILITYFLOOR], true);
 		modelStack.PopMatrix();
 	}
 }
