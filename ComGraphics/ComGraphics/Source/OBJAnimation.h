@@ -35,6 +35,8 @@ public:
 	bool toPortraitDrop = false;
 	bool toPortraitFall = false;
 
+	bool cameramove1 = false;
+	bool cameramove2 = false;
 
 };
 

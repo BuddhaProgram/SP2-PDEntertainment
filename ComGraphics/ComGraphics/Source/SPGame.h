@@ -108,6 +108,7 @@ private:
     void RenderLevel1();
 	void RenderSkyBox();
 	void RenderFloor();
+	void RenderCutScene();
 
     //mob renders
     void RenderGhost1();
