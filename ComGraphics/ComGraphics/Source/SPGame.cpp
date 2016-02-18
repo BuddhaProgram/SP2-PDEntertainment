@@ -31,7 +31,7 @@ void SPGame::Init()
 	glEnable(GL_DEPTH_TEST);
 
 	//Enable back face culling
-	glEnable(GL_CULL_FACE);
+	glDisable(GL_CULL_FACE);
 
 	//Default to fill mode
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
@@ -152,6 +152,10 @@ void SPGame::Init()
     meshList[GEO_FACILITYFLOOR] = MeshBuilder::GenerateOBJ("facility floor", "OBJ//PlanetGround.obj");
     meshList[GEO_FACILITYFLOOR]->textureID = LoadTGA("Image//PlanetGround.tga");
 
+	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
+	meshList[GEO_RHAND]->textureID = LoadTGA("Image//RightHand.tga");
+	meshList[GEO_LHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//LeftHand.obj");
+	meshList[GEO_LHAND]->textureID = LoadTGA("Image//LeftHand.tga");
 
     meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//GhostPlaceholder.obj");
     meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Ghostplaceholder.tga");
@@ -619,6 +623,14 @@ void SPGame::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 3);
 	RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 4);
 	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.82f, 7);
+
+	modelStack.PushMatrix();
+	RenderModelOnScreen(meshList[GEO_RHAND], 15, RotateX, 4.5, 0, -1, false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	RenderModelOnScreen(meshList[GEO_LHAND], 15, RotateX, 0.75, 0, -1, false);
+	modelStack.PopMatrix();
 }
 
 void SPGame::Exit()

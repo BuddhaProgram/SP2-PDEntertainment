@@ -46,6 +46,9 @@ class SPGame : public Scene
         GEO_FACILITYFLOOR,
 		GEO_FACILITYOUT,
 
+		GEO_LHAND,
+		GEO_RHAND,
+
 		// Tools Interface
 		GEO_TOOLUI,
 
