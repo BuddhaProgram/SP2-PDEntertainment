@@ -135,7 +135,9 @@ void SPGame::Init()
 	meshList[GEO_ASTEROID2]->textureID = LoadTGA("Image//Asteroid1.tga");
 
 	meshList[GEO_MAINDOORLEFT] = MeshBuilder::GenerateOBJ("MainDoorLeft", "OBJ//MDLeft.obj");
+	meshList[GEO_MAINDOORLEFT]->textureID = LoadTGA("Image//MDLeft.tga");
 	meshList[GEO_MAINDOORRIGHT] = MeshBuilder::GenerateOBJ("MainDoorRight", "OBJ//MDRight.obj");
+	meshList[GEO_MAINDOORRIGHT]->textureID = LoadTGA("Image//MDRight.tga");
 	meshList[GEO_RUBBLE] = MeshBuilder::GenerateOBJ("Rubble", "OBJ//Rubble.obj");
 	meshList[GEO_PORTRAIT] = MeshBuilder::GenerateOBJ("Portrait", "OBJ//Portrait.obj");
 	meshList[GEO_PORTRAIT]->textureID = LoadTGA("Image//Scream.tga");
@@ -358,9 +360,43 @@ void SPGame::Update(double dt)
 
 	camera.Update(dt);
 
-	anima.Collapsing(dt);
 	anima.OBJAnimation(dt);
-	anima.OpenMainDoor(dt);
+	anima.Collapsing(dt);
+
+	if (numScene == 4)
+	{
+		if (camera.position.x > -2 && camera.position.x < 2 && camera.position.z > 12 && camera.position.z < 21)
+		anima.OpenMainDoor(dt);
+		anima.cameramove1 = true;
+		if (camera.position.z >= 20)
+		{
+			anima.cameramove2 = true;
+		}
+		else if (camera.position.z <= 20)
+		{
+			anima.cameramove2 = false;
+		}
+
+	}
+
+	if (anima.cameramove1 && Application::IsKeyPressed('T'))
+	{
+		viewStack.LoadIdentity();
+		viewStack.LookAt(
+			camera.position.x = 0, camera.position.y = 8, camera.position.z = 60,
+			camera.target.x = 0, camera.target.y = 8, camera.target.z = 0,
+			camera.up.x, camera.up.y, camera.up.z
+			);
+
+		modelStack.LoadIdentity();
+	
+	}
+
+	if (anima.cameramove2 != false)
+	{
+		camera.position.z -= 0.1f;
+	}
+	
 
 	if (Ghost.Spawn)
 	{
@@ -396,6 +432,15 @@ void SPGame::Update(double dt)
         numScene = 1;
 
     }
+	if (Application::IsKeyPressed('T')) // for me to test cutscene animation(Ken)
+	{
+		numScene = 4;
+		if (!Application::IsKeyPressed('T'))
+		{
+			anima.cameramove1 = true;
+		}
+	}
+
     //scenechanger end.................
 
     //ghost
@@ -615,6 +660,10 @@ void SPGame::Render()
     {
         RenderSceneEnd();
     }
+	if (numScene == 4)
+	{
+		RenderCutScene();
+	}
 
 	RenderMesh(meshList[GEO_AXES], false);
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 0);

@@ -99,6 +99,7 @@ public:
 	virtual void Exit();
 	
 	Camera3 camera;
+
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 
@@ -109,6 +110,7 @@ private:
 	void RenderSkyBox();
 	void RenderPlanetFloor();
     void RenderFacilityFloor();
+	void RenderCutScene(); 
 
     //mob renders
     void RenderGhost1();

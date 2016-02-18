@@ -6,6 +6,7 @@
 
 #include "SPGame.h"
 
+
 const unsigned char FPS = 60; // FPS of this game
 const unsigned int frameTime = 1000 / FPS; // time for each frame
 GLFWwindow* m_window;
@@ -105,7 +106,7 @@ void Application::Init()
 void Application::Run()
 {
 	//Main Loop
-	Scene *scene = new SPGame();
+	SPGame *scene = new SPGame();
 	scene->Init();
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
