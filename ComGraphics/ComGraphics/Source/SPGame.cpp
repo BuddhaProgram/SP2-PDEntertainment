@@ -183,10 +183,10 @@ void SPGame::Reset()
 
 void SPGame::Collision(float smallx, float largex, float smallz, float largez)
 {
-	if ((camera.position.x > smallx) && (camera.position.x<largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 3.f)){ camera.position.z = smallz; }
-	if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z>largez - 3.f)){ camera.position.z = largez; }
-	if ((camera.position.z > smallz) && (camera.position.z<largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 3.f)){ camera.position.x = smallx; }
-	if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x>largex - 3.f)){ camera.position.x = largex; }
+	if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 3.f)){ camera.position.z = smallz; }
+	if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 3.f)){ camera.position.z = largez; }
+	if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 3.f)){ camera.position.x = smallx; }
+	if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 3.f)){ camera.position.x = largex; }
 }
 //accounts for possible velocity of objects and clipping through camera.
 
@@ -216,7 +216,7 @@ void SPGame::ToolsUI()
 	}
 }
 
-void SPGame::UpdateToolSlot()
+void SPGame::MouseScrollToolSlot()
 {
 	if (Application::mouse_scroll > 0)
 	{
@@ -253,7 +253,7 @@ void SPGame::Update(double dt)
 	}
 	
 	ToolsUI();
-	UpdateToolSlot();
+	MouseScrollToolSlot();
 
 	if (Application::IsKeyPressed(VK_LBUTTON) && b_LockSwing == false && b_LockSwingDebounce == false && PlayerStat::instance()->stamina>=20)
 	{

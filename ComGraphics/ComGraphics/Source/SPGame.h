@@ -118,10 +118,10 @@ private:
 	void checkPlayerPosMisc();
     void Collision(float smallx, float largex, float smallz, float largez);
 
-	void ToolsUI();
-	void UpdateToolSlot();
 
-	
+	// Tool UI functions
+	void ToolsUI();
+	void MouseScrollToolSlot();
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];

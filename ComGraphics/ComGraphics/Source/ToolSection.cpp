@@ -47,7 +47,6 @@ ToolUI::ToolType ToolSection::GetToolType(int SlotNumber)
 	switch (SlotNumber)
 	{
 	case 1:
-
 		return it->tool;
 		break;
 	case 2:
