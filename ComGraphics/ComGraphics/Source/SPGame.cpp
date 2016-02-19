@@ -25,7 +25,7 @@ void SPGame::Init()
 	// Init VBO here
 
 	// Set background color to dark blue
-	glClearColor(0.0f, 0.0f, 0.1f, 0.0f);
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
 	//Enable depth buffer and depth testing
 	glEnable(GL_DEPTH_TEST);
@@ -340,7 +340,7 @@ void SPGame::Update(double dt)
 		Collision(-100, 100, -115, -95);
 		Collision(-100, -80, -115, 115);
 		Collision(80, 100, -115, 115);
-		Collision(-100, 100, 93, 100);
+		Collision(-100, 100, 93, 100); // please clean up collision codes, and run func called something like col1.
 		if (Application::IsKeyPressed('E'))
 		{
 			if (proximitycheck(-13, 13, -105, -70))
@@ -710,6 +710,7 @@ void SPGame::Render()
     }
     if (numScene == 2)
     {
+		camera.position.y = 10;
 		meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//InsideFLOOR.tga");
         RenderLevel1();
     }
