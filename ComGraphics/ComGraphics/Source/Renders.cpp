@@ -184,8 +184,11 @@ void SPGame::RenderLevel1()
     }
 
 
-    RenderDownWall(5,-5,0);
-    RenderRightWall(5, -5, 0);
+    RenderUpWall(5, -5, 5 );
+    RenderDownWall(5,-5, -5);
+    RenderRightWall(5, -5, 5);
+    RenderLeftWall(5, -5, -5);
+
 	/*----------------------------------[Renders Facility Walls and Ceilings]------------------------------------*/
 		//Sets the position of horizontal walls
 	/*All the code in this section translate the walls according to the x-axis; z-axis is always fixed*/
