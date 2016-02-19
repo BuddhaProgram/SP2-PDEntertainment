@@ -135,6 +135,7 @@ void SPGame::RenderSceneEnd()
     }
 }
 
+
 void SPGame::RenderLevel1()
 {
     if (Ghost.Spawn)
@@ -142,666 +143,669 @@ void SPGame::RenderLevel1()
         RenderGhost1();
     }
 
+
+    RenderDownWall(5,-5,0);
+    RenderRightWall(5, -5, 0);
 	/*----------------------------------[Renders Facility Walls and Ceilings]------------------------------------*/
 		//Sets the position of horizontal walls
 	/*All the code in this section translate the walls according to the x-axis; z-axis is always fixed*/
-	for (int horizontalX = -36; horizontalX <= 36; horizontalX += 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(horizontalX, 4, -460);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalX = -44; horizontalX >= -60; horizontalX -= 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(horizontalX, 4, -412);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalX = 44; horizontalX <= 60; horizontalX += 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(horizontalX, 4, -412);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalX = -68; horizontalX >= -224; horizontalX -= 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(horizontalX, 4, -324);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-							modelStack.Translate(0, 8, 0);
-							modelStack.Rotate(90, 1, 0, 0);
-							modelStack.Scale(8, 8, 8);
-							RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-						modelStack.Rotate(90, 1, 0, 0);
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalX = 68; horizontalX <= 188; horizontalX += 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(horizontalX, 4, -324);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalX = -180; horizontalX <= 164; horizontalX += 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(horizontalX, 4, -300);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalX = -228; horizontalX >= -304; horizontalX -= 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(horizontalX, 4, -244);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalX = -116; horizontalX >= -184; horizontalX -= 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(horizontalX, 4, -244);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalX = -300; horizontalX <= -116; horizontalX += 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(horizontalX, 4, -116);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	/*All the code in this section translate the walls according to the z-axis; x-axis is always fixed*/
-	for (int horizontalZ = -456; horizontalZ <= -412; horizontalZ += 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(-40, 4, horizontalZ);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-					modelStack.Rotate(90, 0, 1, 0);
-					modelStack.Rotate(90, 1, 0, 0);
-					
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 0, 1, 0);
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 0, 1, 0);
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 0, 1, 0);
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalZ = -456; horizontalZ <= -412; horizontalZ += 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(40, 4, horizontalZ);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 0, 1, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 0, 1, 0);
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 0, 1, 0);
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 0, 1, 0);
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalZ = -408; horizontalZ <= -328; horizontalZ += 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(-64, 4, horizontalZ);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 0, 1, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 0, 1, 0);
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 0, 1, 0);
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 0, 1, 0);
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalZ = -408; horizontalZ <= -328; horizontalZ += 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(64, 4, horizontalZ);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 0, 1, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 0, 1, 0);
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 0, 1, 0);
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 0, 1, 0);
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalZ = -408; horizontalZ <= -328; horizontalZ += 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(64, 4, horizontalZ);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 0, 1, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 0, 1, 0);
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 0, 1, 0);
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 0, 1, 0);
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalZ = -320; horizontalZ <= -248; horizontalZ += 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(-224, 4, horizontalZ);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 0, 1, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 0, 1, 0);
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 0, 1, 0);
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 0, 1, 0);
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalZ = -296; horizontalZ <= -248; horizontalZ += 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(-184, 4, horizontalZ);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 0, 1, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 0, 1, 0);
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 0, 1, 0);
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 0, 1, 0);
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalZ = -240; horizontalZ <= -120; horizontalZ += 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(-112, 4, horizontalZ);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 0, 1, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 0, 1, 0);
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 0, 1, 0);
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 0, 1, 0);
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
-
-	for (int horizontalZ = -240; horizontalZ <= -120; horizontalZ += 8)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(-304, 4, horizontalZ);
-
-			modelStack.PushMatrix();
-				modelStack.Translate(0, 8, 0);
-
-				modelStack.PushMatrix();
-					modelStack.Translate(0, 8, 0);
-
-					modelStack.PushMatrix();
-						modelStack.Translate(0, 8, 0);
-						modelStack.Rotate(90, 0, 1, 0);
-						modelStack.Rotate(90, 1, 0, 0);
-
-						modelStack.Scale(8, 8, 8);
-						RenderMesh(meshList[GEO_FACILITYWALLS], true);
-					modelStack.PopMatrix();
-
-					modelStack.Rotate(90, 0, 1, 0);
-					modelStack.Rotate(90, 1, 0, 0);
-					modelStack.Scale(8, 8, 8);
-					RenderMesh(meshList[GEO_FACILITYWALLS], true);
-				modelStack.PopMatrix();
-
-				modelStack.Rotate(90, 0, 1, 0);
-				modelStack.Rotate(90, 1, 0, 0);
-				modelStack.Scale(8, 8, 8);
-				RenderMesh(meshList[GEO_FACILITYWALLS], true);
-			modelStack.PopMatrix();
-
-			modelStack.Rotate(90, 0, 1, 0);
-			modelStack.Rotate(90, 1, 0, 0);
-			modelStack.Scale(8, 8, 8);
-			RenderMesh(meshList[GEO_FACILITYWALLS], true);
-		modelStack.PopMatrix();
-	}
+	//for (int horizontalX = -36; horizontalX <= 36; horizontalX += 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(horizontalX, 4, -460);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalX = -44; horizontalX >= -60; horizontalX -= 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(horizontalX, 4, -412);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalX = 44; horizontalX <= 60; horizontalX += 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(horizontalX, 4, -412);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalX = -68; horizontalX >= -224; horizontalX -= 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(horizontalX, 4, -324);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//						modelStack.Translate(0, 8, 0);
+	//						modelStack.Rotate(90, 1, 0, 0);
+	//						modelStack.Scale(8, 8, 8);
+	//						RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//					modelStack.Rotate(90, 1, 0, 0);
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalX = 68; horizontalX <= 188; horizontalX += 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(horizontalX, 4, -324);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalX = -180; horizontalX <= 164; horizontalX += 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(horizontalX, 4, -300);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalX = -228; horizontalX >= -304; horizontalX -= 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(horizontalX, 4, -244);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalX = -116; horizontalX >= -184; horizontalX -= 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(horizontalX, 4, -244);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalX = -300; horizontalX <= -116; horizontalX += 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(horizontalX, 4, -116);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	///*All the code in this section translate the walls according to the z-axis; x-axis is always fixed*/
+	//for (int horizontalZ = -456; horizontalZ <= -412; horizontalZ += 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(-40, 4, horizontalZ);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+	//				modelStack.Rotate(90, 0, 1, 0);
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 0, 1, 0);
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 0, 1, 0);
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 0, 1, 0);
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalZ = -456; horizontalZ <= -412; horizontalZ += 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(40, 4, horizontalZ);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 0, 1, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 0, 1, 0);
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 0, 1, 0);
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 0, 1, 0);
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalZ = -408; horizontalZ <= -328; horizontalZ += 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(-64, 4, horizontalZ);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 0, 1, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 0, 1, 0);
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 0, 1, 0);
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 0, 1, 0);
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalZ = -408; horizontalZ <= -328; horizontalZ += 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(64, 4, horizontalZ);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 0, 1, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 0, 1, 0);
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 0, 1, 0);
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 0, 1, 0);
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalZ = -408; horizontalZ <= -328; horizontalZ += 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(64, 4, horizontalZ);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 0, 1, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 0, 1, 0);
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 0, 1, 0);
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 0, 1, 0);
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalZ = -320; horizontalZ <= -248; horizontalZ += 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(-224, 4, horizontalZ);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 0, 1, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 0, 1, 0);
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 0, 1, 0);
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 0, 1, 0);
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalZ = -296; horizontalZ <= -248; horizontalZ += 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(-184, 4, horizontalZ);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 0, 1, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 0, 1, 0);
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 0, 1, 0);
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 0, 1, 0);
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalZ = -240; horizontalZ <= -120; horizontalZ += 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(-112, 4, horizontalZ);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 0, 1, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 0, 1, 0);
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 0, 1, 0);
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 0, 1, 0);
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
+
+	//for (int horizontalZ = -240; horizontalZ <= -120; horizontalZ += 8)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(-304, 4, horizontalZ);
+
+	//		modelStack.PushMatrix();
+	//			modelStack.Translate(0, 8, 0);
+
+	//			modelStack.PushMatrix();
+	//				modelStack.Translate(0, 8, 0);
+
+	//				modelStack.PushMatrix();
+	//					modelStack.Translate(0, 8, 0);
+	//					modelStack.Rotate(90, 0, 1, 0);
+	//					modelStack.Rotate(90, 1, 0, 0);
+
+	//					modelStack.Scale(8, 8, 8);
+	//					RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//				modelStack.PopMatrix();
+
+	//				modelStack.Rotate(90, 0, 1, 0);
+	//				modelStack.Rotate(90, 1, 0, 0);
+	//				modelStack.Scale(8, 8, 8);
+	//				RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//			modelStack.PopMatrix();
+
+	//			modelStack.Rotate(90, 0, 1, 0);
+	//			modelStack.Rotate(90, 1, 0, 0);
+	//			modelStack.Scale(8, 8, 8);
+	//			RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//		modelStack.PopMatrix();
+
+	//		modelStack.Rotate(90, 0, 1, 0);
+	//		modelStack.Rotate(90, 1, 0, 0);
+	//		modelStack.Scale(8, 8, 8);
+	//		RenderMesh(meshList[GEO_FACILITYWALLS], true);
+	//	modelStack.PopMatrix();
+	//}
 }
 
 void SPGame::RenderGhost1()
