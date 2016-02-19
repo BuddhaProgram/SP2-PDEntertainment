@@ -4,6 +4,7 @@
 //these codes use x and z coordinates according to DRAWN COORDINATES and not actuall z,x coords
 void SPGame::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//positive Z facing wall
 {
+    zPos = -zPos;
     int xMaxCount = xPosLarge - xPosSmall;
     int zPosActual;
     int xPosActual;
@@ -54,6 +55,7 @@ void SPGame::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//positive Z 
 }
 void SPGame::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negative Z facing Wall
 {
+    zPos = -zPos;
     int xMaxCount = xPosLarge - xPosSmall;
     int zPosActual;
     int xPosActual;
@@ -102,6 +104,7 @@ void SPGame::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negative Z fa
 }
 void SPGame::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// positive X facing wall
 {
+    
     int zMaxCount = zPosLarge - zPosSmall;
     int zPosActual;
     int xPosActual = 0;
@@ -126,7 +129,7 @@ void SPGame::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// positive 
     {
         if (count == 0)
         {
-            zPosActual = ((zPosSmall * 8) + 8);
+            zPosActual = ((zPosSmall * 8));
         }
         if (count > 0)
         {
@@ -134,8 +137,8 @@ void SPGame::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// positive 
         }
 
         modelStack.PushMatrix();
-        modelStack.Translate(xPosActual, 0, zPosActual);
-        modelStack.Rotate(90, 0, 1, 0);
+        modelStack.Translate(xPosActual, 0, -zPosActual);
+        modelStack.Rotate(-90, 0, 1, 0);
 
         modelStack.PushMatrix();
         modelStack.Translate(0, 8, 0);
@@ -175,7 +178,7 @@ void SPGame::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos)//negative X 
     {
         if (count == 0)
         {
-            zPosActual = ((zPosSmall * 8) + 8);
+            zPosActual = ((zPosSmall * 8));
         }
         if (count > 0)
         {
@@ -183,8 +186,8 @@ void SPGame::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos)//negative X 
         }
 
         modelStack.PushMatrix();
-        modelStack.Translate(xPosActual, 0, zPosActual);
-        modelStack.Rotate(90, 0, 1, 0);
+        modelStack.Translate(xPosActual, 0, -zPosActual);
+        modelStack.Rotate(-90, 0, 1, 0);
 
         modelStack.PushMatrix();
         modelStack.Translate(0, 8, 0);
