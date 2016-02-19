@@ -98,9 +98,49 @@ void SPGame::RenderSceneStart()
     //structure renders
     modelStack.PushMatrix();
 		modelStack.Translate(0, 0, -90);
-		modelStack.Scale(6, 6, 4);
+		modelStack.Scale(6, 6.1f, 4);
 		RenderMesh(meshList[GEO_FACILITYOUT], true);
 	modelStack.PopMatrix();
+
+	for (float x = -75; x <= 75; x += 24.94f)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(x, 12.5f, -100);
+		modelStack.Rotate(90, 0, 1, 0);
+		modelStack.Rotate(-90, 0, 0, 1);
+		modelStack.Scale(25, 1, 25);
+		RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
+		modelStack.PopMatrix();
+	}
+	for (float z = -90; z <= 90; z += 24.94f)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(87, 12.5f, z);
+		modelStack.Rotate(-90, 0, 0, 1);
+		modelStack.Scale(25, 1, 25);
+		RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
+		modelStack.PopMatrix();
+	}
+	for (float z = -90; z <= 90; z += 24.94f)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(-87, 12.5f, z);
+		modelStack.Rotate(180, 0, 1, 0);
+		modelStack.Rotate(-90, 0, 0, 1);
+		modelStack.Scale(25, 1, 25);
+		RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
+		modelStack.PopMatrix();
+	}
+	for (float x = -75; x <= 75; x += 24.94f)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(x, 12.5f, 97);
+		modelStack.Rotate(90, 0, 1, 0);
+		modelStack.Rotate(-90, 0, 0, 1);
+		modelStack.Scale(25, 1, 25);
+		RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
+		modelStack.PopMatrix();
+	}
 	RenderSkyBox();
 
     //object renders

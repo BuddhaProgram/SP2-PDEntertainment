@@ -161,6 +161,8 @@ void SPGame::Init()
 
 	meshList[GEO_FACILITYOUT] = MeshBuilder::GenerateOBJ("FacilityOut", "OBJ//FacilityOUT.obj");
 	meshList[GEO_FACILITYOUT]->textureID = LoadTGA("Image//FacilityOUT.tga");
+	meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("Facility Wall Outside", Color(1, 1, 1));
+	meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
 
     //change to correct textured quad later
 	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
@@ -323,7 +325,12 @@ void SPGame::Update(double dt)
 
 	if (numScene == 1)
 	{
-		Collision(-150, 150, -105, -70);
+		Collision(-35, 35, -105, -70);
+		Collision(-100, 100, -115, -95);
+		Collision(-100, -80, -115, 115);
+		Collision(80, 100, -115, 115);
+		Collision(-100, 100, 93, 100);
+		
 	}
 	
 	ToolsUI();
@@ -392,7 +399,7 @@ void SPGame::Update(double dt)
 	{
 		viewStack.LoadIdentity();
 		viewStack.LookAt(
-			camera.position.x = 0, camera.position.y = 8, camera.position.z = 60,
+			camera.position.x = 0, camera.position.y = 8, camera.position.z = 25,
 			camera.target.x = 0, camera.target.y = 8, camera.target.z = 0,
 			camera.up.x, camera.up.y, camera.up.z
 			);
