@@ -75,12 +75,12 @@ void SPGame::Init()
 	light[0].type = Light::LIGHT_SPOT;
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 1.0f;
+	light[0].power = 5.0f;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(15));
-	light[0].cosInner = cos(Math::DegreeToRadian(1));
+	light[0].cosCutoff = cos(Math::DegreeToRadian(45));
+	light[0].cosInner = cos(Math::DegreeToRadian(30));
 	light[0].exponent = 3.f;
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 
@@ -142,8 +142,12 @@ void SPGame::Init()
 	meshList[GEO_PORTRAIT] = MeshBuilder::GenerateOBJ("Portrait", "OBJ//Portrait.obj");
 	meshList[GEO_PORTRAIT]->textureID = LoadTGA("Image//Scream.tga");
 
-	meshList[GEO_TOOLUI] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//ToolUI.obj");
-	meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIUnselected.tga");
+	// Tools Interface and It's Icons
+	meshList[GEO_TOOLUI] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
+
+	meshList[GEO_PICKAXEICON] = MeshBuilder::GenerateQuad("WeaponIcon", Color(1, 1, 1));
+	meshList[GEO_PICKAXEICON]->textureID = LoadTGA("Image//PickaxeIcon.tga");
 
 	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
 	meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
@@ -230,9 +234,27 @@ void SPGame::checkPlayerPosMisc()
 
 void SPGame::ToolsUI()
 {
-	if (camera.position.x >= 100.0f && camera.position.x <= 110.0f && camera.position.z >= 100.0f && camera.position.z <= 110.0f)
+	if (Application::IsKeyPressed('Z'))
 	{
 		Inventory.InsertToolSlot(ToolUI::Pickaxe);
+	}
+}
+
+void SPGame::ToolSelectionMouseScroll()
+{
+	if (Inventory.GetToolType(SlotIndex) == ToolUI::Pickaxe)
+	{
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, RotateX, 1, 0, 0, 4.5, 0, 0, true);
+		modelStack.PopMatrix();
+	}
+}
+
+void SPGame::RenderToolIcon()
+{
+	if (Inventory.GetToolType(1) == ToolUI::Pickaxe)
+	{
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 3, 90, 1, 0, 0, 10, 5, -1, false);
 	}
 }
 
@@ -256,6 +278,26 @@ void SPGame::MouseScrollToolSlot()
 	else if (SlotIndex < 1)
 	{
 		SlotIndex = 4;
+	}
+
+	if (SlotIndex == 1)
+	{
+		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
+	}
+
+	else if (SlotIndex == 2)
+	{
+		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxTwo.tga");
+	}
+
+	else if (SlotIndex == 3)
+	{
+		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxThree.tga");
+	}
+
+	else if (SlotIndex == 4)
+	{
+		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
 	}
 }
 
@@ -331,8 +373,6 @@ void SPGame::Update(double dt)
 	PuzzleOneSwitchCheck(dt);
 	Switches.SwitchPuzzleOne(Switches.b_PuzzleOneSwitchOne, Switches.b_PuzzleOneSwitchTwo, Switches.b_PuzzleOneSwitchThree);
 	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
-
-	//std::cout << Switches.b_PuzzleOneSwitchOne << " " << Switches.b_PuzzleOneSwitchTwo << " " << Switches.b_PuzzleOneSwitchThree << std::endl;
 
 	if (numScene == 1)
 	{
@@ -427,9 +467,6 @@ void SPGame::Update(double dt)
 				numScene = 2;
 			}
 		}
-		
-
-
 	}
 
 	if (anima.cameramove1 && Application::IsKeyPressed('E'))
@@ -636,7 +673,7 @@ void SPGame::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float
 	glEnable(GL_DEPTH_TEST);
 }
 
-void SPGame::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z, bool LightYN)
+void SPGame::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, int rY, int rZ, float x, float y, float z, bool LightYN)
 {
 	Mtx44 ortho;
 	ortho.SetToOrtho(0, 80, 0, 60, -50, 50); //size of screen UI
@@ -648,7 +685,7 @@ void SPGame::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, 
 	modelStack.LoadIdentity(); //Reset modelStack
 	modelStack.Scale(size, size, size);
 	modelStack.Translate(x, y, z);
-	modelStack.Rotate(Rotate, 1, 0, 0);
+	modelStack.Rotate(Rotate, rX, rY, rZ);
 
 	RenderMesh(mesh, LightYN);
 
@@ -692,16 +729,9 @@ void SPGame::Render()
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
-
-
-	if (Inventory.GetToolType(SlotIndex) == ToolUI::Pickaxe)
-	{
-		modelStack.PushMatrix();
-		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, RotateX, 4.5, 0, 0, true);
-		modelStack.PopMatrix();
-	}
-
 	RenderFloor();
+	ToolSelectionMouseScroll();
+	RenderToolIcon();
 
     if (numScene == 1)
     {
@@ -739,7 +769,7 @@ void SPGame::Render()
 		}
 
 		modelStack.PushMatrix();
-		RenderModelOnScreen(meshList[GEO_TOOLUI], 10, 0, 4, 0, 1, false);
+		RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 1, false);
 		modelStack.PopMatrix();
 	}
 	//modelStack.PushMatrix();

@@ -26,7 +26,7 @@ class SPGame : public Scene
 		GEO_FRONT,
 		GEO_BACK,
 		GEO_QUAD,
-		GEO_PICKAXE,
+	
 		GEO_LIGHTBALL,
 		GEO_TEXT,
 		GEO_MOUNTTEXT,
@@ -53,8 +53,11 @@ class SPGame : public Scene
 		GEO_LHAND,
 		GEO_RHAND,
 
-		// Tools Interface
+		// Tools Interface and It's Icons
 		GEO_TOOLUI,
+
+		GEO_PICKAXE,
+		GEO_PICKAXEICON,
 
         GEO_GHOST1,
 
@@ -126,7 +129,7 @@ private:
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-    void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, float x, float y, float z, bool LightYN);
+    void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, int rY, int rZ, float x, float y, float z, bool LightYN);
     //checks
 	void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
 	void checkPlayerPosMisc();
@@ -140,6 +143,8 @@ private:
 	// Tool UI functions
 	void ToolsUI();
 	void MouseScrollToolSlot();
+	void ToolSelectionMouseScroll();
+	void RenderToolIcon();
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
