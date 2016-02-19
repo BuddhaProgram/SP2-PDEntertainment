@@ -1,7 +1,7 @@
 #include "SPGame.h"
 
 
-//these codes use x and z coordinates according to DRAWN COORDINATES and not actuall z,x coords
+//these codes use x and z coordinates according to DRAWN COORDINATES and not actual z,x coords
 void SPGame::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//positive Z facing wall
 {
     zPos = -zPos;
@@ -50,8 +50,6 @@ void SPGame::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//positive Z 
 
         modelStack.PopMatrix();
     }
-
-
 }
 void SPGame::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negative Z facing Wall
 {
