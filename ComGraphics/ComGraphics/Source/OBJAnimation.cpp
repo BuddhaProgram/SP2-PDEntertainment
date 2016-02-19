@@ -2,6 +2,7 @@
 #include "Vector3.h"
 #include "Mtx44.h"
 
+
 Animation::Animation()
 {
 }
@@ -43,6 +44,7 @@ void Animation::OpenMainDoor(double dt)
 	//left door
 	if (OpenDoorL <= -75)
 	{
+
 		toOpenDoorL = false;
 		Collapse = true;
 		if (RubbleCollapse <= -10)

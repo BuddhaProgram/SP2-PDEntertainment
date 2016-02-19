@@ -37,6 +37,7 @@ public:
 
 	bool cameramove1 = false;
 	bool cameramove2 = false;
+	bool cameramove3 = false;
 
 };
 

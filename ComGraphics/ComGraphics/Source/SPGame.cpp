@@ -98,7 +98,7 @@ void SPGame::Init()
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
 	//Initialize camera settings
-	camera.Init(Vector3(0, 10, 0), Vector3(1, 10, 0), Vector3(0, 1, 0));
+	camera.Init(Vector3(0, 10, 0), Vector3(0, 10, -1), Vector3(0, 1, 0));
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -346,7 +346,7 @@ void SPGame::Update(double dt)
 			if (proximitycheck(-13, 13, -105, -70))
 			{
 				displayInteract = false;
-				numScene = 2;
+				numScene = 4;
 			}
 		}
 		if (proximitycheck(-13, 13, -105, -70) && numScene == 1)
@@ -400,7 +400,7 @@ void SPGame::Update(double dt)
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-	camera.Update(dt);
+	//camera.Update(dt);
 
 	anima.OBJAnimation(dt);
 	anima.Collapsing(dt);
@@ -418,15 +418,26 @@ void SPGame::Update(double dt)
 		{
 			anima.cameramove2 = false;
 		}
+		if (anima.OpenDoorL <= - 35)
+		{
+			anima.cameramove3 = true;
+			if (camera.position.z <= -10)
+			{
+				anima.cameramove3 = false;
+				numScene = 2;
+			}
+		}
+		
+
 
 	}
 
-	if (anima.cameramove1 && Application::IsKeyPressed('T'))
+	if (anima.cameramove1 && Application::IsKeyPressed('E'))
 	{
 		viewStack.LoadIdentity();
 		viewStack.LookAt(
 			camera.position.x = 0, camera.position.y = 8, camera.position.z = 25,
-			camera.target.x = 0, camera.target.y = 8, camera.target.z = 0,
+			camera.target.x = 0, camera.target.y = 8, camera.target.z = -1,
 			camera.up.x, camera.up.y, camera.up.z
 			);
 
@@ -434,11 +445,20 @@ void SPGame::Update(double dt)
 	
 	}
 
+	if (anima.cameramove3 != false)
+	{
+		camera.position.z -= 0.2f;
+	}
+
 	if (anima.cameramove2 != false)
 	{
 		camera.position.z -= 0.1f;
 	}
 	
+	if (numScene != 4)
+	{
+		camera.Update(dt);
+	}
 
 	if (Ghost.Spawn)
 	{
@@ -672,9 +692,7 @@ void SPGame::Render()
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
-	modelStack.PushMatrix();
-	RenderModelOnScreen(meshList[GEO_TOOLUI], 10, 0, 4, 0, 1, false);
-	modelStack.PopMatrix();
+
 
 	if (Inventory.GetToolType(SlotIndex) == ToolUI::Pickaxe)
 	{
@@ -706,18 +724,23 @@ void SPGame::Render()
 		RenderCutScene();
 	}
 
-	RenderMesh(meshList[GEO_AXES], false);
-	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
-	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 3);
-	RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 4);
-	RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
-	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
-	if (displayInteract)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 12);
-	}
+	if (numScene != 4){
+		RenderMesh(meshList[GEO_AXES], false);
+		RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
+		RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
+		RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 3);
+		RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 4);
+		RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
+		RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
+		if (displayInteract)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 12);
+		}
 
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_TOOLUI], 10, 0, 4, 0, 1, false);
+		modelStack.PopMatrix();
+	}
 	//modelStack.PushMatrix();
 	//RenderModelOnScreen(meshList[GEO_RHAND], 15, RotateX, 4.5, 0, -1, false);
 	//modelStack.PopMatrix();
