@@ -261,7 +261,7 @@ void SPGame::MouseScrollToolSlot()
 
 void SPGame::PuzzleOneSwitchCheck(double dt)
 {
-	f_SwitchDebounce += dt;
+	f_SwitchDebounce += (float)dt;
 	if (Application::IsKeyPressed('5') && f_SwitchDebounce > 0.5f)
 	{
 		if (Switches.b_PuzzleOneSwitchOne == false)
@@ -308,6 +308,17 @@ void SPGame::PuzzleOneSwitchCheck(double dt)
 	}
 }
 
+bool SPGame::proximitycheck(float smallx, float largex, float smallz, float largez)
+{
+	//this function checks if the camera is close to a side of the object
+	bool result = false;
+	if ((camera.position.x >= smallx - 2.f) && (camera.position.x <= smallx) && (camera.position.z >= smallz) && (camera.position.z <= largez)){ result = true; }
+	if ((camera.position.x <= largex + 2.f) && (camera.position.x >= largex) && (camera.position.z >= smallz) && (camera.position.z <= largez)){ result = true; }
+	if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz - 2.f) && (camera.position.z <= smallz)){ result = true; }
+	if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez + 2.f) && (camera.position.z >= largez)){ result = true; }
+	return result;
+}
+
 void SPGame::Update(double dt)
 {
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
@@ -321,7 +332,7 @@ void SPGame::Update(double dt)
 	Switches.SwitchPuzzleOne(Switches.b_PuzzleOneSwitchOne, Switches.b_PuzzleOneSwitchTwo, Switches.b_PuzzleOneSwitchThree);
 	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
 
-	std::cout << Switches.b_PuzzleOneSwitchOne << " " << Switches.b_PuzzleOneSwitchTwo << " " << Switches.b_PuzzleOneSwitchThree << std::endl;
+	//std::cout << Switches.b_PuzzleOneSwitchOne << " " << Switches.b_PuzzleOneSwitchTwo << " " << Switches.b_PuzzleOneSwitchThree << std::endl;
 
 	if (numScene == 1)
 	{
@@ -330,7 +341,22 @@ void SPGame::Update(double dt)
 		Collision(-100, -80, -115, 115);
 		Collision(80, 100, -115, 115);
 		Collision(-100, 100, 93, 100);
-		
+		if (Application::IsKeyPressed('E'))
+		{
+			if (proximitycheck(-13, 13, -105, -70))
+			{
+				displayInteract = false;
+				numScene = 2;
+			}
+		}
+		if (proximitycheck(-13, 13, -105, -70) && numScene == 1)
+		{
+			displayInteract = true;
+		}
+		else
+		{
+			displayInteract = false;
+		}
 	}
 	
 	ToolsUI();
@@ -681,12 +707,16 @@ void SPGame::Render()
 	}
 
 	RenderMesh(meshList[GEO_AXES], false);
-	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 0);
-	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 1);
-	RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 3);
-	RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 4);
-	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.82f, 7);
+	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
+	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
+	RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 3);
+	RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 4);
+	RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
+	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
+	if (displayInteract)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 12);
+	}
 
 	//modelStack.PushMatrix();
 	//RenderModelOnScreen(meshList[GEO_RHAND], 15, RotateX, 4.5, 0, -1, false);
