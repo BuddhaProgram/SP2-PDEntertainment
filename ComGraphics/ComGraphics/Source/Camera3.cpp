@@ -5,6 +5,7 @@
 
 float regenDelay = 6.f;
 extern GLFWwindow* m_window;
+extern SPGame* numScene;
 Camera3::Camera3()
 {
 }
@@ -65,39 +66,39 @@ void Camera3::CameraRotation(double dt, float CAMERASPEED)
 
 void Camera3::HumanControl()
 {
-	view = (target - position).Normalized();
+		view = (target - position).Normalized();
 
-	if (Application::IsKeyPressed('A'))
-	{
-		position -= right;
-		target -= right;
-	}
-
-	if (Application::IsKeyPressed('D'))
-	{
-		position += right;
-		target += right;
-	}
-
-	if (Application::IsKeyPressed('W'))
-	{
-		position.x += sin(Math::DegreeToRadian(rotationY));
-		position.z += cos(Math::DegreeToRadian(rotationY));
-
-		if (Application::IsKeyPressed(VK_LSHIFT) && PlayerStat::instance()->stamina != 0)
+		if (Application::IsKeyPressed('A'))
 		{
-			position.x += 2*sin(Math::DegreeToRadian(rotationY));
-			position.z += 2*cos(Math::DegreeToRadian(rotationY));
-			PlayerStat::instance()->stamina -= .5f;
+			position -= right;
+			target -= right;
 		}
-	}
+
+		if (Application::IsKeyPressed('D'))
+		{
+			position += right;
+			target += right;
+		}
+
+		if (Application::IsKeyPressed('W'))
+		{
+			position.x += sin(Math::DegreeToRadian(rotationY));
+			position.z += cos(Math::DegreeToRadian(rotationY));
+
+			if (Application::IsKeyPressed(VK_LSHIFT) && PlayerStat::instance()->stamina != 0)
+			{
+				position.x += 2 * sin(Math::DegreeToRadian(rotationY));
+				position.z += 2 * cos(Math::DegreeToRadian(rotationY));
+				PlayerStat::instance()->stamina -= .5f;
+			}
+		}
 
 
-	if (Application::IsKeyPressed('S'))
-	{
-		position.x -= sin(Math::DegreeToRadian(rotationY));
-		position.z -= cos(Math::DegreeToRadian(rotationY));
-	}
+		if (Application::IsKeyPressed('S'))
+		{
+			position.x -= sin(Math::DegreeToRadian(rotationY));
+			position.z -= cos(Math::DegreeToRadian(rotationY));
+		}
 }
 
 void Camera3::Reset()
