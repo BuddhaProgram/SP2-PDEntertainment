@@ -183,10 +183,14 @@ void SPGame::RenderLevel1()
         RenderGhost1();
     }
 
+    //bottom left quadron
     RenderUpWall(0, -5, -55);
     RenderRightWall(-49, -55, -5);
     RenderUpWall(-5, -9, -49);
     RenderRightWall(-39, -49, -9);
+    RenderUpWall(-9,-27, -39);
+    
+
 
     
   
