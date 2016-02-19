@@ -114,6 +114,12 @@ private:
 	void RenderFloor();
 	void RenderCutScene();
 
+    //map rendering
+    void RenderDownWall(int xPosLarge, int xPosSmall, int zPos);//positive Z facing wall
+    void RenderUpWall(int xPosLarge, int xPosSmall, int zPos);//negative Z facing Wall
+    void RenderRightWall(int zPosLarge, int zPosSmall, int xPos);// positive X facing wall
+    void RenderLeftWall(int zPosLarge, int zPosSmall, int xPos);//negative X facing wall
+
     //mob renders
     void RenderGhost1();
 
