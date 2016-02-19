@@ -74,7 +74,7 @@ void SPGame::RenderFloor()
 			for (int z = -450; z < 500; z += 100)
 			{
 				modelStack.PushMatrix();
-					modelStack.Translate(x, 0, z);
+					modelStack.Translate((float)x, 0, (float)z);
 					modelStack.Scale(100, 1, 100);
 					RenderMesh(meshList[GEO_PLANETFLOOR], true);
 				modelStack.PopMatrix();

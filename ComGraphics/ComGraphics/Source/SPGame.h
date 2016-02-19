@@ -131,6 +131,7 @@ private:
 	void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
 	void checkPlayerPosMisc();
     void Collision(float smallx, float largex, float smallz, float largez);
+	bool proximitycheck(float smallx, float largex, float smallz, float largez);
 
 	// Switches Functions for puzzles
 	void PuzzleOneSwitchCheck(double dt);
@@ -183,7 +184,7 @@ private:
 
     float FPS;
 	int SlotIndex;
-
+	bool displayInteract;
 	float mobTimeCount;
 };
 
