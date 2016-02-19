@@ -1,0 +1,32 @@
+﻿Build started 19/2/2016 3:20:05 PM.
+     1>Project "C:\Users\Shem\Desktop\SP2 stuff\SP2-PDEntertainment\ComGraphics\ComGraphics\ComGraphics.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Shem\Desktop\SP2 stuff\SP2-PDEntertainment\ComGraphics\\Common\Source" /I"C:\Users\Shem\Desktop\SP2 stuff\SP2-PDEntertainment\ComGraphics\\glfw\include" /I"C:\Users\Shem\Desktop\SP2 stuff\SP2-PDEntertainment\ComGraphics\\glew\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt source\Renders.cpp
+         Renders.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Shem\Desktop\SP2 stuff\SP2-PDEntertainment\ComGraphics\Debug\ComGraphics.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Shem\Desktop\SP2 stuff\SP2-PDEntertainment\ComGraphics\Debug" /LIBPATH:"C:\Users\Shem\Desktop\SP2 stuff\SP2-PDEntertainment\ComGraphics\\glfw\lib-msvc120" /LIBPATH:"C:\Users\Shem\Desktop\SP2 stuff\SP2-PDEntertainment\ComGraphics\\glew\lib" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Shem\Desktop\SP2 stuff\SP2-PDEntertainment\ComGraphics\Debug\ComGraphics.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Shem\Desktop\SP2 stuff\SP2-PDEntertainment\ComGraphics\Debug\ComGraphics.lib" /MACHINE:X86 Debug\Application.obj
+         Debug\MapRendering.obj
+         Debug\SPGame.obj
+         Debug\Camera.obj
+         Debug\Camera3.obj
+         Debug\LoadOBJ.obj
+         Debug\LoadTGA.obj
+         Debug\main.obj
+         Debug\Mesh.obj
+         Debug\MeshBuilder.obj
+         Debug\OBJAnimation.obj
+         Debug\HostileMob.obj
+         Debug\PlayerStat.obj
+         Debug\Renders.obj
+         Debug\shader.obj
+         Debug\Misc.obj
+         Debug\SwitchLightPuzzle.obj
+         Debug\ToolSection.obj
+         Debug\ToolUI.obj
+         Debug\Utility.obj
+         ComGraphics.vcxproj -> C:\Users\Shem\Desktop\SP2 stuff\SP2-PDEntertainment\ComGraphics\Debug\ComGraphics.exe
+     1>Done Building Project "C:\Users\Shem\Desktop\SP2 stuff\SP2-PDEntertainment\ComGraphics\ComGraphics\ComGraphics.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.10
