@@ -200,6 +200,78 @@ bool b_LockSwing = false;
 bool b_LockSwingDebounce = false;
 bool start_Animation = false;
 
+void SPGame::ToolsUI()
+{
+	if (Application::IsKeyPressed('Z'))
+	{
+		Inventory.InsertToolSlot(ToolUI::Pickaxe);
+	}
+}
+
+void SPGame::RenderToolIcon()
+{
+	if (Inventory.GetToolType(1) == ToolUI::Pickaxe && SlotIndex == 1)
+	{
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 3, 90, 1, 0, 0, 10, 0, 1, false);
+	}
+}
+
+
+void SPGame::MouseScrollToolSlot()
+{
+	if (Application::mouse_scroll > 0)
+	{
+		SlotIndex++;
+	}
+
+	else if (Application::mouse_scroll < 0)
+	{
+		SlotIndex--;
+	}
+
+	if (SlotIndex > 4)
+	{
+		SlotIndex = 1;
+	}
+
+	else if (SlotIndex < 1)
+	{
+		SlotIndex = 4;
+	}
+}
+
+void SPGame::RenderToolUI()
+{
+	if (SlotIndex == 1)
+	{
+		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
+	}
+
+	else if (SlotIndex == 2)
+	{
+		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxTwo.tga");
+	}
+
+	else if (SlotIndex == 3)
+	{
+		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxThree.tga");
+	}
+
+	else if (SlotIndex == 4)
+	{
+		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
+	}
+}
+
+void SPGame::ToolSelectionMouseScroll()
+{
+	if (Inventory.GetToolType(SlotIndex) == ToolUI::Pickaxe)
+	{
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, RotateX, 1, 0, 0, 4.5, 0, 0, true);
+		modelStack.PopMatrix();
+	}
+}
 
 void SPGame::Reset()
 {
@@ -230,75 +302,6 @@ void SPGame::checkPlayerPosMisc()
 	Misc.camX = camera.position.x;
 	Misc.camY = camera.position.y;
 	Misc.camZ = camera.position.z;
-}
-
-void SPGame::ToolsUI()
-{
-	if (Application::IsKeyPressed('Z'))
-	{
-		Inventory.InsertToolSlot(ToolUI::Pickaxe);
-	}
-}
-
-void SPGame::ToolSelectionMouseScroll()
-{
-	if (Inventory.GetToolType(SlotIndex) == ToolUI::Pickaxe)
-	{
-		modelStack.PushMatrix();
-		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, RotateX, 1, 0, 0, 4.5, 0, 0, true);
-		modelStack.PopMatrix();
-	}
-}
-
-void SPGame::RenderToolIcon()
-{
-	if (Inventory.GetToolType(1) == ToolUI::Pickaxe)
-	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 3, 90, 1, 0, 0, 10, 5, -1, false);
-	}
-}
-
-void SPGame::MouseScrollToolSlot()
-{
-	if (Application::mouse_scroll > 0)
-	{
-		SlotIndex++;
-	}
-
-	else if (Application::mouse_scroll < 0)
-	{
-		SlotIndex--;
-	}
-
-	if (SlotIndex > 4)
-	{
-		SlotIndex = 1;
-	}
-
-	else if (SlotIndex < 1)
-	{
-		SlotIndex = 4;
-	}
-
-	if (SlotIndex == 1)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
-	}
-
-	else if (SlotIndex == 2)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxTwo.tga");
-	}
-
-	else if (SlotIndex == 3)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxThree.tga");
-	}
-
-	else if (SlotIndex == 4)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
-	}
 }
 
 void SPGame::PuzzleOneSwitchCheck(double dt)
@@ -399,8 +402,15 @@ void SPGame::Update(double dt)
 		}
 	}
 	
+
+	/*------------------------[All functions of Tool UI and Mouse Scroll Conditions]--------------------------*/
+
 	ToolsUI();
 	MouseScrollToolSlot();
+	RenderToolIcon();
+	RenderToolUI();
+
+	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
 	if (Application::IsKeyPressed(VK_LBUTTON) && b_LockSwing == false && b_LockSwingDebounce == false && PlayerStat::instance()->stamina>=20)
 	{
@@ -731,23 +741,22 @@ void SPGame::Render()
 
 	RenderFloor();
 	ToolSelectionMouseScroll();
-	RenderToolIcon();
 
     if (numScene == 1)
     {
-		meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
+		//meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
         RenderSceneStart();
     }
     if (numScene == 2)
     {
 		camera.position.y = 10;
-		meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//InsideFLOOR.tga");
+		//meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//InsideFLOOR.tga");
         RenderLevel1();
     }
 
     if (numScene == 3)
     {
-		meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
+		//meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
         RenderSceneEnd();
     }
 	if (numScene == 4)
