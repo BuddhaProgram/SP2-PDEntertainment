@@ -1,5 +1,8 @@
 #ifndef SPGame_H
 #define SPGame_H
+//memory leak check
+
+
 
 #include "Scene.h"
 #include "Camera3.h"
@@ -13,6 +16,7 @@
 #include "PlayerStat.h"
 #include "ToolSection.h"
 #include "HostileMob.h"
+
 
 class SPGame : public Scene
 {
@@ -112,6 +116,7 @@ private:
     void RenderLevel1();
 	void RenderSkyBox();
 	void RenderFloor();
+    void RenderCeiling();
 	void RenderCutScene();
 
     //map rendering

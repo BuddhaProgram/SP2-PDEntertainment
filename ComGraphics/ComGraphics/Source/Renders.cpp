@@ -92,6 +92,19 @@ void SPGame::RenderFloor()
 	}
 }
 
+void SPGame::RenderCeiling()
+{
+
+    if (SPGame::numScene == 2)
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(camera.position.x, 20, camera.position.z);
+        modelStack.Rotate(180, 1, 0, 0);
+        modelStack.Scale(300, 1, 300);
+        RenderMesh(meshList[GEO_FACILITYFLOOR], true);
+        modelStack.PopMatrix();
+    }
+}
 // renders the Starting level
 void SPGame::RenderSceneStart()
 {
@@ -178,11 +191,10 @@ void SPGame::RenderSceneEnd()
 
 void SPGame::RenderLevel1()
 {
-    if (Ghost.Spawn)
-    {
-        RenderGhost1();
-    }
+    //basic renders
+    RenderCeiling();
 
+    //structure renders
     //bottom left quadron
     RenderUpWall(-2, -5, -55);//1
     RenderRightWall(-49, -55, -5);//2
@@ -272,6 +284,12 @@ void SPGame::RenderLevel1()
 
     //TOP QUAD END
     //-----------------------------------------------------
+
+    //Mobs
+    if (Ghost.Spawn)
+    {
+        RenderGhost1();
+    }
 }
 
 
