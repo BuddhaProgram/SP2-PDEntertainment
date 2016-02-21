@@ -1,9 +1,8 @@
-
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
 #include "timer.h"
-
+#include "GlobalVariables.h"
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
@@ -21,6 +20,7 @@ private:
 
 	//Declare a window object
 	StopWatch m_timer;
+	GlobalVariables Variables;
 };
 
 #endif
