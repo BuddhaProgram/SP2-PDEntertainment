@@ -381,7 +381,7 @@ void SPGame::JumpToCutSceneOne()
 		if (proximitycheck(-13, 13, -105, -70))
 		{
 			displayInteract = false;
-			Variables.i_numScene = 1;
+			Variables.i_numScene++;
 		}
 	}
 }

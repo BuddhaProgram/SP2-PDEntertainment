@@ -143,12 +143,6 @@ void SPGameSceneTwo::Init()
 	meshList[GEO_PORTRAIT]->textureID = LoadTGA("Image//Scream.tga");
 
 	// Tools Interface and It's Icons
-	meshList[GEO_TOOLUI] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
-	meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
-
-	meshList[GEO_PICKAXEICON] = MeshBuilder::GenerateQuad("WeaponIcon", Color(1, 1, 1));
-	meshList[GEO_PICKAXEICON]->textureID = LoadTGA("Image//PickaxeIcon.tga");
-
 	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
 	meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
 
@@ -167,16 +161,6 @@ void SPGameSceneTwo::Init()
 	meshList[GEO_FACILITYOUT]->textureID = LoadTGA("Image//FacilityOUT.tga");
 	meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("Facility Wall Outside", Color(1, 1, 1));
 	meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
-
-	//change to correct textured quad later
-	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
-	meshList[GEO_RHAND]->textureID = LoadTGA("Image//RightHand.tga");
-	meshList[GEO_LHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//LeftHand.obj");
-	meshList[GEO_LHAND]->textureID = LoadTGA("Image//LeftHand.tga");
-
-	meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//GhostPlaceholder.obj");
-	meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Ghostplaceholder.tga");
-
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
@@ -475,14 +459,6 @@ void SPGameSceneTwo::Render()
 	}
 
 	RenderCutSceneOne();
-
-	//modelStack.PushMatrix();
-	//RenderModelOnScreen(meshList[GEO_RHAND], 15, RotateX, 4.5, 0, -1, false);
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//RenderModelOnScreen(meshList[GEO_LHAND], 15, RotateX, 0.75, 0, -1, false);
-	//modelStack.PopMatrix();
 }
 
 void SPGameSceneTwo::Exit()
