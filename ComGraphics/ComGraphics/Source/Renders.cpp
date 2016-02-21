@@ -1,4 +1,5 @@
 #include "SPGame.h"
+#include "SPGameSceneTwo.h"
 #include "OBJAnimation.h"
 
 Animation anima;
@@ -67,104 +68,18 @@ void SPGame::RenderSkyBox()
 // Rendering of Floor for all Scenes.
 void SPGame::RenderFloor()
 {
-	if (SPGame::numScene == 1 || SPGame::numScene == 3)
-	{		
-		for (int x = -450; x < 500; x += 100)
-		{
-			for (int z = -450; z < 500; z += 100)
-			{
-				modelStack.PushMatrix();
-					modelStack.Translate((float)x, 0, (float)z);
-					modelStack.Scale(100, 1, 100);
-					RenderMesh(meshList[GEO_PLANETFLOOR], true);
-				modelStack.PopMatrix();
-			}
-		}	
-	}
 
-	if (SPGame::numScene == 2)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(camera.position.x, 0, camera.position.z);
-			modelStack.Scale(300, 1, 300);
-			RenderMesh(meshList[GEO_FACILITYFLOOR], true);
-		modelStack.PopMatrix();
-	}
+	//if (SPGame::numScene == 2)
+	//{
+	//	modelStack.PushMatrix();
+	//		modelStack.Translate(camera.position.x, 0, camera.position.z);
+	//		modelStack.Scale(300, 1, 300);
+	//		RenderMesh(meshList[GEO_FACILITYFLOOR], true);
+	//	modelStack.PopMatrix();
+	//}
 }
 
-void SPGame::RenderCeiling()
-{
-
-    if (SPGame::numScene == 2)
-    {
-        modelStack.PushMatrix();
-        modelStack.Translate(camera.position.x, 20, camera.position.z);
-        modelStack.Rotate(180, 1, 0, 0);
-        modelStack.Scale(300, 1, 300);
-        RenderMesh(meshList[GEO_FACILITYFLOOR], true);
-        modelStack.PopMatrix();
-    }
-}
 // renders the Starting level
-void SPGame::RenderSceneStart()
-{
-    //structure renders
-    modelStack.PushMatrix();
-		modelStack.Translate(0, 0, -90);
-		modelStack.Scale(6, 6.1f, 4);
-		RenderMesh(meshList[GEO_FACILITYOUT], true);
-	modelStack.PopMatrix();
-
-	for (float x = -75; x <= 75; x += 24.94f)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(x, 12.5f, -100);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Scale(25, 1, 25);
-		RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
-		modelStack.PopMatrix();
-	}
-	for (float z = -90; z <= 90; z += 24.94f)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(87, 12.5f, z);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Scale(25, 1, 25);
-		RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
-		modelStack.PopMatrix();
-	}
-	for (float z = -90; z <= 90; z += 24.94f)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(-87, 12.5f, z);
-		modelStack.Rotate(180, 0, 1, 0);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Scale(25, 1, 25);
-		RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
-		modelStack.PopMatrix();
-	}
-	for (float x = -75; x <= 75; x += 24.94f)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(x, 12.5f, 97);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Rotate(-90, 0, 0, 1);
-		modelStack.Scale(25, 1, 25);
-		RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
-		modelStack.PopMatrix();
-	}
-	RenderSkyBox();
-
-    //object renders
-
-
-    //Enemy renders
-    if (Ghost.Spawn)
-    {
-        RenderGhost1();
-    }
-}
 
 //render the exit level
 void SPGame::RenderSceneEnd()
@@ -191,10 +106,11 @@ void SPGame::RenderSceneEnd()
 
 void SPGame::RenderLevel1()
 {
-    //basic renders
-    RenderCeiling();
+    if (Ghost.Spawn)
+    {
+        RenderGhost1();
+    }
 
-    //structure renders
     //bottom left quadron
     RenderUpWall(-2, -5, -55);//1
     RenderRightWall(-49, -55, -5);//2
@@ -284,37 +200,4 @@ void SPGame::RenderLevel1()
 
     //TOP QUAD END
     //-----------------------------------------------------
-
-    //Mobs
-    if (Ghost.Spawn)
-    {
-        RenderGhost1();
-    }
-}
-
-
-	
-
-void SPGame::RenderGhost1()
-{
-    modelStack.PushMatrix();
-		modelStack.Translate(Ghost.MobPosX, Ghost.MobPosY, Ghost.MobPosZ);
-		RenderMesh(meshList[GEO_GHOST1], true);
-    modelStack.PopMatrix();
-}
-
-void SPGame::RenderCutScene()
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(10, 0, 0);
-	modelStack.Rotate(anima.OpenDoorL, 0, 1, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_MAINDOORLEFT], false);
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Translate(-10, 0, 0);
-	modelStack.Rotate(anima.OpenDoorR, 0, 1, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_MAINDOORRIGHT], false);
-	modelStack.PopMatrix();
 }

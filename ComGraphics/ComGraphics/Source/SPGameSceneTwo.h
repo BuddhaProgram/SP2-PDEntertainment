@@ -1,21 +1,16 @@
-#ifndef SPGame_H
-#define SPGame_H
+#ifndef SPGAMESCENETWO_H
+#define SPGAMESCENETWO_H
 
 #include "Scene.h"
 #include "Camera3.h"
 #include "Vector3.h"
 #include "Mesh.h"
-#include "Misc.h"
-#include "SwitchLightPuzzle.h"
 #include "MatrixStack.h"
 #include "Light.h"
 #include "OBJAnimation.h"
-#include "PlayerStat.h"
-#include "ToolSection.h"
-#include "HostileMob.h"
 #include "GlobalVariables.h"
 
-class SPGame : public Scene
+class SPGameSceneTwo : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
@@ -27,7 +22,7 @@ class SPGame : public Scene
 		GEO_FRONT,
 		GEO_BACK,
 		GEO_QUAD,
-	
+
 		GEO_LIGHTBALL,
 		GEO_TEXT,
 		GEO_MOUNTTEXT,
@@ -60,10 +55,10 @@ class SPGame : public Scene
 		GEO_PICKAXE,
 		GEO_PICKAXEICON,
 
-        GEO_GHOST1,
+		GEO_GHOST1,
 
-        //player related
-        GEO_HEALTH,
+		//player related
+		GEO_HEALTH,
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE
@@ -97,52 +92,45 @@ class SPGame : public Scene
 		U_TOTAL,
 	};
 public:
-	SPGame();
-	~SPGame();
+	SPGameSceneTwo();
+	~SPGameSceneTwo();
 
 	virtual void Init();
 	virtual void Update(double dt);
 	virtual void Render();
 	virtual void Reset();
 	virtual void Exit();
-	
+
 	Camera3 camera;
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 
-    //scene renders
-	void RenderSceneStart();
-    void RenderSceneEnd();
-    void RenderLevel1();
+	//scene renders
+	void RenderLevel1();
 	void RenderSkyBox();
-	void RenderFloor();
 	void RenderCutSceneOne();
 
-    //map rendering
-    void RenderDownWall(int xPosLarge, int xPosSmall, int zPos);//positive Z facing wall
-    void RenderUpWall(int xPosLarge, int xPosSmall, int zPos);//negative Z facing Wall
-    void RenderRightWall(int zPosLarge, int zPosSmall, int xPos);// positive X facing wall
-    void RenderLeftWall(int zPosLarge, int zPosSmall, int xPos);//negative X facing wall
+	//map rendering
+	void RenderDownWall(int xPosLarge, int xPosSmall, int zPos);//positive Z facing wall
+	void RenderUpWall(int xPosLarge, int xPosSmall, int zPos);//negative Z facing Wall
+	void RenderRightWall(int zPosLarge, int zPosSmall, int xPos);// positive X facing wall
+	void RenderLeftWall(int zPosLarge, int zPosSmall, int xPos);//negative X facing wall
 
-    // Mobs rendering
-    void RenderGhost1();
+	//mob renders
+	void RenderGhost1();
 
-    // Render functions 
-    void RenderText(Mesh* mesh, std::string text, Color color);
-    void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-    void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, int rY, int rZ, float x, float y, float z, bool LightYN);
-
-    // Collision Checks
+	//render functions 
+	void RenderText(Mesh* mesh, std::string text, Color color);
+	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
+	void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, int rY, int rZ, float x, float y, float z, bool LightYN);
+	//checks
 	void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
 	void checkPlayerPosMisc();
-    void Collision(float smallx, float largex, float smallz, float largez);
+	void Collision(float smallx, float largex, float smallz, float largez);
 	bool proximitycheck(float smallx, float largex, float smallz, float largez);
-
-	void CollisionCheckerSceneOne();
 
 	// Switches Functions for puzzles
 	void PuzzleOneSwitchCheck(double dt);
-	float f_SwitchDebounce;
 
 	// Tool UI functions
 	void ToolsUI();
@@ -150,20 +138,6 @@ private:
 	void ToolSelectionMouseScroll();
 	void RenderToolIcon();
 	void RenderToolUI();
-
-	// Tool Actions
-	void ToolSwingingActionSceneOne(double dt);
-
-	// All NPCs functions
-	void AppearGhost(double dt);
-
-	// Mouse Click Functions
-	void LeftMouseClickSceneOne();
-
-	// Render Flooring
-	void RenderFloorSceneOne();
-
-	void JumpToCutSceneOne();
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
@@ -177,28 +151,22 @@ private:
 
 	Light light[1];
 
-	float PlanetRotate;
-	float AsteroidRotate;
-	float AsteroidRotateF;
-	float AsteroidMove;
-	float AsteroidMoveS;
+	//float PlanetRotate;
+	//float AsteroidRotate;
+	//float AsteroidRotateF;
+	//float AsteroidMove;
+	//float AsteroidMoveS;
 
-	float worldspin;
-   
+	//float worldspin;
 
-    Vector3 start ;
-    Vector3 end;
 
-	ToolSection Inventory;
-	ToolUI::ToolType Tool;
-    HostileMob Ghost;
-	misc Misc;
-	SwitchLightPuzzle Switches;
+	Vector3 start;
+	Vector3 end;
 	GlobalVariables Variables;
 
-    float FPS;
+	float FPS;
 	bool displayInteract;
-	float mobTimeCount;
 };
+
 
 #endif

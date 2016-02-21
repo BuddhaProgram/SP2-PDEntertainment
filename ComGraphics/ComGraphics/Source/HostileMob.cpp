@@ -1,4 +1,3 @@
-
 #include "HostileMob.h"
 
 
@@ -44,5 +43,4 @@ void HostileMob::move(double dt, int movespeed)
 
     MobPosX = mob.x;
     MobPosZ = mob.z;
-    //MobRotateY = -camera.target.z;
 }

@@ -1,4 +1,4 @@
-#include "SPGame.h"
+#include "SPGameSceneTwo.h"
 #include "GL\glew.h"
 
 #include "shader.hpp"
@@ -12,15 +12,15 @@
 #include <sstream>
 
 
-SPGame::SPGame()
+SPGameSceneTwo::SPGameSceneTwo()
 {
 }
 
-SPGame::~SPGame()
+SPGameSceneTwo::~SPGameSceneTwo()
 {
 }
 
-void SPGame::Init()
+void SPGameSceneTwo::Init()
 {
 	// Init VBO here
 
@@ -104,18 +104,18 @@ void SPGame::Init()
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("lightball", Color(1, 1, 1), 10, 20);
 
-    meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1));
-    meshList[GEO_FRONT]->textureID = LoadTGA("Image//SkyBox1_front.tga");
-    meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1));
-    meshList[GEO_LEFT]->textureID = LoadTGA("Image//SkyBox1_left.tga");
-    meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1));
-    meshList[GEO_RIGHT]->textureID = LoadTGA("Image//SkyBox1_right.tga");
-    meshList[GEO_TOP] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1));
-    meshList[GEO_TOP]->textureID = LoadTGA("Image//SkyBox1_up.tga");
-    meshList[GEO_BOTTOM] = MeshBuilder::GenerateQuad("SkyBox1_down", Color(1, 1, 1));
-    meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//SkyBox1_down.tga");
-    meshList[GEO_BACK] = MeshBuilder::GenerateQuad("SkyBox1_back", Color(1, 1, 1));
-    meshList[GEO_BACK]->textureID = LoadTGA("Image//SkyBox1_back.tga");
+	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1));
+	meshList[GEO_FRONT]->textureID = LoadTGA("Image//SkyBox1_front.tga");
+	meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1));
+	meshList[GEO_LEFT]->textureID = LoadTGA("Image//SkyBox1_left.tga");
+	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1));
+	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//SkyBox1_right.tga");
+	meshList[GEO_TOP] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1));
+	meshList[GEO_TOP]->textureID = LoadTGA("Image//SkyBox1_up.tga");
+	meshList[GEO_BOTTOM] = MeshBuilder::GenerateQuad("SkyBox1_down", Color(1, 1, 1));
+	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//SkyBox1_down.tga");
+	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("SkyBox1_back", Color(1, 1, 1));
+	meshList[GEO_BACK]->textureID = LoadTGA("Image//SkyBox1_back.tga");
 
 	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
 	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
@@ -143,12 +143,6 @@ void SPGame::Init()
 	meshList[GEO_PORTRAIT]->textureID = LoadTGA("Image//Scream.tga");
 
 	// Tools Interface and It's Icons
-	meshList[GEO_TOOLUI] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
-	meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
-
-	meshList[GEO_PICKAXEICON] = MeshBuilder::GenerateQuad("WeaponIcon", Color(1, 1, 1));
-	meshList[GEO_PICKAXEICON]->textureID = LoadTGA("Image//PickaxeIcon.tga");
-
 	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
 	meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
 
@@ -168,294 +162,40 @@ void SPGame::Init()
 	meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("Facility Wall Outside", Color(1, 1, 1));
 	meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
 
-	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
-	meshList[GEO_RHAND]->textureID = LoadTGA("Image//RightHand.tga");
-	meshList[GEO_LHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//LeftHand.obj");
-	meshList[GEO_LHAND]->textureID = LoadTGA("Image//LeftHand.tga");
-
-    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//GhostPlaceholder.obj");
-    meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Ghostplaceholder.tga");
-
-
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
-    //scene changer init end.............
 
-	// All Switches Debounce Key
-	f_SwitchDebounce = 0.0f;
+	//scene changer inits.............
+	//scene changer init end.............
 }
 
 static float LSPEED = 10.f;
 
+bool start_Animation = false;
 
-void SPGame::ToolsUI()
-{
-	if (Application::IsKeyPressed('Z'))
-	{
-		Inventory.InsertToolSlot(ToolUI::Pickaxe);
-	}
-}
-
-void SPGame::RenderToolIcon()
-{
-	if (Inventory.GetToolType(1) == ToolUI::Pickaxe && Variables.i_SlotIndex == 1)
-	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 3, 90, 1, 0, 0, 10, 0, 1, false);
-	}
-}
-
-void SPGame::MouseScrollToolSlot()
-{
-	if (Application::mouse_scroll > 0)
-	{
-		Variables.i_SlotIndex++;
-	}
-
-	else if (Application::mouse_scroll < 0)
-	{
-		Variables.i_SlotIndex--;
-	}
-
-	if (Variables.i_SlotIndex > 4)
-	{
-		Variables.i_SlotIndex = 1;
-	}
-
-	else if (Variables.i_SlotIndex < 1)
-	{
-		Variables.i_SlotIndex = 4;
-	}
-}
-
-void SPGame::RenderToolUI()
-{
-	if (Variables.i_SlotIndex == 1)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
-	}
-
-	else if (Variables.i_SlotIndex == 2)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxTwo.tga");
-	}
-
-	else if (Variables.i_SlotIndex == 3)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxThree.tga");
-	}
-
-	else if (Variables.i_SlotIndex == 4)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
-	}
-}
-
-void SPGame::ToolSelectionMouseScroll()
-{
-	if (Inventory.GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
-	{
-		modelStack.PushMatrix();
-		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
-		modelStack.PopMatrix();
-	}
-}
-
-void SPGame::Reset()
+void SPGameSceneTwo::Reset()
 {
 }
 
-void SPGame::Collision(float smallx, float largex, float smallz, float largez)
-{
-	if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 3.f)){ camera.position.z = smallz; }
-	if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 3.f)){ camera.position.z = largez; }
-	if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 3.f)){ camera.position.x = smallx; }
-	if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 3.f)){ camera.position.x = largex; }
-}
-
-void SPGame::CollisionCheckerSceneOne()
-{
-	Collision(-35, 35, -105, -70);
-	Collision(-100, 100, -115, -95);
-	Collision(-100, -80, -115, 115);
-	Collision(80, 100, -115, 115);
-	Collision(-100, 100, 93, 100);
-}
-
-void SPGame::RenderFloorSceneOne()
-{
-	for (int x = -450; x < 500; x += 100)
-	{
-		for (int z = -450; z < 500; z += 100)
-		{
-			modelStack.PushMatrix();
-			modelStack.Translate((float)x, 0, (float)z);
-			modelStack.Scale(100, 1, 100);
-			RenderMesh(meshList[GEO_PLANETFLOOR], true);
-			modelStack.PopMatrix();
-		}
-	}
-}
-
-void SPGame::RenderGhost1()
+void SPGameSceneTwo::RenderCutSceneOne()
 {
 	modelStack.PushMatrix();
-	modelStack.Translate(Ghost.MobPosX, Ghost.MobPosY, Ghost.MobPosZ);
-	RenderMesh(meshList[GEO_GHOST1], true);
+		modelStack.Translate(10, 0, 0);
+		modelStack.Rotate(anima.OpenDoorL, 0, 1, 0);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_MAINDOORLEFT], false);
 	modelStack.PopMatrix();
-}
 
-void SPGame::RenderSceneStart()
-{
-	//structure renders
 	modelStack.PushMatrix();
-		modelStack.Translate(0, 0, -90);
-		modelStack.Scale(6, 6.1f, 4);
-		RenderMesh(meshList[GEO_FACILITYOUT], true);
-	modelStack.PopMatrix();
-
-	for (float x = -75; x <= 75; x += 24.94f)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(x, 12.5f, -100);
-			modelStack.Rotate(90, 0, 1, 0);
-			modelStack.Rotate(-90, 0, 0, 1);
-			modelStack.Scale(25, 1, 25);
-			RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
+		modelStack.Translate(-10, 0, 0);
+		modelStack.Rotate(anima.OpenDoorR, 0, 1, 0);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_MAINDOORRIGHT], false);
 		modelStack.PopMatrix();
-	}
-	for (float z = -90; z <= 90; z += 24.94f)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(87, 12.5f, z);
-			modelStack.Rotate(-90, 0, 0, 1);
-			modelStack.Scale(25, 1, 25);
-			RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
-		modelStack.PopMatrix();
-	}
-	for (float z = -90; z <= 90; z += 24.94f)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(-87, 12.5f, z);
-			modelStack.Rotate(180, 0, 1, 0);
-			modelStack.Rotate(-90, 0, 0, 1);
-			modelStack.Scale(25, 1, 25);
-			RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
-		modelStack.PopMatrix();
-	}
-	for (float x = -75; x <= 75; x += 24.94f)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(x, 12.5f, 97);
-			modelStack.Rotate(90, 0, 1, 0);
-			modelStack.Rotate(-90, 0, 0, 1);
-			modelStack.Scale(25, 1, 25);
-			RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
-		modelStack.PopMatrix();
-	}
-	RenderSkyBox();
-
-	//object renders
-
-
-	//Enemy renders
-	if (Ghost.Spawn)
-	{
-		RenderGhost1();
-	}
 }
 
-void SPGame::JumpToCutSceneOne()
-{
-	if (proximitycheck(-13, 13, -105, -70))
-		displayInteract = true;
-
-	else
-	{
-		displayInteract = false;
-	}
-
-	if (Application::IsKeyPressed('E'))
-	{
-		if (proximitycheck(-13, 13, -105, -70))
-		{
-			displayInteract = false;
-			Variables.i_numScene++;
-		}
-	}
-}
-//accounts for possible velocity of objects and clipping through camera.
-
-void SPGame::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 1)
-{
-	mobTimeCount += (((float)(dt)* checkRate) / lessenSpeed);
-	if (mobTimeCount >= 1)
-	{
-		Ghost.TargetDetectX = camera.position.x;
-		Ghost.TargetDetectZ = camera.position.z;
-		mobTimeCount = 0;
-	}
-}
-
-void SPGame::checkPlayerPosMisc()
-{
-	Misc.camX = camera.position.x;
-	Misc.camY = camera.position.y;
-	Misc.camZ = camera.position.z;
-}
-
-
-/*--------------------[Checks for Switches and its logics]--------------------*/
-void SPGame::PuzzleOneSwitchCheck(double dt)
-{
-	f_SwitchDebounce += (float)dt;
-	if (Application::IsKeyPressed('5') && f_SwitchDebounce > 0.5f)
-	{
-		if (Switches.b_PuzzleOneSwitchOne == false)
-			Switches.b_PuzzleOneSwitchOne = true;
-
-		else
-			Switches.b_PuzzleOneSwitchOne = false;
-
-		if (Switches.b_PuzzleOneSwitchTwo == false)
-			Switches.b_PuzzleOneSwitchTwo = true;
-
-		else
-			Switches.b_PuzzleOneSwitchTwo = false;
-
-		f_SwitchDebounce = 0.0f;
-	}
-
-	if (Application::IsKeyPressed('6') && f_SwitchDebounce > 0.5f)
-	{
-		if (Switches.b_PuzzleOneSwitchOne == false)
-			Switches.b_PuzzleOneSwitchOne = true;
-
-		else
-			Switches.b_PuzzleOneSwitchOne = false;
-
-		f_SwitchDebounce = 0.0f;
-	}
-
-	if (Application::IsKeyPressed('7') && f_SwitchDebounce > 0.5f)
-	{
-		if (Switches.b_PuzzleOneSwitchOne == false)
-			Switches.b_PuzzleOneSwitchOne = true;
-
-		else
-			Switches.b_PuzzleOneSwitchOne = false;
-
-		if (Switches.b_PuzzleOneSwitchThree == false)
-			Switches.b_PuzzleOneSwitchThree = true;
-
-		else
-			Switches.b_PuzzleOneSwitchThree = false;
-
-		f_SwitchDebounce = 0.0f;
-	}
-}
-
-bool SPGame::proximitycheck(float smallx, float largex, float smallz, float largez)
+bool SPGameSceneTwo::proximitycheck(float smallx, float largex, float smallz, float largez)
 {
 	//this function checks if the camera is close to a side of the object
 	bool result = false;
@@ -466,86 +206,14 @@ bool SPGame::proximitycheck(float smallx, float largex, float smallz, float larg
 	return result;
 }
 
-/*--------------------[Renders Ghost]--------------------*/
-void SPGame::AppearGhost(double dt)
-{
-	if (Application::IsKeyPressed('J'))
-	{
-		Ghost.Spawn = true;
-	}
-	if (Ghost.Spawn)
-	{
-		Ghost.move(dt, 50);
-	}
-}
-
-/*--------------------[Mouse Click Functions]--------------------*/
-
-
-void SPGame::ToolSwingingActionSceneOne(double dt)
-{
-	if (Variables.b_LockSwingDebounce == true)
-	{
-		Variables.RotateX -= 180.0f * (float)dt;
-
-		if (Variables.RotateX <= -45.0f)
-		{
-			Variables.RotateX = -45.0f;
-			Variables.b_LockSwingDebounce = false;
-		}
-	}
-
-	if (Variables.b_LockSwingDebounce == false && Variables.b_LockSwing == true && Variables.RotateX <= 0.0f)
-	{
-		Variables.RotateX += 180.0f * (float)dt;
-
-		if (Variables.RotateX >= 0.0f)
-		{
-			Variables.RotateX = 0.0f;
-			Variables.b_LockSwing = false;
-		}
-	}
-}
-
-void SPGame::LeftMouseClickSceneOne()
-{
-	if (Application::IsKeyPressed(VK_LBUTTON) && Variables.b_LockSwing == false && Variables.b_LockSwingDebounce == false && PlayerStat::instance()->stamina >= 20)
-	{
-		Variables.b_LockSwing = true;
-		Variables.b_LockSwingDebounce = true;
-		PlayerStat::instance()->stamina -= 20;
-	}
-}
-
-void SPGame::Update(double dt)
+void SPGameSceneTwo::Update(double dt)
 {
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
-	FPS = 1.f / (float)dt;	
-	checkPlayerPosMisc();
-	Ghost.MobRotateY += (float)(500 * dt);
-	worldspin += (float)(dt);
-
-	/*--------------------[Switch Puzzle Logic Functions]--------------------*/
-	PuzzleOneSwitchCheck(dt);
-	Switches.SwitchPuzzleOne(Switches.b_PuzzleOneSwitchOne, Switches.b_PuzzleOneSwitchTwo, Switches.b_PuzzleOneSwitchThree);
-	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
-	
-	/*------------------------[Collisions Check for CutScene]--------------------------*/
-	CollisionCheckerSceneOne();
-	JumpToCutSceneOne();
-
-	/*------------------------[All functions of Tool UI and Mouse Scroll Conditions]--------------------------*/
-
-	ToolsUI();
-	MouseScrollToolSlot();
-	RenderToolIcon();
-	RenderToolUI();
+	FPS = 1.f / (float)dt;
+	//worldspin += (float)(dt);
 
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
-
-	LeftMouseClickSceneOne();
-	ToolSwingingActionSceneOne(dt);
 
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
@@ -556,21 +224,40 @@ void SPGame::Update(double dt)
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-	camera.Update(dt);
+	//camera.Update(dt);
 
 	anima.OBJAnimation(dt);
 	anima.Collapsing(dt);
 
-	if (anima.cameramove1 && Application::IsKeyPressed('E'))
-	{
-		viewStack.LoadIdentity();
-		viewStack.LookAt(
-			camera.position.x = 0, camera.position.y = 8, camera.position.z = 25,
-			camera.target.x = 0, camera.target.y = 8, camera.target.z = -1,
-			camera.up.x, camera.up.y, camera.up.z
-			);
+	if (proximitycheck(-13, 13, -105, -70))
+		displayInteract = true;
 
-		modelStack.LoadIdentity();	
+	else
+	{
+		displayInteract = false;
+	}
+
+	if (camera.position.x > -2 && camera.position.x < 2 && camera.position.z > 12 && camera.position.z < 21)
+		anima.OpenMainDoor(dt);
+
+	anima.cameramove1 = true;
+
+	if (camera.position.z >= 20)
+	{
+		anima.cameramove2 = true;
+	}
+	else if (camera.position.z <= 20)
+	{
+		anima.cameramove2 = false;
+	}
+	if (anima.OpenDoorL <= -35)
+	{
+		anima.cameramove3 = true;
+		if (camera.position.z <= -10)
+		{
+			anima.cameramove3 = false;
+			//JumpScene.ChangingOfScene(0);
+		}
 	}
 
 	if (anima.cameramove3 != false)
@@ -583,19 +270,19 @@ void SPGame::Update(double dt)
 		camera.position.z -= 0.1f;
 	}
 
-	if (Ghost.Spawn)
+	/*if (camera.position.z <= -1 && camera.position.x <= 1 && camera.position.x >= -1)
 	{
-		checkPlayerPos(dt, 5, 1);
-		Ghost.move(dt, 50);
+	start_Animation = true;
 	}
 
-    //scenechanger end.................
-
-	AppearGhost(dt);
-
+	if (start_Animation)
+	{
+	anima.Portraits(dt);
+	}
+	*/
 }
 
-void SPGame::RenderMesh(Mesh*mesh, bool enableLight)
+void SPGameSceneTwo::RenderMesh(Mesh*mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
 
@@ -639,7 +326,7 @@ void SPGame::RenderMesh(Mesh*mesh, bool enableLight)
 	}
 }
 
-void SPGame::RenderText(Mesh* mesh, std::string text, Color color)
+void SPGameSceneTwo::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -669,7 +356,7 @@ void SPGame::RenderText(Mesh* mesh, std::string text, Color color)
 
 }
 
-void SPGame::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
+void SPGameSceneTwo::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -715,7 +402,7 @@ void SPGame::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float
 	glEnable(GL_DEPTH_TEST);
 }
 
-void SPGame::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, int rY, int rZ, float x, float y, float z, bool LightYN)
+void SPGameSceneTwo::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, int rY, int rZ, float x, float y, float z, bool LightYN)
 {
 	Mtx44 ortho;
 	ortho.SetToOrtho(0, 80, 0, 60, -50, 50); //size of screen UI
@@ -736,7 +423,7 @@ void SPGame::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, i
 	modelStack.PopMatrix();
 }
 
-void SPGame::Render()
+void SPGameSceneTwo::Render()
 {
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -771,41 +458,11 @@ void SPGame::Render()
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
-	RenderFloorSceneOne();
-	ToolSelectionMouseScroll();
-	RenderGhost1();
-	
-	RenderSceneStart();
-
-	RenderMesh(meshList[GEO_AXES], false);
-	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
-	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 3);
-	RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 4);
-	RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
-	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
-
-	if (displayInteract)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 12);
-	}
-
-	modelStack.PushMatrix();
-	RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 1, false);
-	modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//RenderModelOnScreen(meshList[GEO_RHAND], 15, RotateX, 4.5, 0, -1, false);
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//RenderModelOnScreen(meshList[GEO_LHAND], 15, RotateX, 0.75, 0, -1, false);
-	//modelStack.PopMatrix();
+	RenderCutSceneOne();
 }
 
-void SPGame::Exit()
+void SPGameSceneTwo::Exit()
 {
-    _CrtDumpMemoryLeaks();
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);
 }
