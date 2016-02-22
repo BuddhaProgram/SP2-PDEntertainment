@@ -13,7 +13,6 @@
 #include "PlayerStat.h"
 #include "ToolSection.h"
 #include "HostileMob.h"
-#include "GlobalVariables.h"
 
 class SPGame : public Scene
 {
@@ -116,7 +115,7 @@ private:
     void RenderLevel1();
 	void RenderSkyBox();
 	void RenderFloor();
-	void RenderCutSceneOne();
+	void RenderCutScene();
 
     //map rendering
     void RenderDownWall(int xPosLarge, int xPosSmall, int zPos);//positive Z facing wall
@@ -124,21 +123,18 @@ private:
     void RenderRightWall(int zPosLarge, int zPosSmall, int xPos);// positive X facing wall
     void RenderLeftWall(int zPosLarge, int zPosSmall, int xPos);//negative X facing wall
 
-    // Mobs rendering
+    //mob renders
     void RenderGhost1();
 
-    // Render functions 
+    //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, int rY, int rZ, float x, float y, float z, bool LightYN);
-
-    // Collision Checks
+    //checks
 	void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
 	void checkPlayerPosMisc();
     void Collision(float smallx, float largex, float smallz, float largez);
 	bool proximitycheck(float smallx, float largex, float smallz, float largez);
-
-	void CollisionCheckerSceneOne();
 
 	// Switches Functions for puzzles
 	void PuzzleOneSwitchCheck(double dt);
@@ -150,20 +146,6 @@ private:
 	void ToolSelectionMouseScroll();
 	void RenderToolIcon();
 	void RenderToolUI();
-
-	// Tool Actions
-	void ToolSwingingActionSceneOne(double dt);
-
-	// All NPCs functions
-	void AppearGhost(double dt);
-
-	// Mouse Click Functions
-	void LeftMouseClickSceneOne();
-
-	// Render Flooring
-	void RenderFloorSceneOne();
-
-	void JumpToCutSceneOne();
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
@@ -184,6 +166,17 @@ private:
 	float AsteroidMoveS;
 
 	float worldspin;
+
+    //variables for scene changer
+    int numScene;
+
+    //sceneStart
+
+    //scene 1
+
+    //scene 2
+
+    //scene 3
    
 
     Vector3 start ;
@@ -194,9 +187,9 @@ private:
     HostileMob Ghost;
 	misc Misc;
 	SwitchLightPuzzle Switches;
-	GlobalVariables Variables;
 
     float FPS;
+	int SlotIndex;
 	bool displayInteract;
 	float mobTimeCount;
 };

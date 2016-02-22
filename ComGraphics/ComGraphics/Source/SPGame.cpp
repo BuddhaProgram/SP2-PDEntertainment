@@ -168,6 +168,7 @@ void SPGame::Init()
 	meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("Facility Wall Outside", Color(1, 1, 1));
 	meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
 
+    //change to correct textured quad later
 	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
 	meshList[GEO_RHAND]->textureID = LoadTGA("Image//RightHand.tga");
 	meshList[GEO_LHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//LeftHand.obj");
@@ -805,7 +806,6 @@ void SPGame::Render()
 
 void SPGame::Exit()
 {
-    _CrtDumpMemoryLeaks();
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);
 }
