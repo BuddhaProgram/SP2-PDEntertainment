@@ -152,14 +152,6 @@ void SPGame::Init()
 	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
 	meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
 
-	meshList[GEO_FACILITYFLOOR] = MeshBuilder::GenerateQuad("Facility Floor", Color(0.623f, 0.467f, 0.467f));
-	meshList[GEO_FACILITYFLOOR]->material.kAmbient.Set(0.3f, 0.3f, 0.3f);
-	meshList[GEO_FACILITYFLOOR]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
-	meshList[GEO_FACILITYFLOOR]->material.kSpecular.Set(1, 1, 1);
-
-	meshList[GEO_FACILITYWALLS] = MeshBuilder::GenerateQuad("Facility Wall", Color(1, 1, 1));
-	meshList[GEO_FACILITYWALLS]->textureID = LoadTGA("Image//InsideWALL.tga");
-
 	meshList[GEO_FACILITYCEILINGS] = MeshBuilder::GenerateQuad("Facility Ceiling", Color(1, 1, 1));
 	meshList[GEO_FACILITYCEILINGS]->textureID = LoadTGA("Image//InsideCEILING.tga");
 
@@ -374,8 +366,7 @@ void SPGame::Update(double dt)
 	Switches.SwitchPuzzleOne(Switches.b_PuzzleOneSwitchOne, Switches.b_PuzzleOneSwitchTwo, Switches.b_PuzzleOneSwitchThree);
 	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
 
-	if (numScene == 1)
-	{
+	
 		Collision(-35, 35, -105, -70);
 		Collision(-100, 100, -115, -95);
 		Collision(-100, -80, -115, 115);
@@ -389,7 +380,7 @@ void SPGame::Update(double dt)
 				numScene = 4;
 			}
 		}
-		if (proximitycheck(-13, 13, -105, -70) && numScene == 1)
+		if (proximitycheck(-13, 13, -105, -70))
 		{
 			displayInteract = true;
 		}
@@ -397,7 +388,6 @@ void SPGame::Update(double dt)
 		{
 			displayInteract = false;
 		}
-	}
 	
 	ToolsUI();
 	MouseScrollToolSlot();
@@ -440,107 +430,7 @@ void SPGame::Update(double dt)
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-	//camera.Update(dt);
-
-	anima.OBJAnimation(dt);
-	anima.Collapsing(dt);
-
-	if (numScene == 4)
-	{
-		if (camera.position.x > -2 && camera.position.x < 2 && camera.position.z > 12 && camera.position.z < 21)
-		anima.OpenMainDoor(dt);
-		anima.cameramove1 = true;
-		if (camera.position.z >= 20)
-		{
-			anima.cameramove2 = true;
-		}
-		else if (camera.position.z <= 20)
-		{
-			anima.cameramove2 = false;
-		}
-		if (anima.OpenDoorL <= - 35)
-		{
-			anima.cameramove3 = true;
-			if (camera.position.z <= -10)
-			{
-				anima.cameramove3 = false;
-				numScene = 2;
-			}
-		}
-	}
-
-	if (anima.cameramove1 && Application::IsKeyPressed('E'))
-	{
-		viewStack.LoadIdentity();
-		viewStack.LookAt(
-			camera.position.x = 0, camera.position.y = 8, camera.position.z = 25,
-			camera.target.x = 0, camera.target.y = 8, camera.target.z = -1,
-			camera.up.x, camera.up.y, camera.up.z
-			);
-
-		modelStack.LoadIdentity();
-	
-	}
-
-	if (anima.cameramove3 != false)
-	{
-		camera.position.z -= 0.2f;
-	}
-
-	if (anima.cameramove2 != false)
-	{
-		camera.position.z -= 0.1f;
-	}
-	
-	if (numScene != 4)
-	{
-		camera.Update(dt);
-	}
-
-	if (Ghost.Spawn)
-	{
-		checkPlayerPos(dt, 5, 1);
-		Ghost.move(dt, 50);
-	}
-
-
-
-    //scene changer codes..............
-    if (Application::IsKeyPressed('P'))
-    {
-        numScene =3;
-        
-    }
-    if (Application::IsKeyPressed('O'))
-    {
-        numScene =2;
-       
-    }
-    if (Application::IsKeyPressed('I'))
-    {
-        numScene = 1;
-
-    }
-	if (Application::IsKeyPressed('T')) // for me to test cutscene animation(Ken)
-	{
-		numScene = 4;
-		if (!Application::IsKeyPressed('T'))
-		{
-			anima.cameramove1 = true;
-		}
-	}
-
-    //scenechanger end.................
-
-    //ghost
-    if (Application::IsKeyPressed('J'))
-    {
-        Ghost.Spawn = true;
-    }
-    if (Ghost.Spawn)
-    {
-        Ghost.move(dt, 50);
-    }
+	camera.Update(dt);
 }
 
 void SPGame::RenderMesh(Mesh*mesh, bool enableLight)
@@ -686,68 +576,60 @@ void SPGame::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, i
 
 void SPGame::Render()
 {
-	// Render VBO here
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    // Render VBO here
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	//Set view matrix using camera settings
-	viewStack.LoadIdentity();
-	viewStack.LookAt(
-		camera.position.x, camera.position.y, camera.position.z,
-		camera.target.x, camera.target.y, camera.target.z,
-		camera.up.x, camera.up.y, camera.up.z
-		);
+    //Set view matrix using camera settings
+    viewStack.LoadIdentity();
+    viewStack.LookAt(
+        camera.position.x, camera.position.y, camera.position.z,
+        camera.target.x, camera.target.y, camera.target.z,
+        camera.up.x, camera.up.y, camera.up.z
+        );
 
-	modelStack.LoadIdentity();
+    modelStack.LoadIdentity();
 
-	// Light Source 1
-	if (light[0].type == Light::LIGHT_DIRECTIONAL)
-	{
-		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
-		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
-		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
-	}
-	else if (light[0].type == Light::LIGHT_SPOT)
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
-		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
-		glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-	}
-	else
-	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
-		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
-	}
+    // Light Source 1
+    if (light[0].type == Light::LIGHT_DIRECTIONAL)
+    {
+        Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
+        Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
+        glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
+    }
+    else if (light[0].type == Light::LIGHT_SPOT)
+    {
+        Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
+        glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
+        Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
+        glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
+    }
+    else
+    {
+        Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
+        glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
+    }
+    //basic renders
+    RenderSceneStart();
+    ToolSelectionMouseScroll();
+    RenderToolIcon();
 
-	RenderFloor();
-	ToolSelectionMouseScroll();
-	RenderToolIcon();
+    RenderMesh(meshList[GEO_AXES], false);
+    RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
+    RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
+    RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 3);
+    RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 4);
+    RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
+    RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
+    if (displayInteract)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 12);
+    }
 
-	if (numScene != 4){
-		RenderMesh(meshList[GEO_AXES], false);
-		RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
-		RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-		RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 3);
-		RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 4);
-		RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
-		RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
-		if (displayInteract)
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 12);
-		}
-
-		modelStack.PushMatrix();
-		RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 1, false);
-		modelStack.PopMatrix();
-	}
-	//modelStack.PushMatrix();
-	//RenderModelOnScreen(meshList[GEO_RHAND], 15, RotateX, 4.5, 0, -1, false);
-	//modelStack.PopMatrix();
-
-	//modelStack.PushMatrix();
-	//RenderModelOnScreen(meshList[GEO_LHAND], 15, RotateX, 0.75, 0, -1, false);
-	//modelStack.PopMatrix();
+    modelStack.PushMatrix();
+    RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 1, false);
+    modelStack.PopMatrix();
 }
+	
 
 void SPGame::Exit()
 {
