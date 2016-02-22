@@ -161,6 +161,14 @@ void SceneLevelOneA::Reset()
 {
 }
 
+void SceneLevelOneA::Collision(float smallx, float largex, float smallz, float largez)
+{
+    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 3.f)){ camera.position.z = smallz; }
+    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 3.f)){ camera.position.z = largez; }
+    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 3.f)){ camera.position.x = smallx; }
+    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 3.f)){ camera.position.x = largex; }
+}
+
 bool SceneLevelOneA::proximitycheck(float smallx, float largex, float smallz, float largez)
 {
     //this function checks if the camera is close to a side of the object
@@ -196,56 +204,21 @@ void SceneLevelOneA::Update(double dt)
     anima.Collapsing(dt);
 
     if (proximitycheck(-13, 13, -105, -70))
+    {
         displayInteract = true;
-
+    }
     else
     {
         displayInteract = false;
     }
 
-    if (camera.position.x > -2 && camera.position.x < 2 && camera.position.z > 12 && camera.position.z < 21)
-        anima.OpenMainDoor(dt);
-
-    anima.cameramove1 = true;
-
-    if (camera.position.z >= 20)
+    for (int i = 0; i < 28; i++)
     {
-        anima.cameramove2 = true;
-    }
-    else if (camera.position.z <= 20)
-    {
-        anima.cameramove2 = false;
-    }
-    if (anima.OpenDoorL <= -35)
-    {
-        anima.cameramove3 = true;
-        if (camera.position.z <= -10)
-        {
-            anima.cameramove3 = false;
-            //JumpScene.ChangingOfScene(0);
-        }
+        Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
 
-    if (anima.cameramove3 != false)
-    {
-        camera.position.z -= 0.2f;
-    }
-
-    if (anima.cameramove2 != false)
-    {
-        camera.position.z -= 0.1f;
-    }
-
-    /*if (camera.position.z <= -1 && camera.position.x <= 1 && camera.position.x >= -1)
-    {
-    start_Animation = true;
-    }
-
-    if (start_Animation)
-    {
-    anima.Portraits(dt);
-    }
-    */
+    camera.Update(dt);
+    
 }
 
 void SceneLevelOneA::RenderMesh(Mesh*mesh, bool enableLight)
@@ -423,6 +396,15 @@ void SceneLevelOneA::Render()
         Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
         glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
     }
+
+    RenderScene();
+
+    RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
+    RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
+    RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 3);
+    RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 4);
+    RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
+    RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
 }
 
 void SceneLevelOneA::Exit()
