@@ -99,7 +99,7 @@ void CutSceneOne::Init()
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
 	//Initialize camera settings
-	camera.Init(Vector3(0, 10, 0), Vector3(0, 10, -1), Vector3(0, 1, 0));
+	camera.Init(Vector3(0, 8, 25), Vector3(0, 8, -1), Vector3(0, 1, 0));
 
 	meshList[GEO_MAINDOORLEFT] = MeshBuilder::GenerateOBJ("MainDoorLeft", "OBJ//MDLeft.obj");
 	meshList[GEO_MAINDOORLEFT]->textureID = LoadTGA("Image//MDLeft.tga");
@@ -127,7 +127,7 @@ void CutSceneOne::Update(double dt)
 {
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
-	//worldspin += (float)(dt);
+
 
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
@@ -140,12 +140,12 @@ void CutSceneOne::Update(double dt)
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
+
+
 	if (camera.position.x > -2 && camera.position.x < 2 && camera.position.z > 12 && camera.position.z < 21)
 	{
 		anima.OpenMainDoor(dt);
 	}
-
-	anima.cameramove1 = true;
 
 	if (camera.position.z >= 20)
 	{
@@ -161,30 +161,21 @@ void CutSceneOne::Update(double dt)
 		if (camera.position.z <= -10)
 		{
 			anima.cameramove3 = false;
-			//JumpScene.ChangingOfScene(0);
+			//Application::SceneTwo();
 		}
 	}
-
-	if (anima.cameramove3 != false)
+	
+	if (anima.cameramove3)
 	{
 		camera.position.z -= 0.2f;
 	}
 
-	if (anima.cameramove2 != false)
+	if (anima.cameramove2)
 	{
 		camera.position.z -= 0.1f;
 	}
 
-	/*if (camera.position.z <= -1 && camera.position.x <= 1 && camera.position.x >= -1)
-	{
-	start_Animation = true;
-	}
 
-	if (start_Animation)
-	{
-	anima.Portraits(dt);
-	}
-	*/
 
 }
 
@@ -238,14 +229,14 @@ void CutSceneOne::Render()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	//Set view matrix using camera settings
-	viewStack.LoadIdentity();
-	viewStack.LookAt(
-		camera.position.x = 0, camera.position.y = 8, camera.position.z= 25,
-		camera.target.x = 0, camera.target.y = 8, camera.target.z = -1,
-		camera.up.x, camera.up.y, camera.up.z
-		);
+		viewStack.LoadIdentity();
+		viewStack.LookAt(
+			camera.position.x, camera.position.y, camera.position.z,
+			camera.target.x, camera.target.y, camera.target.z,
+			camera.up.x, camera.up.y, camera.up.z
+			);
 
-	modelStack.LoadIdentity();
+		modelStack.LoadIdentity();
 
 	// Light Source 1
 	if (light[0].type == Light::LIGHT_DIRECTIONAL)

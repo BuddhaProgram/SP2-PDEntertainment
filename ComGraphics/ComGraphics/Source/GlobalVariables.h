@@ -9,13 +9,14 @@ class GlobalVariables
 		~GlobalVariables();
 
 
-		float RotateX = 0.0f;
+		float RotateX;
+		float f_Worldspin;
+
 		bool b_LockSwing = false;
 		bool b_LockSwingDebounce = false;
 		bool start_Animation = false;
 
 		int i_SlotIndex;
-		int i_numScene;
 };
 
 #endif

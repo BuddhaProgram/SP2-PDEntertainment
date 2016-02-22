@@ -353,50 +353,13 @@ bool SceneStart::proximitycheck(float smallx, float largex, float smallz, float 
 	return result;
 }
 
-void SceneStart::Update(double dt)
+void SceneStart::MouseClickFunction(double dt)
 {
-	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
-	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
-	FPS = 1.f / (float)dt;	
-	checkPlayerPosMisc();
-	Ghost.MobRotateY += (float)(500 * dt);
-	worldspin += (float)(dt);
-
-	PuzzleOneSwitchCheck(dt);
-	Switches.SwitchPuzzleOne(Switches.b_PuzzleOneSwitchOne, Switches.b_PuzzleOneSwitchTwo, Switches.b_PuzzleOneSwitchThree);
-	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
-
-	
-		Collision(-35, 35, -105, -70);
-		Collision(-100, 100, -115, -95);
-		Collision(-100, -80, -115, 115);
-		Collision(80, 100, -115, 115);
-		Collision(-100, 100, 93, 100); // please clean up collision codes, and run func called something like col1.
-		if (Application::IsKeyPressed('E'))
-		{
-			if (proximitycheck(-13, 13, -105, -70))
-			{
-				displayInteract = false;
-                Application::FirstCutScene();
-			}
-		}
-		if (proximitycheck(-13, 13, -105, -70))
-		{
-			displayInteract = true;
-		}
-		else
-		{
-			displayInteract = false;
-		}
-	
-	ToolsUI();
-	MouseScrollToolSlot();
-
-	if (Application::IsKeyPressed(VK_LBUTTON) && b_LockSwing == false && b_LockSwingDebounce == false && PlayerStat::instance()->stamina>=20)
+	if (Application::IsKeyPressed(VK_LBUTTON) && b_LockSwing == false && b_LockSwingDebounce == false && PlayerStat::instance()->stamina >= 20)
 	{
 		b_LockSwing = true;
 		b_LockSwingDebounce = true;
-		PlayerStat::instance()->stamina-=20;
+		PlayerStat::instance()->stamina -= 20;
 	}
 
 	if (b_LockSwingDebounce == true)
@@ -420,6 +383,53 @@ void SceneStart::Update(double dt)
 			b_LockSwing = false;
 		}
 	}
+}
+
+void SceneStart::ChangeFirstCutScene()
+{
+	if (Application::IsKeyPressed('E'))
+	{
+		if (proximitycheck(-13, 13, -105, -70))
+		{
+			displayInteract = false;
+			Application::FirstCutScene();
+		}
+	}
+	if (proximitycheck(-13, 13, -105, -70))
+	{
+		displayInteract = true;
+	}
+	else
+	{
+		displayInteract = false;
+	}
+}
+
+void SceneStart::Update(double dt)
+{
+	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
+	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
+	FPS = 1.f / (float)dt;	
+	checkPlayerPosMisc();
+	Ghost.MobRotateY += (float)(500 * dt);
+	Variables.f_Worldspin += (float)(dt);
+
+	PuzzleOneSwitchCheck(dt);
+	Switches.SwitchPuzzleOne(Switches.b_PuzzleOneSwitchOne, Switches.b_PuzzleOneSwitchTwo, Switches.b_PuzzleOneSwitchThree);
+	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
+
+	
+	Collision(-35, 35, -105, -70);
+	Collision(-100, 100, -115, -95);
+	Collision(-100, -80, -115, 115);
+	Collision(80, 100, -115, 115);
+	Collision(-100, 100, 93, 100);
+	
+	ChangeFirstCutScene();
+
+	ToolsUI();
+	MouseScrollToolSlot();
+	MouseClickFunction(dt);
 
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
