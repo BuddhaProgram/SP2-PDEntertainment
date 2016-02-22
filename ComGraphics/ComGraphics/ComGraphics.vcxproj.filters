@@ -67,6 +67,9 @@
     <ClCompile Include="Source\SPGameSceneTwo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\SceneLevel1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -136,6 +139,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\SPGameSceneTwo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SceneLevel1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

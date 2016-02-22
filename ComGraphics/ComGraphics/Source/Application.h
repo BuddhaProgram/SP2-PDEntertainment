@@ -5,7 +5,10 @@
 #include "GlobalVariables.h"
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-
+//memory leak checks
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
 class Application
 {
 public:

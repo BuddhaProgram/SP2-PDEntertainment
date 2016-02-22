@@ -14,6 +14,7 @@
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\GlobalVariables.cpp" />
     <ClCompile Include="source\MapRendering.cpp" />
+    <ClCompile Include="source\SceneLevel1.cpp" />
     <ClCompile Include="Source\SPGame.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera3.cpp" />
@@ -37,6 +38,7 @@
   <ItemGroup>
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\GlobalVariables.h" />
+    <ClInclude Include="source\SceneLevel1.h" />
     <ClInclude Include="Source\SPGame.h" />
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\Camera3.h" />

@@ -169,15 +169,6 @@ private:
     //variables for scene changer
     int numScene;
 
-    //sceneStart
-
-    //scene 1
-
-    //scene 2
-
-    //scene 3
-   
-
     Vector3 start ;
     Vector3 end;
 

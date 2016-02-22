@@ -10,6 +10,7 @@
 #include "LoadTGA.h"
 #include "Utility.h"
 #include <sstream>
+#include "GlobalVariables.h"
 
 
 SPGameSceneTwo::SPGameSceneTwo()
@@ -172,7 +173,6 @@ void SPGameSceneTwo::Init()
 
 static float LSPEED = 10.f;
 
-bool start_Animation = false;
 
 void SPGameSceneTwo::Reset()
 {

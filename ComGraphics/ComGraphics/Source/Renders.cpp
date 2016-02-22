@@ -67,8 +67,6 @@ void SPGame::RenderSkyBox()
 // Rendering of Floor for all Scenes.
 void SPGame::RenderFloor()
 {
-	if (SPGame::numScene == 1 || SPGame::numScene == 3)
-	{		
 		for (int x = -450; x < 500; x += 100)
 		{
 			for (int z = -450; z < 500; z += 100)
@@ -82,19 +80,14 @@ void SPGame::RenderFloor()
 		}	
 	}
 
-	if (SPGame::numScene == 2)
-	{
-		modelStack.PushMatrix();
-			modelStack.Translate(camera.position.x, 0, camera.position.z);
-			modelStack.Scale(300, 1, 300);
-			RenderMesh(meshList[GEO_FACILITYFLOOR], true);
-		modelStack.PopMatrix();
-	}
-}
-
+	
+		
+//void SPGame::
 // renders the Starting level
 void SPGame::RenderSceneStart()
 {
+    //basic renders
+    RenderFloor();
     //structure renders
     modelStack.PushMatrix();
 		modelStack.Translate(0, 0, -90);

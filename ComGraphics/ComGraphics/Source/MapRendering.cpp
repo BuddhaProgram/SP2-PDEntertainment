@@ -108,7 +108,7 @@ void SPGame::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// positive 
     int xPosActual = 0;
 
 
-    //finds the actual z coord
+    //finds the actual x coord
     if (xPos == 0)
     {
         xPosActual = 0;
@@ -157,7 +157,7 @@ void SPGame::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos)//negative X 
     int xPosActual = 0;
 
 
-    //finds the actual z coord
+    //finds the actual x coord
     if (xPos == 0)
     {
         xPosActual = 0;
