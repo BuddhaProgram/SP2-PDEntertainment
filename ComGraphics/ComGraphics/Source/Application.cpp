@@ -6,7 +6,7 @@
 
 #include "SceneStart.h"
 #include "SceneEnd.h"
-#include "SPGameCutScene1.h"
+#include "CutSceneOne.h"
 
 
 
@@ -118,7 +118,7 @@ void Application::Run()
 	sceneOne->Init();
 	sceneTwo = new SceneEnd();
 	sceneTwo->Init();
-	CutScene1 = new SPGameCutScene1();
+	CutScene1 = new CutSceneOne();
 	CutScene1->Init();
 	//Main Loop
 	//SceneStart *scene = new SceneStart();

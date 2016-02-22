@@ -33,6 +33,7 @@
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\Misc.cpp" />
     <ClCompile Include="Source\SceneEnd.cpp" />
+    <ClCompile Include="Source\CutSceneOne.cpp" />
     <ClCompile Include="Source\SwitchLightPuzzle.cpp" />
     <ClCompile Include="Source\ToolSection.cpp" />
     <ClCompile Include="Source\ToolUI.cpp" />
@@ -58,6 +59,7 @@
     <ClInclude Include="Source\shader.hpp" />
     <ClInclude Include="Source\Misc.h" />
     <ClInclude Include="Source\SceneEnd.h" />
+    <ClInclude Include="Source\CutSceneOne.h" />
     <ClInclude Include="Source\SwitchLightPuzzle.h" />
     <ClInclude Include="Source\ToolSection.h" />
     <ClInclude Include="Source\ToolUI.h" />

@@ -1,8 +1,8 @@
-#include "SceneStart.h"
+#include "SceneLevelOne.h"
 
 
 //these codes use x and z coordinates according to DRAWN COORDINATES and not actual z,x coords
-void SceneStart::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//positive Z facing wall
+void SceneLevelOne::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//positive Z facing wall
 {
     zPos = -zPos;
     int xMaxCount = xPosLarge - xPosSmall;
@@ -51,7 +51,7 @@ void SceneStart::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//positiv
         modelStack.PopMatrix();
     }
 }
-void SceneStart::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negative Z facing Wall
+void SceneLevelOne::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negative Z facing Wall
 {
     zPos = -zPos;
     int xMaxCount = xPosLarge - xPosSmall;
@@ -100,7 +100,7 @@ void SceneStart::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negative 
     }
  
 }
-void SceneStart::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// positive X facing wall
+void SceneLevelOne::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// positive X facing wall
 {
     
     int zMaxCount = zPosLarge - zPosSmall;
@@ -150,7 +150,7 @@ void SceneStart::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// posit
     }
    
 }
-void SceneStart::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos)//negative X facing wall
+void SceneLevelOne::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos)//negative X facing wall
 {
     int zMaxCount = zPosLarge - zPosSmall;
     int zPosActual;
