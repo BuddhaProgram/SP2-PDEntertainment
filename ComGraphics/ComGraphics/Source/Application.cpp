@@ -117,12 +117,12 @@ void Application::Run()
 {
 	Start = new SceneStart();
 	Start->Init();
+    CutScene1 = new CutSceneOne();
+    CutScene1->Init();
 	LevelOneA = new SceneLevelOneA();
 	LevelOneA->Init();
     LevelOneB = new SceneLevelOneB();
     LevelOneB->Init();
-	CutScene1 = new CutSceneOne();
-	CutScene1->Init();
 	//Main Loop
 	//SceneStart *scene = new SceneStart();
 	//scene->Init();
