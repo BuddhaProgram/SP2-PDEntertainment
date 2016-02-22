@@ -14,10 +14,12 @@
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="source\CutSceneOneRenders.cpp" />
     <ClCompile Include="Source\GlobalVariables.cpp" />
-    <ClCompile Include="source\LevelOneRenders.cpp" />
-    <ClCompile Include="source\MapRendering.cpp" />
+    <ClCompile Include="source\MapRender.cpp" />
+    <ClCompile Include="source\SceneLevelOneARenders.cpp" />
     <ClCompile Include="source\SceneEndRenders.cpp" />
-    <ClCompile Include="source\SceneLevelOne.cpp" />
+    <ClCompile Include="source\SceneLevelOneA.cpp" />
+    <ClCompile Include="source\SceneLevelOneB.cpp" />
+    <ClCompile Include="Source\SceneLevelOneBRenders.cpp" />
     <ClCompile Include="Source\SceneStart.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera3.cpp" />
@@ -42,7 +44,8 @@
   <ItemGroup>
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\GlobalVariables.h" />
-    <ClInclude Include="source\SceneLevelOne.h" />
+    <ClInclude Include="source\SceneLevelOneA.h" />
+    <ClInclude Include="source\SceneLevelOneB.h" />
     <ClInclude Include="Source\SceneStart.h" />
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\Camera3.h" />

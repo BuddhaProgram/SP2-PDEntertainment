@@ -377,7 +377,7 @@ void SceneStart::Update(double dt)
 			if (proximitycheck(-13, 13, -105, -70))
 			{
 				displayInteract = false;
-				numScene = 4;
+                Application::FirstCutScene();
 			}
 		}
 		if (proximitycheck(-13, 13, -105, -70))

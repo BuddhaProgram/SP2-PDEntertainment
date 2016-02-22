@@ -10,7 +10,6 @@
 
 
 
-
 const unsigned char FPS = 60; // FPS of this game
 const unsigned int frameTime = 1000 / FPS; // time for each frame
 GLFWwindow* m_window;
@@ -45,8 +44,10 @@ Application::~Application()
 }
 
 Scene* Application::scene;
-Scene* Application::sceneOne;
-Scene* Application::sceneTwo;
+Scene* Application::Start;
+Scene* Application::End;
+Scene* Application::LevelOneA;
+Scene* Application::LevelOneB;
 Scene* Application::CutScene1;
 
 void resize_callback(GLFWwindow* window, int w, int h)
@@ -114,16 +115,18 @@ void Application::Init()
 
 void Application::Run()
 {
-	sceneOne = new SceneStart();
-	sceneOne->Init();
-	sceneTwo = new SceneEnd();
-	sceneTwo->Init();
+	Start = new SceneStart();
+	Start->Init();
+	LevelOneA = new SceneLevelOneA();
+	LevelOneA->Init();
+    LevelOneB = new SceneLevelOneB();
+    LevelOneB->Init();
 	CutScene1 = new CutSceneOne();
 	CutScene1->Init();
 	//Main Loop
 	//SceneStart *scene = new SceneStart();
 	//scene->Init();
-	scene = sceneOne;
+	scene = Start;
 	
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
@@ -146,9 +149,11 @@ void Application::Run()
 
 	} //Check if the ESC key had been pressed or if the window had been closed
 	scene->Exit();
-	delete sceneOne;
-	delete sceneTwo;
+	delete Start;
+	delete End;
 	delete CutScene1;
+    delete LevelOneA;
+    delete LevelOneB;
 }
 
 void Application::Exit()
@@ -159,17 +164,26 @@ void Application::Exit()
 	glfwTerminate();
 }
 
-void Application::SceneOne()
+void Application::StartingScene()
 {
-	scene = sceneOne;
-}
-
-void Application::SceneTwo()
-{
-	scene = sceneTwo;
+    scene = Start;
 }
 
 void Application::FirstCutScene()
 {
-	scene = CutScene1;
+    scene = CutScene1;
+}
+void Application::SceneLevel1A()
+{
+	scene = LevelOneA;
+}
+
+void Application::SceneLevel1B()
+{
+	scene = LevelOneB;
+}
+
+void Application::EndingScene()
+{
+    scene = End;
 }

@@ -1,6 +1,8 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
+#include "SceneLevelOneA.h"
+#include "SceneLevelOneB.h"
 #include "timer.h"
 #include "Scene.h"
 #include "GlobalVariables.h"
@@ -21,13 +23,17 @@ public:
 	static bool IsKeyPressed(unsigned short key);
 	static int mouse_scroll;
 
-	static void SceneOne();
-	static void SceneTwo();
+	static void SceneLevel1A();
+	static void SceneLevel1B();
 	static void FirstCutScene();
+    static void StartingScene();
+    static void EndingScene();
 
-	static Scene *scene;
-	static Scene *sceneOne;
-	static Scene *sceneTwo;
+    static Scene *scene;
+	static Scene *Start;
+	static Scene *LevelOneA;
+    static Scene *LevelOneB;
+	static Scene *End;
 	static Scene *CutScene1;
 private:
 

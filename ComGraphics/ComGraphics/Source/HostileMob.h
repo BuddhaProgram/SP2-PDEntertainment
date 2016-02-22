@@ -3,6 +3,7 @@
 
 #include "Vector3.h"
 
+
 class HostileMob
 {
 public:
@@ -14,8 +15,9 @@ public:
     void move(double dt, int movespeed);
 
     //global variables for use in entire project
-    bool Spawn;
+    
     float MobRotateY;
+    bool Spawn;
 
     //ghost chase variables
     float MobPosX;
