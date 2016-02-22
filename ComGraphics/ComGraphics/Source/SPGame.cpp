@@ -366,18 +366,14 @@ void SPGame::Update(double dt)
 	Switches.SwitchPuzzleOne(Switches.b_PuzzleOneSwitchOne, Switches.b_PuzzleOneSwitchTwo, Switches.b_PuzzleOneSwitchThree);
 	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
 
-	
-		Collision(-35, 35, -105, -70);
-		Collision(-100, 100, -115, -95);
-		Collision(-100, -80, -115, 115);
-		Collision(80, 100, -115, 115);
-		Collision(-100, 100, 93, 100); // please clean up collision codes, and run func called something like col1.
-		if (Application::IsKeyPressed('E'))
+	Application testrun;
+
+	if (Application::IsKeyPressed('E'))
 		{
 			if (proximitycheck(-13, 13, -105, -70))
 			{
 				displayInteract = false;
-				numScene = 4;
+				testrun.FirstCutScene();
 			}
 		}
 		if (proximitycheck(-13, 13, -105, -70))

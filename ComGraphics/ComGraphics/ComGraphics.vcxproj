@@ -29,6 +29,7 @@
     <ClCompile Include="source\Renders.cpp" />
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\Misc.cpp" />
+    <ClCompile Include="Source\SPGameCutScene1.cpp" />
     <ClCompile Include="Source\SPGameSceneTwo.cpp" />
     <ClCompile Include="Source\SwitchLightPuzzle.cpp" />
     <ClCompile Include="Source\ToolSection.cpp" />
@@ -54,6 +55,7 @@
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\shader.hpp" />
     <ClInclude Include="Source\Misc.h" />
+    <ClInclude Include="Source\SPGameCutScene1.h" />
     <ClInclude Include="Source\SPGameSceneTwo.h" />
     <ClInclude Include="Source\SwitchLightPuzzle.h" />
     <ClInclude Include="Source\ToolSection.h" />

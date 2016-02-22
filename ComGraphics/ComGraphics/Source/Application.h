@@ -23,10 +23,12 @@ public:
 
 	static void SceneOne();
 	static void SceneTwo();
+	static void FirstCutScene();
 
 	static Scene *scene;
 	static Scene *sceneOne;
 	static Scene *sceneTwo;
+	static Scene *CutScene1;
 private:
 
 	//Declare a window object
