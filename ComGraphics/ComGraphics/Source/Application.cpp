@@ -6,8 +6,6 @@
 
 #include "SceneStart.h"
 #include "SceneEnd.h"
-#include "SPGame.h"
-#include "SPGameSceneTwo.h"
 #include "SPGameCutScene1.h"
 
 

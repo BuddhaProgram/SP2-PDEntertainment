@@ -1,4 +1,4 @@
-#include "SPGameCutScene1.h"
+#include "CutSceneOne.h"
 #include "GL\glew.h"
 
 #include "shader.hpp"
@@ -13,15 +13,15 @@
 #include "GlobalVariables.h"
 
 
-SPGameCutScene1::SPGameCutScene1()
+CutSceneOne::CutSceneOne()
 {
 }
 
-SPGameCutScene1::~SPGameCutScene1()
+CutSceneOne::~CutSceneOne()
 {
 }
 
-void SPGameCutScene1::Init()
+void CutSceneOne::Init()
 {
 	// Init VBO here
 
@@ -117,11 +117,11 @@ void SPGameCutScene1::Init()
 static float LSPEED = 10.f;
 
 
-void SPGameCutScene1::Reset()
+void CutSceneOne::Reset()
 {
 }
 
-void SPGameCutScene1::RenderCutSceneOne()
+void CutSceneOne::RenderCutSceneOne()
 {
 	modelStack.PushMatrix();
 	modelStack.Translate(10, 0, 0);
@@ -138,7 +138,7 @@ void SPGameCutScene1::RenderCutSceneOne()
 	modelStack.PopMatrix();
 }
 
-void SPGameCutScene1::Update(double dt)
+void CutSceneOne::Update(double dt)
 {
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
@@ -203,7 +203,7 @@ void SPGameCutScene1::Update(double dt)
 
 }
 
-void SPGameCutScene1::RenderMesh(Mesh*mesh, bool enableLight)
+void CutSceneOne::RenderMesh(Mesh*mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
 
@@ -247,7 +247,7 @@ void SPGameCutScene1::RenderMesh(Mesh*mesh, bool enableLight)
 	}
 }
 
-void SPGameCutScene1::Render()
+void CutSceneOne::Render()
 {
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -285,7 +285,7 @@ void SPGameCutScene1::Render()
 	RenderCutSceneOne();
 }
 
-void SPGameCutScene1::Exit()
+void CutSceneOne::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);

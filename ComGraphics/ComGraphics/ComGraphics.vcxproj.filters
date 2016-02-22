@@ -49,9 +49,6 @@
     <ClCompile Include="Source\Misc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\SPGame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\SwitchLightPuzzle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -59,9 +56,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\GlobalVariables.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="source\SceneLevel1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\LevelOneRenders.cpp">
@@ -79,7 +73,10 @@
     <ClCompile Include="Source\SceneEnd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\SPGameCutScene1.cpp">
+    <ClCompile Include="source\SceneLevelOne.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneStart.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -154,9 +151,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\SceneStart.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\SPGameCutScene1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

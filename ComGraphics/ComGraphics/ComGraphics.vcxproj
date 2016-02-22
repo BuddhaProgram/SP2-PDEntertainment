@@ -17,8 +17,8 @@
     <ClCompile Include="source\LevelOneRenders.cpp" />
     <ClCompile Include="source\MapRendering.cpp" />
     <ClCompile Include="source\SceneEndRenders.cpp" />
-    <ClCompile Include="source\SceneLevel1.cpp" />
-    <ClCompile Include="Source\SPGame.cpp" />
+    <ClCompile Include="source\SceneLevelOne.cpp" />
+    <ClCompile Include="Source\SceneStart.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera3.cpp" />
     <ClCompile Include="Source\LoadOBJ.cpp" />
