@@ -1,5 +1,5 @@
-#ifndef SCENELEVELONE_H
-#define SCENELEVELONE_H
+#ifndef SCENELEVELONEA_H
+#define SCENELEVELONEA_H
 
 #include "Scene.h"
 #include "Camera3.h"
@@ -10,7 +10,7 @@
 #include "OBJAnimation.h"
 #include "GlobalVariables.h"
 
-class SceneLevelOne : public Scene
+class SceneLevelOneA : public Scene
 {
     enum GEOMETRY_TYPE
     {
@@ -84,8 +84,8 @@ class SceneLevelOne : public Scene
         U_TOTAL,
     };
 public:
-    SceneLevelOne();
-    ~SceneLevelOne();
+    SceneLevelOneA();
+    ~SceneLevelOneA();
 
     virtual void Init();
     virtual void Update(double dt);

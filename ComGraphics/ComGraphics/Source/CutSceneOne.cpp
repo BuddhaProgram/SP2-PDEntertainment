@@ -110,8 +110,7 @@ void CutSceneOne::Init()
 	projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
-	//scene changer inits.............
-	//scene changer init end.............
+   
 }
 
 static float LSPEED = 10.f;
@@ -161,7 +160,7 @@ void CutSceneOne::Update(double dt)
 		if (camera.position.z <= -10)
 		{
 			anima.cameramove3 = false;
-			//Application::SceneTwo();
+            Application::SceneLevel1A();
 		}
 	}
 	

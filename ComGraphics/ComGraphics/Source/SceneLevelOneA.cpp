@@ -1,4 +1,4 @@
-#include "SceneLevelOne.h"
+#include "SceneLevelOneA.h"
 #include "GL\glew.h"
 
 #include "shader.hpp"
@@ -13,15 +13,15 @@
 #include "GlobalVariables.h"
 
 
-SceneLevelOne::SceneLevelOne()
+SceneLevelOneA::SceneLevelOneA()
 {
 }
 
-SceneLevelOne::~SceneLevelOne()
+SceneLevelOneA::~SceneLevelOneA()
 {
 }
 
-void SceneLevelOne::Init()
+void SceneLevelOneA::Init()
 {
     // Init VBO here
 
@@ -99,7 +99,7 @@ void SceneLevelOne::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    camera.Init(Vector3(0, 10, 0), Vector3(0, 10, -1), Vector3(0, 1, 0));
+    camera.Init(Vector3(0, 10, 424), Vector3(0, 10, 0), Vector3(0, 1, 0));
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -157,11 +157,11 @@ void SceneLevelOne::Init()
 static float LSPEED = 10.f;
 
 
-void SceneLevelOne::Reset()
+void SceneLevelOneA::Reset()
 {
 }
 
-bool SceneLevelOne::proximitycheck(float smallx, float largex, float smallz, float largez)
+bool SceneLevelOneA::proximitycheck(float smallx, float largex, float smallz, float largez)
 {
     //this function checks if the camera is close to a side of the object
     bool result = false;
@@ -172,7 +172,7 @@ bool SceneLevelOne::proximitycheck(float smallx, float largex, float smallz, flo
     return result;
 }
 
-void SceneLevelOne::Update(double dt)
+void SceneLevelOneA::Update(double dt)
 {
     light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
     light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
@@ -248,7 +248,7 @@ void SceneLevelOne::Update(double dt)
     */
 }
 
-void SceneLevelOne::RenderMesh(Mesh*mesh, bool enableLight)
+void SceneLevelOneA::RenderMesh(Mesh*mesh, bool enableLight)
 {
     Mtx44 MVP, modelView, modelView_inverse_transpose;
 
@@ -292,7 +292,7 @@ void SceneLevelOne::RenderMesh(Mesh*mesh, bool enableLight)
     }
 }
 
-void SceneLevelOne::RenderText(Mesh* mesh, std::string text, Color color)
+void SceneLevelOneA::RenderText(Mesh* mesh, std::string text, Color color)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
         return;
@@ -322,7 +322,7 @@ void SceneLevelOne::RenderText(Mesh* mesh, std::string text, Color color)
 
 }
 
-void SceneLevelOne::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
+void SceneLevelOneA::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
         return;
@@ -368,7 +368,7 @@ void SceneLevelOne::RenderTextOnScreen(Mesh* mesh, std::string text, Color color
     glEnable(GL_DEPTH_TEST);
 }
 
-void SceneLevelOne::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, int rY, int rZ, float x, float y, float z, bool LightYN)
+void SceneLevelOneA::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, int rY, int rZ, float x, float y, float z, bool LightYN)
 {
     Mtx44 ortho;
     ortho.SetToOrtho(0, 80, 0, 60, -50, 50); //size of screen UI
@@ -389,7 +389,7 @@ void SceneLevelOne::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, in
     modelStack.PopMatrix();
 }
 
-void SceneLevelOne::Render()
+void SceneLevelOneA::Render()
 {
     // Render VBO here
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -425,7 +425,7 @@ void SceneLevelOne::Render()
     }
 }
 
-void SceneLevelOne::Exit()
+void SceneLevelOneA::Exit()
 {
     glDeleteVertexArrays(1, &m_vertexArrayID);
     glDeleteProgram(m_programID);
