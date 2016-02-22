@@ -121,23 +121,6 @@ void SPGameCutScene1::Reset()
 {
 }
 
-void SPGameCutScene1::RenderCutSceneOne()
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(10, 0, 0);
-	modelStack.Rotate(anima.OpenDoorL, 0, 1, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_MAINDOORLEFT], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(-10, 0, 0);
-	modelStack.Rotate(anima.OpenDoorR, 0, 1, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_MAINDOORRIGHT], false);
-	modelStack.PopMatrix();
-}
-
 void SPGameCutScene1::Update(double dt)
 {
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
@@ -246,6 +229,24 @@ void SPGameCutScene1::RenderMesh(Mesh*mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
+
+void SPGameCutScene1::RenderCutSceneOne()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(10, 0, 0);
+	modelStack.Rotate(anima.OpenDoorL, 0, 1, 0);
+	modelStack.Scale(5, 5, 5);
+	RenderMesh(meshList[GEO_MAINDOORLEFT], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(-10, 0, 0);
+	modelStack.Rotate(anima.OpenDoorR, 0, 1, 0);
+	modelStack.Scale(5, 5, 5);
+	RenderMesh(meshList[GEO_MAINDOORRIGHT], false);
+	modelStack.PopMatrix();
+}
+
 
 void SPGameCutScene1::Render()
 {

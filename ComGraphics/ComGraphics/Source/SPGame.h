@@ -115,7 +115,7 @@ private:
     void RenderLevel1();
 	void RenderSkyBox();
 	void RenderFloor();
-	void RenderCutScene();
+	
 
     //map rendering
     void RenderDownWall(int xPosLarge, int xPosSmall, int zPos);//positive Z facing wall

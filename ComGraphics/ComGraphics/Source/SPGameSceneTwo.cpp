@@ -202,9 +202,6 @@ void SPGameSceneTwo::Update(double dt)
 
 	//camera.Update(dt);
 
-	anima.OBJAnimation(dt);
-	anima.Collapsing(dt);
-
 	if (proximitycheck(-13, 13, -105, -70))
 		displayInteract = true;
 
