@@ -135,13 +135,6 @@ void SPGameSceneTwo::Init()
 	meshList[GEO_ASTEROID2] = MeshBuilder::GenerateOBJ("Asteroid2", "OBJ//Asteroid2.obj");
 	meshList[GEO_ASTEROID2]->textureID = LoadTGA("Image//Asteroid1.tga");
 
-	meshList[GEO_MAINDOORLEFT] = MeshBuilder::GenerateOBJ("MainDoorLeft", "OBJ//MDLeft.obj");
-	meshList[GEO_MAINDOORLEFT]->textureID = LoadTGA("Image//MDLeft.tga");
-	meshList[GEO_MAINDOORRIGHT] = MeshBuilder::GenerateOBJ("MainDoorRight", "OBJ//MDRight.obj");
-	meshList[GEO_MAINDOORRIGHT]->textureID = LoadTGA("Image//MDRight.tga");
-	meshList[GEO_RUBBLE] = MeshBuilder::GenerateOBJ("Rubble", "OBJ//Rubble.obj");
-	meshList[GEO_PORTRAIT] = MeshBuilder::GenerateOBJ("Portrait", "OBJ//Portrait.obj");
-	meshList[GEO_PORTRAIT]->textureID = LoadTGA("Image//Scream.tga");
 
 	// Tools Interface and It's Icons
 	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
