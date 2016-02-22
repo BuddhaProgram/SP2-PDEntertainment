@@ -192,7 +192,7 @@ void SPGameSceneTwo::RenderCutSceneOne()
 		modelStack.Rotate(anima.OpenDoorR, 0, 1, 0);
 		modelStack.Scale(5, 5, 5);
 		RenderMesh(meshList[GEO_MAINDOORRIGHT], false);
-		modelStack.PopMatrix();
+	modelStack.PopMatrix();
 }
 
 bool SPGameSceneTwo::proximitycheck(float smallx, float largex, float smallz, float largez)

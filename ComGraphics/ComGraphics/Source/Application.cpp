@@ -42,6 +42,10 @@ Application::~Application()
 {
 }
 
+Scene* Application::scene;
+Scene* Application::sceneOne;
+Scene* Application::sceneTwo;
+
 void resize_callback(GLFWwindow* window, int w, int h)
 {
 	glViewport(0, 0, w, h); //update opengl the new window size
@@ -107,62 +111,38 @@ void Application::Init()
 
 void Application::Run()
 {
+	sceneOne = new SPGame();
+	sceneOne->Init();
+	sceneTwo = new SPGameSceneTwo();
+	sceneTwo->Init();
 	//Main Loop
-	if (Variables.i_numScene == 0)
-	{
-		SPGame *scene = new SPGame();
-		scene->Init();
-
-		m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
-		while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))
-		{
-			scene->Update(m_timer.getElapsedTime());
-			scene->Render();
-			//Swap buffers
-			glfwSwapBuffers(m_window);
-
-			if (Application::IsKeyPressed(WM_MOUSEWHEEL))
-				glfwSetScrollCallback(m_window, scroll_callback);
-
-			else
-				Application::mouse_scroll = 0;
-
-			//Get and organize events, like keyboard and mouse input, window resizing, etc...
-			glfwPollEvents();
-			m_timer.waitUntil(frameTime);       // Frame rate limiter. Limits each frame to a specified time in ms.   
-
-		} //Check if the ESC key had been pressed or if the window had been closed
-		scene->Exit();
-		delete scene;
-	}
+	//SPGame *scene = new SPGame();
+	//scene->Init();
+	scene = sceneOne;
 	
-	else if (Variables.i_numScene == 1)
+
+	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
+	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))
 	{
-		SPGameSceneTwo *scene = new SPGameSceneTwo();
-		scene->Init();
+		scene->Update(m_timer.getElapsedTime());
+		scene->Render();
+		//Swap buffers
+		glfwSwapBuffers(m_window);
 
-		m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
-		while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))
-		{
-			scene->Update(m_timer.getElapsedTime());
-			scene->Render();
-			//Swap buffers
-			glfwSwapBuffers(m_window);
+		if (Application::IsKeyPressed(WM_MOUSEWHEEL))
+			glfwSetScrollCallback(m_window, scroll_callback);
 
-			if (Application::IsKeyPressed(WM_MOUSEWHEEL))
-				glfwSetScrollCallback(m_window, scroll_callback);
+		else
+			Application::mouse_scroll = 0;
 
-			else
-				Application::mouse_scroll = 0;
+		//Get and organize events, like keyboard and mouse input, window resizing, etc...
+		glfwPollEvents();
+		m_timer.waitUntil(frameTime);       // Frame rate limiter. Limits each frame to a specified time in ms.   
 
-			//Get and organize events, like keyboard and mouse input, window resizing, etc...
-			glfwPollEvents();
-			m_timer.waitUntil(frameTime);       // Frame rate limiter. Limits each frame to a specified time in ms.   
-
-		} //Check if the ESC key had been pressed or if the window had been closed
-		scene->Exit();
-		delete scene;
-	}
+	} //Check if the ESC key had been pressed or if the window had been closed
+	scene->Exit();
+	delete sceneOne;
+	delete sceneTwo;
 }
 
 void Application::Exit()
@@ -171,4 +151,14 @@ void Application::Exit()
 	glfwDestroyWindow(m_window);
 	//Finalize and clean up GLFW
 	glfwTerminate();
+}
+
+void Application::SceneOne()
+{
+	scene = sceneOne;
+}
+
+void Application::SceneTwo()
+{
+	scene = sceneTwo;
 }

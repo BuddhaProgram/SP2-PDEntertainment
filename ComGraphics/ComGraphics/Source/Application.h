@@ -2,6 +2,7 @@
 #define APPLICATION_H
 
 #include "timer.h"
+#include "Scene.h"
 #include "GlobalVariables.h"
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -16,6 +17,13 @@ public:
 	void Exit();
 	static bool IsKeyPressed(unsigned short key);
 	static int mouse_scroll;
+
+	static void SceneOne();
+	static void SceneTwo();
+
+	static Scene *scene;
+	static Scene *sceneOne;
+	static Scene *sceneTwo;
 private:
 
 	//Declare a window object

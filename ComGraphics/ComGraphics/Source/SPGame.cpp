@@ -382,6 +382,7 @@ void SPGame::JumpToCutSceneOne()
 		{
 			displayInteract = false;
 			Variables.i_numScene++;
+			Application::SceneTwo();
 		}
 	}
 }
