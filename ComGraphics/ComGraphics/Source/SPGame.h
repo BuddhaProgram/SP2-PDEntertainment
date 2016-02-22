@@ -13,7 +13,6 @@
 #include "PlayerStat.h"
 #include "ToolSection.h"
 #include "HostileMob.h"
-#include "GlobalVariables.h"
 
 class SPGame : public Scene
 {
@@ -194,7 +193,6 @@ private:
     HostileMob Ghost;
 	misc Misc;
 	SwitchLightPuzzle Switches;
-	GlobalVariables Variables;
 
     float FPS;
 	bool displayInteract;

@@ -67,29 +67,23 @@ void SPGame::RenderSkyBox()
 // Rendering of Floor for all Scenes.
 void SPGame::RenderFloor()
 {
-	if (SPGame::numScene == 1 || SPGame::numScene == 3)
-	{		
-		for (int x = -450; x < 500; x += 100)
-		{
-			for (int z = -450; z < 500; z += 100)
-			{
-				modelStack.PushMatrix();
-					modelStack.Translate((float)x, 0, (float)z);
-					modelStack.Scale(100, 1, 100);
-					RenderMesh(meshList[GEO_PLANETFLOOR], true);
-				modelStack.PopMatrix();
-			}
-		}	
-	}
-
-	if (SPGame::numScene == 2)
+	for (int x = -450; x < 500; x += 100)
 	{
-		modelStack.PushMatrix();
-			modelStack.Translate(camera.position.x, 0, camera.position.z);
-			modelStack.Scale(300, 1, 300);
-			RenderMesh(meshList[GEO_FACILITYFLOOR], true);
-		modelStack.PopMatrix();
-	}
+		for (int z = -450; z < 500; z += 100)
+		{
+			modelStack.PushMatrix();
+				modelStack.Translate((float)x, 0, (float)z);
+				modelStack.Scale(100, 1, 100);
+				RenderMesh(meshList[GEO_PLANETFLOOR], true);
+			modelStack.PopMatrix();
+		}
+	}	
+
+	modelStack.PushMatrix();
+		modelStack.Translate(camera.position.x, 0, camera.position.z);
+		modelStack.Scale(300, 1, 300);
+		RenderMesh(meshList[GEO_FACILITYFLOOR], true);
+	modelStack.PopMatrix();
 }
 
 // renders the Starting level
@@ -277,26 +271,26 @@ void SPGame::RenderLevel1()
 
 	
 
-void SPGame::RenderGhost1()
-{
-    modelStack.PushMatrix();
-		modelStack.Translate(Ghost.MobPosX, Ghost.MobPosY, Ghost.MobPosZ);
-		RenderMesh(meshList[GEO_GHOST1], true);
-    modelStack.PopMatrix();
-}
+//void SPGame::RenderGhost1()
+//{
+//    modelStack.PushMatrix();
+//		modelStack.Translate(Ghost.MobPosX, Ghost.MobPosY, Ghost.MobPosZ);
+//		RenderMesh(meshList[GEO_GHOST1], true);
+//    modelStack.PopMatrix();
+//}
 
-void SPGame::RenderCutScene()
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(10, 0, 0);
-	modelStack.Rotate(anima.OpenDoorL, 0, 1, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_MAINDOORLEFT], false);
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Translate(-10, 0, 0);
-	modelStack.Rotate(anima.OpenDoorR, 0, 1, 0);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_MAINDOORRIGHT], false);
-	modelStack.PopMatrix();
-}
+//void SPGame::RenderCutScene()
+//{
+//	modelStack.PushMatrix();
+//	modelStack.Translate(10, 0, 0);
+//	modelStack.Rotate(anima.OpenDoorL, 0, 1, 0);
+//	modelStack.Scale(5, 5, 5);
+//	RenderMesh(meshList[GEO_MAINDOORLEFT], false);
+//	modelStack.PopMatrix();
+//	modelStack.PushMatrix();
+//	modelStack.Translate(-10, 0, 0);
+//	modelStack.Rotate(anima.OpenDoorR, 0, 1, 0);
+//	modelStack.Scale(5, 5, 5);
+//	RenderMesh(meshList[GEO_MAINDOORRIGHT], false);
+//	modelStack.PopMatrix();
+//}

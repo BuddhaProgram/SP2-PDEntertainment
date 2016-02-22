@@ -15,7 +15,6 @@ class GlobalVariables
 		bool start_Animation = false;
 
 		int i_SlotIndex;
-		int i_numScene;
 };
 
 #endif

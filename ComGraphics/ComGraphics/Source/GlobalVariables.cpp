@@ -8,7 +8,6 @@ GlobalVariables::GlobalVariables()
 	start_Animation = false;
 
 	i_SlotIndex = 1;
-	i_numScene = 0;
 }
 
 GlobalVariables::~GlobalVariables()
