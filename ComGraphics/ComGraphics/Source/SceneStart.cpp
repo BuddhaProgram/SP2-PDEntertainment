@@ -211,6 +211,7 @@ void SceneStart::ToolsUI()
 	if (Application::IsKeyPressed('Z'))
 	{
 		Inventory.InsertToolSlot(ToolUI::Pickaxe);
+		Weapon.InsertItemStatSlot(ToolUI::Pickaxe);
 	}
 }
 
@@ -401,7 +402,8 @@ void SceneStart::Update(double dt)
 	Switches.SwitchPuzzleOne(Switches.b_PuzzleOneSwitchOne, Switches.b_PuzzleOneSwitchTwo, Switches.b_PuzzleOneSwitchThree);
 	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
 
-	
+	std::cout << Weapon.i_Attack << std::endl;
+
 	Collision(-35, 35, -105, -70);
 	Collision(-100, 100, -115, -95);
 	Collision(-100, -80, -115, 115);
