@@ -145,6 +145,10 @@ private:
 	void MouseScrollToolSlot();
 	void ToolSelectionMouseScroll();
 	void RenderToolIcon();
+	void MouseClickFunction(double dt);
+
+	// Interactions to change to FirstCutScene
+	void ChangeFirstCutScene();
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
@@ -164,7 +168,7 @@ private:
 	float AsteroidMove;
 	float AsteroidMoveS;
 
-	float worldspin;
+	
 
     //variables for scene changer
     int numScene;

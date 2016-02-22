@@ -9,7 +9,7 @@ void SceneStart::RenderSkyBox()
     //skybox..................................................................................
     modelStack.PushMatrix();//skybox start
 		modelStack.Scale(500, 500, 500);
-		modelStack.Rotate(worldspin, 0, 1, 0);
+		modelStack.Rotate(Variables.f_Worldspin, 0, 1, 0);
 
     //front
 		modelStack.PushMatrix();
