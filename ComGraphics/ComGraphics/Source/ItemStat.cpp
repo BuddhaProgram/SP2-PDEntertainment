@@ -35,5 +35,5 @@ int ItemStat::InsertItemStatSlot(ToolUI::ToolType Tool)
 		}
 	}
 
-	return i_Attack;
+	return (int)i_Attack;
 }
