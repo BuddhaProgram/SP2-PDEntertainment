@@ -145,7 +145,6 @@ private:
 	void MouseScrollToolSlot();
 	void ToolSelectionMouseScroll();
 	void RenderToolIcon();
-	void RenderToolUI();
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
