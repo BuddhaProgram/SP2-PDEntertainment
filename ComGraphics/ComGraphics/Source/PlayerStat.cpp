@@ -8,7 +8,7 @@ PlayerStat::PlayerStat()
 
 float PlayerStat::getHP()
 {
-	return hp;
+	return PlayerStat::instance()->hp;
 }
 
 float PlayerStat::getStamina()
@@ -18,7 +18,7 @@ float PlayerStat::getStamina()
 
 void PlayerStat::setHP(float HP)
 {
-	hp = HP;
+	PlayerStat::instance()->hp = HP;
 }
 
 void PlayerStat::setStamina(float Stam)
