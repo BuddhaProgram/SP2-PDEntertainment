@@ -4,9 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "SPGame.h"
-#include "SPGameSceneTwo.h"
-#include "SPGameCutScene1.h"
+#include "SceneStart.h"
+#include "SceneEnd.h"
+#include "CutSceneOne.h"
+
 
 
 
@@ -113,14 +114,14 @@ void Application::Init()
 
 void Application::Run()
 {
-	sceneOne = new SPGame();
+	sceneOne = new SceneStart();
 	sceneOne->Init();
-	sceneTwo = new SPGameSceneTwo();
+	sceneTwo = new SceneEnd();
 	sceneTwo->Init();
-	CutScene1 = new SPGameCutScene1();
+	CutScene1 = new CutSceneOne();
 	CutScene1->Init();
 	//Main Loop
-	//SPGame *scene = new SPGame();
+	//SceneStart *scene = new SceneStart();
 	//scene->Init();
 	scene = sceneOne;
 	
