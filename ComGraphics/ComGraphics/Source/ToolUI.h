@@ -3,8 +3,6 @@
 
 #include <vector>
 #include <list>
-#include "Application.h"
-#include "Mesh.h"
 
 class ToolUI
 {

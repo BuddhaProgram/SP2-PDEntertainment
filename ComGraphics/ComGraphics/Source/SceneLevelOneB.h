@@ -8,7 +8,6 @@
 #include "MatrixStack.h"
 #include "Light.h"
 #include "OBJAnimation.h"
-#include "GlobalVariables.h"
 
 class SceneLevelOneB : public Scene
 {

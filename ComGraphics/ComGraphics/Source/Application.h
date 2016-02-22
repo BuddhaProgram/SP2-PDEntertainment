@@ -6,7 +6,6 @@
 
 #include "timer.h"
 #include "Scene.h"
-#include "GlobalVariables.h"
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 //memory leak checks
@@ -40,7 +39,6 @@ private:
 
 	//Declare a window object
 	StopWatch m_timer;
-	GlobalVariables Variables;
 };
 
 #endif

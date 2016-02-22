@@ -11,7 +11,6 @@
 #include "Light.h"
 #include "OBJAnimation.h"
 #include "PlayerStat.h"
-#include "ToolSection.h"
 #include "HostileMob.h"
 
 class SceneStart : public Scene
@@ -176,8 +175,6 @@ private:
     Vector3 start ;
     Vector3 end;
 
-	ToolSection Inventory;
-	ToolUI::ToolType Tool;
     HostileMob Ghost;
 	misc Misc;
 	SwitchLightPuzzle Switches;

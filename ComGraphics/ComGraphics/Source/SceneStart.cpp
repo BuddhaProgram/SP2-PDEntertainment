@@ -174,8 +174,7 @@ void SceneStart::Init()
 	projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
-    //scene changer inits.............
-    numScene = 1;
+
     //scene changer init end.............
 
     
@@ -229,9 +228,9 @@ void SceneStart::ToolsUI()
 	if (Application::IsKeyPressed('Z'))
 	{
 		Inventory.InsertToolSlot(ToolUI::Pickaxe);
+		Weapon.InsertItemStatSlot(ToolUI::Pickaxe);
 	}
 }
-
 void SceneStart::ToolSelectionMouseScroll()
 {
 	if (Inventory.GetToolType(SlotIndex) == ToolUI::Pickaxe)
@@ -419,6 +418,7 @@ void SceneStart::Update(double dt)
 	Switches.SwitchPuzzleOne(Switches.b_PuzzleOneSwitchOne, Switches.b_PuzzleOneSwitchTwo, Switches.b_PuzzleOneSwitchThree);
 	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
 
+	std::cout << Weapon.i_Attack << std::endl;
 	
 	Collision(-35, 35, -105, -70);
 	Collision(-100, 100, -115, -95);
