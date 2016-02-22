@@ -229,7 +229,7 @@ void SceneStart::RenderToolIcon()
 {
 	if (Inventory.GetToolType(1) == ToolUI::Pickaxe)
 	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5, 90, 1, 0, 0, 6.6, 0.775, 1, false);
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
 	}
 }
 
@@ -560,7 +560,7 @@ void SceneStart::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int r
 	modelStack.LoadIdentity(); //Reset modelStack
 	modelStack.Scale(size, size, size);
 	modelStack.Translate(x, y, z);
-	modelStack.Rotate(Rotate, rX, rY, rZ);
+	modelStack.Rotate(Rotate, (float)rX, (float)rY, (float)rZ);
 
 	RenderMesh(mesh, LightYN);
 
