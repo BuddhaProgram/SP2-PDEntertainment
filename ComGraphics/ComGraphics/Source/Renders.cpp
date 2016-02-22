@@ -139,11 +139,7 @@ void SPGame::RenderSceneStart()
     //object renders
 
 
-    //Enemy renders
-    if (Ghost.Spawn)
-    {
-        RenderGhost1();
-    }
+
 }
 
 //render the exit level
