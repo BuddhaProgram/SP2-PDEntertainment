@@ -103,10 +103,10 @@ private:
     void RenderCutSceneOne();
 
     //map rendering
-    void RenderDownWall(int xPosLarge, int xPosSmall, int zPos);//positive Z facing wall
-    void RenderUpWall(int xPosLarge, int xPosSmall, int zPos);//negative Z facing Wall
-    void RenderRightWall(int zPosLarge, int zPosSmall, int xPos);// positive X facing wall
-    void RenderLeftWall(int zPosLarge, int zPosSmall, int xPos);//negative X facing wall
+    void RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber);//positive Z facing wall
+    void RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber);//negative Z facing Wall
+    void RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber);// positive X facing wall
+    void RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber);//negative X facing wall
 
     //mob renders
     void RenderGhost1();
@@ -149,6 +149,11 @@ private:
 
     float FPS;
     bool displayInteract;
+
+    float CollXLarge[41];
+    float CollXSmall[41];
+    float CollZLarge[41];
+    float CollZSmall[41];
 };
 
 

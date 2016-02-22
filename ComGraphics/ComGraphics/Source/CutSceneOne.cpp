@@ -160,6 +160,7 @@ void CutSceneOne::Update(double dt)
 		if (camera.position.z <= -10)
 		{
 			anima.cameramove3 = false;
+            anima.cameramove2 = false;
             Application::SceneLevel1A();
 		}
 	}

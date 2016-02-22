@@ -2,7 +2,7 @@
 #include "SceneLevelOneB.h"
 
 //these codes use x and z coordinates according to DRAWN COORDINATES and not actual z,x coords
-void SceneLevelOneA::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//positive Z facing wall
+void SceneLevelOneA::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber)//positive Z facing wall
 {
     zPos = -zPos;
     int xMaxCount = xPosLarge - xPosSmall;
@@ -24,18 +24,25 @@ void SceneLevelOneA::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//pos
         zPosActual = (zPos * 8) + 4;
     }
 
+    CollZLarge[wallNumber - 1] = zPosActual + 3;
+    CollZSmall[wallNumber - 1] = zPosActual - 3;
+
     //generate
     for (int count = 0; count < xMaxCount; count++)
     {
         if (count == 0)
         {
             xPosActual = ((xPosSmall * 8) + 4);
+            CollXSmall[wallNumber - 1] = xPosActual - 5;
         }
         if(count > 0)
         {
             xPosActual = xPosActual + 8;
         }
-     
+        if (count == xMaxCount - 1)
+        {
+            CollXLarge[wallNumber - 1] = xPosActual + 5;
+        }
 
         modelStack.PushMatrix();
         modelStack.Translate(xPosActual, 0, zPosActual);
@@ -50,14 +57,18 @@ void SceneLevelOneA::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//pos
 
         modelStack.PopMatrix();
     }
+
+   
+
 }
-void SceneLevelOneA::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negative Z facing Wall
+void SceneLevelOneA::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber)//negative Z facing Wall
 {
     zPos = -zPos;
     int xMaxCount = xPosLarge - xPosSmall;
     int zPosActual;
     int xPosActual;
 
+   
 
     //finds the actual z coord
     if (zPos == 0)
@@ -72,6 +83,8 @@ void SceneLevelOneA::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negat
     {
         zPosActual = (zPos * 8) + 4;
     }
+    CollZLarge[wallNumber - 1] = zPosActual+3;
+    CollZSmall[wallNumber - 1] = zPosActual-3;
 
     //generate
     for (int count = 0; count < xMaxCount; count++)
@@ -79,10 +92,15 @@ void SceneLevelOneA::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negat
         if (count == 0)
         {
             xPosActual = ((xPosSmall * 8) + 4);
+            CollXSmall[wallNumber - 1] = xPosActual - 5;
         }
         if (count > 0)
         {
             xPosActual = xPosActual + 8;
+        }
+        if (count == xMaxCount - 1)
+        {
+            CollXLarge[wallNumber - 1] = xPosActual + 5;
         }
 
         modelStack.PushMatrix();
@@ -100,7 +118,7 @@ void SceneLevelOneA::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negat
     }
  
 }
-void SceneLevelOneA::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// positive X facing wall
+void SceneLevelOneA::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber)// positive X facing wall
 {
     
     int zMaxCount = zPosLarge - zPosSmall;
@@ -121,6 +139,8 @@ void SceneLevelOneA::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// p
     {
         xPosActual = xPos * 8;
     }
+    CollXLarge[wallNumber - 1] = xPosActual+ 3;
+    CollXSmall[wallNumber - 1] = xPosActual- 3;
 
     //generate
     for (int count = 0; count < zMaxCount; count++)
@@ -128,10 +148,15 @@ void SceneLevelOneA::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// p
         if (count == 0)
         {
             zPosActual = ((zPosSmall * 8));
+            CollZLarge[wallNumber - 1] = -(zPosActual) + 5;
         }
         if (count > 0)
         {
             zPosActual = zPosActual + 8;
+        }
+        if (count == zMaxCount - 1)
+        {
+            CollZSmall[wallNumber - 1] = -(zPosActual) - 5;
         }
 
         modelStack.PushMatrix();
@@ -150,7 +175,7 @@ void SceneLevelOneA::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// p
     }
    
 }
-void SceneLevelOneA::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos)//negative X facing wall
+void SceneLevelOneA::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber)//negative X facing wall
 {
     int zMaxCount = zPosLarge - zPosSmall;
     int zPosActual;
@@ -170,6 +195,8 @@ void SceneLevelOneA::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos)//neg
     {
         xPosActual = xPos * 8;
     }
+    CollXLarge[wallNumber - 1] = xPosActual+3;
+    CollXSmall[wallNumber - 1] = xPosActual-3;
 
     //generate
     for (int count = 0; count < zMaxCount; count++)
@@ -177,10 +204,15 @@ void SceneLevelOneA::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos)//neg
         if (count == 0)
         {
             zPosActual = ((zPosSmall * 8));
+            CollZLarge[wallNumber - 1] = -(zPosActual)+5;
         }
         if (count > 0)
         {
             zPosActual = zPosActual + 8;
+        }
+        if (count == zMaxCount - 1)
+        {
+            CollZSmall[wallNumber - 1] = -(zPosActual) - 5;
         }
 
         modelStack.PushMatrix();
@@ -200,7 +232,7 @@ void SceneLevelOneA::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos)//neg
 }
 
 //these codes use x and z coordinates according to DRAWN COORDINATES and not actual z,x coords
-void SceneLevelOneB::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//positive Z facing wall
+void SceneLevelOneB::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber)//positive Z facing wall
 {
     zPos = -zPos;
     int xMaxCount = xPosLarge - xPosSmall;
@@ -222,18 +254,25 @@ void SceneLevelOneB::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//pos
         zPosActual = (zPos * 8) + 4;
     }
 
+    CollZLarge[wallNumber - 1] = zPosActual + 3;
+    CollZSmall[wallNumber - 1] = zPosActual - 3;
+
     //generate
     for (int count = 0; count < xMaxCount; count++)
     {
         if (count == 0)
         {
             xPosActual = ((xPosSmall * 8) + 4);
+            CollXSmall[wallNumber - 1] = xPosActual - 5;
         }
         if (count > 0)
         {
             xPosActual = xPosActual + 8;
         }
-
+        if (count == xMaxCount - 1)
+        {
+            CollXLarge[wallNumber - 1] = xPosActual + 5;
+        }
 
         modelStack.PushMatrix();
         modelStack.Translate(xPosActual, 0, zPosActual);
@@ -248,13 +287,17 @@ void SceneLevelOneB::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//pos
 
         modelStack.PopMatrix();
     }
+
+
+
 }
-void SceneLevelOneB::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negative Z facing Wall
+void SceneLevelOneB::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber)//negative Z facing Wall
 {
     zPos = -zPos;
     int xMaxCount = xPosLarge - xPosSmall;
     int zPosActual;
     int xPosActual;
+
 
 
     //finds the actual z coord
@@ -270,6 +313,8 @@ void SceneLevelOneB::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negat
     {
         zPosActual = (zPos * 8) + 4;
     }
+    CollZLarge[wallNumber - 1] = zPosActual + 3;
+    CollZSmall[wallNumber - 1] = zPosActual - 3;
 
     //generate
     for (int count = 0; count < xMaxCount; count++)
@@ -277,10 +322,15 @@ void SceneLevelOneB::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negat
         if (count == 0)
         {
             xPosActual = ((xPosSmall * 8) + 4);
+            CollXSmall[wallNumber - 1] = xPosActual - 5;
         }
         if (count > 0)
         {
             xPosActual = xPosActual + 8;
+        }
+        if (count == xMaxCount - 1)
+        {
+            CollXLarge[wallNumber - 1] = xPosActual + 5;
         }
 
         modelStack.PushMatrix();
@@ -298,7 +348,7 @@ void SceneLevelOneB::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negat
     }
 
 }
-void SceneLevelOneB::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// positive X facing wall
+void SceneLevelOneB::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber)// positive X facing wall
 {
 
     int zMaxCount = zPosLarge - zPosSmall;
@@ -319,6 +369,8 @@ void SceneLevelOneB::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// p
     {
         xPosActual = xPos * 8;
     }
+    CollXLarge[wallNumber - 1] = xPosActual + 3;
+    CollXSmall[wallNumber - 1] = xPosActual - 3;
 
     //generate
     for (int count = 0; count < zMaxCount; count++)
@@ -326,10 +378,15 @@ void SceneLevelOneB::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// p
         if (count == 0)
         {
             zPosActual = ((zPosSmall * 8));
+            CollZLarge[wallNumber - 1] = -(zPosActual)+5;
         }
         if (count > 0)
         {
             zPosActual = zPosActual + 8;
+        }
+        if (count == zMaxCount - 1)
+        {
+            CollZSmall[wallNumber - 1] = -(zPosActual)-5;
         }
 
         modelStack.PushMatrix();
@@ -348,7 +405,7 @@ void SceneLevelOneB::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// p
     }
 
 }
-void SceneLevelOneB::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos)//negative X facing wall
+void SceneLevelOneB::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber)//negative X facing wall
 {
     int zMaxCount = zPosLarge - zPosSmall;
     int zPosActual;
@@ -368,6 +425,8 @@ void SceneLevelOneB::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos)//neg
     {
         xPosActual = xPos * 8;
     }
+    CollXLarge[wallNumber - 1] = xPosActual + 3;
+    CollXSmall[wallNumber - 1] = xPosActual - 3;
 
     //generate
     for (int count = 0; count < zMaxCount; count++)
@@ -375,10 +434,15 @@ void SceneLevelOneB::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos)//neg
         if (count == 0)
         {
             zPosActual = ((zPosSmall * 8));
+            CollZLarge[wallNumber - 1] = -(zPosActual)+5;
         }
         if (count > 0)
         {
             zPosActual = zPosActual + 8;
+        }
+        if (count == zMaxCount - 1)
+        {
+            CollZSmall[wallNumber - 1] = -(zPosActual)-5;
         }
 
         modelStack.PushMatrix();
