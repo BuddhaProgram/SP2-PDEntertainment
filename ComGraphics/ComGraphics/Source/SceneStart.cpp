@@ -188,16 +188,6 @@ void SceneStart::Collision(float smallx, float largex, float smallz, float large
 }
 //accounts for possible velocity of objects and clipping through camera.
 
-void SceneStart::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 1)
-{
-	mobTimeCount += (((float)(dt)* checkRate) / lessenSpeed);
-	if (mobTimeCount >= 1)
-	{
-		Ghost.TargetDetectX = camera.position.x;
-		Ghost.TargetDetectZ = camera.position.z;
-		mobTimeCount = 0;
-	}
-}
 
 void SceneStart::checkPlayerPosMisc()
 {
@@ -395,7 +385,6 @@ void SceneStart::Update(double dt)
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 	FPS = 1.f / (float)dt;	
 	checkPlayerPosMisc();
-	Ghost.MobRotateY += (float)(500 * dt);
 	Variables.f_Worldspin += (float)(dt);
 
 	PuzzleOneSwitchCheck(dt);

@@ -24,8 +24,8 @@ void SceneLevelOneA::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int 
         zPosActual = (zPos * 8) + 4;
     }
 
-	CollZLarge[wallNumber - 1] = (float)zPosActual + 3;
-	CollZSmall[wallNumber - 1] = (float)zPosActual - 3;
+	CollZLarge[wallNumber - 1] = (float)zPosActual + 4;
+	CollZSmall[wallNumber - 1] = (float)zPosActual - 4;
 
     //generate
     for (int count = 0; count < xMaxCount; count++)
@@ -83,8 +83,8 @@ void SceneLevelOneA::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wa
     {
         zPosActual = (zPos * 8) + 4;
     }
-	CollZLarge[wallNumber - 1] = (float)zPosActual + 3;
-	CollZSmall[wallNumber - 1] = (float)zPosActual - 3;
+	CollZLarge[wallNumber - 1] = (float)zPosActual + 4;
+	CollZSmall[wallNumber - 1] = (float)zPosActual - 4;
 
     //generate
     for (int count = 0; count < xMaxCount; count++)
@@ -139,8 +139,8 @@ void SceneLevelOneA::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int
     {
         xPosActual = xPos * 8;
     }
-	CollXLarge[wallNumber - 1] = (float)xPosActual + 3;
-	CollXSmall[wallNumber - 1] = (float)xPosActual - 3;
+	CollXLarge[wallNumber - 1] = (float)xPosActual + 4;
+	CollXSmall[wallNumber - 1] = (float)xPosActual - 4;
 
     //generate
     for (int count = 0; count < zMaxCount; count++)
@@ -195,8 +195,8 @@ void SceneLevelOneA::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int 
     {
         xPosActual = xPos * 8;
     }
-	CollXLarge[wallNumber - 1] = (float)xPosActual + 3;
-	CollXSmall[wallNumber - 1] = (float)xPosActual - 3;
+	CollXLarge[wallNumber - 1] = (float)xPosActual + 4;
+	CollXSmall[wallNumber - 1] = (float)xPosActual - 4;
 
     //generate
     for (int count = 0; count < zMaxCount; count++)
@@ -254,8 +254,8 @@ void SceneLevelOneB::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int 
         zPosActual = (zPos * 8) + 4;
     }
 
-	CollZLarge[wallNumber - 1] = (float)zPosActual + 3;
-	CollZSmall[wallNumber - 1] = (float)zPosActual - 3;
+	CollZLarge[wallNumber - 1] = (float)zPosActual + 4;
+	CollZSmall[wallNumber - 1] = (float)zPosActual - 4;
 
     //generate
     for (int count = 0; count < xMaxCount; count++)
@@ -313,8 +313,8 @@ void SceneLevelOneB::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wa
     {
         zPosActual = (zPos * 8) + 4;
     }
-	CollZLarge[wallNumber - 1] = (float)zPosActual + 3;
-	CollZSmall[wallNumber - 1] = (float)zPosActual - 3;
+	CollZLarge[wallNumber - 1] = (float)zPosActual + 4;
+	CollZSmall[wallNumber - 1] = (float)zPosActual - 4;
 
     //generate
     for (int count = 0; count < xMaxCount; count++)
@@ -369,8 +369,8 @@ void SceneLevelOneB::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int
     {
         xPosActual = xPos * 8;
     }
-	CollXLarge[wallNumber - 1] = (float)xPosActual + 3;
-	CollXSmall[wallNumber - 1] = (float)xPosActual - 3;
+	CollXLarge[wallNumber - 1] = (float)xPosActual + 4;
+	CollXSmall[wallNumber - 1] = (float)xPosActual - 4;
 
     //generate
     for (int count = 0; count < zMaxCount; count++)
@@ -425,8 +425,8 @@ void SceneLevelOneB::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int 
     {
         xPosActual = xPos * 8;
     }
-	CollXLarge[wallNumber - 1] = (float)xPosActual + 3;
-	CollXSmall[wallNumber - 1] = (float)xPosActual - 3;
+	CollXLarge[wallNumber - 1] = (float)xPosActual + 4;
+	CollXSmall[wallNumber - 1] = (float)xPosActual - 4;
 
     //generate
     for (int count = 0; count < zMaxCount; count++)

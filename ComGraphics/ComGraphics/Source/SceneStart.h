@@ -12,6 +12,7 @@
 #include "OBJAnimation.h"
 #include "PlayerStat.h"
 #include "HostileMob.h"
+#include "MobGhost.h"
 
 class SceneStart : public Scene
 {
@@ -175,7 +176,7 @@ private:
     Vector3 start ;
     Vector3 end;
 
-    HostileMob Ghost;
+    MobGhost Ghost;
 	misc Misc;
 	SwitchLightPuzzle Switches;
 

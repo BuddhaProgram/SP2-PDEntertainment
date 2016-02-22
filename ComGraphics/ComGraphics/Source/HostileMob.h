@@ -2,7 +2,8 @@
 #define HOSTILEMOB_H
 
 #include "Vector3.h"
-
+#include "MatrixStack.h"
+#include "Camera3.h"
 
 class HostileMob
 {
@@ -11,15 +12,14 @@ public:
     ~HostileMob();
 
     //functions
-    void checkPlayerPos();
-    void move(double dt, int movespeed);
-
-    //global variables for use in entire project
+    void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
     
-    float MobRotateY;
+
     bool Spawn;
 
-    //ghost chase variables
+    int health;
+
+    //mob position variables
     float MobPosX;
     float MobPosY;
     float MobPosZ;
@@ -28,7 +28,8 @@ public:
     float TargetDetectX;
     float TargetDetectZ;
     float mobTimeCount;
-    
+
+    Camera3 camera;
 };
 #endif
 
