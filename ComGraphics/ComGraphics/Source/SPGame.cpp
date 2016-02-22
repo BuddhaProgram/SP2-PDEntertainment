@@ -503,16 +503,6 @@ void SPGame::Update(double dt)
 		Ghost.move(dt, 50);
 	}
 
-	/*if (camera.position.z <= -1 && camera.position.x <= 1 && camera.position.x >= -1)
-	{
-		start_Animation = true;
-	}
-
-	if (start_Animation)
-	{
-		anima.Portraits(dt);
-	}
-*/
 
 
     //scene changer codes..............
@@ -732,28 +722,6 @@ void SPGame::Render()
 	RenderFloor();
 	ToolSelectionMouseScroll();
 	RenderToolIcon();
-
-    if (numScene == 1)
-    {
-		meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
-        RenderSceneStart();
-    }
-    if (numScene == 2)
-    {
-		camera.position.y = 10;
-		meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//InsideFLOOR.tga");
-        RenderLevel1();
-    }
-
-    if (numScene == 3)
-    {
-		meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
-        RenderSceneEnd();
-    }
-	if (numScene == 4)
-	{
-		RenderCutScene();
-	}
 
 	if (numScene != 4){
 		RenderMesh(meshList[GEO_AXES], false);
