@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "SPGame.h"
-#include "SPGameSceneTwo.h"
+#include "SceneStart.h"
+#include "SceneEnd.h"
 
 
 
@@ -111,12 +111,12 @@ void Application::Init()
 
 void Application::Run()
 {
-	sceneOne = new SPGame();
+	sceneOne = new SceneStart();
 	sceneOne->Init();
-	sceneTwo = new SPGameSceneTwo();
+	sceneTwo = new SceneEnd();
 	sceneTwo->Init();
 	//Main Loop
-	//SPGame *scene = new SPGame();
+	//SceneStart *scene = new SceneStart();
 	//scene->Init();
 	scene = sceneOne;
 	

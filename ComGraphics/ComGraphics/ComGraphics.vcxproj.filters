@@ -49,9 +49,6 @@
     <ClCompile Include="Source\Misc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\Renders.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\SPGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -64,10 +61,22 @@
     <ClCompile Include="Source\GlobalVariables.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\SPGameSceneTwo.cpp">
+    <ClCompile Include="source\SceneLevel1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\SceneLevel1.cpp">
+    <ClCompile Include="source\LevelOneRenders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SceneStartRenders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SceneEndRenders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CutSceneOneRenders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneEnd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -129,19 +138,19 @@
     <ClInclude Include="Source\Misc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\SPGame.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Source\SwitchLightPuzzle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\GlobalVariables.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\SPGameSceneTwo.h">
+    <ClInclude Include="source\SceneLevelOne.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\SceneLevel1.h">
+    <ClInclude Include="Source\SceneEnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneStart.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

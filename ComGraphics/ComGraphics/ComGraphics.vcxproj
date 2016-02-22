@@ -12,8 +12,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Application.cpp" />
+    <ClCompile Include="source\CutSceneOneRenders.cpp" />
     <ClCompile Include="Source\GlobalVariables.cpp" />
+    <ClCompile Include="source\LevelOneRenders.cpp" />
     <ClCompile Include="source\MapRendering.cpp" />
+    <ClCompile Include="source\SceneEndRenders.cpp" />
     <ClCompile Include="source\SceneLevel1.cpp" />
     <ClCompile Include="Source\SPGame.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
@@ -26,10 +29,10 @@
     <ClCompile Include="Source\OBJAnimation.cpp" />
     <ClCompile Include="source\HostileMob.cpp" />
     <ClCompile Include="Source\PlayerStat.cpp" />
-    <ClCompile Include="source\Renders.cpp" />
+    <ClCompile Include="source\SceneStartRenders.cpp" />
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\Misc.cpp" />
-    <ClCompile Include="Source\SPGameSceneTwo.cpp" />
+    <ClCompile Include="Source\SceneEnd.cpp" />
     <ClCompile Include="Source\SwitchLightPuzzle.cpp" />
     <ClCompile Include="Source\ToolSection.cpp" />
     <ClCompile Include="Source\ToolUI.cpp" />
@@ -38,8 +41,8 @@
   <ItemGroup>
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\GlobalVariables.h" />
-    <ClInclude Include="source\SceneLevel1.h" />
-    <ClInclude Include="Source\SPGame.h" />
+    <ClInclude Include="source\SceneLevelOne.h" />
+    <ClInclude Include="Source\SceneStart.h" />
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\Camera3.h" />
     <ClInclude Include="Source\Light.h" />
@@ -54,7 +57,7 @@
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\shader.hpp" />
     <ClInclude Include="Source\Misc.h" />
-    <ClInclude Include="Source\SPGameSceneTwo.h" />
+    <ClInclude Include="Source\SceneEnd.h" />
     <ClInclude Include="Source\SwitchLightPuzzle.h" />
     <ClInclude Include="Source\ToolSection.h" />
     <ClInclude Include="Source\ToolUI.h" />
