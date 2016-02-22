@@ -246,7 +246,7 @@ void SceneStart::RenderToolIcon()
 {
 	if (Inventory.GetToolType(1) == ToolUI::Pickaxe)
 	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 3, 90, 1, 0, 0, 10, 5, -1, false);
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5, 90, 1, 0, 0, 6.6, 0.775, 1, false);
 	}
 }
 
@@ -636,7 +636,7 @@ void SceneStart::Render()
     }
 
     modelStack.PushMatrix();
-    RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 1, false);
+    RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
     modelStack.PopMatrix();
 }
 	
