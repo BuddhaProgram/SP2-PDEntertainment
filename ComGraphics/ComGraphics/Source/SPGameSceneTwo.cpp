@@ -10,6 +10,7 @@
 #include "LoadTGA.h"
 #include "Utility.h"
 #include <sstream>
+#include "GlobalVariables.h"
 
 
 SPGameSceneTwo::SPGameSceneTwo()
@@ -134,13 +135,6 @@ void SPGameSceneTwo::Init()
 	meshList[GEO_ASTEROID2] = MeshBuilder::GenerateOBJ("Asteroid2", "OBJ//Asteroid2.obj");
 	meshList[GEO_ASTEROID2]->textureID = LoadTGA("Image//Asteroid1.tga");
 
-	meshList[GEO_MAINDOORLEFT] = MeshBuilder::GenerateOBJ("MainDoorLeft", "OBJ//MDLeft.obj");
-	meshList[GEO_MAINDOORLEFT]->textureID = LoadTGA("Image//MDLeft.tga");
-	meshList[GEO_MAINDOORRIGHT] = MeshBuilder::GenerateOBJ("MainDoorRight", "OBJ//MDRight.obj");
-	meshList[GEO_MAINDOORRIGHT]->textureID = LoadTGA("Image//MDRight.tga");
-	meshList[GEO_RUBBLE] = MeshBuilder::GenerateOBJ("Rubble", "OBJ//Rubble.obj");
-	meshList[GEO_PORTRAIT] = MeshBuilder::GenerateOBJ("Portrait", "OBJ//Portrait.obj");
-	meshList[GEO_PORTRAIT]->textureID = LoadTGA("Image//Scream.tga");
 
 	// Tools Interface and It's Icons
 	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
@@ -172,27 +166,9 @@ void SPGameSceneTwo::Init()
 
 static float LSPEED = 10.f;
 
-bool start_Animation = false;
 
 void SPGameSceneTwo::Reset()
 {
-}
-
-void SPGameSceneTwo::RenderCutSceneOne()
-{
-	modelStack.PushMatrix();
-		modelStack.Translate(10, 0, 0);
-		modelStack.Rotate(anima.OpenDoorL, 0, 1, 0);
-		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_MAINDOORLEFT], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-		modelStack.Translate(-10, 0, 0);
-		modelStack.Rotate(anima.OpenDoorR, 0, 1, 0);
-		modelStack.Scale(5, 5, 5);
-		RenderMesh(meshList[GEO_MAINDOORRIGHT], false);
-	modelStack.PopMatrix();
 }
 
 bool SPGameSceneTwo::proximitycheck(float smallx, float largex, float smallz, float largez)
@@ -237,49 +213,7 @@ void SPGameSceneTwo::Update(double dt)
 		displayInteract = false;
 	}
 
-	if (camera.position.x > -2 && camera.position.x < 2 && camera.position.z > 12 && camera.position.z < 21)
-		anima.OpenMainDoor(dt);
-
-	anima.cameramove1 = true;
-
-	if (camera.position.z >= 20)
-	{
-		anima.cameramove2 = true;
-	}
-	else if (camera.position.z <= 20)
-	{
-		anima.cameramove2 = false;
-	}
-	if (anima.OpenDoorL <= -35)
-	{
-		anima.cameramove3 = true;
-		if (camera.position.z <= -10)
-		{
-			anima.cameramove3 = false;
-			//JumpScene.ChangingOfScene(0);
-		}
-	}
-
-	if (anima.cameramove3 != false)
-	{
-		camera.position.z -= 0.2f;
-	}
-
-	if (anima.cameramove2 != false)
-	{
-		camera.position.z -= 0.1f;
-	}
-
-	/*if (camera.position.z <= -1 && camera.position.x <= 1 && camera.position.x >= -1)
-	{
-	start_Animation = true;
-	}
-
-	if (start_Animation)
-	{
-	anima.Portraits(dt);
-	}
-	*/
+	
 }
 
 void SPGameSceneTwo::RenderMesh(Mesh*mesh, bool enableLight)
@@ -458,7 +392,6 @@ void SPGameSceneTwo::Render()
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
-	RenderCutSceneOne();
 }
 
 void SPGameSceneTwo::Exit()

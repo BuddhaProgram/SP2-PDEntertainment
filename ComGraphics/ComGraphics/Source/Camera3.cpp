@@ -1,11 +1,11 @@
  #include "Camera3.h"
 #include "Application.h"
 #include "Mtx44.h"
-#include "SPGame.h"
+#include "SceneStart.h"
 
 float regenDelay = 6.f;
 extern GLFWwindow* m_window;
-extern SPGame* numScene;
+extern SceneStart* numScene;
 Camera3::Camera3()
 {
 }

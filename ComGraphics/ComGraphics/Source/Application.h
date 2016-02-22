@@ -6,7 +6,10 @@
 #include "GlobalVariables.h"
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-
+//memory leak checks
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
 class Application
 {
 public:
@@ -20,10 +23,12 @@ public:
 
 	static void SceneOne();
 	static void SceneTwo();
+	static void FirstCutScene();
 
 	static Scene *scene;
 	static Scene *sceneOne;
 	static Scene *sceneTwo;
+	static Scene *CutScene1;
 private:
 
 	//Declare a window object

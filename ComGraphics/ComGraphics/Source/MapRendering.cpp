@@ -1,8 +1,8 @@
-#include "SPGame.h"
+#include "SceneStart.h"
 
 
 //these codes use x and z coordinates according to DRAWN COORDINATES and not actual z,x coords
-void SPGame::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//positive Z facing wall
+void SceneStart::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//positive Z facing wall
 {
     zPos = -zPos;
     int xMaxCount = xPosLarge - xPosSmall;
@@ -51,7 +51,7 @@ void SPGame::RenderDownWall(int xPosLarge, int xPosSmall, int zPos)//positive Z 
         modelStack.PopMatrix();
     }
 }
-void SPGame::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negative Z facing Wall
+void SceneStart::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negative Z facing Wall
 {
     zPos = -zPos;
     int xMaxCount = xPosLarge - xPosSmall;
@@ -100,7 +100,7 @@ void SPGame::RenderUpWall(int xPosLarge, int xPosSmall, int zPos)//negative Z fa
     }
  
 }
-void SPGame::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// positive X facing wall
+void SceneStart::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// positive X facing wall
 {
     
     int zMaxCount = zPosLarge - zPosSmall;
@@ -108,7 +108,7 @@ void SPGame::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// positive 
     int xPosActual = 0;
 
 
-    //finds the actual z coord
+    //finds the actual x coord
     if (xPos == 0)
     {
         xPosActual = 0;
@@ -150,14 +150,14 @@ void SPGame::RenderRightWall(int zPosLarge, int zPosSmall, int xPos)// positive 
     }
    
 }
-void SPGame::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos)//negative X facing wall
+void SceneStart::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos)//negative X facing wall
 {
     int zMaxCount = zPosLarge - zPosSmall;
     int zPosActual;
     int xPosActual = 0;
 
 
-    //finds the actual z coord
+    //finds the actual x coord
     if (xPos == 0)
     {
         xPosActual = 0;

@@ -30,7 +30,7 @@ HostileMob::~HostileMob()
 
 void HostileMob::move(double dt, int movespeed)
 {
-   //note: target detect x and y is player position, its function is in SPGame.cpp
+   //note: target detect x and y is player position, its function is in SceneStart.cpp
     Vector3 start = Vector3(MobPosX, MobPosY, MobPosZ);
     Vector3 end = Vector3(TargetDetectX, 15, TargetDetectZ);
     Vector3 toNorm = end - start;

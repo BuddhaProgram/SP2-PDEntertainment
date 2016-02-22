@@ -4,8 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "SPGame.h"
-#include "SPGameSceneTwo.h"
+#include "SceneStart.h"
+#include "SceneEnd.h"
+#include "SPGameCutScene1.h"
+
 
 
 
@@ -45,6 +47,7 @@ Application::~Application()
 Scene* Application::scene;
 Scene* Application::sceneOne;
 Scene* Application::sceneTwo;
+Scene* Application::CutScene1;
 
 void resize_callback(GLFWwindow* window, int w, int h)
 {
@@ -111,12 +114,14 @@ void Application::Init()
 
 void Application::Run()
 {
-	sceneOne = new SPGame();
+	sceneOne = new SceneStart();
 	sceneOne->Init();
-	sceneTwo = new SPGameSceneTwo();
+	sceneTwo = new SceneEnd();
 	sceneTwo->Init();
+	CutScene1 = new SPGameCutScene1();
+	CutScene1->Init();
 	//Main Loop
-	//SPGame *scene = new SPGame();
+	//SceneStart *scene = new SceneStart();
 	//scene->Init();
 	scene = sceneOne;
 	
@@ -143,6 +148,7 @@ void Application::Run()
 	scene->Exit();
 	delete sceneOne;
 	delete sceneTwo;
+	delete CutScene1;
 }
 
 void Application::Exit()
@@ -161,4 +167,9 @@ void Application::SceneOne()
 void Application::SceneTwo()
 {
 	scene = sceneTwo;
+}
+
+void Application::FirstCutScene()
+{
+	scene = CutScene1;
 }
