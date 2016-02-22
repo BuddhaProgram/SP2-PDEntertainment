@@ -387,14 +387,7 @@ void SceneStart::MouseClickFunction(double dt)
 
 void SceneStart::ChangeFirstCutScene()
 {
-	if (Application::IsKeyPressed('E'))
-	{
-		if (proximitycheck(-13, 13, -105, -70))
-		{
-			displayInteract = false;
-			Application::FirstCutScene();
-		}
-	}
+	
 	if (proximitycheck(-13, 13, -105, -70))
 	{
 		displayInteract = true;
@@ -403,6 +396,14 @@ void SceneStart::ChangeFirstCutScene()
 	{
 		displayInteract = false;
 	}
+    if (Application::IsKeyPressed('E'))
+    {
+        if (proximitycheck(-13, 13, -105, -70))
+        {
+            displayInteract = false;
+            Application::FirstCutScene();
+        }
+    }
 }
 
 void SceneStart::Update(double dt)
