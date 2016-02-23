@@ -43,8 +43,8 @@ void SceneLevelOneA::RenderScene()
     RenderUpWall(-5, -8, -49, 3);//3
     RenderRightWall(-38, -49, -8, 4);//4
     RenderUpWall(-8, -28, -38, 5);//5
-    RenderRightWall(-28, -38, -26, 6);//6
-    RenderUpWall(-26, -38, -28, 7);//7
+    RenderRightWall(-28, -38, -25, 6);//6
+    RenderUpWall(-25, -38, -28, 7);//7
     RenderRightWall(-12, -28, -38, 8);//8
     RenderDownWall(-12, -38, -12, 9);//9
     RenderLeftWall(-12, -28, -12, 10);//10

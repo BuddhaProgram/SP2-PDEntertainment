@@ -45,6 +45,7 @@
   <ItemGroup>
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\GlobalVariables.h" />
+    <ClInclude Include="source\MobBossOne.h" />
     <ClInclude Include="source\MobGhost.h" />
     <ClInclude Include="source\SceneLevelOneA.h" />
     <ClInclude Include="source\SceneLevelOneB.h" />

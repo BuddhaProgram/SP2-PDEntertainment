@@ -425,7 +425,7 @@ void SceneStart::Update(double dt)
 	ChangeFirstCutScene();
 
 	ToolsUI();
-	MouseScrollToolSlot();
+	//MouseScrollToolSlot();
 	MouseClickFunction(dt);
 
 	if (Application::IsKeyPressed('1')) //enable back face culling

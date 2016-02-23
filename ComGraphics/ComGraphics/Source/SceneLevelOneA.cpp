@@ -143,10 +143,6 @@ void SceneLevelOneA::Init()
 
     // Tools Interface and It's Icons
 
-    meshList[GEO_FACILITYFLOOR] = MeshBuilder::GenerateQuad("Facility Floor", Color(0.623f, 0.467f, 0.467f));
-    meshList[GEO_FACILITYFLOOR]->material.kAmbient.Set(0.3f, 0.3f, 0.3f);
-    meshList[GEO_FACILITYFLOOR]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
-    meshList[GEO_FACILITYFLOOR]->material.kSpecular.Set(1, 1, 1);
 
     meshList[GEO_DOORSWITCH] = MeshBuilder::GenerateCube("Switch", Color(0.623f, 0.467f, 0.467f));
     meshList[GEO_DOORSWITCH]->material.kAmbient.Set(0.3f, 0.3f, 0.3f);
@@ -352,7 +348,7 @@ void SceneLevelOneA::Update(double dt)
 
 	/*-------------------------[Tool UI Functions]-------------------------------*/
 	ToolsUI();
-	MouseScrollToolSlot();
+	//MouseScrollToolSlot();
 	MouseClickFunction(dt);
     /*-------------------------[End of Tool UI Functions]-------------------------------*/
 
@@ -505,6 +501,11 @@ void SceneLevelOneA::Update(double dt)
         }
     }
     
+    //codes for changing to level1B
+    if (proximitycheck(192, 216, -8, 8))
+    {
+        Application::SceneLevel1B();
+    }
 }
 
 void SceneLevelOneA::RenderMesh(Mesh*mesh, bool enableLight)

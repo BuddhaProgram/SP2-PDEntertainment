@@ -99,7 +99,7 @@ void SceneLevelOneB::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    camera.Init(Vector3(0, 10, 0), Vector3(0, 10, -1), Vector3(0, 1, 0));
+    camera.Init(Vector3(204, 10, 0), Vector3(0, 10, -1), Vector3(0, 1, 0));
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -142,10 +142,8 @@ void SceneLevelOneB::Init()
 
     // Tools Interface and It's Icons
 
-    meshList[GEO_FACILITYFLOOR] = MeshBuilder::GenerateQuad("Facility Floor", Color(0.623f, 0.467f, 0.467f));
-    meshList[GEO_FACILITYFLOOR]->material.kAmbient.Set(0.3f, 0.3f, 0.3f);
-    meshList[GEO_FACILITYFLOOR]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
-    meshList[GEO_FACILITYFLOOR]->material.kSpecular.Set(1, 1, 1);
+    meshList[GEO_FACILITYFLOOR] = MeshBuilder::GenerateQuad("Facility Floor", Color(1, 1, 1));
+    meshList[GEO_FACILITYFLOOR]->textureID = LoadTGA("Image//InsideFLOOR.tga");
 
     meshList[GEO_FACILITYWALLS] = MeshBuilder::GenerateQuad("Facility Wall", Color(1, 1, 1));
     meshList[GEO_FACILITYWALLS]->textureID = LoadTGA("Image//InsideWALL.tga");
@@ -153,10 +151,8 @@ void SceneLevelOneB::Init()
     meshList[GEO_FACILITYCEILINGS] = MeshBuilder::GenerateQuad("Facility Ceiling", Color(1, 1, 1));
     meshList[GEO_FACILITYCEILINGS]->textureID = LoadTGA("Image//InsideCEILING.tga");
 
-    meshList[GEO_FACILITYOUT] = MeshBuilder::GenerateOBJ("FacilityOut", "OBJ//FacilityOUT.obj");
-    meshList[GEO_FACILITYOUT]->textureID = LoadTGA("Image//FacilityOUT.tga");
-    meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("Facility Wall Outside", Color(1, 1, 1));
-    meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
+    meshList[GEO_SPAWNPOINT] = MeshBuilder::GenerateOBJ("Spawn", "OBJ//SpawnPoint.obj");
+    meshList[GEO_SPAWNPOINT]->textureID = LoadTGA("Image//SpawnPoint.tga");
 
     Mtx44 projection;
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
@@ -171,6 +167,14 @@ static float LSPEED = 10.f;
 
 void SceneLevelOneB::Reset()
 {
+}
+
+void SceneLevelOneB::Collision(float smallx, float largex, float smallz, float largez)
+{
+    if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz) && (camera.position.z <= smallz + 3.f)){ camera.position.z = smallz; }
+    if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez) && (camera.position.z >= largez - 3.f)){ camera.position.z = largez; }
+    if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x >= smallx) && (camera.position.x <= smallx + 3.f)){ camera.position.x = smallx; }
+    if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x <= largex) && (camera.position.x >= largex - 3.f)){ camera.position.x = largex; }
 }
 
 bool SceneLevelOneB::proximitycheck(float smallx, float largex, float smallz, float largez)
@@ -332,68 +336,20 @@ void SceneLevelOneB::Update(double dt)
     if (Application::IsKeyPressed('4'))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-    //camera.Update(dt);
-
-    anima.OBJAnimation(dt);
-    anima.Collapsing(dt);
+    camera.Update(dt);
+    //wall collision
+    for (int i = 0; i < 43; i++)
+    {
+        Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
+    }
 
 	/*-------------------------[Tool UI Functions]-------------------------------*/
 	ToolsUI();
-	MouseScrollToolSlot();
+	//MouseScrollToolSlot();
 	MouseClickFunction(dt);
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
-    if (proximitycheck(-13, 13, -105, -70))
-        displayInteract = true;
-
-    else
-    {
-        displayInteract = false;
-    }
-
-    if (camera.position.x > -2 && camera.position.x < 2 && camera.position.z > 12 && camera.position.z < 21)
-        anima.OpenMainDoor(dt);
-
-    anima.cameramove1 = true;
-
-    if (camera.position.z >= 20)
-    {
-        anima.cameramove2 = true;
-    }
-    else if (camera.position.z <= 20)
-    {
-        anima.cameramove2 = false;
-    }
-    if (anima.OpenDoorL <= -35)
-    {
-        anima.cameramove3 = true;
-        if (camera.position.z <= -10)
-        {
-            anima.cameramove3 = false;
-            //JumpScene.ChangingOfScene(0);
-        }
-    }
-
-    if (anima.cameramove3 != false)
-    {
-        camera.position.z -= 0.2f;
-    }
-
-    if (anima.cameramove2 != false)
-    {
-        camera.position.z -= 0.1f;
-    }
-
-    /*if (camera.position.z <= -1 && camera.position.x <= 1 && camera.position.x >= -1)
-    {
-    start_Animation = true;
-    }
-
-    if (start_Animation)
-    {
-    anima.Portraits(dt);
-    }
-    */
+   
 }
 
 void SceneLevelOneB::RenderMesh(Mesh*mesh, bool enableLight)
@@ -574,6 +530,8 @@ void SceneLevelOneB::Render()
 
 	ToolSelectionMouseScroll();
 	RenderToolIcon();
+
+    RenderScene();
 
 	modelStack.PushMatrix();
 	RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);

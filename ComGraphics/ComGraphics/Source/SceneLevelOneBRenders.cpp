@@ -2,19 +2,19 @@
 #include "OBJAnimation.h"
 
 // Rendering of Floor for all Scenes.
-void SceneLevelOneB::RenderFloor()
+void SceneLevelOneB::RenderFloorCeiling()
 {
-    for (int x = -450; x < 500; x += 100)
-    {
-        for (int z = -450; z < 500; z += 100)
-        {
-            modelStack.PushMatrix();
-            modelStack.Translate((float)x, 0, (float)z);
-            modelStack.Scale(100, 1, 100);
-            RenderMesh(meshList[GEO_PLANETFLOOR], true);
-            modelStack.PopMatrix();
-        }
-    }
+    modelStack.PushMatrix();
+    modelStack.Scale(1000, 1, 1000);
+    RenderMesh(meshList[GEO_FACILITYFLOOR], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 20, 0);
+    modelStack.Rotate(180, 1, 0, 0);
+    modelStack.Scale(1000, 1, 1000);
+    RenderMesh(meshList[GEO_FACILITYCEILINGS], true);
+    modelStack.PopMatrix();
 }
 
 
@@ -26,10 +26,13 @@ void SceneLevelOneB::RenderFloor()
 void SceneLevelOneB::RenderScene()
 {
    
-
+    RenderFloorCeiling();
 
     //------------------------------------------------------------------------
     //top quads
+    modelStack.PushMatrix();
+    modelStack.Translate(0, -7, 0);
+    modelStack.Scale(1, 2.2, 1);
 
     RenderRightWall(63, 47, -43, 1);//1
     RenderDownWall(-10, -43, 62, 2);//2
@@ -79,7 +82,10 @@ void SceneLevelOneB::RenderScene()
     RenderLeftWall(35, 31, 35, 40);//40
     RenderDownWall(35, 20, 35, 41);//41
 
-
+    //connector betw 1A and 1B
+    RenderRightWall(7, -7, 24, 42);//42
+    RenderLeftWall(7, -7, 27, 43);//43
+    modelStack.PopMatrix();
     //TOP QUAD END
     //-----------------------------------------------------
 }
@@ -89,9 +95,9 @@ void SceneLevelOneB::RenderScene()
 
 void SceneLevelOneB::RenderGhost1()
 {
-    /* modelStack.PushMatrix();
+    modelStack.PushMatrix();
     modelStack.Translate(Ghost.MobPosX, Ghost.MobPosY, Ghost.MobPosZ);
     RenderMesh(meshList[GEO_GHOST1], true);
-    modelStack.PopMatrix();*/
+    modelStack.PopMatrix();
 }
 

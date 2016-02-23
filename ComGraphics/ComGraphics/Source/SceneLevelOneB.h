@@ -8,6 +8,7 @@
 #include "MatrixStack.h"
 #include "Light.h"
 #include "OBJAnimation.h"
+#include "MobGhost.h"
 
 class SceneLevelOneB : public Scene
 {
@@ -50,6 +51,7 @@ class SceneLevelOneB : public Scene
 		GEO_BATICON,
 
         GEO_GHOST1,
+        GEO_SPAWNPOINT,
 
         //player related
         GEO_HEALTH,
@@ -101,8 +103,7 @@ private:
 
     //scene renders
     void RenderScene();
-    void RenderFloor();
-    void RenderCutSceneOne();
+    void RenderFloorCeiling();
 
     //map rendering
     void RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber);//positive Z facing wall
@@ -118,7 +119,6 @@ private:
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
     void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, int rY, int rZ, float x, float y, float z, bool LightYN);
     //checks
-    void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
     void checkPlayerPosMisc();
     void Collision(float smallx, float largex, float smallz, float largez);
     bool proximitycheck(float smallx, float largex, float smallz, float largez);
@@ -154,10 +154,12 @@ private:
     float FPS;
     bool displayInteract;
 
-    float CollXLarge[41];
-    float CollXSmall[41];
-    float CollZLarge[41];
-    float CollZSmall[41];
+    float CollXLarge[43];
+    float CollXSmall[43];
+    float CollZLarge[43];
+    float CollZSmall[43];
+
+    MobGhost Ghost;
 };
 
 
