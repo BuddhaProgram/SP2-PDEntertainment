@@ -420,8 +420,6 @@ void SceneStart::Update(double dt)
 	Switches.SwitchPuzzleOne(Switches.b_PuzzleOneSwitchOne, Switches.b_PuzzleOneSwitchTwo, Switches.b_PuzzleOneSwitchThree);
 	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
 
-	//Weapon.StoreAttack(Variables.i_SlotIndex);
-
 	Collision(-35, 35, -105, -70);
 	Collision(-100, 100, -115, -95);
 	Collision(-100, -80, -115, 115);
@@ -444,7 +442,6 @@ void SceneStart::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
 	camera.Update(dt);
-
 }
 
 void SceneStart::RenderMesh(Mesh*mesh, bool enableLight)
