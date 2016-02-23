@@ -13,7 +13,9 @@ public:
 	void OBJAnimation(double dt);
 	void OpenMainDoor(double dt);
 	void Portraits(double dt);
-	void OpenSlideDoor(double dt);
+	void OpenSlideDoor1(double dt);
+	void OpenSlideDoor2(double dt);
+	void CloseSlideDoor2(double dt);
 
 	bool WithinArea(float smallx, float largex, float smallz, float largez);
 	float cam_pos_X, cam_poz_Z;
@@ -47,6 +49,13 @@ public:
 	float DoorSlideBtm;
 	bool toSlideDoorTop = true;
 	bool toSlideDoorBtm = true;
+
+	float DoorSlideTop_2 = 4;
+	float DoorSlideBtm_2 = 4;
+	bool toSlideDoorTop2 = true;
+	bool toSlideDoorBtm2 = true;
+	bool ClosingDoorTop2 = true;
+	bool ClosingDoorBtm2 = true;
 
 };
 

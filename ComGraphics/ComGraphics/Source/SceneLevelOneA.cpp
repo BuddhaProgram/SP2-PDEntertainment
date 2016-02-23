@@ -369,10 +369,16 @@ void SceneLevelOneA::Update(double dt)
 
     anima.OBJAnimation(dt);
     anima.Collapsing(dt);
-	if (activateDoor)
+	if (activateDoor1) {anima.OpenSlideDoor1(dt);}
+	if (activateDoor2)
 	{
-		anima.OpenSlideDoor(dt);
+		anima.OpenSlideDoor2(dt);
 	}
+	else if (!activateDoor2)
+	{
+		anima.CloseSlideDoor2(dt);
+	}
+
 
     if (proximitycheck(-13, 13, -105, -70))
     {
@@ -404,7 +410,7 @@ void SceneLevelOneA::Update(double dt)
 	}
 
 
-	if (proximitycheck(150, 200, 200, 300))
+	if (proximitycheck(170, 188, 190, 200))
 	{
 		displayInteract = true;
 	}
@@ -419,7 +425,7 @@ void SceneLevelOneA::Update(double dt)
 			displayInteract = false;
 			if (Key_1)
 			{
-				activateDoor = true;
+				activateDoor1 = true;
 			}
 			else
 			{
@@ -427,7 +433,7 @@ void SceneLevelOneA::Update(double dt)
 			}
 		}
 	}
-	if (!proximitycheck(150, 200, 200, 300))
+	if (!proximitycheck(170, 188, 190, 200))
 	{
 		Notice = false;
 	}
@@ -437,8 +443,37 @@ void SceneLevelOneA::Update(double dt)
 	}
 
 
-	std::cout << anima.Collapse << std::endl;
+	std::cout << activateDoor2 << std::endl;
 
+	if (proximitycheck(-208, -176, 225, 235))
+	{
+		displayInteract = true;
+	}
+	else
+	{
+		displayInteract = false;
+	}
+	if (Application::IsKeyPressed('E') && proximitycheck(-204, -180, 235, 240))
+	{
+		activateDoor2 = true;	
+		displayInteract = false;
+	}
+
+	if (Ghost.Spawn)
+	{
+		activateDoor2 = false;
+	}
+
+	if (anima.toSlideDoorBtm2)
+	{
+		Collision(-208, -176, 225, 235);
+	}
+
+	/*if (!proximitycheck(-208, -176, 245, 255))
+	{
+		activateDoor2 = false;
+	}
+	*/	
 
 
     if (Application::IsKeyPressed('J'))
@@ -448,7 +483,7 @@ void SceneLevelOneA::Update(double dt)
 
     camera.Update(dt);
     //mob stuff
-    if (proximitycheck(-226, -172, 210,228)&&!activateDoor)
+    if (proximitycheck(-226, -172, 210,228)&&!activateDoor1)
     {
         Ghost.Spawn = true;
     }
@@ -460,12 +495,12 @@ void SceneLevelOneA::Update(double dt)
     {
         Ghost.move(dt, 50);
     }
-    if (proximitycheck(-220,-200, 120, 140) && !activateDoor)
+    if (proximitycheck(-220,-200, 120, 140) && !activateDoor1)
     {
         displayInteract = true;
         if (Application::IsKeyPressed('E'))
         {
-            activateDoor = true;
+            activateDoor1 = true;
             Ghost.Spawn = false;
         }
     }
