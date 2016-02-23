@@ -37,6 +37,7 @@
     <ClCompile Include="Source\Misc.cpp" />
     <ClCompile Include="Source\SceneEnd.cpp" />
     <ClCompile Include="Source\CutSceneOne.cpp" />
+    <ClCompile Include="Source\spawnPoints.cpp" />
     <ClCompile Include="Source\SwitchLightPuzzle.cpp" />
     <ClCompile Include="Source\ToolUI.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
@@ -64,6 +65,7 @@
     <ClInclude Include="Source\Misc.h" />
     <ClInclude Include="Source\SceneEnd.h" />
     <ClInclude Include="Source\CutSceneOne.h" />
+    <ClInclude Include="Source\spawnPoints.h" />
     <ClInclude Include="Source\SwitchLightPuzzle.h" />
     <ClInclude Include="Source\ToolUI.h" />
     <ClInclude Include="Source\Utility.h" />

@@ -31,7 +31,13 @@
     <ClCompile Include="Source\OBJAnimation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\PlayerStat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Source\shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ToolSection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\ToolUI.cpp">
@@ -85,7 +91,7 @@
     <ClCompile Include="source\MobGhost.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Explorer.cpp">
+    <ClCompile Include="Source\spawnPoints.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -123,10 +129,16 @@
     <ClInclude Include="Source\OBJAnimation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\PlayerStat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\shader.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ToolSection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\ToolUI.h">
@@ -165,7 +177,7 @@
     <ClInclude Include="source\MobGhost.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Explorer.h">
+    <ClInclude Include="Source\spawnPoints.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -41,6 +41,8 @@ class SceneLevelOneA : public Scene
         GEO_LHAND,
         GEO_RHAND,
 
+        GEO_SPAWNPOINT,
+
         // Tools Interface and It's Icons
         GEO_TOOLUI,
 
@@ -107,7 +109,7 @@ private:
 
     //scene renders
     void RenderScene();
-    void RenderFloor();
+    void RenderFloorCeiling();
     void RenderCutSceneOne();
 
     //map rendering

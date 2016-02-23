@@ -159,6 +159,9 @@ void SceneLevelOneA::Init()
     meshList[GEO_FACILITYCEILINGS] = MeshBuilder::GenerateQuad("Facility Ceiling", Color(1, 1, 1));
     meshList[GEO_FACILITYCEILINGS]->textureID = LoadTGA("Image//InsideCEILING.tga");
 
+    meshList[GEO_FACILITYFLOOR] = MeshBuilder::GenerateQuad("Facility Floor", Color(1, 1, 1));
+    meshList[GEO_FACILITYFLOOR]->textureID = LoadTGA("Image//InsideFLOOR.tga");
+    
     meshList[GEO_FACILITYOUT] = MeshBuilder::GenerateOBJ("FacilityOut", "OBJ//FacilityOUT.obj");
     meshList[GEO_FACILITYOUT]->textureID = LoadTGA("Image//FacilityOUT.tga");
     meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("Facility Wall Outside", Color(1, 1, 1));
@@ -173,7 +176,8 @@ void SceneLevelOneA::Init()
 	meshList[GEO_SLIDEDOORBTM] = MeshBuilder::GenerateOBJ("Hand", "OBJ//SlideDoorBtm.obj");
 	meshList[GEO_SLIDEDOORBTM]->textureID = LoadTGA("Image//SlidingDoorBtm.tga");
 
-    
+    meshList[GEO_SPAWNPOINT] = MeshBuilder::GenerateOBJ("Spawn", "OBJ//SpawnPoint.obj");
+    meshList[GEO_SPAWNPOINT]->textureID = LoadTGA("Image//SpawnPoint.tga");
 
 
     Mtx44 projection;
@@ -444,7 +448,7 @@ void SceneLevelOneA::Update(double dt)
 
     camera.Update(dt);
     //mob stuff
-    if (proximitycheck(-226, -172, 210,228))
+    if (proximitycheck(-226, -172, 210,228)&&!activateDoor)
     {
         Ghost.Spawn = true;
     }

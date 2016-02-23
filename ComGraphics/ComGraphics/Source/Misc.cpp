@@ -8,10 +8,30 @@ misc::~misc()
 
 }
 
-bool misc::hitting(float smallx, float largex, float smallz, float largez)
-{//height must only be within +9 to +11.
+float getAngle(const Vector3 &view, const Vector3 &target)
+{
+	float MagnitudeA = sqrt(pow(view.x, 2) + pow(view.y, 2) + pow(view.z, 2));
+	float MagnitudeB = sqrt(pow(target.x, 2) + pow(target.y, 2) + pow(target.z, 2));
+	float dotProduct = view.x * target.x + view.y * target.y + view.z * target.z;
+
+	float angle = acos(dotProduct / (MagnitudeA * MagnitudeB));
+
+	return Math::RadianToDegree(angle);
+}
+
+bool misc::hitting(float distance, float mobx, float mobz, float AOA, float camX, float camZ, Vector3 view, Vector3 position)
+{
 	bool result = false;
-	float dist = 3.f;
+	
+	float currDist = sqrt((camX - mobx) * (camX - mobx) + (camZ - mobz) * (camZ - mobz));
+
+	if (currDist <= distance)
+	{
+		if ((getAngle(view, Vector3(mobx,0,mobz) - position)) < AOA) 
+		{
+			result = true;
+		}
+	}
 
 	return result;
 }

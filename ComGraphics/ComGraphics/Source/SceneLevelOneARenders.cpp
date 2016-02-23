@@ -4,19 +4,19 @@
 
 
 // Rendering of Floor for all Scenes.
-void SceneLevelOneA::RenderFloor()
+void SceneLevelOneA::RenderFloorCeiling()
 {
-    for (int x = -450; x < 500; x += 100)
-    {
-        for (int z = -450; z < 500; z += 100)
-        {
-            modelStack.PushMatrix();
-            modelStack.Translate((float)x, 0, (float)z);
-            modelStack.Scale(100, 1, 100);
-            RenderMesh(meshList[GEO_PLANETFLOOR], true);
-            modelStack.PopMatrix();
-        }
-    }
+    modelStack.PushMatrix();
+    modelStack.Scale(1000, 1, 1000);
+    RenderMesh(meshList[GEO_FACILITYFLOOR], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 20, 0);
+    modelStack.Rotate(180, 1, 0, 0);
+    modelStack.Scale(1000, 1, 1000);
+    RenderMesh(meshList[GEO_FACILITYCEILINGS], true);
+    modelStack.PopMatrix();
 }
 
 
@@ -27,15 +27,24 @@ void SceneLevelOneA::RenderFloor()
 
 void SceneLevelOneA::RenderScene()
 {
-  
+    modelStack.PushMatrix();
+    modelStack.Translate(120, 5, 75);
+    modelStack.Scale(4, 4, 4);
+    RenderMesh(meshList[GEO_SPAWNPOINT], true);
+    modelStack.PopMatrix();
+    RenderFloorCeiling();
+
     //bottom left quadron
+    modelStack.PushMatrix();
+    modelStack.Translate(0, -7, 0);
+    modelStack.Scale(1, 2.2, 1);
     RenderUpWall(-2, -5, -55, 1);//1 
     RenderRightWall(-49, -55, -5, 2);//2
     RenderUpWall(-5, -8, -49, 3);//3
     RenderRightWall(-38, -49, -8, 4);//4
     RenderUpWall(-8, -28, -38, 5);//5
-    RenderRightWall(-28, -38, -28, 6);//6
-    RenderUpWall(-28, -38, -28, 7);//7
+    RenderRightWall(-28, -38, -26, 6);//6
+    RenderUpWall(-26, -38, -28, 7);//7
     RenderRightWall(-12, -28, -38, 8);//8
     RenderDownWall(-12, -38, -12, 9);//9
     RenderLeftWall(-12, -28, -12, 10);//10
@@ -61,7 +70,7 @@ void SceneLevelOneA::RenderScene()
     RenderUpWall(8, 5, -51, 26);//26
     RenderLeftWall(-51, -55, 5, 27);//27
     RenderUpWall(5, 2, -55, 28);//28
-
+    modelStack.PopMatrix();
 
 }
 
@@ -98,3 +107,4 @@ void SceneLevelOneA::CollapseRubble()
 	RenderMesh(meshList[GEO_RUBBLE], false);
 	modelStack.PopMatrix();
 }
+
