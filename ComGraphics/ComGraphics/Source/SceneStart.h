@@ -183,6 +183,7 @@ private:
 	int SlotIndex;
 	bool displayInteract;
 	float mobTimeCount;
+
 };
 
 #endif

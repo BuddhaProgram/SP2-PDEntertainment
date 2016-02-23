@@ -426,6 +426,7 @@ void SceneStart::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
 	camera.Update(dt);
+
 }
 
 void SceneStart::RenderMesh(Mesh*mesh, bool enableLight)
@@ -623,8 +624,10 @@ void SceneStart::Render()
     modelStack.PushMatrix();
     RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
     modelStack.PopMatrix();
+
 }
 	
+
 
 void SceneStart::Exit()
 {
