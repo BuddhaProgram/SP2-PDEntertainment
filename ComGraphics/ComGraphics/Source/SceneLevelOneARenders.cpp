@@ -68,11 +68,11 @@ void SceneLevelOneA::RenderScene()
 
 
 
-void SceneLevelOneA::RenderGhost1()
+void SceneLevelOneA::RenderGhost()
 {
-   /* modelStack.PushMatrix();
+    modelStack.PushMatrix();
     modelStack.Translate(Ghost.MobPosX, Ghost.MobPosY, Ghost.MobPosZ);
     RenderMesh(meshList[GEO_GHOST1], true);
-    modelStack.PopMatrix();*/
+    modelStack.PopMatrix();
 }
 

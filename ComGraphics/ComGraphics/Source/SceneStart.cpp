@@ -151,8 +151,7 @@ void SceneStart::Init()
 	meshList[GEO_LHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//LeftHand.obj");
 	meshList[GEO_LHAND]->textureID = LoadTGA("Image//LeftHand.tga");
 
-    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//GhostPlaceholder.obj");
-    meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Ghostplaceholder.tga");
+   
 
 
 	Mtx44 projection;
@@ -415,6 +414,7 @@ void SceneStart::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
 	camera.Update(dt);
+    
 }
 
 void SceneStart::RenderMesh(Mesh*mesh, bool enableLight)
@@ -597,6 +597,7 @@ void SceneStart::Render()
     ToolSelectionMouseScroll();
     RenderToolIcon();
 
+   
     RenderMesh(meshList[GEO_AXES], false);
     RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
     RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);

@@ -6,23 +6,29 @@ MobGhost::MobGhost()
     Spawn = false;
 
     //mob position variables
-    MobPosX = 0;
+    MobPosX = 1;
     MobPosY = 6;
-    MobPosZ = 0;
+    MobPosZ = 1;
 
     //player detection variables
-    TargetDetectX = 0;
-    TargetDetectZ = 0;
+    TargetDetectX = camera.position.x;
+    TargetDetectZ = camera.position.y;
 
     //timer variable
     mobTimeCount = 0;
 
     health = 2;
+    kenaWhack = false;
 }
 
 MobGhost::~MobGhost()
 {
 
+}
+
+void MobGhost::knockback()
+{
+    kenaWhack = true;
 }
 
 void MobGhost::move(double dt, int movespeed)
@@ -42,10 +48,10 @@ void MobGhost::move(double dt, int movespeed)
     MobPosZ = mob.z;
 }
 
-void MobGhost::setSpawnGhost(int xpos, int zpos)
+void MobGhost::setSpawnGhost(float xpos, float zpos)
 {
-    MobPosX = xpos;
-    MobPosZ = zpos;
+    MobPosX = xpos * 8;
+    MobPosZ = -(zpos * 8);
 }
 void MobGhost::TakeDamage(int damage)
 {

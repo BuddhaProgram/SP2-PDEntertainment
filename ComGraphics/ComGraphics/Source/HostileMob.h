@@ -2,8 +2,8 @@
 #define HOSTILEMOB_H
 
 #include "Vector3.h"
-#include "MatrixStack.h"
 #include "Camera3.h"
+
 
 class HostileMob
 {
@@ -12,7 +12,7 @@ public:
     ~HostileMob();
 
     //functions
-    void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
+    void checkPlayerPos(double dt, int checkRate, int lessenSpeed, float xpos, float zpos);
     
 
     bool Spawn;
@@ -29,7 +29,7 @@ public:
     float TargetDetectZ;
     float mobTimeCount;
 
-    Camera3 camera;
+   
 };
 #endif
 
