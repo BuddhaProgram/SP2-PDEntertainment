@@ -49,7 +49,7 @@ class SceneLevelOneA : public Scene
 
         GEO_GHOST1,
 
-
+        GEO_DOORSWITCH,
 		GEO_SLIDEDOORTOP,
 		GEO_SLIDEDOORBTM,
 
@@ -114,7 +114,10 @@ private:
     void RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber);//negative X facing wall
 
     //mob renders
-    void RenderGhost();
+    void RenderGhost(float xpos, float zpos);
+
+	//Obj renders
+	void CollapseRubble();
 
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
@@ -157,6 +160,9 @@ private:
 
     float FPS;
     bool displayInteract;
+	bool activateDoor = false;
+	bool Key_1 = false;
+	bool Notice = false;
 
     //collision variables 
     float CollXLarge[28];

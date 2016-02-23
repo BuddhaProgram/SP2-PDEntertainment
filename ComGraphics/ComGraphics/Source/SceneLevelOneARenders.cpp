@@ -67,25 +67,34 @@ void SceneLevelOneA::RenderScene()
 
 void SceneLevelOneA::TestDoorRender()
 {
-	//modelStack.PushMatrix();
-	//modelStack.Translate(0, DoorSlideTop, 0);
-	//modelStack.Scale(5, 5, 5);
-	//RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
-	//modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	modelStack.Translate(180, 4+anima.DoorSlideTop, 188);
+	modelStack.Scale(4.9f, 2, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
+	modelStack.PopMatrix();
 
-	//modelStack.PushMatrix();
-	//modelStack.Translate(0, DoorSlideBtm, 0);
-	//modelStack.Scale(5, 5, 5);
-	//RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
-	//modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	modelStack.Translate(180, 4+anima.DoorSlideBtm, 188);
+	modelStack.Scale(4.9f, 2, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
+	modelStack.PopMatrix();
+
 }
 
 
-void SceneLevelOneA::RenderGhost()
+void SceneLevelOneA::RenderGhost(float xpos, float zpos)
 {
     modelStack.PushMatrix();
-    modelStack.Translate(Ghost.MobPosX, Ghost.MobPosY, Ghost.MobPosZ);
+    modelStack.Translate(xpos, 6, zpos);
     RenderMesh(meshList[GEO_GHOST1], true);
     modelStack.PopMatrix();
 }
 
+void SceneLevelOneA::CollapseRubble()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 3 + anima.RubbleCollapse, 450);
+	modelStack.Scale(6, 6, 6);
+	RenderMesh(meshList[GEO_RUBBLE], false);
+	modelStack.PopMatrix();
+}

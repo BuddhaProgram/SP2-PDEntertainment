@@ -2,7 +2,6 @@
 #include "Vector3.h"
 #include "Mtx44.h"
 
-
 Animation::Animation()
 {
 }
@@ -16,7 +15,7 @@ void Animation::Collapsing(double dt)
 	//Rubble Falling~
 	if (Collapse)
 	{
-		RubbleCollapse -= (float)(50 * dt);
+		RubbleCollapse -= (float)(200 * dt);
 	}
 
 }
@@ -145,4 +144,19 @@ void Animation::OpenSlideDoor(double dt)
 			toSlideDoorBtm = false;
 		}
 	}
+}
+
+bool Animation::WithinArea(float smallx, float largex, float smallz, float largez)
+{//checks if camera is within a certain area of the room.
+	bool result = false;
+	if (camera.position.x >= smallx && camera.position.x <= largex && camera.position.z >= smallz && camera.position.z <= largez)
+	{
+		result = true;
+	}
+	else
+	{
+		result = false;
+	}
+
+	return result;
 }

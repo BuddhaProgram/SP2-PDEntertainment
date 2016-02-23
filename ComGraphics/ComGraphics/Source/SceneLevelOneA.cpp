@@ -6,6 +6,7 @@
 
 #include "Application.h"
 #include "MeshBuilder.h"
+#include "Misc.h"
 
 #include "LoadTGA.h"
 #include "Utility.h"
@@ -124,6 +125,7 @@ void SceneLevelOneA::Init()
     meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
     meshList[GEO_RUBBLE] = MeshBuilder::GenerateOBJ("Rubble", "OBJ//Rubble.obj");
+	meshList[GEO_RUBBLE]->textureID = LoadTGA("Image//InsideWALL.tga");
     meshList[GEO_PORTRAIT] = MeshBuilder::GenerateOBJ("Portrait", "OBJ//Portrait.obj");
     meshList[GEO_PORTRAIT]->textureID = LoadTGA("Image//Scream.tga");
 
@@ -133,6 +135,11 @@ void SceneLevelOneA::Init()
     meshList[GEO_FACILITYFLOOR]->material.kAmbient.Set(0.3f, 0.3f, 0.3f);
     meshList[GEO_FACILITYFLOOR]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
     meshList[GEO_FACILITYFLOOR]->material.kSpecular.Set(1, 1, 1);
+
+    meshList[GEO_DOORSWITCH] = MeshBuilder::GenerateCube("Switch", Color(0.623f, 0.467f, 0.467f));
+    meshList[GEO_DOORSWITCH]->material.kAmbient.Set(0.3f, 0.3f, 0.3f);
+    meshList[GEO_DOORSWITCH]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
+    meshList[GEO_DOORSWITCH]->material.kSpecular.Set(1, 1, 1);
 
     meshList[GEO_FACILITYWALLS] = MeshBuilder::GenerateQuad("Facility Wall", Color(1, 1, 1));
     meshList[GEO_FACILITYWALLS]->textureID = LoadTGA("Image//InsideWALL.tga");
@@ -154,6 +161,8 @@ void SceneLevelOneA::Init()
 	meshList[GEO_SLIDEDOORBTM] = MeshBuilder::GenerateOBJ("Hand", "OBJ//SlideDoorBtm.obj");
 	meshList[GEO_SLIDEDOORBTM]->textureID = LoadTGA("Image//SlidingDoorBtm.tga");
 
+    
+
 
     Mtx44 projection;
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
@@ -171,10 +180,10 @@ void SceneLevelOneA::Reset()
 
 void SceneLevelOneA::Collision(float smallx, float largex, float smallz, float largez)
 {
-    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 3.f)){ camera.position.z = smallz; }
-    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 3.f)){ camera.position.z = largez; }
-    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 3.f)){ camera.position.x = smallx; }
-    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 3.f)){ camera.position.x = largex; }
+    if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz) && (camera.position.z <= smallz + 3.f)){ camera.position.z = smallz; }
+    if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez) && (camera.position.z >= largez - 3.f)){ camera.position.z = largez; }
+    if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x >= smallx) && (camera.position.x <= smallx + 3.f)){ camera.position.x = smallx; }
+    if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x <= largex) && (camera.position.x >= largex - 3.f)){ camera.position.x = largex; }
 }
 
 bool SceneLevelOneA::proximitycheck(float smallx, float largex, float smallz, float largez)
@@ -210,6 +219,10 @@ void SceneLevelOneA::Update(double dt)
 
     anima.OBJAnimation(dt);
     anima.Collapsing(dt);
+	if (activateDoor)
+	{
+		anima.OpenSlideDoor(dt);
+	}
 
     if (proximitycheck(-13, 13, -105, -70))
     {
@@ -220,25 +233,91 @@ void SceneLevelOneA::Update(double dt)
         displayInteract = false;
     }
 
+    //wall collision DO NOT TOUCH
     for (int i = 0; i < 28; i++)
     {
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
 
+
+	if (/*!(anima.WithinArea(-20, 20, 400, 450))*/  !(camera.position.x >= -20 && camera.position.x <= 20 && camera.position.z >= 400 && camera.position.z <= 450))
+	{
+		anima.Collapse = true;
+		if (anima.RubbleCollapse <= 0)
+		{
+			anima.Collapse = false;
+		}
+	}
+	if (!anima.Collapse)
+	{
+		Collision(-25, 25, 430, 460);
+	}
+
+
+	if (proximitycheck(150, 200, 200, 300))
+	{
+		displayInteract = true;
+	}
+	else
+	{
+		displayInteract = false;
+	}
+	if (Application::IsKeyPressed('E'))
+	{
+		if (proximitycheck(150, 200, 200, 300))
+		{
+			displayInteract = false;
+			if (Key_1)
+			{
+				activateDoor = true;
+			}
+			else
+			{
+				Notice = true;
+			}
+		}
+	}
+	if (!proximitycheck(150, 200, 200, 300))
+	{
+		Notice = false;
+	}
+	if (anima.toSlideDoorBtm)
+	{
+		Collision(150, 200, 180, 200);
+	}
+
+
+	std::cout << anima.Collapse << std::endl;
+
+
+
     if (Application::IsKeyPressed('J'))
     {
         Ghost.Spawn = true;
     }
+
     camera.Update(dt);
     //mob stuff
-  
+    if (proximitycheck(-226, -172, 210,228))
+    {
+        Ghost.Spawn = true;
+    }
 
 
-    Ghost.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
+    Ghost.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);//pos checker
 
     if (Ghost.Spawn)
     {
         Ghost.move(dt, 50);
+    }
+    if (proximitycheck(-220,-200, 120, 140) && !activateDoor)
+    {
+        displayInteract = true;
+        if (Application::IsKeyPressed('E'))
+        {
+            activateDoor = true;
+            Ghost.Spawn = false;
+        }
     }
     
 }
@@ -420,11 +499,19 @@ void SceneLevelOneA::Render()
     }
 
     RenderScene();
+	TestDoorRender();
+	CollapseRubble();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(-200,0,120);
+    modelStack.Scale(5, 5, 5);
+    RenderMesh(meshList[GEO_DOORSWITCH], true);
+    modelStack.PopMatrix();
 
     //mob renders
     if (Ghost.Spawn)
     {
-        RenderGhost();
+        RenderGhost(Ghost.MobPosX, Ghost.MobPosZ);
     }
 
     RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
@@ -433,6 +520,15 @@ void SceneLevelOneA::Render()
     RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 4);
     RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
     RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
+
+	if (Notice)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "NO KEY", Color(0, 1, 0), 4, 10, 7);
+	}
+    if (displayInteract)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 12);
+    }
 }
 
 void SceneLevelOneA::Exit()

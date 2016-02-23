@@ -32,9 +32,7 @@ void HostileMob::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 
     if (mobTimeCount >= 1)
     {
         TargetDetectX = xpos;
-        std::cout << TargetDetectX << std::endl;
         TargetDetectZ = zpos;
-        std::cout << TargetDetectZ << std::endl;
         mobTimeCount = 0;
     }
 }
