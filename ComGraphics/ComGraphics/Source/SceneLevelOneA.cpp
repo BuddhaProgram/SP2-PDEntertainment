@@ -136,6 +136,11 @@ void SceneLevelOneA::Init()
     meshList[GEO_FACILITYFLOOR]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
     meshList[GEO_FACILITYFLOOR]->material.kSpecular.Set(1, 1, 1);
 
+    meshList[GEO_DOORSWITCH] = MeshBuilder::GenerateCube("Switch", Color(0.623f, 0.467f, 0.467f));
+    meshList[GEO_DOORSWITCH]->material.kAmbient.Set(0.3f, 0.3f, 0.3f);
+    meshList[GEO_DOORSWITCH]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
+    meshList[GEO_DOORSWITCH]->material.kSpecular.Set(1, 1, 1);
+
     meshList[GEO_FACILITYWALLS] = MeshBuilder::GenerateQuad("Facility Wall", Color(1, 1, 1));
     meshList[GEO_FACILITYWALLS]->textureID = LoadTGA("Image//InsideWALL.tga");
 
@@ -155,6 +160,8 @@ void SceneLevelOneA::Init()
 	meshList[GEO_SLIDEDOORTOP]->textureID = LoadTGA("Image//SlidingDoorTop.tga");
 	meshList[GEO_SLIDEDOORBTM] = MeshBuilder::GenerateOBJ("Hand", "OBJ//SlideDoorBtm.obj");
 	meshList[GEO_SLIDEDOORBTM]->textureID = LoadTGA("Image//SlidingDoorBtm.tga");
+
+    
 
 
     Mtx44 projection;
@@ -302,6 +309,15 @@ void SceneLevelOneA::Update(double dt)
     if (Ghost.Spawn)
     {
         Ghost.move(dt, 50);
+    }
+    if (proximitycheck(-220,-200, 120, 140) && !activateDoor)
+    {
+        displayInteract = true;
+        if (Application::IsKeyPressed('E'))
+        {
+            activateDoor = true;
+            Ghost.Spawn = false;
+        }
     }
     
 }
@@ -486,6 +502,12 @@ void SceneLevelOneA::Render()
 	TestDoorRender();
 	CollapseRubble();
 
+    modelStack.PushMatrix();
+    modelStack.Translate(-200,0,120);
+    modelStack.Scale(5, 5, 5);
+    RenderMesh(meshList[GEO_DOORSWITCH], true);
+    modelStack.PopMatrix();
+
     //mob renders
     if (Ghost.Spawn)
     {
@@ -503,6 +525,10 @@ void SceneLevelOneA::Render()
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "NO KEY", Color(0, 1, 0), 4, 10, 7);
 	}
+    if (displayInteract)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 12);
+    }
 }
 
 void SceneLevelOneA::Exit()

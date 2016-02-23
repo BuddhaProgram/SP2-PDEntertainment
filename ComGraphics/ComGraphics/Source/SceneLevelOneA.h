@@ -49,7 +49,7 @@ class SceneLevelOneA : public Scene
 
         GEO_GHOST1,
 
-
+        GEO_DOORSWITCH,
 		GEO_SLIDEDOORTOP,
 		GEO_SLIDEDOORBTM,
 
