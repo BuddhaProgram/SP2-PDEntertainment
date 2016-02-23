@@ -15,6 +15,7 @@ class ToolUI
 			Max_ToolType,
 		};
 
+		int ID;
 		ToolUI();
 		ToolUI(ToolType tool);
 		~ToolUI();

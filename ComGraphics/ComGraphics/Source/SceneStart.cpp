@@ -264,32 +264,32 @@ void SceneStart::MouseScrollToolSlot()
 		Variables.i_SlotIndex--;
 	}
 
-	if (SlotIndex > 4)
+	if (Variables.i_SlotIndex > 4)
 	{
 		Variables.i_SlotIndex = 1;
 	}
 
-	else if (SlotIndex < 1)
+	else if (Variables.i_SlotIndex < 1)
 	{
 		Variables.i_SlotIndex = 4;
 	}
 
-	if (SlotIndex == 1)
+	if (Variables.i_SlotIndex == 1)
 	{
 		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
 	}
 
-	else if (SlotIndex == 2)
+	else if (Variables.i_SlotIndex == 2)
 	{
 		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxTwo.tga");
 	}
 
-	else if (SlotIndex == 3)
+	else if (Variables.i_SlotIndex == 3)
 	{
 		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxThree.tga");
 	}
 
-	else if (SlotIndex == 4)
+	else if (Variables.i_SlotIndex == 4)
 	{
 		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
 	}
@@ -421,8 +421,6 @@ void SceneStart::Update(double dt)
 	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
 
 	//Weapon.StoreAttack(Variables.i_SlotIndex);
-
-	//std::cout << Weapon.i_Attack << std::endl;
 
 	Collision(-35, 35, -105, -70);
 	Collision(-100, 100, -115, -95);
