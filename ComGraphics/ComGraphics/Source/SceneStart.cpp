@@ -117,9 +117,6 @@ void SceneStart::Init()
     meshList[GEO_BACK] = MeshBuilder::GenerateQuad("SkyBox1_back", Color(1, 1, 1));
     meshList[GEO_BACK]->textureID = LoadTGA("Image//SkyBox1_back.tga");
 
-	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
-	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
-
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
@@ -132,8 +129,17 @@ void SceneStart::Init()
 	meshList[GEO_TOOLUI] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
 	meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
 
-	meshList[GEO_PICKAXEICON] = MeshBuilder::GenerateQuad("WeaponIcon", Color(1, 1, 1));
+	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
+	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
+
+	meshList[GEO_PICKAXEICON] = MeshBuilder::GenerateQuad("PickAxeIcon", Color(1, 1, 1));
 	meshList[GEO_PICKAXEICON]->textureID = LoadTGA("Image//PickaxeIcon.tga");
+
+	meshList[GEO_BAT] = MeshBuilder::GenerateOBJ("BaseballBat", "OBJ//BaseballBat.obj");
+	meshList[GEO_BAT]->textureID = LoadTGA("Image//BaseballBat.tga");
+
+	meshList[GEO_BATICON] = MeshBuilder::GenerateQuad("BatIcon", Color(1, 1, 1));
+	meshList[GEO_BATICON]->textureID = LoadTGA("Image//BaseballBat.tga");
 
 	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
 	meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
@@ -157,10 +163,6 @@ void SceneStart::Init()
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
-
-    
-    
-	SlotIndex = 1;
 
 	// All Switches Debounce Key
 	f_SwitchDebounce = 0.0f;
@@ -200,16 +202,29 @@ void SceneStart::ToolsUI()
 	if (Application::IsKeyPressed('Z'))
 	{
 		Inventory.InsertToolSlot(ToolUI::Pickaxe);
-		Weapon.InsertItemStatSlot(ToolUI::Pickaxe);
+		//Weapon.InsertItemStatSlot(ToolUI::Pickaxe);
+	}
+
+	if (Application::IsKeyPressed('X'))
+	{
+		Inventory.InsertToolSlot(ToolUI::BaseballBat);
+		//Weapon.InsertItemStatSlot(ToolUI::BaseballBat);
 	}
 }
 
 void SceneStart::ToolSelectionMouseScroll()
 {
-	if (Inventory.GetToolType(SlotIndex) == ToolUI::Pickaxe)
+	if (Inventory.GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
 	{
 		modelStack.PushMatrix();
 		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, RotateX, 1, 0, 0, 4.5, 0, 0, true);
+		modelStack.PopMatrix();
+	}
+
+	else if (Inventory.GetToolType(Variables.i_SlotIndex) == ToolUI::BaseballBat)
+	{
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_BAT], 15, RotateX, 1, 0, 0, 4.5, 0, 0, true);
 		modelStack.PopMatrix();
 	}
 }
@@ -220,46 +235,61 @@ void SceneStart::RenderToolIcon()
 	{
 		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
 	}
+
+	else if (Inventory.GetToolType(1) == ToolUI::BaseballBat)
+	{
+		RenderModelOnScreen(meshList[GEO_BATICON], 4.5, 90, 1, 0, 0, 6.6, 0.775, 1, false);
+	}
+
+	if (Inventory.GetToolType(2) == ToolUI::Pickaxe)
+	{
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5, 90, 1, 0, 0, 6.6, 3, 1, false);
+	}
+
+	else if (Inventory.GetToolType(2) == ToolUI::BaseballBat)
+	{
+		RenderModelOnScreen(meshList[GEO_BATICON], 4.5, 90, 1, 0, 0, 6.6, 3, 1, false);
+	}
 }
 
 void SceneStart::MouseScrollToolSlot()
 {
 	if (Application::mouse_scroll > 0)
 	{
-		SlotIndex++;
+		Variables.i_SlotIndex++;
 	}
 
 	else if (Application::mouse_scroll < 0)
 	{
-		SlotIndex--;
+		Variables.i_SlotIndex--;
 	}
 
-	if (SlotIndex > 4)
+	if (Variables.i_SlotIndex > 4)
 	{
-		SlotIndex = 1;
+		Variables.i_SlotIndex = 1;
 	}
 
-	else if (SlotIndex < 1)
+	else if (Variables.i_SlotIndex < 1)
 	{
-		SlotIndex = 4;
+		Variables.i_SlotIndex = 4;
 	}
 
-	if (SlotIndex == 1)
+	if (Variables.i_SlotIndex == 1)
 	{
 		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
 	}
 
-	else if (SlotIndex == 2)
+	else if (Variables.i_SlotIndex == 2)
 	{
 		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxTwo.tga");
 	}
 
-	else if (SlotIndex == 3)
+	else if (Variables.i_SlotIndex == 3)
 	{
 		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxThree.tga");
 	}
 
-	else if (SlotIndex == 4)
+	else if (Variables.i_SlotIndex == 4)
 	{
 		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
 	}
@@ -390,8 +420,6 @@ void SceneStart::Update(double dt)
 	Switches.SwitchPuzzleOne(Switches.b_PuzzleOneSwitchOne, Switches.b_PuzzleOneSwitchTwo, Switches.b_PuzzleOneSwitchThree);
 	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
 
-	//std::cout << Weapon.i_Attack << std::endl;
-
 	Collision(-35, 35, -105, -70);
 	Collision(-100, 100, -115, -95);
 	Collision(-100, -80, -115, 115);
@@ -414,7 +442,6 @@ void SceneStart::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
 	camera.Update(dt);
-
 }
 
 void SceneStart::RenderMesh(Mesh*mesh, bool enableLight)

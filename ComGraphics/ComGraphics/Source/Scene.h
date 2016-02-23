@@ -2,7 +2,7 @@
 #define SCENE_H
 
 #include "GlobalVariables.h"
-#include "ItemStat.h"
+#include "ToolSection.h"
 
 class Scene
 {
@@ -19,7 +19,6 @@ public:
 
 	ToolSection Inventory;
 	ToolUI::ToolType Tool;
-	ItemStat Weapon;
 	
 };
 

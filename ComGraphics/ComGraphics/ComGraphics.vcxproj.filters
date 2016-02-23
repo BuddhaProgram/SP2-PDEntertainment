@@ -88,9 +88,6 @@
     <ClCompile Include="source\MapRender.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ItemStat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\MobGhost.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -172,9 +169,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\SceneLevelOneA.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ItemStat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\MobGhost.h">

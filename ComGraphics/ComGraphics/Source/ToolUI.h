@@ -10,11 +10,12 @@ class ToolUI
 		enum ToolType
 		{
 			Pickaxe,
-			Torchlight,
+			BaseballBat,
 			Empty,
 			Max_ToolType,
 		};
 
+		int ID;
 		ToolUI();
 		ToolUI(ToolType tool);
 		~ToolUI();

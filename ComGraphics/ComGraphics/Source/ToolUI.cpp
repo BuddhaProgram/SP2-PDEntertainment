@@ -3,6 +3,7 @@
 ToolUI::ToolUI()
 {
 	tool = Empty;
+	ID = 0;
 }
 
 ToolUI::ToolUI(ToolType tool)

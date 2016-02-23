@@ -1,4 +1,4 @@
-#include "ItemStat.h"
+#include "ToolSection.h"
 
 ToolSection::ToolSection()
 {
@@ -47,18 +47,45 @@ ToolUI::ToolType ToolSection::GetToolType(int SlotNumber)
 	switch (SlotNumber)
 	{
 	case 1:
+		if (it->tool == ToolUI::Pickaxe)
+			it->ID = 5;
+
+		else if (it->tool == ToolUI::BaseballBat)
+			it->ID = 10;
+
 		return it->tool;
 		break;
 	case 2:
 		std::advance(it, 1);
+
+		if (it->tool == ToolUI::Pickaxe)
+			it->ID = 5;
+
+		else if (it->tool == ToolUI::BaseballBat)
+			it->ID = 10;
+
 		return it->tool;
 		break;
 	case 3:
 		std::advance(it, 2);
+
+		if (it->tool == ToolUI::Pickaxe)
+			it->ID = 5;
+
+		else if (it->tool == ToolUI::BaseballBat)
+			it->ID = 10;
+
 		return it->tool;
 		break;
 	case 4:
 		std::advance(it, 3);
+
+		if (it->tool == ToolUI::Pickaxe)
+			it->ID = 5;
+
+		else if (it->tool == ToolUI::BaseballBat)
+			it->ID = 10;
+
 		return it->tool;
 		break;
 	}

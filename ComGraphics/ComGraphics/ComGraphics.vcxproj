@@ -14,7 +14,6 @@
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="source\CutSceneOneRenders.cpp" />
     <ClCompile Include="Source\GlobalVariables.cpp" />
-    <ClCompile Include="Source\ItemStat.cpp" />
     <ClCompile Include="source\MapRender.cpp" />
     <ClCompile Include="source\MobGhost.cpp" />
     <ClCompile Include="source\SceneLevelOneARenders.cpp" />
@@ -46,7 +45,6 @@
   <ItemGroup>
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\GlobalVariables.h" />
-    <ClInclude Include="Source\ItemStat.h" />
     <ClInclude Include="source\MobGhost.h" />
     <ClInclude Include="source\SceneLevelOneA.h" />
     <ClInclude Include="source\SceneLevelOneB.h" />
