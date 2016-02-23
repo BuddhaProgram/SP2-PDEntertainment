@@ -169,10 +169,6 @@ void SceneStart::Init()
 }
 
 static float LSPEED = 10.f;
-
-float RotateX = 0.0f;
-bool b_LockSwing = false;
-bool b_LockSwingDebounce = false;
 bool start_Animation = false;
 
 
@@ -201,54 +197,14 @@ void SceneStart::ToolsUI()
 {
 	if (Application::IsKeyPressed('Z'))
 	{
-		Inventory.InsertToolSlot(ToolUI::Pickaxe);
+		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
 		//Weapon.InsertItemStatSlot(ToolUI::Pickaxe);
 	}
 
 	if (Application::IsKeyPressed('X'))
 	{
-		Inventory.InsertToolSlot(ToolUI::BaseballBat);
+		Explorer::instance()->InsertToolSlot(ToolUI::BaseballBat);
 		//Weapon.InsertItemStatSlot(ToolUI::BaseballBat);
-	}
-}
-
-void SceneStart::ToolSelectionMouseScroll()
-{
-	if (Inventory.GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
-	{
-		modelStack.PushMatrix();
-		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, RotateX, 1, 0, 0, 4.5, 0, 0, true);
-		modelStack.PopMatrix();
-	}
-
-	else if (Inventory.GetToolType(Variables.i_SlotIndex) == ToolUI::BaseballBat)
-	{
-		modelStack.PushMatrix();
-		RenderModelOnScreen(meshList[GEO_BAT], 15, RotateX, 1, 0, 0, 4.5, 0, 0, true);
-		modelStack.PopMatrix();
-	}
-}
-
-void SceneStart::RenderToolIcon()
-{
-	if (Inventory.GetToolType(1) == ToolUI::Pickaxe)
-	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
-	}
-
-	else if (Inventory.GetToolType(1) == ToolUI::BaseballBat)
-	{
-		RenderModelOnScreen(meshList[GEO_BATICON], 4.5, 90, 1, 0, 0, 6.6, 0.775, 1, false);
-	}
-
-	if (Inventory.GetToolType(2) == ToolUI::Pickaxe)
-	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5, 90, 1, 0, 0, 6.6, 3, 1, false);
-	}
-
-	else if (Inventory.GetToolType(2) == ToolUI::BaseballBat)
-	{
-		RenderModelOnScreen(meshList[GEO_BATICON], 4.5, 90, 1, 0, 0, 6.6, 3, 1, false);
 	}
 }
 
@@ -292,6 +248,78 @@ void SceneStart::MouseScrollToolSlot()
 	else if (Variables.i_SlotIndex == 4)
 	{
 		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
+	}
+}
+
+void SceneStart::ToolSelectionMouseScroll()
+{
+	if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
+	{
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
+		modelStack.PopMatrix();
+	}
+
+	else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::BaseballBat)
+	{
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_BAT], 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
+		modelStack.PopMatrix();
+	}
+}
+
+void SceneStart::RenderToolIcon()
+{
+	if (Explorer::instance()->GetToolType(1) == ToolUI::Pickaxe)
+	{
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
+	}
+
+	else if (Explorer::instance()->GetToolType(1) == ToolUI::BaseballBat)
+	{
+		RenderModelOnScreen(meshList[GEO_BATICON], 4.5, 90, 1, 0, 0, 6.6, 0.775, 1, false);
+	}
+
+	if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
+	{
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5, 90, 1, 0, 0, 6.6, 3, 1, false);
+	}
+
+	else if (Explorer::instance()->GetToolType(2) == ToolUI::BaseballBat)
+	{
+		RenderModelOnScreen(meshList[GEO_BATICON], 4.5, 90, 1, 0, 0, 6.6, 3, 1, false);
+	}
+}
+
+void SceneStart::MouseClickFunction(double dt)
+{
+	if (Application::IsKeyPressed(VK_LBUTTON) && Variables.b_LockSwing == false && Variables.b_LockSwingDebounce == false && Explorer::instance()->stamina >= 20)
+	{
+		Variables.b_LockSwing = true;
+		Variables.b_LockSwingDebounce = true;
+		Explorer::instance()->stamina -= 20;
+	}
+
+	if (Variables.b_LockSwingDebounce == true)
+	{
+		Variables.RotateX -= 180.0f * (float)dt;
+
+		if (Variables.RotateX <= -45.0f)
+		{
+			Variables.RotateX = -45.0f;
+			Variables.b_LockSwingDebounce = false;
+		}
+	}
+
+	if (Variables.b_LockSwingDebounce == false && Variables.b_LockSwing == true && Variables.RotateX <= 0.0f)
+	{
+		Variables.RotateX += 180.0f * (float)dt;
+
+		if (Variables.RotateX >= 0.0f)
+		{
+			Variables.RotateX = 0.0f;
+			Variables.b_LockSwing = false;
+		}
 	}
 }
 
@@ -353,38 +381,6 @@ bool SceneStart::proximitycheck(float smallx, float largex, float smallz, float 
 	if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz - 2.f) && (camera.position.z <= smallz)){ result = true; }
 	if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez + 2.f) && (camera.position.z >= largez)){ result = true; }
 	return result;
-}
-
-void SceneStart::MouseClickFunction(double dt)
-{
-	if (Application::IsKeyPressed(VK_LBUTTON) && b_LockSwing == false && b_LockSwingDebounce == false && PlayerStat::instance()->stamina >= 20)
-	{
-		b_LockSwing = true;
-		b_LockSwingDebounce = true;
-		PlayerStat::instance()->stamina -= 20;
-	}
-
-	if (b_LockSwingDebounce == true)
-	{
-		RotateX -= 180.0f * (float)dt;
-
-		if (RotateX <= -45.0f)
-		{
-			RotateX = -45.0f;
-			b_LockSwingDebounce = false;
-		}
-	}
-
-	if (b_LockSwingDebounce == false && b_LockSwing == true && RotateX <= 0.0f)
-	{
-		RotateX += 180.0f * (float)dt;
-
-		if (RotateX >= 0.0f)
-		{
-			RotateX = 0.0f;
-			b_LockSwing = false;
-		}
-	}
 }
 
 void SceneStart::ChangeFirstCutScene()
@@ -640,7 +636,6 @@ void SceneStart::Render()
     modelStack.PushMatrix();
     RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
     modelStack.PopMatrix();
-
 }
 	
 

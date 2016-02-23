@@ -2,7 +2,7 @@
 #define SCENE_H
 
 #include "GlobalVariables.h"
-#include "ToolSection.h"
+#include "Explorer.h"
 
 class Scene
 {
@@ -16,10 +16,7 @@ public:
 	virtual void Exit() = 0;
 
 	GlobalVariables Variables;
-
-	ToolSection Inventory;
 	ToolUI::ToolType Tool;
-	
 };
 
 #endif

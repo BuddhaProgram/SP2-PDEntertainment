@@ -41,10 +41,13 @@ class SceneLevelOneB : public Scene
         GEO_RHAND,
 
         // Tools Interface and It's Icons
-        GEO_TOOLUI,
+		GEO_TOOLUI,
 
-        GEO_PICKAXE,
-        GEO_PICKAXEICON,
+		GEO_PICKAXE,
+		GEO_PICKAXEICON,
+
+		GEO_BAT,
+		GEO_BATICON,
 
         GEO_GHOST1,
 
@@ -123,12 +126,14 @@ private:
     // Switches Functions for puzzles
     void PuzzleOneSwitchCheck(double dt);
 
-    // Tool UI functions
-    void ToolsUI();
-    void MouseScrollToolSlot();
-    void ToolSelectionMouseScroll();
-    void RenderToolIcon();
-    void RenderToolUI();
+	// Tool UI functions
+	// Tool UI functions
+	void ToolsUI();
+	void MouseScrollToolSlot();
+	void ToolSelectionMouseScroll();
+	void RenderToolIcon();
+
+	void MouseClickFunction(double dt);
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];

@@ -118,8 +118,20 @@ void SceneLevelOneB::Init()
     meshList[GEO_BACK] = MeshBuilder::GenerateQuad("SkyBox1_back", Color(1, 1, 1));
     meshList[GEO_BACK]->textureID = LoadTGA("Image//SkyBox1_back.tga");
 
-    meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
-    meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
+	meshList[GEO_TOOLUI] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
+
+	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
+	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
+
+	meshList[GEO_PICKAXEICON] = MeshBuilder::GenerateQuad("PickAxeIcon", Color(1, 1, 1));
+	meshList[GEO_PICKAXEICON]->textureID = LoadTGA("Image//PickaxeIcon.tga");
+
+	meshList[GEO_BAT] = MeshBuilder::GenerateOBJ("BaseballBat", "OBJ//BaseballBat.obj");
+	meshList[GEO_BAT]->textureID = LoadTGA("Image//BaseballBat.tga");
+
+	meshList[GEO_BATICON] = MeshBuilder::GenerateQuad("BatIcon", Color(1, 1, 1));
+	meshList[GEO_BATICON]->textureID = LoadTGA("Image//BaseballBat.tga");
 
     meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
     meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
@@ -172,6 +184,136 @@ bool SceneLevelOneB::proximitycheck(float smallx, float largex, float smallz, fl
     return result;
 }
 
+void SceneLevelOneB::ToolsUI()
+{
+	if (Application::IsKeyPressed('Z'))
+	{
+		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
+		//Weapon.InsertItemStatSlot(ToolUI::Pickaxe);
+	}
+
+	if (Application::IsKeyPressed('X'))
+	{
+		Explorer::instance()->InsertToolSlot(ToolUI::BaseballBat);
+		//Weapon.InsertItemStatSlot(ToolUI::BaseballBat);
+	}
+}
+
+void SceneLevelOneB::ToolSelectionMouseScroll()
+{
+	if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
+	{
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
+		modelStack.PopMatrix();
+	}
+
+	else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::BaseballBat)
+	{
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_BAT], 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
+		modelStack.PopMatrix();
+	}
+}
+
+void SceneLevelOneB::RenderToolIcon()
+{
+	if (Explorer::instance()->GetToolType(1) == ToolUI::Pickaxe)
+	{
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
+	}
+
+	else if (Explorer::instance()->GetToolType(1) == ToolUI::BaseballBat)
+	{
+		RenderModelOnScreen(meshList[GEO_BATICON], 4.5, 90, 1, 0, 0, 6.6, 0.775, 1, false);
+	}
+
+	if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
+	{
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5, 90, 1, 0, 0, 6.6, 3, 1, false);
+	}
+
+	else if (Explorer::instance()->GetToolType(2) == ToolUI::BaseballBat)
+	{
+		RenderModelOnScreen(meshList[GEO_BATICON], 4.5, 90, 1, 0, 0, 6.6, 3, 1, false);
+	}
+}
+
+void SceneLevelOneB::MouseScrollToolSlot()
+{
+	if (Application::mouse_scroll > 0)
+	{
+		Variables.i_SlotIndex++;
+	}
+
+	else if (Application::mouse_scroll < 0)
+	{
+		Variables.i_SlotIndex--;
+	}
+
+	if (Variables.i_SlotIndex > 4)
+	{
+		Variables.i_SlotIndex = 1;
+	}
+
+	else if (Variables.i_SlotIndex < 1)
+	{
+		Variables.i_SlotIndex = 4;
+	}
+
+	if (Variables.i_SlotIndex == 1)
+	{
+		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
+	}
+
+	else if (Variables.i_SlotIndex == 2)
+	{
+		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxTwo.tga");
+	}
+
+	else if (Variables.i_SlotIndex == 3)
+	{
+		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxThree.tga");
+	}
+
+	else if (Variables.i_SlotIndex == 4)
+	{
+		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
+	}
+}
+
+void SceneLevelOneB::MouseClickFunction(double dt)
+{
+	if (Application::IsKeyPressed(VK_LBUTTON) && Variables.b_LockSwing == false && Variables.b_LockSwingDebounce == false && Explorer::instance()->stamina >= 20)
+	{
+		Variables.b_LockSwing = true;
+		Variables.b_LockSwingDebounce = true;
+		Explorer::instance()->stamina -= 20;
+	}
+
+	if (Variables.b_LockSwingDebounce == true)
+	{
+		Variables.RotateX -= 180.0f * (float)dt;
+
+		if (Variables.RotateX <= -45.0f)
+		{
+			Variables.RotateX = -45.0f;
+			Variables.b_LockSwingDebounce = false;
+		}
+	}
+
+	if (Variables.b_LockSwingDebounce == false && Variables.b_LockSwing == true && Variables.RotateX <= 0.0f)
+	{
+		Variables.RotateX += 180.0f * (float)dt;
+
+		if (Variables.RotateX >= 0.0f)
+		{
+			Variables.RotateX = 0.0f;
+			Variables.b_LockSwing = false;
+		}
+	}
+}
+
 void SceneLevelOneB::Update(double dt)
 {
     light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
@@ -194,6 +336,12 @@ void SceneLevelOneB::Update(double dt)
 
     anima.OBJAnimation(dt);
     anima.Collapsing(dt);
+
+	/*-------------------------[Tool UI Functions]-------------------------------*/
+	ToolsUI();
+	MouseScrollToolSlot();
+	MouseClickFunction(dt);
+	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
     if (proximitycheck(-13, 13, -105, -70))
         displayInteract = true;
@@ -423,6 +571,13 @@ void SceneLevelOneB::Render()
         Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
         glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
     }
+
+	ToolSelectionMouseScroll();
+	RenderToolIcon();
+
+	modelStack.PushMatrix();
+	RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
+	modelStack.PopMatrix();
 }
 
 void SceneLevelOneB::Exit()

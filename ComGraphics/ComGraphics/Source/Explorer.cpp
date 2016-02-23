@@ -1,19 +1,37 @@
-#include "ToolSection.h"
+#include "Explorer.h"
 
-ToolSection::ToolSection()
+Explorer::Explorer()
 {
+	Explorer::instance()->hp = 100;
+	Explorer::instance()->stamina = 100;
+
 	for (int i = 0; i < 4; ++i)
 	{
-		TotalTools.push_back(ToolUI(ToolUI::Empty));
+		Explorer::instance()->TotalTools.push_back(ToolUI(ToolUI::Empty));
 	}
 }
 
-ToolSection::~ToolSection()
+float Explorer::getHP()
 {
-
+	return Explorer::instance()->hp;
 }
 
-void ToolSection::InsertToolSlot(ToolUI::ToolType ChooseTools)
+float Explorer::getStamina()
+{
+	return Explorer::instance()->stamina;
+}
+
+void Explorer::setHP(float HP)
+{
+	Explorer::instance()->hp = HP;
+}
+
+void Explorer::setStamina(float Stam)
+{
+	Explorer::instance()->stamina = Stam;
+}
+
+void Explorer::InsertToolSlot(ToolUI::ToolType ChooseTools)
 {
 	if (CheckForDoubleTool(ChooseTools) == false)
 	{
@@ -28,7 +46,7 @@ void ToolSection::InsertToolSlot(ToolUI::ToolType ChooseTools)
 	}
 }
 
-bool ToolSection::CheckForDoubleTool(ToolUI::ToolType DoubleTool)
+bool Explorer::CheckForDoubleTool(ToolUI::ToolType DoubleTool)
 {
 	for (std::list<ToolUI>::iterator TS = TotalTools.begin(); TS != TotalTools.end(); ++TS)
 	{
@@ -41,7 +59,7 @@ bool ToolSection::CheckForDoubleTool(ToolUI::ToolType DoubleTool)
 	return false;
 }
 
-ToolUI::ToolType ToolSection::GetToolType(int SlotNumber)
+ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 {
 	std::list<ToolUI>::iterator it = TotalTools.begin();
 	switch (SlotNumber)

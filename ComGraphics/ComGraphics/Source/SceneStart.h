@@ -10,7 +10,6 @@
 #include "MatrixStack.h"
 #include "Light.h"
 #include "OBJAnimation.h"
-#include "PlayerStat.h"
 #include "HostileMob.h"
 #include "MobGhost.h"
 
@@ -145,6 +144,7 @@ private:
 	void MouseScrollToolSlot();
 	void ToolSelectionMouseScroll();
 	void RenderToolIcon();
+
 	void MouseClickFunction(double dt);
 
 	// Interactions to change to FirstCutScene

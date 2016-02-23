@@ -31,14 +31,13 @@
     <ClCompile Include="Source\MeshBuilder.cpp" />
     <ClCompile Include="Source\OBJAnimation.cpp" />
     <ClCompile Include="source\HostileMob.cpp" />
-    <ClCompile Include="Source\PlayerStat.cpp" />
+    <ClCompile Include="Source\Explorer.cpp" />
     <ClCompile Include="source\SceneStartRenders.cpp" />
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\Misc.cpp" />
     <ClCompile Include="Source\SceneEnd.cpp" />
     <ClCompile Include="Source\CutSceneOne.cpp" />
     <ClCompile Include="Source\SwitchLightPuzzle.cpp" />
-    <ClCompile Include="Source\ToolSection.cpp" />
     <ClCompile Include="Source\ToolUI.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
   </ItemGroup>
@@ -59,14 +58,13 @@
     <ClInclude Include="Source\MeshBuilder.h" />
     <ClInclude Include="Source\HostileMob.h" />
     <ClInclude Include="Source\OBJAnimation.h" />
-    <ClInclude Include="Source\PlayerStat.h" />
+    <ClInclude Include="Source\Explorer.h" />
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\shader.hpp" />
     <ClInclude Include="Source\Misc.h" />
     <ClInclude Include="Source\SceneEnd.h" />
     <ClInclude Include="Source\CutSceneOne.h" />
     <ClInclude Include="Source\SwitchLightPuzzle.h" />
-    <ClInclude Include="Source\ToolSection.h" />
     <ClInclude Include="Source\ToolUI.h" />
     <ClInclude Include="Source\Utility.h" />
     <ClInclude Include="Source\Vertex.h" />

@@ -47,6 +47,9 @@ class SceneLevelOneA : public Scene
         GEO_PICKAXE,
         GEO_PICKAXEICON,
 
+		GEO_BAT,
+		GEO_BATICON,
+
         GEO_GHOST1,
 
         GEO_DOORSWITCH,
@@ -132,12 +135,13 @@ private:
     // Switches Functions for puzzles
     void PuzzleOneSwitchCheck(double dt);
 
-    // Tool UI functions
-    void ToolsUI();
-    void MouseScrollToolSlot();
-    void ToolSelectionMouseScroll();
-    void RenderToolIcon();
-    void RenderToolUI();
+	// Tool UI functions
+	void ToolsUI();
+	void MouseScrollToolSlot();
+	void ToolSelectionMouseScroll();
+	void RenderToolIcon();
+
+	void MouseClickFunction(double dt);
 
 	void TestDoorRender(); // Sliding Door
 

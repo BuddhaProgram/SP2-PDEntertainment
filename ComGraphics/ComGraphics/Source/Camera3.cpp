@@ -85,11 +85,11 @@ void Camera3::HumanControl()
 			position.x += sin(Math::DegreeToRadian(rotationY));
 			position.z += cos(Math::DegreeToRadian(rotationY));
 
-			if (Application::IsKeyPressed(VK_LSHIFT) && PlayerStat::instance()->stamina != 0)
+			if (Application::IsKeyPressed(VK_LSHIFT) && Explorer::instance()->stamina != 0)
 			{
 				position.x += 2 * sin(Math::DegreeToRadian(rotationY));
 				position.z += 2 * cos(Math::DegreeToRadian(rotationY));
-				PlayerStat::instance()->stamina -= .5f;
+				Explorer::instance()->stamina -= .5f;
 			}
 		}
 
@@ -118,26 +118,26 @@ void Camera3::Update(double dt)
 	HumanControl();
 	CameraRotation(dt, 0.2f);
 
-	if (PlayerStat::instance()->stamina <= 0)
+	if (Explorer::instance()->stamina <= 0)
 	{
-		PlayerStat::instance()->stamina = 0;
+		Explorer::instance()->stamina = 0;
 		if (regenDelay > 0)
 		{
 			regenDelay -= (float)dt;
 		}
 		if (regenDelay <= 0)
 		{
-			PlayerStat::instance()->stamina += 10 * (float)dt;
+			Explorer::instance()->stamina += 10 * (float)dt;
 		}
 	}
 	else
 	{
-		PlayerStat::instance()->stamina += 10 * (float)dt;
+		Explorer::instance()->stamina += 10 * (float)dt;
 		regenDelay = 6.f;
 	}
-	if (PlayerStat::instance()->stamina > 100)
+	if (Explorer::instance()->stamina > 100)
 	{
-		PlayerStat::instance()->stamina = 100;
+		Explorer::instance()->stamina = 100;
 	}
 
 	Reset();
