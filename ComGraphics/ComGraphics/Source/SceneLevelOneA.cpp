@@ -254,7 +254,7 @@ void SceneLevelOneA::Update(double dt)
 	}
 
 
-	if (proximitycheck(150, 200, 200, 300))
+	if (proximitycheck(170, 188, 190, 200))
 	{
 		displayInteract = true;
 	}
@@ -277,7 +277,7 @@ void SceneLevelOneA::Update(double dt)
 			}
 		}
 	}
-	if (!proximitycheck(150, 200, 200, 300))
+	if (!proximitycheck(170, 188, 190, 200))
 	{
 		Notice = false;
 	}
