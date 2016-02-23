@@ -115,6 +115,9 @@ private:
     //mob renders
     void RenderGhost1();
 
+	//Obj renders
+	void CollapseRubble();
+
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
@@ -155,6 +158,9 @@ private:
 
     float FPS;
     bool displayInteract;
+	bool activateDoor = false;
+	bool Key_1 = false;
+	bool Notice = false;
 
     //collision variables 
     float CollXLarge[28];

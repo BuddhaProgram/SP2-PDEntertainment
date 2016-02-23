@@ -15,6 +15,9 @@ public:
 	void Portraits(double dt);
 	void OpenSlideDoor(double dt);
 
+	bool WithinArea(float smallx, float largex, float smallz, float largez);
+	float cam_pos_X, cam_poz_Z;
+
 	float PlanetRotate;
 	float AsteroidRotate;
 	float AsteroidRotateF;
@@ -28,7 +31,7 @@ public:
 	float OpenDoorR;
 	bool toOpenDoorR = false;
 
-	float RubbleCollapse;
+	float RubbleCollapse = 100;
 	bool Collapse = false;
 
 	float PortraitDrop;

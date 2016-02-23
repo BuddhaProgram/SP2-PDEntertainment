@@ -6,6 +6,7 @@
 
 #include "Application.h"
 #include "MeshBuilder.h"
+#include "Misc.h"
 
 #include "LoadTGA.h"
 #include "Utility.h"
@@ -125,6 +126,7 @@ void SceneLevelOneA::Init()
     meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
     meshList[GEO_RUBBLE] = MeshBuilder::GenerateOBJ("Rubble", "OBJ//Rubble.obj");
+	meshList[GEO_RUBBLE]->textureID = LoadTGA("Image//InsideWALL.tga");
     meshList[GEO_PORTRAIT] = MeshBuilder::GenerateOBJ("Portrait", "OBJ//Portrait.obj");
     meshList[GEO_PORTRAIT]->textureID = LoadTGA("Image//Scream.tga");
 
@@ -168,10 +170,10 @@ void SceneLevelOneA::Reset()
 
 void SceneLevelOneA::Collision(float smallx, float largex, float smallz, float largez)
 {
-    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 3.f)){ camera.position.z = smallz; }
-    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 3.f)){ camera.position.z = largez; }
-    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 3.f)){ camera.position.x = smallx; }
-    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 3.f)){ camera.position.x = largex; }
+    if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz) && (camera.position.z <= smallz + 3.f)){ camera.position.z = smallz; }
+    if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez) && (camera.position.z >= largez - 3.f)){ camera.position.z = largez; }
+    if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x >= smallx) && (camera.position.x <= smallx + 3.f)){ camera.position.x = smallx; }
+    if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x <= largex) && (camera.position.x >= largex - 3.f)){ camera.position.x = largex; }
 }
 
 bool SceneLevelOneA::proximitycheck(float smallx, float largex, float smallz, float largez)
@@ -207,6 +209,10 @@ void SceneLevelOneA::Update(double dt)
 
     anima.OBJAnimation(dt);
     anima.Collapsing(dt);
+	if (activateDoor)
+	{
+		anima.OpenSlideDoor(dt);
+	}
 
     if (proximitycheck(-13, 13, -105, -70))
     {
@@ -221,6 +227,55 @@ void SceneLevelOneA::Update(double dt)
     {
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
+
+	if (/*!(anima.WithinArea(-20, 20, 400, 450))*/  !(camera.position.x >= -20 && camera.position.x <= 20 && camera.position.z >= 400 && camera.position.z <= 450))
+	{
+		anima.Collapse = true;
+		if (anima.RubbleCollapse <= 0)
+		{
+			anima.Collapse = false;
+		}
+	}
+	if (!anima.Collapse)
+	{
+		Collision(-25, 25, 430, 460);
+	}
+
+
+	if (proximitycheck(150, 200, 200, 300))
+	{
+		displayInteract = true;
+	}
+	else
+	{
+		displayInteract = false;
+	}
+	if (Application::IsKeyPressed('E'))
+	{
+		if (proximitycheck(150, 200, 200, 300))
+		{
+			displayInteract = false;
+			if (Key_1)
+			{
+				activateDoor = true;
+			}
+			else
+			{
+				Notice = true;
+			}
+		}
+	}
+	if (!proximitycheck(150, 200, 200, 300))
+	{
+		Notice = false;
+	}
+	if (anima.toSlideDoorBtm)
+	{
+		Collision(150, 200, 180, 200);
+	}
+
+
+	std::cout << anima.Collapse << std::endl;
 
     camera.Update(dt);
     
@@ -403,6 +458,8 @@ void SceneLevelOneA::Render()
     }
 
     RenderScene();
+	TestDoorRender();
+	CollapseRubble();
 
     RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
     RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
@@ -410,6 +467,11 @@ void SceneLevelOneA::Render()
     RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 4);
     RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
     RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
+
+	if (Notice)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "NO KEY", Color(0, 1, 0), 4, 10, 7);
+	}
 }
 
 void SceneLevelOneA::Exit()
