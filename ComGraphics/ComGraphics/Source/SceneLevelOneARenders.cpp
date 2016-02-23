@@ -12,7 +12,7 @@ void SceneLevelOneA::RenderFloorCeiling()
     modelStack.PopMatrix();
 
     modelStack.PushMatrix();
-    modelStack.Translate(0, 15, 0);
+    modelStack.Translate(0, 20, 0);
     modelStack.Rotate(180, 1, 0, 0);
     modelStack.Scale(1000, 1, 1000);
     RenderMesh(meshList[GEO_FACILITYCEILINGS], true);
@@ -27,8 +27,17 @@ void SceneLevelOneA::RenderFloorCeiling()
 
 void SceneLevelOneA::RenderScene()
 {
+    modelStack.PushMatrix();
+    modelStack.Translate(120, 5, 75);
+    modelStack.Scale(4, 4, 4);
+    RenderMesh(meshList[GEO_SPAWNPOINT], true);
+    modelStack.PopMatrix();
     RenderFloorCeiling();
+
     //bottom left quadron
+    modelStack.PushMatrix();
+    modelStack.Translate(0, -7, 0);
+    modelStack.Scale(1, 2.2, 1);
     RenderUpWall(-2, -5, -55, 1);//1 
     RenderRightWall(-49, -55, -5, 2);//2
     RenderUpWall(-5, -8, -49, 3);//3
@@ -67,6 +76,7 @@ void SceneLevelOneA::RenderScene()
 	modelStack.Scale(6, 6.1f, 4);
 	RenderMesh(meshList[GEO_FACILITYOUT], true);
 	modelStack.PopMatrix();
+
 }
 
 void SceneLevelOneA::TestDoorRender()
@@ -114,3 +124,4 @@ void SceneLevelOneA::CollapseRubble()
 	RenderMesh(meshList[GEO_RUBBLE], false);
 	modelStack.PopMatrix();
 }
+
