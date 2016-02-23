@@ -101,7 +101,6 @@ void SceneLevelOneA::Init()
 
     //Initialize camera settings
     camera.Init(Vector3(0, 10, 424), Vector3(0, 10, 0), Vector3(0, 1, 0));
-
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("lightball", Color(1, 1, 1), 10, 20);
@@ -148,17 +147,21 @@ void SceneLevelOneA::Init()
     meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("Facility Wall Outside", Color(1, 1, 1));
     meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
 
+
+    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//GhostPlaceholder.obj");
+    meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Ghostplaceholder.tga");
+
 	meshList[GEO_SLIDEDOORTOP] = MeshBuilder::GenerateOBJ("Hand", "OBJ//SlideDoorTop.obj");
 	meshList[GEO_SLIDEDOORTOP]->textureID = LoadTGA("Image//SlidingDoorTop.tga");
 	meshList[GEO_SLIDEDOORBTM] = MeshBuilder::GenerateOBJ("Hand", "OBJ//SlideDoorBtm.obj");
 	meshList[GEO_SLIDEDOORBTM]->textureID = LoadTGA("Image//SlidingDoorBtm.tga");
 
+
     Mtx44 projection;
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
-    //scene changer inits.............
-    //scene changer init end.............
+    Ghost.setSpawnGhost(-30, -15);
 }
 
 static float LSPEED = 10.f;
@@ -223,10 +226,12 @@ void SceneLevelOneA::Update(double dt)
         displayInteract = false;
     }
 
+    //wall collision DO NOT TOUCH
     for (int i = 0; i < 28; i++)
     {
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
+
 
 	if (/*!(anima.WithinArea(-20, 20, 400, 450))*/  !(camera.position.x >= -20 && camera.position.x <= 20 && camera.position.z >= 400 && camera.position.z <= 450))
 	{
@@ -277,7 +282,27 @@ void SceneLevelOneA::Update(double dt)
 
 	std::cout << anima.Collapse << std::endl;
 
+
+
+    if (Application::IsKeyPressed('J'))
+    {
+        Ghost.Spawn = true;
+    }
+
     camera.Update(dt);
+    //mob stuff
+    if (proximitycheck(-226, -172, 210,228))
+    {
+        Ghost.Spawn = true;
+    }
+
+
+    Ghost.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);//pos checker
+
+    if (Ghost.Spawn)
+    {
+        Ghost.move(dt, 50);
+    }
     
 }
 
@@ -460,6 +485,12 @@ void SceneLevelOneA::Render()
     RenderScene();
 	TestDoorRender();
 	CollapseRubble();
+
+    //mob renders
+    if (Ghost.Spawn)
+    {
+        RenderGhost(Ghost.MobPosX, Ghost.MobPosZ);
+    }
 
     RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
     RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);

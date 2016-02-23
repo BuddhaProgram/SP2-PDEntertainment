@@ -26,13 +26,13 @@ HostileMob::~HostileMob()
     
 }
 
-void HostileMob::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 1)
+void HostileMob::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 1, float xpos = 0, float zpos = 0)
 {
     mobTimeCount += (((float)(dt)* checkRate) / lessenSpeed);
     if (mobTimeCount >= 1)
     {
-        TargetDetectX = camera.position.x;
-        TargetDetectZ = camera.position.z;
+        TargetDetectX = xpos;
+        TargetDetectZ = zpos;
         mobTimeCount = 0;
     }
 }
