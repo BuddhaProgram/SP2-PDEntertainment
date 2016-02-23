@@ -8,6 +8,7 @@
 #include "MatrixStack.h"
 #include "Light.h"
 #include "OBJAnimation.h"
+#include "MobGhost.h"
 
 class SceneLevelOneA : public Scene
 {
@@ -113,7 +114,7 @@ private:
     void RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber);//negative X facing wall
 
     //mob renders
-    void RenderGhost1();
+    void RenderGhost();
 
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
@@ -152,6 +153,7 @@ private:
     Vector3 start;
     Vector3 end;
     GlobalVariables Variables;
+    MobGhost Ghost;
 
     float FPS;
     bool displayInteract;

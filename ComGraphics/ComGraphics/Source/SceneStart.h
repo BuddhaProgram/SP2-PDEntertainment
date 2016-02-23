@@ -113,11 +113,8 @@ private:
 
     //scene renders
 	void RenderSceneStart();
-    void RenderSceneEnd();
-    void RenderLevel1();
 	void RenderSkyBox();
 	void RenderFloor();
-	void RenderCutScene();
 
     //map rendering
     void RenderDownWall(int xPosLarge, int xPosSmall, int zPos);//positive Z facing wall
@@ -126,7 +123,8 @@ private:
     void RenderLeftWall(int zPosLarge, int zPosSmall, int xPos);//negative X facing wall
 
     //mob renders
-    void RenderGhost1();
+    void RenderGhost();
+
 
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
@@ -178,7 +176,6 @@ private:
     Vector3 start ;
     Vector3 end;
 
-    MobGhost Ghost;
 	misc Misc;
 	SwitchLightPuzzle Switches;
 
