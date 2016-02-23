@@ -19,15 +19,16 @@ float getAngle(const Vector3 &view, const Vector3 &target)
 	return Math::RadianToDegree(angle);
 }
 
-bool misc::hitting(float distance, float mobx, float mobz, float AOA, float camX, float camZ, Vector3 view, Vector3 position)
+bool misc::hitting(float distance, float mobx, float mobz, float AOA)
 {
 	bool result = false;
 	
-	float currDist = sqrt((camX - mobx) * (camX - mobx) + (camZ - mobz) * (camZ - mobz));
+	float currDist = sqrt((camera.position.x - mobx) * (camera.position.x - mobx)
+		(camera.position.z - mobz) * (camera.position.z - mobz));
 
 	if (currDist <= distance)
 	{
-		if ((getAngle(view, Vector3(mobx,0,mobz) - position)) < AOA) 
+		if ((getAngle(camera.view, Vector3(mobx,0,mobz) - camera.position)) <= AOA) 
 		{
 			result = true;
 		}
