@@ -15,6 +15,7 @@
     <ClCompile Include="source\CutSceneOneRenders.cpp" />
     <ClCompile Include="Source\GlobalVariables.cpp" />
     <ClCompile Include="source\MapRender.cpp" />
+    <ClCompile Include="source\MobBossOne.cpp" />
     <ClCompile Include="source\MobGhost.cpp" />
     <ClCompile Include="source\SceneLevelOneARenders.cpp" />
     <ClCompile Include="source\SceneEndRenders.cpp" />

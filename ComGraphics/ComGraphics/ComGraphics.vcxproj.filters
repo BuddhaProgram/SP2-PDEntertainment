@@ -91,6 +91,9 @@
     <ClCompile Include="Source\Explorer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\MobBossOne.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">

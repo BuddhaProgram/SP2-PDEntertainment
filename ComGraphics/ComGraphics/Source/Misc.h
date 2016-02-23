@@ -2,7 +2,6 @@
 #define TOOLS_H
 
 #include "Application.h"
-#include "Camera3.h"
 #include "Vector3.h"
 
 class misc

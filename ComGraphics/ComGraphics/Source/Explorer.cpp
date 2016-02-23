@@ -112,3 +112,9 @@ ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 		break;
 	}
 }
+
+//combat stuff
+void Explorer::takeDamage(float damage)
+{
+    setHP(hp - damage);
+}

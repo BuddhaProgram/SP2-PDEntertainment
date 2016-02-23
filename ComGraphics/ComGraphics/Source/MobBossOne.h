@@ -4,19 +4,21 @@
 #include "HostileMob.h"
 
 
-class MobGhost : public HostileMob
+class MobBossOne : public HostileMob
 {
 public:
-    MobGhost();
-    ~MobGhost();
+    MobBossOne();
+    ~MobBossOne();
 
-    void setSpawnGhost(float xpos, float zpos);
+    void setSpawnBossOne(float xpos, float zpos);
     void move(double dt, int movespeed);
+    void attack();
     void knockback();
     void TakeDamage(int damage);
 
 private:
     bool kenaWhack;
+    bool AttackAnimation;
 
 
 

@@ -1,8 +1,9 @@
 #ifndef HOSTILEMOB_H
 #define HOSTILEMOB_H
 
+#include "Misc.h"
+#include "Explorer.h"
 #include "Vector3.h"
-#include "Camera3.h"
 
 
 class HostileMob
@@ -18,6 +19,7 @@ public:
     bool Spawn;
 
     int health;
+    float AttackDamage;
 
     //mob position variables
     float MobPosX;
@@ -28,6 +30,8 @@ public:
     float TargetDetectX;
     float TargetDetectZ;
     float mobTimeCount;
+    
+    misc Misc;
 
    
 };

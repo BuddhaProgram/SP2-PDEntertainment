@@ -11,6 +11,7 @@ public:
 	virtual void setStamina(float currStam);
 	virtual float getHP();
 	virtual float getStamina();
+    virtual void takeDamage(float damage);
 	float stamina;
 	float hp;
 
