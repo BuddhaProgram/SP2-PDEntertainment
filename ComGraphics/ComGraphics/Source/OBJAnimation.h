@@ -13,6 +13,7 @@ public:
 	void OBJAnimation(double dt);
 	void OpenMainDoor(double dt);
 	void Portraits(double dt);
+	void OpenSlideDoor(double dt);
 
 	float PlanetRotate;
 	float AsteroidRotate;
@@ -38,6 +39,11 @@ public:
 	bool cameramove1 = false;
 	bool cameramove2 = false;
 	bool cameramove3 = false;
+
+	float DoorSlideTop;
+	float DoorSlideBtm;
+	bool toSlideDoorTop = true;
+	bool toSlideDoorBtm = true;
 
 };
 

@@ -24,8 +24,8 @@ void SceneLevelOneA::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int 
         zPosActual = (zPos * 8) + 4;
     }
 
-    CollZLarge[wallNumber - 1] = zPosActual + 3;
-    CollZSmall[wallNumber - 1] = zPosActual - 3;
+	CollZLarge[wallNumber - 1] = (float)zPosActual + 4;
+	CollZSmall[wallNumber - 1] = (float)zPosActual - 4;
 
     //generate
     for (int count = 0; count < xMaxCount; count++)
@@ -33,7 +33,7 @@ void SceneLevelOneA::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int 
         if (count == 0)
         {
             xPosActual = ((xPosSmall * 8) + 4);
-            CollXSmall[wallNumber - 1] = xPosActual - 5;
+			CollXSmall[wallNumber - 1] = (float)xPosActual - 5;
         }
         if(count > 0)
         {
@@ -41,11 +41,11 @@ void SceneLevelOneA::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int 
         }
         if (count == xMaxCount - 1)
         {
-            CollXLarge[wallNumber - 1] = xPosActual + 5;
+			CollXLarge[wallNumber - 1] = (float)xPosActual + 5;
         }
 
         modelStack.PushMatrix();
-        modelStack.Translate(xPosActual, 0, zPosActual);
+		modelStack.Translate((float)xPosActual, 0, (float)zPosActual);
 
         modelStack.PushMatrix();
         modelStack.Translate(0, 8, 0);
@@ -83,8 +83,8 @@ void SceneLevelOneA::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wa
     {
         zPosActual = (zPos * 8) + 4;
     }
-    CollZLarge[wallNumber - 1] = zPosActual+3;
-    CollZSmall[wallNumber - 1] = zPosActual-3;
+	CollZLarge[wallNumber - 1] = (float)zPosActual + 4;
+	CollZSmall[wallNumber - 1] = (float)zPosActual - 4;
 
     //generate
     for (int count = 0; count < xMaxCount; count++)
@@ -92,7 +92,7 @@ void SceneLevelOneA::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wa
         if (count == 0)
         {
             xPosActual = ((xPosSmall * 8) + 4);
-            CollXSmall[wallNumber - 1] = xPosActual - 5;
+			CollXSmall[wallNumber - 1] = (float)xPosActual - 5;
         }
         if (count > 0)
         {
@@ -100,11 +100,11 @@ void SceneLevelOneA::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wa
         }
         if (count == xMaxCount - 1)
         {
-            CollXLarge[wallNumber - 1] = xPosActual + 5;
+			CollXLarge[wallNumber - 1] = (float)xPosActual + 5;
         }
 
         modelStack.PushMatrix();
-        modelStack.Translate(xPosActual, 0, zPosActual);
+		modelStack.Translate((float)xPosActual, 0, (float)zPosActual);
         modelStack.Rotate(180, 0, 1, 0);
         modelStack.PushMatrix();
         modelStack.Translate(0, 8, 0);
@@ -139,8 +139,8 @@ void SceneLevelOneA::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int
     {
         xPosActual = xPos * 8;
     }
-    CollXLarge[wallNumber - 1] = xPosActual+ 3;
-    CollXSmall[wallNumber - 1] = xPosActual- 3;
+	CollXLarge[wallNumber - 1] = (float)xPosActual + 4;
+	CollXSmall[wallNumber - 1] = (float)xPosActual - 4;
 
     //generate
     for (int count = 0; count < zMaxCount; count++)
@@ -148,7 +148,7 @@ void SceneLevelOneA::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int
         if (count == 0)
         {
             zPosActual = ((zPosSmall * 8));
-            CollZLarge[wallNumber - 1] = -(zPosActual) + 5;
+			CollZLarge[wallNumber - 1] = -((float)zPosActual) + 5;
         }
         if (count > 0)
         {
@@ -156,11 +156,11 @@ void SceneLevelOneA::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int
         }
         if (count == zMaxCount - 1)
         {
-            CollZSmall[wallNumber - 1] = -(zPosActual) - 5;
+			CollZSmall[wallNumber - 1] = -((float)zPosActual) - 5;
         }
 
         modelStack.PushMatrix();
-        modelStack.Translate(xPosActual, 0, -zPosActual);
+		modelStack.Translate((float)xPosActual, 0, -(float)zPosActual);
         modelStack.Rotate(-90, 0, 1, 0);
 
         modelStack.PushMatrix();
@@ -195,8 +195,8 @@ void SceneLevelOneA::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int 
     {
         xPosActual = xPos * 8;
     }
-    CollXLarge[wallNumber - 1] = xPosActual+3;
-    CollXSmall[wallNumber - 1] = xPosActual-3;
+	CollXLarge[wallNumber - 1] = (float)xPosActual + 4;
+	CollXSmall[wallNumber - 1] = (float)xPosActual - 4;
 
     //generate
     for (int count = 0; count < zMaxCount; count++)
@@ -204,7 +204,7 @@ void SceneLevelOneA::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int 
         if (count == 0)
         {
             zPosActual = ((zPosSmall * 8));
-            CollZLarge[wallNumber - 1] = -(zPosActual)+5;
+			CollZLarge[wallNumber - 1] = -((float)zPosActual) + 5;
         }
         if (count > 0)
         {
@@ -212,11 +212,11 @@ void SceneLevelOneA::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int 
         }
         if (count == zMaxCount - 1)
         {
-            CollZSmall[wallNumber - 1] = -(zPosActual) - 5;
+			CollZSmall[wallNumber - 1] = -((float)zPosActual) - 5;
         }
 
         modelStack.PushMatrix();
-        modelStack.Translate(xPosActual, 0, -zPosActual);
+		modelStack.Translate((float)xPosActual, 0, -(float)zPosActual);
         modelStack.Rotate(-90, 0, 1, 0);
 
         modelStack.PushMatrix();
@@ -254,8 +254,8 @@ void SceneLevelOneB::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int 
         zPosActual = (zPos * 8) + 4;
     }
 
-    CollZLarge[wallNumber - 1] = zPosActual + 3;
-    CollZSmall[wallNumber - 1] = zPosActual - 3;
+	CollZLarge[wallNumber - 1] = (float)zPosActual + 4;
+	CollZSmall[wallNumber - 1] = (float)zPosActual - 4;
 
     //generate
     for (int count = 0; count < xMaxCount; count++)
@@ -263,7 +263,7 @@ void SceneLevelOneB::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int 
         if (count == 0)
         {
             xPosActual = ((xPosSmall * 8) + 4);
-            CollXSmall[wallNumber - 1] = xPosActual - 5;
+			CollXSmall[wallNumber - 1] = (float)xPosActual - 5;
         }
         if (count > 0)
         {
@@ -271,11 +271,11 @@ void SceneLevelOneB::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int 
         }
         if (count == xMaxCount - 1)
         {
-            CollXLarge[wallNumber - 1] = xPosActual + 5;
+			CollXLarge[wallNumber - 1] = (float)xPosActual + 5;
         }
 
         modelStack.PushMatrix();
-        modelStack.Translate(xPosActual, 0, zPosActual);
+		modelStack.Translate((float)xPosActual, 0, (float)zPosActual);
 
         modelStack.PushMatrix();
         modelStack.Translate(0, 8, 0);
@@ -313,8 +313,8 @@ void SceneLevelOneB::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wa
     {
         zPosActual = (zPos * 8) + 4;
     }
-    CollZLarge[wallNumber - 1] = zPosActual + 3;
-    CollZSmall[wallNumber - 1] = zPosActual - 3;
+	CollZLarge[wallNumber - 1] = (float)zPosActual + 4;
+	CollZSmall[wallNumber - 1] = (float)zPosActual - 4;
 
     //generate
     for (int count = 0; count < xMaxCount; count++)
@@ -322,7 +322,7 @@ void SceneLevelOneB::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wa
         if (count == 0)
         {
             xPosActual = ((xPosSmall * 8) + 4);
-            CollXSmall[wallNumber - 1] = xPosActual - 5;
+			CollXSmall[wallNumber - 1] = (float)xPosActual - 5;
         }
         if (count > 0)
         {
@@ -330,11 +330,11 @@ void SceneLevelOneB::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wa
         }
         if (count == xMaxCount - 1)
         {
-            CollXLarge[wallNumber - 1] = xPosActual + 5;
+			CollXLarge[wallNumber - 1] = (float)xPosActual + 5;
         }
 
         modelStack.PushMatrix();
-        modelStack.Translate(xPosActual, 0, zPosActual);
+		modelStack.Translate((float)xPosActual, 0, (float)zPosActual);
         modelStack.Rotate(180, 0, 1, 0);
         modelStack.PushMatrix();
         modelStack.Translate(0, 8, 0);
@@ -369,8 +369,8 @@ void SceneLevelOneB::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int
     {
         xPosActual = xPos * 8;
     }
-    CollXLarge[wallNumber - 1] = xPosActual + 3;
-    CollXSmall[wallNumber - 1] = xPosActual - 3;
+	CollXLarge[wallNumber - 1] = (float)xPosActual + 4;
+	CollXSmall[wallNumber - 1] = (float)xPosActual - 4;
 
     //generate
     for (int count = 0; count < zMaxCount; count++)
@@ -378,7 +378,7 @@ void SceneLevelOneB::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int
         if (count == 0)
         {
             zPosActual = ((zPosSmall * 8));
-            CollZLarge[wallNumber - 1] = -(zPosActual)+5;
+			CollZLarge[wallNumber - 1] = -((float)zPosActual) + 5;
         }
         if (count > 0)
         {
@@ -386,11 +386,11 @@ void SceneLevelOneB::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int
         }
         if (count == zMaxCount - 1)
         {
-            CollZSmall[wallNumber - 1] = -(zPosActual)-5;
+			CollZSmall[wallNumber - 1] = -((float)zPosActual) - 5;
         }
 
         modelStack.PushMatrix();
-        modelStack.Translate(xPosActual, 0, -zPosActual);
+		modelStack.Translate((float)xPosActual, 0, -(float)zPosActual);
         modelStack.Rotate(-90, 0, 1, 0);
 
         modelStack.PushMatrix();
@@ -425,8 +425,8 @@ void SceneLevelOneB::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int 
     {
         xPosActual = xPos * 8;
     }
-    CollXLarge[wallNumber - 1] = xPosActual + 3;
-    CollXSmall[wallNumber - 1] = xPosActual - 3;
+	CollXLarge[wallNumber - 1] = (float)xPosActual + 4;
+	CollXSmall[wallNumber - 1] = (float)xPosActual - 4;
 
     //generate
     for (int count = 0; count < zMaxCount; count++)
@@ -434,7 +434,7 @@ void SceneLevelOneB::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int 
         if (count == 0)
         {
             zPosActual = ((zPosSmall * 8));
-            CollZLarge[wallNumber - 1] = -(zPosActual)+5;
+			CollZLarge[wallNumber - 1] = -((float)zPosActual) + 5;
         }
         if (count > 0)
         {
@@ -442,11 +442,11 @@ void SceneLevelOneB::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int 
         }
         if (count == zMaxCount - 1)
         {
-            CollZSmall[wallNumber - 1] = -(zPosActual)-5;
+			CollZSmall[wallNumber - 1] = -((float)zPosActual) - 5;
         }
 
         modelStack.PushMatrix();
-        modelStack.Translate(xPosActual, 0, -zPosActual);
+		modelStack.Translate((float)xPosActual, 0, -(float)zPosActual);
         modelStack.Rotate(-90, 0, 1, 0);
 
         modelStack.PushMatrix();

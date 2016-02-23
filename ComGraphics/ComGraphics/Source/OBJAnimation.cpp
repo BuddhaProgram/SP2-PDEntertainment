@@ -126,3 +126,23 @@ void Animation::Portraits(double dt)
 		}
 
 }
+
+void Animation::OpenSlideDoor(double dt)
+{
+	if (toSlideDoorTop)
+	{
+		DoorSlideTop += (float)(5 * dt);
+		if (DoorSlideTop >= 10)
+		{
+			toSlideDoorTop = false;
+		}
+	}
+	if (toSlideDoorBtm)
+	{
+		DoorSlideBtm -= (float)(3 * dt);
+		if (DoorSlideBtm <= -6)
+		{
+			toSlideDoorBtm = false;
+		}
+	}
+}

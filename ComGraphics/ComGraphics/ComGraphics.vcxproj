@@ -16,6 +16,7 @@
     <ClCompile Include="Source\GlobalVariables.cpp" />
     <ClCompile Include="Source\ItemStat.cpp" />
     <ClCompile Include="source\MapRender.cpp" />
+    <ClCompile Include="source\MobGhost.cpp" />
     <ClCompile Include="source\SceneLevelOneARenders.cpp" />
     <ClCompile Include="source\SceneEndRenders.cpp" />
     <ClCompile Include="source\SceneLevelOneA.cpp" />
@@ -46,6 +47,7 @@
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\GlobalVariables.h" />
     <ClInclude Include="Source\ItemStat.h" />
+    <ClInclude Include="source\MobGhost.h" />
     <ClInclude Include="source\SceneLevelOneA.h" />
     <ClInclude Include="source\SceneLevelOneB.h" />
     <ClInclude Include="Source\SceneStart.h" />

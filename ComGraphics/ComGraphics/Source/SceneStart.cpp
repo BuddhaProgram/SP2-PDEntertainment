@@ -190,16 +190,6 @@ void SceneStart::Collision(float smallx, float largex, float smallz, float large
 }
 //accounts for possible velocity of objects and clipping through camera.
 
-void SceneStart::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 1)
-{
-	mobTimeCount += (((float)(dt)* checkRate) / lessenSpeed);
-	if (mobTimeCount >= 1)
-	{
-		Ghost.TargetDetectX = camera.position.x;
-		Ghost.TargetDetectZ = camera.position.z;
-		mobTimeCount = 0;
-	}
-}
 
 void SceneStart::checkPlayerPosMisc()
 {
@@ -244,7 +234,7 @@ void SceneStart::RenderToolIcon()
 {
 	if (Inventory.GetToolType(1) == ToolUI::Pickaxe)
 	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5, 90, 1, 0, 0, 6.6, 0.775, 1, false);
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
 	}
 
 	else if (Inventory.GetToolType(1) == ToolUI::BaseballBat)
@@ -425,7 +415,6 @@ void SceneStart::Update(double dt)
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 	FPS = 1.f / (float)dt;	
 	checkPlayerPosMisc();
-	Ghost.MobRotateY += (float)(500 * dt);
 	Variables.f_Worldspin += (float)(dt);
 
 	PuzzleOneSwitchCheck(dt);
@@ -458,6 +447,7 @@ void SceneStart::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
 	camera.Update(dt);
+
 }
 
 void SceneStart::RenderMesh(Mesh*mesh, bool enableLight)
@@ -592,7 +582,7 @@ void SceneStart::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int r
 	modelStack.LoadIdentity(); //Reset modelStack
 	modelStack.Scale(size, size, size);
 	modelStack.Translate(x, y, z);
-	modelStack.Rotate(Rotate, rX, rY, rZ);
+	modelStack.Rotate(Rotate, (float)rX, (float)rY, (float)rZ);
 
 	RenderMesh(mesh, LightYN);
 
@@ -655,8 +645,10 @@ void SceneStart::Render()
     modelStack.PushMatrix();
     RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
     modelStack.PopMatrix();
+
 }
 	
+
 
 void SceneStart::Exit()
 {

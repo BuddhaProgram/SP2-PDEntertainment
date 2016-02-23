@@ -146,6 +146,11 @@ void SceneLevelOneA::Init()
     meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("Facility Wall Outside", Color(1, 1, 1));
     meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
 
+	meshList[GEO_SLIDEDOORTOP] = MeshBuilder::GenerateOBJ("Hand", "OBJ//SlideDoorTop.obj");
+	meshList[GEO_SLIDEDOORTOP]->textureID = LoadTGA("Image//SlidingDoorTop.tga");
+	meshList[GEO_SLIDEDOORBTM] = MeshBuilder::GenerateOBJ("Hand", "OBJ//SlideDoorBtm.obj");
+	meshList[GEO_SLIDEDOORBTM]->textureID = LoadTGA("Image//SlidingDoorBtm.tga");
+
     Mtx44 projection;
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
@@ -353,7 +358,7 @@ void SceneLevelOneA::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, i
     modelStack.LoadIdentity(); //Reset modelStack
     modelStack.Scale(size, size, size);
     modelStack.Translate(x, y, z);
-    modelStack.Rotate(Rotate, rX, rY, rZ);
+	modelStack.Rotate(Rotate, (float)rX, (float)rY, (float)rZ);
 
     RenderMesh(mesh, LightYN);
 

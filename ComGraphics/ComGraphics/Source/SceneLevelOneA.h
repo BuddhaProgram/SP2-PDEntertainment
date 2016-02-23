@@ -48,6 +48,11 @@ class SceneLevelOneA : public Scene
 
         GEO_GHOST1,
 
+
+		GEO_SLIDEDOORTOP,
+		GEO_SLIDEDOORBTM,
+
+
         //player related
         GEO_HEALTH,
         NUM_GEOMETRY,
@@ -129,6 +134,8 @@ private:
     void ToolSelectionMouseScroll();
     void RenderToolIcon();
     void RenderToolUI();
+
+	void TestDoorRender(); // Sliding Door
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];

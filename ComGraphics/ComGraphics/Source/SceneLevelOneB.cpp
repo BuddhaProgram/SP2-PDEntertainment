@@ -380,7 +380,7 @@ void SceneLevelOneB::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, i
     modelStack.LoadIdentity(); //Reset modelStack
     modelStack.Scale(size, size, size);
     modelStack.Translate(x, y, z);
-    modelStack.Rotate(Rotate, rX, rY, rZ);
+	modelStack.Rotate(Rotate, (float)rX, (float)rY, (float)rZ);
 
     RenderMesh(mesh, LightYN);
 
