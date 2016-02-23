@@ -81,10 +81,10 @@ void SceneLevelOneA::TestDoorRender()
 }
 
 
-void SceneLevelOneA::RenderGhost()
+void SceneLevelOneA::RenderGhost(float xpos, float zpos)
 {
     modelStack.PushMatrix();
-    modelStack.Translate(Ghost.MobPosX, Ghost.MobPosY, Ghost.MobPosZ);
+    modelStack.Translate(xpos, 6, zpos);
     RenderMesh(meshList[GEO_GHOST1], true);
     modelStack.PopMatrix();
 }

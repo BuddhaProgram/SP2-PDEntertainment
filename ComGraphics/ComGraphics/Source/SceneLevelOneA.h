@@ -114,7 +114,7 @@ private:
     void RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber);//negative X facing wall
 
     //mob renders
-    void RenderGhost();
+    void RenderGhost(float xpos, float zpos);
 
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);

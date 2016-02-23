@@ -220,10 +220,12 @@ void SceneLevelOneA::Update(double dt)
         displayInteract = false;
     }
 
+    //wall collision DO NOT TOUCH
     for (int i = 0; i < 28; i++)
     {
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
+
 
     if (Application::IsKeyPressed('J'))
     {
@@ -231,10 +233,13 @@ void SceneLevelOneA::Update(double dt)
     }
     camera.Update(dt);
     //mob stuff
-  
+    if (proximitycheck(-226, -172, 210,228))
+    {
+        Ghost.Spawn = true;
+    }
 
 
-    Ghost.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
+    Ghost.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);//pos checker
 
     if (Ghost.Spawn)
     {
@@ -424,7 +429,7 @@ void SceneLevelOneA::Render()
     //mob renders
     if (Ghost.Spawn)
     {
-        RenderGhost();
+        RenderGhost(Ghost.MobPosX, Ghost.MobPosZ);
     }
 
     RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);

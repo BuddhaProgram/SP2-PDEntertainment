@@ -11,8 +11,8 @@ MobGhost::MobGhost()
     MobPosZ = 1;
 
     //player detection variables
-    TargetDetectX = camera.position.x;
-    TargetDetectZ = camera.position.y;
+    TargetDetectX = 0;
+    TargetDetectZ = 0;
 
     //timer variable
     mobTimeCount = 0;
