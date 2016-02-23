@@ -65,7 +65,20 @@ void SceneLevelOneA::RenderScene()
 
 }
 
+void SceneLevelOneA::TestDoorRender()
+{
+	//modelStack.PushMatrix();
+	//modelStack.Translate(0, DoorSlideTop, 0);
+	//modelStack.Scale(5, 5, 5);
+	//RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
+	//modelStack.PopMatrix();
 
+	//modelStack.PushMatrix();
+	//modelStack.Translate(0, DoorSlideBtm, 0);
+	//modelStack.Scale(5, 5, 5);
+	//RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
+	//modelStack.PopMatrix();
+}
 
 
 void SceneLevelOneA::RenderGhost()
