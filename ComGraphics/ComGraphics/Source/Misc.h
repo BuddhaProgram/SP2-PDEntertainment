@@ -11,7 +11,7 @@ public:
 	~misc();
 
 	bool WithinArea(float smallx, float largex, float smallz, float largez);
-	bool hitting(float smallx, float largex, float smallz, float largez);
+	bool hitting(float distance, float mobx, float mobz, float AOA); // AOA is angle of attack
 
 	float camX, camY, camZ;
 };
