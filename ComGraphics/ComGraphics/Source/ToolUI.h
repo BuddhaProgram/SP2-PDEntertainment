@@ -10,7 +10,7 @@ class ToolUI
 		enum ToolType
 		{
 			Pickaxe,
-			Torchlight,
+			BaseballBat,
 			Empty,
 			Max_ToolType,
 		};

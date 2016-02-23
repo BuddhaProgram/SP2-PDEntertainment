@@ -10,10 +10,12 @@ public:
 	ItemStat(float i_Attack);
 	~ItemStat();
 
-	int InsertItemStatSlot(ToolUI::ToolType Tool);
+	void InsertItemStatSlot(ToolUI::ToolType Tool);
+	ItemStat ItemStat::StoreAttack(int SlotIndex);
 
+	int i_Attack;
 
-	float i_Attack;
+	std::list<ItemStat> stats;
 };
 
 #endif
