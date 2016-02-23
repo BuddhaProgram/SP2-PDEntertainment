@@ -34,7 +34,6 @@ void ItemStat::InsertItemStatSlot(ToolUI::ToolType Tool)
 			else if (Tool == ToolUI::BaseballBat)
 			{
 				ITS->i_Attack = 15;
-				break;
 			}
 		}
 

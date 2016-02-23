@@ -203,26 +203,26 @@ void SceneStart::ToolsUI()
 	if (Application::IsKeyPressed('Z'))
 	{
 		Inventory.InsertToolSlot(ToolUI::Pickaxe);
-		Weapon.InsertItemStatSlot(ToolUI::Pickaxe);
+		//Weapon.InsertItemStatSlot(ToolUI::Pickaxe);
 	}
 
 	if (Application::IsKeyPressed('X'))
 	{
 		Inventory.InsertToolSlot(ToolUI::BaseballBat);
-		Weapon.InsertItemStatSlot(ToolUI::BaseballBat);
+		//Weapon.InsertItemStatSlot(ToolUI::BaseballBat);
 	}
 }
 
 void SceneStart::ToolSelectionMouseScroll()
 {
-	if (Inventory.GetToolType(SlotIndex) == ToolUI::Pickaxe)
+	if (Inventory.GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
 	{
 		modelStack.PushMatrix();
 		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, RotateX, 1, 0, 0, 4.5, 0, 0, true);
 		modelStack.PopMatrix();
 	}
 
-	else if (Inventory.GetToolType(SlotIndex) == ToolUI::BaseballBat)
+	else if (Inventory.GetToolType(Variables.i_SlotIndex) == ToolUI::BaseballBat)
 	{
 		modelStack.PushMatrix();
 		RenderModelOnScreen(meshList[GEO_BAT], 15, RotateX, 1, 0, 0, 4.5, 0, 0, true);
@@ -421,9 +421,9 @@ void SceneStart::Update(double dt)
 	Switches.SwitchPuzzleOne(Switches.b_PuzzleOneSwitchOne, Switches.b_PuzzleOneSwitchTwo, Switches.b_PuzzleOneSwitchThree);
 	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
 
-	Weapon.StoreAttack(Variables.i_SlotIndex);
+	//Weapon.StoreAttack(Variables.i_SlotIndex);
 
-	std::cout << Weapon.i_Attack << std::endl;
+	//std::cout << Weapon.i_Attack << std::endl;
 
 	Collision(-35, 35, -105, -70);
 	Collision(-100, 100, -115, -95);
