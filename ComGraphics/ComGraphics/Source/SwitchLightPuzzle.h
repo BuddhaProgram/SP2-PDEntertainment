@@ -7,13 +7,9 @@ class SwitchLightPuzzle
 		SwitchLightPuzzle();
 		~SwitchLightPuzzle();
 
-		void SwitchPuzzleOne(bool One, bool Two, bool Three);
-		bool PuzzleOne(bool solvedOne);
+		bool SwitchPuzzleOne();
 
-		bool b_PuzzleOneSwitchOne;
-		bool b_PuzzleOneSwitchTwo;
-		bool b_PuzzleOneSwitchThree;
-		bool b_PuzzleOneOpen;
+		bool b_PuzzleOne[3];
 };
 
 #endif

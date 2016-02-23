@@ -75,12 +75,12 @@ void SceneStart::Init()
 	light[0].type = Light::LIGHT_SPOT;
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 5.0f;
+	light[0].power = 1.0f;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(45));
-	light[0].cosInner = cos(Math::DegreeToRadian(30));
+	light[0].cosCutoff = cos(Math::DegreeToRadian(15));
+	light[0].cosInner = cos(Math::DegreeToRadian(1));
 	light[0].exponent = 3.f;
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 
@@ -328,45 +328,45 @@ void SceneStart::PuzzleOneSwitchCheck(double dt)
 	f_SwitchDebounce += (float)dt;
 	if (Application::IsKeyPressed('5') && f_SwitchDebounce > 0.5f)
 	{
-		if (Switches.b_PuzzleOneSwitchOne == false)
-			Switches.b_PuzzleOneSwitchOne = true;
+		if (Switches.b_PuzzleOne[0] == false)
+			Switches.b_PuzzleOne[0] = true;
 
 		else
-			Switches.b_PuzzleOneSwitchOne = false;
+			Switches.b_PuzzleOne[0] = false;
 
-		if (Switches.b_PuzzleOneSwitchTwo == false)
-			Switches.b_PuzzleOneSwitchTwo = true;
+		if (Switches.b_PuzzleOne[1] == false)
+			Switches.b_PuzzleOne[1] = true;
 
 		else
-			Switches.b_PuzzleOneSwitchTwo = false;
+			Switches.b_PuzzleOne[1] = false;
 
 		f_SwitchDebounce = 0.0f;
 	}
 
 	if (Application::IsKeyPressed('6') && f_SwitchDebounce > 0.5f)
 	{
-		if (Switches.b_PuzzleOneSwitchOne == false)
-			Switches.b_PuzzleOneSwitchOne = true;
+		if (Switches.b_PuzzleOne[0] == false)
+			Switches.b_PuzzleOne[0] = true;
 
 		else
-			Switches.b_PuzzleOneSwitchOne = false;
+			Switches.b_PuzzleOne[0] = false;
 
 		f_SwitchDebounce = 0.0f;
 	}
 
 	if (Application::IsKeyPressed('7') && f_SwitchDebounce > 0.5f)
 	{
-		if (Switches.b_PuzzleOneSwitchOne == false)
-			Switches.b_PuzzleOneSwitchOne = true;
+		if (Switches.b_PuzzleOne[0] == false)
+			Switches.b_PuzzleOne[0] = true;
 
 		else
-			Switches.b_PuzzleOneSwitchOne = false;
+			Switches.b_PuzzleOne[0] = false;
 
-		if (Switches.b_PuzzleOneSwitchThree == false)
-			Switches.b_PuzzleOneSwitchThree = true;
+		if (Switches.b_PuzzleOne[2] == false)
+			Switches.b_PuzzleOne[2] = true;
 
 		else
-			Switches.b_PuzzleOneSwitchThree = false;
+			Switches.b_PuzzleOne[2] = false;
 
 		f_SwitchDebounce = 0.0f;
 	}
@@ -413,8 +413,7 @@ void SceneStart::Update(double dt)
 	Variables.f_Worldspin += (float)(dt);
 
 	PuzzleOneSwitchCheck(dt);
-	Switches.SwitchPuzzleOne(Switches.b_PuzzleOneSwitchOne, Switches.b_PuzzleOneSwitchTwo, Switches.b_PuzzleOneSwitchThree);
-	Switches.PuzzleOne(Switches.b_PuzzleOneOpen);
+	Switches.SwitchPuzzleOne();
 
 	Collision(-35, 35, -105, -70);
 	Collision(-100, 100, -115, -95);

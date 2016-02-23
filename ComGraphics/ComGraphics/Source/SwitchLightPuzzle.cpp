@@ -2,10 +2,10 @@
 
 SwitchLightPuzzle::SwitchLightPuzzle()
 {
-	b_PuzzleOneSwitchOne = false;
-	b_PuzzleOneSwitchTwo = false;
-	b_PuzzleOneSwitchThree = false;
-	b_PuzzleOneOpen = false;
+	for (int i = 0; i < 3; ++i)
+	{
+		b_PuzzleOne[i] = false;
+	}
 }
 
 SwitchLightPuzzle::~SwitchLightPuzzle()
@@ -13,22 +13,16 @@ SwitchLightPuzzle::~SwitchLightPuzzle()
 
 }
 
-void SwitchLightPuzzle::SwitchPuzzleOne(bool One, bool Two, bool Three)
+bool SwitchLightPuzzle::SwitchPuzzleOne()
 {
-	if (One == true && Two == true == Three == true)
+	for (int i = 0; i < 3; ++i)
 	{
-		b_PuzzleOneOpen = true;
+		if (b_PuzzleOne[i] == false)
+		{
+			return false;
+			break;
+		}
 	}
 
-	else
-		b_PuzzleOneOpen = false;
-}
-
-bool SwitchLightPuzzle::PuzzleOne(bool solvedOne)
-{
-	if (solvedOne == true)
-		return true;
-
-	else
-		return false;
+	return true;
 }

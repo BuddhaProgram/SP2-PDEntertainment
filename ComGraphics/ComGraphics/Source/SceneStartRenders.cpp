@@ -137,9 +137,6 @@ void SceneStart::RenderSceneStart()
 	RenderSkyBox();
 
     //object renders
-
-
-
 }
 
 
