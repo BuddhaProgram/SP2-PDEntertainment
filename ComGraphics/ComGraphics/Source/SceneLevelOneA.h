@@ -160,9 +160,11 @@ private:
 
     float FPS;
     bool displayInteract;
-	bool activateDoor = false;
+	bool activateDoor1 = false;
+	bool activateDoor2 = false;
 	bool Key_1 = false;
 	bool Notice = false;
+	bool Notice2 = false;
 
     //collision variables 
     float CollXLarge[28];
