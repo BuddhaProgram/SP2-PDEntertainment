@@ -104,7 +104,7 @@ private:
 
     //scene renders
     void RenderScene();
-    void RenderFloor();
+    void RenderFloorCeiling();
     void RenderCutSceneOne();
 
     //map rendering
