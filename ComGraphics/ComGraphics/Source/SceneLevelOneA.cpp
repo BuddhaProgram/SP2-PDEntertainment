@@ -364,17 +364,20 @@ void SceneLevelOneA::Update(double dt)
     //camera.Update(dt);
 
     anima.OBJAnimation(dt);
-    anima.Collapsing(dt);
+	anima.Collapsing(dt);
+	checkRubbleFall();
+	checkDoor1();
+	checkDoor2();
+
 	if (activateDoor1) {anima.OpenSlideDoor1(dt);}
 	if (activateDoor2)
 	{
 		anima.OpenSlideDoor2(dt);
 	}
-	else if (!activateDoor2)
+	/*else if (!activateDoor2)
 	{
 		anima.CloseSlideDoor2(dt);
-	}
-
+	}*/
 
     if (proximitycheck(-13, 13, -105, -70))
     {
@@ -390,86 +393,6 @@ void SceneLevelOneA::Update(double dt)
     {
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
-
-
-	if (/*!(anima.WithinArea(-20, 20, 400, 450))*/  !(camera.position.x >= -20 && camera.position.x <= 20 && camera.position.z >= 400 && camera.position.z <= 450))
-	{
-		anima.Collapse = true;
-		if (anima.RubbleCollapse <= 0)
-		{
-			anima.Collapse = false;
-		}
-	}
-	if (!anima.Collapse)
-	{
-		Collision(-25, 25, 430, 460);
-	}
-
-
-	if (proximitycheck(170, 188, 190, 200))
-	{
-		displayInteract = true;
-	}
-	else
-	{
-		displayInteract = false;
-	}
-	if (Application::IsKeyPressed('E'))
-	{
-		if (proximitycheck(150, 200, 200, 300))
-		{
-			displayInteract = false;
-			if (Key_1)
-			{
-				activateDoor1 = true;
-			}
-			else
-			{
-				Notice = true;
-			}
-		}
-	}
-	if (!proximitycheck(170, 188, 190, 200))
-	{
-		Notice = false;
-	}
-	if (anima.toSlideDoorBtm)
-	{
-		Collision(150, 200, 180, 200);
-	}
-
-
-	std::cout << activateDoor2 << std::endl;
-
-	if (proximitycheck(-208, -176, 225, 235))
-	{
-		displayInteract = true;
-	}
-	else
-	{
-		displayInteract = false;
-	}
-	if (Application::IsKeyPressed('E') && proximitycheck(-204, -180, 235, 240))
-	{
-		activateDoor2 = true;	
-		displayInteract = false;
-	}
-
-	if (Ghost.Spawn)
-	{
-		activateDoor2 = false;
-	}
-
-	if (anima.toSlideDoorBtm2)
-	{
-		Collision(-208, -176, 225, 235);
-	}
-
-	/*if (!proximitycheck(-208, -176, 245, 255))
-	{
-		activateDoor2 = false;
-	}
-	*/	
 
 
     if (Application::IsKeyPressed('J'))

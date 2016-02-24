@@ -1,6 +1,7 @@
 #include "OBJAnimation.h"
 #include "Vector3.h"
 #include "Mtx44.h"
+#include "Camera3.h"
 
 Animation::Animation()
 {
@@ -17,7 +18,7 @@ void Animation::Collapsing(double dt)
 	{
 		RubbleCollapse -= (float)(200 * dt);
 	}
-
+	
 }
 
 void Animation::OBJAnimation(double dt)
@@ -131,7 +132,7 @@ void Animation::OpenSlideDoor1(double dt)
 	if (toSlideDoorTop)
 	{
 		DoorSlideTop += (float)(5 * dt);
-		if (DoorSlideTop >= 10)
+		if (DoorSlideTop >= 4)
 		{
 			toSlideDoorTop = false;
 		}
@@ -140,8 +141,8 @@ void Animation::OpenSlideDoor1(double dt)
 
 	if (toSlideDoorBtm)
 	{
-		DoorSlideBtm -= (float)(3 * dt);
-		if (DoorSlideBtm <= -6)
+		DoorSlideBtm -= (float)(5 * dt);
+		if (DoorSlideBtm <= -4)
 		{
 			toSlideDoorBtm = false;
 		}
@@ -154,7 +155,7 @@ void Animation::OpenSlideDoor2(double dt)
 	if (toSlideDoorTop2)
 	{
 		DoorSlideTop_2 += (float)(5 * dt);
-		if (DoorSlideTop_2 >= 10)
+		if (DoorSlideTop_2 >= 4)
 		{
 			toSlideDoorTop2 = false;
 		}
@@ -162,8 +163,8 @@ void Animation::OpenSlideDoor2(double dt)
 
 	if (toSlideDoorBtm2)
 	{
-		DoorSlideBtm_2 -= (float)(3 * dt);
-		if (DoorSlideBtm_2 <= 0)
+		DoorSlideBtm_2 -= (float)(5 * dt);
+		if (DoorSlideBtm_2 <= -4)
 		{
 			toSlideDoorBtm2 = false;
 		}
