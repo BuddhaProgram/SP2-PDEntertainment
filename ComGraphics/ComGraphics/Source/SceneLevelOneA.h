@@ -150,6 +150,10 @@ private:
 
 	void MouseClickFunction(double dt);
 
+	// Updates save point position
+	void UpdateSavePoint();
+	void RenderSavePointText();
+
 	void checkRubbleFall();
 	void checkDoor1();
 	void checkDoor2();

@@ -625,7 +625,7 @@ void SceneStart::Render()
 	RenderMouseScrollToolSlot();
     RenderToolIcon();
 
-	
+
    
     RenderMesh(meshList[GEO_AXES], false);
     RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);

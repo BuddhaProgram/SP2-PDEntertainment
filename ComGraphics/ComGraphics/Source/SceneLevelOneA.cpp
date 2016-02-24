@@ -344,12 +344,30 @@ void SceneLevelOneA::MouseClickFunction(double dt)
 	}
 }
 
+void SceneLevelOneA::UpdateSavePoint()
+{
+	if (camera.position.x > 110.0f && camera.position.x < 130.0f && camera.position.z > 65.0f && camera.position.z < 85.0f && Application::IsKeyPressed('T'))
+	{
+		Explorer::instance()->ExplorerSavePoint(camera.position);
+	}
+}
+
+void SceneLevelOneA::RenderSavePointText()
+{
+	if (camera.position.x > 110.0f && camera.position.x < 130.0f && camera.position.z > 65.0f && camera.position.z < 85.0f)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press T to save your progress ...", Color(0.25f, 0.9f, 0.82f), 3, 5, 5);
+	}
+}
+
 void SceneLevelOneA::Update(double dt)
 {
     light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
     light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
     FPS = 1.f / (float)dt;
     //worldspin += (float)(dt);
+
+	Collision(115.0f, 125.0f, 70.0f, 80.0f);
 
 	/*-------------------------[Tool UI Functions]-------------------------------*/
 	ToolsUI();
@@ -373,6 +391,10 @@ void SceneLevelOneA::Update(double dt)
 	checkRubbleFall();
 	checkDoor1();
 	checkDoor2();
+
+	UpdateSavePoint();
+
+	std::cout << Explorer::instance()->SavePoint << std::endl;
 
 	if (activateDoor1) {anima.OpenSlideDoor1(dt);}
 	if (activateDoor2)
@@ -625,6 +647,8 @@ void SceneLevelOneA::Render()
     modelStack.Scale(5, 5, 5);
     RenderMesh(meshList[GEO_DOORSWITCH], true);
     modelStack.PopMatrix();
+
+	RenderSavePointText();
 
     //mob renders
     if (Ghost.Spawn)
