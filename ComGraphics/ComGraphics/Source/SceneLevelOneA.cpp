@@ -351,10 +351,10 @@ void SceneLevelOneA::Update(double dt)
     FPS = 1.f / (float)dt;
     //worldspin += (float)(dt);
 
-	/*-------------------------[Tool UI Functions]-------------------------------*/
-	ToolsUI();
-	MouseScrollToolSlot();
-	MouseClickFunction(dt);
+    /*-------------------------[Tool UI Functions]-------------------------------*/
+    ToolsUI();
+    MouseScrollToolSlot();
+    MouseClickFunction(dt);
     /*-------------------------[End of Tool UI Functions]-------------------------------*/
 
     if (Application::IsKeyPressed('1')) //enable back face culling
@@ -369,20 +369,20 @@ void SceneLevelOneA::Update(double dt)
     //camera.Update(dt);
 
     anima.OBJAnimation(dt);
-	anima.Collapsing(dt);
-	checkRubbleFall();
-	checkDoor1();
-	checkDoor2();
+    anima.Collapsing(dt);
+    checkRubbleFall();
+    checkDoor1();
+    checkDoor2();
 
-	if (activateDoor1) {anima.OpenSlideDoor1(dt);}
-	if (activateDoor2)
-	{
-		anima.OpenSlideDoor2(dt);
-	}
-	/*else if (!activateDoor2)
-	{
-		anima.CloseSlideDoor2(dt);
-	}*/
+    if (activateDoor1) { anima.OpenSlideDoor1(dt); }
+    if (activateDoor2)
+    {
+        anima.OpenSlideDoor2(dt);
+    }
+    /*else if (!activateDoor2)
+    {
+    anima.CloseSlideDoor2(dt);
+    }*/
 
     if (proximitycheck(-13, 13, -105, -70))
     {
@@ -407,7 +407,7 @@ void SceneLevelOneA::Update(double dt)
 
     camera.Update(dt);
     //mob stuff
-    if (proximitycheck(-226, -172, 210,228)&&!activateDoor1)
+    if (proximitycheck(-226, -172, 210, 228) && !activateDoor1)
     {
         Ghost.Spawn = true;
     }
@@ -419,7 +419,7 @@ void SceneLevelOneA::Update(double dt)
     {
         Ghost.move(dt, 50);
     }
-    if (proximitycheck(-220,-200, 120, 140) && !activateDoor1)
+    if (proximitycheck(-220, -200, 120, 140) && !activateDoor1)
     {
         displayInteract = true;
         if (Application::IsKeyPressed('E'))
@@ -428,7 +428,7 @@ void SceneLevelOneA::Update(double dt)
             Ghost.Spawn = false;
         }
     }
-    
+
     //codes for changing to level1B
     if (proximitycheck(192, 216, -8, 8))
     {
@@ -436,18 +436,10 @@ void SceneLevelOneA::Update(double dt)
     }
 
     //test
-    /*if (!Ghost.canHit)
-    {*/
-        Ghost.mobTimeCount += ((float)(dt)/100);
-        //std::cout << "test " << Ghost.mobTimeCount << std::endl;
-        if (Ghost.mobTimeCount >= 0.5f)
-        {
-            std::cout << "check" << std::endl;
-            std::cout << Ghost.mobTimeCount << std::endl;
-           /* Ghost.canHit = true;*/
-            Ghost.mobTimeCount = 0.f;
-        }
     
+    Collision(Ghost.MobPosX - 2, Ghost.MobPosX + 2, Ghost.MobPosZ - 2, Ghost.MobPosZ + 2);
+    
+
 
 }
 

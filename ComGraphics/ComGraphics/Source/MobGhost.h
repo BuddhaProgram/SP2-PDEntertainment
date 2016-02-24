@@ -20,6 +20,7 @@ public:
 
     bool canHit;
 
+    float mobTimeCount2;
 private:
     bool kenaWhack;
 

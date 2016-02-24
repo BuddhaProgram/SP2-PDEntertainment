@@ -18,7 +18,8 @@ MobGhost::MobGhost()
     TargetDetectZ = 0;
 
     //timer variable
-    mobTimeCount = 0;
+    mobTimeCount = 0.f;
+    mobTimeCount2 = 0.f;
     AttackDamage = 10;
     health = 2;
     kenaWhack = false;
@@ -78,6 +79,16 @@ void MobGhost::move(double dt, int movespeed)
     
     checkAttack();
 
+    if (!canHit)
+    {
+        mobTimeCount2 += ((float)(1 * dt));
+        //std::cout << "test " << Ghost.mobTimeCount << std::endl;
+        if (mobTimeCount2 >= 1.f)
+        {
+            canHit = true;
+            mobTimeCount2 = 0.f;
+        }
+    }
    
 
 }
