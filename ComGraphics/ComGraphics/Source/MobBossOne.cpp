@@ -50,10 +50,10 @@ void MobBossOne::move(double dt, int movespeed = 10)
         MobPosX = mob.x;
         MobPosZ = mob.z;
 
-        if (Misc.WithinArea(MobPosX - 10, MobPosX + 10, MobPosZ - 10, MobPosZ + 10))
+        /*if (Misc.WithinArea(MobPosX - 10, MobPosX + 10, MobPosZ - 10, MobPosZ + 10))
         {
             AttackAnimation = true;
-        }
+        }*/
     }
 }
 

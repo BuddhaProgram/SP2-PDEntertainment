@@ -1,6 +1,6 @@
 #include "SceneLevelOneA.h"
 #include "OBJAnimation.h"
-
+#include "Application.h"
 
 
 // Rendering of Floor for all Scenes.
@@ -72,36 +72,122 @@ void SceneLevelOneA::RenderScene()
     RenderUpWall(5, 2, -55, 28);//28
 
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 500);
-	modelStack.Scale(6, 6.1f, 4);
+	modelStack.Translate(0, 3, 455);
+	modelStack.Scale(6, 3.1f, 4);
+	modelStack.Rotate(180, 0, 1, 0);
 	RenderMesh(meshList[GEO_FACILITYOUT], true);
 	modelStack.PopMatrix();
 
+}
+
+void SceneLevelOneA::checkRubbleFall()
+{
+	if (/*!(anima.WithinArea(-20, 20, 400, 450))*/  !(camera.position.x >= -20 && camera.position.x <= 20 && camera.position.z >= 400 && camera.position.z <= 450))
+	{
+		anima.Collapse = true;
+		if (anima.RubbleCollapse <= 0)
+		{
+			anima.Collapse = false;
+		}
+	}
+
+	if (!anima.Collapse)
+	{
+		Collision(-25, 25, 410, 460);
+	}
+}
+
+void SceneLevelOneA::checkDoor1()
+{
+	if (proximitycheck(170, 188, 190, 200))
+	{
+		displayInteract = true;
+	}
+	else
+	{
+		displayInteract = false;
+	}
+	if (Application::IsKeyPressed('E'))
+	{
+		if (proximitycheck(150, 200, 200, 300))
+		{
+			displayInteract = false;
+			if (Key_1)
+			{
+				activateDoor1 = true;
+			}
+			else
+			{
+				Notice = true;
+			}
+		}
+	}
+	if (!proximitycheck(170, 188, 190, 200))
+	{
+		Notice = false;
+	}
+	if (anima.toSlideDoorBtm)
+	{
+		Collision(150, 200, 180, 200);
+	}
+}
+
+void SceneLevelOneA::checkDoor2()
+{
+	if (proximitycheck(-208, -176, 225, 235))
+	{
+		displayInteract = true;
+	}
+	else
+	{
+		displayInteract = false;
+	}
+	if (Application::IsKeyPressed('E') && proximitycheck(-204, -180, 235, 240))
+	{
+		activateDoor2 = true;
+		displayInteract = false;
+	}
+
+	if (Ghost.Spawn)
+	{
+		activateDoor2 = false;
+	}
+
+	if (anima.toSlideDoorBtm2)
+	{
+		Collision(-208, -176, 225, 235);
+	}
+
+	/*if (!proximitycheck(-208, -176, 245, 255))
+	{
+	activateDoor2 = false;
+	}
+	*/
 }
 
 void SceneLevelOneA::TestDoorRender()
 {
 	modelStack.PushMatrix();
 	modelStack.Translate(180, anima.DoorSlideTop, 188);
-	modelStack.Scale(4.9f, 2, 5);
+	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(180, anima.DoorSlideBtm, 188);
-	modelStack.Scale(4.9f, 2, 5);
+	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(-191, anima.DoorSlideTop_2, 228);
-	modelStack.Scale(4.9f, 2, 5);
+	modelStack.Translate(-188, anima.DoorSlideTop_2, 228);
+	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(-191, anima.DoorSlideBtm_2, 228);
-	modelStack.Scale(4.9f, 2, 5);
+	modelStack.Translate(-188, anima.DoorSlideBtm_2, 228);
+	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
 	modelStack.PopMatrix();
 
@@ -119,7 +205,7 @@ void SceneLevelOneA::RenderGhost(float xpos, float zpos)
 void SceneLevelOneA::CollapseRubble()
 {
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 3 + anima.RubbleCollapse, 450);
+	modelStack.Translate(0, 3 + anima.RubbleCollapse, 440);
 	modelStack.Scale(6, 6, 6);
 	RenderMesh(meshList[GEO_RUBBLE], false);
 	modelStack.PopMatrix();

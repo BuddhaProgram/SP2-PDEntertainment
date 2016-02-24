@@ -1,7 +1,7 @@
 #ifndef HOSTILEMOB_H
 #define HOSTILEMOB_H
 
-#include "Misc.h"
+//#include "Misc.h"
 #include "Explorer.h"
 #include "Vector3.h"
 
@@ -31,7 +31,7 @@ public:
     float TargetDetectZ;
     float mobTimeCount;
     
-    misc Misc;
+   
 
    
 };

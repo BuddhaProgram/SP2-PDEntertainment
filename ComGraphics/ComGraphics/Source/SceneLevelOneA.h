@@ -145,6 +145,9 @@ private:
 
 	void MouseClickFunction(double dt);
 
+	void checkRubbleFall();
+	void checkDoor1();
+	void checkDoor2();
 	void TestDoorRender(); // Sliding Door
 
     unsigned m_vertexArrayID;

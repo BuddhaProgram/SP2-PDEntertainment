@@ -50,8 +50,8 @@ public:
 	bool toSlideDoorTop = true;
 	bool toSlideDoorBtm = true;
 
-	float DoorSlideTop_2 = 4;
-	float DoorSlideBtm_2 = 4;
+	float DoorSlideTop_2;
+	float DoorSlideBtm_2;
 	bool toSlideDoorTop2 = true;
 	bool toSlideDoorBtm2 = true;
 	bool ClosingDoorTop2 = true;
