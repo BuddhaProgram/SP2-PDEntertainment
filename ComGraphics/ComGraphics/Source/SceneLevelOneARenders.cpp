@@ -94,25 +94,25 @@ void SceneLevelOneA::checkRubbleFall()
 
 	if (!anima.Collapse)
 	{
-		Collision(-25, 25, 410, 460);
+		Collision(-25, 25, 420, 500);
 	}
 }
 
 void SceneLevelOneA::checkDoor1()
 {
-	if (proximitycheck(170, 188, 190, 200))
+	if (proximitycheck(170, 190, 199, 200))
 	{
-		displayInteract = true;
+		displayInteract1 = true;
 	}
 	else
 	{
-		displayInteract = false;
+		displayInteract1 = false;
 	}
 	if (Application::IsKeyPressed('E'))
 	{
-		if (proximitycheck(150, 200, 200, 300))
+		if (proximitycheck(170, 190, 199, 200))
 		{
-			displayInteract = false;
+			displayInteract1 = false;
 			if (Key_1)
 			{
 				activateDoor1 = true;
@@ -123,35 +123,43 @@ void SceneLevelOneA::checkDoor1()
 			}
 		}
 	}
-	if (!proximitycheck(170, 188, 190, 200))
+	if (!proximitycheck(170, 190, 199, 200))
 	{
 		Notice = false;
 	}
 	if (anima.toSlideDoorBtm)
 	{
-		Collision(150, 200, 180, 200);
+		//Collision(150, 200, 180, 200);
 	}
 }
 
 void SceneLevelOneA::checkDoor2()
 {
-	if (proximitycheck(-208, -176, 225, 235))
+	if (proximitycheck(-208, -176, 232, 235))
 	{
-		displayInteract = true;
+		displayInteract2 = true;
+		if (activateDoor2_1)
+		{
+			displayInteract2 = false;
+		}
 	}
 	else
 	{
-		displayInteract = false;
+		displayInteract2 = false;
 	}
 	if (Application::IsKeyPressed('E') && proximitycheck(-204, -180, 235, 240))
 	{
-		activateDoor2 = true;
-		displayInteract = false;
+		activateDoor2_1 = true;
 	}
 
 	if (Ghost.Spawn)
 	{
-		activateDoor2 = false;
+		activateDoor2_1 = false;
+		activateDoor2_2 = true;
+		if (activateDoor2_2)
+		{
+			Collision(-208, -176, 225, 235);
+		}
 	}
 
 	if (anima.toSlideDoorBtm2)
@@ -164,6 +172,52 @@ void SceneLevelOneA::checkDoor2()
 	activateDoor2 = false;
 	}
 	*/
+}
+
+void SceneLevelOneA::checkDoor3()
+{
+	//if (!activateDoor3_1)
+	//{
+	//	activateDoor3_2 = true;
+	//}
+
+	if (proximitycheck(192, 217, 60, 64))
+	{
+		displayInteract3 = true;	
+		if (activateDoor3)
+		{
+			displayInteract3 = false;
+		}
+	}
+	else
+	{
+		displayInteract3 = false;
+	}
+	if (proximitycheck(192, 217, 60, 64) && (Application::IsKeyPressed('E')))
+	{
+		activateDoor3 = true;
+	}
+
+
+	//if (/*!proximitycheck(192, 217, 60, 64)*/ camera.position.x <= 192 && camera.position.x >= 217 && camera.position.z >= 64)
+	//{
+	//	activateDoor3_1 = false;
+	//	activateDoor3_2 = true;
+	//}
+
+	if (anima.toSlideDoorBtm3)
+	{
+		Collision(192, 217, 60, 64);
+	}
+
+}
+
+void SceneLevelOneA::checkDrop()
+{
+	if (proximitycheck(-15, 15, 326, 345))
+	{
+		willDrop = true;
+	}
 }
 
 void SceneLevelOneA::TestDoorRender()
@@ -192,8 +246,19 @@ void SceneLevelOneA::TestDoorRender()
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
 	modelStack.PopMatrix();
 
-}
+	modelStack.PushMatrix();
+	modelStack.Translate(204, anima.DoorSlideTop_3, 59);
+	modelStack.Scale(4.9f, 4, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
+	modelStack.PopMatrix();
 
+	modelStack.PushMatrix();
+	modelStack.Translate(204, anima.DoorSlideBtm_3, 59);
+	modelStack.Scale(4.9f, 4, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
+	modelStack.PopMatrix();
+
+}
 
 void SceneLevelOneA::RenderGhost(float xpos, float zpos)
 {
@@ -212,3 +277,22 @@ void SceneLevelOneA::CollapseRubble()
 	modelStack.PopMatrix();
 }
 
+void SceneLevelOneA::DropPortrait()
+{
+	modelStack.PushMatrix();
+	//modelStack.Translate(192, anima.PortraitDrop , 300);
+	
+	
+	modelStack.Translate(0, 0, 300);
+
+	//modelStack.Rotate(-90, 0, 1, 0);
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 5, 0);
+	
+	modelStack.Scale(3, 3, 3);
+	modelStack.Rotate(anima.f_PortraitFall, 1, 0, 0);
+		RenderMesh(meshList[GEO_PORTRAIT], false);
+		modelStack.PopMatrix();
+	modelStack.PopMatrix();
+}

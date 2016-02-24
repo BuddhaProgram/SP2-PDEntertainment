@@ -56,6 +56,9 @@ class SceneLevelOneB : public Scene
         GEO_GHOST1,
         GEO_SPAWNPOINT,
 
+		GEO_SLIDEDOORTOP,
+		GEO_SLIDEDOORBTM,
+
         //player related
         GEO_HEALTH,
         NUM_GEOMETRY,
@@ -116,6 +119,7 @@ private:
 
     //mob renders
     void RenderGhost1();
+	void RenderDoor();
 
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
@@ -125,6 +129,8 @@ private:
     void checkPlayerPosMisc();
     void Collision(float smallx, float largex, float smallz, float largez);
     bool proximitycheck(float smallx, float largex, float smallz, float largez);
+
+	void checkDoor1();
 
     // Switches Functions for puzzles
     void PuzzleOneSwitchCheck(double dt);
@@ -156,7 +162,8 @@ private:
     GlobalVariables Variables;
 
     float FPS;
-    bool displayInteract;
+    bool displayInteract1;
+	bool activateDoor1;
 
     float CollXLarge[43];
     float CollXSmall[43];

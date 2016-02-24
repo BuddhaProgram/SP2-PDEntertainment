@@ -1,5 +1,6 @@
 #include "SceneLevelOneB.h"
 #include "OBJAnimation.h"
+#include "Application.h"
 
 // Rendering of Floor for all Scenes.
 void SceneLevelOneB::RenderFloorCeiling()
@@ -90,8 +91,62 @@ void SceneLevelOneB::RenderScene()
     //-----------------------------------------------------
 }
 
+void SceneLevelOneB::RenderDoor()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(204, 0, 59);
+	modelStack.Scale(4.9f, 4, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
+	modelStack.PopMatrix();
 
+	modelStack.PushMatrix();
+	modelStack.Translate(204, 0, 59);
+	modelStack.Scale(4.9f, 4, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
+	modelStack.PopMatrix();
 
+	Collision(190, 216, 54, 60);
+
+	modelStack.PushMatrix();
+	modelStack.Translate(204, anima.DoorSlideTop, -51);
+	modelStack.Scale(4.9f, 4, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(204, anima.DoorSlideBtm, -51);
+	modelStack.Scale(4.9f, 4, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
+	modelStack.PopMatrix();
+}
+
+void SceneLevelOneB::checkDoor1()
+{
+	if (proximitycheck(190, 216, -40, -46))
+	{
+		displayInteract1 = true;
+		if (activateDoor1)
+		{
+			displayInteract1 = false;
+		}
+	}
+	else
+	{
+		displayInteract1 = false;
+	}
+	if (Application::IsKeyPressed('E'))
+	{
+		if (proximitycheck(190, 216, -40, -46))
+		{
+			activateDoor1 = true;
+		}
+		
+	}
+	if (anima.toSlideDoorBtm)
+	{
+		Collision(190, 216, -55, -45);
+	}
+}
 
 void SceneLevelOneB::RenderGhost1()
 {
