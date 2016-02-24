@@ -114,10 +114,6 @@ ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 }
 
 //combat stuff
-void Explorer::takeDamage(float damage)
-{
-    setHP(hp - damage);
-}
 
 void Explorer::ExplorerSavePoint(Vector3 pos)
 {
