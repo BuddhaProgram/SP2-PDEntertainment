@@ -11,6 +11,8 @@ Explorer::Explorer()
 	{
 		Explorer::instance()->TotalTools.push_back(ToolUI(ToolUI::Empty));
 	}
+
+	Explorer::instance()->SavePoint = (0, 0, 0);
 }
 
 float Explorer::getHP()
@@ -115,4 +117,9 @@ ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 void Explorer::takeDamage(float damage)
 {
     setHP(hp - damage);
+}
+
+void Explorer::ExplorerSavePoint(Vector3 pos)
+{
+	SavePoint = pos;
 }

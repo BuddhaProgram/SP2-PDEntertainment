@@ -1,5 +1,5 @@
-#ifndef SCENELEVELONEA_H
-#define SCENELEVELONEA_H
+#ifndef SCENELEVELTWO_H
+#define SCENELEVELTWO_H
 
 #include "Scene.h"
 #include "Camera3.h"
@@ -10,7 +10,7 @@
 #include "OBJAnimation.h"
 #include "MobGhost.h"
 
-class SceneLevelOneA : public Scene
+class SceneLevelTwo : public Scene
 {
     enum GEOMETRY_TYPE
     {
@@ -41,30 +41,26 @@ class SceneLevelOneA : public Scene
         GEO_LHAND,
         GEO_RHAND,
 
-        GEO_SPAWNPOINT,
-
         // Tools Interface and It's Icons
-		GEO_TOOLUIONE,
-		GEO_TOOLUITWO,
-		GEO_TOOLUITHREE,
-		GEO_TOOLUIFOUR,
+        GEO_TOOLUIONE,
+        GEO_TOOLUITWO,
+        GEO_TOOLUITHREE,
+        GEO_TOOLUIFOUR,
 
         GEO_PICKAXE,
         GEO_PICKAXEICON,
 
-		GEO_BAT,
-		GEO_BATICON,
+        GEO_BAT,
+        GEO_BATICON,
 
         GEO_GHOST1,
+        GEO_SPAWNPOINT,
 
-        GEO_DOORSWITCH,
-		GEO_SLIDEDOORTOP,
-		GEO_SLIDEDOORBTM,
-
+        GEO_SLIDEDOORTOP,
+        GEO_SLIDEDOORBTM,
 
         //player related
-        GEO_HEALTHBAR,
-		GEO_STAMINABAR,
+        GEO_HEALTH,
         NUM_GEOMETRY,
     };
     enum UNIFORM_TYPE
@@ -98,8 +94,8 @@ class SceneLevelOneA : public Scene
         U_TOTAL,
     };
 public:
-    SceneLevelOneA();
-    ~SceneLevelOneA();
+    SceneLevelTwo();
+    ~SceneLevelTwo();
 
     virtual void Init();
     virtual void Update(double dt);
@@ -114,7 +110,6 @@ private:
     //scene renders
     void RenderScene();
     void RenderFloorCeiling();
-    void RenderCutSceneOne();
 
     //map rendering
     void RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber);//positive Z facing wall
@@ -123,44 +118,32 @@ private:
     void RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber);//negative X facing wall
 
     //mob renders
-    void RenderGhost(float xpos, float zpos);
-
-	//Obj renders
-	void CollapseRubble();
-	void DropPortrait();
+    void RenderGhost1();
+    void RenderDoor();
 
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-	void RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN);
+    void RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float x, float y, float z, bool LightYN);
     //checks
-    void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
     void checkPlayerPosMisc();
     void Collision(float smallx, float largex, float smallz, float largez);
     bool proximitycheck(float smallx, float largex, float smallz, float largez);
 
+    void checkDoor1();
+
     // Switches Functions for puzzles
     void PuzzleOneSwitchCheck(double dt);
 
-	// Tool UI functions
-	void ToolsUI();
-	void MouseScrollToolSlot();
-	void RenderMouseScrollToolSlot();
-	void ToolSelectionMouseScroll();
-	void RenderToolIcon();
+    // Tool UI functions
+    // Tool UI functions
+    void ToolsUI();
+    void MouseScrollToolSlot();
+    void RenderMouseScrollToolSlot();
+    void ToolSelectionMouseScroll();
+    void RenderToolIcon();
 
-	void MouseClickFunction(double dt);
-
-	// Updates save point position
-	void UpdateSavePoint();
-	void RenderSavePointText();
-
-	void checkRubbleFall();
-	void checkDoor1();
-	void checkDoor2();
-	void checkDoor3();
-	void checkDrop();
-	void TestDoorRender(); // Sliding Door
+    void MouseClickFunction(double dt);
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
@@ -177,26 +160,17 @@ private:
     Vector3 start;
     Vector3 end;
     GlobalVariables Variables;
-    MobGhost Ghost;
 
     float FPS;
-	bool displayInteract1;
-	bool displayInteract2;
-	bool displayInteract3;
-	bool activateDoor1 = false;
-	bool activateDoor2_1 = false;
-	bool activateDoor2_2 = false;
-	bool activateDoor3 = false; //if true open door
-	bool Key_1 = false;
-	bool Notice = false;
-	bool Notice2 = false;
-	bool willDrop = false;
+    bool displayInteract1;
+    bool activateDoor1;
 
-    //collision variables 
-    float CollXLarge[28];
-    float CollXSmall[28];
-    float CollZLarge[28];
-    float CollZSmall[28];
+    float CollXLarge[43];
+    float CollXSmall[43];
+    float CollZLarge[43];
+    float CollZSmall[43];
+
+    MobGhost Ghost;
 };
 
 

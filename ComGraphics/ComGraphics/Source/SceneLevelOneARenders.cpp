@@ -7,15 +7,15 @@
 void SceneLevelOneA::RenderFloorCeiling()
 {
     modelStack.PushMatrix();
-    modelStack.Scale(1000, 1, 1000);
-    RenderMesh(meshList[GEO_FACILITYFLOOR], true);
+		modelStack.Scale(1000, 1, 1000);
+		RenderMesh(meshList[GEO_FACILITYFLOOR], true);
     modelStack.PopMatrix();
 
     modelStack.PushMatrix();
-    modelStack.Translate(0, 20, 0);
-    modelStack.Rotate(180, 1, 0, 0);
-    modelStack.Scale(1000, 1, 1000);
-    RenderMesh(meshList[GEO_FACILITYCEILINGS], true);
+		modelStack.Translate(0, 20, 0);
+		modelStack.Rotate(180, 1, 0, 0);
+		modelStack.Scale(1000, 1, 1000);
+		RenderMesh(meshList[GEO_FACILITYCEILINGS], true);
     modelStack.PopMatrix();
 }
 
@@ -28,10 +28,11 @@ void SceneLevelOneA::RenderFloorCeiling()
 void SceneLevelOneA::RenderScene()
 {
     modelStack.PushMatrix();
-    modelStack.Translate(120, 5, 75);
-    modelStack.Scale(4, 4, 4);
-    RenderMesh(meshList[GEO_SPAWNPOINT], true);
-    modelStack.PopMatrix();
+		modelStack.Translate(120, 0, 75);
+		modelStack.Scale(4, 4, 4);
+		RenderMesh(meshList[GEO_SPAWNPOINT], true);
+	modelStack.PopMatrix();
+
     RenderFloorCeiling();
 
     //bottom left quadron

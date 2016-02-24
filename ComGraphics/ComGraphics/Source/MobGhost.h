@@ -14,8 +14,13 @@ public:
     void move(double dt, int movespeed);
     void knockback();
     void TakeDamage(int damage);
+    void checkAttack();
+    bool proximitycheck(float smallx, float largex, float smallz, float largez);
     void attack();
 
+    bool canHit;
+
+    float mobTimeCount2;
 private:
     bool kenaWhack;
 

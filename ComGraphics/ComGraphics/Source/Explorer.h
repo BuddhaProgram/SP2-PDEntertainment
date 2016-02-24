@@ -1,6 +1,7 @@
 #ifndef EXPLORER_H
 #define EXPLORER_H
 #include "ToolUI.h"
+#include "Vector3.h"
 
 class Explorer
 {
@@ -11,7 +12,6 @@ public:
 	virtual void setStamina(float currStam);
 	virtual float getHP();
 	virtual float getStamina();
-    virtual void takeDamage(float damage);
 	float stamina;
 	float hp;
 
@@ -21,7 +21,11 @@ public:
 	void InsertToolSlot(ToolUI::ToolType ChooseTools);
 	bool CheckForDoubleTool(ToolUI::ToolType DoubleTool);
 
+	void ExplorerSavePoint(Vector3 pos);
+
 	std::list<ToolUI> TotalTools;
+	Vector3 SavePoint;
+	
 
 private:
 	Explorer();
