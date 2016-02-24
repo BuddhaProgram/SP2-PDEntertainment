@@ -1,9 +1,9 @@
 #ifndef HOSTILEMOB_H
 #define HOSTILEMOB_H
 
-//#include "Misc.h"
 #include "Explorer.h"
 #include "Vector3.h"
+
 
 
 class HostileMob
@@ -31,7 +31,6 @@ public:
     float TargetDetectZ;
     float mobTimeCount;
     
-   
 
    
 };

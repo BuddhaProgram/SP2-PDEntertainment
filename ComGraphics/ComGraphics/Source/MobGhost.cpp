@@ -1,5 +1,8 @@
 #include "MobGhost.h"
 
+#include "Misc.h"
+
+misc functions;
 MobGhost::MobGhost()
 {
     //global variables for use in entire project
@@ -16,7 +19,7 @@ MobGhost::MobGhost()
 
     //timer variable
     mobTimeCount = 0;
-
+    AttackDamage = 10;
     health = 2;
     kenaWhack = false;
 }
@@ -30,7 +33,10 @@ void MobGhost::knockback()
 {
     kenaWhack = true;
 }
-
+void MobGhost::attack()
+{
+    Explorer::instance()->hp -= AttackDamage;
+}
 void MobGhost::move(double dt, int movespeed)
 {
     //note: target detect x and y is player position, its function is in scene cpp file
@@ -46,6 +52,7 @@ void MobGhost::move(double dt, int movespeed)
 
     MobPosX = mob.x;
     MobPosZ = mob.z;
+
 }
 
 void MobGhost::setSpawnGhost(float xpos, float zpos)

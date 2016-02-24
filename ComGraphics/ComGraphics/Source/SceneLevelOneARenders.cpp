@@ -36,8 +36,8 @@ void SceneLevelOneA::RenderScene()
 
     //bottom left quadron
     modelStack.PushMatrix();
-    modelStack.Translate(0, -7, 0);
-    modelStack.Scale(1, 2.2, 1);
+    modelStack.Translate(0, -10, 0);
+    modelStack.Scale(1, 2.5, 1);
     RenderUpWall(-2, -5, -55, 1);//1 
     RenderRightWall(-49, -55, -5, 2);//2
     RenderUpWall(-5, -8, -49, 3);//3
