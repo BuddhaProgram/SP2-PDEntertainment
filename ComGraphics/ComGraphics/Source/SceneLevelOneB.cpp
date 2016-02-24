@@ -118,8 +118,17 @@ void SceneLevelOneB::Init()
     meshList[GEO_BACK] = MeshBuilder::GenerateQuad("SkyBox1_back", Color(1, 1, 1));
     meshList[GEO_BACK]->textureID = LoadTGA("Image//SkyBox1_back.tga");
 
-	meshList[GEO_TOOLUI] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
-	meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
+	meshList[GEO_TOOLUIONE] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_TOOLUIONE]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
+
+	meshList[GEO_TOOLUITWO] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_TOOLUITWO]->textureID = LoadTGA("Image//ToolsUIBoxTwo.tga");
+
+	meshList[GEO_TOOLUITHREE] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_TOOLUITHREE]->textureID = LoadTGA("Image//ToolsUIBoxThree.tga");
+
+	meshList[GEO_TOOLUIFOUR] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_TOOLUIFOUR]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
 
 	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
 	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
@@ -208,14 +217,14 @@ void SceneLevelOneB::ToolSelectionMouseScroll()
 	if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
 	{
 		modelStack.PushMatrix();
-		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
+		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, 15, 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
 		modelStack.PopMatrix();
 	}
 
 	else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::BaseballBat)
 	{
 		modelStack.PushMatrix();
-		RenderModelOnScreen(meshList[GEO_BAT], 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
+		RenderModelOnScreen(meshList[GEO_BAT], 15, 15, 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
 		modelStack.PopMatrix();
 	}
 }
@@ -224,22 +233,22 @@ void SceneLevelOneB::RenderToolIcon()
 {
 	if (Explorer::instance()->GetToolType(1) == ToolUI::Pickaxe)
 	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
 	}
 
 	else if (Explorer::instance()->GetToolType(1) == ToolUI::BaseballBat)
 	{
-		RenderModelOnScreen(meshList[GEO_BATICON], 4.5, 90, 1, 0, 0, 6.6, 0.775, 1, false);
+		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
 	}
 
 	if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
 	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5, 90, 1, 0, 0, 6.6, 3, 1, false);
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 10.0f, 0.775f, 1, false);
 	}
 
 	else if (Explorer::instance()->GetToolType(2) == ToolUI::BaseballBat)
 	{
-		RenderModelOnScreen(meshList[GEO_BATICON], 4.5, 90, 1, 0, 0, 6.6, 3, 1, false);
+		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 10.0f, 0.775f, 1, false);
 	}
 }
 
@@ -264,26 +273,21 @@ void SceneLevelOneB::MouseScrollToolSlot()
 	{
 		Variables.i_SlotIndex = 4;
 	}
+}
 
+void SceneLevelOneB::RenderMouseScrollToolSlot()
+{
 	if (Variables.i_SlotIndex == 1)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
-	}
+		RenderModelOnScreen(meshList[GEO_TOOLUIONE], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
 
-	else if (Variables.i_SlotIndex == 2)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxTwo.tga");
-	}
+	if (Variables.i_SlotIndex == 2)
+		RenderModelOnScreen(meshList[GEO_TOOLUITWO], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
 
-	else if (Variables.i_SlotIndex == 3)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxThree.tga");
-	}
+	if (Variables.i_SlotIndex == 3)
+		RenderModelOnScreen(meshList[GEO_TOOLUITHREE], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
 
-	else if (Variables.i_SlotIndex == 4)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
-	}
+	if (Variables.i_SlotIndex == 4)
+		RenderModelOnScreen(meshList[GEO_TOOLUIFOUR], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
 }
 
 void SceneLevelOneB::MouseClickFunction(double dt)
@@ -345,7 +349,7 @@ void SceneLevelOneB::Update(double dt)
 
 	/*-------------------------[Tool UI Functions]-------------------------------*/
 	ToolsUI();
-	//MouseScrollToolSlot();
+	MouseScrollToolSlot();
 	MouseClickFunction(dt);
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
@@ -472,25 +476,25 @@ void SceneLevelOneB::RenderTextOnScreen(Mesh* mesh, std::string text, Color colo
     glEnable(GL_DEPTH_TEST);
 }
 
-void SceneLevelOneB::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, int rY, int rZ, float x, float y, float z, bool LightYN)
+void SceneLevelOneB::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
-    Mtx44 ortho;
-    ortho.SetToOrtho(0, 80, 0, 60, -50, 50); //size of screen UI
-    projectionStack.PushMatrix();
-    projectionStack.LoadMatrix(ortho);
-    viewStack.PushMatrix();
-    viewStack.LoadIdentity(); //No need camera for ortho mode
-    modelStack.PushMatrix();
-    modelStack.LoadIdentity(); //Reset modelStack
-    modelStack.Scale(size, size, size);
-    modelStack.Translate(x, y, z);
+	Mtx44 ortho;
+	ortho.SetToOrtho(0, 80, 0, 60, -50, 50); //size of screen UI
+	projectionStack.PushMatrix();
+	projectionStack.LoadMatrix(ortho);
+	viewStack.PushMatrix();
+	viewStack.LoadIdentity(); //No need camera for ortho mode
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity(); //Reset modelStack
+	modelStack.Scale(Sx, Sy, Sz);
+	modelStack.Translate(Tx, Ty, Tz);
 	modelStack.Rotate(Rotate, (float)rX, (float)rY, (float)rZ);
 
-    RenderMesh(mesh, LightYN);
+	RenderMesh(mesh, LightYN);
 
-    projectionStack.PopMatrix();
-    viewStack.PopMatrix();
-    modelStack.PopMatrix();
+	projectionStack.PopMatrix();
+	viewStack.PopMatrix();
+	modelStack.PopMatrix();
 }
 
 void SceneLevelOneB::Render()
@@ -529,13 +533,12 @@ void SceneLevelOneB::Render()
     }
 
 	ToolSelectionMouseScroll();
+	RenderMouseScrollToolSlot();
 	RenderToolIcon();
 
     RenderScene();
 
-	modelStack.PushMatrix();
-	RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
-	modelStack.PopMatrix();
+
 }
 
 void SceneLevelOneB::Exit()

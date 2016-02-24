@@ -44,7 +44,10 @@ class SceneLevelOneA : public Scene
         GEO_SPAWNPOINT,
 
         // Tools Interface and It's Icons
-        GEO_TOOLUI,
+		GEO_TOOLUIONE,
+		GEO_TOOLUITWO,
+		GEO_TOOLUITHREE,
+		GEO_TOOLUIFOUR,
 
         GEO_PICKAXE,
         GEO_PICKAXEICON,
@@ -141,6 +144,7 @@ private:
 	// Tool UI functions
 	void ToolsUI();
 	void MouseScrollToolSlot();
+	void RenderMouseScrollToolSlot();
 	void ToolSelectionMouseScroll();
 	void RenderToolIcon();
 
