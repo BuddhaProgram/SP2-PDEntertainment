@@ -649,6 +649,7 @@ void SceneLevelOneA::Render()
     RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->f_hpBarScaleX, 1.0f, 1.0f, 90, 1, 0, 0, Explorer::instance()->f_hpBarTranslateX, 57, 0, false);
     RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
     modelStack.PopMatrix();
+    
 
 }
 
