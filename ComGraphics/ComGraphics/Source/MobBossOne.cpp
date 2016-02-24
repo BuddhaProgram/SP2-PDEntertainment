@@ -1,4 +1,7 @@
 #include "MobBossOne.h"
+#include "Misc.h"
+
+misc Functions;
 
 MobBossOne::MobBossOne()
 {
@@ -50,7 +53,7 @@ void MobBossOne::move(double dt, int movespeed = 10)
         MobPosX = mob.x;
         MobPosZ = mob.z;
 
-        if (Misc.WithinArea(MobPosX - 10, MobPosX + 10, MobPosZ - 10, MobPosZ + 10))
+      if (Functions.WithinArea(MobPosX - 10, MobPosX + 10, MobPosZ - 10, MobPosZ + 10))
         {
             AttackAnimation = true;
         }
