@@ -3,7 +3,7 @@
 
 #include "SceneLevelOneA.h"
 #include "SceneLevelOneB.h"
-
+#include "SceneLevelTwo.h"
 #include "timer.h"
 #include "Scene.h"
 #include <GL/glew.h>
@@ -25,6 +25,7 @@ public:
 
 	static void SceneLevel1A();
 	static void SceneLevel1B();
+    static void SceneLevel2();
 	static void FirstCutScene();
     static void StartingScene();
     static void EndingScene();
@@ -33,6 +34,7 @@ public:
 	static Scene *Start;
 	static Scene *LevelOneA;
     static Scene *LevelOneB;
+    static Scene *LevelTwo;
 	static Scene *End;
 	static Scene *CutScene1;
 private:

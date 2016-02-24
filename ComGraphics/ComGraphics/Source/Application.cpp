@@ -10,6 +10,7 @@
 
 
 
+
 const unsigned char FPS = 60; // FPS of this game
 const unsigned int frameTime = 1000 / FPS; // time for each frame
 GLFWwindow* m_window;
@@ -48,6 +49,7 @@ Scene* Application::Start;
 Scene* Application::End;
 Scene* Application::LevelOneA;
 Scene* Application::LevelOneB;
+Scene* Application::LevelTwo;
 Scene* Application::CutScene1;
 
 void resize_callback(GLFWwindow* window, int w, int h)
@@ -123,6 +125,8 @@ void Application::Run()
 	LevelOneA->Init();
     LevelOneB = new SceneLevelOneB();
     LevelOneB->Init();
+    LevelTwo = new SceneLevelTwo();
+    LevelTwo->Init();
 	//Main Loop
 	//SceneStart *scene = new SceneStart();
 	//scene->Init();
@@ -181,6 +185,11 @@ void Application::SceneLevel1A()
 void Application::SceneLevel1B()
 {
 	scene = LevelOneB;
+}
+
+void Application::SceneLevel2()
+{
+    scene = LevelTwo;
 }
 
 void Application::EndingScene()
