@@ -22,6 +22,7 @@ MobGhost::MobGhost()
     AttackDamage = 10;
     health = 2;
     kenaWhack = false;
+    canHit = true;
 }
 
 MobGhost::~MobGhost()
@@ -29,13 +30,35 @@ MobGhost::~MobGhost()
 
 }
 
+bool MobGhost::proximitycheck(float smallx, float largex, float smallz, float largez)
+{
+    //this function checks if the camera is close to a side of the object
+    bool result = false;
+    if ((TargetDetectX >= smallx - 2.f) && (TargetDetectX <= smallx) && (TargetDetectZ >= smallz) && (TargetDetectZ <= largez)){ result = true; }
+    if ((TargetDetectX <= largex + 2.f) && (TargetDetectX >= largex) && (TargetDetectZ >= smallz) && (TargetDetectZ <= largez)){ result = true; }
+    if ((TargetDetectX >= smallx) && (TargetDetectX <= largex) && (TargetDetectZ >= smallz - 2.f) && (TargetDetectZ <= smallz)){ result = true; }
+    if ((TargetDetectX >= smallx) && (TargetDetectX <= largex) && (TargetDetectZ <= largez + 2.f) && (TargetDetectZ >= largez)){ result = true; }
+    return result;
+}
 void MobGhost::knockback()
 {
     kenaWhack = true;
 }
+
+
 void MobGhost::attack()
 {
+    std::cout << "attack" << std::endl;
     Explorer::instance()->hp -= AttackDamage;
+    canHit = false;
+}
+
+void MobGhost::checkAttack()
+{
+    if (proximitycheck(MobPosX - 5, MobPosX + 5, MobPosZ - 5, MobPosZ + 5) && canHit)
+    {
+        attack();
+    }
 }
 void MobGhost::move(double dt, int movespeed)
 {
@@ -52,8 +75,13 @@ void MobGhost::move(double dt, int movespeed)
 
     MobPosX = mob.x;
     MobPosZ = mob.z;
+    
+    checkAttack();
+
+   
 
 }
+
 
 void MobGhost::setSpawnGhost(float xpos, float zpos)
 {

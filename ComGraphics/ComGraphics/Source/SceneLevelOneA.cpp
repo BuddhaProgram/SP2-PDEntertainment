@@ -430,6 +430,21 @@ void SceneLevelOneA::Update(double dt)
     {
         Application::SceneLevel1B();
     }
+
+    //test
+    /*if (!Ghost.canHit)
+    {*/
+        Ghost.mobTimeCount += ((float)(dt)/100);
+        //std::cout << "test " << Ghost.mobTimeCount << std::endl;
+        if (Ghost.mobTimeCount >= 0.5f)
+        {
+            std::cout << "check" << std::endl;
+            std::cout << Ghost.mobTimeCount << std::endl;
+           /* Ghost.canHit = true;*/
+            Ghost.mobTimeCount = 0.f;
+        }
+    
+
 }
 
 void SceneLevelOneA::RenderMesh(Mesh*mesh, bool enableLight)
