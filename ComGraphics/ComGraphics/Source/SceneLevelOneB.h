@@ -42,7 +42,10 @@ class SceneLevelOneB : public Scene
         GEO_RHAND,
 
         // Tools Interface and It's Icons
-		GEO_TOOLUI,
+		GEO_TOOLUIONE,
+		GEO_TOOLUITWO,
+		GEO_TOOLUITHREE,
+		GEO_TOOLUIFOUR,
 
 		GEO_PICKAXE,
 		GEO_PICKAXEICON,
@@ -117,7 +120,7 @@ private:
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-    void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, int rY, int rZ, float x, float y, float z, bool LightYN);
+	void RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float x, float y, float z, bool LightYN);
     //checks
     void checkPlayerPosMisc();
     void Collision(float smallx, float largex, float smallz, float largez);
@@ -130,6 +133,7 @@ private:
 	// Tool UI functions
 	void ToolsUI();
 	void MouseScrollToolSlot();
+	void RenderMouseScrollToolSlot();
 	void ToolSelectionMouseScroll();
 	void RenderToolIcon();
 

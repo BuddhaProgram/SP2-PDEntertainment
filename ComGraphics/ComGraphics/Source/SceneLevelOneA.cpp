@@ -118,8 +118,17 @@ void SceneLevelOneA::Init()
     meshList[GEO_BACK] = MeshBuilder::GenerateQuad("SkyBox1_back", Color(1, 1, 1));
     meshList[GEO_BACK]->textureID = LoadTGA("Image//SkyBox1_back.tga");
 
-	meshList[GEO_TOOLUI] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
-	meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
+	meshList[GEO_TOOLUIONE] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_TOOLUIONE]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
+
+	meshList[GEO_TOOLUITWO] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_TOOLUITWO]->textureID = LoadTGA("Image//ToolsUIBoxTwo.tga");
+
+	meshList[GEO_TOOLUITHREE] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_TOOLUITHREE]->textureID = LoadTGA("Image//ToolsUIBoxThree.tga");
+
+	meshList[GEO_TOOLUIFOUR] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_TOOLUIFOUR]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
 
 	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
 	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
@@ -286,26 +295,21 @@ void SceneLevelOneA::MouseScrollToolSlot()
 	{
 		Variables.i_SlotIndex = 4;
 	}
+}
 
+void SceneLevelOneA::RenderMouseScrollToolSlot()
+{
 	if (Variables.i_SlotIndex == 1)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
-	}
+		RenderModelOnScreen(meshList[GEO_TOOLUIONE], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
 
-	else if (Variables.i_SlotIndex == 2)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxTwo.tga");
-	}
+	if (Variables.i_SlotIndex == 2)
+		RenderModelOnScreen(meshList[GEO_TOOLUITWO], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
 
-	else if (Variables.i_SlotIndex == 3)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxThree.tga");
-	}
+	if (Variables.i_SlotIndex == 3)
+		RenderModelOnScreen(meshList[GEO_TOOLUITHREE], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
 
-	else if (Variables.i_SlotIndex == 4)
-	{
-		meshList[GEO_TOOLUI]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
-	}
+	if (Variables.i_SlotIndex == 4)
+		RenderModelOnScreen(meshList[GEO_TOOLUIFOUR], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
 }
 
 void SceneLevelOneA::MouseClickFunction(double dt)
@@ -349,7 +353,7 @@ void SceneLevelOneA::Update(double dt)
 
 	/*-------------------------[Tool UI Functions]-------------------------------*/
 	ToolsUI();
-	//MouseScrollToolSlot();
+	MouseScrollToolSlot();
 	MouseClickFunction(dt);
     /*-------------------------[End of Tool UI Functions]-------------------------------*/
 
@@ -613,6 +617,7 @@ void SceneLevelOneA::Render()
 	CollapseRubble();
 
 	ToolSelectionMouseScroll();
+	RenderMouseScrollToolSlot();
 	RenderToolIcon();
 
     modelStack.PushMatrix();
@@ -646,7 +651,6 @@ void SceneLevelOneA::Render()
 	modelStack.PushMatrix();
 	RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57, 0, false);
 	RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56, 0, false);
-	RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
 	modelStack.PopMatrix();
 }
 

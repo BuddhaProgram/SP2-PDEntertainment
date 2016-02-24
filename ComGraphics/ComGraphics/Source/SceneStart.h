@@ -53,7 +53,10 @@ class SceneStart : public Scene
 		GEO_RHAND,
 
 		// Tools Interface and It's Icons
-		GEO_TOOLUI,
+		GEO_TOOLUIONE,
+		GEO_TOOLUITWO,
+		GEO_TOOLUITHREE,
+		GEO_TOOLUIFOUR,
 
 		GEO_PICKAXE,
 		GEO_BAT,
@@ -144,6 +147,7 @@ private:
 	// Tool UI functions
 	void ToolsUI();
 	void MouseScrollToolSlot();
+	void RenderMouseScrollToolSlot();
 	void ToolSelectionMouseScroll();
 	void RenderToolIcon();
 
@@ -170,8 +174,6 @@ private:
 	float AsteroidMove;
 	float AsteroidMoveS;
 
-	
-
     //variables for scene changer
     int numScene;
 
@@ -182,7 +184,6 @@ private:
 	SwitchLightPuzzle Switches;
 
     float FPS;
-	int SlotIndex;
 	bool displayInteract;
 	float mobTimeCount;
 
