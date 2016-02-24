@@ -1,9 +1,6 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
-#include "SceneLevelOneA.h"
-#include "SceneLevelOneB.h"
-#include "SceneLevelTwo.h"
 #include "timer.h"
 #include "Scene.h"
 #include <GL/glew.h>
@@ -23,6 +20,7 @@ public:
 	static bool IsKeyPressed(unsigned short key);
 	static int mouse_scroll;
 
+	static void OpenGame();
 	static void SceneLevel1A();
 	static void SceneLevel1B();
     static void SceneLevel2();
@@ -31,6 +29,7 @@ public:
     static void EndingScene();
 
     static Scene *scene;
+	static Scene *Opening;
 	static Scene *Start;
 	static Scene *LevelOneA;
     static Scene *LevelOneB;

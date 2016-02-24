@@ -4,9 +4,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "SceneOpening.h"
 #include "SceneStart.h"
 #include "SceneEnd.h"
 #include "CutSceneOne.h"
+#include "SceneLevelOneA.h"
+#include "SceneLevelOneB.h"
+#include "SceneLevelTwo.h"
 
 
 
@@ -45,6 +49,7 @@ Application::~Application()
 }
 
 Scene* Application::scene;
+Scene* Application::Opening;
 Scene* Application::Start;
 Scene* Application::End;
 Scene* Application::LevelOneA;
@@ -117,6 +122,8 @@ void Application::Init()
 
 void Application::Run()
 {
+	Opening = new SceneOpening();
+	Opening->Init();
 	Start = new SceneStart();
 	Start->Init();
     CutScene1 = new CutSceneOne();
@@ -130,7 +137,7 @@ void Application::Run()
 	//Main Loop
 	//SceneStart *scene = new SceneStart();
 	//scene->Init();
-	scene = LevelOneA;
+	scene = Opening;
 	
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
@@ -153,6 +160,7 @@ void Application::Run()
 
 	} //Check if the ESC key had been pressed or if the window had been closed
 	scene->Exit();
+	delete Opening;
 	delete Start;
 	delete End;
 	delete CutScene1;
@@ -166,6 +174,11 @@ void Application::Exit()
 	glfwDestroyWindow(m_window);
 	//Finalize and clean up GLFW
 	glfwTerminate();
+}
+
+void Application::OpenGame()
+{
+	scene = Opening;
 }
 
 void Application::StartingScene()

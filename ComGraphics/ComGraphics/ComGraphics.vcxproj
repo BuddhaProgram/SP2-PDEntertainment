@@ -24,6 +24,7 @@
     <ClCompile Include="Source\SceneLevelOneBRenders.cpp" />
     <ClCompile Include="source\SceneLevelTwo.cpp" />
     <ClCompile Include="source\SceneLevelTwoRenders.cpp" />
+    <ClCompile Include="Source\SceneOpening.cpp" />
     <ClCompile Include="Source\SceneStart.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera3.cpp" />
@@ -48,6 +49,7 @@
   <ItemGroup>
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\GlobalVariables.h" />
+    <ClInclude Include="Source\SceneOpening.h" />
     <ClInclude Include="source\SceneLevelTwo.h" />
     <ClInclude Include="source\MobBossOne.h" />
     <ClInclude Include="source\MobGhost.h" />
