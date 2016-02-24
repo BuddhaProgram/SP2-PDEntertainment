@@ -16,8 +16,6 @@ public:
 	float hp;
 
 	float f_hpBarScaleX;
-	float f_hpBarTranslateX;
-	float f_staminaBar;
 
 	ToolUI::ToolType GetToolType(int SlotNumber);
 	void InsertToolSlot(ToolUI::ToolType ChooseTools);
