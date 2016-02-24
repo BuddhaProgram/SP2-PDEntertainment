@@ -16,6 +16,8 @@ public:
 	void OpenSlideDoor1(double dt);
 	void OpenSlideDoor2(double dt);
 	void CloseSlideDoor2(double dt);
+	void OpenSlideDoor3(double dt);
+	void CloseSlideDoor3(double dt);
 
 	bool WithinArea(float smallx, float largex, float smallz, float largez);
 	float cam_pos_X, cam_poz_Z;
@@ -36,10 +38,10 @@ public:
 	float RubbleCollapse = 100;
 	bool Collapse = false;
 
-	float PortraitDrop;
-	float PortraitFall;
-	bool toPortraitDrop = false;
-	bool toPortraitFall = false;
+	float f_PortraitDrop = 6;
+	float f_PortraitFall = 0;
+	bool b_toPortraitDrop = false;
+	bool b_toPortraitFall = false;
 
 	bool cameramove1 = false;
 	bool cameramove2 = false;
@@ -56,6 +58,14 @@ public:
 	bool toSlideDoorBtm2 = true;
 	bool ClosingDoorTop2 = true;
 	bool ClosingDoorBtm2 = true;
+
+	float DoorSlideTop_3;
+	float DoorSlideBtm_3;
+	bool toSlideDoorTop3 = true;
+	bool toSlideDoorBtm3 = true;
+	bool ClosingDoorTop3 = true;
+	bool ClosingDoorBtm3 = true;
+
 
 };
 

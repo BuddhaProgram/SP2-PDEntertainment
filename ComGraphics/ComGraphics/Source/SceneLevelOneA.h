@@ -127,6 +127,7 @@ private:
 
 	//Obj renders
 	void CollapseRubble();
+	void DropPortrait();
 
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
@@ -153,6 +154,8 @@ private:
 	void checkRubbleFall();
 	void checkDoor1();
 	void checkDoor2();
+	void checkDoor3();
+	void checkDrop();
 	void TestDoorRender(); // Sliding Door
 
     unsigned m_vertexArrayID;
@@ -173,12 +176,17 @@ private:
     MobGhost Ghost;
 
     float FPS;
-    bool displayInteract;
+	bool displayInteract1;
+	bool displayInteract2;
+	bool displayInteract3;
 	bool activateDoor1 = false;
-	bool activateDoor2 = false;
+	bool activateDoor2_1 = false;
+	bool activateDoor2_2 = false;
+	bool activateDoor3 = false; //if true open door
 	bool Key_1 = false;
 	bool Notice = false;
 	bool Notice2 = false;
+	bool willDrop = false;
 
     //collision variables 
     float CollXLarge[28];

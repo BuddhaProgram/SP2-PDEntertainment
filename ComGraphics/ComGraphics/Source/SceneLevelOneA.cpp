@@ -351,10 +351,10 @@ void SceneLevelOneA::Update(double dt)
     FPS = 1.f / (float)dt;
     //worldspin += (float)(dt);
 
-    /*-------------------------[Tool UI Functions]-------------------------------*/
-    ToolsUI();
-    MouseScrollToolSlot();
-    MouseClickFunction(dt);
+	/*-------------------------[Tool UI Functions]-------------------------------*/
+	ToolsUI();
+	MouseScrollToolSlot();
+	MouseClickFunction(dt);
     /*-------------------------[End of Tool UI Functions]-------------------------------*/
 
     if (Application::IsKeyPressed('1')) //enable back face culling
@@ -369,29 +369,32 @@ void SceneLevelOneA::Update(double dt)
     //camera.Update(dt);
 
     anima.OBJAnimation(dt);
-    anima.Collapsing(dt);
-    checkRubbleFall();
-    checkDoor1();
-    checkDoor2();
+	anima.Collapsing(dt);
+	checkRubbleFall();
+	checkDoor1();
+	checkDoor2();
+	checkDoor3();
+	checkDrop();
 
-    if (activateDoor1) { anima.OpenSlideDoor1(dt); }
-    if (activateDoor2)
-    {
-        anima.OpenSlideDoor2(dt);
-    }
-    /*else if (!activateDoor2)
-    {
-    anima.CloseSlideDoor2(dt);
-    }*/
+	if (activateDoor1) {anima.OpenSlideDoor1(dt);}
+	if (activateDoor2_1) 
+	{
+		anima.OpenSlideDoor2(dt);
+	}
+	else if (activateDoor2_2)
+	{
+		anima.CloseSlideDoor2(dt);
+	}
+	if (activateDoor3) { anima.OpenSlideDoor3(dt); }
 
-    if (proximitycheck(-13, 13, -105, -70))
-    {
-        displayInteract = true;
-    }
-    else
-    {
-        displayInteract = false;
-    }
+	if (!(proximitycheck(192, 217, 60, 64)))
+	{
+			anima.CloseSlideDoor3(dt);
+	}
+	if (willDrop)
+	{
+		anima.Portraits(dt);
+	}
 
     //wall collision DO NOT TOUCH
     for (int i = 0; i < 28; i++)
@@ -400,14 +403,14 @@ void SceneLevelOneA::Update(double dt)
     }
 
 
-    if (Application::IsKeyPressed('J'))
-    {
-        Ghost.Spawn = true;
-    }
+    //if (Application::IsKeyPressed('J'))
+    //{
+    //    Ghost.Spawn = true;
+    //}
 
     camera.Update(dt);
     //mob stuff
-    if (proximitycheck(-226, -172, 210, 228) && !activateDoor1)
+    if (proximitycheck(-226, -172, 210,228)&&!activateDoor1)
     {
         Ghost.Spawn = true;
     }
@@ -419,7 +422,7 @@ void SceneLevelOneA::Update(double dt)
     {
         Ghost.move(dt, 50);
     }
-    if (proximitycheck(-220, -200, 120, 140) && !activateDoor1)
+   /* if (proximitycheck(-220,-200, 120, 140) && !activateDoor1)
     {
         displayInteract = true;
         if (Application::IsKeyPressed('E'))
@@ -427,20 +430,13 @@ void SceneLevelOneA::Update(double dt)
             activateDoor1 = true;
             Ghost.Spawn = false;
         }
-    }
-
+    }*/
+    
     //codes for changing to level1B
     if (proximitycheck(192, 216, -8, 8))
     {
         Application::SceneLevel1B();
     }
-
-    //test
-    
-    Collision(Ghost.MobPosX - 2, Ghost.MobPosX + 2, Ghost.MobPosZ - 2, Ghost.MobPosZ + 2);
-    
-
-
 }
 
 void SceneLevelOneA::RenderMesh(Mesh*mesh, bool enableLight)
@@ -622,6 +618,7 @@ void SceneLevelOneA::Render()
     RenderScene();
 	TestDoorRender();
 	CollapseRubble();
+	DropPortrait();
 
 	ToolSelectionMouseScroll();
 	RenderMouseScrollToolSlot();
@@ -650,15 +647,21 @@ void SceneLevelOneA::Render()
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "NO KEY", Color(0, 1, 0), 4, 10, 7);
 	}
-    if (displayInteract)
+	if (displayInteract1 || displayInteract2 || displayInteract3)
     {
-        RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 12);
+        RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
     }
+
+
+	/*modelStack.PushMatrix();
+	RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
+	modelStack.PopMatrix();*/
 
 	modelStack.PushMatrix();
 	RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57, 0, false);
 	RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56, 0, false);
 	modelStack.PopMatrix();
+
 }
 
 void SceneLevelOneA::Exit()

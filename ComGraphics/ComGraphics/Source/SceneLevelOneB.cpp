@@ -160,6 +160,11 @@ void SceneLevelOneB::Init()
     meshList[GEO_FACILITYCEILINGS] = MeshBuilder::GenerateQuad("Facility Ceiling", Color(1, 1, 1));
     meshList[GEO_FACILITYCEILINGS]->textureID = LoadTGA("Image//InsideCEILING.tga");
 
+	meshList[GEO_SLIDEDOORTOP] = MeshBuilder::GenerateOBJ("Hand", "OBJ//SlideDoorTop.obj");
+	meshList[GEO_SLIDEDOORTOP]->textureID = LoadTGA("Image//SlidingDoorTop.tga");
+	meshList[GEO_SLIDEDOORBTM] = MeshBuilder::GenerateOBJ("Hand", "OBJ//SlideDoorBtm.obj");
+	meshList[GEO_SLIDEDOORBTM]->textureID = LoadTGA("Image//SlidingDoorBtm.tga");
+
     meshList[GEO_SPAWNPOINT] = MeshBuilder::GenerateOBJ("Spawn", "OBJ//SpawnPoint.obj");
     meshList[GEO_SPAWNPOINT]->textureID = LoadTGA("Image//SpawnPoint.tga");
 
@@ -341,6 +346,11 @@ void SceneLevelOneB::Update(double dt)
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
     camera.Update(dt);
+	checkDoor1();
+	if (activateDoor1)
+	{
+		anima.OpenSlideDoor1(dt);
+	}
     //wall collision
     for (int i = 0; i < 43; i++)
     {
@@ -537,7 +547,24 @@ void SceneLevelOneB::Render()
 	RenderToolIcon();
 
     RenderScene();
+	RenderDoor();
 
+	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
+	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
+	RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 3);
+	RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 4);
+	RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
+	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
+
+	if (displayInteract1 /*|| displayInteract2 || displayInteract3*/)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
+	}
+
+
+	//modelStack.PushMatrix();
+	//RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
+	//modelStack.PopMatrix();
 
 }
 
