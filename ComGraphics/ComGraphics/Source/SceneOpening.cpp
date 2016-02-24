@@ -120,7 +120,7 @@ void SceneOpening::Reset()
 
 void SceneOpening::OptionChange(double dt)
 {
-	ChooseOptionDebounce += dt;
+	ChooseOptionDebounce += (float)dt;
 	if (Application::mouse_scroll > 0 && ChooseOptionDebounce > 0.2f)
 	{
 		ui_ChooseOption++;

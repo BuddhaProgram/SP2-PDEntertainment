@@ -26,14 +26,12 @@ void SceneLevelOneB::RenderFloorCeiling()
 
 void SceneLevelOneB::RenderScene()
 {
-   
     RenderFloorCeiling();
-
     //------------------------------------------------------------------------
     //top quads
     modelStack.PushMatrix();
     modelStack.Translate(0, -7, 0);
-    modelStack.Scale(1, 2.2, 1);
+    modelStack.Scale(1, 2.2f, 1);
 
     RenderRightWall(63, 47, -43, 1);//1
     RenderDownWall(-10, -43, 62, 2);//2

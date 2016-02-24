@@ -12,7 +12,7 @@ Explorer::Explorer()
 		Explorer::instance()->TotalTools.push_back(ToolUI(ToolUI::Empty));
 	}
 
-	Explorer::instance()->SavePoint = (0, 0, 0);
+	Explorer::instance()->SavePoint = (0.f, 0.f, 0.f);
 }
 
 float Explorer::getHP()
@@ -109,6 +109,8 @@ ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 			it->ID = 10;
 
 		return it->tool;
+		break;
+	default:
 		break;
 	}
 }
