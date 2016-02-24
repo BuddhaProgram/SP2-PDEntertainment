@@ -39,7 +39,7 @@ public:
 	bool Collapse = false;
 
 	float f_PortraitDrop = 6;
-	float f_PortraitFall = 0;
+	float f_PortraitFall;
 	bool b_toPortraitDrop = false;
 	bool b_toPortraitFall = false;
 

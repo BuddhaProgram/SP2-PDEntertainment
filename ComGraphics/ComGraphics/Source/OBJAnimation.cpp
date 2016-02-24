@@ -102,36 +102,12 @@ void Animation::OpenMainDoor(double dt)
 
 void Animation::Portraits(double dt)
 {
-		//if (PortraitDrop > 4)
-		//{
-		//	toPortraitDrop = true;
-		//}
-		//if (PortraitDrop <= 4)
-		//{
-		//	toPortraitDrop = false;
-		//	toPortraitFall = true;
-		//}
-		//if (PortraitFall >= 90)
-		//{
-		//	toPortraitFall = false;
-		//}
-
-		//if (toPortraitDrop == true)
-		//{
-		//	PortraitDrop -= (float)(50 * dt);
-		//}
-		//if (toPortraitFall == true)
-		//{
-		//	PortraitFall += (float)(40 * dt);
-		//}
-
-
 	if (f_PortraitDrop >= 6)
 	{
 		b_toPortraitDrop = true;
 	}
 
-	if (f_PortraitDrop <= 5)
+	if (f_PortraitDrop <= 4.5f)
 	{
 		b_toPortraitDrop = false;
 		b_toPortraitFall = true;
@@ -140,17 +116,17 @@ void Animation::Portraits(double dt)
 	if (b_toPortraitDrop)
 	{
 		f_PortraitDrop -= (float)(50 * dt);
-
 	}
 
 	if (b_toPortraitFall)
 	{
-		f_PortraitFall += (float)(20 * dt);
+		f_PortraitFall += (float)(50 * dt);
+	}
 
-		//if (f_PortraitFall >= 90.0f)
-		//{
-		//	b_toPortraitFall = false;
-		//}
+	if (f_PortraitFall >= 90)
+	{
+		f_PortraitFall = 90;
+		b_toPortraitFall = false;
 	}
 }
 

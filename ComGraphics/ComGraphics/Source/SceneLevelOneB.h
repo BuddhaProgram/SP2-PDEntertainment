@@ -131,6 +131,8 @@ private:
     bool proximitycheck(float smallx, float largex, float smallz, float largez);
 
 	void checkDoor1();
+	void checkDoor2();
+	void checkDoor3();
 
     // Switches Functions for puzzles
     void PuzzleOneSwitchCheck(double dt);
@@ -164,6 +166,7 @@ private:
     float FPS;
     bool displayInteract1;
 	bool activateDoor1;
+	bool activateDoor2;
 
     float CollXLarge[43];
     float CollXSmall[43];

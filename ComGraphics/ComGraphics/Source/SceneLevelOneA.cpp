@@ -394,6 +394,7 @@ void SceneLevelOneA::Update(double dt)
 	if (willDrop)
 	{
 		anima.Portraits(dt);
+
 	}
 
     //wall collision DO NOT TOUCH

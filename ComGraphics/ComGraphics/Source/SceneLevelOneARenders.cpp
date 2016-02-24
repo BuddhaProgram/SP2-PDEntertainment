@@ -77,7 +77,7 @@ void SceneLevelOneA::RenderScene()
 	modelStack.Rotate(180, 0, 1, 0);
 	RenderMesh(meshList[GEO_FACILITYOUT], true);
 	modelStack.PopMatrix();
-
+	Collision(-25, 25, 430, 500);
 }
 
 void SceneLevelOneA::checkRubbleFall()
@@ -213,7 +213,7 @@ void SceneLevelOneA::checkDoor3()
 
 void SceneLevelOneA::checkDrop()
 {
-	if (proximitycheck(-15, 15, 326, 345))
+	if (proximitycheck(64,160, 288, 305))
 	{
 		willDrop = true;
 	}
@@ -278,20 +278,13 @@ void SceneLevelOneA::CollapseRubble()
 
 void SceneLevelOneA::DropPortrait()
 {
-	modelStack.PushMatrix();
-	//modelStack.Translate(192, anima.PortraitDrop , 300);
-	
-	
-	modelStack.Translate(0, 0, 300);
-
-	//modelStack.Rotate(-90, 0, 1, 0);
 
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 5, 0);
-	
-	modelStack.Scale(3, 3, 3);
-	modelStack.Rotate(anima.f_PortraitFall, 1, 0, 0);
-		RenderMesh(meshList[GEO_PORTRAIT], false);
-		modelStack.PopMatrix();
+	modelStack.Translate(192, anima.f_PortraitDrop , 300);
+	modelStack.Scale(12, 4, 12);
+	modelStack.Rotate(anima.f_PortraitFall, 0, 0, 1);
+	modelStack.Rotate(-90, 0, 1, 0);
+	RenderMesh(meshList[GEO_PORTRAIT], false);
 	modelStack.PopMatrix();
+
 }
