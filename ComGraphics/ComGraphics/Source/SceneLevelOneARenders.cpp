@@ -19,14 +19,32 @@ void SceneLevelOneA::RenderFloorCeiling()
     modelStack.PopMatrix();
 }
 
-
+void SceneLevelOneA::RenderSuitCase()
+{
+    modelStack.PushMatrix();
+    modelStack.Translate(280, 2, 120);
+    modelStack.Scale(4, 4, 4);
+    RenderMesh(meshList[GEO_SUITCASE], true);
+    modelStack.PopMatrix();
+}
 
 //void SceneLevelOneA::
 // renders the Starting level
 
+void SceneLevelOneA::RenderInteract()
+{
+    RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
+}
 
 void SceneLevelOneA::RenderScene()
 {
+    // temp key switch place holder for first locked door
+    modelStack.PushMatrix();
+    modelStack.Translate(-200, 3, 120);
+    modelStack.Scale(4, 4, 4);
+    RenderMesh(meshList[GEO_SPAWNPOINT], true);
+    modelStack.PopMatrix();
+
     modelStack.PushMatrix();
 		modelStack.Translate(120, 0, 75);
 		modelStack.Scale(4, 4, 4);
@@ -34,6 +52,7 @@ void SceneLevelOneA::RenderScene()
 	modelStack.PopMatrix();
 
     RenderFloorCeiling();
+    RenderSuitCase();
 
     //bottom left quadron
     modelStack.PushMatrix();

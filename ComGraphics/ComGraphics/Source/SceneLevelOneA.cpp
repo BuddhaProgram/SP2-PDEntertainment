@@ -13,6 +13,10 @@
 #include <sstream>
 #include "GlobalVariables.h"
 
+//this include and definition is needed
+#include "Misc.h"
+misc MISC;
+//.................
 
 SceneLevelOneA::SceneLevelOneA()
 {
@@ -184,6 +188,9 @@ void SceneLevelOneA::Init()
     meshList[GEO_SPAWNPOINT] = MeshBuilder::GenerateOBJ("Spawn", "OBJ//SpawnPoint.obj");
     meshList[GEO_SPAWNPOINT]->textureID = LoadTGA("Image//SpawnPoint.tga");
 
+    meshList[GEO_SUITCASE] = MeshBuilder::GenerateOBJ("Spawn", "OBJ//SuitCase.obj");
+    meshList[GEO_SUITCASE]->textureID = LoadTGA("Image//SuitCase.tga");
+
 	meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
 	meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
     Mtx44 projection;
@@ -329,6 +336,7 @@ void SceneLevelOneA::MouseClickFunction(double dt)
 		{
 			Variables.RotateX = -45.0f;
 			Variables.b_LockSwingDebounce = false;
+            AttackCheck();
 		}
 	}
 
@@ -342,6 +350,16 @@ void SceneLevelOneA::MouseClickFunction(double dt)
 			Variables.b_LockSwing = false;
 		}
 	}
+}
+
+void SceneLevelOneA::AttackCheck()
+{
+    //Ghost combat checker
+
+    if (Application::IsKeyPressed(VK_LBUTTON) && MISC.hitting(15.f, Ghost.MobPosX, Ghost.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    {
+        Ghost.TakeDamage(1);//temporary variable is 1
+    }
 }
 
 void SceneLevelOneA::UpdateSavePoint()
@@ -384,7 +402,7 @@ void SceneLevelOneA::Update(double dt)
     if (Application::IsKeyPressed('4'))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-    //camera.Update(dt);
+    camera.Update(dt);
 
     anima.OBJAnimation(dt);
 	anima.Collapsing(dt);
@@ -396,7 +414,7 @@ void SceneLevelOneA::Update(double dt)
 
 	UpdateSavePoint();
 
-	std::cout << Explorer::instance()->SavePoint << std::endl;
+	//std::cout << Explorer::instance()->SavePoint << std::endl;
 
 	if (activateDoor1) {anima.OpenSlideDoor1(dt);}
 	if (activateDoor2_1) 
@@ -426,34 +444,34 @@ void SceneLevelOneA::Update(double dt)
     }
 
 
-    //if (Application::IsKeyPressed('J'))
-    //{
-    //    Ghost.Spawn = true;
-    //}
 
-    camera.Update(dt);
     //mob stuff
-    if (proximitycheck(-226, -172, 210,228)&&!activateDoor1)
+    if (proximitycheck(-226, -160, 210,228)&&!activateDoor1)
     {
         Ghost.Spawn = true;
     }
-
+    
 
     Ghost.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);//pos checker
 
     if (Ghost.Spawn)
     {
-        Ghost.move(dt, 50);
+        Ghost.move(dt, 30);
     }
-   /* if (proximitycheck(-220,-200, 120, 140) && !activateDoor1)
+
+    if (proximitycheck(-205,-195, 115, 125) && !activateDoor1)
     {
-        displayInteract = true;
+        tempbool = true;
         if (Application::IsKeyPressed('E'))
         {
             activateDoor1 = true;
             Ghost.Spawn = false;
         }
-    }*/
+    }
+    else
+    {
+        tempbool = false;
+    }
     
     //codes for changing to level1B
     if (proximitycheck(192, 216, -8, 8))
@@ -672,9 +690,9 @@ void SceneLevelOneA::Render()
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "NO KEY", Color(0, 1, 0), 4, 10, 7);
 	}
-	if (displayInteract1 || displayInteract2 || displayInteract3)
+	if (displayInteract1 || displayInteract2 || displayInteract3 || tempbool)
     {
-        RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
+        RenderInteract();
     }
 
 

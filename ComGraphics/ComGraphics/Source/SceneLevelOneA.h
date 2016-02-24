@@ -65,6 +65,7 @@ class SceneLevelOneA : public Scene
         //player related
         GEO_HEALTHBAR,
 		GEO_STAMINABAR,
+        GEO_SUITCASE,
         NUM_GEOMETRY,
     };
     enum UNIFORM_TYPE
@@ -115,6 +116,8 @@ private:
     void RenderScene();
     void RenderFloorCeiling();
     void RenderCutSceneOne();
+    void RenderSuitCase();
+    void RenderInteract();
 
     //map rendering
     void RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber);//positive Z facing wall
@@ -160,6 +163,7 @@ private:
 	void checkDoor2();
 	void checkDoor3();
 	void checkDrop();
+    void AttackCheck();
 	void TestDoorRender(); // Sliding Door
 
     unsigned m_vertexArrayID;
@@ -197,6 +201,9 @@ private:
     float CollXSmall[28];
     float CollZLarge[28];
     float CollZSmall[28];
+
+    //temporary variables until combat is up
+    bool tempbool = false;
 };
 
 
