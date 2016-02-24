@@ -5,9 +5,7 @@ Explorer::Explorer()
 	Explorer::instance()->hp = 100;
 	Explorer::instance()->stamina = 100;
 
-	Explorer::instance()->f_hpBarScaleX = 10;
-	Explorer::instance()->f_hpBarTranslateX = 1.0f;
-	Explorer::instance()->f_staminaBar = 5.0f;
+	Explorer::instance()->f_hpBarScaleX = 10.f;
 
 	for (int i = 0; i < 4; ++i)
 	{

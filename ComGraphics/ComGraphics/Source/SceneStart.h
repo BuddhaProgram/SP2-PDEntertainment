@@ -65,6 +65,7 @@ class SceneStart : public Scene
         //player related
         GEO_HEALTH,
 		GEO_HEALTHBAR,
+		GEO_STAMINABAR,
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE

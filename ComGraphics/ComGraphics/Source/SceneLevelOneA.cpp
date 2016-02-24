@@ -175,9 +175,8 @@ void SceneLevelOneA::Init()
     meshList[GEO_SPAWNPOINT] = MeshBuilder::GenerateOBJ("Spawn", "OBJ//SpawnPoint.obj");
     meshList[GEO_SPAWNPOINT]->textureID = LoadTGA("Image//SpawnPoint.tga");
 
-    // meshList for health bar
-    meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
-
+	meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
+	meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
     Mtx44 projection;
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
@@ -228,42 +227,42 @@ void SceneLevelOneA::ToolsUI()
 
 void SceneLevelOneA::ToolSelectionMouseScroll()
 {
-    if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
-    {
-        modelStack.PushMatrix();
-        RenderModelOnScreen(meshList[GEO_PICKAXE], 15, 15, 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
-        modelStack.PopMatrix();
-    }
+	if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
+	{
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, 15, 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
+		modelStack.PopMatrix();
+	}
 
-    else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::BaseballBat)
-    {
-        modelStack.PushMatrix();
-        RenderModelOnScreen(meshList[GEO_BAT], 15, 15, 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
-        modelStack.PopMatrix();
-    }
+	else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::BaseballBat)
+	{
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_BAT], 15, 15, 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
+		modelStack.PopMatrix();
+	}
 }
 
 void SceneLevelOneA::RenderToolIcon()
 {
-    if (Explorer::instance()->GetToolType(1) == ToolUI::Pickaxe)
-    {
-        RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
-    }
+	if (Explorer::instance()->GetToolType(1) == ToolUI::Pickaxe)
+	{
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
+	}
 
-    else if (Explorer::instance()->GetToolType(1) == ToolUI::BaseballBat)
-    {
-        RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
-    }
+	else if (Explorer::instance()->GetToolType(1) == ToolUI::BaseballBat)
+	{
+		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
+	}
 
-    if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
-    {
-        RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 10.0f, 0.775f, 1, false);
-    }
+	if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
+	{
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 10.0f, 0.775f, 1, false);
+	}
 
-    else if (Explorer::instance()->GetToolType(2) == ToolUI::BaseballBat)
-    {
-        RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 10.0f, 0.775f, 1, false);
-    }
+	else if (Explorer::instance()->GetToolType(2) == ToolUI::BaseballBat)
+	{
+		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 10.0f, 0.775f, 1, false);
+	}
 }
 
 void SceneLevelOneA::MouseScrollToolSlot()
@@ -431,7 +430,6 @@ void SceneLevelOneA::Update(double dt)
     {
         Application::SceneLevel1B();
     }
-
 }
 
 void SceneLevelOneA::RenderMesh(Mesh*mesh, bool enableLight)
@@ -556,23 +554,23 @@ void SceneLevelOneA::RenderTextOnScreen(Mesh* mesh, std::string text, Color colo
 
 void SceneLevelOneA::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
-    Mtx44 ortho;
-    ortho.SetToOrtho(0, 80, 0, 60, -50, 50); //size of screen UI
-    projectionStack.PushMatrix();
-    projectionStack.LoadMatrix(ortho);
-    viewStack.PushMatrix();
-    viewStack.LoadIdentity(); //No need camera for ortho mode
-    modelStack.PushMatrix();
-    modelStack.LoadIdentity(); //Reset modelStack
-    modelStack.Scale(Sx, Sy, Sz);
-    modelStack.Translate(Tx, Ty, Tz);
-    modelStack.Rotate(Rotate, (float)rX, (float)rY, (float)rZ);
+	Mtx44 ortho;
+	ortho.SetToOrtho(0, 80, 0, 60, -50, 50); //size of screen UI
+	projectionStack.PushMatrix();
+	projectionStack.LoadMatrix(ortho);
+	viewStack.PushMatrix();
+	viewStack.LoadIdentity(); //No need camera for ortho mode
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity(); //Reset modelStack
+	modelStack.Scale(Sx, Sy, Sz);
+	modelStack.Translate(Tx, Ty, Tz);
+	modelStack.Rotate(Rotate, (float)rX, (float)rY, (float)rZ);
 
-    RenderMesh(mesh, LightYN);
+	RenderMesh(mesh, LightYN);
 
-    projectionStack.PopMatrix();
-    viewStack.PopMatrix();
-    modelStack.PopMatrix();
+	projectionStack.PopMatrix();
+	viewStack.PopMatrix();
+	modelStack.PopMatrix();
 }
 
 void SceneLevelOneA::Render()
@@ -631,9 +629,9 @@ void SceneLevelOneA::Render()
 
     RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
     RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-    RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 3);
-    RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 4);
-    RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
+    //RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 3);
+    //RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 4);
+    //RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
     RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
 
 	if (Notice)
@@ -645,11 +643,11 @@ void SceneLevelOneA::Render()
         RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 12);
     }
 
-    modelStack.PushMatrix();
-    RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->f_hpBarScaleX, 1.0f, 1.0f, 90, 1, 0, 0, Explorer::instance()->f_hpBarTranslateX, 57, 0, false);
-    RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
-    modelStack.PopMatrix();
-
+	modelStack.PushMatrix();
+	RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57, 0, false);
+	RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56, 0, false);
+	RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
+	modelStack.PopMatrix();
 }
 
 void SceneLevelOneA::Exit()

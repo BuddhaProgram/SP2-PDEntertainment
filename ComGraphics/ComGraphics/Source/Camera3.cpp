@@ -82,17 +82,17 @@ void Camera3::HumanControl()
 
 		if (Application::IsKeyPressed('W'))
 		{
+			float sprintFactor = 1.5f;
 			position.x += sin(Math::DegreeToRadian(rotationY));
 			position.z += cos(Math::DegreeToRadian(rotationY));
 
 			if (Application::IsKeyPressed(VK_LSHIFT) && Explorer::instance()->stamina != 0)
 			{
-				position.x += 2 * sin(Math::DegreeToRadian(rotationY));
-				position.z += 2 * cos(Math::DegreeToRadian(rotationY));
-				Explorer::instance()->stamina -= .5f;
+				position.x += sprintFactor * sin(Math::DegreeToRadian(rotationY));
+				position.z += sprintFactor * cos(Math::DegreeToRadian(rotationY));
+				Explorer::instance()->stamina -= 1;
 			}
 		}
-
 
 		if (Application::IsKeyPressed('S'))
 		{
