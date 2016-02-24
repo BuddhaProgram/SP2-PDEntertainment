@@ -61,6 +61,7 @@ class SceneLevelOneA : public Scene
 
         //player related
         GEO_HEALTH,
+        GEO_HEALTHBAR,
         NUM_GEOMETRY,
     };
     enum UNIFORM_TYPE
@@ -127,7 +128,7 @@ private:
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
     void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-    void RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, int rY, int rZ, float x, float y, float z, bool LightYN);
+    void RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN);
     //checks
     void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
     void checkPlayerPosMisc();

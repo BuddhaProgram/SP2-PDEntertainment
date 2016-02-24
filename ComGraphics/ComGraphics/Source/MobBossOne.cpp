@@ -73,5 +73,5 @@ void MobBossOne::TakeDamage(int damage)
 void MobBossOne::attack()
 {
     AttackAnimation = true;
-    //Explorer::takeDamage(AttackDamage);
+    Explorer::instance()->hp -= AttackDamage;
 }

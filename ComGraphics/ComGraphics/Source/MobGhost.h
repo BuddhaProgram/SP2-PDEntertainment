@@ -14,6 +14,7 @@ public:
     void move(double dt, int movespeed);
     void knockback();
     void TakeDamage(int damage);
+    void attack();
 
 private:
     bool kenaWhack;
