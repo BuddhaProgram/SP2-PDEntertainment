@@ -111,7 +111,8 @@ ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 		return it->tool;
 		break;
 	default:
-		break;
+		//do nothing
+		return it->tool;
 	}
 }
 

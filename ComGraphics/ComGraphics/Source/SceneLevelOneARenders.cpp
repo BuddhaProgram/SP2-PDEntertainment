@@ -244,37 +244,37 @@ void SceneLevelOneA::TestDoorRender()
 	modelStack.PushMatrix();
 	modelStack.Translate(180, anima.DoorSlideTop, 188);
 	modelStack.Scale(4.9f, 4, 5);
-	RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(180, anima.DoorSlideBtm, 188);
 	modelStack.Scale(4.9f, 4, 5);
-	RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(-188, anima.DoorSlideTop_2, 228);
 	modelStack.Scale(4.9f, 4, 5);
-	RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(-188, anima.DoorSlideBtm_2, 228);
 	modelStack.Scale(4.9f, 4, 5);
-	RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(204, anima.DoorSlideTop_3, 59);
 	modelStack.Scale(4.9f, 4, 5);
-	RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(204, anima.DoorSlideBtm_3, 59);
 	modelStack.Scale(4.9f, 4, 5);
-	RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
 
 }
@@ -292,7 +292,7 @@ void SceneLevelOneA::CollapseRubble()
 	modelStack.PushMatrix();
 	modelStack.Translate(0, 3 + anima.RubbleCollapse, 440);
 	modelStack.Scale(6, 6, 6);
-	RenderMesh(meshList[GEO_RUBBLE], false);
+	RenderMesh(meshList[GEO_RUBBLE], true);
 	modelStack.PopMatrix();
 }
 
@@ -304,7 +304,7 @@ void SceneLevelOneA::DropPortrait()
 	modelStack.Scale(12, 4, 12);
 	modelStack.Rotate(anima.f_PortraitFall, 0, 0, 1);
 	modelStack.Rotate(-90, 0, 1, 0);
-	RenderMesh(meshList[GEO_PORTRAIT], false);
+	RenderMesh(meshList[GEO_PORTRAIT], true);
 	modelStack.PopMatrix();
 
 }
