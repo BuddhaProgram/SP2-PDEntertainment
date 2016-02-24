@@ -102,37 +102,64 @@ void Animation::OpenMainDoor(double dt)
 
 void Animation::Portraits(double dt)
 {
-		if (PortraitDrop >= 0)
-		{
-			toPortraitDrop = true;
-		}
-		if (PortraitDrop <= -4)
-		{
-			toPortraitDrop = false;
-			toPortraitFall = true;
-		}
-		if (PortraitFall >= 90)
-		{
-			toPortraitFall = false;
-		}
+		//if (PortraitDrop > 4)
+		//{
+		//	toPortraitDrop = true;
+		//}
+		//if (PortraitDrop <= 4)
+		//{
+		//	toPortraitDrop = false;
+		//	toPortraitFall = true;
+		//}
+		//if (PortraitFall >= 90)
+		//{
+		//	toPortraitFall = false;
+		//}
 
-		if (toPortraitDrop)
-		{
-			PortraitDrop -= (float)(50 * dt);
-		}
-		if (toPortraitFall)
-		{
-			PortraitFall += (float)(40 * dt);
-		}
+		//if (toPortraitDrop == true)
+		//{
+		//	PortraitDrop -= (float)(50 * dt);
+		//}
+		//if (toPortraitFall == true)
+		//{
+		//	PortraitFall += (float)(40 * dt);
+		//}
 
+
+	if (f_PortraitDrop >= 6)
+	{
+		b_toPortraitDrop = true;
+	}
+
+	if (f_PortraitDrop <= 5)
+	{
+		b_toPortraitDrop = false;
+		b_toPortraitFall = true;
+	}
+
+	if (b_toPortraitDrop)
+	{
+		f_PortraitDrop -= (float)(50 * dt);
+
+	}
+
+	if (b_toPortraitFall)
+	{
+		f_PortraitFall += (float)(20 * dt);
+
+		//if (f_PortraitFall >= 90.0f)
+		//{
+		//	b_toPortraitFall = false;
+		//}
+	}
 }
 
 void Animation::OpenSlideDoor1(double dt)
 {
 	if (toSlideDoorTop)
 	{
-		DoorSlideTop += (float)(5 * dt);
-		if (DoorSlideTop >= 4)
+		DoorSlideTop += (float)(8 * dt);
+		if (DoorSlideTop >= 10)
 		{
 			toSlideDoorTop = false;
 		}
@@ -142,7 +169,7 @@ void Animation::OpenSlideDoor1(double dt)
 	if (toSlideDoorBtm)
 	{
 		DoorSlideBtm -= (float)(5 * dt);
-		if (DoorSlideBtm <= -4)
+		if (DoorSlideBtm <= -6)
 		{
 			toSlideDoorBtm = false;
 		}
@@ -176,7 +203,7 @@ void Animation::CloseSlideDoor2(double dt)
 	if (ClosingDoorTop2)
 	{
 		DoorSlideTop_2 -= (float)(5 * dt);
-		if (DoorSlideTop_2 <= 4)
+		if (DoorSlideTop_2 <= 0)
 		{
 			ClosingDoorTop2 = false;
 		}
@@ -184,10 +211,53 @@ void Animation::CloseSlideDoor2(double dt)
 
 	if (ClosingDoorBtm2)
 	{
-		DoorSlideBtm_2 += (float)(3 * dt);
-		if (DoorSlideBtm_2 >= 4)
+		DoorSlideBtm_2 += (float)(5 * dt);
+		if (DoorSlideBtm_2 >= 0)
 		{
 			ClosingDoorBtm2 = false;
+		}
+	}
+}
+
+void Animation::OpenSlideDoor3(double dt)
+{
+	if (toSlideDoorTop3)
+	{
+		DoorSlideTop_3 += (float)(5 * dt);
+		if (DoorSlideTop_3 >= 4)
+		{
+			toSlideDoorTop3 = false;
+		}
+	}
+
+	if (toSlideDoorBtm3)
+	{
+		DoorSlideBtm_3 -= (float)(5 * dt);
+		if (DoorSlideBtm_3 <= -4)
+		{
+			toSlideDoorBtm3 = false;
+		}
+	}
+
+}
+
+void Animation::CloseSlideDoor3(double dt)
+{
+	if (ClosingDoorTop3)
+	{
+		DoorSlideTop_3 -= (float)(5 * dt);
+		if (DoorSlideTop_3 <= 0)
+		{
+			ClosingDoorTop3 = false;
+		}
+	}
+
+	if (ClosingDoorBtm3)
+	{
+		DoorSlideBtm_3 += (float)(5 * dt);
+		if (DoorSlideBtm_3 >= 0)
+		{
+			ClosingDoorBtm3 = false;
 		}
 	}
 }
