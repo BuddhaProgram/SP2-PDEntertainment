@@ -57,10 +57,14 @@ void SceneLevelOneB::RenderScene()
     modelStack.Translate(0, -7, 0);
     modelStack.Scale(1, 2.2f, 1);
 
+    modelStack.PushMatrix();
     RenderRightWall(63, 47, -43, 1);//1
     RenderDownWall(-10, -43, 62, 2);//2
     RenderLeftWall(63, 47, -10, 3);//3
     RenderUpWall(-10, -35, 47, 4);//4
+    RenderUpWall(0, -4, 51, 15);//15
+    modelStack.PopMatrix();
+
     RenderUpWall(-38, -43, 47, 5);//5
 
     RenderRightWall(47, 38, -38, 6); //6
@@ -73,7 +77,7 @@ void SceneLevelOneB::RenderScene()
 
     RenderLeftWall(51, 38, 3, 13); //13
     RenderRightWall(51, 41, 0, 14); //14
-    RenderUpWall(0, -4, 51, 15);//15
+
     RenderUpWall(10, 3, 51, 16); //16
     RenderLeftWall(62, 51, 10, 17); //17
     RenderRightWall(62, 51, -4, 18);//18
