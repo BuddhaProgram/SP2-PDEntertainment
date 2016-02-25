@@ -10,7 +10,7 @@
 #include "LoadTGA.h"
 #include "Utility.h"
 #include <sstream>
-
+float rotate;
 
 SceneStart::SceneStart()
 {
@@ -159,6 +159,12 @@ void SceneStart::Init()
     meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("FacilityOUT wall", Color(1, 1, 1));
     meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
     
+	meshList[GEO_BOSS1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//Boss1.obj");
+	meshList[GEO_BOSS1]->textureID = LoadTGA("Image//Boss1.tga");
+	meshList[GEO_CRYSTAL1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//Crystal1.obj");
+	meshList[GEO_CRYSTAL1]->textureID = LoadTGA("Image//Crystal.tga");
+	meshList[GEO_CRYSTAL2] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//Crystal2.obj");
+	meshList[GEO_CRYSTAL2]->textureID = LoadTGA("Image//Crystal.tga");
 
     //change to correct textured quad later
 	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
@@ -442,6 +448,11 @@ void SceneStart::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
 	camera.Update(dt);
+
+	rotate += (float)(200 * dt);
+
+
+
 }
 
 void SceneStart::RenderMesh(Mesh*mesh, bool enableLight)
@@ -643,6 +654,26 @@ void SceneStart::Render()
 	RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp/5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57.0f, 0, false);
 	RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56.0f, 0, false);
     modelStack.PopMatrix();
+
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 3, 0);
+	modelStack.Scale(6, 6, 6);
+	RenderMesh(meshList[GEO_BOSS1], false);
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 4, 0);
+	modelStack.Rotate(rotate, 1, 1, 0);
+	RenderMesh(meshList[GEO_CRYSTAL1], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 4, 0);
+	modelStack.Rotate(rotate, -1, 1, 0);
+	RenderMesh(meshList[GEO_CRYSTAL2], false);
+
+	modelStack.PopMatrix();
+
+	modelStack.PopMatrix();
 }
 	
 
