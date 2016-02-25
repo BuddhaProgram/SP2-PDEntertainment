@@ -51,7 +51,7 @@ void SceneLevelOneB::RenderScene()
     //top quads
     modelStack.PushMatrix();
     modelStack.Translate(0, -3, 0);
-    modelStack.Scale(1, 1.2, 1);
+    modelStack.Scale(1, 1.2f, 1);
 
     modelStack.PushMatrix();
     modelStack.Translate(0, -7, 0);

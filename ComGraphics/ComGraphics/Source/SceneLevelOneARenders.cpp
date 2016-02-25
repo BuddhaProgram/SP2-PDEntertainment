@@ -312,8 +312,18 @@ void SceneLevelOneA::TestDoorRender()
 
 void SceneLevelOneA::RenderGhost(float xpos, float zpos)
 {
+	float rotGhost;
+	if (camera.target.z > camera.position.z)
+	{
+		rotGhost = Math::RadianToDegree(atan(camera.view.x / camera.view.z)) - 180;
+	}
+	else
+	{
+		rotGhost = Math::RadianToDegree(atan(camera.view.x / camera.view.z));
+	}
     modelStack.PushMatrix();
     modelStack.Translate(xpos, 6, zpos);
+	modelStack.Rotate(rotGhost + 270, 0, 1, 0);
 	modelStack.Scale(6, 3, 6);
     RenderMesh(meshList[GEO_GHOST1], true);
     modelStack.PopMatrix();
