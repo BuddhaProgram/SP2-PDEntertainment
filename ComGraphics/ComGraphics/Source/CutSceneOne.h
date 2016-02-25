@@ -78,15 +78,6 @@ private:
 
 	Light light[1];
 
-	//float PlanetRotate;
-	//float AsteroidRotate;
-	//float AsteroidRotateF;
-	//float AsteroidMove;
-	//float AsteroidMoveS;
-
-	//float worldspin;
-
-
 	Vector3 start;
 	Vector3 end;
 	GlobalVariables Variables;
