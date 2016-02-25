@@ -73,17 +73,17 @@ void SceneLevelOneB::Init()
 
     glUseProgram(m_programID);
 
-    light[0].type = Light::LIGHT_SPOT;
-    light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
-    light[0].color.Set(1, 1, 1);
-    light[0].power = 1.0f;
-    light[0].kC = 1.f;
-    light[0].kL = 0.01f;
-    light[0].kQ = 0.001f;
-    light[0].cosCutoff = cos(Math::DegreeToRadian(15));
-    light[0].cosInner = cos(Math::DegreeToRadian(1));
-    light[0].exponent = 3.f;
-    light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
+	light[0].type = Light::LIGHT_SPOT;
+	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
+	light[0].color.Set(1, 1, 1);
+	light[0].power = 2.0f;
+	light[0].kC = 1.f;
+	light[0].kL = 0.01f;
+	light[0].kQ = 0.001f;
+	light[0].cosCutoff = cos(Math::DegreeToRadian(90));
+	light[0].cosInner = cos(Math::DegreeToRadian(1));
+	light[0].exponent = 3.f;
+	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 
     // Pass information
     glUniform1i(m_parameters[U_NUMLIGHTS], 1);
@@ -217,19 +217,34 @@ void SceneLevelOneB::ToolsUI()
 	}
 }
 
+void SceneLevelOneB::RenderMouseScrollToolSlot()
+{
+	if (Variables.i_SlotIndex == 1)
+		RenderModelOnScreen(meshList[GEO_TOOLUIONE], 7.0f, 7.0f, 7.0f, 0.0f, 1.0f, 0.0f, 0.0f, 5.75f, 0.0f, 0.0f, false);
+
+	if (Variables.i_SlotIndex == 2)
+		RenderModelOnScreen(meshList[GEO_TOOLUITWO], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
+
+	if (Variables.i_SlotIndex == 3)
+		RenderModelOnScreen(meshList[GEO_TOOLUITHREE], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
+
+	if (Variables.i_SlotIndex == 4)
+		RenderModelOnScreen(meshList[GEO_TOOLUIFOUR], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
+}
+
 void SceneLevelOneB::ToolSelectionMouseScroll()
 {
 	if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
 	{
 		modelStack.PushMatrix();
-		RenderModelOnScreen(meshList[GEO_PICKAXE], 15, 15, 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
+		RenderModelOnScreen(meshList[GEO_PICKAXE], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
 		modelStack.PopMatrix();
 	}
 
 	else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::BaseballBat)
 	{
 		modelStack.PushMatrix();
-		RenderModelOnScreen(meshList[GEO_BAT], 15, 15, 15, Variables.RotateX, 1, 0, 0, 4.5, 0, 0, true);
+		RenderModelOnScreen(meshList[GEO_BAT], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
 		modelStack.PopMatrix();
 	}
 }
@@ -238,22 +253,22 @@ void SceneLevelOneB::RenderToolIcon()
 {
 	if (Explorer::instance()->GetToolType(1) == ToolUI::Pickaxe)
 	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
 	}
 
 	else if (Explorer::instance()->GetToolType(1) == ToolUI::BaseballBat)
 	{
-		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1, false);
+		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
 	}
 
 	if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
 	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 10.0f, 0.775f, 1, false);
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 10.0f, 0.775f, 1.0f, false);
 	}
 
 	else if (Explorer::instance()->GetToolType(2) == ToolUI::BaseballBat)
 	{
-		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 10.0f, 0.775f, 1, false);
+		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 10.0f, 0.775f, 1.0f, false);
 	}
 }
 
@@ -280,21 +295,6 @@ void SceneLevelOneB::MouseScrollToolSlot()
 	}
 }
 
-void SceneLevelOneB::RenderMouseScrollToolSlot()
-{
-	if (Variables.i_SlotIndex == 1)
-		RenderModelOnScreen(meshList[GEO_TOOLUIONE], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
-
-	if (Variables.i_SlotIndex == 2)
-		RenderModelOnScreen(meshList[GEO_TOOLUITWO], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
-
-	if (Variables.i_SlotIndex == 3)
-		RenderModelOnScreen(meshList[GEO_TOOLUITHREE], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
-
-	if (Variables.i_SlotIndex == 4)
-		RenderModelOnScreen(meshList[GEO_TOOLUIFOUR], 7, 7, 7, 0, 1, 0, 0, 5.75, 0, 0, false);
-}
-
 void SceneLevelOneB::MouseClickFunction(double dt)
 {
 	if (Application::IsKeyPressed(VK_LBUTTON) && Variables.b_LockSwing == false && Variables.b_LockSwingDebounce == false && Explorer::instance()->stamina >= 20)
@@ -306,7 +306,7 @@ void SceneLevelOneB::MouseClickFunction(double dt)
 
 	if (Variables.b_LockSwingDebounce == true)
 	{
-		Variables.RotateX -= 180.0f * (float)dt;
+		Variables.RotateX -= 360.0f * (float)dt;
 
 		if (Variables.RotateX <= -45.0f)
 		{
@@ -317,7 +317,7 @@ void SceneLevelOneB::MouseClickFunction(double dt)
 
 	if (Variables.b_LockSwingDebounce == false && Variables.b_LockSwing == true && Variables.RotateX <= 0.0f)
 	{
-		Variables.RotateX += 180.0f * (float)dt;
+		Variables.RotateX += 360.0f * (float)dt;
 
 		if (Variables.RotateX >= 0.0f)
 		{

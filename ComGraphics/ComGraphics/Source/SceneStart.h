@@ -175,7 +175,6 @@ private:
 	float AsteroidMoveS;
 
     //variables for scene changer
-    int numScene;
 
     Vector3 start ;
     Vector3 end;

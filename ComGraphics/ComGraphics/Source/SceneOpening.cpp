@@ -76,11 +76,11 @@ void SceneOpening::Init()
 	light[0].type = Light::LIGHT_SPOT;
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 1.0f;
+	light[0].power = 2.0f;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(15));
+	light[0].cosCutoff = cos(Math::DegreeToRadian(90));
 	light[0].cosInner = cos(Math::DegreeToRadian(1));
 	light[0].exponent = 3.f;
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
@@ -120,7 +120,7 @@ void SceneOpening::Reset()
 
 void SceneOpening::OptionChange(double dt)
 {
-	ChooseOptionDebounce += dt;
+	ChooseOptionDebounce += (float)dt;
 	if (Application::mouse_scroll > 0 && ChooseOptionDebounce > 0.2f)
 	{
 		ui_ChooseOption++;
@@ -144,18 +144,18 @@ void SceneOpening::RenderOptionChange()
 {
 	if (ui_ChooseOption == 1)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Start Game", Color(1, 1, 1), 5, 6, 6);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Exit", Color(1, 1, 0), 5, 6, 5);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Start Game", Color(1.0f, 1.0f, 1.0f), 5.0f, 6.0f, 6.0f);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Exit", Color(1.0f, 1.0f, 0.0f), 5.0f, 6.0f, 5.0f);
 
-		RenderTextOnScreen(meshList[GEO_TEXT], ">>", Color(1, 0, 1), 5, 4, 6);
+		RenderTextOnScreen(meshList[GEO_TEXT], ">>", Color(1.0f, 0.0f, 1.0f), 5.0f, 4.0f, 6.0f);
 	}
 
 	else if (ui_ChooseOption == 2)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Start Game", Color(1, 1, 0), 5, 6, 6);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Exit", Color(1, 1, 1), 5, 6, 5);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Start Game", Color(1.0f, 1.0f, 0.0f), 5.0f, 6.0f, 6.0f);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Exit", Color(1.0f, 1.0f, 1.0f), 5.0f, 6.0f, 5.0f);
 
-		RenderTextOnScreen(meshList[GEO_TEXT], ">>", Color(1, 0, 1), 5, 4, 5);
+		RenderTextOnScreen(meshList[GEO_TEXT], ">>", Color(1.0f, 0.0f, 1.0f), 5.0f, 4.0f, 5.0f);
 	}
 }
 

@@ -26,14 +26,12 @@ void SceneLevelOneB::RenderFloorCeiling()
 
 void SceneLevelOneB::RenderScene()
 {
-   
     RenderFloorCeiling();
-
     //------------------------------------------------------------------------
     //top quads
     modelStack.PushMatrix();
     modelStack.Translate(0, -7, 0);
-    modelStack.Scale(1, 2.2, 1);
+    modelStack.Scale(1, 2.2f, 1);
 
     RenderRightWall(63, 47, -43, 1);//1
     RenderDownWall(-10, -43, 62, 2);//2
@@ -97,13 +95,13 @@ void SceneLevelOneB::RenderDoor()
 	modelStack.PushMatrix();
 	modelStack.Translate(204, 0, 59);
 	modelStack.Scale(4.9f, 4, 5);
-	RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(204, 0, 59);
 	modelStack.Scale(4.9f, 4, 5);
-	RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
 
 	Collision(190, 216, 54, 60);
@@ -111,26 +109,26 @@ void SceneLevelOneB::RenderDoor()
 	modelStack.PushMatrix();
 	modelStack.Translate(204, anima.DoorSlideTop, -51);
 	modelStack.Scale(4.9f, 4, 5);
-	RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(204, anima.DoorSlideBtm, -51);
 	modelStack.Scale(4.9f, 4, 5);
-	RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
 
 	//3rd door
 	modelStack.PushMatrix();
 	modelStack.Translate(228, 0, -218);
 	modelStack.Scale(4.9f, 4, 5);
-	RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(228, 0, -218);
 	modelStack.Scale(4.9f, 4, 5);
-	RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
 
 	//4th door
@@ -138,14 +136,14 @@ void SceneLevelOneB::RenderDoor()
 	modelStack.Translate(56, 0, -128);
 	modelStack.Scale(4.9f, 4, 5);
 	modelStack.Rotate(90, 0, 1, 0);
-	RenderMesh(meshList[GEO_SLIDEDOORTOP], false);
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(56, 0, -128);
 	modelStack.Scale(4.9f, 4, 5);
 	modelStack.Rotate(90, 0, 1, 0);
-	RenderMesh(meshList[GEO_SLIDEDOORBTM], false);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
 }
 
