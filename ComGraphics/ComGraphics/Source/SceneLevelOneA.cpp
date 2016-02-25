@@ -416,8 +416,6 @@ void SceneLevelOneA::Update(double dt)
     EnvironmentAnimation(dt);
 	UpdateSavePoint();
 
-	//std::cout << Explorer::instance()->SavePoint << std::endl;
-
 	if (activateDoor1) {anima.OpenSlideDoor1(dt);}
 	if (activateDoor2_1) 
 	{
@@ -443,16 +441,11 @@ void SceneLevelOneA::Update(double dt)
 
 	}
 
-	//std::cout << activateDoor2_1 << " " << activateDoor2_2 << " " << Ghost.Spawn << std::endl;
-	std::cout << anima.toSlideDoorTop2 << " " << anima.toSlideDoorBtm2 << std::endl;
-
     //wall collision DO NOT TOUCH
     for (int i = 0; i < 28; i++)
     {
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
-
-
 
     //mob stuff
     if (proximitycheck(-226, -160, 210,228)&&!activateDoor1)

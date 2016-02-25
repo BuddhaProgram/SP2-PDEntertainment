@@ -9,6 +9,11 @@ Explorer::Explorer()
 
 	for (int i = 0; i < 4; ++i)
 	{
+		Explorer::instance()->itemAttack[i] = 0;
+	}
+
+	for (int i = 0; i < 4; ++i)
+	{
 		Explorer::instance()->TotalTools.push_back(ToolUI(ToolUI::Empty));
 	}
 
@@ -70,48 +75,44 @@ ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 	{
 	case 1:
 		if (it->tool == ToolUI::Pickaxe)
-			it->ID = 5;
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 5;
 
 		else if (it->tool == ToolUI::BaseballBat)
-			it->ID = 10;
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 15;
 
 		return it->tool;
 		break;
 	case 2:
 		std::advance(it, 1);
-
 		if (it->tool == ToolUI::Pickaxe)
-			it->ID = 5;
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 5;
 
 		else if (it->tool == ToolUI::BaseballBat)
-			it->ID = 10;
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 15;
 
 		return it->tool;
 		break;
 	case 3:
 		std::advance(it, 2);
-
 		if (it->tool == ToolUI::Pickaxe)
-			it->ID = 5;
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 5;
 
 		else if (it->tool == ToolUI::BaseballBat)
-			it->ID = 10;
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 15;
 
 		return it->tool;
 		break;
 	case 4:
 		std::advance(it, 3);
-
 		if (it->tool == ToolUI::Pickaxe)
-			it->ID = 5;
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 5;
 
 		else if (it->tool == ToolUI::BaseballBat)
-			it->ID = 10;
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 15;
 
 		return it->tool;
 		break;
 	default:
-		//do nothing
 		return it->tool;
 	}
 }
