@@ -66,7 +66,8 @@ class SceneLevelOneB : public Scene
 
 		GEO_SLIDEDOORTOP,
 		GEO_SLIDEDOORBTM,
-
+        GEO_HEALTHBAR,
+        GEO_STAMINABAR,
         //player related
         GEO_HEALTH,
         NUM_GEOMETRY,
