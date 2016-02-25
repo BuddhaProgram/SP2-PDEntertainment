@@ -259,18 +259,19 @@ void SceneLevelOneB::RenderGhost(float xpos, float zpos)
 void SceneLevelOneB::RenderBoss(float xpos, float zpos)
 {
 	float rotGhost;
+	Vector3 view = (Vector3(xpos,0,zpos) - camera.position).Normalize();
 	if (camera.target.z > camera.position.z)
 	{
-		rotGhost = Math::RadianToDegree(atan(camera.view.x / camera.view.z)) - 180;
+		rotGhost = Math::RadianToDegree(atan(view.x / view.z)) - 180;
 	}
 	else
 	{
-		rotGhost = Math::RadianToDegree(atan(camera.view.x / camera.view.z));
+		rotGhost = Math::RadianToDegree(atan(view.x / view.z));
 	}
     modelStack.PushMatrix();//boss start
 
     modelStack.Translate(xpos, 4, zpos);
-	modelStack.Rotate(-rotGhost, 0, 1, 0);
+	modelStack.Rotate(rotGhost-90, 0, 1, 0);
     modelStack.Scale(5, 5, 5);
     RenderMesh(meshList[GEO_BOSS1], false);
 
