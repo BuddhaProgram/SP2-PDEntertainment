@@ -106,6 +106,14 @@ void SceneLevelOneA::RenderScene()
 	RenderMesh(meshList[GEO_FACILITYOUT], true);
 	modelStack.PopMatrix();
 	Collision(-25, 25, 430, 500);
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 8, 285);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(3, 2, 7);
+	RenderMesh(meshList[GEO_TV], true);
+	modelStack.PopMatrix();
+
 }
 
 void SceneLevelOneA::checkRubbleFall()
@@ -130,6 +138,10 @@ void SceneLevelOneA::checkDoor1()
 	if (proximitycheck(170, 190, 199, 200))
 	{
 		displayInteract1 = true;
+		if (activateDoor1)
+		{
+			displayInteract1 = false;
+		}
 	}
 	else
 	{

@@ -38,6 +38,7 @@ class SceneLevelOneA : public Scene
         GEO_FACILITYOUTWALL,
         GEO_FACILITYWALLS,
         GEO_FACILITYCEILINGS,
+		GEO_TV,
 
         GEO_LHAND,
         GEO_RHAND,

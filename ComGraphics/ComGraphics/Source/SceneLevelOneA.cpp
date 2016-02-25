@@ -155,6 +155,8 @@ void SceneLevelOneA::Init()
 	meshList[GEO_RUBBLE]->textureID = LoadTGA("Image//InsideWALL.tga");
     meshList[GEO_PORTRAIT] = MeshBuilder::GenerateOBJ("Portrait", "OBJ//Portrait.obj");
     meshList[GEO_PORTRAIT]->textureID = LoadTGA("Image//Scream.tga");
+	meshList[GEO_TV] = MeshBuilder::GenerateOBJ("TV", "OBJ//TV.obj");
+	meshList[GEO_TV]->textureID = LoadTGA("Image//TV.tga");
 
 	meshList[GEO_BLOOD] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
 	meshList[GEO_BLOOD]->textureID = LoadTGA("Image//Blood.tga");
@@ -454,7 +456,7 @@ void SceneLevelOneA::Update(double dt)
     }
 
     //mob stuff
-    if (proximitycheck(-226, -160, 210,228)&&!activateDoor1)
+    if (proximitycheck(-226, -160, 210,218)&&!activateDoor1)
     {
         Ghost.Spawn = true;
     }
