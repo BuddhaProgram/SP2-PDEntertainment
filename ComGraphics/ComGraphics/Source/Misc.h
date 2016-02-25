@@ -12,7 +12,7 @@ public:
 
 	bool WithinArea(float smallx, float largex, float smallz, float largez);
 	bool hitting(float distance, float mobx, float mobz, float AOA, float camX, float camZ, Vector3 view, Vector3 position); // AOA is angle of attack
-	float getAngle(const Vector3 &view, const Vector3 &target);
+
 	float camX, camY, camZ;
 };
 #endif

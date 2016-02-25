@@ -106,6 +106,7 @@ void MobGhost::setSpawnGhost(float xpos, float zpos)
 }
 void MobGhost::TakeDamage(int damage)
 {
-    //std::cout << "hit" << std::endl;
+    std::cout << "hit" << std::endl;
     health = health - damage;
+   
 }
