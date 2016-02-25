@@ -454,6 +454,7 @@ void SceneLevelOneA::Update(double dt)
     if (Ghost.Spawn)
     {
         Ghost.move(dt, 25);
+        Collision(Ghost.MobPosX - 4, Ghost.MobPosX + 4, Ghost.MobPosZ - 4, Ghost.MobPosZ + 4);
     }
 
     if (proximitycheck(-205,-195, 115, 125) && !activateDoor1)

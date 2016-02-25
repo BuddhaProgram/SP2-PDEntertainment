@@ -211,6 +211,7 @@ void SceneLevelOneB::RenderGhost(float xpos, float zpos)
 {
     modelStack.PushMatrix();
     modelStack.Translate(xpos, 6, zpos);
+    modelStack.Scale(3, 3, 3);
     RenderMesh(meshList[GEO_GHOST1], true);
     modelStack.PopMatrix();
 }
