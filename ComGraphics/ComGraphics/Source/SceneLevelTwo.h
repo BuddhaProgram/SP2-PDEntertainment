@@ -42,16 +42,19 @@ class SceneLevelTwo : public Scene
         GEO_RHAND,
 
         // Tools Interface and It's Icons
-        GEO_TOOLUIONE,
-        GEO_TOOLUITWO,
-        GEO_TOOLUITHREE,
-        GEO_TOOLUIFOUR,
+		GEO_TOOLUIONE,
+		GEO_TOOLUITWO,
+		GEO_TOOLUITHREE,
+		GEO_TOOLUIFOUR,
 
-        GEO_PICKAXE,
-        GEO_PICKAXEICON,
+		GEO_PICKAXE,
+		GEO_PICKAXEICON,
 
-        GEO_BAT,
-        GEO_BATICON,
+		GEO_BAT,
+		GEO_BATICON,
+
+		GEO_SWORD,
+		GEO_SWORDICON,
 
         GEO_GHOST1,
         GEO_SPAWNPOINT,
