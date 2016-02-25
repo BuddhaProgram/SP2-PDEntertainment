@@ -168,12 +168,26 @@ void SceneLevelOneB::Init()
     meshList[GEO_SPAWNPOINT] = MeshBuilder::GenerateOBJ("Spawn", "OBJ//SpawnPoint.obj");
     meshList[GEO_SPAWNPOINT]->textureID = LoadTGA("Image//SpawnPoint.tga");
 
+    meshList[GEO_SUITCASE] = MeshBuilder::GenerateOBJ("SuitCase", "OBJ//SuitCase.obj");
+    meshList[GEO_SUITCASE]->textureID = LoadTGA("Image//SuitCase.tga");
+
+    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("Alien", "OBJ//AlienOne.obj");
+    meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Alien1.tga");
+
+    meshList[GEO_BOSS1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//Boss1.obj");
+    meshList[GEO_BOSS1]->textureID = LoadTGA("Image//Boss1.tga");
+    meshList[GEO_CRYSTAL1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//Crystal1.obj");
+    meshList[GEO_CRYSTAL1]->textureID = LoadTGA("Image//Crystal.tga");
+    meshList[GEO_CRYSTAL2] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//Crystal2.obj");
+    meshList[GEO_CRYSTAL2]->textureID = LoadTGA("Image//Crystal.tga");
+
     Mtx44 projection;
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
-    //scene changer inits.............
-    //scene changer init end.............
+    PuzzleGhost1.setSpawnGhost(24, 31);
+    PuzzleGhost1.setSpawnGhost(30, 31);
+    BossOne.setSpawnBossOne(-30, 55);
 }
 
 static float LSPEED = 10.f;
@@ -189,6 +203,12 @@ void SceneLevelOneB::Collision(float smallx, float largex, float smallz, float l
     if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez) && (camera.position.z >= largez - 3.f)){ camera.position.z = largez; }
     if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x >= smallx) && (camera.position.x <= smallx + 3.f)){ camera.position.x = smallx; }
     if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x <= largex) && (camera.position.x >= largex - 3.f)){ camera.position.x = largex; }
+
+	camera.target = Vector3(
+		sin(Math::DegreeToRadian(camera.rotationY)) * cos(Math::DegreeToRadian(camera.rotationX)) + this->camera.position.x,
+		sin(Math::DegreeToRadian(camera.rotationX)) + this->camera.position.y,
+		cos(Math::DegreeToRadian(camera.rotationX)) * cos(Math::DegreeToRadian(camera.rotationY)) + this->camera.position.z
+		);
 }
 
 bool SceneLevelOneB::proximitycheck(float smallx, float largex, float smallz, float largez)
@@ -312,6 +332,7 @@ void SceneLevelOneB::MouseClickFunction(double dt)
 		{
 			Variables.RotateX = -45.0f;
 			Variables.b_LockSwingDebounce = false;
+            attackCheck();
 		}
 	}
 
@@ -363,7 +384,27 @@ void SceneLevelOneB::Update(double dt)
 	MouseClickFunction(dt);
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
+    EnvironmentAnimation(dt);
+    MobsSpawn();
    
+
+    PuzzleGhost1.checkPlayerPos(dt, 1,1,camera.position.x, camera.position.z);
+    PuzzleGhost2.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);
+    BossOne.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);
+
+    if (PuzzleGhost1.Spawn)
+    {
+        PuzzleGhost1.move(dt, 25);
+    }
+
+    if (PuzzleGhost2.Spawn)
+    {
+        PuzzleGhost2.move(dt, 25);
+    }
+    if (BossOne.Spawn)
+    {
+        BossOne.move(dt, 15);
+    }
 }
 
 void SceneLevelOneB::RenderMesh(Mesh*mesh, bool enableLight)
@@ -561,7 +602,15 @@ void SceneLevelOneB::Render()
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
 	}
 
-
+    if (PuzzleGhost1.Spawn)
+    {
+        RenderGhost(PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ);
+    }
+    
+    if (BossOne.Spawn)
+    {
+        RenderBoss(BossOne.MobPosX, BossOne.MobPosZ);
+    }
 	//modelStack.PushMatrix();
 	//RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
 	//modelStack.PopMatrix();

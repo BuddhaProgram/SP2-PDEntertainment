@@ -13,11 +13,6 @@
 #include <sstream>
 #include "GlobalVariables.h"
 
-//this include and definition is needed
-#include "Misc.h"
-misc MISC;
-//.................
-
 SceneLevelOneA::SceneLevelOneA()
 {
 
@@ -155,6 +150,9 @@ void SceneLevelOneA::Init()
     meshList[GEO_PORTRAIT] = MeshBuilder::GenerateOBJ("Portrait", "OBJ//Portrait.obj");
     meshList[GEO_PORTRAIT]->textureID = LoadTGA("Image//Scream.tga");
 
+	meshList[GEO_BLOOD] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_BLOOD]->textureID = LoadTGA("Image//Blood.tga");
+
     // Tools Interface and It's Icons
 
 
@@ -178,7 +176,7 @@ void SceneLevelOneA::Init()
     meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
 
 
-    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//AlienOne.obj");
+    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("Alien", "OBJ//AlienOne.obj");
     meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Alien1.tga");
 
 	meshList[GEO_SLIDEDOORTOP] = MeshBuilder::GenerateOBJ("Hand", "OBJ//SlideDoorTop.obj");
@@ -215,6 +213,12 @@ void SceneLevelOneA::Collision(float smallx, float largex, float smallz, float l
     if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez) && (camera.position.z >= largez - 3.f)){ camera.position.z = largez; }
     if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x >= smallx) && (camera.position.x <= smallx + 3.f)){ camera.position.x = smallx; }
     if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x <= largex) && (camera.position.x >= largex - 3.f)){ camera.position.x = largex; }
+
+	camera.target = Vector3(
+		sin(Math::DegreeToRadian(camera.rotationY)) * cos(Math::DegreeToRadian(camera.rotationX)) + camera.position.x,
+		sin(Math::DegreeToRadian(camera.rotationX)) + camera.position.y,
+		cos(Math::DegreeToRadian(camera.rotationX)) * cos(Math::DegreeToRadian(camera.rotationY)) + camera.position.z
+		);
 }
 
 bool SceneLevelOneA::proximitycheck(float smallx, float largex, float smallz, float largez)
@@ -354,15 +358,7 @@ void SceneLevelOneA::MouseClickFunction(double dt)
 	}
 }
 
-void SceneLevelOneA::AttackCheck()
-{
-    //Ghost combat checker
 
-    if (Application::IsKeyPressed(VK_LBUTTON) && MISC.hitting(20.f, Ghost.MobPosX, Ghost.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
-    {
-        Ghost.TakeDamage(1);//temporary variable is 1
-    }
-}
 
 void SceneLevelOneA::UpdateSavePoint()
 {
@@ -382,11 +378,12 @@ void SceneLevelOneA::RenderSavePointText()
 
 void SceneLevelOneA::Update(double dt)
 {
+	
     light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
     light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
     FPS = 1.f / (float)dt;
     //worldspin += (float)(dt);
-
+	camera.Update(dt);
 	Collision(115.0f, 125.0f, 70.0f, 80.0f);
 
 	/*-------------------------[Tool UI Functions]-------------------------------*/
@@ -403,8 +400,6 @@ void SceneLevelOneA::Update(double dt)
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
     if (Application::IsKeyPressed('4'))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
-
-    camera.Update(dt);
 
     anima.OBJAnimation(dt);
 	anima.Collapsing(dt);
@@ -466,9 +461,12 @@ void SceneLevelOneA::Update(double dt)
         Key1Active = true;
         if (Application::IsKeyPressed('E'))
         {
-            activateDoor1 = true;
-			displayInteract1 = false;
+            Key_1 = true;
         }
+		if (Key1Active)
+		{
+			displayInteract1 = false;
+		}
     }
     else
     {
@@ -697,15 +695,11 @@ void SceneLevelOneA::Render()
         RenderInteract();
     }
 
-
-	/*modelStack.PushMatrix();
-	RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
-	modelStack.PopMatrix();*/
-
 	modelStack.PushMatrix();
 	RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57, 0, false);
 	RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56, 0, false);
 	modelStack.PopMatrix();
+
 }
 
 void SceneLevelOneA::Exit()

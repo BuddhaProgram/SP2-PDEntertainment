@@ -29,6 +29,7 @@ class SceneLevelOneA : public Scene
 
         GEO_RUBBLE,
         GEO_PORTRAIT,
+		GEO_BLOOD,
 
         GEO_PLANETFLOOR,
         GEO_FACILITYFLOOR,
@@ -56,6 +57,7 @@ class SceneLevelOneA : public Scene
 		GEO_BATICON,
 
         GEO_GHOST1,
+		GEO_BOSS1,
 
         GEO_DOORSWITCH,
 		GEO_SLIDEDOORTOP,
@@ -180,7 +182,6 @@ private:
     bool willDrop = false;
     bool Key1Active = false;
     float EnvRotateY = 0;
-    float EnvTranslateY = 5;
 
 
     unsigned m_vertexArrayID;

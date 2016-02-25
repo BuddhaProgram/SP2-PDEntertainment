@@ -61,7 +61,7 @@ void Camera3::CameraRotation(double dt, float CAMERASPEED)
 		sin(Math::DegreeToRadian(rotationY)) * cos(Math::DegreeToRadian(rotationX)) + this->position.x, 
 		sin(Math::DegreeToRadian(rotationX)) + this->position.y, 
 		cos(Math::DegreeToRadian(rotationX)) * cos(Math::DegreeToRadian(rotationY)) + this->position.z
-		);
+	);
 }
 
 void Camera3::HumanControl()
@@ -71,13 +71,13 @@ void Camera3::HumanControl()
 		if (Application::IsKeyPressed('A'))
 		{
 			position -= right;
-			target -= right;
+		
 		}
 
 		if (Application::IsKeyPressed('D'))
 		{
 			position += right;
-			target += right;
+			
 		}
 
 		if (Application::IsKeyPressed('W'))
@@ -107,16 +107,22 @@ void Camera3::Reset()
 
 void Camera3::Update(double dt)
 { 
+	
+	HumanControl();
+	CameraRotation(dt, 0.2f);
+
+	target = Vector3(
+		sin(Math::DegreeToRadian(rotationY)) * cos(Math::DegreeToRadian(rotationX)) + this->position.x,
+		sin(Math::DegreeToRadian(rotationX)) + this->position.y,
+		cos(Math::DegreeToRadian(rotationX)) * cos(Math::DegreeToRadian(rotationY)) + this->position.z
+	);
 	view = (target - position).Normalized();
 	right = view.Cross(defaultUp);
-	right.y = 0;
+	//right.y = 0;
 	right.Normalize();
 	this->up = right.Cross(view).Normalized();
 
 	static const float CAMERA_SPEED = 50.f;
-
-	HumanControl();
-	CameraRotation(dt, 0.2f);
 
 	if (Explorer::instance()->stamina <= 0)
 	{

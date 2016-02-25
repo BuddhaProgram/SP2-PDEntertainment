@@ -10,7 +10,7 @@
 #include "LoadTGA.h"
 #include "Utility.h"
 #include <sstream>
-
+float rotate;
 
 SceneStart::SceneStart()
 {
@@ -159,6 +159,8 @@ void SceneStart::Init()
     meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("FacilityOUT wall", Color(1, 1, 1));
     meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
     
+	
+	
 
     //change to correct textured quad later
 	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
@@ -442,6 +444,11 @@ void SceneStart::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
 	camera.Update(dt);
+
+	rotate += (float)(200 * dt);
+
+
+
 }
 
 void SceneStart::RenderMesh(Mesh*mesh, bool enableLight)
@@ -643,6 +650,9 @@ void SceneStart::Render()
 	RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp/5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57.0f, 0, false);
 	RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56.0f, 0, false);
     modelStack.PopMatrix();
+
+
+	
 }
 	
 

@@ -2,6 +2,9 @@
 #include "OBJAnimation.h"
 #include "Application.h"
 
+#include"Misc.h"
+
+misc Func;
 // Rendering of Floor for all Scenes.
 void SceneLevelOneB::RenderFloorCeiling()
 {
@@ -26,9 +29,30 @@ void SceneLevelOneB::RenderFloorCeiling()
 
 void SceneLevelOneB::RenderScene()
 {
+
+    //secondsave
+    modelStack.PushMatrix();
+    modelStack.Translate(-200, 5, -200);
+    modelStack.Rotate(EnvRotateY, 0, 1, 0);
+    modelStack.Scale(4, 4, 4);
+    RenderMesh(meshList[GEO_SPAWNPOINT], true);
+    modelStack.PopMatrix();
     RenderFloorCeiling();
+
+    //suitcase
+    modelStack.PushMatrix();
+    modelStack.Translate(-200, 5, -120);
+    modelStack.Rotate(EnvRotateY, 0, 1, 0);
+    modelStack.Scale(4, 4, 4);
+    RenderMesh(meshList[GEO_SUITCASE], true);
+    modelStack.PopMatrix();
+
     //------------------------------------------------------------------------
     //top quads
+    modelStack.PushMatrix();
+    modelStack.Translate(0, -3, 0);
+    modelStack.Scale(1, 1.2f, 1);
+
     modelStack.PushMatrix();
     modelStack.Translate(0, -7, 0);
     modelStack.Scale(1, 2.2f, 1);
@@ -85,12 +109,15 @@ void SceneLevelOneB::RenderScene()
     RenderRightWall(7, -7, 24, 42);//42
     RenderLeftWall(7, -7, 27, 43);//43
     modelStack.PopMatrix();
+
+    modelStack.PopMatrix();
     //TOP QUAD END
     //-----------------------------------------------------
 }
 
 void SceneLevelOneB::RenderDoor()
 {
+
 	//1st door
 	modelStack.PushMatrix();
 	modelStack.Translate(204, 0, 59);
@@ -120,27 +147,27 @@ void SceneLevelOneB::RenderDoor()
 
 	//3rd door
 	modelStack.PushMatrix();
-	modelStack.Translate(228, 0, -218);
+	modelStack.Translate(228, anima.DoorSlideTop_2, -218);
 	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(228, 0, -218);
+	modelStack.Translate(228, anima.DoorSlideBtm_2, -218);
 	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
 
 	//4th door
 	modelStack.PushMatrix();
-	modelStack.Translate(56, 0, -128);
+	modelStack.Translate(56, anima.DoorSlideTop_3, -128);
 	modelStack.Scale(4.9f, 4, 5);
 	modelStack.Rotate(90, 0, 1, 0);
 	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(56, 0, -128);
+	modelStack.Translate(56, anima.DoorSlideBtm_3, -128);
 	modelStack.Scale(4.9f, 4, 5);
 	modelStack.Rotate(90, 0, 1, 0);
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
@@ -188,3 +215,64 @@ void SceneLevelOneB::RenderGhost(float xpos, float zpos)
     modelStack.PopMatrix();
 }
 
+void SceneLevelOneB::RenderBoss(float xpos, float zpos)
+{
+    modelStack.PushMatrix();//boss start
+
+    modelStack.Translate(xpos, 4, zpos);
+    modelStack.Scale(6, 6, 6);
+    RenderMesh(meshList[GEO_BOSS1], false);
+
+    if (BossOne.AttackAnimation)
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(0, 4, 0);
+        modelStack.Rotate(BossOne.CrystalAnim, 1, 1, 0);
+        RenderMesh(meshList[GEO_CRYSTAL1], false);
+        modelStack.PopMatrix();
+
+        modelStack.PushMatrix();
+        modelStack.Translate(0, 4, 0);
+        modelStack.Rotate(BossOne.CrystalAnim, -1, 1, 0);
+        RenderMesh(meshList[GEO_CRYSTAL2], false);
+        modelStack.PopMatrix();
+    }
+
+    modelStack.PopMatrix();//boss end
+}
+
+void SceneLevelOneB::EnvironmentAnimation(double dt)
+{
+    EnvRotateY += (float)(20.f * dt);
+
+
+}
+void SceneLevelOneB::attackCheck()
+{
+    //Ghost combat checker
+
+    if (Application::IsKeyPressed(VK_LBUTTON) && Func.hitting(20.f, PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    {
+        PuzzleGhost1.TakeDamage(1);//temporary variable is 1
+    }
+
+    if (Application::IsKeyPressed(VK_LBUTTON) && Func.hitting(20.f, PuzzleGhost2.MobPosX, PuzzleGhost2.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    {
+        PuzzleGhost2.TakeDamage(1);//temporary variable is 1
+    }
+}
+
+void SceneLevelOneB::MobsSpawn()
+{
+    
+    if (proximitycheck(216, 240, -256, -248))
+    {
+        PuzzleGhost1.Spawn = true;
+        PuzzleGhost2.Spawn = true;
+    }
+    if (proximitycheck(-304, -280, -384, -392))
+    {
+        BossOne.Spawn = true;
+    }
+        
+}

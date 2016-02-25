@@ -9,6 +9,7 @@
 #include "Light.h"
 #include "OBJAnimation.h"
 #include "MobGhost.h"
+#include "MobBossOne.h"
 
 class SceneLevelOneB : public Scene
 {
@@ -54,7 +55,11 @@ class SceneLevelOneB : public Scene
 		GEO_BATICON,
 
         GEO_GHOST1,
+        GEO_BOSS1,
+        GEO_CRYSTAL1,
+        GEO_CRYSTAL2,
         GEO_SPAWNPOINT,
+        GEO_SUITCASE,
 
 		GEO_SLIDEDOORTOP,
 		GEO_SLIDEDOORBTM,
@@ -119,6 +124,7 @@ private:
 
     //mob renders
     void RenderGhost(float xpos, float zpos);
+    void RenderBoss(float xpos, float zpos);
 	void RenderDoor();
 
     //render functions 
@@ -130,9 +136,16 @@ private:
     void Collision(float smallx, float largex, float smallz, float largez);
     bool proximitycheck(float smallx, float largex, float smallz, float largez);
 
+    //animation functions
 	void checkDoor1();
 	void checkDoor2();
 	void checkDoor3();
+    void EnvironmentAnimation(double dt);
+    void attackCheck();
+    void MobsSpawn();
+    //objects and mob animation variables
+    float EnvRotateY = 0;
+
 
     // Switches Functions for puzzles
     void PuzzleOneSwitchCheck(double dt);
@@ -173,7 +186,9 @@ private:
     float CollZLarge[43];
     float CollZSmall[43];
 
-    MobGhost Ghost;
+    MobGhost PuzzleGhost1;
+    MobGhost PuzzleGhost2;
+    MobBossOne BossOne;
 };
 
 
