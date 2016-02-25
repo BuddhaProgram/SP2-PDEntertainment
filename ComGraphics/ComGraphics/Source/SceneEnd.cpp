@@ -76,11 +76,11 @@ void SceneEnd::Init()
 	light[0].type = Light::LIGHT_SPOT;
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 1.0f;
+	light[0].power = 2.0f;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(15));
+	light[0].cosCutoff = cos(Math::DegreeToRadian(90));
 	light[0].cosInner = cos(Math::DegreeToRadian(1));
 	light[0].exponent = 3.f;
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));

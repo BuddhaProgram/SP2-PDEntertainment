@@ -180,10 +180,10 @@ void SceneLevelOneB::checkDoor2()
 
 }
 
-void SceneLevelOneB::RenderGhost1()
+void SceneLevelOneB::RenderGhost(float xpos, float zpos)
 {
     modelStack.PushMatrix();
-    modelStack.Translate(Ghost.MobPosX, Ghost.MobPosY, Ghost.MobPosZ);
+    modelStack.Translate(xpos, 6, zpos);
     RenderMesh(meshList[GEO_GHOST1], true);
     modelStack.PopMatrix();
 }

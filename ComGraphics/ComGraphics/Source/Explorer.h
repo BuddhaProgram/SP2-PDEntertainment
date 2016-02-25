@@ -17,6 +17,7 @@ public:
 	float hp;
 	float f_hpBarScaleX;
 
+
 	ToolUI::ToolType GetToolType(int SlotNumber);
 	void InsertToolSlot(ToolUI::ToolType ChooseTools);
 	bool CheckForDoubleTool(ToolUI::ToolType DoubleTool);
