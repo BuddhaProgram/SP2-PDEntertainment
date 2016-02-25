@@ -155,6 +155,9 @@ void SceneLevelOneA::Init()
     meshList[GEO_PORTRAIT] = MeshBuilder::GenerateOBJ("Portrait", "OBJ//Portrait.obj");
     meshList[GEO_PORTRAIT]->textureID = LoadTGA("Image//Scream.tga");
 
+	meshList[GEO_BLOOD] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_BLOOD]->textureID = LoadTGA("Image//Blood.tga");
+
     // Tools Interface and It's Icons
 
 
@@ -473,9 +476,12 @@ void SceneLevelOneA::Update(double dt)
         Key1Active = true;
         if (Application::IsKeyPressed('E'))
         {
-            activateDoor1 = true;
-			displayInteract1 = false;
+            Key_1 = true;
         }
+		if (Key1Active)
+		{
+			displayInteract1 = false;
+		}
     }
     else
     {
@@ -704,15 +710,11 @@ void SceneLevelOneA::Render()
         RenderInteract();
     }
 
-
-	/*modelStack.PushMatrix();
-	RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
-	modelStack.PopMatrix();*/
-
 	modelStack.PushMatrix();
 	RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57, 0, false);
 	RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56, 0, false);
 	modelStack.PopMatrix();
+
 }
 
 void SceneLevelOneA::Exit()

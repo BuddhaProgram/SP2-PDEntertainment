@@ -25,7 +25,7 @@ class SceneStart : public Scene
 		GEO_FRONT,
 		GEO_BACK,
 		GEO_QUAD,
-	
+
 		GEO_LIGHTBALL,
 		GEO_TEXT,
 		GEO_MOUNTTEXT,
@@ -63,7 +63,11 @@ class SceneStart : public Scene
 		GEO_PICKAXEICON,
 		GEO_BATICON,
 
-        GEO_GHOST1,
+		GEO_GHOST1,
+		GEO_BOSS1,
+
+		GEO_CRYSTAL1,
+		GEO_CRYSTAL2,
 
         //player related
         GEO_HEALTH,

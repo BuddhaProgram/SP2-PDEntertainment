@@ -134,7 +134,6 @@ void SceneLevelOneA::checkDoor1()
 	{
 		if (proximitycheck(170, 190, 199, 200))
 		{
-			displayInteract1 = false;
 			if (Key_1)
 			{
 				activateDoor1 = true;
@@ -288,6 +287,18 @@ void SceneLevelOneA::TestDoorRender()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(204, anima.DoorSlideBtm_3, 59);
+	modelStack.Scale(4.9f, 4, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(204, 0, -40);
+	modelStack.Scale(4.9f, 4, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(204, 0, -40);
 	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
