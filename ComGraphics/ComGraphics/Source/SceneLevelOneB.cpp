@@ -187,6 +187,9 @@ void SceneLevelOneB::Init()
     meshList[GEO_CRYSTAL2] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//Crystal2.obj");
     meshList[GEO_CRYSTAL2]->textureID = LoadTGA("Image//Crystal.tga");
 
+    meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
+    meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
+
     Mtx44 projection;
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
@@ -589,7 +592,10 @@ void SceneLevelOneB::Render()
 {
     // Render VBO here
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+    modelStack.PushMatrix();
+    RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57, 0, false);
+    RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56, 0, false);
+    modelStack.PopMatrix();
     //Set view matrix using camera settings
     viewStack.LoadIdentity();
     viewStack.LookAt(
