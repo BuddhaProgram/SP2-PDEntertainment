@@ -8,7 +8,7 @@ misc::~misc()
 
 }
 
-float getAngle(const Vector3 &view, const Vector3 &target)
+float misc::getAngle(const Vector3 &view, const Vector3 &target)
 {
 	float MagnitudeA = sqrt(pow(view.x, 2) + pow(view.y, 2) + pow(view.z, 2));
 	float MagnitudeB = sqrt(pow(target.x, 2) + pow(target.y, 2) + pow(target.z, 2));
@@ -30,7 +30,7 @@ bool misc::hitting(float distance, float mobx, float mobz, float AOA, float camX
 		if ((getAngle(view, Vector3(mobx,0,mobz) - position)) <= AOA) 
 		{
 			result = true;
-            std::cout << "target" << std::endl;
+            //std::cout << "target" << std::endl;
 		}
 	}
 
