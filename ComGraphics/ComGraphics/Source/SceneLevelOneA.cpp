@@ -439,7 +439,7 @@ void SceneLevelOneA::Update(double dt)
 	}
 
 	//std::cout << activateDoor2_1 << " " << activateDoor2_2 << " " << Ghost.Spawn << std::endl;
-	std::cout << anima.toSlideDoorTop2 << " " << anima.toSlideDoorBtm2 << std::endl;
+	//std::cout << anima.toSlideDoorTop2 << " " << anima.toSlideDoorBtm2 << std::endl;
 
     //wall collision DO NOT TOUCH
     for (int i = 0; i < 28; i++)
