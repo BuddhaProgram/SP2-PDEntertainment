@@ -22,7 +22,8 @@ void SceneLevelOneA::RenderFloorCeiling()
 void SceneLevelOneA::RenderSuitCase()
 {
     modelStack.PushMatrix();
-    modelStack.Translate(280, 2, 120);
+    modelStack.Translate(280, EnvTranslateY, 120);
+    modelStack.Rotate(EnvRotateY, 0, 1, 0);
     modelStack.Scale(4, 4, 4);
     RenderMesh(meshList[GEO_SUITCASE], true);
     modelStack.PopMatrix();
@@ -45,8 +46,10 @@ void SceneLevelOneA::RenderScene()
     RenderMesh(meshList[GEO_SPAWNPOINT], true);
     modelStack.PopMatrix();
 
+    //firstsave
     modelStack.PushMatrix();
-		modelStack.Translate(120, 0, 75);
+		modelStack.Translate(120, EnvTranslateY, 75);
+        modelStack.Rotate(EnvRotateY, 0, 1, 0);
 		modelStack.Scale(4, 4, 4);
 		RenderMesh(meshList[GEO_SPAWNPOINT], true);
 	modelStack.PopMatrix();
@@ -307,4 +310,11 @@ void SceneLevelOneA::DropPortrait()
 	RenderMesh(meshList[GEO_PORTRAIT], false);
 	modelStack.PopMatrix();
 
+}
+
+void SceneLevelOneA::EnvironmentAnimation(double dt)
+{
+    EnvRotateY += (float)(20.f * dt);
+
+  
 }

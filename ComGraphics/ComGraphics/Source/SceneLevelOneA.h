@@ -158,6 +158,7 @@ private:
 	void UpdateSavePoint();
 	void RenderSavePointText();
 
+    //checkers and animation functions
 	void checkRubbleFall();
 	void checkDoor1();
 	void checkDoor2();
@@ -165,6 +166,24 @@ private:
 	void checkDrop();
     void AttackCheck();
 	void TestDoorRender(); // Sliding Door
+    void EnvironmentAnimation(double dt);
+
+    //objects and mob animation variables
+    bool displayInteract1;
+    bool displayInteract2;
+    bool displayInteract3;
+    bool activateDoor1 = false;
+    bool activateDoor2_1 = false;
+    bool activateDoor2_2 = false;
+    bool activateDoor3 = false; //if true open door
+    bool Key_1 = false;
+    bool Notice = false;
+    bool Notice2 = false;
+    bool willDrop = false;
+    bool Key1Active = false;
+    float EnvRotateY = 0;
+    float EnvTranslateY = 5;
+
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
@@ -184,26 +203,14 @@ private:
     MobGhost Ghost;
 
     float FPS;
-	bool displayInteract1;
-	bool displayInteract2;
-	bool displayInteract3;
-	bool activateDoor1 = false;
-	bool activateDoor2_1 = false;
-	bool activateDoor2_2 = false;
-	bool activateDoor3 = false; //if true open door
-	bool Key_1 = false;
-	bool Notice = false;
-	bool Notice2 = false;
-	bool willDrop = false;
+	
 
     //collision variables 
     float CollXLarge[28];
     float CollXSmall[28];
     float CollZLarge[28];
     float CollZSmall[28];
-
-    //temporary variables until combat is up
-    bool tempbool = false;
+   
 };
 
 

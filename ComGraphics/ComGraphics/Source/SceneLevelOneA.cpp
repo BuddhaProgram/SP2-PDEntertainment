@@ -356,7 +356,7 @@ void SceneLevelOneA::AttackCheck()
 {
     //Ghost combat checker
 
-    if (Application::IsKeyPressed(VK_LBUTTON) && MISC.hitting(15.f, Ghost.MobPosX, Ghost.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    if (Application::IsKeyPressed(VK_LBUTTON) && MISC.hitting(20.f, Ghost.MobPosX, Ghost.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
         Ghost.TakeDamage(1);//temporary variable is 1
     }
@@ -411,7 +411,7 @@ void SceneLevelOneA::Update(double dt)
 	checkDoor2();
 	checkDoor3();
 	checkDrop();
-
+    EnvironmentAnimation(dt);
 	UpdateSavePoint();
 
 	//std::cout << Explorer::instance()->SavePoint << std::endl;
@@ -456,12 +456,12 @@ void SceneLevelOneA::Update(double dt)
 
     if (Ghost.Spawn)
     {
-        Ghost.move(dt, 30);
+        Ghost.move(dt, 25);
     }
 
     if (proximitycheck(-205,-195, 115, 125) && !activateDoor1)
     {
-        tempbool = true;
+        Key1Active = true;
         if (Application::IsKeyPressed('E'))
         {
             activateDoor1 = true;
@@ -470,7 +470,7 @@ void SceneLevelOneA::Update(double dt)
     }
     else
     {
-        tempbool = false;
+        Key1Active = false;
     }
     
     //codes for changing to level1B
@@ -690,7 +690,7 @@ void SceneLevelOneA::Render()
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "NO KEY", Color(0, 1, 0), 4, 10, 7);
 	}
-	if (displayInteract1 || displayInteract2 || displayInteract3 || tempbool)
+	if (displayInteract1 || displayInteract2 || displayInteract3 || Key1Active)
     {
         RenderInteract();
     }

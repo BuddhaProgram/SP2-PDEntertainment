@@ -118,7 +118,7 @@ private:
     void RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber);//negative X facing wall
 
     //mob renders
-    void RenderGhost1();
+    void RenderGhost(float xpos, float zpos);
 	void RenderDoor();
 
     //render functions 
