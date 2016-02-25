@@ -2,6 +2,9 @@
 #include "OBJAnimation.h"
 #include "Application.h"
 
+#include"Misc.h"
+
+misc Func;
 // Rendering of Floor for all Scenes.
 void SceneLevelOneB::RenderFloorCeiling()
 {
@@ -26,7 +29,24 @@ void SceneLevelOneB::RenderFloorCeiling()
 
 void SceneLevelOneB::RenderScene()
 {
+
+    //secondsave
+    modelStack.PushMatrix();
+    modelStack.Translate(-200, 5, -200);
+    modelStack.Rotate(EnvRotateY, 0, 1, 0);
+    modelStack.Scale(4, 4, 4);
+    RenderMesh(meshList[GEO_SPAWNPOINT], true);
+    modelStack.PopMatrix();
     RenderFloorCeiling();
+
+    //suitcase
+    modelStack.PushMatrix();
+    modelStack.Translate(-200, 5, -120);
+    modelStack.Rotate(EnvRotateY, 0, 1, 0);
+    modelStack.Scale(4, 4, 4);
+    RenderMesh(meshList[GEO_SUITCASE], true);
+    modelStack.PopMatrix();
+
     //------------------------------------------------------------------------
     //top quads
     modelStack.PushMatrix();
@@ -91,6 +111,7 @@ void SceneLevelOneB::RenderScene()
 
 void SceneLevelOneB::RenderDoor()
 {
+
 	//1st door
 	modelStack.PushMatrix();
 	modelStack.Translate(204, 0, 59);
@@ -188,3 +209,38 @@ void SceneLevelOneB::RenderGhost(float xpos, float zpos)
     modelStack.PopMatrix();
 }
 
+void SceneLevelOneB::EnvironmentAnimation(double dt)
+{
+    EnvRotateY += (float)(20.f * dt);
+
+
+}
+void SceneLevelOneB::attackCheck()
+{
+    //Ghost combat checker
+
+    if (Application::IsKeyPressed(VK_LBUTTON) && Func.hitting(20.f, PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    {
+        PuzzleGhost1.TakeDamage(1);//temporary variable is 1
+    }
+
+    if (Application::IsKeyPressed(VK_LBUTTON) && Func.hitting(20.f, PuzzleGhost2.MobPosX, PuzzleGhost2.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    {
+        PuzzleGhost2.TakeDamage(1);//temporary variable is 1
+    }
+}
+
+void SceneLevelOneB::MobsSpawn()
+{
+    
+    if (proximitycheck(216, 240, -256, -248))
+    {
+        PuzzleGhost1.Spawn = true;
+        PuzzleGhost2.Spawn = true;
+    }
+    if (proximitycheck(-304, -280, 384, 392))
+    {
+        BossOne.Spawn = true;
+    }
+        
+}

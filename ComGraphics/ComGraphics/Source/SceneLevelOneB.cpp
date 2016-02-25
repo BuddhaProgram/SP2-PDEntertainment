@@ -168,12 +168,19 @@ void SceneLevelOneB::Init()
     meshList[GEO_SPAWNPOINT] = MeshBuilder::GenerateOBJ("Spawn", "OBJ//SpawnPoint.obj");
     meshList[GEO_SPAWNPOINT]->textureID = LoadTGA("Image//SpawnPoint.tga");
 
+    meshList[GEO_SUITCASE] = MeshBuilder::GenerateOBJ("SuitCase", "OBJ//SuitCase.obj");
+    meshList[GEO_SUITCASE]->textureID = LoadTGA("Image//SuitCase.tga");
+
+    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("Alien", "OBJ//AlienOne.obj");
+    meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Alien1.tga");
+
     Mtx44 projection;
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
-    //scene changer inits.............
-    //scene changer init end.............
+    PuzzleGhost1.setSpawnGhost(24, 31);
+    PuzzleGhost1.setSpawnGhost(30, 31);
+    BossOne.setSpawnBossOne(-30, 55);
 }
 
 static float LSPEED = 10.f;
@@ -312,6 +319,7 @@ void SceneLevelOneB::MouseClickFunction(double dt)
 		{
 			Variables.RotateX = -45.0f;
 			Variables.b_LockSwingDebounce = false;
+            attackCheck();
 		}
 	}
 
@@ -363,7 +371,26 @@ void SceneLevelOneB::Update(double dt)
 	MouseClickFunction(dt);
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
+    EnvironmentAnimation(dt);
+    MobsSpawn();
    
+
+    PuzzleGhost1.checkPlayerPos(dt, 1,1,camera.position.x, camera.position.z);
+    PuzzleGhost2.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);
+
+    if (PuzzleGhost1.Spawn)
+    {
+        PuzzleGhost1.move(dt, 25);
+    }
+
+    if (PuzzleGhost2.Spawn)
+    {
+        PuzzleGhost2.move(dt, 25);
+    }
+    if (BossOne.Spawn)
+    {
+        BossOne.move(dt, 15);
+    }
 }
 
 void SceneLevelOneB::RenderMesh(Mesh*mesh, bool enableLight)
@@ -561,7 +588,11 @@ void SceneLevelOneB::Render()
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
 	}
 
-
+    if (PuzzleGhost1.Spawn)
+    {
+        RenderGhost(PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ);
+    }
+   
 	//modelStack.PushMatrix();
 	//RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
 	//modelStack.PopMatrix();

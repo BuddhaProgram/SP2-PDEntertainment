@@ -2,6 +2,11 @@
 #include "OBJAnimation.h"
 #include "Application.h"
 
+//this include and definition is needed
+#include "Misc.h"
+misc MISC;
+//.................
+
 
 // Rendering of Floor for all Scenes.
 void SceneLevelOneA::RenderFloorCeiling()
@@ -22,7 +27,7 @@ void SceneLevelOneA::RenderFloorCeiling()
 void SceneLevelOneA::RenderSuitCase()
 {
     modelStack.PushMatrix();
-    modelStack.Translate(280, EnvTranslateY, 120);
+    modelStack.Translate(280, 5, 120);
     modelStack.Rotate(EnvRotateY, 0, 1, 0);
     modelStack.Scale(4, 4, 4);
     RenderMesh(meshList[GEO_SUITCASE], true);
@@ -48,7 +53,7 @@ void SceneLevelOneA::RenderScene()
 
     //firstsave
     modelStack.PushMatrix();
-		modelStack.Translate(120, EnvTranslateY, 75);
+		modelStack.Translate(120, 5, 75);
         modelStack.Rotate(EnvRotateY, 0, 1, 0);
 		modelStack.Scale(4, 4, 4);
 		RenderMesh(meshList[GEO_SPAWNPOINT], true);
@@ -328,6 +333,13 @@ void SceneLevelOneA::DropPortrait()
 void SceneLevelOneA::EnvironmentAnimation(double dt)
 {
     EnvRotateY += (float)(20.f * dt);
+}
+void SceneLevelOneA::AttackCheck()
+{
+    //Ghost combat checker
 
-  
+    if (Application::IsKeyPressed(VK_LBUTTON) && MISC.hitting(20.f, Ghost.MobPosX, Ghost.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    {
+        Ghost.TakeDamage(1);//temporary variable is 1
+    }
 }

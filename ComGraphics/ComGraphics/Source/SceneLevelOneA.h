@@ -180,7 +180,6 @@ private:
     bool willDrop = false;
     bool Key1Active = false;
     float EnvRotateY = 0;
-    float EnvTranslateY = 5;
 
 
     unsigned m_vertexArrayID;

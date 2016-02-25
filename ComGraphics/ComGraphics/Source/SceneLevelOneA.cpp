@@ -13,11 +13,6 @@
 #include <sstream>
 #include "GlobalVariables.h"
 
-//this include and definition is needed
-#include "Misc.h"
-misc MISC;
-//.................
-
 SceneLevelOneA::SceneLevelOneA()
 {
 
@@ -178,7 +173,7 @@ void SceneLevelOneA::Init()
     meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
 
 
-    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//AlienOne.obj");
+    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("Alien", "OBJ//AlienOne.obj");
     meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Alien1.tga");
 
 	meshList[GEO_SLIDEDOORTOP] = MeshBuilder::GenerateOBJ("Hand", "OBJ//SlideDoorTop.obj");
@@ -354,15 +349,7 @@ void SceneLevelOneA::MouseClickFunction(double dt)
 	}
 }
 
-void SceneLevelOneA::AttackCheck()
-{
-    //Ghost combat checker
 
-    if (Application::IsKeyPressed(VK_LBUTTON) && MISC.hitting(20.f, Ghost.MobPosX, Ghost.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
-    {
-        Ghost.TakeDamage(1);//temporary variable is 1
-    }
-}
 
 void SceneLevelOneA::UpdateSavePoint()
 {
