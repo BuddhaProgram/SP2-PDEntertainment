@@ -99,7 +99,7 @@ void SceneLevelOneB::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    camera.Init(Vector3(204, 10, 0), Vector3(0, 10, -1), Vector3(0, 1, 0));
+    camera.Init(Vector3(204, 10, 0), Vector3(0, 10, 1), Vector3(0, 1, 0));
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -404,7 +404,9 @@ void SceneLevelOneB::Update(double dt)
     if (BossOne.Spawn)
     {
         BossOne.move(dt, 15);
+        Collision(BossOne.MobPosX - 20, BossOne.MobPosX + 20, BossOne.MobPosZ - 20, BossOne.MobPosZ + 20);
     }
+
 }
 
 void SceneLevelOneB::RenderMesh(Mesh*mesh, bool enableLight)

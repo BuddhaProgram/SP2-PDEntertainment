@@ -77,7 +77,7 @@ void SceneLevelOneA::RenderScene()
     RenderDownWall(-12, -38, -12, 9);//9
     RenderLeftWall(-12, -28, -12, 10);//10
     RenderUpWall(-12, -22, -28, 11);//11
-    RenderRightWall(-28, -35, -22, 12);//12
+    RenderLeftWall(-28, -35, -22, 12);//12
 
     RenderDownWall(21, -22, -35, 13);//13 (centre long wall)
 

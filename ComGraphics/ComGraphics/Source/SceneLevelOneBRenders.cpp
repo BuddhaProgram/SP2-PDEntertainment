@@ -14,9 +14,16 @@ void SceneLevelOneB::RenderFloorCeiling()
     modelStack.PopMatrix();
 
     modelStack.PushMatrix();
-    modelStack.Translate(0, 20, 0);
+    modelStack.Translate(0, 20, -155);
     modelStack.Rotate(180, 1, 0, 0);
-    modelStack.Scale(1000, 1, 1000);
+    modelStack.Scale(1000, 1, 430);
+    RenderMesh(meshList[GEO_FACILITYCEILINGS], true);
+    modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 40, -440);
+    modelStack.Rotate(180, 1, 0, 0);
+    modelStack.Scale(1000, 1, 240);
     RenderMesh(meshList[GEO_FACILITYCEILINGS], true);
     modelStack.PopMatrix();
 }
@@ -57,11 +64,15 @@ void SceneLevelOneB::RenderScene()
     modelStack.Translate(0, -7, 0);
     modelStack.Scale(1, 2.2f, 1);
 
+    modelStack.PushMatrix();
+    modelStack.Translate(0, -7, 0);
+    modelStack.Scale(1, 2.2, 1);
     RenderRightWall(63, 47, -43, 1);//1
     RenderDownWall(-10, -43, 62, 2);//2
     RenderLeftWall(63, 47, -10, 3);//3
     RenderUpWall(-10, -35, 47, 4);//4
     RenderUpWall(-38, -43, 47, 5);//5
+    modelStack.PopMatrix();
 
     RenderRightWall(47, 38, -38, 6); //6
     RenderLeftWall(47, 41, -35, 7); //7
@@ -108,8 +119,14 @@ void SceneLevelOneB::RenderScene()
     //connector betw 1A and 1B
     RenderRightWall(7, -7, 24, 42);//42
     RenderLeftWall(7, -7, 27, 43);//43
-    modelStack.PopMatrix();
 
+    modelStack.PushMatrix();
+    modelStack.Translate(0, 7, 0);
+    RenderUpWall(-35, -38, 47, 44);
+    modelStack.PopMatrix();
+    modelStack.PopMatrix();
+    //Floating wall to cover hole in boss room
+    
     modelStack.PopMatrix();
     //TOP QUAD END
     //-----------------------------------------------------
@@ -240,7 +257,7 @@ void SceneLevelOneB::RenderBoss(float xpos, float zpos)
 
     modelStack.Translate(xpos, 4, zpos);
 	modelStack.Rotate(-rotGhost, 0, 1, 0);
-    modelStack.Scale(6, 6, 6);
+    modelStack.Scale(5, 5, 5);
     RenderMesh(meshList[GEO_BOSS1], false);
 
     if (BossOne.AttackAnimation)
@@ -273,12 +290,16 @@ void SceneLevelOneB::attackCheck()
 
     if (Application::IsKeyPressed(VK_LBUTTON) && Func.hitting(20.f, PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
-        PuzzleGhost1.TakeDamage(1);//temporary variable is 1
+        PuzzleGhost1.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
     }
 
     if (Application::IsKeyPressed(VK_LBUTTON) && Func.hitting(20.f, PuzzleGhost2.MobPosX, PuzzleGhost2.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
-        PuzzleGhost2.TakeDamage(1);//temporary variable is 1
+        PuzzleGhost2.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
+    }
+    if (Application::IsKeyPressed(VK_LBUTTON) && Func.hitting(60.f, BossOne.MobPosX, BossOne.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    {
+        BossOne.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
     }
 }
 

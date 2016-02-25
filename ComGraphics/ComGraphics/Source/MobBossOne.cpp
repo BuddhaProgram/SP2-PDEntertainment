@@ -16,13 +16,13 @@ MobBossOne::MobBossOne()
     //player detection variables
     TargetDetectX = 0;
     TargetDetectZ = 0;
-
     //timer variable
     mobTimeCount = 0;
 
     health = 40;
     AttackDamage = 1;
     kenaWhack = false;
+    AttackAnimation = true;
 }
 
 MobBossOne::~MobBossOne()
@@ -46,7 +46,7 @@ bool MobBossOne::proximitycheck(float smallx, float largex, float smallz, float 
 }
 void MobBossOne::checkAttack(double dt)
 {
-    if (proximitycheck(MobPosX - 5, MobPosX + 5, MobPosZ - 5, MobPosZ + 5) && AttackAnimation)
+    if (proximitycheck(MobPosX - 20, MobPosX + 20, MobPosZ - 20, MobPosZ + 20) && AttackAnimation)
     {
         attack();
     }
@@ -102,10 +102,15 @@ void MobBossOne::setSpawnBossOne(float xpos, float zpos)
 }
 void MobBossOne::TakeDamage(int damage)
 {
+    std::cout << health << std::endl;
     health = health - damage;
 }
 
 void MobBossOne::attack()
 {
     Explorer::instance()->hp -= AttackDamage;
+    if (health <= 0)
+    {
+        Spawn = false;
+    }
 }
