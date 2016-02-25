@@ -28,11 +28,8 @@ void SceneLevelOneB::RenderFloorCeiling()
     modelStack.PopMatrix();
 }
 
-
-
 //void SceneLevelOneB::
 // renders the Starting level
-
 
 void SceneLevelOneB::RenderScene()
 {
@@ -66,7 +63,7 @@ void SceneLevelOneB::RenderScene()
 
     modelStack.PushMatrix();
     modelStack.Translate(0, -7, 0);
-    modelStack.Scale(1, 2.2, 1);
+    modelStack.Scale(1, 2.2f, 1);
     RenderRightWall(63, 47, -43, 1);//1
     RenderDownWall(-10, -43, 62, 2);//2
     RenderLeftWall(63, 47, -10, 3);//3
@@ -273,20 +270,20 @@ void SceneLevelOneB::RenderBoss(float xpos, float zpos)
     modelStack.Translate(xpos, 4, zpos);
 	modelStack.Rotate(rotGhost-90, 0, 1, 0);
     modelStack.Scale(5, 5, 5);
-    RenderMesh(meshList[GEO_BOSS1], false);
+    RenderMesh(meshList[GEO_BOSS1], true);
 
     if (BossOne.AttackAnimation)
     {
         modelStack.PushMatrix();
         modelStack.Translate(0, 4, 0);
         modelStack.Rotate(BossOne.CrystalAnim, 1, 1, 0);
-        RenderMesh(meshList[GEO_CRYSTAL1], false);
+		RenderMesh(meshList[GEO_CRYSTAL1], true);
         modelStack.PopMatrix();
 
         modelStack.PushMatrix();
         modelStack.Translate(0, 4, 0);
         modelStack.Rotate(BossOne.CrystalAnim, -1, 1, 0);
-        RenderMesh(meshList[GEO_CRYSTAL2], false);
+		RenderMesh(meshList[GEO_CRYSTAL2], true);
         modelStack.PopMatrix();
     }
 
@@ -296,9 +293,8 @@ void SceneLevelOneB::RenderBoss(float xpos, float zpos)
 void SceneLevelOneB::EnvironmentAnimation(double dt)
 {
     EnvRotateY += (float)(20.f * dt);
-
-
 }
+
 void SceneLevelOneB::attackCheck()
 {
     //Ghost combat checker

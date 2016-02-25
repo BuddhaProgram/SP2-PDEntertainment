@@ -32,7 +32,7 @@ void SceneOpening::Init()
 	glEnable(GL_DEPTH_TEST);
 
 	//Enable back face culling
-	glDisable(GL_CULL_FACE);
+	glEnable(GL_CULL_FACE);
 
 	//Default to fill mode
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);

@@ -32,7 +32,7 @@ void SceneLevelOneB::Init()
     glEnable(GL_DEPTH_TEST);
 
     //Enable back face culling
-    glDisable(GL_CULL_FACE);
+    glEnable(GL_CULL_FACE);
 
     //Default to fill mode
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
@@ -99,7 +99,7 @@ void SceneLevelOneB::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    camera.Init(Vector3(204, 10, 0), Vector3(0, 10, 1), Vector3(0, 1, 0));
+    camera.Init(Vector3(204, 10, 0), Vector3(204, 10, -1), Vector3(0, 1, 0));
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -191,7 +191,7 @@ void SceneLevelOneB::Init()
     meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
 
     Mtx44 projection;
-    projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
+    projection.SetToPerspective(90.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
     PuzzleGhost1.setSpawnGhost(24, 31);
