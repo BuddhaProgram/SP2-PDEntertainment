@@ -81,8 +81,8 @@ void SceneLevelOneA::Init()
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(90));
-	light[0].cosInner = cos(Math::DegreeToRadian(1));
+	light[0].cosCutoff = cos(Math::DegreeToRadian(30));
+	light[0].cosInner = cos(Math::DegreeToRadian(15));
 	light[0].exponent = 3.f;
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 
@@ -202,7 +202,7 @@ void SceneLevelOneA::Init()
 	meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
 
     Mtx44 projection;
-    projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
+    projection.SetToPerspective(90.f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
     Ghost.setSpawnGhost(-30, -15);
