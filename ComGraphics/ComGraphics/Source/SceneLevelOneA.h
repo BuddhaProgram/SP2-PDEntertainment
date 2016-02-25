@@ -60,8 +60,6 @@ class SceneLevelOneA : public Scene
         GEO_DOORSWITCH,
 		GEO_SLIDEDOORTOP,
 		GEO_SLIDEDOORBTM,
-
-
         //player related
         GEO_HEALTHBAR,
 		GEO_STAMINABAR,

@@ -177,8 +177,8 @@ void SceneLevelOneA::Init()
     meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
 
 
-    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//GhostPlaceholder.obj");
-    meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Ghostplaceholder.tga");
+    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//AlienOne.obj");
+    meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Alien1.tga");
 
 	meshList[GEO_SLIDEDOORTOP] = MeshBuilder::GenerateOBJ("Hand", "OBJ//SlideDoorTop.obj");
 	meshList[GEO_SLIDEDOORTOP]->textureID = LoadTGA("Image//SlidingDoorTop.tga");
@@ -193,6 +193,7 @@ void SceneLevelOneA::Init()
 
 	meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
 	meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
+
     Mtx44 projection;
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
@@ -425,6 +426,10 @@ void SceneLevelOneA::Update(double dt)
 	{
 		anima.CloseSlideDoor2(dt);
 	}
+	if (!Ghost.Spawn && activateDoor2_1)
+	{
+		anima.OpenSlideDoor2(dt);
+	}
 	if (activateDoor3) { anima.OpenSlideDoor3(dt); }
 
 	if (!(proximitycheck(192, 217, 60, 64)))
@@ -436,6 +441,9 @@ void SceneLevelOneA::Update(double dt)
 		anima.Portraits(dt);
 
 	}
+
+	//std::cout << activateDoor2_1 << " " << activateDoor2_2 << " " << Ghost.Spawn << std::endl;
+	std::cout << anima.toSlideDoorTop2 << " " << anima.toSlideDoorBtm2 << std::endl;
 
     //wall collision DO NOT TOUCH
     for (int i = 0; i < 28; i++)
@@ -465,7 +473,7 @@ void SceneLevelOneA::Update(double dt)
         if (Application::IsKeyPressed('E'))
         {
             activateDoor1 = true;
-            Ghost.Spawn = false;
+			displayInteract1 = false;
         }
     }
     else
@@ -704,7 +712,6 @@ void SceneLevelOneA::Render()
 	RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57, 0, false);
 	RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56, 0, false);
 	modelStack.PopMatrix();
-
 }
 
 void SceneLevelOneA::Exit()

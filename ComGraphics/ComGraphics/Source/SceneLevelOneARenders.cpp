@@ -135,6 +135,7 @@ void SceneLevelOneA::checkDoor1()
 			if (Key_1)
 			{
 				activateDoor1 = true;
+				displayInteract1 = false;
 			}
 			else
 			{
@@ -148,7 +149,7 @@ void SceneLevelOneA::checkDoor1()
 	}
 	if (anima.toSlideDoorBtm)
 	{
-		//Collision(150, 200, 180, 200);
+		Collision(140, 210, 180, 200);
 	}
 }
 
@@ -177,13 +178,24 @@ void SceneLevelOneA::checkDoor2()
 		activateDoor2_2 = true;
 		if (activateDoor2_2)
 		{
-			Collision(-208, -176, 225, 235);
+			Collision(-218, -166, 225, 235);
+		}
+		if (Ghost.health <= 0)
+		{
+			activateDoor2_1 = true;
+			activateDoor2_2 = false;
+			if (activateDoor2_1)
+			{
+				anima.toSlideDoorTop2 = true;
+				anima.toSlideDoorBtm2 = true;
+				displayInteract2 = false;
+			}
 		}
 	}
 
 	if (anima.toSlideDoorBtm2)
 	{
-		Collision(-208, -176, 225, 235);
+		Collision(-218, -166, 225, 235);
 	}
 
 	/*if (!proximitycheck(-208, -176, 245, 255))
@@ -226,7 +238,7 @@ void SceneLevelOneA::checkDoor3()
 
 	if (anima.toSlideDoorBtm3)
 	{
-		Collision(192, 217, 60, 64);
+		Collision(182, 227, 60, 64);
 	}
 
 }
@@ -283,6 +295,7 @@ void SceneLevelOneA::RenderGhost(float xpos, float zpos)
 {
     modelStack.PushMatrix();
     modelStack.Translate(xpos, 6, zpos);
+	modelStack.Scale(6, 3, 6);
     RenderMesh(meshList[GEO_GHOST1], true);
     modelStack.PopMatrix();
 }
