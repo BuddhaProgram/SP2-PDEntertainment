@@ -410,31 +410,7 @@ void SceneLevelOneA::Update(double dt)
 	checkDrop();
     EnvironmentAnimation(dt);
 	UpdateSavePoint();
-
-	if (activateDoor1) {anima.OpenSlideDoor1(dt);}
-	if (activateDoor2_1) 
-	{
-		anima.OpenSlideDoor2(dt);
-	}
-	else if (activateDoor2_2)
-	{
-		anima.CloseSlideDoor2(dt);
-	}
-	if (!Ghost.Spawn && activateDoor2_1)
-	{
-		anima.OpenSlideDoor2(dt);
-	}
-	if (activateDoor3) { anima.OpenSlideDoor3(dt); }
-
-	if (!(proximitycheck(192, 217, 60, 64)))
-	{
-			anima.CloseSlideDoor3(dt);
-	}
-	if (willDrop)
-	{
-		anima.Portraits(dt);
-
-	}
+	AnimationCheck(dt);
 
     //wall collision DO NOT TOUCH
     for (int i = 0; i < 28; i++)
@@ -456,22 +432,7 @@ void SceneLevelOneA::Update(double dt)
         Ghost.move(dt, 25);
     }
 
-    if (proximitycheck(-205,-195, 115, 125) && !activateDoor1)
-    {
-        Key1Active = true;
-        if (Application::IsKeyPressed('E'))
-        {
-            Key_1 = true;
-        }
-		if (Key1Active)
-		{
-			displayInteract1 = false;
-		}
-    }
-    else
-    {
-        Key1Active = false;
-    }
+   
     
     //codes for changing to level1B
     if (proximitycheck(192, 216, -8, 8))

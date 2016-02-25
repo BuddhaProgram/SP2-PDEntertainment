@@ -167,6 +167,7 @@ private:
     void AttackCheck();
 	void TestDoorRender(); // Sliding Door
     void EnvironmentAnimation(double dt);
+	void AnimationCheck(double dt);
 
     //objects and mob animation variables
     bool displayInteract1;
