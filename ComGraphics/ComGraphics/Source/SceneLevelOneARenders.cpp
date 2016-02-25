@@ -342,6 +342,4 @@ void SceneLevelOneA::DropPortrait()
 void SceneLevelOneA::EnvironmentAnimation(double dt)
 {
     EnvRotateY += (float)(20.f * dt);
-
-  
 }
