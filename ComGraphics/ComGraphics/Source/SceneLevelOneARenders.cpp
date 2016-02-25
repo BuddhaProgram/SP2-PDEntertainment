@@ -158,6 +158,23 @@ void SceneLevelOneA::checkDoor1()
 	{
 		Collision(140, 210, 180, 200);
 	}
+
+	if (proximitycheck(-205, -195, 115, 125) && !activateDoor1)
+	{
+		Key1Active = true;
+		if (Application::IsKeyPressed('E'))
+		{
+			Key_1 = true;
+		}
+		if (Key1Active)
+		{
+			displayInteract1 = false;
+		}
+	}
+	else
+	{
+		Key1Active = false;
+	}
 }
 
 void SceneLevelOneA::checkDoor2()
@@ -363,4 +380,32 @@ void SceneLevelOneA::AttackCheck()
     {
         Ghost.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
     }
+}
+
+void SceneLevelOneA::AnimationCheck(double dt)
+{
+	if (activateDoor1) { anima.OpenSlideDoor1(dt); }
+	if (activateDoor2_1)
+	{
+		anima.OpenSlideDoor2(dt);
+	}
+	else if (activateDoor2_2)
+	{
+		anima.CloseSlideDoor2(dt);
+	}
+	if (!Ghost.Spawn && activateDoor2_1)
+	{
+		anima.OpenSlideDoor2(dt);
+	}
+	if (activateDoor3) { anima.OpenSlideDoor3(dt); }
+
+	if (!(proximitycheck(192, 217, 60, 64)))
+	{
+		anima.CloseSlideDoor3(dt);
+	}
+	if (willDrop)
+	{
+		anima.Portraits(dt);
+
+	}
 }

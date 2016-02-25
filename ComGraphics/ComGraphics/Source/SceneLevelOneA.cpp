@@ -142,6 +142,12 @@ void SceneLevelOneA::Init()
 	meshList[GEO_BATICON] = MeshBuilder::GenerateQuad("BatIcon", Color(1, 1, 1));
 	meshList[GEO_BATICON]->textureID = LoadTGA("Image//BaseballBat.tga");
 
+	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("Sword", "OBJ//Sword.obj");
+	meshList[GEO_SWORD]->textureID = LoadTGA("Image//Sword.tga");
+
+	meshList[GEO_SWORDICON] = MeshBuilder::GenerateQuad("SwordIcon", Color(1, 1, 1));
+	meshList[GEO_SWORDICON]->textureID = LoadTGA("Image//SwordIcon.tga");
+
     meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
     meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
@@ -235,16 +241,13 @@ bool SceneLevelOneA::proximitycheck(float smallx, float largex, float smallz, fl
 void SceneLevelOneA::ToolsUI()
 {
 	if (Application::IsKeyPressed('Z'))
-	{
 		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
-		//Weapon.InsertItemStatSlot(ToolUI::Pickaxe);
-	}
 
 	if (Application::IsKeyPressed('X'))
-	{
 		Explorer::instance()->InsertToolSlot(ToolUI::BaseballBat);
-		//Weapon.InsertItemStatSlot(ToolUI::BaseballBat);
-	}
+
+	if (Application::IsKeyPressed('C'))
+		Explorer::instance()->InsertToolSlot(ToolUI::Sword);
 }
 
 void SceneLevelOneA::ToolSelectionMouseScroll()
@@ -262,6 +265,13 @@ void SceneLevelOneA::ToolSelectionMouseScroll()
 		RenderModelOnScreen(meshList[GEO_BAT], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
 		modelStack.PopMatrix();
 	}
+
+	else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Sword)
+	{
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_SWORD], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
+		modelStack.PopMatrix();
+	}
 }
 
 void SceneLevelOneA::RenderToolIcon()
@@ -276,14 +286,39 @@ void SceneLevelOneA::RenderToolIcon()
 		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
 	}
 
+	else if (Explorer::instance()->GetToolType(1) == ToolUI::Sword)
+	{
+		RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
+	}
+
 	if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
 	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 10.0f, 0.775f, 1.0f, false);
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
 	}
 
 	else if (Explorer::instance()->GetToolType(2) == ToolUI::BaseballBat)
 	{
-		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 10.0f, 0.775f, 1.0f, false);
+		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
+	}
+
+	else if (Explorer::instance()->GetToolType(2) == ToolUI::Sword)
+	{
+		RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
+	}
+
+	if (Explorer::instance()->GetToolType(3) == ToolUI::Pickaxe)
+	{
+		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.7f, 0.775f, 1.0f, false);
+	}
+
+	else if (Explorer::instance()->GetToolType(3) == ToolUI::BaseballBat)
+	{
+		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+	}
+
+	else if (Explorer::instance()->GetToolType(3) == ToolUI::Sword)
+	{
+		RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
 	}
 }
 
@@ -410,31 +445,7 @@ void SceneLevelOneA::Update(double dt)
 	checkDrop();
     EnvironmentAnimation(dt);
 	UpdateSavePoint();
-
-	if (activateDoor1) {anima.OpenSlideDoor1(dt);}
-	if (activateDoor2_1) 
-	{
-		anima.OpenSlideDoor2(dt);
-	}
-	else if (activateDoor2_2)
-	{
-		anima.CloseSlideDoor2(dt);
-	}
-	if (!Ghost.Spawn && activateDoor2_1)
-	{
-		anima.OpenSlideDoor2(dt);
-	}
-	if (activateDoor3) { anima.OpenSlideDoor3(dt); }
-
-	if (!(proximitycheck(192, 217, 60, 64)))
-	{
-			anima.CloseSlideDoor3(dt);
-	}
-	if (willDrop)
-	{
-		anima.Portraits(dt);
-
-	}
+	AnimationCheck(dt);
 
     //wall collision DO NOT TOUCH
     for (int i = 0; i < 28; i++)
@@ -457,22 +468,7 @@ void SceneLevelOneA::Update(double dt)
         Collision(Ghost.MobPosX - 4, Ghost.MobPosX + 4, Ghost.MobPosZ - 4, Ghost.MobPosZ + 4);
     }
 
-    if (proximitycheck(-205,-195, 115, 125) && !activateDoor1)
-    {
-        Key1Active = true;
-        if (Application::IsKeyPressed('E'))
-        {
-            Key_1 = true;
-        }
-		if (Key1Active)
-		{
-			displayInteract1 = false;
-		}
-    }
-    else
-    {
-        Key1Active = false;
-    }
+   
     
     //codes for changing to level1B
     if (proximitycheck(192, 216, -8, 8))

@@ -50,11 +50,14 @@ class SceneLevelOneA : public Scene
 		GEO_TOOLUITHREE,
 		GEO_TOOLUIFOUR,
 
-        GEO_PICKAXE,
-        GEO_PICKAXEICON,
+		GEO_PICKAXE,
+		GEO_PICKAXEICON,
 
 		GEO_BAT,
 		GEO_BATICON,
+
+		GEO_SWORD,
+		GEO_SWORDICON,
 
         GEO_GHOST1,
 		GEO_BOSS1,
@@ -167,6 +170,7 @@ private:
     void AttackCheck();
 	void TestDoorRender(); // Sliding Door
     void EnvironmentAnimation(double dt);
+	void AnimationCheck(double dt);
 
     //objects and mob animation variables
     bool displayInteract1;

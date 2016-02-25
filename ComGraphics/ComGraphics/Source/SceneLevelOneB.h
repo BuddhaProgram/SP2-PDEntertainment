@@ -54,6 +54,9 @@ class SceneLevelOneB : public Scene
 		GEO_BAT,
 		GEO_BATICON,
 
+		GEO_SWORD,
+		GEO_SWORDICON,
+
         GEO_GHOST1,
         GEO_BOSS1,
         GEO_CRYSTAL1,

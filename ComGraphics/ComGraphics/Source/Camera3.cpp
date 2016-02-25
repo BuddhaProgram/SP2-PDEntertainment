@@ -133,12 +133,12 @@ void Camera3::Update(double dt)
 		}
 		if (regenDelay <= 0)
 		{
-			Explorer::instance()->stamina += 10 * (float)dt;
+			Explorer::instance()->stamina += 15 * (float)dt;
 		}
 	}
 	else
 	{
-		Explorer::instance()->stamina += 10 * (float)dt;
+		Explorer::instance()->stamina += 15 * (float)dt;
 		regenDelay = 6.f;
 	}
 	if (Explorer::instance()->stamina > 100)

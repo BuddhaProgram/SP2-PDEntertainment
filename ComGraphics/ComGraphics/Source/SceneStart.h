@@ -59,9 +59,13 @@ class SceneStart : public Scene
 		GEO_TOOLUIFOUR,
 
 		GEO_PICKAXE,
-		GEO_BAT,
 		GEO_PICKAXEICON,
+
+		GEO_BAT,
 		GEO_BATICON,
+
+		GEO_SWORD,
+		GEO_SWORDICON,
 
 		GEO_GHOST1,
 		
