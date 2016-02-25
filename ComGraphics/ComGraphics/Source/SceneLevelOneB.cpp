@@ -174,6 +174,13 @@ void SceneLevelOneB::Init()
     meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("Alien", "OBJ//AlienOne.obj");
     meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Alien1.tga");
 
+    meshList[GEO_BOSS1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//Boss1.obj");
+    meshList[GEO_BOSS1]->textureID = LoadTGA("Image//Boss1.tga");
+    meshList[GEO_CRYSTAL1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//Crystal1.obj");
+    meshList[GEO_CRYSTAL1]->textureID = LoadTGA("Image//Crystal.tga");
+    meshList[GEO_CRYSTAL2] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//Crystal2.obj");
+    meshList[GEO_CRYSTAL2]->textureID = LoadTGA("Image//Crystal.tga");
+
     Mtx44 projection;
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
@@ -377,6 +384,7 @@ void SceneLevelOneB::Update(double dt)
 
     PuzzleGhost1.checkPlayerPos(dt, 1,1,camera.position.x, camera.position.z);
     PuzzleGhost2.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);
+    BossOne.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);
 
     if (PuzzleGhost1.Spawn)
     {
@@ -592,7 +600,11 @@ void SceneLevelOneB::Render()
     {
         RenderGhost(PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ);
     }
-   
+    
+    if (BossOne.Spawn)
+    {
+        RenderBoss(BossOne.MobPosX, BossOne.MobPosZ);
+    }
 	//modelStack.PushMatrix();
 	//RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
 	//modelStack.PopMatrix();

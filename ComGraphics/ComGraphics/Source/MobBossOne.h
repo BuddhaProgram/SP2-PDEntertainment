@@ -15,10 +15,15 @@ public:
     void attack();
     void knockback();
     void TakeDamage(int damage);
+    void checkAttack(double dt);
+    bool proximitycheck(float smallx, float largex, float smallz, float largez);
+    bool AttackAnimation;
+    float CrystalAnim;
 
 private:
     bool kenaWhack;
-    bool AttackAnimation;
+    
+    int animtimer;
 
 
 

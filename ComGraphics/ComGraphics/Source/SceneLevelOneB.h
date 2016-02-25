@@ -55,6 +55,9 @@ class SceneLevelOneB : public Scene
 		GEO_BATICON,
 
         GEO_GHOST1,
+        GEO_BOSS1,
+        GEO_CRYSTAL1,
+        GEO_CRYSTAL2,
         GEO_SPAWNPOINT,
         GEO_SUITCASE,
 
@@ -121,6 +124,7 @@ private:
 
     //mob renders
     void RenderGhost(float xpos, float zpos);
+    void RenderBoss(float xpos, float zpos);
 	void RenderDoor();
 
     //render functions 

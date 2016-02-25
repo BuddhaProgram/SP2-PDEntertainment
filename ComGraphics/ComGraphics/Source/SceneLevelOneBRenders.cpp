@@ -50,6 +50,10 @@ void SceneLevelOneB::RenderScene()
     //------------------------------------------------------------------------
     //top quads
     modelStack.PushMatrix();
+    modelStack.Translate(0, -3, 0);
+    modelStack.Scale(1, 1.2, 1);
+
+    modelStack.PushMatrix();
     modelStack.Translate(0, -7, 0);
     modelStack.Scale(1, 2.2f, 1);
 
@@ -104,6 +108,8 @@ void SceneLevelOneB::RenderScene()
     //connector betw 1A and 1B
     RenderRightWall(7, -7, 24, 42);//42
     RenderLeftWall(7, -7, 27, 43);//43
+    modelStack.PopMatrix();
+
     modelStack.PopMatrix();
     //TOP QUAD END
     //-----------------------------------------------------
@@ -209,6 +215,32 @@ void SceneLevelOneB::RenderGhost(float xpos, float zpos)
     modelStack.PopMatrix();
 }
 
+void SceneLevelOneB::RenderBoss(float xpos, float zpos)
+{
+    modelStack.PushMatrix();//boss start
+
+    modelStack.Translate(xpos, 4, zpos);
+    modelStack.Scale(6, 6, 6);
+    RenderMesh(meshList[GEO_BOSS1], false);
+
+    if (BossOne.AttackAnimation)
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(0, 4, 0);
+        modelStack.Rotate(BossOne.CrystalAnim, 1, 1, 0);
+        RenderMesh(meshList[GEO_CRYSTAL1], false);
+        modelStack.PopMatrix();
+
+        modelStack.PushMatrix();
+        modelStack.Translate(0, 4, 0);
+        modelStack.Rotate(BossOne.CrystalAnim, -1, 1, 0);
+        RenderMesh(meshList[GEO_CRYSTAL2], false);
+        modelStack.PopMatrix();
+    }
+
+    modelStack.PopMatrix();//boss end
+}
+
 void SceneLevelOneB::EnvironmentAnimation(double dt)
 {
     EnvRotateY += (float)(20.f * dt);
@@ -238,7 +270,7 @@ void SceneLevelOneB::MobsSpawn()
         PuzzleGhost1.Spawn = true;
         PuzzleGhost2.Spawn = true;
     }
-    if (proximitycheck(-304, -280, 384, 392))
+    if (proximitycheck(-304, -280, -384, -392))
     {
         BossOne.Spawn = true;
     }

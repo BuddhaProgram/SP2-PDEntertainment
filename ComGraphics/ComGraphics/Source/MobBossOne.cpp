@@ -21,7 +21,7 @@ MobBossOne::MobBossOne()
     mobTimeCount = 0;
 
     health = 10;
-    AttackDamage = 2;
+    AttackDamage = 1;
     kenaWhack = false;
 }
 
@@ -34,11 +34,47 @@ void MobBossOne::knockback()
 {
     kenaWhack = true;
 }
+bool MobBossOne::proximitycheck(float smallx, float largex, float smallz, float largez)
+{
+    //this function checks if the camera is close to a side of the object
+    bool result = false;
+    if ((TargetDetectX >= smallx - 2.f) && (TargetDetectX <= smallx) && (TargetDetectZ >= smallz) && (TargetDetectZ <= largez)){ result = true; }
+    if ((TargetDetectX <= largex + 2.f) && (TargetDetectX >= largex) && (TargetDetectZ >= smallz) && (TargetDetectZ <= largez)){ result = true; }
+    if ((TargetDetectX >= smallx) && (TargetDetectX <= largex) && (TargetDetectZ >= smallz - 2.f) && (TargetDetectZ <= smallz)){ result = true; }
+    if ((TargetDetectX >= smallx) && (TargetDetectX <= largex) && (TargetDetectZ <= largez + 2.f) && (TargetDetectZ >= largez)){ result = true; }
+    return result;
+}
+void MobBossOne::checkAttack(double dt)
+{
+    if (proximitycheck(MobPosX - 5, MobPosX + 5, MobPosZ - 5, MobPosZ + 5) && AttackAnimation)
+    {
+        attack();
+    }
+
+    if (AttackAnimation)
+    {
+        animtimer += ((float)(dt)* 1);
+        if (animtimer >= 8)
+        {
+            AttackAnimation = false;
+            animtimer = 0;
+        }
+    }
+
+    if (!AttackAnimation)
+    {
+        animtimer += ((float)(dt)* 1);
+        if (animtimer >= 3)
+        {
+            AttackAnimation = true;
+            animtimer = 0;
+        }
+    }
+}
 
 void MobBossOne::move(double dt, int movespeed = 10)
 {
-    if (!AttackAnimation)
-    {
+   
         //note: target detect x and y is player position, its function is in scene cpp file
         Vector3 start = Vector3(MobPosX, MobPosY, MobPosZ);
         Vector3 end = Vector3(TargetDetectX, 15, TargetDetectZ);
@@ -53,11 +89,10 @@ void MobBossOne::move(double dt, int movespeed = 10)
         MobPosX = mob.x;
         MobPosZ = mob.z;
 
-      if (Functions.WithinArea(MobPosX - 10, MobPosX + 10, MobPosZ - 10, MobPosZ + 10))
-        {
-            AttackAnimation = true;
-        }
-    }
+        checkAttack(dt);
+
+        CrystalAnim += 200 * (float)(dt);
+    
 }
 
 void MobBossOne::setSpawnBossOne(float xpos, float zpos)

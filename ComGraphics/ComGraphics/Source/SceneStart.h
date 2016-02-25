@@ -64,10 +64,9 @@ class SceneStart : public Scene
 		GEO_BATICON,
 
 		GEO_GHOST1,
-		GEO_BOSS1,
+		
 
-		GEO_CRYSTAL1,
-		GEO_CRYSTAL2,
+		
 
         //player related
         GEO_HEALTH,
