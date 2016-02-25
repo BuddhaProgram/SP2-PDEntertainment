@@ -11,6 +11,7 @@ class ToolUI
 		{
 			Pickaxe,
 			BaseballBat,
+			Sword,
 			Empty,
 			Max_ToolType,
 		};
