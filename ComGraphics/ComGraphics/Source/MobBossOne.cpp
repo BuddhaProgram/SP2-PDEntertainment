@@ -53,7 +53,7 @@ void MobBossOne::checkAttack(double dt)
 
     if (AttackAnimation)
     {
-        animtimer += ((float)(dt)* 1);
+        animtimer += ((float)(dt));
         if (animtimer >= 8)
         {
             AttackAnimation = false;
@@ -63,7 +63,7 @@ void MobBossOne::checkAttack(double dt)
 
     if (!AttackAnimation)
     {
-        animtimer += ((float)(dt)* 1);
+        animtimer += ((float)(dt));
         if (animtimer >= 3)
         {
             AttackAnimation = true;

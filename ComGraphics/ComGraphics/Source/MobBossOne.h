@@ -23,7 +23,7 @@ public:
 private:
     bool kenaWhack;
     
-    int animtimer;
+    float animtimer;
 
 
 
