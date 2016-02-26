@@ -17,6 +17,7 @@
     <ClCompile Include="source\MapRender.cpp" />
     <ClCompile Include="source\MobBossOne.cpp" />
     <ClCompile Include="source\MobGhost.cpp" />
+    <ClCompile Include="Source\Music.cpp" />
     <ClCompile Include="source\SceneLevelOneARenders.cpp" />
     <ClCompile Include="source\SceneEndRenders.cpp" />
     <ClCompile Include="source\SceneLevelOneA.cpp" />
@@ -47,8 +48,10 @@
     <ClCompile Include="Source\Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="irrKlang\include\irrKlang.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\GlobalVariables.h" />
+    <ClInclude Include="Source\Music.h" />
     <ClInclude Include="Source\SceneOpening.h" />
     <ClInclude Include="source\SceneLevelTwo.h" />
     <ClInclude Include="source\MobBossOne.h" />
@@ -132,13 +135,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Common\Source;$(SolutionDir)\glfw\include;$(SolutionDir)\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\irrKlang\include;$(SolutionDir)\Common\Source;$(SolutionDir)\glfw\include;$(SolutionDir)\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)\glfw\lib-msvc120;$(SolutionDir)\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;glfw3.lib;opengl32.lib;winmm.lib;Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)\glfw\lib-msvc120;$(SolutionDir)\glew\lib;$(SolutionDir)\irrKlang;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glfw3.lib;opengl32.lib;winmm.lib;Common.lib;irrKlang.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

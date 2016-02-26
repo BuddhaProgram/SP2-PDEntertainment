@@ -1,5 +1,6 @@
 #include "Application.h"
 
+
 //Include the standard C++ headers
 #include <stdio.h>
 #include <stdlib.h>
@@ -47,7 +48,7 @@ Application::Application()
 Application::~Application()
 {
 }
-
+Music* Application::musics;
 Scene* Application::scene;
 Scene* Application::Opening;
 Scene* Application::Start;
@@ -84,9 +85,9 @@ void Application::Init()
 
 
 	//Create a window and create its OpenGL context
-	m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
+	//m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
 	//m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", NULL, NULL);
-	//m_window = glfwCreateWindow(800, 600, "Computer Graphics", NULL, NULL);
+	m_window = glfwCreateWindow(800, 600, "Computer Graphics", NULL, NULL);
 	glfwSetScrollCallback(m_window, scroll_callback);
 
 	//If the window couldn't be created
@@ -122,6 +123,10 @@ void Application::Init()
 
 void Application::Run()
 {
+	musics = new Music();
+	musics->init();
+	musics->OpeningMusic();
+
 	Opening = new SceneOpening();
 	Opening->Init();
 	Start = new SceneStart();
@@ -160,6 +165,7 @@ void Application::Run()
 
 	} //Check if the ESC key had been pressed or if the window had been closed
 	scene->Exit();
+	delete musics;
 	delete Opening;
 	delete Start;
 	delete End;
