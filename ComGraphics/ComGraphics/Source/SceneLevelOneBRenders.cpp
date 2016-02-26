@@ -298,7 +298,6 @@ void SceneLevelOneB::RenderGhost(float xpos, float zpos)
     modelStack.PushMatrix();
     modelStack.Translate(xpos, 6, zpos);
 	modelStack.Rotate(rotGhost+270, 0, 1, 0);
-    modelStack.Scale(4, 4, 4);
     RenderMesh(meshList[GEO_GHOST1], true);
     modelStack.PopMatrix();
 }
@@ -348,32 +347,35 @@ void SceneLevelOneB::EnvironmentAnimation(double dt)
 void SceneLevelOneB::attackCheck()
 {
     //Ghost combat checker
+
+    if (Application::IsKeyPressed(VK_LBUTTON) && Func.hitting(20.f, PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    {
+        PuzzleGhost1.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
+    }
+
+    if (Application::IsKeyPressed(VK_LBUTTON) && Func.hitting(20.f, PuzzleGhost2.MobPosX, PuzzleGhost2.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    {
+        PuzzleGhost2.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
+    }
     if (Application::IsKeyPressed(VK_LBUTTON) && Func.hitting(60.f, BossOne.MobPosX, BossOne.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
         BossOne.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
-    }
-
-    if (Application::IsKeyPressed(VK_LBUTTON) && Func.hitting(60.f, Ghost1.MobPosX, Ghost1.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
-    {
-        Ghost1.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
     }
 }
 
 void SceneLevelOneB::MobsSpawn()
 {
-   
-    if (proximitycheck(-304, -280, -376, -384) && BossOne.health>0)
+    if (proximitycheck(216, 240, -256, -248) && PuzzleGhost1.health >0)
+    {
+        std::cout << "ghost" << std::endl;
+        PuzzleGhost1.Spawn = true;
+    }
+    if (proximitycheck(-304, -280, -392, -384) && BossOne.health>0)
     {
         std::cout << "boss" << std::endl;
         BossOne.Spawn = true;
     }
 
-    if (proximitycheck(216, 240, -248, -256) && Ghost1.health>0)
-    {
-        std::cout << "alien" << std::endl;
-        Ghost1.Spawn = true;
-    }
-        
 }
 
 void SceneLevelOneB::RenderPuzzle()
@@ -404,27 +406,10 @@ void SceneLevelOneB::RenderPuzzle()
     modelStack.PopMatrix();
 
     //buttons
-    if (!Switches.b_PuzzleOne[0])
-    {
-        modelStack.PushMatrix();
-        modelStack.Translate(320, 15, -168);
-        modelStack.Scale(2, 2, 2);
-        RenderMesh(meshList[GEO_LIGHTRED], true);
-        modelStack.PopMatrix();
-    }
-    else if (Switches.b_PuzzleOne[0])
-    {
-        modelStack.PushMatrix();
-        modelStack.Translate(320, 15, -168);
-        modelStack.Scale(2, 2, 2);
-        RenderMesh(meshList[GEO_LIGHTGREEN], true);
-        modelStack.PopMatrix();
-    }
-
     if (!Switches.b_PuzzleOne[1])
     {
         modelStack.PushMatrix();
-        modelStack.Translate(320, 15, -144);
+        modelStack.Translate(320, 15, -168);
         modelStack.Scale(2, 2, 2);
         RenderMesh(meshList[GEO_LIGHTRED], true);
         modelStack.PopMatrix();
@@ -432,7 +417,7 @@ void SceneLevelOneB::RenderPuzzle()
     else if (Switches.b_PuzzleOne[1])
     {
         modelStack.PushMatrix();
-        modelStack.Translate(320, 15, -144);
+        modelStack.Translate(320, 15, -168);
         modelStack.Scale(2, 2, 2);
         RenderMesh(meshList[GEO_LIGHTGREEN], true);
         modelStack.PopMatrix();
@@ -441,12 +426,29 @@ void SceneLevelOneB::RenderPuzzle()
     if (!Switches.b_PuzzleOne[2])
     {
         modelStack.PushMatrix();
-        modelStack.Translate(320, 15, -120);
+        modelStack.Translate(320, 15, -144);
         modelStack.Scale(2, 2, 2);
         RenderMesh(meshList[GEO_LIGHTRED], true);
         modelStack.PopMatrix();
     }
     else if (Switches.b_PuzzleOne[2])
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(320, 15, -144);
+        modelStack.Scale(2, 2, 2);
+        RenderMesh(meshList[GEO_LIGHTGREEN], true);
+        modelStack.PopMatrix();
+    }
+
+    if (!Switches.b_PuzzleOne[3])
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(320, 15, -120);
+        modelStack.Scale(2, 2, 2);
+        RenderMesh(meshList[GEO_LIGHTRED], true);
+        modelStack.PopMatrix();
+    }
+    else if (Switches.b_PuzzleOne[3])
     {
         modelStack.PushMatrix();
         modelStack.Translate(320, 15, -120);
@@ -466,78 +468,50 @@ void SceneLevelOneB::checkPlayerPosMisc()
 //puzzle function definitions
 void SceneLevelOneB::PuzzleOneSwitchCheck(double dt)
 {
-    Variables.f_SwitchDebounce += (float)dt;
-    if (Func.WithinArea(295, 320, -176, -160))
+    f_SwitchDebounce += (float)dt;
+    if (Application::IsKeyPressed('E') && f_SwitchDebounce > 0.5f && Func.WithinArea(312, 320, -160, -176))
     {
-        if (Application::IsKeyPressed('E') && Variables.f_SwitchDebounce > 0.5f)
-        {
-            if (Switches.b_PuzzleOne[0] == false)
-            {
-                Switches.b_PuzzleOne[0] = true;
-            }
+        if (Switches.b_PuzzleOne[0] == false)
+            Switches.b_PuzzleOne[0] = true;
 
-            else
-            {
-                Switches.b_PuzzleOne[0] = false;
-            }
+        else
+            Switches.b_PuzzleOne[0] = false;
 
-            if (Switches.b_PuzzleOne[1] == false)
-            {
-                Switches.b_PuzzleOne[1] = true;
-            }
+        if (Switches.b_PuzzleOne[1] == false)
+            Switches.b_PuzzleOne[1] = true;
 
-            else
-            {
-                Switches.b_PuzzleOne[1] = false;
-            }
+        else
+            Switches.b_PuzzleOne[1] = false;
 
-            Variables.f_SwitchDebounce = 0.0f;
-        }
-
-    }
-    if (Func.WithinArea(295, 320, -152, -136))
-    {
-        if (Application::IsKeyPressed('E') && Variables.f_SwitchDebounce > 0.5f)
-        {
-            if (Switches.b_PuzzleOne[0] == false)
-            {
-                Switches.b_PuzzleOne[0] = true;
-            }
-
-            else
-            {
-                Switches.b_PuzzleOne[0] = false;
-            }
-
-            Variables.f_SwitchDebounce = 0.0f;
-        }
+        f_SwitchDebounce = 0.0f;
     }
 
-    if (Func.WithinArea(295, 320, -128, -112))
+    if (Application::IsKeyPressed('E') && f_SwitchDebounce > 0.5f && Func.WithinArea(312, 320, -136, -152))
     {
-        if (Application::IsKeyPressed('E') && Variables.f_SwitchDebounce > 0.5f)
-        {
-            if (Switches.b_PuzzleOne[0] == false)
-            {
-                Switches.b_PuzzleOne[0] = true;
-            }
-            else
-            {
-                Switches.b_PuzzleOne[0] = false;
-            }
+        if (Switches.b_PuzzleOne[0] == false)
+            Switches.b_PuzzleOne[0] = true;
 
-            if (Switches.b_PuzzleOne[2] == false)
-            {
-                Switches.b_PuzzleOne[2] = true;
-            }
+        else
+            Switches.b_PuzzleOne[0] = false;
 
-            else
-            {
-                Switches.b_PuzzleOne[2] = false;
-            }
+        f_SwitchDebounce = 0.0f;
+    }
 
-            Variables.f_SwitchDebounce = 0.0f;
-        }
+    if (Application::IsKeyPressed('E') && f_SwitchDebounce > 0.5f && Func.WithinArea(312, 320, -112, -128))
+    {
+        if (Switches.b_PuzzleOne[0] == false)
+            Switches.b_PuzzleOne[0] = true;
+
+        else
+            Switches.b_PuzzleOne[0] = false;
+
+        if (Switches.b_PuzzleOne[2] == false)
+            Switches.b_PuzzleOne[2] = true;
+
+        else
+            Switches.b_PuzzleOne[2] = false;
+
+        f_SwitchDebounce = 0.0f;
     }
 }
 void SceneLevelOneB::PuzzleInteracts(double dt)
@@ -556,63 +530,135 @@ void SceneLevelOneB::PuzzleInteracts(double dt)
         switch1Detect = false;
     }
 
-  
-
-    
-    if (Switches.b_PuzzleOne[0])
+    //switch one
+    if (Func.WithinArea(295, 320, -176, -160))
     {
-        if (SwitchRotate1 < 90)
+        if (Application::IsKeyPressed('E') && !Switches.b_PuzzleOne[1] && !SwitchAnimate1)
         {
-            SwitchRotate1 += 120 * (float)(dt);
+            Switches.b_PuzzleOne[1] = true;
+            SwitchAnimate1 = true;
+        }
+        if (Application::IsKeyPressed('E') && Switches.b_PuzzleOne[1] && !SwitchAnimate1)
+        {
+            Switches.b_PuzzleOne[1] = false;
+            SwitchAnimate1 = true;
+        }
+    }
+    
+    //switch two
+    if (Func.WithinArea(295, 320, -152, -136))
+    {
+
+        if (Application::IsKeyPressed('E') && !Switches.b_PuzzleOne[2] && !SwitchAnimate2)
+        {
+            Switches.b_PuzzleOne[2] = true;
+            SwitchAnimate2 = true;
+        }
+        if (Application::IsKeyPressed('E') && Switches.b_PuzzleOne[2] && !SwitchAnimate2)
+        {
+            Switches.b_PuzzleOne[2] = false;
+            SwitchAnimate2 = true;
         }
 
     }
-        if (!Switches.b_PuzzleOne[0])
-        {           
+
+    //switch three
+    if (Func.WithinArea(295, 320, -128, -112))
+    {
+        if (Application::IsKeyPressed('E') && !Switches.b_PuzzleOne[3] && !SwitchAnimate3)
+        {                        
+                Switches.b_PuzzleOne[3] = true;
+                SwitchAnimate3 = true;
+        }
+        if (Application::IsKeyPressed('E') && Switches.b_PuzzleOne[3] && !SwitchAnimate3)
+        {
+            Switches.b_PuzzleOne[3] = false;
+            SwitchAnimate3 = true;
+        }
+    }
+
+    if (SwitchAnimate1)
+    {
+        if (Switches.b_PuzzleOne[1])
+        {
+            if (SwitchRotate1 < 90)
+            {
+                SwitchRotate1 += 120 * (float)(dt);
+            }
+            if (SwitchRotate1 >= 90)
+            {
+                SwitchAnimate1 = false;
+            }
+        }
+        if (!Switches.b_PuzzleOne[1])
+        {
             if (SwitchRotate1 > 0)
             {
                 SwitchRotate1 -= 120 * (float)(dt);
             }
-           
+            if (SwitchRotate1 <= 0)
+            {
+                SwitchAnimate1 = false;
+            }
         }
+
 
     
   
         if (Switches.b_PuzzleOne[1])
+
+    }
+    if (SwitchAnimate2)
+    {
+        if (Switches.b_PuzzleOne[2])
         {
             if (SwitchRotate2 < 90)
             {
                 SwitchRotate2 += 120 * (float)(dt);
             }
+            if (SwitchRotate2 >= 90)
+            {
+                SwitchAnimate2 = false;
+            }
         }
-
-        if (!Switches.b_PuzzleOne[1])
+        if (!Switches.b_PuzzleOne[2])
         {
             if (SwitchRotate2 > 0)
             {
                 SwitchRotate2 -= 120 * (float)(dt);
             }
+            if (SwitchRotate2 <= 0)
+            {
+                SwitchAnimate2 = false;
+            }
         }
-    
-
-   
-        if (Switches.b_PuzzleOne[2])
+    }
+    if (SwitchAnimate3)
+    {
+        if (Switches.b_PuzzleOne[3])
         {
             if (SwitchRotate3 < 90)
             {
                 SwitchRotate3 += 120 * (float)(dt);
             }
+            if (SwitchRotate3 >= 90)
+            {
+                SwitchAnimate3 = false;
+            }
         }
-
-        if (!Switches.b_PuzzleOne[2])
+        if (!Switches.b_PuzzleOne[3])
         {
             if (SwitchRotate3 > 0)
             {
                 SwitchRotate3 -= 120 * (float)(dt);
             }
+            if (SwitchRotate3 <= 0)
+            {
+                SwitchAnimate3 = false;
+            }
         }
-        
-    
+
+
 }
 
 void SceneLevelOneB::AnimationCheck(double dt)
@@ -638,6 +684,9 @@ void SceneLevelOneB::AnimationCheck(double dt)
     if (!BossOne.Spawn && activateDoor3_1)
     {
         anima.OpenSlideDoor_Boss(dt);
+    }
+
+
     }
 
 }

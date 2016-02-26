@@ -50,7 +50,5 @@ bool misc::WithinArea(float smallx, float largex, float smallz, float largez)
 	{
 		return true;
 	}
-
-    else
-	    return false;
+	return false;
 }

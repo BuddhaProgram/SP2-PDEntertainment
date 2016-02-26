@@ -148,8 +148,8 @@ private:
 	bool proximitycheck(float smallx, float largex, float smallz, float largez);
 
 	// Switches Functions for puzzles
-	//void PuzzleOneSwitchCheck(double dt);
-	
+	void PuzzleOneSwitchCheck(double dt);
+	float f_SwitchDebounce;
 
 	// Tool UI functions
 	void ToolsUI();

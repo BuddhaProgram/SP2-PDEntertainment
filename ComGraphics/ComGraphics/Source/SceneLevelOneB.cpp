@@ -204,10 +204,9 @@ void SceneLevelOneB::Init()
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
-    BossOne.setSpawnBossOne(-30, -55);
-    Ghost1.setSpawnGhost(23, 33);
-
-    f_SwitchDebounce = 0.0f;
+    PuzzleGhost1.setSpawnGhost(24, 31);
+    PuzzleGhost1.setSpawnGhost(30, 31);
+    BossOne.setSpawnBossOne(-30, 55);
 }
 
 static float LSPEED = 10.f;
@@ -440,25 +439,25 @@ void SceneLevelOneB::Update(double dt)
 	PuzzleOneSwitchCheck(dt);
     EnvironmentAnimation(dt);
     MobsSpawn();
-    PuzzleOneSwitchCheck(dt);
-    Switches.SwitchPuzzleOne();
+   
 
-    std::cout << Switches.b_PuzzleOne[0] << " " << Switches.b_PuzzleOne[1] << " " << Switches.b_PuzzleOne[2] << " " << Switches.SwitchPuzzleOne() << std::endl;
-
+    PuzzleGhost1.checkPlayerPos(dt, 1,1,camera.position.x, camera.position.z);
+    PuzzleGhost2.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);
     BossOne.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);
-    Ghost1.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);
 
+    if (PuzzleGhost1.Spawn)
+    {
+        PuzzleGhost1.move(dt, 25);
+    }
+
+    if (PuzzleGhost2.Spawn)
+    {
+        PuzzleGhost2.move(dt, 25);
+    }
     if (BossOne.Spawn)
     {
         BossOne.move(dt, 15);
         Collision(BossOne.MobPosX - 20, BossOne.MobPosX + 20, BossOne.MobPosZ - 20, BossOne.MobPosZ + 20);
-    }
-
-    if (Ghost1.Spawn)
-    {
-        Ghost1.move(dt, 30);
-        Collision(Ghost1.MobPosX - 20, Ghost1.MobPosX + 20, Ghost1.MobPosZ - 20, Ghost1.MobPosZ + 20);
-
     }
 
 }
@@ -661,14 +660,15 @@ void SceneLevelOneB::Render()
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
 	}
+
+    if (PuzzleGhost1.Spawn)
+    {
+        RenderGhost(PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ);
+    }
+    
     if (BossOne.Spawn)
     {
         RenderBoss(BossOne.MobPosX, BossOne.MobPosZ);
-    }
-
-    if (Ghost1.Spawn)
-    {
-        RenderGhost(Ghost1.MobPosX, Ghost1.MobPosZ);
     }
 	//modelStack.PushMatrix();
 	//RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
