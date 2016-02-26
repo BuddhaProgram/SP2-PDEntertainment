@@ -69,7 +69,7 @@ class SceneStart : public Scene
 
 		GEO_GHOST1,
 		
-
+		GEO_BLOOD1,
 		
 
         //player related
