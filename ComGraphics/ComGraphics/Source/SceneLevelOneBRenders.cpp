@@ -236,10 +236,10 @@ void SceneLevelOneB::checkDoor1()
 void SceneLevelOneB::checkDoor2()
 {
 
-	//if (/*switch is true*/)
-	//{
-	//	activateDoor2 = true;
-	//}
+	if (Switches.b_PuzzleOne[0] && Switches.b_PuzzleOne[1] && Switches.b_PuzzleOne[2])
+	{
+		activateDoor2 = true;
+	}
 
 	if (anima.toSlideDoorBtm2)
 	{
@@ -444,7 +444,7 @@ void SceneLevelOneB::RenderPuzzle()
     modelStack.PopMatrix();
 
     //buttons
-    if (!Switches.b_PuzzleOne[1])
+    if (!Switches.b_PuzzleOne[0])
     {
         modelStack.PushMatrix();
         modelStack.Translate(320, 15, -168);
@@ -452,10 +452,27 @@ void SceneLevelOneB::RenderPuzzle()
         RenderMesh(meshList[GEO_LIGHTRED], true);
         modelStack.PopMatrix();
     }
-    else if (Switches.b_PuzzleOne[1])
+    else if (Switches.b_PuzzleOne[0])
     {
         modelStack.PushMatrix();
         modelStack.Translate(320, 15, -168);
+        modelStack.Scale(2, 2, 2);
+        RenderMesh(meshList[GEO_LIGHTGREEN], true);
+        modelStack.PopMatrix();
+    }
+
+    if (!Switches.b_PuzzleOne[1])
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(320, 15, -144);
+        modelStack.Scale(2, 2, 2);
+        RenderMesh(meshList[GEO_LIGHTRED], true);
+        modelStack.PopMatrix();
+    }
+    else if (Switches.b_PuzzleOne[1])
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(320, 15, -144);
         modelStack.Scale(2, 2, 2);
         RenderMesh(meshList[GEO_LIGHTGREEN], true);
         modelStack.PopMatrix();
@@ -464,29 +481,12 @@ void SceneLevelOneB::RenderPuzzle()
     if (!Switches.b_PuzzleOne[2])
     {
         modelStack.PushMatrix();
-        modelStack.Translate(320, 15, -144);
-        modelStack.Scale(2, 2, 2);
-        RenderMesh(meshList[GEO_LIGHTRED], true);
-        modelStack.PopMatrix();
-    }
-    else if (Switches.b_PuzzleOne[2])
-    {
-        modelStack.PushMatrix();
-        modelStack.Translate(320, 15, -144);
-        modelStack.Scale(2, 2, 2);
-        RenderMesh(meshList[GEO_LIGHTGREEN], true);
-        modelStack.PopMatrix();
-    }
-
-    if (!Switches.b_PuzzleOne[3])
-    {
-        modelStack.PushMatrix();
         modelStack.Translate(320, 15, -120);
         modelStack.Scale(2, 2, 2);
         RenderMesh(meshList[GEO_LIGHTRED], true);
         modelStack.PopMatrix();
     }
-    else if (Switches.b_PuzzleOne[3])
+    else if (Switches.b_PuzzleOne[2])
     {
         modelStack.PushMatrix();
         modelStack.Translate(320, 15, -120);
@@ -571,14 +571,14 @@ void SceneLevelOneB::PuzzleInteracts(double dt)
     //switch one
     if (Func.WithinArea(295, 320, -176, -160))
     {
-        if (Application::IsKeyPressed('E') && !Switches.b_PuzzleOne[1] && !SwitchAnimate1)
+        if (Application::IsKeyPressed('E') && !Switches.b_PuzzleOne[0] && !SwitchAnimate1)
         {
-            Switches.b_PuzzleOne[1] = true;
+            Switches.b_PuzzleOne[0] = true;
             SwitchAnimate1 = true;
         }
-        if (Application::IsKeyPressed('E') && Switches.b_PuzzleOne[1] && !SwitchAnimate1)
+        if (Application::IsKeyPressed('E') && Switches.b_PuzzleOne[0] && !SwitchAnimate1)
         {
-            Switches.b_PuzzleOne[1] = false;
+            Switches.b_PuzzleOne[0] = false;
             SwitchAnimate1 = true;
         }
     }
@@ -587,14 +587,14 @@ void SceneLevelOneB::PuzzleInteracts(double dt)
     if (Func.WithinArea(295, 320, -152, -136))
     {
 
-        if (Application::IsKeyPressed('E') && !Switches.b_PuzzleOne[2] && !SwitchAnimate2)
+        if (Application::IsKeyPressed('E') && !Switches.b_PuzzleOne[1] && !SwitchAnimate2)
         {
-            Switches.b_PuzzleOne[2] = true;
+            Switches.b_PuzzleOne[1] = true;
             SwitchAnimate2 = true;
         }
-        if (Application::IsKeyPressed('E') && Switches.b_PuzzleOne[2] && !SwitchAnimate2)
+        if (Application::IsKeyPressed('E') && Switches.b_PuzzleOne[1] && !SwitchAnimate2)
         {
-            Switches.b_PuzzleOne[2] = false;
+            Switches.b_PuzzleOne[1] = false;
             SwitchAnimate2 = true;
         }
 
@@ -603,21 +603,21 @@ void SceneLevelOneB::PuzzleInteracts(double dt)
     //switch three
     if (Func.WithinArea(295, 320, -128, -112))
     {
-        if (Application::IsKeyPressed('E') && !Switches.b_PuzzleOne[3] && !SwitchAnimate3)
+        if (Application::IsKeyPressed('E') && !Switches.b_PuzzleOne[2] && !SwitchAnimate3)
         {                        
-                Switches.b_PuzzleOne[3] = true;
+                Switches.b_PuzzleOne[2] = true;
                 SwitchAnimate3 = true;
         }
-        if (Application::IsKeyPressed('E') && Switches.b_PuzzleOne[3] && !SwitchAnimate3)
+        if (Application::IsKeyPressed('E') && Switches.b_PuzzleOne[2] && !SwitchAnimate3)
         {
-            Switches.b_PuzzleOne[3] = false;
+            Switches.b_PuzzleOne[2] = false;
             SwitchAnimate3 = true;
         }
     }
 
     if (SwitchAnimate1)
     {
-        if (Switches.b_PuzzleOne[1])
+        if (Switches.b_PuzzleOne[0])
         {
             if (SwitchRotate1 < 90)
             {
@@ -628,7 +628,7 @@ void SceneLevelOneB::PuzzleInteracts(double dt)
                 SwitchAnimate1 = false;
             }
         }
-        if (!Switches.b_PuzzleOne[1])
+        if (!Switches.b_PuzzleOne[0])
         {
             if (SwitchRotate1 > 0)
             {
@@ -642,7 +642,7 @@ void SceneLevelOneB::PuzzleInteracts(double dt)
     }
     if (SwitchAnimate2)
     {
-        if (Switches.b_PuzzleOne[2])
+        if (Switches.b_PuzzleOne[1])
         {
             if (SwitchRotate2 < 90)
             {
@@ -653,7 +653,7 @@ void SceneLevelOneB::PuzzleInteracts(double dt)
                 SwitchAnimate2 = false;
             }
         }
-        if (!Switches.b_PuzzleOne[2])
+        if (!Switches.b_PuzzleOne[1])
         {
             if (SwitchRotate2 > 0)
             {
@@ -667,7 +667,7 @@ void SceneLevelOneB::PuzzleInteracts(double dt)
     }
     if (SwitchAnimate3)
     {
-        if (Switches.b_PuzzleOne[3])
+        if (Switches.b_PuzzleOne[2])
         {
             if (SwitchRotate3 < 90)
             {
@@ -678,7 +678,7 @@ void SceneLevelOneB::PuzzleInteracts(double dt)
                 SwitchAnimate3 = false;
             }
         }
-        if (!Switches.b_PuzzleOne[3])
+        if (!Switches.b_PuzzleOne[2])
         {
             if (SwitchRotate3 > 0)
             {
