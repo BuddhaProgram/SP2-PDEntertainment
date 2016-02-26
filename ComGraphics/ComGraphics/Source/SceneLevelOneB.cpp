@@ -201,7 +201,7 @@ void SceneLevelOneB::Init()
     meshList[GEO_PUZZLELEVER]->textureID = LoadTGA("Image//PuzzleLever.tga");
 
     Mtx44 projection;
-    projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
+    projection.SetToPerspective(90.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
     PuzzleGhost1.setSpawnGhost(24, 31);
@@ -424,6 +424,12 @@ void SceneLevelOneB::Update(double dt)
 	PuzzleOneSwitchCheck(dt);
 
 	std::cout << PuzzleGhost1.Spawn << std::endl;
+
+	if (activateDoor1)
+	{
+		anima.OpenSlideDoor1(dt);
+	}
+
     //wall collision
     for (int i = 0; i < 43; i++)
     {
@@ -436,11 +442,11 @@ void SceneLevelOneB::Update(double dt)
 	MouseClickFunction(dt);
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
+    PuzzleOneSwitchCheck(dt);
     //PuzzleInteracts(dt);
-	PuzzleOneSwitchCheck(dt);
     EnvironmentAnimation(dt);
     MobsSpawn();
-   
+    
 
     PuzzleGhost1.checkPlayerPos(dt, 1,1,camera.position.x, camera.position.z);
     PuzzleGhost2.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);
@@ -619,7 +625,7 @@ void SceneLevelOneB::Render()
         camera.target.x, camera.target.y, camera.target.z,
         camera.up.x, camera.up.y, camera.up.z
         );
-	//Init(Vector3(204, 10, 0), Vector3(204, 10, -1), Vector3(0, 1, 0));
+
     modelStack.LoadIdentity();
 
     // Light Source 1
@@ -658,6 +664,7 @@ void SceneLevelOneB::Render()
 
 
 	if (displayInteract1 || displayInteract2 || switch1Detect|| displayInteract3)
+
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
 	}

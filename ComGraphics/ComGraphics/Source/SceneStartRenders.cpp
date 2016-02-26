@@ -136,6 +136,7 @@ void SceneStart::RenderSceneStart()
 	}
 	RenderSkyBox();
 
+
 	modelStack.PushMatrix();
 	modelStack.Translate(86.9, 5, 0);
 	modelStack.Rotate(90, 0, 0, 1);

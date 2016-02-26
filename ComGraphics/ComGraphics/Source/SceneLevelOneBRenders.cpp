@@ -192,13 +192,13 @@ void SceneLevelOneB::RenderDoor()
 
 	//5th door BOSS door
 	modelStack.PushMatrix();
-	modelStack.Translate(-292, anima.DoorSlideTop_Boss, -363);
+	modelStack.Translate(-292, 0, -363);
 	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(-292, anima.DoorSlideBtm_Boss, -363);
+	modelStack.Translate(-292, 0, -363);
 	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
@@ -215,6 +215,7 @@ void SceneLevelOneB::RenderDoor()
 	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
+
 }
 
 void SceneLevelOneB::checkDoor1()
@@ -241,7 +242,7 @@ void SceneLevelOneB::checkDoor1()
 	}
 	if (anima.toSlideDoorBtm)
 	{
-		Collision(190, 220, -55, -45);
+		Collision(190, 216, -55, -45);
 	}
 }
 
@@ -334,6 +335,7 @@ void SceneLevelOneB::checkDoor4()
 	{
 		Collision(0, 25, -410, -390);
 	}
+
 }
 
 void SceneLevelOneB::RenderGhost(float xpos, float zpos)
@@ -462,6 +464,7 @@ void SceneLevelOneB::AnimationCheck(double dt)
 	}
 
 }
+
 void SceneLevelOneB::RenderPuzzle()
 {
     //levers
@@ -552,188 +555,135 @@ void SceneLevelOneB::checkPlayerPosMisc()
 //puzzle function definitions
 void SceneLevelOneB::PuzzleOneSwitchCheck(double dt)
 {
-    f_SwitchDebounce += (float)dt;
-    if (Application::IsKeyPressed('E') && f_SwitchDebounce > 0.5f && Func.WithinArea(312, 320, -160, -176))
+    Variables.f_SwitchDebounce += (float)dt;
+    if (Func.WithinArea(312, 320, -160, -176))
     {
-        if (Switches.b_PuzzleOne[0] == false)
-            Switches.b_PuzzleOne[0] = true;
-
-        else
-            Switches.b_PuzzleOne[0] = false;
-
-        if (Switches.b_PuzzleOne[1] == false)
-            Switches.b_PuzzleOne[1] = true;
-
-        else
-            Switches.b_PuzzleOne[1] = false;
-
-        f_SwitchDebounce = 0.0f;
-    }
-
-    if (Application::IsKeyPressed('E') && f_SwitchDebounce > 0.5f && Func.WithinArea(312, 320, -136, -152))
-    {
-        if (Switches.b_PuzzleOne[0] == false)
-            Switches.b_PuzzleOne[0] = true;
-
-        else
-            Switches.b_PuzzleOne[0] = false;
-
-        f_SwitchDebounce = 0.0f;
-    }
-
-    if (Application::IsKeyPressed('E') && f_SwitchDebounce > 0.5f && Func.WithinArea(312, 320, -112, -128))
-    {
-        if (Switches.b_PuzzleOne[0] == false)
-            Switches.b_PuzzleOne[0] = true;
-
-        else
-            Switches.b_PuzzleOne[0] = false;
-
-        if (Switches.b_PuzzleOne[2] == false)
-            Switches.b_PuzzleOne[2] = true;
-
-        else
-            Switches.b_PuzzleOne[2] = false;
-
-        f_SwitchDebounce = 0.0f;
-    }
-}
-void SceneLevelOneB::PuzzleInteracts(double dt)
-{
-   //switch word alerts
-    if (
-        Func.WithinArea(295, 320, -176, -160) ||
-        Func.WithinArea(295, 320, -152, -136) ||
-        Func.WithinArea(295, 320, -128, -112)
-        )
-    {
-        switch1Detect = true;
-    }
-    else
-    {
-        switch1Detect = false;
-    }
-
-    //switch one
-    if (Func.WithinArea(295, 320, -176, -160))
-    {
-        if (Application::IsKeyPressed('E') && !Switches.b_PuzzleOne[0] && !SwitchAnimate1)
+        if (Application::IsKeyPressed('E') && Variables.f_SwitchDebounce > 0.5f)
         {
-            Switches.b_PuzzleOne[0] = true;
-            SwitchAnimate1 = true;
-        }
-        if (Application::IsKeyPressed('E') && Switches.b_PuzzleOne[0] && !SwitchAnimate1)
-        {
-            Switches.b_PuzzleOne[0] = false;
-            SwitchAnimate1 = true;
+            if (Switches.b_PuzzleOne[0] == false)
+            {
+                Switches.b_PuzzleOne[0] = true;
+            }
+
+            else
+            {
+                Switches.b_PuzzleOne[0] = false;
+            }
+
+            if (Switches.b_PuzzleOne[1] == false)
+            {
+                Switches.b_PuzzleOne[1] = true;
+            }
+            else
+            {
+                Switches.b_PuzzleOne[1] = false;
+            }
+            Variables.f_SwitchDebounce = 0.0f;
         }
     }
-    
-    //switch two
-    if (Func.WithinArea(295, 320, -152, -136))
-	{
-        if (Application::IsKeyPressed('E') && !Switches.b_PuzzleOne[1] && !SwitchAnimate2)
+    if (Func.WithinArea(312, 320, -136, -152))
+    {
+        if (Application::IsKeyPressed('E') && Variables.f_SwitchDebounce > 0.5f)
         {
-            Switches.b_PuzzleOne[1] = true;
-            SwitchAnimate2 = true;
+            if (Switches.b_PuzzleOne[0] == false)
+            {
+                Switches.b_PuzzleOne[0] = true;
+            }
+            else
+            {
+                Switches.b_PuzzleOne[0] = false;
+            }
+            Variables.f_SwitchDebounce = 0.0f;
         }
-        if (Application::IsKeyPressed('E') && Switches.b_PuzzleOne[1] && !SwitchAnimate2)
-        {
-            Switches.b_PuzzleOne[1] = false;
-            SwitchAnimate2 = true;
-        }
-
     }
 
-    //switch three
-    if (Func.WithinArea(295, 320, -128, -112))
+    if (Func.WithinArea(312, 320, -112, -128))
     {
-        if (Application::IsKeyPressed('E') && !Switches.b_PuzzleOne[2] && !SwitchAnimate3)
-        {                        
+        if (Application::IsKeyPressed('E') && Variables.f_SwitchDebounce > 0.5f)
+        {
+            if (Switches.b_PuzzleOne[0] == false)
+            {
+                Switches.b_PuzzleOne[0] = true;
+            }
+            else
+            {
+                Switches.b_PuzzleOne[0] = false;
+            }
+            if (Switches.b_PuzzleOne[2] == false)
+            {
                 Switches.b_PuzzleOne[2] = true;
-                SwitchAnimate3 = true;
-        }
-        if (Application::IsKeyPressed('E') && Switches.b_PuzzleOne[2] && !SwitchAnimate3)
-        {
-            Switches.b_PuzzleOne[2] = false;
-            SwitchAnimate3 = true;
-        }
-    }
-
-    if (SwitchAnimate1)
-    {
-        if (Switches.b_PuzzleOne[0])
-        {
-            if (SwitchRotate1 < 90)
-            {
-                SwitchRotate1 += 120 * (float)(dt);
             }
-            if (SwitchRotate1 >= 90)
+            else
             {
-                SwitchAnimate1 = false;
+                Switches.b_PuzzleOne[2] = false;
             }
-        }
-        if (!Switches.b_PuzzleOne[0])
-        {
-            if (SwitchRotate1 > 0)
-            {
-                SwitchRotate1 -= 120 * (float)(dt);
-            }
-            if (SwitchRotate1 <= 0)
-            {
-                SwitchAnimate1 = false;
-            }
+            Variables.f_SwitchDebounce = 0.0f;
         }
     }
-    if (SwitchAnimate2)
-    {
-        if (Switches.b_PuzzleOne[1])
-        {
-            if (SwitchRotate2 < 90)
-            {
-                SwitchRotate2 += 120 * (float)(dt);
-            }
-            if (SwitchRotate2 >= 90)
-            {
-                SwitchAnimate2 = false;
-            }
-        }
-        if (!Switches.b_PuzzleOne[1])
-        {
-            if (SwitchRotate2 > 0)
-            {
-                SwitchRotate2 -= 120 * (float)(dt);
-            }
-            if (SwitchRotate2 <= 0)
-            {
-                SwitchAnimate2 = false;
-            }
-        }
-    }
-    if (SwitchAnimate3)
-    {
-        if (Switches.b_PuzzleOne[2])
-        {
-            if (SwitchRotate3 < 90)
-            {
-                SwitchRotate3 += 120 * (float)(dt);
-            }
-            if (SwitchRotate3 >= 90)
-            {
-                SwitchAnimate3 = false;
-            }
-        }
-        if (!Switches.b_PuzzleOne[2])
-        {
-            if (SwitchRotate3 > 0)
-            {
-                SwitchRotate3 -= 120 * (float)(dt);
-            }
-            if (SwitchRotate3 <= 0)
-            {
-                SwitchAnimate3 = false;
-            }
-        }
-    }
-
 }
+//void SceneLevelOneB::PuzzleInteracts(double dt)
+//{
+//    //switch word alerts
+//    if (
+//        Func.WithinArea(295, 320, -176, -160) ||
+//        Func.WithinArea(295, 320, -152, -136) ||
+//        Func.WithinArea(295, 320, -128, -112)
+//        )
+//    {
+//        switch1Detect = true;
+//    }
+//    else
+//    {
+//        switch1Detect = false;
+//    }
+//
+//
+//
+//    if (Switches.b_PuzzleOne[0])
+//    {
+//        if (SwitchRotate1 < 90)
+//        {
+//            SwitchRotate1 += 120 * (float)(dt);
+//        }
+//    }
+//
+//    if (!Switches.b_PuzzleOne[0])
+//    {
+//        if (SwitchRotate1 > 0)
+//        {
+//            SwitchRotate1 -= 120 * (float)(dt);
+//        }
+//    }
+//
+//    if (Switches.b_PuzzleOne[1])
+//    {
+//        if (SwitchRotate2 < 90)
+//        {
+//            SwitchRotate2 += 120 * (float)(dt);
+//        }
+//    }
+//
+//    if (!Switches.b_PuzzleOne[1])
+//    {
+//        if (SwitchRotate2 > 0)
+//        {
+//            SwitchRotate2 -= 120 * (float)(dt);
+//        }
+//    }
+//
+//    if (Switches.b_PuzzleOne[2])
+//    {
+//        if (SwitchRotate3 < 90)
+//        {
+//            SwitchRotate3 += 120 * (float)(dt);
+//        }
+//    }
+//    if (!Switches.b_PuzzleOne[2])
+//    {
+//        if (SwitchRotate3 > 0)
+//        {
+//            SwitchRotate3 -= 120 * (float)(dt);
+//        }
+//    }
+//
+//}

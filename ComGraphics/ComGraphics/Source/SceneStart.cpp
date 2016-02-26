@@ -165,8 +165,7 @@ void SceneStart::Init()
     meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("FacilityOUT wall", Color(1, 1, 1));
     meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
     
-	meshList[GEO_BLOOD1] = MeshBuilder::GenerateQuad("Blood1", Color(1, 1, 1));
-	meshList[GEO_BLOOD1]->textureID = LoadTGA("Image//Blood1.tga");
+	
 	
 
     //change to correct textured quad later
@@ -184,7 +183,6 @@ void SceneStart::Init()
 	projectionStack.LoadMatrix(projection);
 
 	// All Switches Debounce Key
-	f_SwitchDebounce = 0.0f;
 }
 
 static float LSPEED = 10.f;
@@ -372,54 +370,54 @@ void SceneStart::MouseClickFunction(double dt)
 	}
 }
 
-void SceneStart::PuzzleOneSwitchCheck(double dt)
-{
-	f_SwitchDebounce += (float)dt;
-	if (Application::IsKeyPressed('5') && f_SwitchDebounce > 0.5f)
-	{
-		if (Switches.b_PuzzleOne[0] == false)
-			Switches.b_PuzzleOne[0] = true;
-
-		else
-			Switches.b_PuzzleOne[0] = false;
-
-		if (Switches.b_PuzzleOne[1] == false)
-			Switches.b_PuzzleOne[1] = true;
-
-		else
-			Switches.b_PuzzleOne[1] = false;
-
-		f_SwitchDebounce = 0.0f;
-	}
-
-	if (Application::IsKeyPressed('6') && f_SwitchDebounce > 0.5f)
-	{
-		if (Switches.b_PuzzleOne[0] == false)
-			Switches.b_PuzzleOne[0] = true;
-
-		else
-			Switches.b_PuzzleOne[0] = false;
-
-		f_SwitchDebounce = 0.0f;
-	}
-
-	if (Application::IsKeyPressed('7') && f_SwitchDebounce > 0.5f)
-	{
-		if (Switches.b_PuzzleOne[0] == false)
-			Switches.b_PuzzleOne[0] = true;
-
-		else
-			Switches.b_PuzzleOne[0] = false;
-
-		if (Switches.b_PuzzleOne[2] == false)
-			Switches.b_PuzzleOne[2] = true;
-
-		else
-			Switches.b_PuzzleOne[2] = false;
-
-		f_SwitchDebounce = 0.0f;
-	}
-}
+//void SceneStart::PuzzleOneSwitchCheck(double dt)
+//{
+//	f_SwitchDebounce += (float)dt;
+//	if (Application::IsKeyPressed('5') && f_SwitchDebounce > 0.5f)
+//	{
+//		if (Switches.b_PuzzleOne[0] == false)
+//			Switches.b_PuzzleOne[0] = true;
+//
+//		else
+//			Switches.b_PuzzleOne[0] = false;
+//
+//		if (Switches.b_PuzzleOne[1] == false)
+//			Switches.b_PuzzleOne[1] = true;
+//
+//		else
+//			Switches.b_PuzzleOne[1] = false;
+//
+//		f_SwitchDebounce = 0.0f;
+//	}
+//
+//	if (Application::IsKeyPressed('6') && f_SwitchDebounce > 0.5f)
+//	{
+//		if (Switches.b_PuzzleOne[0] == false)
+//			Switches.b_PuzzleOne[0] = true;
+//
+//		else
+//			Switches.b_PuzzleOne[0] = false;
+//
+//		f_SwitchDebounce = 0.0f;
+//	}
+//
+//	if (Application::IsKeyPressed('7') && f_SwitchDebounce > 0.5f)
+//	{
+//		if (Switches.b_PuzzleOne[0] == false)
+//			Switches.b_PuzzleOne[0] = true;
+//
+//		else
+//			Switches.b_PuzzleOne[0] = false;
+//
+//		if (Switches.b_PuzzleOne[2] == false)
+//			Switches.b_PuzzleOne[2] = true;
+//
+//		else
+//			Switches.b_PuzzleOne[2] = false;
+//
+//		f_SwitchDebounce = 0.0f;
+//	}
+//}
 
 bool SceneStart::proximitycheck(float smallx, float largex, float smallz, float largez)
 {
@@ -461,7 +459,7 @@ void SceneStart::Update(double dt)
 	checkPlayerPosMisc();
 	Variables.f_Worldspin += (float)(dt);
 
-	PuzzleOneSwitchCheck(dt);
+	//PuzzleOneSwitchCheck(dt);
 	Switches.SwitchPuzzleOne();
 
 	Collision(-35, 35, -105, -70);
