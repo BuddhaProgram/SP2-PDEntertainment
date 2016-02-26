@@ -2,11 +2,6 @@
 #include "OBJAnimation.h"
 #include "Application.h"
 
-//this include and definition is needed
-#include "Misc.h"
-misc MISC;
-//.................
-
 
 // Rendering of Floor for all Scenes.
 void SceneLevelOneA::RenderFloorCeiling()
@@ -388,7 +383,7 @@ void SceneLevelOneA::AttackCheck()
 {
     //Ghost combat checker
 
-    if (Application::IsKeyPressed(VK_LBUTTON) && MISC.hitting(20.f, Ghost.MobPosX, Ghost.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(20.f, Ghost.MobPosX, Ghost.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
         Ghost.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
     }

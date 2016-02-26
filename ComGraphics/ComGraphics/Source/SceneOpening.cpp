@@ -4,9 +4,6 @@
 #include "shader.hpp"
 #include "Mtx44.h"
 
-#include "Application.h"
-#include "MeshBuilder.h"
-
 #include "LoadTGA.h"
 #include "Utility.h"
 #include <sstream>

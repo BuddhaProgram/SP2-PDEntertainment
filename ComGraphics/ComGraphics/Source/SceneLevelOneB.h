@@ -10,7 +10,6 @@
 #include "OBJAnimation.h"
 #include "MobGhost.h"
 #include "MobBossOne.h"
-#include "SwitchLightPuzzle.h"
 
 class SceneLevelOneB : public Scene
 {
@@ -161,21 +160,10 @@ private:
 
     // Switches Functions for puzzles
     void PuzzleOneSwitchCheck(double dt);
-    float f_SwitchDebounce;
-    bool switch1Detect = false;
-
-    bool SwitchAnimate1 = false;
-    bool SwitchAnimate2 = false;
-    bool SwitchAnimate3 = false;
-
-    float SwitchRotate1 = 0;
-    float SwitchRotate2 = 0;
-    float SwitchRotate3 = 0;
-
+	void SwitchCollisionChecker();
     void RenderPuzzle();
-    //void PuzzleInteracts(double dt);
+	void LogicAnimationSwitches(double dt);
 
-	// Tool UI functions
 	// Tool UI functions
 	void ToolsUI();
 	void MouseScrollToolSlot();
@@ -219,9 +207,6 @@ private:
     MobGhost PuzzleGhost1;
     MobGhost PuzzleGhost2;
     MobBossOne BossOne;
-    SwitchLightPuzzle Switches;
-
- 
 };
 
 

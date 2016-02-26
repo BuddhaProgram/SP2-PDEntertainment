@@ -1,11 +1,12 @@
 #ifndef SCENEOPENING_H
 #define SCENEOPENING_H
 
+#include "Application.h"
+#include "MeshBuilder.h"
 #include "Scene.h"
 #include "Camera3.h"
 #include "Vector3.h"
 #include "Mesh.h"
-#include "Misc.h"
 #include "MatrixStack.h"
 #include "Light.h"
 #include "HostileMob.h"

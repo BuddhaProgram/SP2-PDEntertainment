@@ -11,6 +11,15 @@ GlobalVariables::GlobalVariables()
 	
 	i_SlotIndex = 1;
     f_SwitchDebounce = 0.0f;
+
+	f_SwitchRotateOne = 0.0f;
+	f_SwitchRotateTwo = 0.0f;
+	f_SwitchRotateThree = 0.0f;
+
+	for (int i = 0; i < 5; ++i)
+	{
+		b_SwitchAnimate[i] = false;
+	}
 }
 
 GlobalVariables::~GlobalVariables()

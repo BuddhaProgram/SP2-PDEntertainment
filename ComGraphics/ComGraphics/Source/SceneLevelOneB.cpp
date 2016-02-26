@@ -396,6 +396,169 @@ void SceneLevelOneB::MouseClickFunction(double dt)
 	}
 }
 
+void SceneLevelOneB::SwitchCollisionChecker()
+{
+	Collision(305.0f, 320.0f, -180.0f, -100.0f);
+}
+
+void SceneLevelOneB::PuzzleOneSwitchCheck(double dt)
+{
+	Variables.f_SwitchDebounce += (float)dt;
+	if (Misc.WithinArea(300, 320, -176, -160))
+	{
+		if (Application::IsKeyPressed(VK_RBUTTON) && Variables.f_SwitchDebounce > 0.5f)
+		{
+			if (Variables.b_SwitchAnimate[0] == false)
+				Variables.b_SwitchAnimate[0] = true;
+
+			else
+				Variables.b_SwitchAnimate[0] = false;
+
+			if (Switches.b_PuzzleOne[0] == false)
+			{
+				Switches.b_PuzzleOne[0] = true;
+			}
+
+			else
+			{
+				Switches.b_PuzzleOne[0] = false;
+			}
+
+			if (Switches.b_PuzzleOne[1] == false)
+			{
+				Switches.b_PuzzleOne[1] = true;
+			}
+
+			else
+			{
+				Switches.b_PuzzleOne[1] = false;
+			}
+
+			Variables.f_SwitchDebounce = 0.0f;
+		}
+	}
+	if (Misc.WithinArea(300, 320, -152, -136))
+	{
+		if (Application::IsKeyPressed(VK_RBUTTON) && Variables.f_SwitchDebounce > 0.5f)
+		{
+			if (Variables.b_SwitchAnimate[1] == false)
+				Variables.b_SwitchAnimate[1] = true;
+
+			else
+				Variables.b_SwitchAnimate[1] = false;
+
+			if (Switches.b_PuzzleOne[0] == false)
+			{
+				Switches.b_PuzzleOne[0] = true;
+			}
+
+			else
+			{
+				Switches.b_PuzzleOne[0] = false;
+			}
+
+			Variables.f_SwitchDebounce = 0.0f;
+		}
+	}
+
+	if (Misc.WithinArea(300, 320, -128, -112))
+	{
+		if (Application::IsKeyPressed(VK_RBUTTON) && Variables.f_SwitchDebounce > 0.5f)
+		{
+			if (Variables.b_SwitchAnimate[2] == false)
+				Variables.b_SwitchAnimate[2] = true;
+
+			else
+				Variables.b_SwitchAnimate[2] = false;
+
+			if (Switches.b_PuzzleOne[0] == false)
+			{
+				Switches.b_PuzzleOne[0] = true;
+			}
+
+			else
+			{
+				Switches.b_PuzzleOne[0] = false;
+			}
+
+			if (Switches.b_PuzzleOne[2] == false)
+			{
+				Switches.b_PuzzleOne[2] = true;
+			}
+
+			else
+			{
+				Switches.b_PuzzleOne[2] = false;
+			}
+
+			Variables.f_SwitchDebounce = 0.0f;
+		}
+	}
+}
+
+void SceneLevelOneB::LogicAnimationSwitches(double dt)
+{
+	if (Variables.b_SwitchAnimate[0] == true)
+	{
+		Variables.f_SwitchRotateOne += (float)(180.0f * dt);
+
+		if (Variables.f_SwitchRotateOne >= 90.0f)
+		{
+			Variables.f_SwitchRotateOne = 90.0f;
+		}
+	}
+
+	else if (Variables.b_SwitchAnimate[0] == false)
+	{
+		Variables.f_SwitchRotateOne -= (float)(180.0f * dt);
+
+		if (Variables.f_SwitchRotateOne <= 0.0f)
+		{
+			Variables.f_SwitchRotateOne = 0.0f;
+		}
+	}
+
+	if (Variables.b_SwitchAnimate[1] == true)
+	{
+		Variables.f_SwitchRotateTwo += (float)(180.0f * dt);
+
+		if (Variables.f_SwitchRotateTwo >= 90.0f)
+		{
+			Variables.f_SwitchRotateTwo = 90.0f;
+		}
+	}
+
+	else if (Variables.b_SwitchAnimate[1] == false)
+	{
+		Variables.f_SwitchRotateTwo -= (float)(180.0f * dt);
+
+		if (Variables.f_SwitchRotateTwo <= 0.0f)
+		{
+			Variables.f_SwitchRotateTwo = 0.0f;
+		}
+	}
+
+	if (Variables.b_SwitchAnimate[2] == true)
+	{
+		Variables.f_SwitchRotateThree += (float)(180.0f * dt);
+
+		if (Variables.f_SwitchRotateThree >= 90.0f)
+		{
+			Variables.f_SwitchRotateThree = 90.0f;
+		}
+	}
+
+	else if (Variables.b_SwitchAnimate[1] == false)
+	{
+		Variables.f_SwitchRotateThree -= (float)(180.0f * dt);
+
+		if (Variables.f_SwitchRotateThree <= 0.0f)
+		{
+			Variables.f_SwitchRotateThree = 0.0f;
+		}
+	}
+}
+
 void SceneLevelOneB::Update(double dt)
 {
     light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
@@ -421,6 +584,8 @@ void SceneLevelOneB::Update(double dt)
 
 	//checkDoor3();
 	PuzzleOneSwitchCheck(dt);
+	SwitchCollisionChecker();
+	Switches.SwitchPuzzleOne();
 
 	std::cout << Switches.b_PuzzleOne[0] << " " << Switches.b_PuzzleOne[1] << " " << Switches.b_PuzzleOne[2] << std::endl;
 
@@ -428,8 +593,7 @@ void SceneLevelOneB::Update(double dt)
 	checkDoor4();
 	AnimationCheck(dt);
 	PuzzleOneSwitchCheck(dt);
-
-	std::cout << PuzzleGhost1.Spawn << std::endl;
+	LogicAnimationSwitches(dt);
 
 	if (activateDoor1)
 	{
@@ -667,7 +831,7 @@ void SceneLevelOneB::Render()
 
 
 
-	if (displayInteract1 || displayInteract2 || switch1Detect|| displayInteract3)
+	if (displayInteract1 || displayInteract2 || displayInteract3)
 
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);

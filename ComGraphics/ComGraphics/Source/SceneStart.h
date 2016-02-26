@@ -6,7 +6,6 @@
 #include "Vector3.h"
 #include "Mesh.h"
 #include "Misc.h"
-#include "SwitchLightPuzzle.h"
 #include "MatrixStack.h"
 #include "Light.h"
 #include "OBJAnimation.h"

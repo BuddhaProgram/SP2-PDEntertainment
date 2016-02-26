@@ -2,7 +2,9 @@
 #define SCENE_H
 
 #include "GlobalVariables.h"
+#include "SwitchLightPuzzle.h"
 #include "Explorer.h"
+#include"Misc.h"
 
 class Scene
 {
@@ -17,6 +19,9 @@ public:
 
 	GlobalVariables Variables;
 	ToolUI::ToolType Tool;
+	SwitchLightPuzzle Switches;
+
+	misc Misc;
 };
 
 #endif

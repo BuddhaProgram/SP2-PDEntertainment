@@ -396,7 +396,6 @@ void SceneLevelOneA::MouseClickFunction(double dt)
 }
 
 
-
 void SceneLevelOneA::UpdateSavePoint()
 {
 	if (camera.position.x > 110.0f && camera.position.x < 130.0f && camera.position.z > 65.0f && camera.position.z < 85.0f && Application::IsKeyPressed('T'))

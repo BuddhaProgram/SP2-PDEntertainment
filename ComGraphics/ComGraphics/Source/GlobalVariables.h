@@ -18,6 +18,12 @@ class GlobalVariables
 
 		int i_SlotIndex;
         float f_SwitchDebounce;
+
+		float f_SwitchRotateOne;
+		float f_SwitchRotateTwo;
+		float f_SwitchRotateThree;
+
+		bool b_SwitchAnimate[5];
 };
 
 #endif

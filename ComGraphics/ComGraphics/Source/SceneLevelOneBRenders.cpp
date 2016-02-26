@@ -2,10 +2,6 @@
 #include "OBJAnimation.h"
 #include "Application.h"
 
-#include"Misc.h"
-
-misc Func;
-
 
 // Rendering of Floor for all Scenes.
 void SceneLevelOneB::RenderFloorCeiling()
@@ -402,16 +398,16 @@ void SceneLevelOneB::attackCheck()
 {
     //Ghost combat checker
 
-    if (Application::IsKeyPressed(VK_LBUTTON) && Func.hitting(20.f, PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(20.f, PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
         PuzzleGhost1.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
     }
 
-    if (Application::IsKeyPressed(VK_LBUTTON) && Func.hitting(20.f, PuzzleGhost2.MobPosX, PuzzleGhost2.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(20.f, PuzzleGhost2.MobPosX, PuzzleGhost2.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
         PuzzleGhost2.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
     }
-    if (Application::IsKeyPressed(VK_LBUTTON) && Func.hitting(60.f, BossOne.MobPosX, BossOne.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(60.f, BossOne.MobPosX, BossOne.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
         BossOne.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
     }
@@ -465,225 +461,90 @@ void SceneLevelOneB::AnimationCheck(double dt)
 
 }
 
-void SceneLevelOneB::RenderPuzzle()
-{
-    //levers
-    modelStack.PushMatrix();
-    modelStack.Translate(320, 6, -168);
-    modelStack.Rotate(45, 0, 0, 1);
-    modelStack.Rotate(SwitchRotate1, 0, 0, 1);
-    modelStack.Scale(2, 2, 2);
-    RenderMesh(meshList[GEO_PUZZLELEVER], true);
-    modelStack.PopMatrix();
-
-    modelStack.PushMatrix();
-    modelStack.Translate(320, 6, -144);
-    modelStack.Rotate(45, 0, 0, 1);
-    modelStack.Rotate(SwitchRotate2, 0, 0, 1);
-    modelStack.Scale(2, 2, 2);
-    RenderMesh(meshList[GEO_PUZZLELEVER], true);
-    modelStack.PopMatrix();
-
-    modelStack.PushMatrix();
-    modelStack.Translate(320, 6, -120);
-    modelStack.Rotate(45, 0, 0, 1);
-    modelStack.Rotate(SwitchRotate3, 0, 0, 1);
-    modelStack.Scale(2, 2, 2);
-    RenderMesh(meshList[GEO_PUZZLELEVER], true);
-    modelStack.PopMatrix();
-
-    //buttons
-    if (!Switches.b_PuzzleOne[0])
-    {
-        modelStack.PushMatrix();
-        modelStack.Translate(320, 15, -168);
-        modelStack.Scale(2, 2, 2);
-        RenderMesh(meshList[GEO_LIGHTRED], true);
-        modelStack.PopMatrix();
-    }
-    else if (Switches.b_PuzzleOne[0])
-    {
-        modelStack.PushMatrix();
-        modelStack.Translate(320, 15, -168);
-        modelStack.Scale(2, 2, 2);
-        RenderMesh(meshList[GEO_LIGHTGREEN], true);
-        modelStack.PopMatrix();
-    }
-
-    if (!Switches.b_PuzzleOne[1])
-    {
-        modelStack.PushMatrix();
-        modelStack.Translate(320, 15, -144);
-        modelStack.Scale(2, 2, 2);
-        RenderMesh(meshList[GEO_LIGHTRED], true);
-        modelStack.PopMatrix();
-    }
-    else if (Switches.b_PuzzleOne[1])
-    {
-        modelStack.PushMatrix();
-        modelStack.Translate(320, 15, -144);
-        modelStack.Scale(2, 2, 2);
-        RenderMesh(meshList[GEO_LIGHTGREEN], true);
-        modelStack.PopMatrix();
-    }
-
-    if (!Switches.b_PuzzleOne[2])
-    {
-        modelStack.PushMatrix();
-        modelStack.Translate(320, 15, -120);
-        modelStack.Scale(2, 2, 2);
-        RenderMesh(meshList[GEO_LIGHTRED], true);
-        modelStack.PopMatrix();
-    }
-    else if (Switches.b_PuzzleOne[2])
-    {
-        modelStack.PushMatrix();
-        modelStack.Translate(320, 15, -120);
-        modelStack.Scale(2, 2, 2);
-        RenderMesh(meshList[GEO_LIGHTGREEN], true);
-        modelStack.PopMatrix();
-    }
-}
 void SceneLevelOneB::checkPlayerPosMisc()
 {
-    Func.camX = camera.position.x;
-    Func.camY = camera.position.y;
-    Func.camZ = camera.position.z;
+    Misc.camX = camera.position.x;
+    Misc.camY = camera.position.y;
+    Misc.camZ = camera.position.z;
 }
 
-
-//puzzle function definitions
-void SceneLevelOneB::PuzzleOneSwitchCheck(double dt)
+// Puzzle Renderings
+void SceneLevelOneB::RenderPuzzle()
 {
-    Variables.f_SwitchDebounce += (float)dt;
-    if (Func.WithinArea(312, 320, -160, -176))
-    {
-        if (Application::IsKeyPressed('E') && Variables.f_SwitchDebounce > 0.5f)
-        {
-            if (Switches.b_PuzzleOne[0] == false)
-            {
-                Switches.b_PuzzleOne[0] = true;
-            }
+	//levers
+	modelStack.PushMatrix();
+		modelStack.Translate(320, 6, -168);
+		modelStack.Rotate(45, 0, 0, 1);
+		modelStack.Rotate(Variables.f_SwitchRotateOne, 0, 0, 1);
+		modelStack.Scale(2, 2, 2);
+		RenderMesh(meshList[GEO_PUZZLELEVER], true);
+	modelStack.PopMatrix();
 
-            else
-            {
-                Switches.b_PuzzleOne[0] = false;
-            }
+	modelStack.PushMatrix();
+		modelStack.Translate(320, 6, -144);
+		modelStack.Rotate(45, 0, 0, 1);
+		modelStack.Rotate(Variables.f_SwitchRotateTwo, 0, 0, 1);
+		modelStack.Scale(2, 2, 2);
+		RenderMesh(meshList[GEO_PUZZLELEVER], true);
+	modelStack.PopMatrix();
 
-            if (Switches.b_PuzzleOne[1] == false)
-            {
-                Switches.b_PuzzleOne[1] = true;
-            }
-            else
-            {
-                Switches.b_PuzzleOne[1] = false;
-            }
-            Variables.f_SwitchDebounce = 0.0f;
-        }
-    }
-    if (Func.WithinArea(312, 320, -136, -152))
-    {
-        if (Application::IsKeyPressed('E') && Variables.f_SwitchDebounce > 0.5f)
-        {
-            if (Switches.b_PuzzleOne[0] == false)
-            {
-                Switches.b_PuzzleOne[0] = true;
-            }
-            else
-            {
-                Switches.b_PuzzleOne[0] = false;
-            }
-            Variables.f_SwitchDebounce = 0.0f;
-        }
-    }
+	modelStack.PushMatrix();
+		modelStack.Translate(320, 6, -120);
+		modelStack.Rotate(45, 0, 0, 1);
+		modelStack.Rotate(Variables.f_SwitchRotateThree, 0, 0, 1);
+		modelStack.Scale(2, 2, 2);
+		RenderMesh(meshList[GEO_PUZZLELEVER], true);
+	modelStack.PopMatrix();
 
-    if (Func.WithinArea(312, 320, -112, -128))
-    {
-        if (Application::IsKeyPressed('E') && Variables.f_SwitchDebounce > 0.5f)
-        {
-            if (Switches.b_PuzzleOne[0] == false)
-            {
-                Switches.b_PuzzleOne[0] = true;
-            }
-            else
-            {
-                Switches.b_PuzzleOne[0] = false;
-            }
-            if (Switches.b_PuzzleOne[2] == false)
-            {
-                Switches.b_PuzzleOne[2] = true;
-            }
-            else
-            {
-                Switches.b_PuzzleOne[2] = false;
-            }
-            Variables.f_SwitchDebounce = 0.0f;
-        }
-    }
+	//buttons
+	if (!Switches.b_PuzzleOne[0])
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(320, 15, -168);
+			modelStack.Scale(2, 2, 2);
+			RenderMesh(meshList[GEO_LIGHTRED], true);
+		modelStack.PopMatrix();
+	}
+	else if (Switches.b_PuzzleOne[0])
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(320, 15, -168);
+			modelStack.Scale(2, 2, 2);
+			RenderMesh(meshList[GEO_LIGHTGREEN], true);
+		modelStack.PopMatrix();
+	}
+
+	if (!Switches.b_PuzzleOne[1])
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(320, 15, -144);
+			modelStack.Scale(2, 2, 2);
+			RenderMesh(meshList[GEO_LIGHTRED], true);
+		modelStack.PopMatrix();
+	}
+	else if (Switches.b_PuzzleOne[1])
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(320, 15, -144);
+			modelStack.Scale(2, 2, 2);
+			RenderMesh(meshList[GEO_LIGHTGREEN], true);
+		modelStack.PopMatrix();
+	}
+
+	if (!Switches.b_PuzzleOne[2])
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(320, 15, -120);
+			modelStack.Scale(2, 2, 2);
+			RenderMesh(meshList[GEO_LIGHTRED], true);
+		modelStack.PopMatrix();
+	}
+	else if (Switches.b_PuzzleOne[2])
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(320, 15, -120);
+			modelStack.Scale(2, 2, 2);
+			RenderMesh(meshList[GEO_LIGHTGREEN], true);
+		modelStack.PopMatrix();
+	}
 }
-//void SceneLevelOneB::PuzzleInteracts(double dt)
-//{
-//    //switch word alerts
-//    if (
-//        Func.WithinArea(295, 320, -176, -160) ||
-//        Func.WithinArea(295, 320, -152, -136) ||
-//        Func.WithinArea(295, 320, -128, -112)
-//        )
-//    {
-//        switch1Detect = true;
-//    }
-//    else
-//    {
-//        switch1Detect = false;
-//    }
-//
-//
-//
-//    if (Switches.b_PuzzleOne[0])
-//    {
-//        if (SwitchRotate1 < 90)
-//        {
-//            SwitchRotate1 += 120 * (float)(dt);
-//        }
-//    }
-//
-//    if (!Switches.b_PuzzleOne[0])
-//    {
-//        if (SwitchRotate1 > 0)
-//        {
-//            SwitchRotate1 -= 120 * (float)(dt);
-//        }
-//    }
-//
-//    if (Switches.b_PuzzleOne[1])
-//    {
-//        if (SwitchRotate2 < 90)
-//        {
-//            SwitchRotate2 += 120 * (float)(dt);
-//        }
-//    }
-//
-//    if (!Switches.b_PuzzleOne[1])
-//    {
-//        if (SwitchRotate2 > 0)
-//        {
-//            SwitchRotate2 -= 120 * (float)(dt);
-//        }
-//    }
-//
-//    if (Switches.b_PuzzleOne[2])
-//    {
-//        if (SwitchRotate3 < 90)
-//        {
-//            SwitchRotate3 += 120 * (float)(dt);
-//        }
-//    }
-//    if (!Switches.b_PuzzleOne[2])
-//    {
-//        if (SwitchRotate3 > 0)
-//        {
-//            SwitchRotate3 -= 120 * (float)(dt);
-//        }
-//    }
-//
-//}
