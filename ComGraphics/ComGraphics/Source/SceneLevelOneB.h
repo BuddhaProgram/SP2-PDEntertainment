@@ -150,9 +150,11 @@ private:
 	void checkDoor1();
 	void checkDoor2();
 	void checkDoor3();
+	void checkDoor4();
     void EnvironmentAnimation(double dt);
     void attackCheck();
     void MobsSpawn();
+	void AnimationCheck(double dt);
     //objects and mob animation variables
     float EnvRotateY = 0;
 
@@ -201,8 +203,13 @@ private:
 
     float FPS;
     bool displayInteract1;
+	bool displayInteract2;
+	bool displayInteract3;
 	bool activateDoor1;
 	bool activateDoor2;
+	bool activateDoor3_1;
+	bool activateDoor3_2;
+	bool activateDoor4;
 
     float CollXLarge[43];
     float CollXSmall[43];

@@ -137,12 +137,12 @@ void SceneStart::RenderSceneStart()
 	RenderSkyBox();
 
 
-	modelStack.PushMatrix();
-	modelStack.Translate(86.9, 5, 0);
-	modelStack.Rotate(90, 0, 0, 1);
-	modelStack.Scale(40, 1, 90);
-	RenderMesh(meshList[GEO_BLOOD1], true);
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//modelStack.Translate(86.9, 5, 0);
+	//modelStack.Rotate(90, 0, 0, 1);
+	//modelStack.Scale(40, 1, 90);
+	//RenderMesh(meshList[GEO_BLOOD1], true);
+	//modelStack.PopMatrix();
 
     //object renders
 }
