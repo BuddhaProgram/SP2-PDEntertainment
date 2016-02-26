@@ -281,6 +281,49 @@ void Animation::CloseSlideDoor_Boss(double dt)
 	}
 }
 
+void Animation::OpenSlideDoor4(double dt)
+{
+	if (toSlideDoorTop4)
+	{
+		DoorSlideTop_4 += (float)(8 * dt);
+		if (DoorSlideTop_4 >= 10)
+		{
+			toSlideDoorTop4 = false;
+		}
+	}
+
+	if (toSlideDoorBtm4)
+	{
+		DoorSlideBtm_4 -= (float)(5 * dt);
+		if (DoorSlideBtm_4 <= -6)
+		{
+			toSlideDoorBtm4 = false;
+		}
+	}
+
+}
+
+void Animation::CloseSlideDoor4(double dt)
+{
+	if (ClosingDoorTop4)
+	{
+		DoorSlideTop_4 -= (float)(8 * dt);
+		if (DoorSlideTop_4 <= 0)
+		{
+			ClosingDoorTop4 = false;
+		}
+	}
+
+	if (ClosingDoorBtm4)
+	{
+		DoorSlideBtm_4 += (float)(5 * dt);
+		if (DoorSlideBtm_4 >= 0)
+		{
+			ClosingDoorBtm4 = false;
+		}
+	}
+}
+
 bool Animation::WithinArea(float smallx, float largex, float smallz, float largez)
 {//checks if camera is within a certain area of the room.
 	bool result = false;

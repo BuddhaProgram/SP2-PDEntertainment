@@ -17,6 +17,7 @@ class SceneOpening : public Scene
 	{
 		GEO_LIGHTBALL,
 		GEO_TEXT,
+		GEO_TITLE,
 
 		NUM_GEOMETRY,
 	};

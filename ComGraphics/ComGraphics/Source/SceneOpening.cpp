@@ -106,6 +106,11 @@ void SceneOpening::Init()
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
+	//meshList[GEO_TITLE] = MeshBuilder::GenerateOBJ("Title", "OBJ//Title.obj");
+	meshList[GEO_TITLE] = MeshBuilder::GenerateQuad("Title", Color(1, 1, 1));
+	meshList[GEO_TITLE]->textureID = LoadTGA("Image//Title.tga");
+
+
 	Mtx44 projection;
 	projection.SetToPerspective(90.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
@@ -363,7 +368,13 @@ void SceneOpening::Render()
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 
+	modelStack.PushMatrix();
+	RenderModelOnScreen(meshList[GEO_TITLE], 70.f, 15.f, 10.f, 90, 1, 0, 0, 0.6f, 3.f, 1.0f, false);
+	modelStack.PopMatrix();
+
+
 	RenderOptionChange();
+
 }
 
 void SceneOpening::Exit()

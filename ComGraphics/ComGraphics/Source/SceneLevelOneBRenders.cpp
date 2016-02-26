@@ -203,6 +203,18 @@ void SceneLevelOneB::RenderDoor()
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
 
+	//6th door near elevator
+	modelStack.PushMatrix();
+	modelStack.Translate(12, 0, -400);
+	modelStack.Scale(4.9f, 4, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(12, 0, -400);
+	modelStack.Scale(4.9f, 4, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
+	modelStack.PopMatrix();
 }
 
 void SceneLevelOneB::checkDoor1()
@@ -229,7 +241,7 @@ void SceneLevelOneB::checkDoor1()
 	}
 	if (anima.toSlideDoorBtm)
 	{
-		Collision(190, 216, -55, -45);
+		Collision(190, 220, -55, -45);
 	}
 }
 
@@ -293,6 +305,11 @@ void SceneLevelOneB::checkDoor3()
 	{
 		Collision(-350, -250, -375, -355);
 	}
+}
+
+void SceneLevelOneB::checkDoor4()
+{
+
 }
 
 void SceneLevelOneB::RenderGhost(float xpos, float zpos)

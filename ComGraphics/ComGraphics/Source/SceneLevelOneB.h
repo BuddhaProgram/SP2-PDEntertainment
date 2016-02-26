@@ -150,6 +150,7 @@ private:
 	void checkDoor1();
 	void checkDoor2();
 	void checkDoor3();
+	void checkDoor4();
     void EnvironmentAnimation(double dt);
     void attackCheck();
     void MobsSpawn();
@@ -203,10 +204,12 @@ private:
     float FPS;
     bool displayInteract1;
 	bool displayInteract2;
+	bool displayInteract3;
 	bool activateDoor1 = false;
 	bool activateDoor2 = false;
 	bool activateDoor3_1 = false;
 	bool activateDoor3_2 = false;
+	bool activateDoor4 = false;
 
     float CollXLarge[43];
     float CollXSmall[43];

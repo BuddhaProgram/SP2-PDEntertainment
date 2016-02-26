@@ -18,6 +18,8 @@ public:
 	void CloseSlideDoor2(double dt);
 	void OpenSlideDoor3(double dt);
 	void CloseSlideDoor3(double dt);
+	void OpenSlideDoor4(double dt);
+	void CloseSlideDoor4(double dt);
 	void OpenSlideDoor_Boss(double dt);
 	void CloseSlideDoor_Boss(double dt);
 
@@ -74,6 +76,13 @@ public:
 	bool toSlideDoorBtm_Boss = true;
 	bool ClosingDoorTop_Boss = true;
 	bool ClosingDoorBtm_Boss = true;
+
+	float DoorSlideTop_4;
+	float DoorSlideBtm_4;
+	bool toSlideDoorTop4 = true;
+	bool toSlideDoorBtm4 = true;
+	bool ClosingDoorTop4 = true;
+	bool ClosingDoorBtm4 = true;
 
 
 };
