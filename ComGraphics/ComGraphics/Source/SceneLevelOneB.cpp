@@ -423,7 +423,7 @@ void SceneLevelOneB::Update(double dt)
 	AnimationCheck(dt);
 	PuzzleOneSwitchCheck(dt);
 
-	std::cout << PuzzleGhost1.Spawn << std::endl;
+	std::cout << Ghost1.Spawn << std::endl;
     //wall collision
     for (int i = 0; i < 43; i++)
     {
