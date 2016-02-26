@@ -22,6 +22,7 @@ public:
 	static bool IsKeyPressed(unsigned short key);
 	static int mouse_scroll;
 
+	static void OpenCutScene();
 	static void OpenGame();
 	static void SceneLevel1A();
 	static void SceneLevel1B();
@@ -33,6 +34,7 @@ public:
 	static Music *musics;
 
     static Scene *scene;
+	static Scene *IntroScene;
 	static Scene *Opening;
 	static Scene *Start;
 	static Scene *LevelOneA;

@@ -12,6 +12,7 @@
 #include "SceneLevelOneA.h"
 #include "SceneLevelOneB.h"
 #include "SceneLevelTwo.h"
+#include "OpeningCutScene.h"
 
 
 
@@ -50,6 +51,7 @@ Application::~Application()
 }
 Music* Application::musics;
 Scene* Application::scene;
+Scene* Application::IntroScene;
 Scene* Application::Opening;
 Scene* Application::Start;
 Scene* Application::End;
@@ -129,6 +131,8 @@ void Application::Run()
 
 	Opening = new SceneOpening();
 	Opening->Init();
+	IntroScene = new OpeningCutScene();
+	IntroScene->Init();
 	Start = new SceneStart();
 	Start->Init();
     CutScene1 = new CutSceneOne();
@@ -140,8 +144,14 @@ void Application::Run()
     LevelTwo = new SceneLevelTwo();
     LevelTwo->Init();
 
+
+
+	//Main Loop
+	//SceneStart *scene = new SceneStart();
+	//scene->Init();
+
 	scene = Opening;
-	
+
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(m_window) && !IsKeyPressed(VK_ESCAPE))
@@ -163,7 +173,9 @@ void Application::Run()
 
 	} //Check if the ESC key had been pressed or if the window had been closed
 	scene->Exit();
+
 	delete musics;
+	delete IntroScene;
 	delete Opening;
 	delete Start;
 	delete End;
@@ -212,4 +224,9 @@ void Application::SceneLevel2()
 void Application::EndingScene()
 {
     scene = End;
+}
+
+void Application::OpenCutScene()
+{
+	scene = IntroScene;;
 }

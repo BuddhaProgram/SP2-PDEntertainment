@@ -203,6 +203,19 @@ void SceneLevelOneB::RenderDoor()
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
 
+	//6th door near elevator
+	modelStack.PushMatrix();
+	modelStack.Translate(12, anima.DoorSlideTop_4, -400);
+	modelStack.Scale(4.9f, 4, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(12, anima.DoorSlideBtm_4, -400);
+	modelStack.Scale(4.9f, 4, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
+	modelStack.PopMatrix();
+
 }
 
 void SceneLevelOneB::checkDoor1()
@@ -235,6 +248,93 @@ void SceneLevelOneB::checkDoor1()
 
 void SceneLevelOneB::checkDoor2()
 {
+
+	if (Switches.b_PuzzleOne[0] && Switches.b_PuzzleOne[1] && Switches.b_PuzzleOne[2])
+	{
+		activateDoor2 = true;
+	}
+
+	if (anima.toSlideDoorBtm2)
+	{
+		Collision(52, 65, -150, -100);
+		Collision(205, 245, -220, -210);
+	}
+}
+
+void SceneLevelOneB::checkDoor3()
+{
+	if (proximitycheck(-350, -250 ,-375, -355))
+	{
+		displayInteract2 = true;
+		if (activateDoor3_1)
+		{
+			displayInteract2 = false;
+		}
+	}
+	else
+	{
+		displayInteract2 = false;
+	}
+	if (Application::IsKeyPressed('E') && proximitycheck(-350, -250, -375, -355))
+	{
+		activateDoor3_1 = true;
+	}
+
+	if (BossOne.Spawn)
+	{
+		activateDoor3_1 = false;
+		activateDoor3_2 = true;
+		displayInteract2 = false;
+		if (activateDoor3_2)
+		{
+			Collision(-350, -250, -375, -355);
+		}
+		if (BossOne.health <= 0)
+		{
+			activateDoor3_1 = true;
+			activateDoor3_2 = false;
+			if (activateDoor3_1)
+			{
+				anima.toSlideDoorTop_Boss = true;
+				anima.toSlideDoorBtm_Boss = true;
+				displayInteract2 = false;
+			}
+		}
+	}
+
+	if (anima.toSlideDoorBtm_Boss)
+	{
+		Collision(-350, -250, -375, -355);
+	}
+}
+
+void SceneLevelOneB::checkDoor4()
+{
+	if (proximitycheck(0, 25, -410, -390))
+	{
+		displayInteract3 = true;
+		if (activateDoor4)
+		{
+			displayInteract3 = false;
+		}
+	}
+	else
+	{
+		displayInteract3 = false;
+	}
+	if (Application::IsKeyPressed('E'))
+	{
+		if (proximitycheck(0, 25, -410, -390))
+		{
+			activateDoor4 = true;
+		}
+
+	}
+
+	if (anima.toSlideDoorBtm4)
+	{
+		Collision(0, 25, -410, -390);
+	}
 
 }
 
@@ -331,6 +431,38 @@ void SceneLevelOneB::MobsSpawn()
         BossOne.Spawn = true;
     }
         
+}
+
+void SceneLevelOneB::AnimationCheck(double dt)
+{
+	if (activateDoor1)
+	{
+		anima.OpenSlideDoor1(dt);
+	}
+	if (activateDoor2)
+	{
+		anima.OpenSlideDoor2(dt);
+		anima.OpenSlideDoor3(dt);
+	}
+	if (activateDoor3_1)
+	{
+		anima.OpenSlideDoor_Boss(dt);
+	}
+	else if (activateDoor3_2)
+	{
+		anima.CloseSlideDoor_Boss(dt);
+	}
+
+	if (!BossOne.Spawn && activateDoor3_1)
+	{
+		anima.OpenSlideDoor_Boss(dt);
+	}
+
+	if (activateDoor4)
+	{
+		anima.OpenSlideDoor4(dt);
+	}
+
 }
 
 void SceneLevelOneB::RenderPuzzle()

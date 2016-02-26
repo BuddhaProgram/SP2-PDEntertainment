@@ -418,10 +418,24 @@ void SceneLevelOneB::Update(double dt)
     checkPlayerPosMisc();
 	checkDoor1();
 	checkDoor2();
+
 	//checkDoor3();
 	PuzzleOneSwitchCheck(dt);
 
 	std::cout << Switches.b_PuzzleOne[0] << " " << Switches.b_PuzzleOne[1] << " " << Switches.b_PuzzleOne[2] << std::endl;
+
+	checkDoor3();
+	checkDoor4();
+	AnimationCheck(dt);
+	PuzzleOneSwitchCheck(dt);
+
+	std::cout << PuzzleGhost1.Spawn << std::endl;
+
+	if (activateDoor1)
+	{
+		anima.OpenSlideDoor1(dt);
+	}
+
     //wall collision
     for (int i = 0; i < 43; i++)
     {
@@ -652,7 +666,9 @@ void SceneLevelOneB::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
 
 
-	if (displayInteract1 || switch1Detect/*|| displayInteract2 || displayInteract3*/)
+
+	if (displayInteract1 || displayInteract2 || switch1Detect|| displayInteract3)
+
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
 	}
