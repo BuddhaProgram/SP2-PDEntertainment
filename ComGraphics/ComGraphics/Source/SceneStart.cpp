@@ -165,7 +165,8 @@ void SceneStart::Init()
     meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("FacilityOUT wall", Color(1, 1, 1));
     meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
     
-	
+	meshList[GEO_BLOOD1] = MeshBuilder::GenerateQuad("Blood1", Color(1, 1, 1));
+	meshList[GEO_BLOOD1]->textureID = LoadTGA("Image//Blood1.tga");
 	
 
     //change to correct textured quad later
@@ -179,7 +180,7 @@ void SceneStart::Init()
 	meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
 
 	Mtx44 projection;
-	projection.SetToPerspective(90.f, 16.f / 9.f, 0.1f, 10000.f);
+	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
 	// All Switches Debounce Key

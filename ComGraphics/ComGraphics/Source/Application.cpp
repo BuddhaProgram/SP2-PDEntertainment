@@ -142,6 +142,7 @@ void Application::Run()
 	//Main Loop
 	//SceneStart *scene = new SceneStart();
 	//scene->Init();
+
 	scene = Opening;
 	
 

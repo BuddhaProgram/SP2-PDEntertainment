@@ -168,10 +168,10 @@ private:
     bool displayInteract1;
     bool activateDoor1;
 
-    float CollXLarge[43];
-    float CollXSmall[43];
-    float CollZLarge[43];
-    float CollZSmall[43];
+    float CollXLarge[60];
+    float CollXSmall[60];
+    float CollZLarge[60];
+    float CollZSmall[60];
 
     MobGhost Ghost;
 };

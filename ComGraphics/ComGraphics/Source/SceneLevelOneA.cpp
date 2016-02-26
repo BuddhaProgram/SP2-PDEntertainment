@@ -202,7 +202,7 @@ void SceneLevelOneA::Init()
 	meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
 
     Mtx44 projection;
-    projection.SetToPerspective(90.f, 16.f / 9.f, 0.1f, 10000.f);
+    projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
     Ghost.setSpawnGhost(-30, -15);

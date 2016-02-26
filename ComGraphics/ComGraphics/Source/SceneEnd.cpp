@@ -164,7 +164,7 @@ void SceneEnd::Init()
 	meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
 
 	Mtx44 projection;
-	projection.SetToPerspective(90.f, 16.f / 9.f, 0.1f, 10000.f);
+	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
 	//scene changer inits.............
