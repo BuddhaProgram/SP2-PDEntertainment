@@ -209,9 +209,9 @@ private:
     float CollZLarge[43];
     float CollZSmall[43];
 
-    MobGhost PuzzleGhost1;
-    MobGhost PuzzleGhost2;
+   
     MobBossOne BossOne;
+    MobGhost Ghost1;
     SwitchLightPuzzle Switches;
 
  

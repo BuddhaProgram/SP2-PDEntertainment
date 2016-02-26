@@ -17,6 +17,7 @@ class GlobalVariables
 		bool start_Animation = false;
 
 		int i_SlotIndex;
+        float f_SwitchDebounce;
 };
 
 #endif
