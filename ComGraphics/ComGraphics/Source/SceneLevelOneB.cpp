@@ -422,7 +422,7 @@ void SceneLevelOneB::Update(double dt)
 	AnimationCheck(dt);
 	PuzzleOneSwitchCheck(dt);
 
-	std::cout << PuzzleGhost1.Spawn << std::endl;
+	std::cout << Switches.b_PuzzleOne[0] << " " << Switches.b_PuzzleOne[1] << " " << Switches.b_PuzzleOne[2] << std::endl;
     //wall collision
     for (int i = 0; i < 43; i++)
     {
@@ -435,8 +435,7 @@ void SceneLevelOneB::Update(double dt)
 	MouseClickFunction(dt);
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
-    //PuzzleInteracts(dt);
-	PuzzleOneSwitchCheck(dt);
+    PuzzleInteracts(dt);
     EnvironmentAnimation(dt);
     MobsSpawn();
    
@@ -670,6 +669,7 @@ void SceneLevelOneB::Render()
     {
         RenderBoss(BossOne.MobPosX, BossOne.MobPosZ);
     }
+
 	//modelStack.PushMatrix();
 	//RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
 	//modelStack.PopMatrix();

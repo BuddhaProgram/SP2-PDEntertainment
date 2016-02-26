@@ -598,6 +598,7 @@ void SceneLevelOneB::PuzzleInteracts(double dt)
             Switches.b_PuzzleOne[0] = false;
             SwitchAnimate1 = true;
         }
+
     }
     
     //switch two
