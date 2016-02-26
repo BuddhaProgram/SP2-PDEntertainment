@@ -201,10 +201,11 @@ void SceneLevelOneB::Init()
     meshList[GEO_PUZZLELEVER]->textureID = LoadTGA("Image//PuzzleLever.tga");
 
     Mtx44 projection;
-    projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
+    projection.SetToPerspective(90.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
-    Ghost1.setSpawnGhost(24, 31);
+    PuzzleGhost1.setSpawnGhost(24, 31);
+    PuzzleGhost1.setSpawnGhost(30, 31);
     BossOne.setSpawnBossOne(-30, 55);
 }
 
@@ -416,12 +417,10 @@ void SceneLevelOneB::Update(double dt)
     camera.Update(dt);
     checkPlayerPosMisc();
 	checkDoor1();
-	checkDoor2();
-	checkDoor3();
-	AnimationCheck(dt);
-	PuzzleOneSwitchCheck(dt);
-
-	std::cout << Ghost1.Spawn << std::endl;
+	if (activateDoor1)
+	{
+		anima.OpenSlideDoor1(dt);
+	}
     //wall collision
     for (int i = 0; i < 43; i++)
     {
@@ -434,20 +433,24 @@ void SceneLevelOneB::Update(double dt)
 	MouseClickFunction(dt);
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
-    //PuzzleInteracts(dt);
-	PuzzleOneSwitchCheck(dt);
+    PuzzleInteracts(dt);
     EnvironmentAnimation(dt);
     MobsSpawn();
    
 
-    Ghost1.checkPlayerPos(dt, 1,1,camera.position.x, camera.position.z);
+    PuzzleGhost1.checkPlayerPos(dt, 1,1,camera.position.x, camera.position.z);
+    PuzzleGhost2.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);
     BossOne.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);
 
-    if (Ghost1.Spawn)
+    if (PuzzleGhost1.Spawn)
     {
-        Ghost1.move(dt, 25);
+        PuzzleGhost1.move(dt, 25);
     }
 
+    if (PuzzleGhost2.Spawn)
+    {
+        PuzzleGhost2.move(dt, 25);
+    }
     if (BossOne.Spawn)
     {
         BossOne.move(dt, 15);
@@ -612,7 +615,7 @@ void SceneLevelOneB::Render()
         camera.target.x, camera.target.y, camera.target.z,
         camera.up.x, camera.up.y, camera.up.z
         );
-	//Init(Vector3(204, 10, 0), Vector3(204, 10, -1), Vector3(0, 1, 0));
+
     modelStack.LoadIdentity();
 
     // Light Source 1
@@ -649,15 +652,14 @@ void SceneLevelOneB::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
 	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
 
-
-	if (displayInteract1 || displayInteract2 || switch1Detect/*|| displayInteract2 || displayInteract3*/)
+	if (displayInteract1 || switch1Detect/*|| displayInteract2 || displayInteract3*/)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
 	}
 
-    if (Ghost1.Spawn)
+    if (PuzzleGhost1.Spawn)
     {
-        RenderGhost(Ghost1.MobPosX, Ghost1.MobPosZ);
+        RenderGhost(PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ);
     }
     
     if (BossOne.Spawn)

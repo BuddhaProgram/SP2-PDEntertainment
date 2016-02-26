@@ -200,25 +200,19 @@ private:
     GlobalVariables Variables;
 
     float FPS;
-  
+    bool displayInteract1;
+	bool activateDoor1;
+	bool activateDoor2;
+
     float CollXLarge[43];
     float CollXSmall[43];
     float CollZLarge[43];
     float CollZSmall[43];
 
-    MobGhost Ghost1;
+    MobGhost PuzzleGhost1;
+    MobGhost PuzzleGhost2;
     MobBossOne BossOne;
     SwitchLightPuzzle Switches;
-    void AnimationCheck(double dt);
-
-    bool displayInteract1;
-    bool displayInteract2;
-    bool displayInteract3;
-    bool activateDoor1 = false;
-    bool activateDoor2 = false;
-    bool activateDoor3_1 = false;
-    bool activateDoor3_2 = false;
-    bool activateDoor4 = false;
 
  
 };
