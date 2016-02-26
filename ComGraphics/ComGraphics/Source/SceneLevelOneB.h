@@ -10,6 +10,7 @@
 #include "OBJAnimation.h"
 #include "MobGhost.h"
 #include "MobBossOne.h"
+#include "SwitchLightPuzzle.h"
 
 class SceneLevelOneB : public Scene
 {
@@ -43,19 +44,19 @@ class SceneLevelOneB : public Scene
         GEO_RHAND,
 
         // Tools Interface and It's Icons
-		GEO_TOOLUIONE,
-		GEO_TOOLUITWO,
-		GEO_TOOLUITHREE,
-		GEO_TOOLUIFOUR,
+        GEO_TOOLUIONE,
+        GEO_TOOLUITWO,
+        GEO_TOOLUITHREE,
+        GEO_TOOLUIFOUR,
 
-		GEO_PICKAXE,
-		GEO_PICKAXEICON,
+        GEO_PICKAXE,
+        GEO_PICKAXEICON,
 
-		GEO_BAT,
-		GEO_BATICON,
+        GEO_BAT,
+        GEO_BATICON,
 
-		GEO_SWORD,
-		GEO_SWORDICON,
+        GEO_SWORD,
+        GEO_SWORDICON,
 
         GEO_GHOST1,
         GEO_BOSS1,
@@ -64,10 +65,15 @@ class SceneLevelOneB : public Scene
         GEO_SPAWNPOINT,
         GEO_SUITCASE,
 
-		GEO_SLIDEDOORTOP,
-		GEO_SLIDEDOORBTM,
+        GEO_SLIDEDOORTOP,
+        GEO_SLIDEDOORBTM,
         GEO_HEALTHBAR,
         GEO_STAMINABAR,
+
+        //puzzle stuff
+        GEO_LIGHTGREEN,
+        GEO_LIGHTRED,
+        GEO_PUZZLELEVER,
         //player related
         GEO_HEALTH,
         NUM_GEOMETRY,
@@ -153,6 +159,19 @@ private:
 
     // Switches Functions for puzzles
     void PuzzleOneSwitchCheck(double dt);
+    float f_SwitchDebounce;
+    bool switch1Detect = false;
+
+    bool SwitchAnimate1 = false;
+    bool SwitchAnimate2 = false;
+    bool SwitchAnimate3 = false;
+
+    float SwitchRotate1 = 0;
+    float SwitchRotate2 = 0;
+    float SwitchRotate3 = 0;
+
+    void RenderPuzzle();
+    void PuzzleInteracts(double dt);
 
 	// Tool UI functions
 	// Tool UI functions
@@ -193,6 +212,9 @@ private:
     MobGhost PuzzleGhost1;
     MobGhost PuzzleGhost2;
     MobBossOne BossOne;
+    SwitchLightPuzzle Switches;
+
+ 
 };
 
 
