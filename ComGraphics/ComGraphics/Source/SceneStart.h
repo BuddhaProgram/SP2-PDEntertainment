@@ -148,8 +148,8 @@ private:
 	bool proximitycheck(float smallx, float largex, float smallz, float largez);
 
 	// Switches Functions for puzzles
-	void PuzzleOneSwitchCheck(double dt);
-	float f_SwitchDebounce;
+	//void PuzzleOneSwitchCheck(double dt);
+	
 
 	// Tool UI functions
 	void ToolsUI();
@@ -175,11 +175,6 @@ private:
 
 	Light light[1];
 
-	float PlanetRotate;
-	float AsteroidRotate;
-	float AsteroidRotateF;
-	float AsteroidMove;
-	float AsteroidMoveS;
 
     //variables for scene changer
 

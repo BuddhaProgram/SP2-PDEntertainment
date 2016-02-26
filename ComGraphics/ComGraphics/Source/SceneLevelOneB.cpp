@@ -433,10 +433,11 @@ void SceneLevelOneB::Update(double dt)
 	MouseClickFunction(dt);
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
-    PuzzleInteracts(dt);
+    PuzzleOneSwitchCheck(dt);
+    //PuzzleInteracts(dt);
     EnvironmentAnimation(dt);
     MobsSpawn();
-   
+    
 
     PuzzleGhost1.checkPlayerPos(dt, 1,1,camera.position.x, camera.position.z);
     PuzzleGhost2.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);

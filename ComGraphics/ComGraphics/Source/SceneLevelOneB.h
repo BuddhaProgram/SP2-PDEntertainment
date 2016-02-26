@@ -171,7 +171,7 @@ private:
     float SwitchRotate3 = 0;
 
     void RenderPuzzle();
-    void PuzzleInteracts(double dt);
+    //void PuzzleInteracts(double dt);
 
 	// Tool UI functions
 	// Tool UI functions

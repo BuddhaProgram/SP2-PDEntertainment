@@ -138,7 +138,7 @@ void Application::Run()
 	//SceneStart *scene = new SceneStart();
 	//scene->Init();
 
-	scene = Opening;
+	scene = LevelOneB;
 
 	
 
