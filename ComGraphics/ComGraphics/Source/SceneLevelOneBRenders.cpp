@@ -205,13 +205,13 @@ void SceneLevelOneB::RenderDoor()
 
 	//6th door near elevator
 	modelStack.PushMatrix();
-	modelStack.Translate(12, 0, -400);
+	modelStack.Translate(12, anima.DoorSlideTop_4, -400);
 	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(12, 0, -400);
+	modelStack.Translate(12, anima.DoorSlideBtm_4, -400);
 	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
@@ -309,7 +309,31 @@ void SceneLevelOneB::checkDoor3()
 
 void SceneLevelOneB::checkDoor4()
 {
+	if (proximitycheck(0, 25, -410, -390))
+	{
+		displayInteract3 = true;
+		if (activateDoor4)
+		{
+			displayInteract3 = false;
+		}
+	}
+	else
+	{
+		displayInteract3 = false;
+	}
+	if (Application::IsKeyPressed('E'))
+	{
+		if (proximitycheck(0, 25, -410, -390))
+		{
+			activateDoor4 = true;
+		}
 
+	}
+
+	if (anima.toSlideDoorBtm4)
+	{
+		Collision(0, 25, -410, -390);
+	}
 }
 
 void SceneLevelOneB::RenderGhost(float xpos, float zpos)
@@ -430,6 +454,11 @@ void SceneLevelOneB::AnimationCheck(double dt)
 	if (!BossOne.Spawn && activateDoor3_1)
 	{
 		anima.OpenSlideDoor_Boss(dt);
+	}
+
+	if (activateDoor4)
+	{
+		anima.OpenSlideDoor4(dt);
 	}
 
 }

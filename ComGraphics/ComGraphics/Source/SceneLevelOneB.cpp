@@ -419,6 +419,7 @@ void SceneLevelOneB::Update(double dt)
 	checkDoor1();
 	checkDoor2();
 	checkDoor3();
+	checkDoor4();
 	AnimationCheck(dt);
 	PuzzleOneSwitchCheck(dt);
 
@@ -656,7 +657,7 @@ void SceneLevelOneB::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
 
 
-	if (displayInteract1 || displayInteract2 || switch1Detect/*|| displayInteract2 || displayInteract3*/)
+	if (displayInteract1 || displayInteract2 || switch1Detect|| displayInteract3)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
 	}
