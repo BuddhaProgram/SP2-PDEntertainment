@@ -10,6 +10,7 @@ GlobalVariables::GlobalVariables()
 	start_Animation = false;
 	
 	i_SlotIndex = 1;
+    f_SwitchDebounce = 0.0f;
 }
 
 GlobalVariables::~GlobalVariables()

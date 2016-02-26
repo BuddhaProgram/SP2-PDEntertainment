@@ -150,11 +150,9 @@ private:
 	void checkDoor1();
 	void checkDoor2();
 	void checkDoor3();
-	void checkDoor4();
     void EnvironmentAnimation(double dt);
     void attackCheck();
     void MobsSpawn();
-	void AnimationCheck(double dt);
     //objects and mob animation variables
     float EnvRotateY = 0;
 
@@ -173,7 +171,7 @@ private:
     float SwitchRotate3 = 0;
 
     void RenderPuzzle();
-    void PuzzleInteracts(double dt);
+    //void PuzzleInteracts(double dt);
 
 	// Tool UI functions
 	// Tool UI functions
@@ -203,13 +201,8 @@ private:
 
     float FPS;
     bool displayInteract1;
-	bool displayInteract2;
-	bool displayInteract3;
-	bool activateDoor1 = false;
-	bool activateDoor2 = false;
-	bool activateDoor3_1 = false;
-	bool activateDoor3_2 = false;
-	bool activateDoor4 = false;
+	bool activateDoor1;
+	bool activateDoor2;
 
     float CollXLarge[43];
     float CollXSmall[43];
@@ -219,9 +212,9 @@ private:
     MobGhost PuzzleGhost1;
     MobGhost PuzzleGhost2;
     MobBossOne BossOne;
-
     SwitchLightPuzzle Switches;
 
+ 
 };
 
 
