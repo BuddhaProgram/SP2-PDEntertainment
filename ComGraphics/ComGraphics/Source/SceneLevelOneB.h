@@ -206,8 +206,7 @@ private:
     float CollZLarge[43];
     float CollZSmall[43];
 
-    MobGhost PuzzleGhost1;
-    MobGhost PuzzleGhost2;
+    MobGhost Ghost1;
     MobBossOne BossOne;
     SwitchLightPuzzle Switches;
     void AnimationCheck(double dt);
