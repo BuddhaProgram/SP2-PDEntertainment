@@ -99,7 +99,7 @@ void SceneStart::RenderSceneStart()
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(x, 12.5f, -100);
-		modelStack.Rotate(90, 0, 1, 0);
+		modelStack.Rotate(270, 0, 1, 0);
 		modelStack.Rotate(-90, 0, 0, 1);
 		modelStack.Scale(25, 1, 25);
 		RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
@@ -109,6 +109,7 @@ void SceneStart::RenderSceneStart()
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(87, 12.5f, z);
+		modelStack.Rotate(180, 0, 1, 0);
 		modelStack.Rotate(-90, 0, 0, 1);
 		modelStack.Scale(25, 1, 25);
 		RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
@@ -118,7 +119,6 @@ void SceneStart::RenderSceneStart()
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(-87, 12.5f, z);
-		modelStack.Rotate(180, 0, 1, 0);
 		modelStack.Rotate(-90, 0, 0, 1);
 		modelStack.Scale(25, 1, 25);
 		RenderMesh(meshList[GEO_FACILITYOUTWALL], true);

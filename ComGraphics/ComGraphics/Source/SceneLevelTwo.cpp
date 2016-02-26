@@ -99,7 +99,7 @@ void SceneLevelTwo::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    camera.Init(Vector3(204, 10, 0), Vector3(0, 10, -1), Vector3(0, 1, 0));
+    camera.Init(Vector3(0, 10, 400), Vector3(0, 10, -1), Vector3(0, 1, 0));
 
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -175,7 +175,7 @@ void SceneLevelTwo::Init()
     meshList[GEO_SPAWNPOINT]->textureID = LoadTGA("Image//SpawnPoint.tga");
 
     Mtx44 projection;
-    projection.SetToPerspective(90.f, 16.f / 9.f, 0.1f, 10000.f);
+    projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
     //scene changer inits.............
@@ -393,7 +393,7 @@ void SceneLevelTwo::Update(double dt)
         anima.OpenSlideDoor1(dt);
     }
     //wall collision
-    for (int i = 0; i < 43; i++)
+    for (int i = 0; i < 60; i++)
     {
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
