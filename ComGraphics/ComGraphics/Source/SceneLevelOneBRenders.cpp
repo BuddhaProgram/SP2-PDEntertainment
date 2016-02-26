@@ -189,13 +189,13 @@ void SceneLevelOneB::RenderDoor()
 
 	//5th door BOSS door
 	modelStack.PushMatrix();
-	modelStack.Translate(-292, 0, -363);
+	modelStack.Translate(-292, anima.DoorSlideTop_Boss, -363);
 	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(-292, 0, -363);
+	modelStack.Translate(-292, anima.DoorSlideBtm_Boss, -363);
 	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
@@ -233,6 +233,63 @@ void SceneLevelOneB::checkDoor1()
 void SceneLevelOneB::checkDoor2()
 {
 
+	//if (/*switch is true*/)
+	//{
+	//	activateDoor2 = true;
+	//}
+
+	if (anima.toSlideDoorBtm2)
+	{
+		Collision(52, 65, -150, -100);
+		Collision(205, 245, -220, -210);
+	}
+}
+
+void SceneLevelOneB::checkDoor3()
+{
+	if (proximitycheck(-350, -250 ,-375, -355))
+	{
+		displayInteract2 = true;
+		if (activateDoor3_1)
+		{
+			displayInteract2 = false;
+		}
+	}
+	else
+	{
+		displayInteract2 = false;
+	}
+	if (Application::IsKeyPressed('E') && proximitycheck(-350, -250, -375, -355))
+	{
+		activateDoor3_1 = true;
+	}
+
+	if (BossOne.Spawn)
+	{
+		activateDoor3_1 = false;
+		activateDoor3_2 = true;
+		displayInteract2 = false;
+		if (activateDoor3_2)
+		{
+			Collision(-350, -250, -375, -355);
+		}
+		if (BossOne.health <= 0)
+		{
+			activateDoor3_1 = true;
+			activateDoor3_2 = false;
+			if (activateDoor3_1)
+			{
+				anima.toSlideDoorTop_Boss = true;
+				anima.toSlideDoorBtm_Boss = true;
+				displayInteract2 = false;
+			}
+		}
+	}
+
+	if (anima.toSlideDoorBtm_Boss)
+	{
+		Collision(-350, -250, -375, -355);
+	}
 }
 
 void SceneLevelOneB::RenderGhost(float xpos, float zpos)
@@ -327,4 +384,30 @@ void SceneLevelOneB::MobsSpawn()
         BossOne.Spawn = true;
     }
         
+}
+
+void SceneLevelOneB::AnimationCheck(double dt)
+{
+	if (activateDoor1)
+	{
+		anima.OpenSlideDoor1(dt);
+	}
+	if (activateDoor2)
+	{
+		anima.OpenSlideDoor2(dt);
+		anima.OpenSlideDoor3(dt);
+	}
+	if (activateDoor3_1)
+	{
+		anima.OpenSlideDoor_Boss(dt);
+	}
+	else if (activateDoor3_2)
+	{
+		anima.CloseSlideDoor_Boss(dt);
+	}
+
+	if (!BossOne.Spawn && activateDoor3_1)
+	{
+		anima.OpenSlideDoor_Boss(dt);
+	}
 }

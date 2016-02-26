@@ -18,6 +18,8 @@ public:
 	void CloseSlideDoor2(double dt);
 	void OpenSlideDoor3(double dt);
 	void CloseSlideDoor3(double dt);
+	void OpenSlideDoor_Boss(double dt);
+	void CloseSlideDoor_Boss(double dt);
 
 	bool WithinArea(float smallx, float largex, float smallz, float largez);
 	float cam_pos_X, cam_poz_Z;
@@ -65,6 +67,13 @@ public:
 	bool toSlideDoorBtm3 = true;
 	bool ClosingDoorTop3 = true;
 	bool ClosingDoorBtm3 = true;
+
+	float DoorSlideTop_Boss;
+	float DoorSlideBtm_Boss;
+	bool toSlideDoorTop_Boss = true;
+	bool toSlideDoorBtm_Boss = true;
+	bool ClosingDoorTop_Boss = true;
+	bool ClosingDoorBtm_Boss = true;
 
 
 };

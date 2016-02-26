@@ -147,6 +147,7 @@ private:
     void EnvironmentAnimation(double dt);
     void attackCheck();
     void MobsSpawn();
+	void AnimationCheck(double dt);
     //objects and mob animation variables
     float EnvRotateY = 0;
 
@@ -182,8 +183,11 @@ private:
 
     float FPS;
     bool displayInteract1;
-	bool activateDoor1;
-	bool activateDoor2;
+	bool displayInteract2;
+	bool activateDoor1 = false;
+	bool activateDoor2 = false;
+	bool activateDoor3_1 = false;
+	bool activateDoor3_2 = false;
 
     float CollXLarge[43];
     float CollXSmall[43];
@@ -193,6 +197,7 @@ private:
     MobGhost PuzzleGhost1;
     MobGhost PuzzleGhost2;
     MobBossOne BossOne;
+
 };
 
 

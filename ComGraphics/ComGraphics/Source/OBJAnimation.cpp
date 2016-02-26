@@ -157,8 +157,8 @@ void Animation::OpenSlideDoor2(double dt)
 {
 	if (toSlideDoorTop2)
 	{
-		DoorSlideTop_2 += (float)(5 * dt);
-		if (DoorSlideTop_2 >= 4)
+		DoorSlideTop_2 += (float)(8 * dt);
+		if (DoorSlideTop_2 >= 10)
 		{
 			toSlideDoorTop2 = false;
 		}
@@ -167,7 +167,7 @@ void Animation::OpenSlideDoor2(double dt)
 	if (toSlideDoorBtm2)
 	{
 		DoorSlideBtm_2 -= (float)(5 * dt);
-		if (DoorSlideBtm_2 <= -4)
+		if (DoorSlideBtm_2 <= -6)
 		{
 			toSlideDoorBtm2 = false;
 		}
@@ -178,7 +178,7 @@ void Animation::CloseSlideDoor2(double dt)
 {
 	if (ClosingDoorTop2)
 	{
-		DoorSlideTop_2 -= (float)(5 * dt);
+		DoorSlideTop_2 -= (float)(8 * dt);
 		if (DoorSlideTop_2 <= 0)
 		{
 			ClosingDoorTop2 = false;
@@ -199,8 +199,8 @@ void Animation::OpenSlideDoor3(double dt)
 {
 	if (toSlideDoorTop3)
 	{
-		DoorSlideTop_3 += (float)(5 * dt);
-		if (DoorSlideTop_3 >= 4)
+		DoorSlideTop_3 += (float)(8 * dt);
+		if (DoorSlideTop_3 >= 10)
 		{
 			toSlideDoorTop3 = false;
 		}
@@ -209,7 +209,7 @@ void Animation::OpenSlideDoor3(double dt)
 	if (toSlideDoorBtm3)
 	{
 		DoorSlideBtm_3 -= (float)(5 * dt);
-		if (DoorSlideBtm_3 <= -4)
+		if (DoorSlideBtm_3 <= -6)
 		{
 			toSlideDoorBtm3 = false;
 		}
@@ -221,7 +221,7 @@ void Animation::CloseSlideDoor3(double dt)
 {
 	if (ClosingDoorTop3)
 	{
-		DoorSlideTop_3 -= (float)(5 * dt);
+		DoorSlideTop_3 -= (float)(8 * dt);
 		if (DoorSlideTop_3 <= 0)
 		{
 			ClosingDoorTop3 = false;
@@ -234,6 +234,49 @@ void Animation::CloseSlideDoor3(double dt)
 		if (DoorSlideBtm_3 >= 0)
 		{
 			ClosingDoorBtm3 = false;
+		}
+	}
+}
+
+void Animation::OpenSlideDoor_Boss(double dt)
+{
+	if (toSlideDoorTop_Boss)
+	{
+		DoorSlideTop_Boss += (float)(8 * dt);
+		if (DoorSlideTop_Boss >= 10)
+		{
+			toSlideDoorTop_Boss = false;
+		}
+	}
+
+	if (toSlideDoorBtm_Boss)
+	{
+		DoorSlideBtm_Boss -= (float)(5 * dt);
+		if (DoorSlideBtm_Boss <= -6)
+		{
+			toSlideDoorBtm_Boss = false;
+		}
+	}
+
+}
+
+void Animation::CloseSlideDoor_Boss(double dt)
+{
+	if (ClosingDoorTop_Boss)
+	{
+		DoorSlideTop_Boss -= (float)(8 * dt);
+		if (DoorSlideTop_Boss <= 0)
+		{
+			ClosingDoorTop_Boss = false;
+		}
+	}
+
+	if (ClosingDoorBtm_Boss)
+	{
+		DoorSlideBtm_Boss += (float)(5 * dt);
+		if (DoorSlideBtm_Boss >= 0)
+		{
+			ClosingDoorBtm_Boss = false;
 		}
 	}
 }
