@@ -168,7 +168,7 @@ void SceneLevelOneA::checkDoor1()
 	}
 	if (anima.toSlideDoorBtm)
 	{
-		//Collision(140, 210, 180, 200);
+		Collision(140, 210, 180, 200);
 	}
 
 	if (proximitycheck(-205, -195, 115, 125) && !activateDoor1)
