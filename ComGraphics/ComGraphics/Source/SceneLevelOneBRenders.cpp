@@ -415,6 +415,7 @@ void SceneLevelOneB::AnimationCheck(double dt)
 		anima.OpenSlideDoor_Boss(dt);
 	}
 
+}
 void SceneLevelOneB::RenderPuzzle()
 {
     //levers
@@ -689,5 +690,5 @@ void SceneLevelOneB::PuzzleInteracts(double dt)
             }
         }
     }
->>>>>>> origin/master
+
 }
