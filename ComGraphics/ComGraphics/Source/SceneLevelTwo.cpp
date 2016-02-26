@@ -32,7 +32,7 @@ void SceneLevelTwo::Init()
     glEnable(GL_DEPTH_TEST);
 
     //Enable back face culling
-    glDisable(GL_CULL_FACE);
+	glEnable(GL_CULL_FACE);
 
     //Default to fill mode
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
@@ -80,8 +80,8 @@ void SceneLevelTwo::Init()
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(90));
-	light[0].cosInner = cos(Math::DegreeToRadian(1));
+	light[0].cosCutoff = cos(Math::DegreeToRadian(30));
+	light[0].cosInner = cos(Math::DegreeToRadian(15));
 	light[0].exponent = 3.f;
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 
@@ -175,7 +175,7 @@ void SceneLevelTwo::Init()
     meshList[GEO_SPAWNPOINT]->textureID = LoadTGA("Image//SpawnPoint.tga");
 
     Mtx44 projection;
-    projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
+    projection.SetToPerspective(90.f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
     //scene changer inits.............
@@ -195,6 +195,12 @@ void SceneLevelTwo::Collision(float smallx, float largex, float smallz, float la
     if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez) && (camera.position.z >= largez - 3.f)){ camera.position.z = largez; }
     if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x >= smallx) && (camera.position.x <= smallx + 3.f)){ camera.position.x = smallx; }
     if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x <= largex) && (camera.position.x >= largex - 3.f)){ camera.position.x = largex; }
+
+	camera.target = Vector3(
+		sin(Math::DegreeToRadian(camera.rotationY)) * cos(Math::DegreeToRadian(camera.rotationX)) + camera.position.x,
+		sin(Math::DegreeToRadian(camera.rotationX)) + camera.position.y,
+		cos(Math::DegreeToRadian(camera.rotationX)) * cos(Math::DegreeToRadian(camera.rotationY)) + camera.position.z
+		);
 }
 
 bool SceneLevelTwo::proximitycheck(float smallx, float largex, float smallz, float largez)
