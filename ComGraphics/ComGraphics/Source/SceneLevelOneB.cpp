@@ -418,8 +418,7 @@ void SceneLevelOneB::Update(double dt)
     checkPlayerPosMisc();
 	checkDoor1();
 	checkDoor2();
-	checkDoor3();
-	AnimationCheck(dt);
+	//checkDoor3();
 	PuzzleOneSwitchCheck(dt);
 
 	std::cout << Switches.b_PuzzleOne[0] << " " << Switches.b_PuzzleOne[1] << " " << Switches.b_PuzzleOne[2] << std::endl;
@@ -434,8 +433,6 @@ void SceneLevelOneB::Update(double dt)
 	MouseScrollToolSlot();
 	MouseClickFunction(dt);
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
-
-    PuzzleInteracts(dt);
     EnvironmentAnimation(dt);
     MobsSpawn();
    
@@ -655,7 +652,7 @@ void SceneLevelOneB::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
 
 
-	if (displayInteract1 || displayInteract2 || switch1Detect/*|| displayInteract2 || displayInteract3*/)
+	if (displayInteract1 || switch1Detect/*|| displayInteract2 || displayInteract3*/)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
 	}

@@ -149,7 +149,7 @@ private:
     //animation functions
 	void checkDoor1();
 	void checkDoor2();
-	void checkDoor3();
+	//void checkDoor3();
     void EnvironmentAnimation(double dt);
     void attackCheck();
     void MobsSpawn();
