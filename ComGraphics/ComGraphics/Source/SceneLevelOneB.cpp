@@ -190,6 +190,16 @@ void SceneLevelOneB::Init()
     meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
     meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
 
+    //puzzle inits
+    meshList[GEO_LIGHTGREEN] = MeshBuilder::GenerateOBJ("green light", "OBJ//PuzzleLight.obj");
+    meshList[GEO_LIGHTGREEN]->textureID = LoadTGA("Image//PuzzleLightGREEN.tga");
+
+    meshList[GEO_LIGHTRED] = MeshBuilder::GenerateOBJ("red light", "OBJ//PuzzleLight.obj");
+    meshList[GEO_LIGHTRED]->textureID = LoadTGA("Image//PuzzleLightRED.tga");
+
+    meshList[GEO_PUZZLELEVER] = MeshBuilder::GenerateOBJ("lever", "OBJ//PuzzleLever.obj");
+    meshList[GEO_PUZZLELEVER]->textureID = LoadTGA("Image//PuzzleLever.tga");
+
     Mtx44 projection;
     projection.SetToPerspective(90.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
@@ -405,6 +415,7 @@ void SceneLevelOneB::Update(double dt)
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
     camera.Update(dt);
+    checkPlayerPosMisc();
 	checkDoor1();
 	checkDoor2();
 	checkDoor3();
@@ -422,6 +433,7 @@ void SceneLevelOneB::Update(double dt)
 	MouseClickFunction(dt);
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
+    PuzzleInteracts(dt);
     EnvironmentAnimation(dt);
     MobsSpawn();
    
@@ -640,7 +652,8 @@ void SceneLevelOneB::Render()
 	RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
 	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
 
-	if (displayInteract1 || displayInteract2 /*|| displayInteract3*/)
+
+	if (displayInteract1 || displayInteract2 || switch1Detect/*|| displayInteract2 || displayInteract3*/)
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
 	}
