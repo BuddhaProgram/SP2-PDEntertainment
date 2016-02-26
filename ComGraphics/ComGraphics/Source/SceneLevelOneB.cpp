@@ -201,7 +201,7 @@ void SceneLevelOneB::Init()
     meshList[GEO_PUZZLELEVER]->textureID = LoadTGA("Image//PuzzleLever.tga");
 
     Mtx44 projection;
-    projection.SetToPerspective(90.0f, 16.f / 9.f, 0.1f, 10000.f);
+    projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
     PuzzleGhost1.setSpawnGhost(24, 31);
@@ -435,7 +435,8 @@ void SceneLevelOneB::Update(double dt)
 	MouseClickFunction(dt);
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
-    PuzzleInteracts(dt);
+    //PuzzleInteracts(dt);
+	PuzzleOneSwitchCheck(dt);
     EnvironmentAnimation(dt);
     MobsSpawn();
    
