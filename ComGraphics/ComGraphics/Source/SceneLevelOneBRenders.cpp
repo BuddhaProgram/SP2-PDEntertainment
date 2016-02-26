@@ -585,8 +585,7 @@ void SceneLevelOneB::PuzzleInteracts(double dt)
     
     //switch two
     if (Func.WithinArea(295, 320, -152, -136))
-    {
-
+	{
         if (Application::IsKeyPressed('E') && !Switches.b_PuzzleOne[1] && !SwitchAnimate2)
         {
             Switches.b_PuzzleOne[1] = true;
