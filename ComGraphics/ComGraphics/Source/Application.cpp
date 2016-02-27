@@ -144,13 +144,11 @@ void Application::Run()
     LevelTwo = new SceneLevelTwo();
     LevelTwo->Init();
 
-
-
 	//Main Loop
 	//SceneStart *scene = new SceneStart();
 	//scene->Init();
 
-	scene = LevelOneB;
+	scene = LevelTwo;
 
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame

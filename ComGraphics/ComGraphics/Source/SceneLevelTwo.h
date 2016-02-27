@@ -37,6 +37,10 @@ class SceneLevelTwo : public Scene
         GEO_FACILITYOUTWALL,
         GEO_FACILITYWALLS,
         GEO_FACILITYCEILINGS,
+		GEO_TRAPWALL,
+
+		GEO_HEALTHBAR,
+		GEO_STAMINABAR,
 
         GEO_LHAND,
         GEO_RHAND,
@@ -122,7 +126,7 @@ private:
 
     //mob renders
     void RenderGhost1();
-    void RenderDoor();
+	void RenderTraps();
 
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
@@ -132,8 +136,6 @@ private:
     void checkPlayerPosMisc();
     void Collision(float smallx, float largex, float smallz, float largez);
     bool proximitycheck(float smallx, float largex, float smallz, float largez);
-
-    void checkDoor1();
 
     // Switches Functions for puzzles
     void PuzzleOneSwitchCheck(double dt);
@@ -172,6 +174,8 @@ private:
     float CollXSmall[60];
     float CollZLarge[60];
     float CollZSmall[60];
+
+	float transSpikeDoor;
 
     MobGhost Ghost;
 };

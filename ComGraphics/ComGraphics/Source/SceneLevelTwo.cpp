@@ -174,6 +174,12 @@ void SceneLevelTwo::Init()
     meshList[GEO_SPAWNPOINT] = MeshBuilder::GenerateOBJ("Spawn", "OBJ//SpawnPoint.obj");
     meshList[GEO_SPAWNPOINT]->textureID = LoadTGA("Image//SpawnPoint.tga");
 
+	meshList[GEO_TRAPWALL] = MeshBuilder::GenerateOBJ("SPIKEWALL", "OBJ//walltrap.obj");
+	meshList[GEO_TRAPWALL]->textureID = LoadTGA("Image//WallTrap.tga");
+
+	meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
+	meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
+
     Mtx44 projection;
     projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
@@ -375,6 +381,12 @@ void SceneLevelTwo::Update(double dt)
     FPS = 1.f / (float)dt;
     //worldspin += (float)(dt);
 
+	transSpikeDoor += 0.5f;
+	if (transSpikeDoor > 150)
+	{
+		transSpikeDoor = 150;
+	}
+
     /*-------------------------[End of Tool UI Functions]-------------------------------*/
 
     if (Application::IsKeyPressed('1')) //enable back face culling
@@ -387,7 +399,6 @@ void SceneLevelTwo::Update(double dt)
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
     camera.Update(dt);
-    checkDoor1();
     if (activateDoor1)
     {
         anima.OpenSlideDoor1(dt);
@@ -397,6 +408,9 @@ void SceneLevelTwo::Update(double dt)
     {
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
+
+	//trapwall collision
+	Collision(-76 + transSpikeDoor, -60 + transSpikeDoor, 128, 360);
 
     /*-------------------------[Tool UI Functions]-------------------------------*/
     ToolsUI();
@@ -588,14 +602,16 @@ void SceneLevelTwo::Render()
     RenderToolIcon();
 
     RenderScene();
-    RenderDoor();
+	RenderTraps();
 
     RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
     RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-    RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 3);
-    RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 4);
-    RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
     RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
+
+	modelStack.PushMatrix();
+	RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57, 0, false);
+	RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56, 0, false);
+	modelStack.PopMatrix();
 
     if (displayInteract1 /*|| displayInteract2 || displayInteract3*/)
     {
