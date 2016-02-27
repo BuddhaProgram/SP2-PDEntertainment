@@ -347,6 +347,7 @@ void SceneLevelOneB::RenderGhost(float xpos, float zpos)
 	}
     modelStack.PushMatrix();
     modelStack.Translate(xpos, 6, zpos);
+    modelStack.Scale(3, 3, 3);
 	modelStack.Rotate(rotGhost+270, 0, 1, 0);
     RenderMesh(meshList[GEO_GHOST1], true);
     modelStack.PopMatrix();
@@ -400,12 +401,12 @@ void SceneLevelOneB::attackCheck()
 
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(20.f, PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
-        PuzzleGhost1.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
+        PuzzleGhost1.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);
     }
 
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(20.f, PuzzleGhost2.MobPosX, PuzzleGhost2.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
-        PuzzleGhost2.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
+        PuzzleGhost2.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);
     }
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(60.f, BossOne.MobPosX, BossOne.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
@@ -418,8 +419,11 @@ void SceneLevelOneB::MobsSpawn()
     
     if (proximitycheck(216, 240, -256, -248) && PuzzleGhost1.health >0)
     {
-        std::cout << "ghost" << std::endl;
         PuzzleGhost1.Spawn = true;
+    }
+    if (proximitycheck(216, 240, -256, -248) && PuzzleGhost2.health >0)
+    {
+        PuzzleGhost2.Spawn = true;
     }
     if (proximitycheck(-304, -280, -392, -384) && BossOne.health>0)
     {

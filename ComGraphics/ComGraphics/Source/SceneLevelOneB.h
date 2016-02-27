@@ -74,7 +74,6 @@ class SceneLevelOneB : public Scene
         GEO_LIGHTRED,
         GEO_PUZZLELEVER,
         //player related
-        GEO_HEALTH,
         NUM_GEOMETRY,
     };
     enum UNIFORM_TYPE

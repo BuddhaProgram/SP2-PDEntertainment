@@ -67,7 +67,6 @@ class SceneLevelTwo : public Scene
         GEO_SLIDEDOORBTM,
 
         //player related
-        GEO_HEALTH,
         NUM_GEOMETRY,
     };
     enum UNIFORM_TYPE

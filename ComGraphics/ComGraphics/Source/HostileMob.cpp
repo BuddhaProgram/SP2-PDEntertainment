@@ -37,5 +37,12 @@ void HostileMob::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 
     }
 }
 
+void HostileMob::MobCollision(float smallx, float largex, float smallz, float largez)
+{
+    if ((MobPosX >= smallx) && (MobPosX <= largex) && (MobPosZ >= smallz) && (MobPosZ <= smallz + 3.f)){ MobPosZ = smallz; }
+    if ((MobPosX >= smallx) && (MobPosX <= largex) && (MobPosZ <= largez) && (MobPosZ >= largez - 3.f)){ MobPosZ = largez; }
+    if ((MobPosZ >= smallz) && (MobPosZ <= largez) && (MobPosX >= smallx) && (MobPosX <= smallx + 3.f)){ MobPosX = smallx; }
+    if ((MobPosZ >= smallz) && (MobPosZ <= largez) && (MobPosX <= largex) && (MobPosX >= largex - 3.f)){ MobPosX = largex; }
+}
 
 

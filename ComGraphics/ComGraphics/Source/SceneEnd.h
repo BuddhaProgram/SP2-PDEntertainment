@@ -66,7 +66,6 @@ class SceneEnd : public Scene
 		GEO_GHOST1,
 
 		//player related
-		GEO_HEALTH,
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE

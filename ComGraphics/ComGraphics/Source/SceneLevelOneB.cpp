@@ -205,7 +205,7 @@ void SceneLevelOneB::Init()
     projectionStack.LoadMatrix(projection);
 
     PuzzleGhost1.setSpawnGhost(24, 31);
-    PuzzleGhost1.setSpawnGhost(30, 31);
+    PuzzleGhost2.setSpawnGhost(30, 31);
     BossOne.setSpawnBossOne(-30, 55);
 }
 
@@ -587,7 +587,7 @@ void SceneLevelOneB::Update(double dt)
 	SwitchCollisionChecker();
 	Switches.SwitchPuzzleOne();
 
-	std::cout << Switches.b_PuzzleOne[0] << " " << Switches.b_PuzzleOne[1] << " " << Switches.b_PuzzleOne[2] << std::endl;
+	//std::cout << Switches.b_PuzzleOne[0] << " " << Switches.b_PuzzleOne[1] << " " << Switches.b_PuzzleOne[2] << std::endl;
 
 	checkDoor3();
 	checkDoor4();
@@ -605,6 +605,11 @@ void SceneLevelOneB::Update(double dt)
     {
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
+    Collision(-352,-336, -488,-376);
+
+    //mob collision
+    PuzzleGhost1.MobCollision(PuzzleGhost2.MobPosX - 4, PuzzleGhost2.MobPosX + 4, PuzzleGhost2.MobPosZ - 4, PuzzleGhost2.MobPosZ + 4);
+    PuzzleGhost2.MobCollision(PuzzleGhost1.MobPosX - 4, PuzzleGhost1.MobPosX + 4, PuzzleGhost1.MobPosZ - 4, PuzzleGhost1.MobPosZ + 4);
 
 	/*-------------------------[Tool UI Functions]-------------------------------*/
 	ToolsUI();
@@ -633,6 +638,8 @@ void SceneLevelOneB::Update(double dt)
         BossOne.move(dt, 15);
         Collision(BossOne.MobPosX - 20, BossOne.MobPosX + 20, BossOne.MobPosZ - 20, BossOne.MobPosZ + 20);
     }
+
+
 
 }
 
@@ -839,7 +846,14 @@ void SceneLevelOneB::Render()
 
     if (PuzzleGhost1.Spawn)
     {
+        std::cout << "1" << std::endl;
         RenderGhost(PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ);
+    }
+
+    if (PuzzleGhost2.Spawn)
+    {
+        std::cout << "2" << std::endl;
+        RenderGhost(PuzzleGhost2.MobPosX, PuzzleGhost2.MobPosZ);
     }
     
     if (BossOne.Spawn)
