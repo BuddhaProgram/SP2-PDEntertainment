@@ -74,6 +74,10 @@ class SceneLevelOneB : public Scene
         GEO_LIGHTRED,
         GEO_PUZZLELEVER,
         //player related
+
+		GEO_DEADCOLOR,
+		GEO_DEADBLACKSCREEN,
+
         NUM_GEOMETRY,
     };
     enum UNIFORM_TYPE
@@ -171,6 +175,10 @@ private:
 	void RenderToolIcon();
 
 	void MouseClickFunction(double dt);
+
+	// Checkers and interaction when player dies
+	void RenderPlayerDiesInteraction();
+	void UpdatePlayerDiesInteraction(double dt);
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];

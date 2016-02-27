@@ -69,6 +69,11 @@ class SceneLevelOneA : public Scene
         //player related
         GEO_HEALTHBAR,
 		GEO_STAMINABAR,
+
+		// Animations when player dies
+		GEO_DEADCOLOR,
+		GEO_DEADBLACKSCREEN,
+
         GEO_SUITCASE,
         NUM_GEOMETRY,
     };
@@ -172,6 +177,10 @@ private:
 	void TestDoorRender(); // Sliding Door
     void EnvironmentAnimation(double dt);
 	void AnimationCheck(double dt);
+
+	// Checkers and interaction when player dies
+	void RenderPlayerDiesInteraction();
+	void UpdatePlayerDiesInteraction(double dt);
 
     //objects and mob animation variables
     bool displayInteract1;
