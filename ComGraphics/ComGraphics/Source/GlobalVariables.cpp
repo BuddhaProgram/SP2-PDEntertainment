@@ -20,6 +20,8 @@ GlobalVariables::GlobalVariables()
 	{
 		b_SwitchAnimate[i] = false;
 	}
+
+	f_redScreenTimer = 0.0f;
 }
 
 GlobalVariables::~GlobalVariables()

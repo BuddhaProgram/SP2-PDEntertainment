@@ -68,6 +68,11 @@ class SceneLevelTwo : public Scene
 
         //player related
         GEO_HEALTH,
+
+		// Animations when player dies
+		GEO_DEADCOLOR,
+		GEO_DEADBLACKSCREEN,
+
         NUM_GEOMETRY,
     };
     enum UNIFORM_TYPE
@@ -141,7 +146,6 @@ private:
     void PuzzleOneSwitchCheck(double dt);
 
     // Tool UI functions
-    // Tool UI functions
     void ToolsUI();
     void MouseScrollToolSlot();
     void RenderMouseScrollToolSlot();
@@ -149,6 +153,10 @@ private:
     void RenderToolIcon();
 
     void MouseClickFunction(double dt);
+
+	// Checkers and interaction when player dies
+	void RenderPlayerDiesInteraction();
+	void UpdatePlayerDiesInteraction(double dt);
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];

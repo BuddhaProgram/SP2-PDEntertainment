@@ -163,6 +163,10 @@ void SceneEnd::Init()
 	meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("Facility Wall Outside", Color(1, 1, 1));
 	meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
 
+	/*--------------------[Used as a background for Dead Scene]--------------------*/
+	meshList[GEO_DEADCOLOR] = MeshBuilder::GenerateQuad("DeadScreen", Color(1, 0, 0));
+	meshList[GEO_DEADBLACKSCREEN] = MeshBuilder::GenerateQuad("DeadSCreenTwo", Color(0, 0, 0));
+
 	Mtx44 projection;
 	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
@@ -190,14 +194,22 @@ bool SceneEnd::proximitycheck(float smallx, float largex, float smallz, float la
 	return result;
 }
 
+void SceneEnd::UpdatePlayerDiesInteraction(double dt)
+{
+	if (Explorer::instance()->isDead == true)
+	{
+		Variables.f_redScreenTimer += (float)(dt);
+		light[0].power = 0.0f;
+		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
+	}
+}
+
 void SceneEnd::Update(double dt)
 {
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 	FPS = 1.f / (float)dt;
 	worldspin += (float)(dt);
-
-	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
@@ -208,8 +220,13 @@ void SceneEnd::Update(double dt)
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-	//camera.Update(dt);
+	Explorer::instance()->checkDead();
+	Explorer::instance()->hp -= (float)(50.0f * dt);
 
+	UpdatePlayerDiesInteraction(dt);
+
+	//camera.Update(dt);
+	
 	anima.OBJAnimation(dt);
 	anima.Collapsing(dt);
 
@@ -386,7 +403,7 @@ void SceneEnd::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, flo
 	glEnable(GL_DEPTH_TEST);
 }
 
-void SceneEnd::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX, int rY, int rZ, float x, float y, float z, bool LightYN)
+void SceneEnd::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
 	Mtx44 ortho;
 	ortho.SetToOrtho(0, 80, 0, 60, -50, 50); //size of screen UI
@@ -396,8 +413,8 @@ void SceneEnd::RenderModelOnScreen(Mesh* mesh, float size, float Rotate, int rX,
 	viewStack.LoadIdentity(); //No need camera for ortho mode
 	modelStack.PushMatrix();
 	modelStack.LoadIdentity(); //Reset modelStack
-	modelStack.Scale(size, size, size);
-	modelStack.Translate(x, y, z);
+	modelStack.Scale(Sx, Sy, Sz);
+	modelStack.Translate(Tx, Ty, Tz);
 	modelStack.Rotate(Rotate, (float)rX, (float)rY, (float)rZ);
 
 	RenderMesh(mesh, LightYN);
@@ -441,6 +458,8 @@ void SceneEnd::Render()
 		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
+
+	RenderPlayerDiesInteraction();
 }
 
 void SceneEnd::Exit()

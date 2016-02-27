@@ -138,3 +138,42 @@ void SceneLevelTwo::RenderGhost1()
     RenderMesh(meshList[GEO_GHOST1], true);
     modelStack.PopMatrix();
 }
+
+void SceneLevelTwo::RenderPlayerDiesInteraction()
+{
+	if (Explorer::instance()->isDead == true)
+	{
+		if (Variables.f_redScreenTimer <= 2.0f)
+		{
+			RenderModelOnScreen(meshList[GEO_DEADCOLOR], 100.0f, 100.0f, 100.0f, 90, 1, 0, 0, 0.3f, 0.5f, 0, false);
+		}
+
+		else if (Variables.f_redScreenTimer > 2.0f && Variables.f_redScreenTimer <= 4.0f)
+		{
+			RenderModelOnScreen(meshList[GEO_DEADBLACKSCREEN], 100.0f, 100.0f, 100.0f, 90, 1, 0, 0, 0.3f, 0.5f, 0, false);
+			RenderTextOnScreen(meshList[GEO_TEXT], "You are Dead!", Color(1, 0.2, 1), 5.0f, 4.5f, 9.0f);
+		}
+
+		else if (Variables.f_redScreenTimer > 4.0f)
+		{
+			if (Explorer::instance()->PlayerLife > 0)
+			{
+				RenderModelOnScreen(meshList[GEO_DEADBLACKSCREEN], 100.0f, 100.0f, 100.0f, 90, 1, 0, 0, 0.3f, 0.5f, 0, false);
+				RenderTextOnScreen(meshList[GEO_TEXT], "You are Dead!", Color(1, 0.2, 1), 5.0f, 4.5f, 9.0f);
+				RenderTextOnScreen(meshList[GEO_TEXT], "Continue? (Y/ N)", Color(1, 1, 1), 5.0f, 4.0f, 8.0f);
+			}
+
+			else if (Explorer::instance()->PlayerLife <= 0)
+			{
+				RenderModelOnScreen(meshList[GEO_DEADBLACKSCREEN], 100.0f, 100.0f, 100.0f, 90, 1, 0, 0, 0.3f, 0.5f, 0, false);
+				RenderTextOnScreen(meshList[GEO_TEXT], "You are Dead!", Color(1, 0.2, 1), 5.0f, 4.5f, 9.0f);
+				RenderTextOnScreen(meshList[GEO_TEXT], "Game Over!", Color(1, 1, 1), 5.0f, 5.0f, 8.0f);
+
+				if (Variables.f_redScreenTimer > 8.0f)
+				{
+					Application::OpenGame();
+				}
+			}
+		}
+	}
+}
