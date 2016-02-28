@@ -633,7 +633,7 @@ void SceneLevelOneB::Update(double dt)
     PuzzleGhost2.MobCollision(PuzzleGhost1.MobPosX - 4, PuzzleGhost1.MobPosX + 4, PuzzleGhost1.MobPosZ - 4, PuzzleGhost1.MobPosZ + 4);
 
 	Explorer::instance()->checkDead();
-	Explorer::instance()->hp -= (float)(50.0f * dt);
+	//Explorer::instance()->hp -= (float)(50.0f * dt);
 
 	UpdatePlayerDiesInteraction(dt);
 
@@ -665,6 +665,8 @@ void SceneLevelOneB::Update(double dt)
         Collision(BossOne.MobPosX - 20, BossOne.MobPosX + 20, BossOne.MobPosZ - 20, BossOne.MobPosZ + 20);
     }
 
+   /* std::cout << "Ghost1: " << PuzzleGhost1.Spawn << std::endl;
+    std::cout << "Ghost2: " << PuzzleGhost2.Spawn << std::endl;*/
 
 
 }

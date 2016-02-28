@@ -419,10 +419,12 @@ void SceneLevelOneB::MobsSpawn()
     
     if (proximitycheck(216, 240, -256, -248) && PuzzleGhost1.health >0)
     {
+        std::cout << "check1" << std::endl;
         PuzzleGhost1.Spawn = true;
     }
     if (proximitycheck(216, 240, -256, -248) && PuzzleGhost2.health >0)
     {
+        std::cout << "check2" << std::endl;
         PuzzleGhost2.Spawn = true;
     }
     if (proximitycheck(-304, -280, -392, -384) && BossOne.health>0)

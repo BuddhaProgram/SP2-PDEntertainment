@@ -213,6 +213,9 @@ private:
 
     MobGhost PuzzleGhost1;
     MobGhost PuzzleGhost2;
+    MobGhost ElevatorGhost1;
+    MobGhost ElevatorGhost2;
+    MobGhost ElevatorGhost3;
     MobBossOne BossOne;
 };
 
