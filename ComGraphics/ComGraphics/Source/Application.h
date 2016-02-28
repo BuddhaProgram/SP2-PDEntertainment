@@ -23,6 +23,7 @@ public:
 	static int mouse_scroll;
 
 	static void OpenCutScene();
+	static void OpenCutScene2();
 	static void OpenGame();
 	static void SceneLevel1A();
 	static void SceneLevel1B();
@@ -35,6 +36,7 @@ public:
 
     static Scene *scene;
 	static Scene *IntroScene;
+	static Scene *IntroScene2;
 	static Scene *Opening;
 	static Scene *Start;
 	static Scene *LevelOneA;

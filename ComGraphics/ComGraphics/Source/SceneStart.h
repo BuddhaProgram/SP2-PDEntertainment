@@ -68,6 +68,7 @@ class SceneStart : public Scene
 
 		GEO_GHOST1,
 		
+		GEO_DEADBODY,
 		GEO_BLOOD1,
 		
 
