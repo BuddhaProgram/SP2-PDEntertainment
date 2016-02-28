@@ -324,6 +324,27 @@ void Animation::CloseSlideDoor4(double dt)
 	}
 }
 
+void Animation::CloseSlideDoor5(double dt)
+{
+	if (ClosingDoorTop5)
+	{
+		DoorSlideTop_5 -= (float)(8 * dt);
+		if (DoorSlideTop_5 <= 0)
+		{
+			ClosingDoorTop5 = false;
+		}
+	}
+
+	if (ClosingDoorBtm5)
+	{
+		DoorSlideBtm_5 += (float)(5 * dt);
+		if (DoorSlideBtm_5 >= 0)
+		{
+			ClosingDoorBtm5 = false;
+		}
+	}
+}
+
 bool Animation::WithinArea(float smallx, float largex, float smallz, float largez)
 {//checks if camera is within a certain area of the room.
 	bool result = false;

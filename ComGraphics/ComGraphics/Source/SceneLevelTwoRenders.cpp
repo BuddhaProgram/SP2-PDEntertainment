@@ -97,18 +97,17 @@ void SceneLevelTwo::RenderScene()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 123);
+	modelStack.Translate(0, anima.DoorSlideTop_5, 123);
 	modelStack.Scale(6.5f, 4, 5);
-
-		modelStack.PushMatrix();
-		RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
-		modelStack.PopMatrix();
-
-		modelStack.PushMatrix();
-		RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
-		modelStack.PopMatrix();
-
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, anima.DoorSlideBtm_5, 123);
+	modelStack.Scale(6.5f, 4, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
+	modelStack.PopMatrix();
+
 }
 
 void SceneLevelTwo::RenderTraps()

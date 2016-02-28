@@ -458,6 +458,7 @@ void SceneLevelTwo::Update(double dt)
     FPS = 1.f / (float)dt;
     //worldspin += (float)(dt);
 	checkPlayerPosMisc();
+
 	if (Misc.WithinArea(-76,76,128,360))
 	{
 		transSpikeDoor+=0.8f;
@@ -466,8 +467,10 @@ void SceneLevelTwo::Update(double dt)
 	{
 		closeDoors = true;
 	}
+
 	if (closeDoors == true)
 	{
+		anima.CloseSlideDoor5(dt);
 		Collision(-13,13,120,123);
 	}
 	
@@ -487,10 +490,6 @@ void SceneLevelTwo::Update(double dt)
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
     camera.Update(dt);
-    if (activateDoor1)
-    {
-        anima.OpenSlideDoor1(dt);
-    }
     //wall collision
     for (int i = 0; i < 60; i++)
     {
