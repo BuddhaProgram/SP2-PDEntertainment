@@ -16,7 +16,7 @@ class GlobalVariables
 		bool b_LockSwingDebounce = false;
 		bool start_Animation = false;
 
-		int i_SlotIndex;
+
         float f_SwitchDebounce;
 
 		float f_SwitchRotateOne;

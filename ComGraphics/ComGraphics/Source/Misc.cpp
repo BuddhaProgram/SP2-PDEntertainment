@@ -39,9 +39,8 @@ bool misc::hitting(float distance, float mobx, float mobz, float AOA, float camX
 
 bool misc::WithinArea(float smallx, float largex, float smallz, float largez)
 {//checks if camera is within a certain area of the room.
-	if (camX > smallx && camX < largex && camZ > smallz && camZ < largez)
+	if (camX >= smallx && camX <= largex && camZ >= smallz && camZ <= largez)
 		return true;
-
 	else
 		return false;
 }

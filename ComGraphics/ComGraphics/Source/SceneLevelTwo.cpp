@@ -211,10 +211,10 @@ void SceneLevelTwo::Reset()
 
 void SceneLevelTwo::Collision(float smallx, float largex, float smallz, float largez)
 {
-    if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz) && (camera.position.z <= smallz + 3.f)){ camera.position.z = smallz; }
-    if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez) && (camera.position.z >= largez - 3.f)){ camera.position.z = largez; }
-    if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x >= smallx) && (camera.position.x <= smallx + 3.f)){ camera.position.x = smallx; }
-    if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x <= largex) && (camera.position.x >= largex - 3.f)){ camera.position.x = largex; }
+    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 3.f)){ camera.position.z = smallz; }
+    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 3.f)){ camera.position.z = largez; }
+    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 3.f)){ camera.position.x = smallx; }
+    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 3.f)){ camera.position.x = largex; }
 
 	camera.target = Vector3(
 		sin(Math::DegreeToRadian(camera.rotationY)) * cos(Math::DegreeToRadian(camera.rotationX)) + camera.position.x,
@@ -250,21 +250,21 @@ void SceneLevelTwo::ToolSelectionMouseScroll()
 {
 	if (Explorer::instance()->isDead == false)
 	{
-		if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe)
 		{
 			modelStack.PushMatrix();
 			RenderModelOnScreen(meshList[GEO_PICKAXE], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
 			modelStack.PopMatrix();
 		}
 
-		else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::BaseballBat)
+		else if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::BaseballBat)
 		{
 			modelStack.PushMatrix();
 			RenderModelOnScreen(meshList[GEO_BAT], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
 			modelStack.PopMatrix();
 		}
 
-		else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Sword)
+		else if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Sword)
 		{
 			modelStack.PushMatrix();
 			RenderModelOnScreen(meshList[GEO_SWORD], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
@@ -328,22 +328,22 @@ void SceneLevelTwo::MouseScrollToolSlot()
 {
     if (Application::mouse_scroll > 0)
     {
-        Variables.i_SlotIndex++;
+        Explorer::instance()->i_SlotIndex++;
     }
 
     else if (Application::mouse_scroll < 0)
     {
-        Variables.i_SlotIndex--;
+        Explorer::instance()->i_SlotIndex--;
     }
 
-    if (Variables.i_SlotIndex > 4)
+    if (Explorer::instance()->i_SlotIndex > 4)
     {
-        Variables.i_SlotIndex = 1;
+        Explorer::instance()->i_SlotIndex = 1;
     }
 
-    else if (Variables.i_SlotIndex < 1)
+    else if (Explorer::instance()->i_SlotIndex < 1)
     {
-        Variables.i_SlotIndex = 4;
+        Explorer::instance()->i_SlotIndex = 4;
     }
 }
 
@@ -351,16 +351,16 @@ void SceneLevelTwo::RenderMouseScrollToolSlot()
 {
 	if (Explorer::instance()->isDead == false)
 	{
-		if (Variables.i_SlotIndex == 1)
+		if (Explorer::instance()->i_SlotIndex == 1)
 			RenderModelOnScreen(meshList[GEO_TOOLUIONE], 7.0f, 7.0f, 7.0f, 0.0f, 1.0f, 0.0f, 0.0f, 5.75f, 0.0f, 0.0f, false);
 
-		if (Variables.i_SlotIndex == 2)
+		if (Explorer::instance()->i_SlotIndex == 2)
 			RenderModelOnScreen(meshList[GEO_TOOLUITWO], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
 
-		if (Variables.i_SlotIndex == 3)
+		if (Explorer::instance()->i_SlotIndex == 3)
 			RenderModelOnScreen(meshList[GEO_TOOLUITHREE], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
 
-		if (Variables.i_SlotIndex == 4)
+		if (Explorer::instance()->i_SlotIndex == 4)
 			RenderModelOnScreen(meshList[GEO_TOOLUIFOUR], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
 	}
 }
@@ -444,17 +444,36 @@ void SceneLevelTwo::ContinueGameOrNot()
 	}
 }
 
+void SceneLevelTwo::checkPlayerPosMisc()
+{
+	Misc.camX = camera.position.x;
+	Misc.camY = camera.position.y;
+	Misc.camZ = camera.position.z;
+}
+
 void SceneLevelTwo::Update(double dt)
 {
     light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
     light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
     FPS = 1.f / (float)dt;
     //worldspin += (float)(dt);
-
-	transSpikeDoor += 0.5f;
-	if (transSpikeDoor > 150)
+	checkPlayerPosMisc();
+	if (Misc.WithinArea(-76,76,128,360))
 	{
-		transSpikeDoor = 150;
+		transSpikeDoor+=0.8f;
+	}
+	if (Misc.WithinArea(-12,12,80,120))
+	{
+		closeDoors = true;
+	}
+	if (closeDoors == true)
+	{
+		Collision(-13,13,120,123);
+	}
+	
+	if (transSpikeDoor > 160)
+	{
+		transSpikeDoor = 160;
 	}
 
 

@@ -3,7 +3,6 @@
 
 #include "HostileMob.h"
 
-
 class MobGhost : public HostileMob
 {
 public:
@@ -16,7 +15,7 @@ public:
     void TakeDamage(int damage);
     void checkAttack();
     bool proximitycheck(float smallx, float largex, float smallz, float largez);
-    void attack();
+    void attack(float AttackDamage);
 
     bool canHit;
 

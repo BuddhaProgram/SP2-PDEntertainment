@@ -2,7 +2,6 @@
 
 #include "Misc.h"
 
-misc functions;
 MobGhost::MobGhost()
 {
     //global variables for use in entire project
@@ -47,10 +46,11 @@ void MobGhost::knockback()
 }
 
 
-void MobGhost::attack()
+void MobGhost::attack(float AttackDamage)
 {
     //std::cout << "attack" << std::endl;
-    Explorer::instance()->hp -= AttackDamage;
+	this->AttackDamage = AttackDamage;
+	Explorer::instance()->MinusHP((float)(AttackDamage));
     canHit = false;
 }
 
@@ -58,7 +58,7 @@ void MobGhost::checkAttack()
 {
     if (proximitycheck(MobPosX - 5, MobPosX + 5, MobPosZ - 5, MobPosZ + 5) && canHit)
     {
-        attack();
+        attack(AttackDamage);
     }
 }
 void MobGhost::move(double dt, int movespeed)
@@ -104,8 +104,9 @@ void MobGhost::setSpawnGhost(float xpos, float zpos)
     MobPosX = xpos * 8;
     MobPosZ = -(zpos * 8);
 }
+
 void MobGhost::TakeDamage(int damage)
 {
     std::cout << "hit" << std::endl;
-	Explorer::instance()->MinusHP((float)damage);  
+	health -= damage;
 }
