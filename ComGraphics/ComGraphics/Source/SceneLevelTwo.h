@@ -174,6 +174,7 @@ private:
     Vector3 start;
     Vector3 end;
     GlobalVariables Variables;
+	misc Misc;
 
     float FPS;
     bool displayInteract1;
@@ -185,7 +186,7 @@ private:
     float CollZSmall[60];
 
 	float transSpikeDoor;
-
+	bool closeDoors;
     MobGhost Ghost;
 };
 
