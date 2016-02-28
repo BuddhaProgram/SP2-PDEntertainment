@@ -103,6 +103,7 @@ private:
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float x, float y, float z, bool LightYN);
+	void RenderTextWord();
 
 	// Interactions to change to FirstCutScene
 	void ChangeFirstCutScene();
@@ -141,6 +142,10 @@ private:
 	bool check2 = false;
 	bool check3 = false;
 	float eyeOpening;
+
+	bool text1 = false;
+	bool text2 = false;
+
 };
 
 #endif
