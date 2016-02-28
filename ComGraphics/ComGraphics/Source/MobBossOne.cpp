@@ -102,7 +102,7 @@ void MobBossOne::setSpawnBossOne(float xpos, float zpos)
 }
 void MobBossOne::TakeDamage(int damage)
 {
-	Explorer::instance()->MinusHP(damage);
+	Explorer::instance()->MinusHP((float)damage);
 }
 
 void MobBossOne::attack()
