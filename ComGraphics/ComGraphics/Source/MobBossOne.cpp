@@ -1,7 +1,4 @@
 #include "MobBossOne.h"
-#include "Misc.h"
-
-misc Functions;
 
 MobBossOne::MobBossOne()
 {
@@ -19,10 +16,12 @@ MobBossOne::MobBossOne()
     //timer variable
     mobTimeCount = 0;
 
-    health = 40;
+    health = 1;
     AttackDamage = 1;
     kenaWhack = false;
     AttackAnimation = true;
+
+	BossDies = false;
 }
 
 MobBossOne::~MobBossOne()
@@ -48,7 +47,7 @@ void MobBossOne::checkAttack(double dt)
 {
     if (proximitycheck(MobPosX - 20, MobPosX + 20, MobPosZ - 20, MobPosZ + 20) && AttackAnimation)
     {
-        attack();
+        attack(AttackDamage);
     }
 
     if (AttackAnimation)
@@ -102,14 +101,16 @@ void MobBossOne::setSpawnBossOne(float xpos, float zpos)
 }
 void MobBossOne::TakeDamage(int damage)
 {
-	Explorer::instance()->MinusHP((float)damage);
+	health -= damage;
 }
 
-void MobBossOne::attack()
+void MobBossOne::attack(float damage)
 {
-    Explorer::instance()->hp -= AttackDamage;
+	this->AttackDamage = damage;
+	Explorer::instance()->MinusHP((float)(AttackDamage));
     if (health <= 0)
     {
         Spawn = false;
+		BossDies = true;
     }
 }

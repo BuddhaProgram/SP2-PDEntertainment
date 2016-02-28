@@ -21,6 +21,8 @@ GlobalVariables::GlobalVariables()
 	}
 
 	f_redScreenTimer = 0.0f;
+
+	f_SuitcaseRotateY = 0.0f;
 }
 
 GlobalVariables::~GlobalVariables()

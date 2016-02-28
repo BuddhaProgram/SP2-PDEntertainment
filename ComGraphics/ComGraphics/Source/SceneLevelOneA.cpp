@@ -6,7 +6,6 @@
 
 #include "Application.h"
 #include "MeshBuilder.h"
-#include "Misc.h"
 
 #include "LoadTGA.h"
 #include "Utility.h"
@@ -131,6 +130,12 @@ void SceneLevelOneA::Init()
 	meshList[GEO_TOOLUIFOUR] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
 	meshList[GEO_TOOLUIFOUR]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
 
+	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
+	meshList[GEO_RHAND]->textureID = LoadTGA("Image//RightHand.tga");
+
+	meshList[GEO_LHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//LeftHand.obj");
+	meshList[GEO_LHAND]->textureID = LoadTGA("Image//LeftHand.tga");
+
 	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
 	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
 
@@ -254,20 +259,23 @@ bool SceneLevelOneA::proximitycheck(float smallx, float largex, float smallz, fl
 
 void SceneLevelOneA::ToolsUI()
 {
-	if (Application::IsKeyPressed('Z'))
+	if (Explorer::instance()->b_PickUpTool[0] == false && camera.position.x > -5.0f && camera.position.x < 5.0f && camera.position.z > 350.0f && camera.position.z < 370.0f)
+	{
 		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
-
-	if (Application::IsKeyPressed('X'))
-		Explorer::instance()->InsertToolSlot(ToolUI::BaseballBat);
-
-	if (Application::IsKeyPressed('C'))
-		Explorer::instance()->InsertToolSlot(ToolUI::Sword);
+		Explorer::instance()->b_PickUpTool[0] = true;
+	}
 }
 
 void SceneLevelOneA::ToolSelectionMouseScroll()
 {
 	if (Explorer::instance()->isDead == false)
 	{
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand)
+		{
+			RenderModelOnScreen(meshList[GEO_RHAND], 15, 15, 15, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, -1.0f, false);
+			RenderModelOnScreen(meshList[GEO_LHAND], 15, 15, 15, Variables.RotateX, 1, 0, 0, 0.75f, 0.0f, -1.0f, false);
+		}
+
 		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe)
 		{
 			modelStack.PushMatrix();
@@ -327,7 +335,7 @@ void SceneLevelOneA::RenderToolIcon()
 
 		if (Explorer::instance()->GetToolType(3) == ToolUI::Pickaxe)
 		{
-			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.7f, 0.775f, 1.0f, false);
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
 		}
 
 		else if (Explorer::instance()->GetToolType(3) == ToolUI::BaseballBat)
@@ -338,6 +346,21 @@ void SceneLevelOneA::RenderToolIcon()
 		else if (Explorer::instance()->GetToolType(3) == ToolUI::Sword)
 		{
 			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+		}
+
+		if (Explorer::instance()->GetToolType(4) == ToolUI::Pickaxe)
+		{
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(4) == ToolUI::BaseballBat)
+		{
+			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(4) == ToolUI::Sword)
+		{
+			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.275f, 0.775f, 1.0f, false);
 		}
 	}
 }
@@ -482,19 +505,31 @@ void SceneLevelOneA::ContinueGameOrNot()
 	}
 }
 
+void SceneLevelOneA::PickUpSuitcaseInteraction()
+{
+	if (camera.position.x > 270.0f && camera.position.x < 290.0f && camera.position.z > 110.0f && camera.position.z < 130.0f)
+	{
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand && Explorer::instance()->b_pickUpSuitCase[0] == false)
+		{
+			Explorer::instance()->b_pickUpSuitCase[0] = true;
+			Explorer::instance()->i_SuitcaseCount++;
+		}
+	}
+}
+
 void SceneLevelOneA::Update(double dt)
 {
-	
-    light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
-    light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
-    FPS = 1.f / (float)dt;
+
+	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
+	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
+	FPS = 1.f / (float)dt;
 	camera.Update(dt);
 	Collision(115.0f, 125.0f, 70.0f, 80.0f);
+	Variables.f_rotatingTool += (float)(180 * dt);
 
-	
 
 	if (Application::IsKeyPressed('5'))
-	Explorer::instance()->hp -= (float)(50.0f * dt);
+		Explorer::instance()->hp -= (float)(50.0f * dt);
 
 	/*-------------------------[Death of the Explorer]-------------------------------*/
 	Explorer::instance()->checkDead();
@@ -511,50 +546,52 @@ void SceneLevelOneA::Update(double dt)
 	ToolsUI();
 	MouseScrollToolSlot();
 	MouseClickFunction(dt);
-    /*-------------------------[End of Tool UI Functions]-------------------------------*/
+	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
-    if (Application::IsKeyPressed('1')) //enable back face culling
-        glEnable(GL_CULL_FACE);
-    if (Application::IsKeyPressed('2')) //disable back face culling
-        glDisable(GL_CULL_FACE);
-    if (Application::IsKeyPressed('3'))
-        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
-    if (Application::IsKeyPressed('4'))
-        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-    anima.OBJAnimation(dt);
+	/*-------------------------[Suitcase Interaction]-------------------------------*/
+	PickUpSuitcaseInteraction();
+
+	if (Application::IsKeyPressed('1')) //enable back face culling
+		glEnable(GL_CULL_FACE);
+	if (Application::IsKeyPressed('2')) //disable back face culling
+		glDisable(GL_CULL_FACE);
+	if (Application::IsKeyPressed('3'))
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
+	if (Application::IsKeyPressed('4'))
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
+
+	anima.OBJAnimation(dt);
 	anima.Collapsing(dt);
 	checkRubbleFall();
 	checkDoor1();
 	checkDoor2();
 	checkDoor3();
 	checkDrop();
-    EnvironmentAnimation(dt);
+	EnvironmentAnimation(dt);
 	UpdateSavePoint();
 	AnimationCheck(dt);
 
-    //wall collision DO NOT TOUCH
-    for (int i = 0; i < 28; i++)
-    {
-        Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
-    }
+	//wall collision DO NOT TOUCH
+	for (int i = 0; i < 28; i++)
+	{
+		Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
+	}
 
-    //mob stuff
-    if (proximitycheck(-226, -160, 210,218)&&!activateDoor1)
-    {
-        Ghost.Spawn = true;
-    }
-    
+	//mob stuff
+	if (proximitycheck(-226, -160, 210, 218) && !activateDoor1)
+	{
+		Ghost.Spawn = true;
+	}
 
-    Ghost.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);//pos checker
 
-    if (Ghost.Spawn)
-    {
-        Ghost.move(dt, 25);
-        Collision(Ghost.MobPosX - 4, Ghost.MobPosX + 4, Ghost.MobPosZ - 4, Ghost.MobPosZ + 4);
-    }
+	Ghost.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);//pos checker
 
-   
+	if (Ghost.Spawn)
+	{
+		Ghost.move(dt, 25);
+		Collision(Ghost.MobPosX - 4, Ghost.MobPosX + 4, Ghost.MobPosZ - 4, Ghost.MobPosZ + 4);
+	}
     
     //codes for changing to level1B
     if (proximitycheck(192, 216, -8, 8))
@@ -764,9 +801,6 @@ void SceneLevelOneA::Render()
 
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
 	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-	//RenderTextOnScreen(meshList[GEO_TEXT], "TAR (" + std::to_string(camera.target.x) + "," + std::to_string(camera.target.y) + "," + std::to_string(camera.target.z) + ")", Color(1, 0, 0), 2, 0, 3);
-	//RenderTextOnScreen(meshList[GEO_TEXT], "VIEW (" + std::to_string(camera.view.x) + "," + std::to_string(camera.view.y) + "," + std::to_string(camera.view.z) + ")", Color(1, 0, 0), 2, 0, 4);
-	//RenderTextOnScreen(meshList[GEO_TEXT], "UP (" + std::to_string(camera.up.x) + "," + std::to_string(camera.up.y) + "," + std::to_string(camera.up.z) + ")", Color(1, 0, 0), 2, 0, 5);
 	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
 
 	if (Notice)
@@ -787,6 +821,10 @@ void SceneLevelOneA::Render()
 	}
 
 	RenderPlayerDiesInteraction();
+
+
+	RenderPickUpPickAxe();
+	RenderPickUpSuitcaseText();
 }
 
 void SceneLevelOneA::Exit()

@@ -26,6 +26,11 @@ class GlobalVariables
 		bool b_SwitchAnimate[5];
 
 		float f_redScreenTimer;
+
+		float f_rotatingTool;
+
+		float f_SuitcaseRotateY;
+		float f_savePointRotateY;
 };
 
 #endif

@@ -12,6 +12,7 @@ class ToolUI
 			Pickaxe,
 			BaseballBat,
 			Sword,
+			Hand,
 			Empty,
 			Max_ToolType,
 		};

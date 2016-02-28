@@ -15,7 +15,7 @@ public:
     void TakeDamage(int damage);
     void checkAttack();
     bool proximitycheck(float smallx, float largex, float smallz, float largez);
-    void attack(float AttackDamage);
+    void attack(float Damage);
 
     bool canHit;
 

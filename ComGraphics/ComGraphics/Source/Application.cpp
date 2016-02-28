@@ -129,7 +129,7 @@ void Application::Run()
 {
 	musics = new Music();
 	musics->init();
-	musics->OpeningMusic();
+	/*musics->OpeningMusic();*/
 
 	Opening = new SceneOpening();
 	Opening->Init();
@@ -152,7 +152,7 @@ void Application::Run()
 	//SceneStart *scene = new SceneStart();
 	//scene->Init();
 
-	scene = LevelTwo;
+	scene = LevelOneA;
 
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame

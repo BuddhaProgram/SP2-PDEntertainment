@@ -46,10 +46,10 @@ void MobGhost::knockback()
 }
 
 
-void MobGhost::attack(float AttackDamage)
+void MobGhost::attack(float Damage)
 {
     //std::cout << "attack" << std::endl;
-	this->AttackDamage = AttackDamage;
+	this->AttackDamage = Damage;
 	Explorer::instance()->MinusHP((float)(AttackDamage));
     canHit = false;
 }

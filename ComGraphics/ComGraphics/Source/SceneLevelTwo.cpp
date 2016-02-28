@@ -130,6 +130,12 @@ void SceneLevelTwo::Init()
     meshList[GEO_TOOLUIFOUR] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
     meshList[GEO_TOOLUIFOUR]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
 
+	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
+	meshList[GEO_RHAND]->textureID = LoadTGA("Image//RightHand.tga");
+
+	meshList[GEO_LHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//LeftHand.obj");
+	meshList[GEO_LHAND]->textureID = LoadTGA("Image//LeftHand.tga");
+
     meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
     meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
 
@@ -236,20 +242,19 @@ bool SceneLevelTwo::proximitycheck(float smallx, float largex, float smallz, flo
 
 void SceneLevelTwo::ToolsUI()
 {
-	if (Application::IsKeyPressed('Z'))
-		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
 
-	if (Application::IsKeyPressed('X'))
-		Explorer::instance()->InsertToolSlot(ToolUI::BaseballBat);
-
-	if (Application::IsKeyPressed('C'))
-		Explorer::instance()->InsertToolSlot(ToolUI::Sword);
 }
 
 void SceneLevelTwo::ToolSelectionMouseScroll()
 {
 	if (Explorer::instance()->isDead == false)
 	{
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand)
+		{
+			RenderModelOnScreen(meshList[GEO_RHAND], 15, 15, 15, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, -1.0f, false);
+			RenderModelOnScreen(meshList[GEO_LHAND], 15, 15, 15, Variables.RotateX, 1, 0, 0, 0.75f, 0.0f, -1.0f, false);
+		}
+
 		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe)
 		{
 			modelStack.PushMatrix();
@@ -309,7 +314,7 @@ void SceneLevelTwo::RenderToolIcon()
 
 		if (Explorer::instance()->GetToolType(3) == ToolUI::Pickaxe)
 		{
-			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.7f, 0.775f, 1.0f, false);
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
 		}
 
 		else if (Explorer::instance()->GetToolType(3) == ToolUI::BaseballBat)
@@ -320,6 +325,21 @@ void SceneLevelTwo::RenderToolIcon()
 		else if (Explorer::instance()->GetToolType(3) == ToolUI::Sword)
 		{
 			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+		}
+
+		if (Explorer::instance()->GetToolType(4) == ToolUI::Pickaxe)
+		{
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(4) == ToolUI::BaseballBat)
+		{
+			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(4) == ToolUI::Sword)
+		{
+			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.275f, 0.775f, 1.0f, false);
 		}
 	}
 }

@@ -27,6 +27,10 @@ public:
 	bool CheckForDoubleTool(ToolUI::ToolType DoubleTool);
 
 	std::list<ToolUI> TotalTools;
+	bool b_PickUpTool[3];
+
+	int i_SuitcaseCount;
+	bool b_pickUpSuitCase[5];
 
 	unsigned int PlayerLife;
 	bool isDead;

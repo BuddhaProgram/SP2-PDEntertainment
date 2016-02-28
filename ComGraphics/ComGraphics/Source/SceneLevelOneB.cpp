@@ -130,6 +130,12 @@ void SceneLevelOneB::Init()
 	meshList[GEO_TOOLUIFOUR] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
 	meshList[GEO_TOOLUIFOUR]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
 
+	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
+	meshList[GEO_RHAND]->textureID = LoadTGA("Image//RightHand.tga");
+
+	meshList[GEO_LHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//LeftHand.obj");
+	meshList[GEO_LHAND]->textureID = LoadTGA("Image//LeftHand.tga");
+
 	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
 	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
 
@@ -257,14 +263,17 @@ bool SceneLevelOneB::proximitycheck(float smallx, float largex, float smallz, fl
 
 void SceneLevelOneB::ToolsUI()
 {
-	if (Application::IsKeyPressed('Z'))
-		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
-
-	if (Application::IsKeyPressed('X'))
+	if (Explorer::instance()->b_PickUpTool[1] == false && camera.position.x > 90.0f && camera.position.x < 110.0f && camera.position.z > -170.0f && camera.position.z < -150.0f)
+	{
 		Explorer::instance()->InsertToolSlot(ToolUI::BaseballBat);
+		Explorer::instance()->b_PickUpTool[1] = true;
+	}
 
-	if (Application::IsKeyPressed('C'))
+	if (Explorer::instance()->b_PickUpTool[2] == false && camera.position.x > -210.0f && camera.position.x < -190.0f && camera.position.z > -450.0f && camera.position.z < -430.0f)
+	{
 		Explorer::instance()->InsertToolSlot(ToolUI::Sword);
+		Explorer::instance()->b_PickUpTool[2] = true;
+	}
 }
 
 void SceneLevelOneB::RenderMouseScrollToolSlot()
@@ -289,6 +298,12 @@ void SceneLevelOneB::ToolSelectionMouseScroll()
 {
 	if (Explorer::instance()->isDead == false)
 	{
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand)
+		{
+			RenderModelOnScreen(meshList[GEO_RHAND], 15, 15, 15, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, -1.0f, false);
+			RenderModelOnScreen(meshList[GEO_LHAND], 15, 15, 15, Variables.RotateX, 1, 0, 0, 0.75f, 0.0f, -1.0f, false);
+		}
+
 		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe)
 		{
 			modelStack.PushMatrix();
@@ -348,7 +363,7 @@ void SceneLevelOneB::RenderToolIcon()
 
 		if (Explorer::instance()->GetToolType(3) == ToolUI::Pickaxe)
 		{
-			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.7f, 0.775f, 1.0f, false);
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
 		}
 
 		else if (Explorer::instance()->GetToolType(3) == ToolUI::BaseballBat)
@@ -359,6 +374,21 @@ void SceneLevelOneB::RenderToolIcon()
 		else if (Explorer::instance()->GetToolType(3) == ToolUI::Sword)
 		{
 			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+		}
+
+		if (Explorer::instance()->GetToolType(4) == ToolUI::Pickaxe)
+		{
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(4) == ToolUI::BaseballBat)
+		{
+			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(4) == ToolUI::Sword)
+		{
+			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.275f, 0.775f, 1.0f, false);
 		}
 	}
 }
@@ -629,11 +659,24 @@ void SceneLevelOneB::ContinueGameOrNot()
 	}
 }
 
+void SceneLevelOneB::PickUpSuitcaseInteraction()
+{
+	if (camera.position.x > -210.0f && camera.position.x < -190.0f && camera.position.z > -130.0f && camera.position.z < -110.0f)
+	{
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand && Explorer::instance()->b_pickUpSuitCase[1] == false)
+		{
+			Explorer::instance()->b_pickUpSuitCase[1] = true;
+			Explorer::instance()->i_SuitcaseCount++;
+		}
+	}
+}
+
 void SceneLevelOneB::Update(double dt)
 {
     light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
     light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
     FPS = 1.f / (float)dt;
+	Variables.f_rotatingTool += (float)(180 * dt);
     //worldspin += (float)(dt);
 
     if (Application::IsKeyPressed('1')) //enable back face culling
@@ -697,6 +740,7 @@ void SceneLevelOneB::Update(double dt)
     EnvironmentAnimation(dt);
     MobsSpawn();
    
+	PickUpSuitcaseInteraction();
 
     PuzzleGhost1.checkPlayerPos(dt, 1,1,camera.position.x, camera.position.z);
     PuzzleGhost2.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);
@@ -944,6 +988,9 @@ void SceneLevelOneB::Render()
 	}
 
 	RenderPlayerDiesInteraction();
+	RenderPickUpPickTools();
+
+	RenderPickUpSuitcaseText();
 }
 
 void SceneLevelOneB::Exit()
