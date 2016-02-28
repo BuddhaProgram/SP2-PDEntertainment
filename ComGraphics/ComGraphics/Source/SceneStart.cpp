@@ -165,7 +165,9 @@ void SceneStart::Init()
     meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("FacilityOUT wall", Color(1, 1, 1));
     meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
     
-	
+
+	meshList[GEO_DEADBODY] = MeshBuilder::GenerateOBJ("Pile of dead body", "OBJ//DeadBody.obj");
+	meshList[GEO_DEADBODY]->textureID = LoadTGA("Image//DeadBody.tga");
 	
 
     //change to correct textured quad later

@@ -13,6 +13,7 @@
 #include "SceneLevelOneB.h"
 #include "SceneLevelTwo.h"
 #include "OpeningCutScene.h"
+#include "OpeningCutScene2.h"
 
 
 
@@ -52,6 +53,7 @@ Application::~Application()
 Music* Application::musics;
 Scene* Application::scene;
 Scene* Application::IntroScene;
+Scene* Application::IntroScene2;
 Scene* Application::Opening;
 Scene* Application::Start;
 Scene* Application::End;
@@ -89,7 +91,7 @@ void Application::Init()
 	//Create a window and create its OpenGL context
 	//m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
 	//m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", NULL, NULL);
-	m_window = glfwCreateWindow(800, 600, "Computer Graphics", NULL, NULL);
+    m_window = glfwCreateWindow(800, 600, "Computer Graphics", NULL, NULL);
 	glfwSetScrollCallback(m_window, scroll_callback);
 
 	//If the window couldn't be created
@@ -133,6 +135,8 @@ void Application::Run()
 	Opening->Init();
 	IntroScene = new OpeningCutScene();
 	IntroScene->Init();
+	IntroScene2 = new OpeningCutScene2();
+	IntroScene2->Init();
 	Start = new SceneStart();
 	Start->Init();
     CutScene1 = new CutSceneOne();
@@ -150,7 +154,7 @@ void Application::Run()
 	//SceneStart *scene = new SceneStart();
 	//scene->Init();
 
-	scene = LevelOneB;
+	scene = Opening;
 
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
@@ -176,6 +180,7 @@ void Application::Run()
 
 	delete musics;
 	delete IntroScene;
+	delete IntroScene2;
 	delete Opening;
 	delete Start;
 	delete End;
@@ -228,5 +233,10 @@ void Application::EndingScene()
 
 void Application::OpenCutScene()
 {
-	scene = IntroScene;;
+	scene = IntroScene;
+}
+
+void Application::OpenCutScene2()
+{
+	scene = IntroScene2;
 }

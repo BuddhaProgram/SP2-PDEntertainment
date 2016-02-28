@@ -109,6 +109,9 @@
     <ClCompile Include="Source\OpeningCutScene.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Source\OpeningCutScene2.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -208,6 +211,9 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Source\OpeningCutScene.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\OpeningCutScene2.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

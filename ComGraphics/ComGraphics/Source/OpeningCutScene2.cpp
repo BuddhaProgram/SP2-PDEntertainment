@@ -1,24 +1,25 @@
-#include "SceneOpening.h"
+#include "OpeningCutScene2.h"
 #include "GL\glew.h"
 
 #include "shader.hpp"
 #include "Mtx44.h"
 
+#include "Application.h"
+#include "MeshBuilder.h"
+
 #include "LoadTGA.h"
 #include "Utility.h"
 #include <sstream>
 
-
-SceneOpening::SceneOpening()
-{
-	ui_ChooseOption = 1;
-}
-
-SceneOpening::~SceneOpening()
+OpeningCutScene2::OpeningCutScene2()
 {
 }
 
-void SceneOpening::Init()
+OpeningCutScene2::~OpeningCutScene2()
+{
+}
+
+void OpeningCutScene2::Init()
 {
 	// Init VBO here
 
@@ -96,84 +97,62 @@ void SceneOpening::Init()
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
 	//Initialize camera settings
-	camera.Init(Vector3(0, 10, 0), Vector3(0, 10, -1), Vector3(0, 1, 0));
+	camera.Init(Vector3(0, 10, 0), Vector3(0, 15, 1), Vector3(0, 1, 0));
+
+	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("lightball", Color(1, 1, 1), 10, 20);
+
+	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1));
+	meshList[GEO_FRONT]->textureID = LoadTGA("Image//SkyBox1_front.tga");
+	meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1));
+	meshList[GEO_LEFT]->textureID = LoadTGA("Image//SkyBox1_left.tga");
+	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1));
+	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//SkyBox1_right.tga");
+	meshList[GEO_TOP] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1));
+	meshList[GEO_TOP]->textureID = LoadTGA("Image//SkyBox1_up.tga");
+	meshList[GEO_BOTTOM] = MeshBuilder::GenerateQuad("SkyBox1_down", Color(1, 1, 1));
+	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//SkyBox1_down.tga");
+	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("SkyBox1_back", Color(1, 1, 1));
+	meshList[GEO_BACK]->textureID = LoadTGA("Image//SkyBox1_back.tga");
+
+	meshList[GEO_QUAD] = MeshBuilder::GenerateQuad("SceneOpening", Color(0, 0, 0));
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
-	//meshList[GEO_TITLE] = MeshBuilder::GenerateOBJ("Title", "OBJ//Title.obj");
-	meshList[GEO_TITLE] = MeshBuilder::GenerateQuad("Title", Color(1, 1, 1));
-	meshList[GEO_TITLE]->textureID = LoadTGA("Image//Title.tga");
+	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
+	meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
 
+	meshList[GEO_FACILITYOUT] = MeshBuilder::GenerateOBJ("Facility Outer", "OBJ//FacilityOUT.obj");
+	meshList[GEO_FACILITYOUT]->textureID = LoadTGA("Image//FacilityOUT.tga");
+
+	meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("FacilityOUT wall", Color(1, 1, 1));
+	meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
+
+	meshList[GEO_DEADBODY] = MeshBuilder::GenerateOBJ("Pile of dead body", "OBJ//DeadBody.obj");
+	meshList[GEO_DEADBODY]->textureID = LoadTGA("Image//DeadBody.tga");
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
+
+	// All Switches Debounce Key
 }
 
 static float LSPEED = 10.f;
 
-void SceneOpening::Reset()
+void OpeningCutScene2::Reset()
 {
-
 }
 
-void SceneOpening::OptionChange(double dt)
-{
-	ChooseOptionDebounce += (float)dt;
-	if (Application::mouse_scroll > 0 && ChooseOptionDebounce > 0.2f)
-	{
-		ui_ChooseOption++;
-		ChooseOptionDebounce = 0;
-	}
-		
-	else if (Application::mouse_scroll < 0 && ChooseOptionDebounce > 0.2f)
-	{
-		ui_ChooseOption--;
-		ChooseOptionDebounce = 0;
-	}
-		
-	if (ui_ChooseOption < 1)
-		ui_ChooseOption = 2;
+//accounts for possible velocity of objects and clipping through camera.
 
-	else if (ui_ChooseOption > 2)
-		ui_ChooseOption = 1;
-}
-
-void SceneOpening::RenderOptionChange()
-{
-	if (ui_ChooseOption == 1)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Start Game", Color(1.0f, 1.0f, 1.0f), 5.0f, 6.0f, 6.0f);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Exit", Color(1.0f, 1.0f, 0.0f), 5.0f, 6.0f, 5.0f);
-
-		RenderTextOnScreen(meshList[GEO_TEXT], ">>", Color(1.0f, 0.0f, 1.0f), 5.0f, 4.0f, 6.0f);
-	}
-
-	else if (ui_ChooseOption == 2)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Start Game", Color(1.0f, 1.0f, 0.0f), 5.0f, 6.0f, 6.0f);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Exit", Color(1.0f, 1.0f, 1.0f), 5.0f, 6.0f, 5.0f);
-
-		RenderTextOnScreen(meshList[GEO_TEXT], ">>", Color(1.0f, 0.0f, 1.0f), 5.0f, 4.0f, 5.0f);
-	}
-}
-
-void SceneOpening::ChangeScene()
-{
-	if (Application::IsKeyPressed(VK_RETURN) && ui_ChooseOption == 1)
-		App.OpenCutScene();
-
-	else if (Application::IsKeyPressed(VK_RETURN) && ui_ChooseOption == 2)
-		App.Exit();
-}
-
-void SceneOpening::Update(double dt)
+void OpeningCutScene2::Update(double dt)
 {
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
+	Variables.f_Worldspin += (float)(dt);
 
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
@@ -184,12 +163,86 @@ void SceneOpening::Update(double dt)
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-	OptionChange(dt);
-	ChangeScene();
-	camera.Update(dt);
+	if (rotateCamX)
+	{
+		if (camera_check1)
+		{
+			MoveCamera1 -= (float)(20.f * dt);
+			if (MoveCamera1 <= -45)
+			{
+				camera_check1 = false;
+				camera_check2 = true;
+			}
+		}
+		if (camera_check2)
+		{
+			MoveCamera1 += (float)(20.f * dt);
+		}
+		if (camera_check3)
+		{
+			MoveCamera1 -= (float)(20.f * dt);
+		}
+
+		if (MoveCamera1 >= 45)
+		{
+			camera_check2 = false;
+			camera_check3 = true;
+		}
+		if (camera_check3 && MoveCamera1 <= 0)
+		{
+			camera_check3 = false;
+			rotateCamX = false;
+			if (!rotateCamX)
+			{
+				Application::StartingScene();
+			}
+		}
+	}
+
+	if (rotateCamY)
+	{
+		RotateCamera += (float)(10.f * dt);
+		if (RotateCamera >=80)
+		{
+			rotateCamY = false;
+			rotateCamX = true;
+		}
+	}
+
+	if (wokeUp)
+	{
+		if (check1)
+		{
+			eyeOpening += (float)(0.05f * dt);
+			if (eyeOpening >= 0.11f)
+			{
+				check1 = false;
+				check2 = true;
+			}
+		}
+		if (check2)
+		{
+			eyeOpening -= (float)(0.05f * dt);
+		}
+		if (check3)
+		{
+			eyeOpening += (float)(0.1f * dt);
+		}
+		
+		if (eyeOpening <= 0)
+		{
+			check2 = false;
+			check3 = true;
+		}
+		if (eyeOpening >= 1.f)
+		{
+			wokeUp = false;
+			rotateCamY = true;
+		}
+	}
 }
 
-void SceneOpening::RenderMesh(Mesh*mesh, bool enableLight)
+void OpeningCutScene2::RenderMesh(Mesh*mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
 
@@ -233,7 +286,7 @@ void SceneOpening::RenderMesh(Mesh*mesh, bool enableLight)
 	}
 }
 
-void SceneOpening::RenderText(Mesh* mesh, std::string text, Color color)
+void OpeningCutScene2::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -263,7 +316,7 @@ void SceneOpening::RenderText(Mesh* mesh, std::string text, Color color)
 
 }
 
-void SceneOpening::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
+void OpeningCutScene2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -309,7 +362,7 @@ void SceneOpening::RenderTextOnScreen(Mesh* mesh, std::string text, Color color,
 	glEnable(GL_DEPTH_TEST);
 }
 
-void SceneOpening::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
+void OpeningCutScene2::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
 	Mtx44 ortho;
 	ortho.SetToOrtho(0, 80, 0, 60, -50, 50); //size of screen UI
@@ -330,13 +383,15 @@ void SceneOpening::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz,
 	modelStack.PopMatrix();
 }
 
-void SceneOpening::Render()
+void OpeningCutScene2::Render()
 {
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	//Set view matrix using camera settings
 	viewStack.LoadIdentity();
+	viewStack.Rotate(MoveCamera1, 0, 1, 0);
+	viewStack.Rotate(RotateCamera, 1, 0, 0);
 	viewStack.LookAt(
 		camera.position.x, camera.position.y, camera.position.z,
 		camera.target.x, camera.target.y, camera.target.z,
@@ -344,6 +399,8 @@ void SceneOpening::Render()
 		);
 
 	modelStack.LoadIdentity();
+
+	RenderSceneStart();
 
 	// Light Source 1
 	if (light[0].type == Light::LIGHT_DIRECTIONAL)
@@ -364,17 +421,27 @@ void SceneOpening::Render()
 		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
-
+	//basic renders
+	
 	modelStack.PushMatrix();
-	RenderModelOnScreen(meshList[GEO_TITLE], 70.f, 15.f, 10.f, 90, 1, 0, 0, 0.6f, 3.f, 1.0f, false);
+	RenderModelOnScreen(meshList[GEO_QUAD], 80, 60, 5, 90, 1, 0, 0, 0.5f, 1+eyeOpening, 1, false);
+	modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	RenderModelOnScreen(meshList[GEO_QUAD], 80, 60, 5, 90, 1, 0, 0, 0.5f, -eyeOpening, 1, false);
 	modelStack.PopMatrix();
 
-
-	RenderOptionChange();
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 53);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Scale(15, 15, 15);
+	RenderMesh(meshList[GEO_DEADBODY], true);
+	modelStack.PopMatrix();
 
 }
 
-void SceneOpening::Exit()
+
+
+void OpeningCutScene2::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);

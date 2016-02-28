@@ -100,7 +100,7 @@ void SceneLevelOneA::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    camera.Init(Vector3(0, 10, 424), Vector3(0, 10, 0), Vector3(0, 1, 0));
+    camera.Init(Vector3(0, 10, 424), Vector3(0, 10, 1), Vector3(0, 1, 0));
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("lightball", Color(1, 1, 1), 10, 20);
