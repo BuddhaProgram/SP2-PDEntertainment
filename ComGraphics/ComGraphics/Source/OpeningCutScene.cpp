@@ -104,6 +104,8 @@ void OpeningCutScene::Init()
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
+	meshList[GEO_TEXTBACKGROUND] = MeshBuilder::GenerateQuad("text background", Color(1,1,1));
+
 	Mtx44 projection;
 	projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
@@ -127,15 +129,43 @@ void OpeningCutScene::Update(double dt)
 
 	if (toMoveText)
 	{
-		TextMove += (float)(1 * dt);
-		if (TextMove >= 5)
+		TextMove += (float)(1.5f * dt);
+		if (TextMove >= 35)
 		{
 			toMoveText = false;
 			appearText = true;
+			startTimer = true;
 		}
 	}
 
+	if(toMoveBG)
+	{
+		BGMove += (float)(0.1f * dt);
+		if (BGMove >= 25)
+		{
+			toMoveBG = false;
+			appearBG = true;
+		}
+	}
 
+	if (startTimer)
+	{
+		timercount += (float)(1 * dt);
+		if (timercount >= 3)
+		{
+			startTimer = false;
+			appearText = false;
+			changeScene = true;
+		}
+	}
+
+	std::cout << timercount << std::endl;
+
+	if (changeScene)
+	{
+		
+		Application::OpenCutScene2();
+	}
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
 	if (Application::IsKeyPressed('1')) //enable back face culling
@@ -147,6 +177,50 @@ void OpeningCutScene::Update(double dt)
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
+}
+
+void OpeningCutScene::RenderMesh(Mesh*mesh, bool enableLight)
+{
+	Mtx44 MVP, modelView, modelView_inverse_transpose;
+
+	MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top();
+	glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
+	modelView = viewStack.Top() * modelStack.Top();
+	glUniformMatrix4fv(m_parameters[U_MODELVIEW], 1, GL_FALSE, &modelView.a[0]);
+	if (enableLight)
+	{
+		glUniform1i(m_parameters[U_LIGHTENABLED], 1);
+		modelView_inverse_transpose = modelView.GetInverse().GetTranspose();
+
+		glUniformMatrix4fv(m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE], 1, GL_FALSE, &modelView_inverse_transpose.a[0]);
+
+		//load materials
+		glUniform3fv(m_parameters[U_MATERIAL_AMBIENT], 1, &mesh->material.kAmbient.r);
+		glUniform3fv(m_parameters[U_MATERIAL_DIFFUSE], 1, &mesh->material.kDiffuse.r);
+		glUniform3fv(m_parameters[U_MATERIAL_SPECULAR], 1, &mesh->material.kSpecular.r);
+		glUniform1f(m_parameters[U_MATERIAL_SHININESS], mesh->material.kShininess);
+	}
+	else
+	{
+		glUniform1i(m_parameters[U_LIGHTENABLED], 0);
+	}
+
+	if (mesh->textureID > 0)
+	{
+		glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, mesh->textureID);
+		glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
+	}
+	else
+	{
+		glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 0);
+	}
+	mesh->Render();
+	if (mesh->textureID > 0)
+	{
+		glBindTexture(GL_TEXTURE_2D, 0);
+	}
 }
 
 void OpeningCutScene::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
@@ -195,21 +269,59 @@ void OpeningCutScene::RenderTextOnScreen(Mesh* mesh, std::string text, Color col
 	glEnable(GL_DEPTH_TEST);
 }
 
+void OpeningCutScene::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
+{
+	Mtx44 ortho;
+	ortho.SetToOrtho(0, 80, 0, 60, -50, 50); //size of screen UI
+	projectionStack.PushMatrix();
+	projectionStack.LoadMatrix(ortho);
+	viewStack.PushMatrix();
+	viewStack.LoadIdentity(); //No need camera for ortho mode
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity(); //Reset modelStack
+	modelStack.Scale(Sx, Sy, Sz);
+	modelStack.Translate(Tx, Ty, Tz);
+	modelStack.Rotate(Rotate, (float)rX, (float)rY, (float)rZ);
+
+	RenderMesh(mesh, LightYN);
+
+	projectionStack.PopMatrix();
+	viewStack.PopMatrix();
+	modelStack.PopMatrix();
+}
+
+
 void OpeningCutScene::RenderOpeningCutScene()
 {
-	if (toMoveText)
+	if (toMoveBG)
 	{
+	
 		modelStack.PushMatrix();
-		RenderTextOnScreen(meshList[GEO_TEXT], "NO KEY", Color(0, 1, 0), 4, 10, TextMove);
+		glBlendFunc(1, 1);
+		RenderModelOnScreen(meshList[GEO_TEXTBACKGROUND], 60, 60, 5, 90, 1, 0, 0, 0.65f, BGMove-0.5f, -1, true);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove-2.f);
+		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 3.5f);
+		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 5.f);
+		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 6.5f);
+		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 8.f);
+		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 9.5);
+		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 11.f);
+		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 12.5f);
+		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 14.f);
 		modelStack.PopMatrix();
 	}
 
-	if (appearText)
+	if (startTimer)
 	{
 		modelStack.PushMatrix();
 		RenderTextOnScreen(meshList[GEO_TEXT], "BENNNNNNNNY", Color(0, 1, 0), 4, 10, 7);
 		modelStack.PopMatrix();
 	}
+
 }
 
 void OpeningCutScene::Render()

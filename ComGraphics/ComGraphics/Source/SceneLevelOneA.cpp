@@ -100,7 +100,7 @@ void SceneLevelOneA::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    camera.Init(Vector3(0, 10, 424), Vector3(0, 10, 0), Vector3(0, 1, 0));
+    camera.Init(Vector3(0, 10, 424), Vector3(0, 10, 1), Vector3(0, 1, 0));
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("lightball", Color(1, 1, 1), 10, 20);
@@ -215,6 +215,16 @@ static float LSPEED = 10.f;
 
 void SceneLevelOneA::Reset()
 {
+	Explorer::instance()->hp = 100;
+	Explorer::instance()->isDead = false;
+	Explorer::instance()->PlayerLife = 3;
+	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
+	Variables.f_redScreenTimer = 0.0f;
+
+	for (int i = 0; i < 4; ++i)
+	{
+		Explorer::instance()->checkSavePoint[i] = false;
+	}
 }
 
 void SceneLevelOneA::Collision(float smallx, float largex, float smallz, float largez)
@@ -432,20 +442,67 @@ void SceneLevelOneA::UpdatePlayerDiesInteraction(double dt)
 	}
 }
 
+void SceneLevelOneA::ContinueGameOrNot()
+{
+	if (Explorer::instance()->PlayerLife > 0 && Variables.f_redScreenTimer > 4.0f)
+	{
+		if (Application::IsKeyPressed('Y'))
+		{
+			if (Explorer::instance()->checkSavePoint[0] == false)
+			{
+				camera.position.x = 0;
+				camera.position.y = 10;
+				camera.position.z = 424;
+
+				--Explorer::instance()->PlayerLife;
+				Explorer::instance()->hp = 100;
+				Explorer::instance()->isDead = false;
+				Variables.f_redScreenTimer = 0.0f;
+			}
+
+			else if (Explorer::instance()->checkSavePoint[0] == true)
+			{
+				camera.position = Explorer::instance()->SavePoint;
+
+				--Explorer::instance()->PlayerLife;
+				Explorer::instance()->hp = 100;
+				Explorer::instance()->isDead = false;
+				Variables.f_redScreenTimer = 0.0f;
+			}
+		}
+
+		else if (Application::IsKeyPressed('N'))
+		{
+			Reset();
+			Application::OpenGame();
+		}
+	}
+}
+
 void SceneLevelOneA::Update(double dt)
 {
 	
     light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
     light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
     FPS = 1.f / (float)dt;
-    //worldspin += (float)(dt);
 	camera.Update(dt);
 	Collision(115.0f, 125.0f, 70.0f, 80.0f);
 
-	Explorer::instance()->checkDead();
+	
+
+	if (Application::IsKeyPressed('5'))
 	Explorer::instance()->hp -= (float)(50.0f * dt);
 
+	/*-------------------------[Death of the Explorer]-------------------------------*/
+	Explorer::instance()->checkDead();
 	UpdatePlayerDiesInteraction(dt);
+	ContinueGameOrNot();
+
+	if (Explorer::instance()->PlayerLife <= 0 && Variables.f_redScreenTimer > 8.0f)
+		Application::OpenGame();
+	/*-------------------------[End of Death Functions]-------------------------------*/
+
+
 
 	/*-------------------------[Tool UI Functions]-------------------------------*/
 	ToolsUI();

@@ -1,15 +1,18 @@
-#ifndef SCENEEND_H
-#define SCENEEND_H
+#ifndef OPENINGCUTSCENE2_H
+#define OPENINGCUTSCENE2_H
 
 #include "Scene.h"
 #include "Camera3.h"
 #include "Vector3.h"
 #include "Mesh.h"
+#include "Misc.h"
 #include "MatrixStack.h"
 #include "Light.h"
 #include "OBJAnimation.h"
+#include "HostileMob.h"
+#include "MobGhost.h"
 
-class SceneEnd : public Scene
+class OpeningCutScene2 : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
@@ -20,22 +23,12 @@ class SceneEnd : public Scene
 		GEO_RIGHT,
 		GEO_FRONT,
 		GEO_BACK,
+
 		GEO_QUAD,
 
 		GEO_LIGHTBALL,
 		GEO_TEXT,
 		GEO_MOUNTTEXT,
-
-		GEO_EARTH,
-		GEO_MOON,
-		GEO_PLANET,
-		GEO_ASTEROID1,
-		GEO_ASTEROID2,
-
-		GEO_MAINDOORLEFT,
-		GEO_MAINDOORRIGHT,
-		GEO_RUBBLE,
-		GEO_PORTRAIT,
 
 		GEO_PLANETFLOOR,
 		GEO_FACILITYFLOOR,
@@ -45,29 +38,8 @@ class SceneEnd : public Scene
 		GEO_FACILITYWALLS,
 		GEO_FACILITYCEILINGS,
 
-		GEO_LHAND,
-		GEO_RHAND,
-
-		// Tools Interface and It's Icons
-		GEO_TOOLUIONE,
-		GEO_TOOLUITWO,
-		GEO_TOOLUITHREE,
-		GEO_TOOLUIFOUR,
-
-		GEO_PICKAXE,
-		GEO_PICKAXEICON,
-
-		GEO_BAT,
-		GEO_BATICON,
-
-		GEO_SWORD,
-		GEO_SWORDICON,
-
-		GEO_GHOST1,
-
-		// Animations when player dies
-		GEO_DEADCOLOR,
-		GEO_DEADBLACKSCREEN,
+		GEO_DEADBODY,
+		GEO_BLOOD1,
 
 
 		NUM_GEOMETRY,
@@ -103,8 +75,8 @@ class SceneEnd : public Scene
 		U_TOTAL,
 	};
 public:
-	SceneEnd();
-	~SceneEnd();
+	OpeningCutScene2();
+	~OpeningCutScene2();
 
 	virtual void Init();
 	virtual void Update(double dt);
@@ -117,10 +89,9 @@ private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 
 	//scene renders
-	void RenderLevel1();
-    void RenderFloor();
+	void RenderSceneStart();
 	void RenderSkyBox();
-	void RenderSceneEnd();
+	void RenderFloor();
 
 	//map rendering
 	void RenderDownWall(int xPosLarge, int xPosSmall, int zPos);//positive Z facing wall
@@ -128,34 +99,13 @@ private:
 	void RenderRightWall(int zPosLarge, int zPosSmall, int xPos);// positive X facing wall
 	void RenderLeftWall(int zPosLarge, int zPosSmall, int xPos);//negative X facing wall
 
-	//mob renders
-	void RenderGhost1();
-
 	//render functions 
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-	void RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN);
-	//checks
-	void checkPlayerPos(double dt, int checkRate, int lessenSpeed);
-	void checkPlayerPosMisc();
-	void Collision(float smallx, float largex, float smallz, float largez);
-	bool proximitycheck(float smallx, float largex, float smallz, float largez);
+	void RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float x, float y, float z, bool LightYN);
 
-	// Switches Functions for puzzles
-	void PuzzleOneSwitchCheck(double dt);
-
-	// Tool UI functions
-	void ToolsUI();
-	void MouseScrollToolSlot();
-	void ToolSelectionMouseScroll();
-	void RenderToolIcon();
-	void RenderToolUI();
-
-	// Checkers and interaction when player dies
-	void RenderPlayerDiesInteraction();
-	void UpdatePlayerDiesInteraction(double dt);
-
-	void ContinueGameOrNot();
+	// Interactions to change to FirstCutScene
+	void ChangeFirstCutScene();
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
@@ -169,22 +119,28 @@ private:
 
 	Light light[1];
 
-	//float PlanetRotate;
-	//float AsteroidRotate;
-	//float AsteroidRotateF;
-	//float AsteroidMove;
-	//float AsteroidMoveS;
 
-	float worldspin;
-
+	//variables for scene changer
 
 	Vector3 start;
 	Vector3 end;
-	GlobalVariables Variables;
 
-	float FPS;
-	bool displayInteract;
+	misc Misc;
+
+	bool rotateCamX = false;
+	float MoveCamera1;
+	bool camera_check1 = true;
+	bool camera_check2 = false;
+	bool camera_check3 = false;
+
+	bool rotateCamY = false;
+	float RotateCamera;
+
+	bool wokeUp = true;
+	bool check1 = true;
+	bool check2 = false;
+	bool check3 = false;
+	float eyeOpening;
 };
-
 
 #endif

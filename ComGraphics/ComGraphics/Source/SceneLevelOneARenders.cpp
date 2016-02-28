@@ -163,7 +163,7 @@ void SceneLevelOneA::checkDoor1()
 	}
 	if (anima.toSlideDoorBtm)
 	{
-		Collision(140, 210, 180, 200);
+	//	Collision(140, 210, 180, 200);
 	}
 
 	if (proximitycheck(-205, -195, 115, 125) && !activateDoor1)
@@ -446,11 +446,6 @@ void SceneLevelOneA::RenderPlayerDiesInteraction()
 				RenderModelOnScreen(meshList[GEO_DEADBLACKSCREEN], 100.0f, 100.0f, 100.0f, 90, 1, 0, 0, 0.3f, 0.5f, 0, false);
 				RenderTextOnScreen(meshList[GEO_TEXT], "You are Dead!", Color(1, 0.2, 1), 5.0f, 4.5f, 9.0f);
 				RenderTextOnScreen(meshList[GEO_TEXT], "Game Over!", Color(1, 1, 1), 5.0f, 5.0f, 8.0f);
-
-				if (Variables.f_redScreenTimer > 8.0f)
-				{
-					Application::OpenGame();
-				}
 			}
 		}
 	}

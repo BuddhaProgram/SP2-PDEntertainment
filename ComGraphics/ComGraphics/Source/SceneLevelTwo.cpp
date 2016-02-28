@@ -197,6 +197,16 @@ static float LSPEED = 10.f;
 
 void SceneLevelTwo::Reset()
 {
+	Explorer::instance()->hp = 100;
+	Explorer::instance()->isDead = false;
+	Explorer::instance()->PlayerLife = 3;
+	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
+	Variables.f_redScreenTimer = 0.0f;
+
+	for (int i = 0; i < 4; ++i)
+	{
+		Explorer::instance()->checkSavePoint[i] = false;
+	}
 }
 
 void SceneLevelTwo::Collision(float smallx, float largex, float smallz, float largez)
@@ -397,6 +407,43 @@ void SceneLevelTwo::UpdatePlayerDiesInteraction(double dt)
 	}
 }
 
+void SceneLevelTwo::ContinueGameOrNot()
+{
+	if (Explorer::instance()->PlayerLife > 0 && Variables.f_redScreenTimer > 4.0f)
+	{
+		if (Application::IsKeyPressed('Y'))
+		{
+			if (Explorer::instance()->checkSavePoint[2] == false)
+			{
+				camera.position.x = 0;
+				camera.position.y = 10;
+				camera.position.z = 424;
+
+				--Explorer::instance()->PlayerLife;
+				Explorer::instance()->hp = 100;
+				Explorer::instance()->isDead = false;
+				Variables.f_redScreenTimer = 0.0f;
+			}
+
+			else if (Explorer::instance()->checkSavePoint[2] == true)
+			{
+				camera.position = Explorer::instance()->SavePoint;
+
+				--Explorer::instance()->PlayerLife;
+				Explorer::instance()->hp = 100;
+				Explorer::instance()->isDead = false;
+				Variables.f_redScreenTimer = 0.0f;
+			}
+		}
+
+		else if (Application::IsKeyPressed('N'))
+		{
+			Reset();
+			Application::OpenGame();
+		}
+	}
+}
+
 void SceneLevelTwo::Update(double dt)
 {
     light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
@@ -434,10 +481,14 @@ void SceneLevelTwo::Update(double dt)
 	//trapwall collision
 	Collision(-76 + transSpikeDoor, -60 + transSpikeDoor, 128, 360);
 
+	/*-------------------------[Death of the Explorer]-------------------------------*/
 	Explorer::instance()->checkDead();
-	Explorer::instance()->hp -= (float)(50.0f * dt);
-
 	UpdatePlayerDiesInteraction(dt);
+	ContinueGameOrNot();
+
+	if (Explorer::instance()->PlayerLife <= 0 && Variables.f_redScreenTimer > 8.0f)
+		Application::OpenGame();
+	/*-------------------------[End of Death Functions]-------------------------------*/
 
     /*-------------------------[Tool UI Functions]-------------------------------*/
     ToolsUI();

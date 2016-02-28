@@ -15,6 +15,7 @@ class OpeningCutScene : public Scene
 	enum GEOMETRY_TYPE
 	{
 		GEO_TEXT,
+		GEO_TEXTBACKGROUND,
 
 		NUM_GEOMETRY,
 	};
@@ -60,7 +61,9 @@ public:
 
 	Camera3 camera;
 private:
+	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
+	void RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float x, float y, float z, bool LightYN);
 
 	//render functions 
 	void RenderOpeningCutScene();
@@ -84,6 +87,14 @@ private:
 	float TextMove = 0;
 	bool toMoveText = true;
 	bool appearText = false;
+	float BGMove = 0;
+	bool toMoveBG = true;
+	bool appearBG = false;
+
+	bool startTimer = false;
+	float timercount = 0;
+
+	bool changeScene = false;
 };
 
 

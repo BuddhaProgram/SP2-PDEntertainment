@@ -166,7 +166,7 @@ void SceneOpening::RenderOptionChange()
 void SceneOpening::ChangeScene()
 {
 	if (Application::IsKeyPressed(VK_RETURN) && ui_ChooseOption == 1)
-		App.StartingScene();
+		App.OpenCutScene();
 
 	else if (Application::IsKeyPressed(VK_RETURN) && ui_ChooseOption == 2)
 		App.Exit();
