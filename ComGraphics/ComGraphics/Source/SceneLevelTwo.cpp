@@ -211,10 +211,10 @@ void SceneLevelTwo::Reset()
 
 void SceneLevelTwo::Collision(float smallx, float largex, float smallz, float largez)
 {
-    if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz) && (camera.position.z <= smallz + 3.f)){ camera.position.z = smallz; }
-    if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez) && (camera.position.z >= largez - 3.f)){ camera.position.z = largez; }
-    if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x >= smallx) && (camera.position.x <= smallx + 3.f)){ camera.position.x = smallx; }
-    if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x <= largex) && (camera.position.x >= largex - 3.f)){ camera.position.x = largex; }
+    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 3.f)){ camera.position.z = smallz; }
+    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 3.f)){ camera.position.z = largez; }
+    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 3.f)){ camera.position.x = smallx; }
+    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 3.f)){ camera.position.x = largex; }
 
 	camera.target = Vector3(
 		sin(Math::DegreeToRadian(camera.rotationY)) * cos(Math::DegreeToRadian(camera.rotationX)) + camera.position.x,
@@ -444,17 +444,36 @@ void SceneLevelTwo::ContinueGameOrNot()
 	}
 }
 
+void SceneLevelTwo::checkPlayerPosMisc()
+{
+	Misc.camX = camera.position.x;
+	Misc.camY = camera.position.y;
+	Misc.camZ = camera.position.z;
+}
+
 void SceneLevelTwo::Update(double dt)
 {
     light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
     light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
     FPS = 1.f / (float)dt;
     //worldspin += (float)(dt);
-
-	transSpikeDoor += 0.5f;
-	if (transSpikeDoor > 150)
+	checkPlayerPosMisc();
+	if (Misc.WithinArea(-76,76,128,360))
 	{
-		transSpikeDoor = 150;
+		transSpikeDoor+=0.8f;
+	}
+	if (Misc.WithinArea(-12,12,80,120))
+	{
+		closeDoors = true;
+	}
+	if (closeDoors == true)
+	{
+		Collision(-13,13,120,123);
+	}
+	
+	if (transSpikeDoor > 160)
+	{
+		transSpikeDoor = 160;
 	}
 
 
