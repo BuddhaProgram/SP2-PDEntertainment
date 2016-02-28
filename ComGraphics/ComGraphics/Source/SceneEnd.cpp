@@ -15,6 +15,13 @@
 
 SceneEnd::SceneEnd()
 {
+	for (int i = 0; i < 3; ++i)
+	{
+		b_RepairDone[i] = false;
+	}
+
+	b_startRepair = false;
+	f_RepairProcess = 0.0f;
 }
 
 SceneEnd::~SceneEnd()
@@ -118,8 +125,45 @@ void SceneEnd::Init()
 	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("SkyBox1_back", Color(1, 1, 1));
 	meshList[GEO_BACK]->textureID = LoadTGA("Image//SkyBox1_back.tga");
 
+	/*--------------------[Inventory Interface and Tool Icons]--------------------*/
+	meshList[GEO_TOOLUIONE] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_TOOLUIONE]->textureID = LoadTGA("Image//ToolsUIBoxOne.tga");
+
+	meshList[GEO_TOOLUITWO] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_TOOLUITWO]->textureID = LoadTGA("Image//ToolsUIBoxTwo.tga");
+
+	meshList[GEO_TOOLUITHREE] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_TOOLUITHREE]->textureID = LoadTGA("Image//ToolsUIBoxThree.tga");
+
+	meshList[GEO_TOOLUIFOUR] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
+	meshList[GEO_TOOLUIFOUR]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
+
+	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
+	meshList[GEO_RHAND]->textureID = LoadTGA("Image//RightHand.tga");
+
+	meshList[GEO_LHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//LeftHand.obj");
+	meshList[GEO_LHAND]->textureID = LoadTGA("Image//LeftHand.tga");
+
 	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
 	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
+
+	meshList[GEO_PICKAXEICON] = MeshBuilder::GenerateQuad("PickAxeIcon", Color(1, 1, 1));
+	meshList[GEO_PICKAXEICON]->textureID = LoadTGA("Image//PickaxeIcon.tga");
+
+	meshList[GEO_BAT] = MeshBuilder::GenerateOBJ("BaseballBat", "OBJ//BaseballBat.obj");
+	meshList[GEO_BAT]->textureID = LoadTGA("Image//BaseballBat.tga");
+
+	meshList[GEO_BATICON] = MeshBuilder::GenerateQuad("BatIcon", Color(1, 1, 1));
+	meshList[GEO_BATICON]->textureID = LoadTGA("Image//BaseballBat.tga");
+
+	meshList[GEO_SWORD] = MeshBuilder::GenerateOBJ("Sword", "OBJ//Sword.obj");
+	meshList[GEO_SWORD]->textureID = LoadTGA("Image//Sword.tga");
+
+	meshList[GEO_SWORDICON] = MeshBuilder::GenerateQuad("SwordIcon", Color(1, 1, 1));
+	meshList[GEO_SWORDICON]->textureID = LoadTGA("Image//SwordIcon.tga");
+
+	meshList[GEO_REPAIRPOD] = MeshBuilder::GenerateTorus("Repair", Color(1, 0, 0), 4, 36, 1.0f, 0.1f);
+	meshList[GEO_REPAIRDONE] = MeshBuilder::GenerateTorus("Repair", Color(0, 1, 0), 4, 36, 1.0f, 0.1f);
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
@@ -167,6 +211,9 @@ void SceneEnd::Init()
 	meshList[GEO_DEADCOLOR] = MeshBuilder::GenerateQuad("DeadScreen", Color(1, 0, 0));
 	meshList[GEO_DEADBLACKSCREEN] = MeshBuilder::GenerateQuad("DeadSCreenTwo", Color(0, 0, 0));
 
+	meshList[GEO_SPACESHIP] = MeshBuilder::GenerateOBJ("Ship", "OBJ//Spaceship.obj");
+	meshList[GEO_SPACESHIP]->textureID = LoadTGA("Image//MaterialsShip.tga");
+
 	Mtx44 projection;
 	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
@@ -192,6 +239,19 @@ void SceneEnd::Reset()
 	}
 }
 
+void SceneEnd::Collision(float smallx, float largex, float smallz, float largez)
+{
+	if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz) && (camera.position.z <= smallz + 3.f)){ camera.position.z = smallz; }
+	if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez) && (camera.position.z >= largez - 3.f)){ camera.position.z = largez; }
+	if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x >= smallx) && (camera.position.x <= smallx + 3.f)){ camera.position.x = smallx; }
+	if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x <= largex) && (camera.position.x >= largex - 3.f)){ camera.position.x = largex; }
+
+	camera.target = Vector3(
+		sin(Math::DegreeToRadian(camera.rotationY)) * cos(Math::DegreeToRadian(camera.rotationX)) + camera.position.x,
+		sin(Math::DegreeToRadian(camera.rotationX)) + camera.position.y,
+		cos(Math::DegreeToRadian(camera.rotationX)) * cos(Math::DegreeToRadian(camera.rotationY)) + camera.position.z
+		);
+}
 
 bool SceneEnd::proximitycheck(float smallx, float largex, float smallz, float largez)
 {
@@ -211,6 +271,178 @@ void SceneEnd::UpdatePlayerDiesInteraction(double dt)
 		Variables.f_redScreenTimer += (float)(dt);
 		light[0].power = 0.0f;
 		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
+	}
+}
+
+void SceneEnd::MouseScrollToolSlot()
+{
+	if (Application::mouse_scroll > 0)
+	{
+		Explorer::instance()->i_SlotIndex++;
+	}
+
+	else if (Application::mouse_scroll < 0)
+	{
+		Explorer::instance()->i_SlotIndex--;
+	}
+
+	if (Explorer::instance()->i_SlotIndex > 4)
+	{
+		Explorer::instance()->i_SlotIndex = 1;
+	}
+
+	else if (Explorer::instance()->i_SlotIndex < 1)
+	{
+		Explorer::instance()->i_SlotIndex = 4;
+	}
+}
+
+void SceneEnd::RenderMouseScrollToolSlot()
+{
+	if (Explorer::instance()->isDead == false)
+	{
+		if (Explorer::instance()->i_SlotIndex == 1)
+			RenderModelOnScreen(meshList[GEO_TOOLUIONE], 7.0f, 7.0f, 7.0f, 0.0f, 1.0f, 0.0f, 0.0f, 5.75f, 0.0f, 0.0f, false);
+
+		if (Explorer::instance()->i_SlotIndex == 2)
+			RenderModelOnScreen(meshList[GEO_TOOLUITWO], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
+
+		if (Explorer::instance()->i_SlotIndex == 3)
+			RenderModelOnScreen(meshList[GEO_TOOLUITHREE], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
+
+		if (Explorer::instance()->i_SlotIndex == 4)
+			RenderModelOnScreen(meshList[GEO_TOOLUIFOUR], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
+	}
+}
+
+void SceneEnd::ToolSelectionMouseScroll()
+{
+	if (Explorer::instance()->isDead == false)
+	{
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand)
+		{
+			RenderModelOnScreen(meshList[GEO_RHAND], 15, 15, 15, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, -1.0f, false);
+			RenderModelOnScreen(meshList[GEO_LHAND], 15, 15, 15, Variables.RotateX, 1, 0, 0, 0.75f, 0.0f, -1.0f, false);
+		}
+
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe)
+		{
+			modelStack.PushMatrix();
+			RenderModelOnScreen(meshList[GEO_PICKAXE], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
+			modelStack.PopMatrix();
+		}
+
+		else if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::BaseballBat)
+		{
+			modelStack.PushMatrix();
+			RenderModelOnScreen(meshList[GEO_BAT], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
+			modelStack.PopMatrix();
+		}
+
+		else if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Sword)
+		{
+			modelStack.PushMatrix();
+			RenderModelOnScreen(meshList[GEO_SWORD], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
+			modelStack.PopMatrix();
+		}
+	}
+}
+
+void SceneEnd::RenderToolIcon()
+{
+	if (Explorer::instance()->isDead == false)
+	{
+		if (Explorer::instance()->GetToolType(1) == ToolUI::Pickaxe)
+		{
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(1) == ToolUI::BaseballBat)
+		{
+			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(1) == ToolUI::Sword)
+		{
+			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
+		}
+
+		if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
+		{
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(2) == ToolUI::BaseballBat)
+		{
+			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(2) == ToolUI::Sword)
+		{
+			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
+		}
+
+		if (Explorer::instance()->GetToolType(3) == ToolUI::Pickaxe)
+		{
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(3) == ToolUI::BaseballBat)
+		{
+			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(3) == ToolUI::Sword)
+		{
+			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+		}
+
+		if (Explorer::instance()->GetToolType(4) == ToolUI::Pickaxe)
+		{
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(4) == ToolUI::BaseballBat)
+		{
+			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(4) == ToolUI::Sword)
+		{
+			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.275f, 0.775f, 1.0f, false);
+		}
+	}
+}
+
+void SceneEnd::MouseClickFunction(double dt)
+{
+	if (Application::IsKeyPressed(VK_LBUTTON) && Variables.b_LockSwing == false && Variables.b_LockSwingDebounce == false && Explorer::instance()->stamina >= 20)
+	{
+		Variables.b_LockSwing = true;
+		Variables.b_LockSwingDebounce = true;
+		Explorer::instance()->stamina -= 20;
+	}
+
+	if (Variables.b_LockSwingDebounce == true)
+	{
+		Variables.RotateX -= 360.0f * (float)dt;
+
+		if (Variables.RotateX <= -45.0f)
+		{
+			Variables.RotateX = -45.0f;
+			Variables.b_LockSwingDebounce = false;
+		}
+	}
+
+	if (Variables.b_LockSwingDebounce == false && Variables.b_LockSwing == true && Variables.RotateX <= 0.0f)
+	{
+		Variables.RotateX += 360.0f * (float)dt;
+
+		if (Variables.RotateX >= 0.0f)
+		{
+			Variables.RotateX = 0.0f;
+			Variables.b_LockSwing = false;
+		}
 	}
 }
 
@@ -251,6 +483,41 @@ void SceneEnd::ContinueGameOrNot()
 	}
 }
 
+void SceneEnd::UpdateRepairs(double dt)
+{
+	if (camera.position.x > -6.0f && camera.position.x < 6.0f && camera.position.z > -166.0f && camera.position.z < -154.0f)
+	{
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand && b_RepairDone[1] == false)
+		{
+			b_startRepair = true;
+			f_RepairProcess += (float)(5.0f * dt);
+		}
+	}
+
+	else if (camera.position.x > -6.0f && camera.position.x < 6.0f && camera.position.z > -246.0f && camera.position.z < -234.0f)
+	{
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand && b_RepairDone[0] == false)
+		{
+			b_startRepair = true;
+			f_RepairProcess += (float)(5.0f * dt);
+		}
+	}
+
+	if (f_RepairProcess >= 100.0f && b_RepairDone[0] == false && b_startRepair == true)
+	{
+		b_startRepair = false;
+		b_RepairDone[0] = true;
+		f_RepairProcess = 0.0f;
+	}
+
+	if (f_RepairProcess >= 100.0f && b_RepairDone[1] == false && b_startRepair == true)
+	{
+		b_startRepair = false;
+		b_RepairDone[1] = true;
+		f_RepairProcess = 0.0f;
+	}
+}
+
 void SceneEnd::Update(double dt)
 {
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
@@ -267,6 +534,8 @@ void SceneEnd::Update(double dt)
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
+	Collision(-50.0f, 70.0f, -240.0f, -160.0f);
+
 	/*-------------------------[Death of the Explorer]-------------------------------*/
 	Explorer::instance()->checkDead();
 	UpdatePlayerDiesInteraction(dt);
@@ -276,62 +545,15 @@ void SceneEnd::Update(double dt)
 		Application::OpenGame();
 	/*-------------------------[End of Death Functions]-------------------------------*/
 
-	//camera.Update(dt);
-	
+	/*-------------------------[Tool UI Functions]-------------------------------*/
+	MouseScrollToolSlot();
+	MouseClickFunction(dt);
+	/*-------------------------[End of Tool UI Functions]-------------------------------*/
+
+	camera.Update(dt);
 	anima.OBJAnimation(dt);
-	anima.Collapsing(dt);
+	UpdateRepairs(dt);
 
-	if (proximitycheck(-13, 13, -105, -70))
-		displayInteract = true;
-
-	else
-	{
-		displayInteract = false;
-	}
-
-	if (camera.position.x > -2 && camera.position.x < 2 && camera.position.z > 12 && camera.position.z < 21)
-		anima.OpenMainDoor(dt);
-
-	anima.cameramove1 = true;
-
-	if (camera.position.z >= 20)
-	{
-		anima.cameramove2 = true;
-	}
-	else if (camera.position.z <= 20)
-	{
-		anima.cameramove2 = false;
-	}
-	if (anima.OpenDoorL <= -35)
-	{
-		anima.cameramove3 = true;
-		if (camera.position.z <= -10)
-		{
-			anima.cameramove3 = false;
-			//JumpScene.ChangingOfScene(0);
-		}
-	}
-
-	if (anima.cameramove3 != false)
-	{
-		camera.position.z -= 0.2f;
-	}
-
-	if (anima.cameramove2 != false)
-	{
-		camera.position.z -= 0.1f;
-	}
-
-	/*if (camera.position.z <= -1 && camera.position.x <= 1 && camera.position.x >= -1)
-	{
-	start_Animation = true;
-	}
-
-	if (start_Animation)
-	{
-	anima.Portraits(dt);
-	}
-	*/
 }
 
 void SceneEnd::RenderMesh(Mesh*mesh, bool enableLight)
@@ -509,8 +731,23 @@ void SceneEnd::Render()
 		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
+	RenderSkyBox();
+	RenderSceneEnd();
+	RenderFloor();
+
+	RenderShipAndPod();
 
 	RenderPlayerDiesInteraction();
+
+	ToolSelectionMouseScroll();
+	RenderMouseScrollToolSlot();
+	RenderToolIcon();
+
+	RenderRepairText();
+
+	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
+	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
+	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
 }
 
 void SceneEnd::Exit()

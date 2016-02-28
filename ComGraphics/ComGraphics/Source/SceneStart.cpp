@@ -227,14 +227,7 @@ void SceneStart::checkPlayerPosMisc()
 
 void SceneStart::ToolsUI()
 {
-	if (Application::IsKeyPressed('Z'))
-		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
 
-	if (Application::IsKeyPressed('X'))
-		Explorer::instance()->InsertToolSlot(ToolUI::BaseballBat);
-
-	if (Application::IsKeyPressed('C'))
-		Explorer::instance()->InsertToolSlot(ToolUI::Sword);
 }
 
 void SceneStart::MouseScrollToolSlot()

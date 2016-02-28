@@ -40,9 +40,6 @@ class SceneLevelOneA : public Scene
         GEO_FACILITYCEILINGS,
 		GEO_TV,
 
-        GEO_LHAND,
-        GEO_RHAND,
-
         GEO_SPAWNPOINT,
 
         // Tools Interface and It's Icons
@@ -50,6 +47,9 @@ class SceneLevelOneA : public Scene
 		GEO_TOOLUITWO,
 		GEO_TOOLUITHREE,
 		GEO_TOOLUIFOUR,
+
+		GEO_LHAND,
+		GEO_RHAND,
 
 		GEO_PICKAXE,
 		GEO_PICKAXEICON,
