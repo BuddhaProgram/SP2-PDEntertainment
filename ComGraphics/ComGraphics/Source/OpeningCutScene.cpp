@@ -151,7 +151,7 @@ void OpeningCutScene::Update(double dt)
 	if (startTimer)
 	{
 		timercount += (float)(1 * dt);
-		if (timercount >= 5)
+		if (timercount >= 3)
 		{
 			startTimer = false;
 			appearText = false;
