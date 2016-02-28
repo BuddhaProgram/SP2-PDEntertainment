@@ -211,10 +211,10 @@ void SceneLevelTwo::Reset()
 
 void SceneLevelTwo::Collision(float smallx, float largex, float smallz, float largez)
 {
-    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 3.f)){ camera.position.z = smallz; }
-    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 3.f)){ camera.position.z = largez; }
-    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 3.f)){ camera.position.x = smallx; }
-    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 3.f)){ camera.position.x = largex; }
+    if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz) && (camera.position.z <= smallz + 3.f)){ camera.position.z = smallz; }
+    if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez) && (camera.position.z >= largez - 3.f)){ camera.position.z = largez; }
+    if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x >= smallx) && (camera.position.x <= smallx + 3.f)){ camera.position.x = smallx; }
+    if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x <= largex) && (camera.position.x >= largex - 3.f)){ camera.position.x = largex; }
 
 	camera.target = Vector3(
 		sin(Math::DegreeToRadian(camera.rotationY)) * cos(Math::DegreeToRadian(camera.rotationX)) + camera.position.x,
@@ -458,7 +458,11 @@ void SceneLevelTwo::Update(double dt)
     FPS = 1.f / (float)dt;
     //worldspin += (float)(dt);
 	checkPlayerPosMisc();
-	if (Misc.WithinArea(-76,76,128,360))
+
+	//trapwall collision
+	Collision(-76 + transSpikeDoor, -60 + transSpikeDoor, 127, 361);
+
+	if (Misc.WithinArea(-76,76,127,361))
 	{
 		transSpikeDoor+=0.8f;
 	}
@@ -471,9 +475,9 @@ void SceneLevelTwo::Update(double dt)
 		Collision(-13,13,120,123);
 	}
 	
-	if (transSpikeDoor > 160)
+	if (transSpikeDoor > 140)
 	{
-		transSpikeDoor = 160;
+		transSpikeDoor = 140;
 	}
 
 
@@ -496,9 +500,6 @@ void SceneLevelTwo::Update(double dt)
     {
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
-
-	//trapwall collision
-	Collision(-76 + transSpikeDoor, -60 + transSpikeDoor, 128, 360);
 
 	/*-------------------------[Death of the Explorer]-------------------------------*/
 	Explorer::instance()->checkDead();
