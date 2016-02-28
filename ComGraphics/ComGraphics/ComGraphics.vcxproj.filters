@@ -55,10 +55,19 @@
     <ClCompile Include="Source\Music.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="source\SceneEndRenders.cpp">
+    <ClCompile Include="Source\OBJAnimation.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\OpeningCutScene.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\OpeningCutScene2.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\SceneEnd.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SceneEndRenders.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="source\SceneLevelOneA.cpp">
@@ -79,6 +88,9 @@
     <ClCompile Include="source\SceneLevelTwoRenders.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Source\SceneOpening.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
     <ClCompile Include="Source\SceneStart.cpp">
       <Filter>Source</Filter>
     </ClCompile>
@@ -94,20 +106,10 @@
     <ClCompile Include="Source\SwitchLightPuzzle.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ToolUI.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Utility.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Source\OpeningCutScene.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\OpeningCutScene2.cpp">
-    <ClCompile Include="Source\SceneOpening.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\OBJAnimation.cpp">
+    <ClCompile Include="Source\ToolUI.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -169,6 +171,12 @@
     <ClInclude Include="Source\OBJAnimation.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Source\OpeningCutScene.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\OpeningCutScene2.h">
+      <Filter>Header</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Scene.h">
       <Filter>Header</Filter>
     </ClInclude>
@@ -190,15 +198,6 @@
     <ClInclude Include="Source\SceneStart.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Source\shader.hpp">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\spawnPoints.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\SwitchLightPuzzle.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Source\ToolUI.h">
       <Filter>Header</Filter>
     </ClInclude>
@@ -208,51 +207,54 @@
     <ClInclude Include="Source\Vertex.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Source\OpeningCutScene.h">
+    <ClInclude Include="Source\SwitchLightPuzzle.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Source\OpeningCutScene2.h">
+    <ClInclude Include="Source\spawnPoints.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\shader.hpp">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Shader\Shading.fragmentshader">
-      <Filter>Shaders</Filter>
-    </None>
     <None Include="Shader\LightSource.fragmentshader">
-      <Filter>Shaders</Filter>
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\Shading.fragmentshader">
+      <Filter>Shader</Filter>
     </None>
     <None Include="Shader\Shading.vertexshader">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="Shader\SimpleVertexShader.vertexshader">
-      <Filter>Shaders</Filter>
+      <Filter>Shader</Filter>
     </None>
     <None Include="Shader\SimpleFragmentShader.fragmentshader">
-      <Filter>Shaders</Filter>
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\SimpleVertexShader.vertexshader">
+      <Filter>Shader</Filter>
     </None>
     <None Include="Shader\Text.fragmentshader">
-      <Filter>Shaders</Filter>
+      <Filter>Shader</Filter>
     </None>
     <None Include="Shader\Texture.fragmentshader">
-      <Filter>Shaders</Filter>
+      <Filter>Shader</Filter>
     </None>
     <None Include="Shader\Texture.vertexshader">
-      <Filter>Shaders</Filter>
+      <Filter>Shader</Filter>
     </None>
     <None Include="Shader\TransformVertexShader.vertexshader">
-      <Filter>Shaders</Filter>
+      <Filter>Shader</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header">
-      <UniqueIdentifier>{164ad30c-79e5-4099-b513-0cc273ba3aed}</UniqueIdentifier>
+      <UniqueIdentifier>{b53c4469-8db4-4402-9a31-2e6482c3c792}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source">
-      <UniqueIdentifier>{3df44683-fe16-4b41-8fc9-ff565fafc838}</UniqueIdentifier>
+      <UniqueIdentifier>{643ebb5e-1fde-484b-a3b9-e95b8afc1088}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shaders">
-      <UniqueIdentifier>{e73d4897-e362-4f97-b8cc-e29d35759614}</UniqueIdentifier>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{d8e8b335-8dde-4945-a910-929a5c1c0c98}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
