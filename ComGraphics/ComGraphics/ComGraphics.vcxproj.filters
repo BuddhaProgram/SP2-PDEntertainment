@@ -55,9 +55,6 @@
     <ClCompile Include="Source\Music.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Source\OBJAnimation.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="source\SceneEndRenders.cpp">
       <Filter>Source</Filter>
     </ClCompile>
@@ -80,9 +77,6 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="source\SceneLevelTwoRenders.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\SceneOpening.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\SceneStart.cpp">
@@ -110,6 +104,10 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\OpeningCutScene2.cpp">
+    <ClCompile Include="Source\SceneOpening.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\OBJAnimation.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>

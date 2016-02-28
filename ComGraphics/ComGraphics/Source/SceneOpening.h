@@ -20,6 +20,7 @@ class SceneOpening : public Scene
 		GEO_TEXT,
 		GEO_TITLE,
 
+
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE

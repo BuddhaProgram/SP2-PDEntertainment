@@ -347,6 +347,7 @@ void SceneLevelOneB::RenderGhost(float xpos, float zpos)
 	}
     modelStack.PushMatrix();
     modelStack.Translate(xpos, 6, zpos);
+    modelStack.Scale(3, 3, 3);
 	modelStack.Rotate(rotGhost+270, 0, 1, 0);
     RenderMesh(meshList[GEO_GHOST1], true);
     modelStack.PopMatrix();
@@ -400,12 +401,12 @@ void SceneLevelOneB::attackCheck()
 
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(20.f, PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
-        PuzzleGhost1.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
+        PuzzleGhost1.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);
     }
 
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(20.f, PuzzleGhost2.MobPosX, PuzzleGhost2.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
-        PuzzleGhost2.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
+        PuzzleGhost2.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);
     }
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(60.f, BossOne.MobPosX, BossOne.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
@@ -418,8 +419,11 @@ void SceneLevelOneB::MobsSpawn()
     
     if (proximitycheck(216, 240, -256, -248) && PuzzleGhost1.health >0)
     {
-        std::cout << "ghost" << std::endl;
         PuzzleGhost1.Spawn = true;
+    }
+    if (proximitycheck(216, 240, -256, -248) && PuzzleGhost2.health >0)
+    {
+        PuzzleGhost2.Spawn = true;
     }
     if (proximitycheck(-304, -280, -392, -384) && BossOne.health>0)
     {
@@ -546,5 +550,44 @@ void SceneLevelOneB::RenderPuzzle()
 			modelStack.Scale(2, 2, 2);
 			RenderMesh(meshList[GEO_LIGHTGREEN], true);
 		modelStack.PopMatrix();
+	}
+}
+
+void SceneLevelOneB::RenderPlayerDiesInteraction()
+{
+	if (Explorer::instance()->isDead == true)
+	{
+		if (Variables.f_redScreenTimer <= 2.0f)
+		{
+			RenderModelOnScreen(meshList[GEO_DEADCOLOR], 100.0f, 100.0f, 100.0f, 90, 1, 0, 0, 0.3f, 0.5f, 0, false);
+		}
+
+		else if (Variables.f_redScreenTimer > 2.0f && Variables.f_redScreenTimer <= 4.0f)
+		{
+			RenderModelOnScreen(meshList[GEO_DEADBLACKSCREEN], 100.0f, 100.0f, 100.0f, 90, 1, 0, 0, 0.3f, 0.5f, 0, false);
+			RenderTextOnScreen(meshList[GEO_TEXT], "You are Dead!", Color(1, 0.2, 1), 5.0f, 4.5f, 9.0f);
+		}
+
+		else if (Variables.f_redScreenTimer > 4.0f)
+		{
+			if (Explorer::instance()->PlayerLife > 0)
+			{
+				RenderModelOnScreen(meshList[GEO_DEADBLACKSCREEN], 100.0f, 100.0f, 100.0f, 90, 1, 0, 0, 0.3f, 0.5f, 0, false);
+				RenderTextOnScreen(meshList[GEO_TEXT], "You are Dead!", Color(1, 0.2, 1), 5.0f, 4.5f, 9.0f);
+				RenderTextOnScreen(meshList[GEO_TEXT], "Continue? (Y/ N)", Color(1, 1, 1), 5.0f, 4.0f, 8.0f);
+			}
+
+			else if (Explorer::instance()->PlayerLife <= 0)
+			{
+				RenderModelOnScreen(meshList[GEO_DEADBLACKSCREEN], 100.0f, 100.0f, 100.0f, 90, 1, 0, 0, 0.3f, 0.5f, 0, false);
+				RenderTextOnScreen(meshList[GEO_TEXT], "You are Dead!", Color(1, 0.2, 1), 5.0f, 4.5f, 9.0f);
+				RenderTextOnScreen(meshList[GEO_TEXT], "Game Over!", Color(1, 1, 1), 5.0f, 5.0f, 8.0f);
+
+				if (Variables.f_redScreenTimer > 8.0f)
+				{
+					Application::OpenGame();
+				}
+			}
+		}
 	}
 }

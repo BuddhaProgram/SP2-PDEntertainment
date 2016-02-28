@@ -11,6 +11,7 @@ public:
 	virtual void setHP(float currHP);
 	virtual void setStamina(float currStam);
 	virtual float getHP();
+	virtual float MinusHP(float TakeDamage);
 	virtual float getStamina();
 
 	float stamina;
@@ -24,6 +25,11 @@ public:
 
 	std::list<ToolUI> TotalTools;
 
+	unsigned int PlayerLife;
+	bool isDead;
+	bool checkSavePoint[4];
+
+	void checkDead();
 	void ExplorerSavePoint(Vector3 pos);
 	Vector3 SavePoint;
 

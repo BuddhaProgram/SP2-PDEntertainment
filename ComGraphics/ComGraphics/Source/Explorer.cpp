@@ -18,11 +18,39 @@ Explorer::Explorer()
 	}
 
 	Explorer::instance()->SavePoint = (0.f, 0.f, 0.f);
+
+	Explorer::instance()->PlayerLife = 0;
+	Explorer::instance()->isDead = false;
+	
+	for (int i = 0; i < 4; ++i)
+	{
+		Explorer::instance()->checkSavePoint[i] = false;
+	}
 }
 
 float Explorer::getHP()
 {
 	return Explorer::instance()->hp;
+}
+
+float Explorer::MinusHP(float TakeDamage)
+{
+	Explorer::instance()->hp -= TakeDamage;
+	
+	if (Explorer::instance()->hp <= 0)
+	{
+		Explorer::instance()->hp = 0;
+	}
+	
+	return Explorer::instance()->hp;
+}
+
+void Explorer::checkDead()
+{
+	if (Explorer::instance()->hp <= 0)
+	{
+		Explorer::instance()->isDead = true;
+	}
 }
 
 float Explorer::getStamina()

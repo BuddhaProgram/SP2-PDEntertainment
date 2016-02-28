@@ -148,8 +148,6 @@ void Application::Run()
     LevelTwo = new SceneLevelTwo();
     LevelTwo->Init();
 
-
-
 	//Main Loop
 	//SceneStart *scene = new SceneStart();
 	//scene->Init();

@@ -21,7 +21,7 @@ MobGhost::MobGhost()
     mobTimeCount = 0.f;
     mobTimeCount2 = 0.f;
     AttackDamage = 10;
-    health = 10;
+    health = 4;
     kenaWhack = false;
     canHit = true;
 }
@@ -107,6 +107,5 @@ void MobGhost::setSpawnGhost(float xpos, float zpos)
 void MobGhost::TakeDamage(int damage)
 {
     std::cout << "hit" << std::endl;
-    health = health - damage;
-   
+	Explorer::instance()->MinusHP(damage);  
 }

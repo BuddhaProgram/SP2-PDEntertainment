@@ -200,12 +200,16 @@ void SceneLevelOneB::Init()
     meshList[GEO_PUZZLELEVER] = MeshBuilder::GenerateOBJ("lever", "OBJ//PuzzleLever.obj");
     meshList[GEO_PUZZLELEVER]->textureID = LoadTGA("Image//PuzzleLever.tga");
 
+	/*--------------------[Used as a background for Dead Scene]--------------------*/
+	meshList[GEO_DEADCOLOR] = MeshBuilder::GenerateQuad("DeadScreen", Color(1, 0, 0));
+	meshList[GEO_DEADBLACKSCREEN] = MeshBuilder::GenerateQuad("DeadSCreenTwo", Color(0, 0, 0));
+
     Mtx44 projection;
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
     PuzzleGhost1.setSpawnGhost(24, 31);
-    PuzzleGhost1.setSpawnGhost(30, 31);
+    PuzzleGhost2.setSpawnGhost(30, 31);
     BossOne.setSpawnBossOne(-30, 55);
 }
 
@@ -255,88 +259,97 @@ void SceneLevelOneB::ToolsUI()
 
 void SceneLevelOneB::RenderMouseScrollToolSlot()
 {
-	if (Variables.i_SlotIndex == 1)
-		RenderModelOnScreen(meshList[GEO_TOOLUIONE], 7.0f, 7.0f, 7.0f, 0.0f, 1.0f, 0.0f, 0.0f, 5.75f, 0.0f, 0.0f, false);
+	if (Explorer::instance()->isDead == false)
+	{
+		if (Variables.i_SlotIndex == 1)
+			RenderModelOnScreen(meshList[GEO_TOOLUIONE], 7.0f, 7.0f, 7.0f, 0.0f, 1.0f, 0.0f, 0.0f, 5.75f, 0.0f, 0.0f, false);
 
-	if (Variables.i_SlotIndex == 2)
-		RenderModelOnScreen(meshList[GEO_TOOLUITWO], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
+		if (Variables.i_SlotIndex == 2)
+			RenderModelOnScreen(meshList[GEO_TOOLUITWO], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
 
-	if (Variables.i_SlotIndex == 3)
-		RenderModelOnScreen(meshList[GEO_TOOLUITHREE], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
+		if (Variables.i_SlotIndex == 3)
+			RenderModelOnScreen(meshList[GEO_TOOLUITHREE], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
 
-	if (Variables.i_SlotIndex == 4)
-		RenderModelOnScreen(meshList[GEO_TOOLUIFOUR], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
+		if (Variables.i_SlotIndex == 4)
+			RenderModelOnScreen(meshList[GEO_TOOLUIFOUR], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
+	}
 }
 
 void SceneLevelOneB::ToolSelectionMouseScroll()
 {
-	if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
+	if (Explorer::instance()->isDead == false)
 	{
-		modelStack.PushMatrix();
-		RenderModelOnScreen(meshList[GEO_PICKAXE], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
-		modelStack.PopMatrix();
-	}
+		if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
+		{
+			modelStack.PushMatrix();
+			RenderModelOnScreen(meshList[GEO_PICKAXE], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
+			modelStack.PopMatrix();
+		}
 
-	else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::BaseballBat)
-	{
-		modelStack.PushMatrix();
-		RenderModelOnScreen(meshList[GEO_BAT], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
-		modelStack.PopMatrix();
-	}
+		else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::BaseballBat)
+		{
+			modelStack.PushMatrix();
+			RenderModelOnScreen(meshList[GEO_BAT], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
+			modelStack.PopMatrix();
+		}
 
-	else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Sword)
-	{
-		modelStack.PushMatrix();
-		RenderModelOnScreen(meshList[GEO_SWORD], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
-		modelStack.PopMatrix();
+		else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Sword)
+		{
+			modelStack.PushMatrix();
+			RenderModelOnScreen(meshList[GEO_SWORD], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
+			modelStack.PopMatrix();
+		}
 	}
 }
 
 void SceneLevelOneB::RenderToolIcon()
 {
-	if (Explorer::instance()->GetToolType(1) == ToolUI::Pickaxe)
+	if (Explorer::instance()->isDead == false)
 	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
-	}
+		if (Explorer::instance()->GetToolType(1) == ToolUI::Pickaxe)
+		{
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
+		}
 
-	else if (Explorer::instance()->GetToolType(1) == ToolUI::BaseballBat)
-	{
-		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
-	}
+		else if (Explorer::instance()->GetToolType(1) == ToolUI::BaseballBat)
+		{
+			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
+		}
 
-	else if (Explorer::instance()->GetToolType(1) == ToolUI::Sword)
-	{
-		RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
-	}
+		else if (Explorer::instance()->GetToolType(1) == ToolUI::Sword)
+		{
+			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
+		}
 
-	if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
-	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
-	}
+		if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
+		{
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
+		}
 
-	else if (Explorer::instance()->GetToolType(2) == ToolUI::BaseballBat)
-	{
-		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
-	}
+		else if (Explorer::instance()->GetToolType(2) == ToolUI::BaseballBat)
+		{
+			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
+		}
 
-	else if (Explorer::instance()->GetToolType(2) == ToolUI::Sword)
-	{
-		RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
-	}
+		else if (Explorer::instance()->GetToolType(2) == ToolUI::Sword)
+		{
+			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
+		}
 
-	if (Explorer::instance()->GetToolType(3) == ToolUI::Pickaxe)
-	{
-		RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.7f, 0.775f, 1.0f, false);
-	}
+		if (Explorer::instance()->GetToolType(3) == ToolUI::Pickaxe)
+		{
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.7f, 0.775f, 1.0f, false);
+		}
 
-	else if (Explorer::instance()->GetToolType(3) == ToolUI::BaseballBat)
-	{
-		RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
-	}
+		else if (Explorer::instance()->GetToolType(3) == ToolUI::BaseballBat)
+		{
+			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+		}
 
-	else if (Explorer::instance()->GetToolType(3) == ToolUI::Sword)
-	{
-		RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+		else if (Explorer::instance()->GetToolType(3) == ToolUI::Sword)
+		{
+			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+		}
 	}
 }
 
@@ -559,14 +572,22 @@ void SceneLevelOneB::LogicAnimationSwitches(double dt)
 	}
 }
 
+void SceneLevelOneB::UpdatePlayerDiesInteraction(double dt)
+{
+	if (Explorer::instance()->isDead == true)
+	{
+		Variables.f_redScreenTimer += (float)(dt);
+		light[0].power = 0.0f;
+		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
+	}
+}
+
 void SceneLevelOneB::Update(double dt)
 {
     light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
     light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
     FPS = 1.f / (float)dt;
     //worldspin += (float)(dt);
-
-    /*-------------------------[End of Tool UI Functions]-------------------------------*/
 
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
@@ -587,7 +608,7 @@ void SceneLevelOneB::Update(double dt)
 	SwitchCollisionChecker();
 	Switches.SwitchPuzzleOne();
 
-	std::cout << Switches.b_PuzzleOne[0] << " " << Switches.b_PuzzleOne[1] << " " << Switches.b_PuzzleOne[2] << std::endl;
+	//std::cout << Switches.b_PuzzleOne[0] << " " << Switches.b_PuzzleOne[1] << " " << Switches.b_PuzzleOne[2] << std::endl;
 
 	checkDoor3();
 	checkDoor4();
@@ -605,6 +626,16 @@ void SceneLevelOneB::Update(double dt)
     {
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
+    Collision(-352,-336, -488,-376);
+
+    //mob collision
+    PuzzleGhost1.MobCollision(PuzzleGhost2.MobPosX - 4, PuzzleGhost2.MobPosX + 4, PuzzleGhost2.MobPosZ - 4, PuzzleGhost2.MobPosZ + 4);
+    PuzzleGhost2.MobCollision(PuzzleGhost1.MobPosX - 4, PuzzleGhost1.MobPosX + 4, PuzzleGhost1.MobPosZ - 4, PuzzleGhost1.MobPosZ + 4);
+
+	Explorer::instance()->checkDead();
+	Explorer::instance()->hp -= (float)(50.0f * dt);
+
+	UpdatePlayerDiesInteraction(dt);
 
 	/*-------------------------[Tool UI Functions]-------------------------------*/
 	ToolsUI();
@@ -633,6 +664,8 @@ void SceneLevelOneB::Update(double dt)
         BossOne.move(dt, 15);
         Collision(BossOne.MobPosX - 20, BossOne.MobPosX + 20, BossOne.MobPosZ - 20, BossOne.MobPosZ + 20);
     }
+
+
 
 }
 
@@ -781,10 +814,6 @@ void SceneLevelOneB::Render()
 {
     // Render VBO here
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    modelStack.PushMatrix();
-    RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57, 0, false);
-    RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56, 0, false);
-    modelStack.PopMatrix();
     //Set view matrix using camera settings
     viewStack.LoadIdentity();
     viewStack.LookAt(
@@ -839,7 +868,14 @@ void SceneLevelOneB::Render()
 
     if (PuzzleGhost1.Spawn)
     {
+        std::cout << "1" << std::endl;
         RenderGhost(PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ);
+    }
+
+    if (PuzzleGhost2.Spawn)
+    {
+        std::cout << "2" << std::endl;
+        RenderGhost(PuzzleGhost2.MobPosX, PuzzleGhost2.MobPosZ);
     }
     
     if (BossOne.Spawn)
@@ -847,10 +883,15 @@ void SceneLevelOneB::Render()
         RenderBoss(BossOne.MobPosX, BossOne.MobPosZ);
     }
 
-	//modelStack.PushMatrix();
-	//RenderModelOnScreen(meshList[GEO_TOOLUI], 7, 0, 1, 0, 0, 5.75, 0, 0, false);
-	//modelStack.PopMatrix();
+	if (Explorer::instance()->isDead == false)
+	{
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57, 0, false);
+		RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56, 0, false);
+		modelStack.PopMatrix();
+	}
 
+	RenderPlayerDiesInteraction();
 }
 
 void SceneLevelOneB::Exit()

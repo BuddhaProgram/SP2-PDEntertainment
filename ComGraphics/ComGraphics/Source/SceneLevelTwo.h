@@ -37,6 +37,10 @@ class SceneLevelTwo : public Scene
         GEO_FACILITYOUTWALL,
         GEO_FACILITYWALLS,
         GEO_FACILITYCEILINGS,
+		GEO_TRAPWALL,
+
+		GEO_HEALTHBAR,
+		GEO_STAMINABAR,
 
         GEO_LHAND,
         GEO_RHAND,
@@ -63,7 +67,11 @@ class SceneLevelTwo : public Scene
         GEO_SLIDEDOORBTM,
 
         //player related
-        GEO_HEALTH,
+
+		GEO_DEADCOLOR,
+		GEO_DEADBLACKSCREEN,
+
+
         NUM_GEOMETRY,
     };
     enum UNIFORM_TYPE
@@ -122,7 +130,7 @@ private:
 
     //mob renders
     void RenderGhost1();
-    void RenderDoor();
+	void RenderTraps();
 
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
@@ -133,12 +141,9 @@ private:
     void Collision(float smallx, float largex, float smallz, float largez);
     bool proximitycheck(float smallx, float largex, float smallz, float largez);
 
-    void checkDoor1();
-
     // Switches Functions for puzzles
     void PuzzleOneSwitchCheck(double dt);
 
-    // Tool UI functions
     // Tool UI functions
     void ToolsUI();
     void MouseScrollToolSlot();
@@ -147,6 +152,10 @@ private:
     void RenderToolIcon();
 
     void MouseClickFunction(double dt);
+
+	// Checkers and interaction when player dies
+	void RenderPlayerDiesInteraction();
+	void UpdatePlayerDiesInteraction(double dt);
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
@@ -172,6 +181,8 @@ private:
     float CollXSmall[60];
     float CollZLarge[60];
     float CollZSmall[60];
+
+	float transSpikeDoor;
 
     MobGhost Ghost;
 };

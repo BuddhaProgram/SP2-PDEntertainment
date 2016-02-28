@@ -14,6 +14,7 @@ public:
 
     //functions
     void checkPlayerPos(double dt, int checkRate, int lessenSpeed, float xpos, float zpos);
+    void MobCollision(float smallx, float largex, float smallz, float largez);
     
 
     bool Spawn;

@@ -102,8 +102,7 @@ void MobBossOne::setSpawnBossOne(float xpos, float zpos)
 }
 void MobBossOne::TakeDamage(int damage)
 {
-    std::cout << health << std::endl;
-    health = health - damage;
+	Explorer::instance()->MinusHP(damage);
 }
 
 void MobBossOne::attack()
