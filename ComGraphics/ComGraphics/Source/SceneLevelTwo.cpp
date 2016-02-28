@@ -211,10 +211,10 @@ void SceneLevelTwo::Reset()
 
 void SceneLevelTwo::Collision(float smallx, float largex, float smallz, float largez)
 {
-    if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz) && (camera.position.z <= smallz + 3.f)){ camera.position.z = smallz; }
-    if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez) && (camera.position.z >= largez - 3.f)){ camera.position.z = largez; }
-    if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x >= smallx) && (camera.position.x <= smallx + 3.f)){ camera.position.x = smallx; }
-    if ((camera.position.z >= smallz) && (camera.position.z <= largez) && (camera.position.x <= largex) && (camera.position.x >= largex - 3.f)){ camera.position.x = largex; }
+    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 3.f)){ camera.position.z = smallz; }
+    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 3.f)){ camera.position.z = largez; }
+    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 3.f)){ camera.position.x = smallx; }
+    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 3.f)){ camera.position.x = largex; }
 
 	camera.target = Vector3(
 		sin(Math::DegreeToRadian(camera.rotationY)) * cos(Math::DegreeToRadian(camera.rotationX)) + camera.position.x,
@@ -470,7 +470,7 @@ void SceneLevelTwo::Update(double dt)
 	{
 		transSpikeDoor+=0.8f;
 	}
-	if (Misc.WithinArea(-12,12,80,120))
+	if (Misc.WithinArea(-12,12,80,118))
 	{
 		closeDoors = true;
 	}
@@ -478,7 +478,7 @@ void SceneLevelTwo::Update(double dt)
 	if (closeDoors == true)
 	{
 		anima.CloseSlideDoor5(dt);
-		Collision(-13,13,120,123);
+		Collision(-13,13,120,125);
 	}
 	
 	if (transSpikeDoor > 140)
