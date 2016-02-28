@@ -463,7 +463,7 @@ void SceneLevelTwo::Update(double dt)
 	if (Misc.WithinArea(-76,76,128,360))
 
 	//trapwall collision
-	Collision(-76 + transSpikeDoor, -60 + transSpikeDoor, 127, 361);
+	Collision(-76 + transSpikeDoor, -60 + transSpikeDoor, 127, 362);
 
 	if (Misc.WithinArea(-76,76,127,361))
 
