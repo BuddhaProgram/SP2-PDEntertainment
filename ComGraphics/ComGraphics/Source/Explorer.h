@@ -3,6 +3,7 @@
 #include "ToolUI.h"
 #include "Vector3.h"
 
+
 class Explorer
 {
 public:
@@ -17,6 +18,8 @@ public:
 	float stamina;
 	float hp;
 	float f_hpBarScaleX;
+
+	int i_SlotIndex;
 
 	int itemAttack[4];
 	ToolUI::ToolType GetToolType(int SlotNumber);

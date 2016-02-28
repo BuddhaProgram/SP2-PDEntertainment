@@ -250,21 +250,21 @@ void SceneLevelTwo::ToolSelectionMouseScroll()
 {
 	if (Explorer::instance()->isDead == false)
 	{
-		if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe)
 		{
 			modelStack.PushMatrix();
 			RenderModelOnScreen(meshList[GEO_PICKAXE], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
 			modelStack.PopMatrix();
 		}
 
-		else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::BaseballBat)
+		else if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::BaseballBat)
 		{
 			modelStack.PushMatrix();
 			RenderModelOnScreen(meshList[GEO_BAT], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
 			modelStack.PopMatrix();
 		}
 
-		else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Sword)
+		else if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Sword)
 		{
 			modelStack.PushMatrix();
 			RenderModelOnScreen(meshList[GEO_SWORD], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
@@ -328,22 +328,22 @@ void SceneLevelTwo::MouseScrollToolSlot()
 {
     if (Application::mouse_scroll > 0)
     {
-        Variables.i_SlotIndex++;
+        Explorer::instance()->i_SlotIndex++;
     }
 
     else if (Application::mouse_scroll < 0)
     {
-        Variables.i_SlotIndex--;
+        Explorer::instance()->i_SlotIndex--;
     }
 
-    if (Variables.i_SlotIndex > 4)
+    if (Explorer::instance()->i_SlotIndex > 4)
     {
-        Variables.i_SlotIndex = 1;
+        Explorer::instance()->i_SlotIndex = 1;
     }
 
-    else if (Variables.i_SlotIndex < 1)
+    else if (Explorer::instance()->i_SlotIndex < 1)
     {
-        Variables.i_SlotIndex = 4;
+        Explorer::instance()->i_SlotIndex = 4;
     }
 }
 
@@ -351,16 +351,16 @@ void SceneLevelTwo::RenderMouseScrollToolSlot()
 {
 	if (Explorer::instance()->isDead == false)
 	{
-		if (Variables.i_SlotIndex == 1)
+		if (Explorer::instance()->i_SlotIndex == 1)
 			RenderModelOnScreen(meshList[GEO_TOOLUIONE], 7.0f, 7.0f, 7.0f, 0.0f, 1.0f, 0.0f, 0.0f, 5.75f, 0.0f, 0.0f, false);
 
-		if (Variables.i_SlotIndex == 2)
+		if (Explorer::instance()->i_SlotIndex == 2)
 			RenderModelOnScreen(meshList[GEO_TOOLUITWO], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
 
-		if (Variables.i_SlotIndex == 3)
+		if (Explorer::instance()->i_SlotIndex == 3)
 			RenderModelOnScreen(meshList[GEO_TOOLUITHREE], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
 
-		if (Variables.i_SlotIndex == 4)
+		if (Explorer::instance()->i_SlotIndex == 4)
 			RenderModelOnScreen(meshList[GEO_TOOLUIFOUR], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
 	}
 }

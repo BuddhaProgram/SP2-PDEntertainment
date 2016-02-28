@@ -7,6 +7,8 @@ Explorer::Explorer()
 
 	Explorer::instance()->f_hpBarScaleX = 10.f;
 
+	Explorer::instance()->i_SlotIndex = 1;
+
 	for (int i = 0; i < 4; ++i)
 	{
 		Explorer::instance()->itemAttack[i] = 0;

@@ -385,7 +385,7 @@ void SceneLevelOneA::AttackCheck()
 
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(20.f, Ghost.MobPosX, Ghost.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
-        Ghost.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
+		Ghost.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);//temporary variable is 1
     }
 }
 

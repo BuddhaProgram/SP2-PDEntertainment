@@ -4,8 +4,6 @@
 #include "Explorer.h"
 #include "Vector3.h"
 
-
-
 class HostileMob
 {
 public:
@@ -31,8 +29,6 @@ public:
     float TargetDetectX;
     float TargetDetectZ;
     float mobTimeCount;
-    
-
    
 };
 #endif

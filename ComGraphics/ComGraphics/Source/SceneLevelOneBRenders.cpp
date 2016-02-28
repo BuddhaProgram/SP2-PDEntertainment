@@ -401,16 +401,16 @@ void SceneLevelOneB::attackCheck()
 
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(20.f, PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
-        PuzzleGhost1.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);
+		PuzzleGhost1.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);
     }
 
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(20.f, PuzzleGhost2.MobPosX, PuzzleGhost2.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
-        PuzzleGhost2.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);
+		PuzzleGhost2.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);
     }
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(60.f, BossOne.MobPosX, BossOne.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
-        BossOne.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
+		BossOne.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);//temporary variable is 1
     }
 }
 
