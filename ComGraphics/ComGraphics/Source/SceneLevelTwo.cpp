@@ -478,22 +478,32 @@ void SceneLevelTwo::Update(double dt)
     FPS = 1.f / (float)dt;
     //worldspin += (float)(dt);
 	checkPlayerPosMisc();
+
+
 	if (Misc.WithinArea(-76,76,128,360))
+
+	//trapwall collision
+	Collision(-76 + transSpikeDoor, -60 + transSpikeDoor, 127, 362);
+
+	if (Misc.WithinArea(-76,76,127,361))
+
 	{
 		transSpikeDoor+=0.8f;
 	}
-	if (Misc.WithinArea(-12,12,80,120))
+	if (Misc.WithinArea(-12,12,80,118))
 	{
 		closeDoors = true;
 	}
+
 	if (closeDoors == true)
 	{
-		Collision(-13,13,120,123);
+		anima.CloseSlideDoor5(dt);
+		Collision(-13,13,120,125);
 	}
 	
-	if (transSpikeDoor > 160)
+	if (transSpikeDoor > 140)
 	{
-		transSpikeDoor = 160;
+		transSpikeDoor = 140;
 	}
 
 
@@ -507,18 +517,11 @@ void SceneLevelTwo::Update(double dt)
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
     camera.Update(dt);
-    if (activateDoor1)
-    {
-        anima.OpenSlideDoor1(dt);
-    }
     //wall collision
     for (int i = 0; i < 60; i++)
     {
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
-
-	//trapwall collision
-	Collision(-76 + transSpikeDoor, -60 + transSpikeDoor, 128, 360);
 
 	/*-------------------------[Death of the Explorer]-------------------------------*/
 	Explorer::instance()->checkDead();
