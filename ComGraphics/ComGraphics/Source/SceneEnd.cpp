@@ -180,6 +180,16 @@ static float LSPEED = 10.f;
 
 void SceneEnd::Reset()
 {
+	Explorer::instance()->hp = 100;
+	Explorer::instance()->isDead = false;
+	Explorer::instance()->PlayerLife = 3;
+	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
+	Variables.f_redScreenTimer = 0.0f;
+
+	for (int i = 0; i < 4; ++i)
+	{
+		Explorer::instance()->checkSavePoint[i] = false;
+	}
 }
 
 
@@ -204,6 +214,43 @@ void SceneEnd::UpdatePlayerDiesInteraction(double dt)
 	}
 }
 
+void SceneEnd::ContinueGameOrNot()
+{
+	if (Explorer::instance()->PlayerLife > 0 && Variables.f_redScreenTimer > 4.0f)
+	{
+		if (Application::IsKeyPressed('Y'))
+		{
+			if (Explorer::instance()->checkSavePoint[3] == false)
+			{
+				camera.position.x = 0;
+				camera.position.y = 10;
+				camera.position.z = 424;
+
+				--Explorer::instance()->PlayerLife;
+				Explorer::instance()->hp = 100;
+				Explorer::instance()->isDead = false;
+				Variables.f_redScreenTimer = 0.0f;
+			}
+
+			else if (Explorer::instance()->checkSavePoint[3] == true)
+			{
+				camera.position = Explorer::instance()->SavePoint;
+
+				--Explorer::instance()->PlayerLife;
+				Explorer::instance()->hp = 100;
+				Explorer::instance()->isDead = false;
+				Variables.f_redScreenTimer = 0.0f;
+			}
+		}
+
+		else if (Application::IsKeyPressed('N'))
+		{
+			Reset();
+			Application::OpenGame();
+		}
+	}
+}
+
 void SceneEnd::Update(double dt)
 {
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
@@ -220,10 +267,14 @@ void SceneEnd::Update(double dt)
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
+	/*-------------------------[Death of the Explorer]-------------------------------*/
 	Explorer::instance()->checkDead();
-	Explorer::instance()->hp -= (float)(50.0f * dt);
-
 	UpdatePlayerDiesInteraction(dt);
+	ContinueGameOrNot();
+
+	if (Explorer::instance()->PlayerLife <= 0 && Variables.f_redScreenTimer > 8.0f)
+		Application::OpenGame();
+	/*-------------------------[End of Death Functions]-------------------------------*/
 
 	//camera.Update(dt);
 	

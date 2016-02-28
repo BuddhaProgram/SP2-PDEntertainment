@@ -19,7 +19,7 @@ Explorer::Explorer()
 
 	Explorer::instance()->SavePoint = (0.f, 0.f, 0.f);
 
-	Explorer::instance()->PlayerLife = 0;
+	Explorer::instance()->PlayerLife = 3;
 	Explorer::instance()->isDead = false;
 	
 	for (int i = 0; i < 4; ++i)

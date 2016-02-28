@@ -180,6 +180,8 @@ private:
 	void RenderPlayerDiesInteraction();
 	void UpdatePlayerDiesInteraction(double dt);
 
+	void ContinueGameOrNot();
+
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
 

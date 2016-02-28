@@ -182,6 +182,8 @@ private:
 	void RenderPlayerDiesInteraction();
 	void UpdatePlayerDiesInteraction(double dt);
 
+	void ContinueGameOrNot();
+
     //objects and mob animation variables
     bool displayInteract1;
     bool displayInteract2;
