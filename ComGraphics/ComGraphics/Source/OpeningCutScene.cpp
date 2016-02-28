@@ -308,7 +308,7 @@ void OpeningCutScene::RenderOpeningCutScene()
 		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 5.f);
 		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 6.5f);
 		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 8.f);
-		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 9.5);
+		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 9.5f);
 		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 11.f);
 		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 12.5f);
 		RenderTextOnScreen(meshList[GEO_TEXT], "BLAH", Color(0, 1, 0), 4, 8.5f, TextMove - 14.f);
