@@ -407,6 +407,111 @@ void Animation::CloseSlideDoor5(double dt)
 	}
 }
 
+void Animation::OpenQPDOOR1(double dt)
+{
+	if (QP_TOPDOOR1)
+	{
+		QPDOOR1_TOP += (float)(8 * dt);
+		if (QPDOOR1_TOP >= 10)
+		{
+			QP_TOPDOOR1 = false;
+		}
+	}
+
+	if (QP_BOTDOOR1)
+	{
+		QPDOOR1_BOT -= (float)(5 * dt);
+		if (QPDOOR1_BOT <= -6)
+		{
+			QP_BOTDOOR1 = false;
+		}
+	}
+}
+
+void Animation::OpenQPDOOR2(double dt)
+{
+	if (QP_TOPDOOR2)
+	{
+		QPDOOR2_TOP += (float)(8 * dt);
+		if (QPDOOR2_TOP >= 10)
+		{
+			QP_TOPDOOR2 = false;
+		}
+	}
+
+	if (QP_BOTDOOR2)
+	{
+		QPDOOR2_BOT -= (float)(5 * dt);
+		if (QPDOOR2_BOT <= -6)
+		{
+			QP_BOTDOOR2 = false;
+		}
+	}
+}
+
+void Animation::OpenQPDOOR3(double dt)
+{
+	if (QP_TOPDOOR3)
+	{
+		QPDOOR3_TOP += (float)(8 * dt);
+		if (QPDOOR3_TOP >= 10)
+		{
+			QP_TOPDOOR3 = false;
+		}
+	}
+
+	if (QP_BOTDOOR3)
+	{
+		QPDOOR3_BOT -= (float)(5 * dt);
+		if (QPDOOR3_BOT <= -6)
+		{
+			QP_BOTDOOR3 = false;
+		}
+	}
+}
+
+void Animation::OpenQPDOOR4(double dt)
+{
+	if (QP_TOPDOOR4)
+	{
+		QPDOOR4_TOP -= (float)(8 * dt);
+		if (QPDOOR4_TOP <= 0)
+		{
+			QP_TOPDOOR4 = false;
+		}
+	}
+
+	if (QP_BOTDOOR4)
+	{
+		QPDOOR4_BOT += (float)(5 * dt);
+		if (QPDOOR4_BOT >= 0)
+		{
+			QP_BOTDOOR4 = false;
+		}
+	}
+}
+
+void Animation::OpenQPDOOR5(double dt)
+{
+	if (QP_TOPDOOR5)
+	{
+		QPDOOR5_TOP += (float)(8 * dt);
+		if (QPDOOR5_TOP >= 10)
+		{
+			QP_TOPDOOR5 = false;
+		}
+	}
+
+	if (QP_BOTDOOR5)
+	{
+		QPDOOR5_BOT -= (float)(5 * dt);
+		if (QPDOOR5_BOT <= -6)
+		{
+			QP_BOTDOOR5 = false;
+		}
+	}
+}
+
 bool Animation::WithinArea(float smallx, float largex, float smallz, float largez)
 {//checks if camera is within a certain area of the room.
 	bool result = false;

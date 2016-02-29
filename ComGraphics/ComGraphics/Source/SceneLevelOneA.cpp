@@ -812,10 +812,15 @@ void SceneLevelOneA::Render()
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "NO KEY", Color(0, 1, 0), 4, 10, 7);
 	}
-	if (displayInteract1 || displayInteract2 || displayInteract3 || Key1Active)
+	if (displayInteract1 || displayInteract2 || displayInteract3)
 	{
 		RenderInteract();
 	}
+    if (Key1Active)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "Press Right Mouse to interact", Color(1, 0, 0), 3, 8.75f, 8);
+    }
+
 
 	if (Explorer::instance()->isDead == false)
 	{

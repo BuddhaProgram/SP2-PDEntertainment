@@ -129,10 +129,8 @@ private:
 	void RenderSceneEnd();
 
 	//map rendering
-	void RenderDownWall(int xPosLarge, int xPosSmall, int zPos);//positive Z facing wall
-	void RenderUpWall(int xPosLarge, int xPosSmall, int zPos);//negative Z facing Wall
-	void RenderRightWall(int zPosLarge, int zPosSmall, int xPos);// positive X facing wall
-	void RenderLeftWall(int zPosLarge, int zPosSmall, int xPos);//negative X facing wall
+	void RenderDownWall(int xPos, int zPos);//positive Z facing wall
+	
 
 	//mob renders
 	void RenderGhost1();
@@ -204,6 +202,7 @@ private:
 	Vector3 end;
 
 	float FPS;
+   
 };
 
 

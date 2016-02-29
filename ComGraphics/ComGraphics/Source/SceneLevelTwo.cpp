@@ -99,8 +99,8 @@ void SceneLevelTwo::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    camera.Init(Vector3(0, 10, 400), Vector3(0, 10, -1), Vector3(0, 1, 0));
-
+    //camera.Init(Vector3(0, 10, -110), Vector3(0, 10, -1), Vector3(0, 1, 0));
+	camera.Init(Vector3(0, 10, 400), Vector3(0, 10, -1), Vector3(0, 1, 0));
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("lightball", Color(1, 1, 1), 10, 20);
@@ -213,6 +213,15 @@ void SceneLevelTwo::Reset()
 	Variables.f_redScreenTimer = 0.0f;
 	transSpikeDoor = 0;
 	closeDoors = false;
+	timerDoor = 3;
+	Switch1Press = false;
+	Switch2Press = false;
+	Switch1Int = false;
+	Switch2Int = false;
+	Switch1Rot = 45.f;
+	Switch2Rot = 45.f;
+	openDoor1 = false;
+	openDoor2 = false;
 	for (int i = 0; i < 4; ++i)
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
@@ -475,43 +484,118 @@ void SceneLevelTwo::checkPlayerPosMisc()
 	Misc.camZ = camera.position.z;
 }
 
-void SceneLevelTwo::Update(double dt)
+void SceneLevelTwo::SomeUpdates(double dt)
 {
-    light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
-    light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
-    FPS = 1.f / (float)dt;
-    //worldspin += (float)(dt);
-	checkPlayerPosMisc();
-
-	if (anima.OpenDoor6)
+	if (openDoor1 == true)
 	{
-		anima.OpenSlideDoor1(dt);
+		anima.QP_TOPDOOR1 = true;
+		anima.QP_BOTDOOR1 = true;
+	}
+
+	if (openDoor2 == true)
+	{
+		anima.QP_TOPDOOR2 = true;
+		anima.QP_BOTDOOR2 = true;
+	}
+
+	if (timerDoor == 0)
+	{
+		anima.QP_TOPDOOR4 = true;
+		if (anima.QPDOOR4_TOP <= 0)
+		{
+			anima.QP_TOPDOOR4 = false;
+		}
+		anima.QP_BOTDOOR4 = true;
+		Collision(-20, 20, -305, -295);
+	}
+
+	if (Misc.WithinArea(-12, 12, -105, -95) && Application::IsKeyPressed('E'))
+	{
+		invisWALLDisappear = true;
+	}
+
+	if (invisWALLDisappear == false)
+	{
+		Collision(-20, 20, -110, -100);
+	}
+	else
+	{
+		timerDoor -= (float)dt;
+		if (timerDoor <= 0)
+		{
+			timerDoor = 0;
+		}
+	}
+
+	if (anima.QP_TOPDOOR1 && anima.QP_BOTDOOR1)//left door
+	{
+		anima.OpenQPDOOR1(dt);
 	}
 	else
 	{
 		Collision(-96, -80, -20, 22);
 	}
 
-	if (anima.OpenDoor7)
+	if (anima.QP_TOPDOOR2 && anima.QP_BOTDOOR2)//right door
 	{
-		anima.OpenSlideDoor2(dt);
+		anima.OpenQPDOOR2(dt);
 	}
 	else
-    {
+	{
 		Collision(80, 96, -20, 22);
 	}
 
-	if (Misc.WithinArea(-76,76,128,360))
+	if (Switch1Press == true && Switch2Press == true)
+	{
+		anima.QP_TOPDOOR3 = true;
+		anima.QP_BOTDOOR3 = true;
+	}
 
-	//trapwall collision
-	Collision(-76 + transSpikeDoor, -60 + transSpikeDoor, 127, 362);
+	if (anima.QP_TOPDOOR3 && anima.QP_BOTDOOR3)//first frontfacing door
+	{
+		anima.OpenQPDOOR3(dt);
+	}
+	else
+	{
+		Collision(-20, 20, -105, -95);
+	}
 
-	if (Misc.WithinArea(-76,76,127,361))
+	if (anima.QP_TOPDOOR4 && anima.QP_BOTDOOR4)
+	{
+		anima.OpenQPDOOR4(dt);
+		Collision(-20, 20, -305, -295);
+	}
+
+	if (anima.QP_TOPDOOR5 && anima.QP_BOTDOOR5)
+	{
+		anima.OpenQPDOOR5(dt);
+	}
+	else
+	{
+		Collision(320, 360, -30, -10);
+	}
+
+	if (openDoor1 == false && proximitycheck(-96, -80, -20, 22) && Application::IsKeyPressed('E'))
+	{
+		openDoor1 = true;
+	}
+
+	if (openDoor2 == false && proximitycheck(80, 96, -20, 22) && Application::IsKeyPressed('E'))
+	{
+		openDoor2 = true;
+	}
+
+	if (Misc.WithinArea(-76, 76, 128, 360))
+
+		//trapwall collision
+		Collision(-76 + transSpikeDoor, -60 + transSpikeDoor, 127, 362);
+
+	if (Misc.WithinArea(-76, 76, 127, 361))
 
 	{
-		transSpikeDoor+=0.8f;
+		transSpikeDoor += 0.8f;
 	}
-	if (Misc.WithinArea(-12,12,80,118))
+	if (Misc.WithinArea(-12, 12, 80, 118))
 	{
 		closeDoors = true;
 	}
@@ -519,15 +603,23 @@ void SceneLevelTwo::Update(double dt)
 	if (closeDoors == true)
 	{
 		anima.CloseSlideDoor5(dt);
-		Collision(-20,20,115,125);
+		Collision(-20, 20, 115, 125);
 	}
-	
+
 	if (transSpikeDoor > 140)
 	{
 		transSpikeDoor = 140;
 	}
+}
 
-
+void SceneLevelTwo::Update(double dt)
+{
+    light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
+    light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
+    FPS = 1.f / (float)dt;
+    //worldspin += (float)(dt);
+	checkPlayerPosMisc();
+	SomeUpdates(dt);
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
     if (Application::IsKeyPressed('2')) //disable back face culling
@@ -767,6 +859,11 @@ void SceneLevelTwo::Render()
     {
         RenderTextOnScreen(meshList[GEO_TEXT], "Press Right mouse to interact", Color(1, 0, 0), 3, 8.75f, 8);
     }
+
+	if (timerDoor != 0 && invisWALLDisappear == true)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "YOU HAVE " + std::to_string((int)timerDoor) +  "SECONDS. RUN.", Color(1, 0, 0), 3, 8.75f, 8);
+	}
 
 	RenderPlayerDiesInteraction();
 }
