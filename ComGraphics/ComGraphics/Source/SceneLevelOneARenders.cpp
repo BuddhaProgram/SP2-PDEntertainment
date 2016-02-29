@@ -473,7 +473,7 @@ void SceneLevelOneA::RenderPickUpPickAxe()
 	{
 		modelStack.PushMatrix();
 			modelStack.Translate(0, 6, 360);
-			modelStack.Scale(1.8, 0.6, 1.8);
+			modelStack.Scale(1.8f, 0.6f, 1.8f);
 			modelStack.Rotate(Variables.f_rotatingTool, 0, 1, 0);
 			modelStack.Rotate(45, 1, 0, 0);
 			RenderMesh(meshList[GEO_PICKAXE], true);

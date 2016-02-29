@@ -608,7 +608,7 @@ void SceneLevelOneB::RenderPickUpPickTools()
 	{
 		modelStack.PushMatrix();
 			modelStack.Translate(100, 6, -160);
-			modelStack.Scale(1.8, 0.6, 1.8);
+			modelStack.Scale(1.8f, 0.6f, 1.8f);
 			modelStack.Rotate(Variables.f_rotatingTool, 0, 1, 0);
 			modelStack.Rotate(15, 1, 0, 0);
 			RenderMesh(meshList[GEO_BAT], true);
@@ -619,7 +619,7 @@ void SceneLevelOneB::RenderPickUpPickTools()
 	{
 		modelStack.PushMatrix();
 			modelStack.Translate(-200, 6, -440);
-			modelStack.Scale(1.8, 0.6, 1.8);
+			modelStack.Scale(1.8f, 0.6f, 1.8f);
 			modelStack.Rotate(Variables.f_rotatingTool, 0, 1, 0);
 			modelStack.Rotate(15, 1, 0, 0);
 			RenderMesh(meshList[GEO_SWORD], true);
