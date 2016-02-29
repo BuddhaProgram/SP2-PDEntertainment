@@ -76,6 +76,8 @@ class SceneStart : public Scene
 		GEO_HEALTHBAR,
 		GEO_STAMINABAR,
 
+		GEO_HEALTHICON,
+
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE

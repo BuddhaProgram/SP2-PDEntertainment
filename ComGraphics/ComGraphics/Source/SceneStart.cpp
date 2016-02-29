@@ -170,11 +170,12 @@ void SceneStart::Init()
 
     meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("FacilityOUT wall", Color(1, 1, 1));
     meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
-    
 
 	meshList[GEO_DEADBODY] = MeshBuilder::GenerateOBJ("Pile of dead body", "OBJ//DeadBody.obj");
 	meshList[GEO_DEADBODY]->textureID = LoadTGA("Image//DeadBody.tga");
 	
+	meshList[GEO_HEALTHICON] = MeshBuilder::GenerateQuad("HealthIcon", Color(1, 1, 1));
+	meshList[GEO_HEALTHICON]->textureID = LoadTGA("Image//Heart1.tga");
 
     //change to correct textured quad later
 	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
@@ -669,6 +670,8 @@ void SceneStart::Render()
 	RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp/5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57.0f, 0, false);
 	RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56.0f, 0, false);
     modelStack.PopMatrix();
+
+	RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 5.f, 1.0f, false);
 }
 	
 
