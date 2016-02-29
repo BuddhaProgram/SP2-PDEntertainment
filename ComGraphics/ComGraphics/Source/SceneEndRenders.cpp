@@ -131,7 +131,7 @@ void SceneEnd::RenderPlayerDiesInteraction()
 void SceneEnd::RenderShipAndPod()
 {
 	modelStack.PushMatrix();
-		modelStack.Translate(0, 0, -200);
+		modelStack.Translate(0, -2, -200);
 		modelStack.Scale(15, 15, 15);
 		RenderMesh(meshList[GEO_SPACESHIP], true);
 	modelStack.PopMatrix();
@@ -197,22 +197,43 @@ void SceneEnd::RenderShipAndPod()
 	}
 }
 
+void SceneEnd::RenderMineText()
+{
+	if (camera.position.x > -56.0f && camera.position.x < -44.0f && camera.position.z > -206.0f && camera.position.z < -194.0f)
+	{
+		if (b_RepairDone[2] == true && b_startRepair[2] == false)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Rocks are rem oved!", Color(0.1f, 0.3f, 1.0f), 3.0f, 9.0f, 8.0f);
+		}
+
+		if (b_RepairDone[2] == false && b_startRepair[2] == true && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "M ine the rocks!", Color(0.1f, 0.3f, 1.f), 3.0f, 10.0f, 6.0f);
+		}
+
+		else if (b_RepairDone[2] == false && b_startRepair[2] == true && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex != ToolUI::Pickaxe))
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Use Pickaxe to mine!", Color(0.1f, 0.3f, 1.0f), 3.0f, 7.0f, 8.0f);
+		}
+	}
+}
+
 void SceneEnd::RenderRepairText()
 {
 	if (camera.position.x > -6.0f && camera.position.x < 6.0f && camera.position.z > -166.0f && camera.position.z < -154.0f)
 	{
-		if (b_RepairDone[1] == true && b_startRepair == false)
+		if (b_RepairDone[1] == true && b_startRepair[1] == false)
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Repair is done!", Color(0.1f, 0.3f, 1.0f), 3, 10.0f, 8.0f);
 		}
 
-		if (b_startRepair == true && b_RepairDone[1] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand)
+		if (b_startRepair[1] == true && b_RepairDone[1] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand)
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Repairing ...", Color(0.1, 0.3, 1), 3, 10.0f, 8.0f);
 			RenderTextOnScreen(meshList[GEO_TEXT], std::to_string(f_RepairProcess) + " %", Color(0.1, 0.3, 1), 3, 10.0f, 7.0f);
 		}
 
-		else if (b_startRepair == true && b_RepairDone[1] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) != ToolUI::Hand)
+		else if (b_startRepair[1] == true && b_RepairDone[1] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) != ToolUI::Hand)
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Use Hands for repair!", Color(0.1f, 0.3f, 1.0f), 3, 8.0f, 8.0f);
 		}
@@ -220,18 +241,18 @@ void SceneEnd::RenderRepairText()
 
 	if (camera.position.x > -6.0f && camera.position.x < 6.0f && camera.position.z > -246.0f && camera.position.z < -234.0f)
 	{
-		if (b_RepairDone[0] == true && b_startRepair == false)
+		if (b_RepairDone[0] == true && b_startRepair[0] == false)
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Repair is done!", Color(0.1f, 0.3f, 1.0f), 3, 10.0f, 8.0f);
 		}
 
-		if (b_startRepair == true && b_RepairDone[0] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand)
+		if (b_startRepair[0] == true && b_RepairDone[0] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand)
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Repairing ...", Color(0.1, 0.3, 1), 3, 10.0f, 8.0f);
 			RenderTextOnScreen(meshList[GEO_TEXT], std::to_string(f_RepairProcess) + " %", Color(0.1, 0.3, 1), 3, 10.0f, 7.0f);
 		}
 
-		else if (b_startRepair == true && b_RepairDone[0] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) != ToolUI::Hand)
+		else if (b_startRepair[0] == true && b_RepairDone[0] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) != ToolUI::Hand)
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Use Hands for repair!", Color(0.1f, 0.3f, 1.0f), 3, 8.0f, 8.0f);
 		}

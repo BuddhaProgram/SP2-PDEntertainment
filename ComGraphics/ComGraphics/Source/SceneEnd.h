@@ -8,6 +8,7 @@
 #include "MatrixStack.h"
 #include "Light.h"
 #include "OBJAnimation.h"
+#include <iomanip>
 
 class SceneEnd : public Scene
 {
@@ -44,6 +45,8 @@ class SceneEnd : public Scene
 		GEO_FACILITYOUTWALL,
 		GEO_FACILITYWALLS,
 		GEO_FACILITYCEILINGS,
+
+		GEO_ROCK,
 
 		// Tools Interface and It's Icons
 		GEO_TOOLUIONE,
@@ -149,12 +152,16 @@ private:
 
 	// Spaceship and Pod function
 	bool b_RepairDone[3];
-	bool b_startRepair;
+	bool b_startRepair[3];
+	bool b_ReadyToFly();
 	float f_RepairProcess;
 	void RenderShipAndPod();
 
 	void RenderRepairText();
+	void RenderMineText();
 	void UpdateRepairs(double dt);
+
+	float f_rockY;
 
 	// Combat
 
@@ -195,10 +202,8 @@ private:
 
 	Vector3 start;
 	Vector3 end;
-	GlobalVariables Variables;
 
 	float FPS;
-	bool displayInteract;
 };
 
 
