@@ -141,6 +141,7 @@ private:
     //checks
     void checkPlayerPosMisc();
     void Collision(float smallx, float largex, float smallz, float largez);
+	void SpecialCollision(float smallx, float largex, float smallz, float largez);
     bool proximitycheck(float smallx, float largex, float smallz, float largez);
     void SwitchCheck(double dt);
 	
@@ -200,8 +201,10 @@ private:
 	bool openDoor1 = false;
 	bool openDoor2 = false;
 	bool invisWALLDisappear = false;
+	bool puzzling;
+	float transSpikeWall2;
+	bool hitWall;
     MobGhost Ghost;
-
 };
 
 
