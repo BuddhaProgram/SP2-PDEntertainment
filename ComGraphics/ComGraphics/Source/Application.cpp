@@ -134,17 +134,31 @@ void Application::Run()
 	/*musics->OpeningMusic();*/
 
 	Opening = new SceneOpening();
+	Opening->Init();
 	IntroScene = new OpeningCutScene();
+	IntroScene->Init();
 	IntroScene2 = new OpeningCutScene2();
+	IntroScene2->Init();
 	Start = new SceneStart();
+	Start->Init();
     CutScene1 = new CutSceneOne();
+    CutScene1->Init();
 	LevelOneA = new SceneLevelOneA();
+	LevelOneA->Init();
     LevelOneB = new SceneLevelOneB();
+    LevelOneB->Init();
     LevelTwo = new SceneLevelTwo();
+    LevelTwo->Init();
 	End = new SceneEnd();
+	End->Init();
+	EndScene = new SceneEndCutScene();
+	EndScene->Init();
 
-	scene = End;
-    scene-> Init();
+	//Main Loop
+	//SceneStart *scene = new SceneStart();
+	//scene->Init();
+
+	scene = LevelTwo;
 
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
@@ -191,61 +205,45 @@ void Application::Exit()
 void Application::OpenGame()
 {
 	scene = Opening;
-    scene->Init();
 }
 
 void Application::StartingScene()
 {
     scene = Start;
-    scene->Init();
 }
 
 void Application::FirstCutScene()
 {
     scene = CutScene1;
-    scene->Init();
-
 }
 void Application::SceneLevel1A()
 {
 	scene = LevelOneA;
-    scene->Init();
-
 }
 
 void Application::SceneLevel1B()
 {
 	scene = LevelOneB;
-    scene->Init();
-
 }
 
 void Application::SceneLevel2()
 {
     scene = LevelTwo;
-    scene->Init();
-
 }
 
 void Application::EndingScene()
 {
     scene = End;
-    scene->Init();
-
 }
 
 void Application::OpenCutScene()
 {
 	scene = IntroScene;
-    scene->Init();
-
 }
 
 void Application::OpenCutScene2()
 {
 	scene = IntroScene2;
-    scene->Init();
-
 }
 
 void Application::EndingCutScene()

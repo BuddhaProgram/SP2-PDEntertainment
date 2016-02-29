@@ -30,6 +30,9 @@ public:
 	void OpenQPDOOR4(double dt);
 	void OpenQPDOOR5(double dt);
 
+	void ShipTakeOff(double dt);
+
+
 	bool WithinArea(float smallx, float largex, float smallz, float largez);
 	float cam_pos_X, cam_poz_Z;
 
@@ -120,6 +123,11 @@ public:
 	float QPDOOR5_BOT;
 	bool QP_TOPDOOR5 = false;
 	bool QP_BOTDOOR5 = false;
+
+	float MovingShip;
+	float MovingShip2;
+	bool shipCheck1 = true;
+	bool shipCheck2 = false;
 };
 
 #endif
