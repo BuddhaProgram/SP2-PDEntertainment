@@ -57,6 +57,8 @@ class SceneEnd : public Scene
 		GEO_LHAND,
 		GEO_RHAND,
 
+		GEO_HANDICON,
+
 		GEO_PICKAXE,
 		GEO_PICKAXEICON,
 
@@ -75,6 +77,8 @@ class SceneEnd : public Scene
 		GEO_SPACESHIP,
 		GEO_REPAIRPOD,
 		GEO_REPAIRDONE,
+
+		GEO_HEALTHICON,
 
 		NUM_GEOMETRY,
 	};

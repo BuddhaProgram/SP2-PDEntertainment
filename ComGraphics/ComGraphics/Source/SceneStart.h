@@ -57,6 +57,8 @@ class SceneStart : public Scene
 		GEO_TOOLUITHREE,
 		GEO_TOOLUIFOUR,
 
+		GEO_HANDICON,
+
 		GEO_PICKAXE,
 		GEO_PICKAXEICON,
 

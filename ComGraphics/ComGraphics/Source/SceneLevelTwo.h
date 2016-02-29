@@ -51,6 +51,8 @@ class SceneLevelTwo : public Scene
 		GEO_TOOLUITHREE,
 		GEO_TOOLUIFOUR,
 
+		GEO_HANDICON,
+
 		GEO_PICKAXE,
 		GEO_PICKAXEICON,
 
@@ -71,6 +73,7 @@ class SceneLevelTwo : public Scene
 		GEO_DEADCOLOR,
 		GEO_DEADBLACKSCREEN,
 
+		GEO_HEALTHICON,
 
         NUM_GEOMETRY,
     };

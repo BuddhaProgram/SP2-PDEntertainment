@@ -50,6 +50,8 @@ class SceneLevelOneA : public Scene
 		GEO_TOOLUITHREE,
 		GEO_TOOLUIFOUR,
 
+		GEO_HANDICON,
+
 		GEO_LHAND,
 		GEO_RHAND,
 
@@ -75,6 +77,8 @@ class SceneLevelOneA : public Scene
 		// Animations when player dies
 		GEO_DEADCOLOR,
 		GEO_DEADBLACKSCREEN,
+
+		GEO_HEALTHICON,
 
         GEO_SUITCASE,
         NUM_GEOMETRY,
