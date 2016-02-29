@@ -15,6 +15,73 @@ File containing function to make animation work
 
 Animation::Animation()
 {
+	OpenDoorL = 0;
+	OpenDoorR = 0;
+	toOpenDoorL = false;
+	toOpenDoorR = false;
+	RubbleCollapse = 100;
+	Collapse = false;
+	f_PortraitDrop = 6;
+	f_PortraitFall = 0;
+	 b_toPortraitDrop = false;
+	 b_toPortraitFall = false;
+
+	 cameramove1 = false;
+	 cameramove2 = false;
+	 cameramove3 = false;
+
+	 DoorSlideTop = 0;
+	 DoorSlideBtm = 0;
+	 toSlideDoorTop = true;
+	 toSlideDoorBtm = true;
+
+	 DoorSlideTop_2 = 0;
+	 DoorSlideBtm_2 = 0;
+	 toSlideDoorTop2 = true;
+	 toSlideDoorBtm2 = true;
+	 ClosingDoorTop2 = true;
+	 ClosingDoorBtm2 = true;
+
+	 DoorSlideTop_3 = 0;
+	 DoorSlideBtm_3 = 0;
+	 toSlideDoorTop3 = true;
+	 toSlideDoorBtm3 = true;
+	 ClosingDoorTop3 = true;
+	 ClosingDoorBtm3 = true;
+
+	 DoorSlideTop_Boss = 0;
+	 DoorSlideBtm_Boss = 0;
+	 toSlideDoorTop_Boss = true;
+	 toSlideDoorBtm_Boss = true;
+	 ClosingDoorTop_Boss = true;
+	 ClosingDoorBtm_Boss = true;
+
+	 DoorSlideTop_4 = 0;
+	 DoorSlideBtm_4 = 0;
+	 toSlideDoorTop4 = true;
+	 toSlideDoorBtm4 = true;
+	 ClosingDoorTop4 = true;
+	 ClosingDoorBtm4 = true;
+
+	 DoorSlideTop_5 = 10;
+	 DoorSlideBtm_5 = -6;
+	 ClosingDoorTop5 = true;
+	 ClosingDoorBtm5 = true;
+
+	 MovingShip = 0;
+	 MovingShip2 = 0;
+	 shipCheck1 = true;
+	 shipCheck2 = false;
+
+	  OpenDoor6 = false;
+
+	  OpenDoor7 = false;
+
+	  OpenDoor8 = false;
+
+	  OpenDoor9 = false;
+
+	  OpenDoor10 = false;
 }
 
 Animation::~Animation()

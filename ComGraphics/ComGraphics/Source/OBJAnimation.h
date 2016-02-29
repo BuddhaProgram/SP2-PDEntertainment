@@ -62,75 +62,74 @@ public:
 	Camera3 camera;
 
 	float OpenDoorL;
-	bool toOpenDoorL = false;
+	bool toOpenDoorL;
 	float OpenDoorR;
-	bool toOpenDoorR = false;
+	bool toOpenDoorR;
 
-	float RubbleCollapse = 100;
-	bool Collapse = false;
+	float RubbleCollapse;
+	bool Collapse;
 
-	float f_PortraitDrop = 6;
+	float f_PortraitDrop;
 	float f_PortraitFall;
-	bool b_toPortraitDrop = false;
-	bool b_toPortraitFall = false;
+	bool b_toPortraitDrop;
+	bool b_toPortraitFall;
 
-	bool cameramove1 = false;
-	bool cameramove2 = false;
-	bool cameramove3 = false;
+	bool cameramove1;
+	bool cameramove2;
+	bool cameramove3;
 
 	float DoorSlideTop;
 	float DoorSlideBtm;
-	bool toSlideDoorTop = true;
-	bool toSlideDoorBtm = true;
+	bool toSlideDoorTop;
+	bool toSlideDoorBtm;
 
 	float DoorSlideTop_2;
 	float DoorSlideBtm_2;
-	bool toSlideDoorTop2 = true;
-	bool toSlideDoorBtm2 = true;
-	bool ClosingDoorTop2 = true;
-	bool ClosingDoorBtm2 = true;
+	bool toSlideDoorTop2;
+	bool toSlideDoorBtm2;
+	bool ClosingDoorTop2;
+	bool ClosingDoorBtm2;
 
 	float DoorSlideTop_3;
 	float DoorSlideBtm_3;
-	bool toSlideDoorTop3 = true;
-	bool toSlideDoorBtm3 = true;
-	bool ClosingDoorTop3 = true;
-	bool ClosingDoorBtm3 = true;
+	bool toSlideDoorTop3;
+	bool toSlideDoorBtm3;
+	bool ClosingDoorTop3;
+	bool ClosingDoorBtm3;
 
 	float DoorSlideTop_Boss;
 	float DoorSlideBtm_Boss;
-	bool toSlideDoorTop_Boss = true;
-	bool toSlideDoorBtm_Boss = true;
-	bool ClosingDoorTop_Boss = true;
-	bool ClosingDoorBtm_Boss = true;
+	bool toSlideDoorTop_Boss;
+	bool toSlideDoorBtm_Boss;
+	bool ClosingDoorTop_Boss;
+	bool ClosingDoorBtm_Boss;
 
 	float DoorSlideTop_4;
 	float DoorSlideBtm_4;
-	bool toSlideDoorTop4 = true;
-	bool toSlideDoorBtm4 = true;
-	bool ClosingDoorTop4 = true;
-	bool ClosingDoorBtm4 = true;
+	bool toSlideDoorTop4;
+	bool toSlideDoorBtm4;
+	bool ClosingDoorTop4;
+	bool ClosingDoorBtm4;
 
-	float DoorSlideTop_5 = 10;
-	float DoorSlideBtm_5 = -6;
-	bool ClosingDoorTop5 = true;
-	bool ClosingDoorBtm5 = true;
-
+	float DoorSlideTop_5;
+	float DoorSlideBtm_5;
+	bool ClosingDoorTop5;
+	bool ClosingDoorBtm5;
 
 	float MovingShip;
 	float MovingShip2;
-	bool shipCheck1 = true;
-	bool shipCheck2 = false;
+	bool shipCheck1;
+	bool shipCheck2;
 
-	bool OpenDoor6 = false;
+	bool OpenDoor6;
 
-	bool OpenDoor7 = false;
+	bool OpenDoor7;
 
-	bool OpenDoor8 = false;
+	bool OpenDoor8;
 
-	bool OpenDoor9 = false;
+	bool OpenDoor9;
 
-	bool OpenDoor10 = false;
+	bool OpenDoor10;
 
 
 };

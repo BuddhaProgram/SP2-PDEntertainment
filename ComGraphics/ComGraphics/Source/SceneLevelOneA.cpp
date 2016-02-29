@@ -16,7 +16,15 @@
 
 SceneLevelOneA::SceneLevelOneA()
 {
-
+	 activateDoor1 = false;
+	 activateDoor2_1 = false;
+	 activateDoor2_2 = false;
+	 activateDoor3 = false; //if true open door
+	 Key_1 = false;
+	 Notice = false;
+	 Notice2 = false;
+	 willDrop = false;
+	 Key1Active = false;
 }
 
 SceneLevelOneA::~SceneLevelOneA()

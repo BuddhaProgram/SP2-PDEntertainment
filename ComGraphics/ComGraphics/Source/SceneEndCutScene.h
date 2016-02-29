@@ -149,11 +149,11 @@ private:
 
 	float MoveCamera1;
 	float MoveCamera2;
-	bool CameraMove1 = false;
-	bool CameraMove2 = false;
+	bool CameraMove1;
+	bool CameraMove2;
 
-	float MoveQuad = -0.5f;
-	bool QuadMove = false;
+	float MoveQuad;
+	bool QuadMove;
 };
 
 

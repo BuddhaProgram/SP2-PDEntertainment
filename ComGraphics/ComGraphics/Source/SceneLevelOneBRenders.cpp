@@ -201,13 +201,13 @@ void SceneLevelOneB::RenderDoor()
 
 	//5th door BOSS door
 	modelStack.PushMatrix();
-	modelStack.Translate(-292, 0, -363);
+	modelStack.Translate(-292, anima.DoorSlideTop_Boss, -363);
 	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(-292, 0, -363);
+	modelStack.Translate(-292, anima.DoorSlideBtm_Boss, -363);
 	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();

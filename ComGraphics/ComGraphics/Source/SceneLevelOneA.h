@@ -196,15 +196,15 @@ private:
     bool displayInteract1;
     bool displayInteract2;
     bool displayInteract3;
-    bool activateDoor1 = false;
-    bool activateDoor2_1 = false;
-    bool activateDoor2_2 = false;
-    bool activateDoor3 = false; //if true open door
-    bool Key_1 = false;
-    bool Notice = false;
-    bool Notice2 = false;
-    bool willDrop = false;
-    bool Key1Active = false;
+    bool activateDoor1;
+    bool activateDoor2_1;
+    bool activateDoor2_2;
+    bool activateDoor3; //if true open door
+    bool Key_1;
+    bool Notice;
+    bool Notice2;
+    bool willDrop;
+    bool Key1Active;
     float SwitchRot = 45.f;
 
     unsigned m_vertexArrayID;
