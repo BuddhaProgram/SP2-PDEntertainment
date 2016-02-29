@@ -16,7 +16,7 @@ MobBossOne::MobBossOne()
     mobTimeCount = 0;
 
     health = 24;
-    AttackDamage = 0.5;
+    AttackDamage = 3;
     kenaWhack = false;
     AttackAnimation = true;
 

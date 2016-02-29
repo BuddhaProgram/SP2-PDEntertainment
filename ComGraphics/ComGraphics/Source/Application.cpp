@@ -143,7 +143,7 @@ void Application::Run()
     LevelTwo = new SceneLevelTwo();
 	End = new SceneEnd();
 
-	scene = End;
+	scene = LevelOneB;
     scene-> Init();
 
 

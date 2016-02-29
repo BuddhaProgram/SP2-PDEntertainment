@@ -179,7 +179,7 @@ void SceneLevelOneA::checkDoor1(double dt)
 	if (MiscA.WithinArea(-235, -220, 98, 110) && !activateDoor1)
 	{
 		Key1Active = true;
-		if (Application::IsKeyPressed('E'))
+		if (Application::IsKeyPressed(VK_RBUTTON))
 		{
 			Key_1 = true;
 		}
