@@ -2,6 +2,8 @@
 #include "OBJAnimation.h"
 #include "Application.h"
 
+#include "Misc.h"
+misc MiscA;
 
 // Rendering of Floor for all Scenes.
 void SceneLevelOneA::RenderFloorCeiling()
@@ -43,11 +45,16 @@ void SceneLevelOneA::RenderInteract()
 void SceneLevelOneA::RenderScene()
 {
     // temp key switch place holder for first locked door
-    modelStack.PushMatrix();
-    modelStack.Translate(-200, 3, 120);
-    modelStack.Scale(4, 4, 4);
-    RenderMesh(meshList[GEO_SPAWNPOINT], true);
-    modelStack.PopMatrix();
+    //modelStack.PushMatrix();
+  
+        modelStack.PushMatrix();
+        modelStack.Translate(-230, 7, 100);
+        modelStack.Rotate(SwitchRot, 1, 0, 0);
+        modelStack.Rotate(90, 0, 1, 0);
+        modelStack.Scale(2, 1.8, 2);
+        RenderMesh(meshList[GEO_DOORSWITCH], true);
+        modelStack.PopMatrix();
+    //modelStack.PopMatrix();
 
     //firstsave
     modelStack.PushMatrix();
@@ -131,7 +138,7 @@ void SceneLevelOneA::checkRubbleFall()
 	}
 }
 
-void SceneLevelOneA::checkDoor1()
+void SceneLevelOneA::checkDoor1(double dt)
 {
 	if (proximitycheck(170, 190, 199, 200))
 	{
@@ -166,10 +173,10 @@ void SceneLevelOneA::checkDoor1()
 	}
 	if (anima.toSlideDoorBtm)
 	{
-	//	Collision(140, 210, 180, 200);
+	    Collision(140, 210, 180, 200);
 	}
 
-	if (proximitycheck(-205, -195, 115, 125) && !activateDoor1)
+	if (MiscA.WithinArea(-235, -220, 98, 110) && !activateDoor1)
 	{
 		Key1Active = true;
 		if (Application::IsKeyPressed('E'))
@@ -185,6 +192,13 @@ void SceneLevelOneA::checkDoor1()
 	{
 		Key1Active = false;
 	}
+    if (Key_1)
+    {
+        if (SwitchRot < 135.f)
+        {
+            SwitchRot += (float)(dt)* 90;
+        }
+    }
 }
 
 void SceneLevelOneA::checkDoor2()
@@ -232,11 +246,9 @@ void SceneLevelOneA::checkDoor2()
 		Collision(-218, -166, 225, 235);
 	}
 
-	/*if (!proximitycheck(-208, -176, 245, 255))
-	{
-	activateDoor2 = false;
-	}
-	*/
+    MiscA.camX = camera.position.x;
+    MiscA.camY = camera.position.y;
+    MiscA.camZ = camera.position.z;
 }
 
 void SceneLevelOneA::checkDoor3()
@@ -387,7 +399,7 @@ void SceneLevelOneA::AttackCheck()
 {
     //Ghost combat checker
 
-    if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(20.f, Ghost.MobPosX, Ghost.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(25.f, Ghost.MobPosX, Ghost.MobPosZ, 270, camera.position.x, camera.position.z, camera.view, camera.position))
     {
 		Ghost.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);//temporary variable is 1
     }

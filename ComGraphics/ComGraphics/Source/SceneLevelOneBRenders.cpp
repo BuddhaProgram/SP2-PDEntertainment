@@ -24,6 +24,15 @@ void SceneLevelOneB::RenderFloorCeiling()
     modelStack.Scale(1000, 1, 240);
     RenderMesh(meshList[GEO_FACILITYCEILINGS], true);
     modelStack.PopMatrix();
+
+    //Ceiling for exit rm
+    modelStack.PushMatrix();
+    modelStack.Translate(24.5, 20.5, -421);
+    modelStack.Rotate(180, 1, 0, 0);
+    modelStack.Scale(120, 1, 150);
+    RenderMesh(meshList[GEO_FACILITYCEILINGS], true);
+    modelStack.PopMatrix();
+
 }
 //void SceneLevelOneB::
 // renders the Starting level
