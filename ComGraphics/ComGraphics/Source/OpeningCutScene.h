@@ -9,6 +9,12 @@
 #include "Light.h"
 #include "OBJAnimation.h"
 #include "GlobalVariables.h"
+#include <vector>
+#include <fstream>
+
+using std::vector;
+using std::ifstream;
+using std::string;
 
 class OpeningCutScene : public Scene
 {
@@ -60,13 +66,19 @@ public:
 	virtual void Exit();
 
 	Camera3 camera;
+
+	vector<string> readText;
+	vector<string> ReadFromText(string link);
+	vector<string> TestYou;
+	vector<string>::iterator its = readText.begin();
+
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float x, float y, float z, bool LightYN);
 
 	//render functions 
-	void RenderOpeningCutScene();
+	void RenderOpeningCutScene(vector<string> Test);
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];

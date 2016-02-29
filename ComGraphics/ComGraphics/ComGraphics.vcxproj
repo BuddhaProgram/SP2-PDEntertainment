@@ -20,6 +20,7 @@
     <ClCompile Include="Source\Music.cpp" />
     <ClCompile Include="Source\OpeningCutScene.cpp" />
     <ClCompile Include="Source\OpeningCutScene2.cpp" />
+    <ClCompile Include="Source\SceneEndCutScene.cpp" />
     <ClCompile Include="source\SceneLevelOneARenders.cpp" />
     <ClCompile Include="source\SceneEndRenders.cpp" />
     <ClCompile Include="source\SceneLevelOneA.cpp" />
@@ -56,6 +57,7 @@
     <ClInclude Include="Source\Music.h" />
     <ClInclude Include="Source\OpeningCutScene.h" />
     <ClInclude Include="Source\OpeningCutScene2.h" />
+    <ClInclude Include="Source\SceneEndCutScene.h" />
     <ClInclude Include="Source\SceneOpening.h" />
     <ClInclude Include="source\SceneLevelTwo.h" />
     <ClInclude Include="source\MobBossOne.h" />

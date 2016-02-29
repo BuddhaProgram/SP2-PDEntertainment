@@ -1,19 +1,39 @@
+/**************************************************************************/
+/*!
+\file			OBJAnimation.h
+\author			Matsuda Kenichi
+\par			email: 150450F\@mymail.nyp.edu.sg
+\brief
+Class to define all animation
+*/
+/**************************************************************************/
+
 #ifndef OBJANIMATION_H
 #define OBJANIMATION_H
 
 #include "Camera3.h"
 
+/**************************************************************************/
+/*!
+Class Animation:
+\brief
+Define Animation and its method make object move on it owns.
+*/
+/**************************************************************************/
+
 class Animation
 {
 public:
-	Animation();
-	~Animation();
+	Animation(); //Default constructor
+	~Animation(); // Destructor
 
-	void Collapsing(double dt);
-	void OBJAnimation(double dt);
-	void OpenMainDoor(double dt);
-	void Portraits(double dt);
-	void OpenSlideDoor1(double dt);
+	void Collapsing(double dt);				//Function to make rubble collapse
+	void OBJAnimation(double dt);			//Function to make obj animated
+	void OpenMainDoor(double dt);			//Function to make CutScene door animation
+	void Portraits(double dt);				//Function to make the Portrait falling animation
+
+	//Functions for Doors opening and closing animation
+	void OpenSlideDoor1(double dt);			
 	void OpenSlideDoor2(double dt);
 	void CloseSlideDoor2(double dt);
 	void OpenSlideDoor3(double dt);
@@ -24,8 +44,14 @@ public:
 	void CloseSlideDoor_Boss(double dt);
 	void CloseSlideDoor5(double dt);
 
+	//Function for ship animation
+	void ShipTakeOff(double dt);
+
+	//Check function to see if char is within certaain area
 	bool WithinArea(float smallx, float largex, float smallz, float largez);
 	float cam_pos_X, cam_poz_Z;
+
+	/*Variables and Bools*/
 
 	float PlanetRotate;
 	float AsteroidRotate;
@@ -90,6 +116,12 @@ public:
 	bool ClosingDoorTop5 = true;
 	bool ClosingDoorBtm5 = true;
 
+
+	float MovingShip;
+	float MovingShip2;
+	bool shipCheck1 = true;
+	bool shipCheck2 = false;
+
 	bool OpenDoor6 = false;
 
 	bool OpenDoor7 = false;
@@ -99,6 +131,7 @@ public:
 	bool OpenDoor9 = false;
 
 	bool OpenDoor10 = false;
+
 
 };
 
