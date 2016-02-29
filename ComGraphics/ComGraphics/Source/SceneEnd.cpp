@@ -494,7 +494,7 @@ void SceneEnd::UpdateRepairs(double dt)
 		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand && b_RepairDone[1] == false)
 		{
 			b_startRepair[1] = true;
-			f_RepairProcess += (float)(50.0f * dt);
+			f_RepairProcess += (float)(5.0f * dt);
 		}
 	}
 
@@ -503,7 +503,7 @@ void SceneEnd::UpdateRepairs(double dt)
 		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand && b_RepairDone[0] == false)
 		{
 			b_startRepair[0] = true;
-			f_RepairProcess += (float)(50.0f * dt);
+			f_RepairProcess += (float)(5.0f * dt);
 		}
 	}
 
@@ -556,10 +556,10 @@ void SceneEnd::Update(double dt)
 
 	if (camera.position.x > -56.0f && camera.position.x < -44.0f && camera.position.z > -206.0f && camera.position.z < -194.0f)
 	{
-		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe && b_RepairDone[2] == false && Application::IsKeyPressed(VK_LBUTTON))
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe && b_RepairDone[2] == false && Application::IsKeyPressed(VK_LBUTTON) && Explorer::instance()->stamina >= 20)
 		{
 			b_startRepair[2] = true;
-			f_rockY -= 1.0f;
+			f_rockY -= 0.15f;
 		}
 
 		if (f_rockY <= 1.0f)
@@ -577,6 +577,7 @@ void SceneEnd::Update(double dt)
 
 	if (Explorer::instance()->PlayerLife <= 0 && Variables.f_redScreenTimer > 8.0f)
 		Application::OpenGame();
+
 	/*-------------------------[End of Death Functions]-------------------------------*/
 
 	/*-------------------------[Tool UI Functions]-------------------------------*/
@@ -588,14 +589,12 @@ void SceneEnd::Update(double dt)
 	anima.OBJAnimation(dt);
 	UpdateRepairs(dt);
 
-	if (Application::IsKeyPressed('O'))
+	if (b_ReadyToFly() && camera.position.x >= -60 && camera.position.x <= 80 && camera.position.z >= -250 && camera.position.z <= -150)
 	{
-		Application::EndingCutScene();
-	}
-
-	if (Application::IsKeyPressed('Z'))
-	{
-		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
+		if (Application::IsKeyPressed('E'))
+		{
+			Application::EndingCutScene();
+		}
 	}
 
 }

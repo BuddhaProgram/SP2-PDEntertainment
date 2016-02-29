@@ -414,8 +414,6 @@ void SceneEndCutScene::Render()
 	RenderSceneEndCutScene();
 	RenderFloor();
 
-	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-
 	modelStack.PushMatrix();
 	RenderModelOnScreen(meshList[GEO_QUAD], 80, 60, 5, 90, 1, 0, 0, MoveQuad, 0.5f, 1, false);
 	modelStack.PopMatrix();
