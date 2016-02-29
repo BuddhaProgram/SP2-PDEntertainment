@@ -154,7 +154,7 @@ void Application::Run()
 	//SceneStart *scene = new SceneStart();
 	//scene->Init();
 
-	scene = LevelTwo;
+	scene = End;
 
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
