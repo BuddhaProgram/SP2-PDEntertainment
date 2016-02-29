@@ -1,4 +1,4 @@
-#include "OpeningCutScene.h"
+#include "SceneEndCutScene.h"
 #include "GL\glew.h"
 
 #include "shader.hpp"
@@ -13,15 +13,16 @@
 #include "GlobalVariables.h"
 
 
-OpeningCutScene::OpeningCutScene()
+SceneEndCutScene::SceneEndCutScene()
+{
+
+}
+
+SceneEndCutScene::~SceneEndCutScene()
 {
 }
 
-OpeningCutScene::~OpeningCutScene()
-{
-}
-
-void OpeningCutScene::Init()
+void SceneEndCutScene::Init()
 {
 	// Init VBO here
 
@@ -76,7 +77,7 @@ void OpeningCutScene::Init()
 	light[0].type = Light::LIGHT_SPOT;
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 1.0f;
+	light[0].power = 2.0f;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
@@ -99,131 +100,83 @@ void OpeningCutScene::Init()
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
 	//Initialize camera settings
-	camera.Init(Vector3(0, 10, 0), Vector3(0, 10, -1), Vector3(0, 1, 0));
+	camera.Init(Vector3(0, 10, -320), Vector3(0, 10, -120), Vector3(0, 1, 0));
+
+	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
+
+	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("lightball", Color(1, 1, 1), 10, 20);
+
+	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1));
+	meshList[GEO_FRONT]->textureID = LoadTGA("Image//SkyBox1_front.tga");
+	meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1));
+	meshList[GEO_LEFT]->textureID = LoadTGA("Image//SkyBox1_left.tga");
+	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1));
+	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//SkyBox1_right.tga");
+	meshList[GEO_TOP] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1));
+	meshList[GEO_TOP]->textureID = LoadTGA("Image//SkyBox1_up.tga");
+	meshList[GEO_BOTTOM] = MeshBuilder::GenerateQuad("SkyBox1_down", Color(1, 1, 1));
+	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//SkyBox1_down.tga");
+	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("SkyBox1_back", Color(1, 1, 1));
+	meshList[GEO_BACK]->textureID = LoadTGA("Image//SkyBox1_back.tga");
+
+	meshList[GEO_QUAD] = MeshBuilder::GenerateQuad("front", Color(0, 0, 0));
+
+	/*--------------------[Inventory Interface and Tool Icons]--------------------*/
+
+	meshList[GEO_REPAIRPOD] = MeshBuilder::GenerateTorus("Repair", Color(1, 0, 0), 4, 36, 1.0f, 0.1f);
+	meshList[GEO_REPAIRDONE] = MeshBuilder::GenerateTorus("Repair", Color(0, 1, 0), 4, 36, 1.0f, 0.1f);
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
-	meshList[GEO_TEXTBACKGROUND] = MeshBuilder::GenerateQuad("text background", Color(1,1,1));
+	meshList[GEO_EARTH] = MeshBuilder::GenerateOBJ("Earth", "OBJ//Earth.obj");
+	meshList[GEO_EARTH]->textureID = LoadTGA("Image//Earth.tga");
+	meshList[GEO_MOON] = MeshBuilder::GenerateOBJ("Moon", "OBJ//Moon.obj");
+	meshList[GEO_MOON]->textureID = LoadTGA("Image//Moon.tga");
+	meshList[GEO_PLANET] = MeshBuilder::GenerateOBJ("Planet", "OBJ//Planet.obj");
+	meshList[GEO_PLANET]->textureID = LoadTGA("Image//Planet.tga");
+	meshList[GEO_ASTEROID1] = MeshBuilder::GenerateOBJ("Asteroid1", "OBJ//Asteroid1.obj");
+	meshList[GEO_ASTEROID1]->textureID = LoadTGA("Image//Asteroid1.tga");
+	meshList[GEO_ASTEROID2] = MeshBuilder::GenerateOBJ("Asteroid2", "OBJ//Asteroid2.obj");
+	meshList[GEO_ASTEROID2]->textureID = LoadTGA("Image//Asteroid1.tga");
+
+	// Tools Interface and It's Icons
+	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
+	meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
+
+	meshList[GEO_FACILITYOUT] = MeshBuilder::GenerateOBJ("FacilityOut", "OBJ//FacilityOUT.obj");
+	meshList[GEO_FACILITYOUT]->textureID = LoadTGA("Image//FacilityOUT.tga");
+	meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("Facility Wall Outside", Color(1, 1, 1));
+	meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
+
+	/*--------------------[Used as a background for Dead Scene]--------------------*/
+	meshList[GEO_DEADCOLOR] = MeshBuilder::GenerateQuad("DeadScreen", Color(1, 0, 0));
+	meshList[GEO_DEADBLACKSCREEN] = MeshBuilder::GenerateQuad("DeadSCreenTwo", Color(0, 0, 0));
+
+	meshList[GEO_SPACESHIP] = MeshBuilder::GenerateOBJ("Ship", "OBJ//Spaceship.obj");
+	meshList[GEO_SPACESHIP]->textureID = LoadTGA("Image//MaterialsShip.tga");
 
 	Mtx44 projection;
-	projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
+	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
-	TestYou = ReadFromText("Intro.txt");
+	//scene changer inits.............
+	//scene changer init end.............
 }
 
 static float LSPEED = 10.f;
 
 
-void OpeningCutScene::Reset()
+void SceneEndCutScene::Reset()
 {
 }
 
-vector<string> OpeningCutScene::ReadFromText(string link)
-{
-	ifstream txtData;
-	txtData.open(link, std::ifstream::in);
-
-	if (!txtData)
-	{
-		std::cout << "Error Opening" << link << std::endl;
-		exit(1);
-	}
-
-	if (txtData.good())
-	{
-		while (txtData.good())
-		{
-			string data;
-			std::getline(txtData, data);
-			readText.push_back(data);
-		}
-	}
-
-	txtData.close();
-	return readText;
-}
-
-
-void OpeningCutScene::RenderOpeningCutScene(vector<string> Test)
-{
-	float y = 2;
-
-	for (vector<string>::iterator its = TestYou.begin(); its != TestYou.end(); ++its)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], *its, Color(1, 1, 1), 2.5f, 4.5f, TextMove - y);
-		y += 1.5f;
-	}
-	
-
-	if (toMoveBG)
-	{
-
-
-		modelStack.PushMatrix();
-		glBlendFunc(1, 1);
-		RenderModelOnScreen(meshList[GEO_TEXTBACKGROUND], 60, 60, 5, 90, 1, 0, 0, 0.65f, BGMove - 0.5f, -1, true);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		modelStack.PopMatrix();
-
-
-	}
-
-	if (startTimer)
-	{
-		modelStack.PushMatrix();
-		RenderTextOnScreen(meshList[GEO_TEXT], "Benny....W ake up!!", Color(0, 1, 0), 4, 5, 7);
-		modelStack.PopMatrix();
-	}
-
-}
-
-void OpeningCutScene::Update(double dt)
+void SceneEndCutScene::Update(double dt)
 {
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
-
-	if (toMoveText)
-	{
-		TextMove += (float)(2.4f * dt);
-		if (TextMove >= 55)
-		{
-			toMoveText = false;
-			appearText = true;
-			startTimer = true;
-		}
-	}
-
-	if(toMoveBG)
-	{
-		BGMove += (float)(0.1f * dt);
-		if (BGMove >= 25)
-		{
-			toMoveBG = false;
-			appearBG = true;
-		}
-	}
-
-	if (startTimer)
-	{
-		timercount += (float)(1 * dt);
-		if (timercount >= 3)
-		{
-			startTimer = false;
-			appearText = false;
-			changeScene = true;
-		}
-	}
-
-	std::cout << timercount << std::endl;
-
-	if (changeScene)
-	{
-		
-		Application::OpenCutScene2();
-	}
-	/*-------------------------[End of Tool UI Functions]-------------------------------*/
+	FPS = 1.f / (float)dt;
+	worldspin += (float)(dt);
 
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
@@ -234,9 +187,53 @@ void OpeningCutScene::Update(double dt)
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
+	if (anima.shipCheck1 || anima.shipCheck2)
+	{
+		anima.ShipTakeOff(dt);
+	}
+
+	if (CameraMove1)
+	{
+		MoveCamera1 -= (float)(10 * dt);
+	}
+	if (CameraMove2)
+	{
+		MoveCamera2 -= (float)(50 * dt);
+	}
+
+	if (anima.MovingShip >= 5)
+	{
+		CameraMove1 = true;
+		if (anima.MovingShip >= 20)
+		{
+			CameraMove1 = false;
+			CameraMove2 = true;
+			if (MoveCamera2 <= -55)
+			{
+				CameraMove2 = false;
+			}
+		}
+	}
+
+	if (anima.MovingShip2 >= 500)
+	{
+		QuadMove = true;
+	}
+
+	if (QuadMove)
+	{
+		if (MoveQuad <= 0.49f)
+		{
+			MoveQuad += (float)(0.5f * dt);
+		}
+	}
+
+
+	std::cout << anima.MovingShip2 << std::endl;
+
 }
 
-void OpeningCutScene::RenderMesh(Mesh*mesh, bool enableLight)
+void SceneEndCutScene::RenderMesh(Mesh*mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
 
@@ -280,7 +277,37 @@ void OpeningCutScene::RenderMesh(Mesh*mesh, bool enableLight)
 	}
 }
 
-void OpeningCutScene::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
+void SceneEndCutScene::RenderText(Mesh* mesh, std::string text, Color color)
+{
+	if (!mesh || mesh->textureID <= 0) //Proper error check
+		return;
+
+	glDisable(GL_DEPTH_TEST);
+	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
+	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
+	glUniform1i(m_parameters[U_LIGHTENABLED], 0);
+	glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
+
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, mesh->textureID);
+	glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
+
+	for (unsigned i = 0; i < text.length(); ++i)
+	{
+		Mtx44 characterSpacing;
+		characterSpacing.SetToTranslation(i * 1.0f + 0.5f, 0.5f, 0); //1.0f is the spacing of each character, you may change this value
+		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
+		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
+
+		mesh->Render((unsigned)text[i] * 6, 6);
+	}
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
+	glEnable(GL_DEPTH_TEST);
+
+}
+
+void SceneEndCutScene::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -326,7 +353,7 @@ void OpeningCutScene::RenderTextOnScreen(Mesh* mesh, std::string text, Color col
 	glEnable(GL_DEPTH_TEST);
 }
 
-void OpeningCutScene::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
+void SceneEndCutScene::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
 	Mtx44 ortho;
 	ortho.SetToOrtho(0, 80, 0, 60, -50, 50); //size of screen UI
@@ -347,13 +374,15 @@ void OpeningCutScene::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float 
 	modelStack.PopMatrix();
 }
 
-void OpeningCutScene::Render()
+void SceneEndCutScene::Render()
 {
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	//Set view matrix using camera settings
 	viewStack.LoadIdentity();
+	viewStack.Rotate(MoveCamera2, 0, 1, 0);
+	viewStack.Rotate(MoveCamera1, 1, 0, 0);
 	viewStack.LookAt(
 		camera.position.x, camera.position.y, camera.position.z,
 		camera.target.x, camera.target.y, camera.target.z,
@@ -381,11 +410,20 @@ void OpeningCutScene::Render()
 		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
+	RenderSkyBox();
+	RenderSceneEndCutScene();
+	RenderFloor();
 
-	RenderOpeningCutScene(TestYou);
+	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
+
+	modelStack.PushMatrix();
+	RenderModelOnScreen(meshList[GEO_QUAD], 80, 60, 5, 90, 1, 0, 0, MoveQuad, 0.5f, 1, false);
+	modelStack.PopMatrix();
+
+	RenderShipAndPod();
 }
 
-void OpeningCutScene::Exit()
+void SceneEndCutScene::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);

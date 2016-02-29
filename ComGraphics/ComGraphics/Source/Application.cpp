@@ -14,6 +14,7 @@
 #include "SceneLevelTwo.h"
 #include "OpeningCutScene.h"
 #include "OpeningCutScene2.h"
+#include "SceneEndCutScene.h"
 
 
 
@@ -61,6 +62,7 @@ Scene* Application::LevelOneA;
 Scene* Application::LevelOneB;
 Scene* Application::LevelTwo;
 Scene* Application::CutScene1;
+Scene* Application::EndScene;
 
 void resize_callback(GLFWwindow* window, int w, int h)
 {
@@ -149,12 +151,14 @@ void Application::Run()
     LevelTwo->Init();
 	End = new SceneEnd();
 	End->Init();
+	EndScene = new SceneEndCutScene();
+	EndScene->Init();
 
 	//Main Loop
 	//SceneStart *scene = new SceneStart();
 	//scene->Init();
 
-	scene = End;
+	scene = IntroScene;
 
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
@@ -187,6 +191,7 @@ void Application::Run()
 	delete CutScene1;
     delete LevelOneA;
     delete LevelOneB;
+	delete EndScene;
 }
 
 void Application::Exit()
@@ -239,4 +244,9 @@ void Application::OpenCutScene()
 void Application::OpenCutScene2()
 {
 	scene = IntroScene2;
+}
+
+void Application::EndingCutScene()
+{
+	scene = EndScene;
 }

@@ -554,6 +554,11 @@ void SceneEnd::Update(double dt)
 	anima.OBJAnimation(dt);
 	UpdateRepairs(dt);
 
+	if (Application::IsKeyPressed('O'))
+	{
+		Application::EndingCutScene();
+	}
+
 }
 
 void SceneEnd::RenderMesh(Mesh*mesh, bool enableLight)

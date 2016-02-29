@@ -1,4 +1,5 @@
 #include "SceneEnd.h"
+#include "SceneEndCutScene.h"
 #include "Application.h"
 #include "OBJAnimation.h"
 
@@ -131,7 +132,7 @@ void SceneEnd::RenderPlayerDiesInteraction()
 void SceneEnd::RenderShipAndPod()
 {
 	modelStack.PushMatrix();
-		modelStack.Translate(0, 0, -200);
+		modelStack.Translate(0, -2, -200);
 		modelStack.Scale(15, 15, 15);
 		RenderMesh(meshList[GEO_SPACESHIP], true);
 	modelStack.PopMatrix();
@@ -235,5 +236,164 @@ void SceneEnd::RenderRepairText()
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Use Hands for repair!", Color(0.1f, 0.3f, 1.0f), 3, 8.0f, 8.0f);
 		}
+	}
+}
+
+
+void SceneEndCutScene::RenderSkyBox()
+{
+	//skybox..................................................................................
+	modelStack.PushMatrix();//skybox start
+	modelStack.Scale(500, 500, 500);
+	modelStack.Rotate(worldspin, 0, 1, 0);
+
+	//front
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, -10);
+	modelStack.Rotate(90, 1, 0, 0);
+	modelStack.Scale(20, 0, 20);
+	RenderMesh(meshList[GEO_FRONT], false);
+	modelStack.PopMatrix();
+
+	//right
+	modelStack.PushMatrix();
+	modelStack.Translate(10, 0, 0);
+	modelStack.Rotate(90, 0, 0, 1);
+	modelStack.Rotate(-90, 0, 1, 0);
+	modelStack.Scale(20, 0, 20);
+	RenderMesh(meshList[GEO_RIGHT], false);
+	modelStack.PopMatrix();
+
+	//left
+	modelStack.PushMatrix();
+	modelStack.Translate(-10, 0, 0);
+	modelStack.Rotate(-90, 0, 0, 1);
+	modelStack.Rotate(90, 0, 1, 0);
+	modelStack.Scale(20, 0, 20);
+	RenderMesh(meshList[GEO_LEFT], false);
+	modelStack.PopMatrix();
+
+	//back
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 10);
+	modelStack.Rotate(-90, 1, 0, 0);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Scale(20, 0, 20);
+	RenderMesh(meshList[GEO_BACK], false);
+	modelStack.PopMatrix();
+
+	//bottom
+	modelStack.PushMatrix();
+	modelStack.Translate(0, -10, 0);
+	modelStack.Scale(20, 0, 20);
+	RenderMesh(meshList[GEO_BOTTOM], false);
+	modelStack.PopMatrix();
+
+	//top
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 10, 0);
+	modelStack.Rotate(180, 0, 0, 1);
+	modelStack.Scale(20, 0, 20);
+	RenderMesh(meshList[GEO_TOP], false);
+	modelStack.PopMatrix();
+
+	modelStack.PopMatrix();//skybox end
+}
+
+// Rendering of Floor for all Scenes.
+void SceneEndCutScene::RenderFloor()
+{
+	for (int x = -450; x < 500; x += 100)
+	{
+		for (int z = -450; z < 500; z += 100)
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate((float)x, 0, (float)z);
+			modelStack.Scale(100, 1, 100);
+			RenderMesh(meshList[GEO_PLANETFLOOR], true);
+			modelStack.PopMatrix();
+		}
+	}
+}
+
+void SceneEndCutScene::RenderSceneEndCutScene()
+{
+	//structure renders
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0, 90);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Scale(6, 6, 4);
+	RenderMesh(meshList[GEO_FACILITYOUT], true);
+	modelStack.PopMatrix();
+	//object renders
+
+}
+
+void SceneEndCutScene::RenderShipAndPod()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(anima.MovingShip2, anima.MovingShip, -200);
+	modelStack.Scale(15, 15, 15);
+	RenderMesh(meshList[GEO_SPACESHIP], true);
+	modelStack.PopMatrix();
+
+	if (b_RepairDone[0] == false)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(0, 0, -240);
+		modelStack.Scale(12, 12, 12);
+		modelStack.Rotate(45, 0, 1, 0);
+		RenderMesh(meshList[GEO_REPAIRPOD], true);
+		modelStack.PopMatrix();
+	}
+
+	else
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(0, 0, -240);
+		modelStack.Scale(12, 12, 12);
+		modelStack.Rotate(45, 0, 1, 0);
+		RenderMesh(meshList[GEO_REPAIRDONE], true);
+		modelStack.PopMatrix();
+	}
+
+	if (b_RepairDone[1] == false)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(0, 0, -160);
+		modelStack.Scale(12, 12, 12);
+		modelStack.Rotate(45, 0, 1, 0);
+		RenderMesh(meshList[GEO_REPAIRPOD], true);
+		modelStack.PopMatrix();
+	}
+
+	else
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(0, 0, -160);
+		modelStack.Scale(12, 12, 12);
+		modelStack.Rotate(45, 0, 1, 0);
+		RenderMesh(meshList[GEO_REPAIRDONE], true);
+		modelStack.PopMatrix();
+	}
+
+	if (b_RepairDone[2] == false)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(-50, 0, -200);
+		modelStack.Scale(12, 12, 12);
+		modelStack.Rotate(45, 0, 1, 0);
+		RenderMesh(meshList[GEO_REPAIRPOD], true);
+		modelStack.PopMatrix();
+	}
+
+	else
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(-50, 0, -200);
+		modelStack.Scale(12, 12, 12);
+		modelStack.Rotate(45, 0, 1, 0);
+		RenderMesh(meshList[GEO_REPAIRDONE], true);
+		modelStack.PopMatrix();
 	}
 }

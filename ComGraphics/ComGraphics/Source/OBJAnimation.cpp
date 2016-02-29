@@ -1,3 +1,13 @@
+/**************************************************************************/
+/*!
+\file			OBJAnimation.cpp
+\author			Matsuda Kenichi
+\par			email: 150450F\@mymail.nyp.edu.sg
+\brief
+File containing function to make animation work
+*/
+/**************************************************************************/
+
 #include "OBJAnimation.h"
 #include "Vector3.h"
 #include "Mtx44.h"
@@ -14,7 +24,7 @@ Animation::~Animation()
 void Animation::Collapsing(double dt)
 {
 	//Rubble Falling~
-	if (Collapse)
+	if (Collapse) //if Collapse is true, rubble will fall
 	{
 		RubbleCollapse -= (float)(200 * dt);
 	}
@@ -42,25 +52,10 @@ void Animation::OBJAnimation(double dt)
 void Animation::OpenMainDoor(double dt)
 {
 	//left door
-	if (OpenDoorL <= -75)
+	if (OpenDoorL <= -75) // if OpenDoorL is less than 75, animation will stop
 	{
 
 		toOpenDoorL = false;
-		Collapse = true;
-		if (RubbleCollapse <= -10)
-		{
-			Collapse = false;
-			/*		toPortraitDrop = true;
-			if (PortraitDrop <= -4)
-			{
-			toPortraitDrop = false;
-			toPortraitFall = true;
-			if (PortraitFall >= 90)
-			{
-			toPortraitFall = false;
-			}
-			}*/
-		}
 
 	}
 	if (OpenDoorL >= 0)
@@ -358,4 +353,23 @@ bool Animation::WithinArea(float smallx, float largex, float smallz, float large
 	}
 
 	return result;
+}
+
+void Animation::ShipTakeOff(double dt)
+{
+	if (shipCheck1)
+	{
+		MovingShip += (float)(10 * dt);
+	}
+
+	if (shipCheck2)
+	{
+		MovingShip2 += (float)(100.0f * dt);
+	}
+
+	if (MovingShip >= 20)
+	{
+		shipCheck1 = false;
+		shipCheck2 = true;
+	}
 }
