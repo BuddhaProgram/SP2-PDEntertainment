@@ -407,8 +407,8 @@ void Animation::OpenQPDOOR4(double dt)
 {
 	if (QP_TOPDOOR4)
 	{
-		QPDOOR4_TOP += (float)(8 * dt);
-		if (QPDOOR4_TOP >= 10)
+		QPDOOR4_TOP -= (float)(8 * dt);
+		if (QPDOOR4_TOP <= 0)
 		{
 			QP_TOPDOOR4 = false;
 		}
@@ -416,8 +416,8 @@ void Animation::OpenQPDOOR4(double dt)
 
 	if (QP_BOTDOOR4)
 	{
-		QPDOOR4_BOT -= (float)(5 * dt);
-		if (QPDOOR4_BOT <= -6)
+		QPDOOR4_BOT += (float)(5 * dt);
+		if (QPDOOR4_BOT >= 0)
 		{
 			QP_BOTDOOR4 = false;
 		}

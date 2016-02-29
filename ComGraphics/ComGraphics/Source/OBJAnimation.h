@@ -114,8 +114,8 @@ public:
 	bool QP_TOPDOOR3 = false;
 	bool QP_BOTDOOR3 = false;
 
-	float QPDOOR4_TOP;
-	float QPDOOR4_BOT;
+	float QPDOOR4_TOP = 10;
+	float QPDOOR4_BOT = -6;
 	bool QP_TOPDOOR4 = false;
 	bool QP_BOTDOOR4 = false;
 

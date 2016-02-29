@@ -117,7 +117,7 @@ public:
     Camera3 camera;
 private:
     void RenderMesh(Mesh *mesh, bool enableLight);
-
+	void SomeUpdates(double dt);
     //scene renders
     void RenderScene();
     void RenderFloorCeiling();
@@ -143,7 +143,7 @@ private:
     void Collision(float smallx, float largex, float smallz, float largez);
     bool proximitycheck(float smallx, float largex, float smallz, float largez);
     void SwitchCheck(double dt);
-
+	
     // Switches Functions for puzzles
     void PuzzleOneSwitchCheck(double dt);
 
@@ -199,6 +199,7 @@ private:
 	float timerDoor = 3;
 	bool openDoor1 = false;
 	bool openDoor2 = false;
+	bool invisWALLDisappear = false;
     MobGhost Ghost;
 
 };
