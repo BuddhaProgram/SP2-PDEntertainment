@@ -489,11 +489,7 @@ void SceneLevelTwo::Update(double dt)
 	}
 	else
 	{
-
-		//Collision(-86, -77, -8, 12);
-
-		Collision(-90, -80, -12, 16);
-
+		Collision(-96, -80, -20, 22);
 	}
 
 	if (anima.OpenDoor7)
@@ -501,9 +497,8 @@ void SceneLevelTwo::Update(double dt)
 		anima.OpenSlideDoor2(dt);
 	}
 	else
-
-		//Collision(77, 86, -8, 12);
-
+    {
+		Collision(80, 96, -20, 22);
 	}
 
 	if (Misc.WithinArea(-76,76,128,360))
