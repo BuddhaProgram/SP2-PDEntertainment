@@ -1,7 +1,7 @@
 #include "SceneLevelOneA.h"
 #include "SceneLevelOneB.h"
 #include "SceneLevelTwo.h"
-
+#include "SceneEnd.h"
 //these codes use x and z coordinates according to DRAWN COORDINATES and not actual z,x coords
 void SceneLevelOneA::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber)//positive Z facing wall
 {
@@ -691,3 +691,21 @@ void SceneLevelTwo::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int w
 		modelStack.PopMatrix();
 	}
 }
+
+void SceneEnd::RenderDownWall(int xPos, int zPos)//positive Z facing wall
+{
+    modelStack.PushMatrix();
+    modelStack.Scale(1, 8, 1);
+
+    modelStack.PushMatrix();
+    modelStack.Translate(xPos,0,zPos);
+    modelStack.Rotate(-90, 1, 0, 0);
+    modelStack.Rotate(90, 0, 1, 0);
+    modelStack.Scale(8, 8, 1000);
+    RenderMesh(meshList[GEO_FACILITYOUTWALL], true);
+    modelStack.PopMatrix();
+    modelStack.PopMatrix();
+
+}
+
+

@@ -592,6 +592,10 @@ void SceneEnd::Update(double dt)
 	{
 		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
 	}
+    //door collision
+    Collision(-40, 40, 70, 110);
+    //unending wall collision
+    Collision(-500, 500, 95, 105);
 }
 
 void SceneEnd::RenderMesh(Mesh*mesh, bool enableLight)
@@ -772,7 +776,7 @@ void SceneEnd::Render()
 	RenderSkyBox();
 	RenderSceneEnd();
 	RenderFloor();
-
+    RenderDownWall(0, 100);
 	RenderShipAndPod();
 
 	RenderPlayerDiesInteraction();
