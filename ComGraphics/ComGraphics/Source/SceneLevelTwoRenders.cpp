@@ -151,13 +151,13 @@ void SceneLevelTwo::RenderScene()
 
 	//MIDDLE DOORS
 	modelStack.PushMatrix();
-	modelStack.Translate(0, anima.QPDOOR3_TOP, -300);
+	modelStack.Translate(0, anima.QPDOOR3_TOP, -100);
 	modelStack.Scale(6.5f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(0, anima.QPDOOR3_BOT, -300);
+	modelStack.Translate(0, anima.QPDOOR3_BOT, -100);
 	modelStack.Scale(6.5f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
@@ -165,13 +165,13 @@ void SceneLevelTwo::RenderScene()
 
 	//MIDDLE DOORS
 	modelStack.PushMatrix();
-	modelStack.Translate(0, anima.QPDOOR4_TOP, -100);
+	modelStack.Translate(0, anima.QPDOOR4_TOP, -300);
 	modelStack.Scale(6.5f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(0, anima.QPDOOR4_BOT, -100);
+	modelStack.Translate(0, anima.QPDOOR4_BOT, -300);
 	modelStack.Scale(6.5f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();

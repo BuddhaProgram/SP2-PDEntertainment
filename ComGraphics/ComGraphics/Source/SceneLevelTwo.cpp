@@ -495,7 +495,7 @@ void SceneLevelTwo::Update(double dt)
 	}
 	else
 	{
-		//Collision(-96, -80, -20, 22);
+		Collision(-96, -80, -20, 22);
 	}
 
 	if (anima.QP_TOPDOOR2 && anima.QP_BOTDOOR2)//right door
@@ -504,7 +504,7 @@ void SceneLevelTwo::Update(double dt)
 	}
 	else
     {
-		//Collision(80, 96, -20, 22);
+		Collision(80, 96, -20, 22);
 	}
 
 	if (Switch1Press == true && Switch2Press == true)
@@ -522,16 +522,16 @@ void SceneLevelTwo::Update(double dt)
 		Collision(-20, 20, -105, -95); 
 	}
 
-	if (anima.QP_TOPDOOR4)
+	if (anima.QP_TOPDOOR4 && anima.QP_BOTDOOR4)
 	{
 		anima.OpenQPDOOR4(dt);
 	}
 	else
 	{
-		//Collision(-20, 20, -305, -295);
+		Collision(-20, 20, -305, -295);
 	}
 
-	if (anima.QP_TOPDOOR5)
+	if (anima.QP_TOPDOOR5 && anima.QP_BOTDOOR5)
 	{
 		anima.OpenQPDOOR5(dt);
 	}
