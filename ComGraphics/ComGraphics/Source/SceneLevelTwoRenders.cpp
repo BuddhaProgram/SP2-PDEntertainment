@@ -255,7 +255,7 @@ void SceneLevelTwo::RenderTraps()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(320,0,-390);
+	modelStack.Translate(320, 0, -390 + transSpikeWall2);
 	modelStack.Rotate(-90, 0, 1, 0);
 	modelStack.Scale(7, 7, 7.25f);
 

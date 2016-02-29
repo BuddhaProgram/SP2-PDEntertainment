@@ -140,11 +140,6 @@ public:
 	float QPDOOR5_BOT;
 	bool QP_TOPDOOR5 = false;
 	bool QP_BOTDOOR5 = false;
-
-	float MovingShip;
-	float MovingShip2;
-	bool shipCheck1 = true;
-	bool shipCheck2 = false;
 };
 
 #endif

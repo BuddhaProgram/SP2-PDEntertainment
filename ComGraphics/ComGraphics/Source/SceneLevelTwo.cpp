@@ -99,8 +99,8 @@ void SceneLevelTwo::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    //camera.Init(Vector3(0, 10, -110), Vector3(0, 10, -1), Vector3(0, 1, 0));
-	camera.Init(Vector3(0, 10, 400), Vector3(0, 10, -1), Vector3(0, 1, 0));
+    camera.Init(Vector3(0, 10, -110), Vector3(0, 10, -1), Vector3(0, 1, 0));
+	//camera.Init(Vector3(0, 10, 400), Vector3(0, 10, -1), Vector3(0, 1, 0));
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("lightball", Color(1, 1, 1), 10, 20);
@@ -203,7 +203,6 @@ void SceneLevelTwo::Init()
 
 static float LSPEED = 10.f;
 
-
 void SceneLevelTwo::Reset()
 {
 	Explorer::instance()->hp = 100;
@@ -222,6 +221,10 @@ void SceneLevelTwo::Reset()
 	Switch2Rot = 45.f;
 	openDoor1 = false;
 	openDoor2 = false;
+	invisWALLDisappear = false;
+	puzzling = false;
+	transSpikeWall2 = 0;
+	hitWall = false;
 	for (int i = 0; i < 4; ++i)
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
@@ -234,6 +237,20 @@ void SceneLevelTwo::Collision(float smallx, float largex, float smallz, float la
     if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 5.f)){ camera.position.z = largez; }
     if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 5.f)){ camera.position.x = smallx; }
     if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 5.f)){ camera.position.x = largex; }
+
+	camera.target = Vector3(
+		sin(Math::DegreeToRadian(camera.rotationY)) * cos(Math::DegreeToRadian(camera.rotationX)) + camera.position.x,
+		sin(Math::DegreeToRadian(camera.rotationX)) + camera.position.y,
+		cos(Math::DegreeToRadian(camera.rotationX)) * cos(Math::DegreeToRadian(camera.rotationY)) + camera.position.z
+		);
+}
+
+void SceneLevelTwo::SpecialCollision(float smallx, float largex, float smallz, float largez)
+{
+	if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 5.f)){ camera.position.z = smallz; hitWall = true; }
+	if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 5.f)){ camera.position.z = largez; hitWall = true; }
+	if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 5.f)){ camera.position.x = smallx; hitWall = true; }
+	if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 5.f)){ camera.position.x = largex; hitWall = true; }
 
 	camera.target = Vector3(
 		sin(Math::DegreeToRadian(camera.rotationY)) * cos(Math::DegreeToRadian(camera.rotationX)) + camera.position.x,
@@ -486,6 +503,12 @@ void SceneLevelTwo::checkPlayerPosMisc()
 
 void SceneLevelTwo::SomeUpdates(double dt)
 {
+	//check if touch wall
+	if (hitWall == true)
+	{
+		Explorer::instance()->isDead = true;
+	}
+	//stuff
 	if (openDoor1 == true)
 	{
 		anima.QP_TOPDOOR1 = true;
@@ -588,7 +611,7 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	if (Misc.WithinArea(-76, 76, 128, 360))
 
 		//trapwall collision
-		Collision(-76 + transSpikeDoor, -60 + transSpikeDoor, 127, 362);
+		SpecialCollision(-76 + transSpikeDoor, -60 + transSpikeDoor, 127, 362);
 
 	if (Misc.WithinArea(-76, 76, 127, 361))
 
@@ -609,6 +632,17 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	if (transSpikeDoor > 140)
 	{
 		transSpikeDoor = 140;
+	}
+
+	SpecialCollision(240, 400, -392 + transSpikeWall2, -376 + transSpikeWall2);
+
+	if (Misc.WithinArea(244, 360, -60, -40))
+	{
+		puzzling = true;
+	}
+	if (puzzling == true)
+	{
+		transSpikeWall2 += (float)dt;
 	}
 }
 
