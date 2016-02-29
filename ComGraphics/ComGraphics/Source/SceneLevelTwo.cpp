@@ -643,6 +643,10 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	{
 		transSpikeWall2 += (float)dt;
 	}
+	if (Misc.WithinArea(324, 356, -20, -4))
+	{
+		Application::EndingScene();
+	}
 }
 
 void SceneLevelTwo::Update(double dt)
