@@ -12,6 +12,8 @@
 #include <sstream>
 #include "GlobalVariables.h"
 
+
+
 SceneLevelOneA::SceneLevelOneA()
 {
 
@@ -167,10 +169,8 @@ void SceneLevelOneA::Init()
 	meshList[GEO_BLOOD] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
 	meshList[GEO_BLOOD]->textureID = LoadTGA("Image//Blood.tga");
 
-    meshList[GEO_DOORSWITCH] = MeshBuilder::GenerateCube("Switch", Color(0.623f, 0.467f, 0.467f));
-    meshList[GEO_DOORSWITCH]->material.kAmbient.Set(0.3f, 0.3f, 0.3f);
-    meshList[GEO_DOORSWITCH]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
-    meshList[GEO_DOORSWITCH]->material.kSpecular.Set(1, 1, 1);
+    meshList[GEO_DOORSWITCH] = MeshBuilder::GenerateOBJ("lever", "OBJ//PuzzleLever.obj");
+    meshList[GEO_DOORSWITCH]->textureID = LoadTGA("Image//PuzzleLever.tga");
 
     meshList[GEO_FACILITYWALLS] = MeshBuilder::GenerateQuad("Facility Wall", Color(1, 1, 1));
     meshList[GEO_FACILITYWALLS]->textureID = LoadTGA("Image//InsideWALL.tga");
@@ -524,6 +524,7 @@ void SceneLevelOneA::Update(double dt)
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 	FPS = 1.f / (float)dt;
 	camera.Update(dt);
+    
 	Collision(115.0f, 125.0f, 70.0f, 80.0f);
 	Variables.f_rotatingTool += (float)(180 * dt);
 
@@ -564,7 +565,7 @@ void SceneLevelOneA::Update(double dt)
 	anima.OBJAnimation(dt);
 	anima.Collapsing(dt);
 	checkRubbleFall();
-	checkDoor1();
+	checkDoor1(dt);
 	checkDoor2();
 	checkDoor3();
 	checkDrop();
@@ -577,7 +578,7 @@ void SceneLevelOneA::Update(double dt)
 	{
 		Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
 	}
-
+    Collision(-235, -220, 98, 110);
 	//mob stuff
 	if (proximitycheck(-226, -160, 210, 218) && !activateDoor1)
 	{
@@ -785,11 +786,7 @@ void SceneLevelOneA::Render()
 	RenderMouseScrollToolSlot();
 	RenderToolIcon();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(-200, 0, 120);
-	modelStack.Scale(5, 5, 5);
-	RenderMesh(meshList[GEO_DOORSWITCH], true);
-	modelStack.PopMatrix();
+	
 
 	RenderSavePointText();
 

@@ -10,6 +10,8 @@
 #include "OBJAnimation.h"
 #include "MobGhost.h"
 
+
+
 class SceneLevelOneA : public Scene
 {
     enum GEOMETRY_TYPE
@@ -171,7 +173,7 @@ private:
 
     //checkers and animation functions
 	void checkRubbleFall();
-	void checkDoor1();
+	void checkDoor1(double dt);
 	void checkDoor2();
 	void checkDoor3();
 	void checkDrop();
@@ -203,6 +205,7 @@ private:
     bool Notice2 = false;
     bool willDrop = false;
     bool Key1Active = false;
+    float SwitchRot = 45.f;
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];

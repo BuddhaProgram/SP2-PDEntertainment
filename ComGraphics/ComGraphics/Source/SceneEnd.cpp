@@ -18,10 +18,11 @@ SceneEnd::SceneEnd()
 	for (int i = 0; i < 3; ++i)
 	{
 		b_RepairDone[i] = false;
+		b_startRepair[i] = false;
 	}
 
-	b_startRepair = false;
 	f_RepairProcess = 0.0f;
+	f_rockY = 25.0f;
 }
 
 SceneEnd::~SceneEnd()
@@ -213,6 +214,9 @@ void SceneEnd::Init()
 
 	meshList[GEO_SPACESHIP] = MeshBuilder::GenerateOBJ("Ship", "OBJ//Spaceship.obj");
 	meshList[GEO_SPACESHIP]->textureID = LoadTGA("Image//MaterialsShip.tga");
+
+	meshList[GEO_ROCK] = MeshBuilder::GenerateOBJ("ROCK", "OBJ//Rock.obj");
+	meshList[GEO_ROCK]->textureID = LoadTGA("Image//rock.tga");
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
@@ -489,8 +493,8 @@ void SceneEnd::UpdateRepairs(double dt)
 	{
 		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand && b_RepairDone[1] == false)
 		{
-			b_startRepair = true;
-			f_RepairProcess += (float)(5.0f * dt);
+			b_startRepair[1] = true;
+			f_RepairProcess += (float)(50.0f * dt);
 		}
 	}
 
@@ -498,24 +502,38 @@ void SceneEnd::UpdateRepairs(double dt)
 	{
 		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand && b_RepairDone[0] == false)
 		{
-			b_startRepair = true;
-			f_RepairProcess += (float)(5.0f * dt);
+			b_startRepair[0] = true;
+			f_RepairProcess += (float)(50.0f * dt);
 		}
 	}
 
-	if (f_RepairProcess >= 100.0f && b_RepairDone[0] == false && b_startRepair == true)
+	if (f_RepairProcess >= 100.0f && b_RepairDone[0] == false && b_startRepair[0] == true)
 	{
-		b_startRepair = false;
+		b_startRepair[0] = false;
 		b_RepairDone[0] = true;
 		f_RepairProcess = 0.0f;
 	}
 
-	if (f_RepairProcess >= 100.0f && b_RepairDone[1] == false && b_startRepair == true)
+	if (f_RepairProcess >= 100.0f && b_RepairDone[1] == false && b_startRepair[1] == true)
 	{
-		b_startRepair = false;
+		b_startRepair[1] = false;
 		b_RepairDone[1] = true;
 		f_RepairProcess = 0.0f;
 	}
+}
+
+bool SceneEnd::b_ReadyToFly()
+{
+	for (int i = 0; i < 3; ++i)
+	{
+		if (b_RepairDone[i] == false)
+		{
+			return false;
+			break;
+		}
+	}
+
+	return true;
 }
 
 void SceneEnd::Update(double dt)
@@ -535,6 +553,22 @@ void SceneEnd::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
 	Collision(-50.0f, 70.0f, -240.0f, -160.0f);
+
+	if (camera.position.x > -56.0f && camera.position.x < -44.0f && camera.position.z > -206.0f && camera.position.z < -194.0f)
+	{
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe && b_RepairDone[2] == false && Application::IsKeyPressed(VK_LBUTTON))
+		{
+			b_startRepair[2] = true;
+			f_rockY -= 1.0f;
+		}
+
+		if (f_rockY <= 1.0f)
+		{
+			f_rockY = 1.0f;
+			b_RepairDone[2] = true;
+			b_startRepair[2] = false;
+		}
+	}
 
 	/*-------------------------[Death of the Explorer]-------------------------------*/
 	Explorer::instance()->checkDead();
@@ -557,6 +591,11 @@ void SceneEnd::Update(double dt)
 	if (Application::IsKeyPressed('O'))
 	{
 		Application::EndingCutScene();
+	}
+
+	if (Application::IsKeyPressed('Z'))
+	{
+		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
 	}
 
 }
@@ -749,10 +788,20 @@ void SceneEnd::Render()
 	RenderToolIcon();
 
 	RenderRepairText();
+	RenderMineText();
 
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
 	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
 	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
+
+	if (b_RepairDone[2] == false)
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(-30, 0, -200);
+			modelStack.Scale(20, f_rockY, 20);
+			RenderMesh(meshList[GEO_ROCK], true);
+		modelStack.PopMatrix();
+	}
 }
 
 void SceneEnd::Exit()

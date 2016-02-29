@@ -24,6 +24,15 @@ void SceneLevelOneB::RenderFloorCeiling()
     modelStack.Scale(1000, 1, 240);
     RenderMesh(meshList[GEO_FACILITYCEILINGS], true);
     modelStack.PopMatrix();
+
+    //Ceiling for exit rm
+    modelStack.PushMatrix();
+    modelStack.Translate(24.5, 20.5, -421);
+    modelStack.Rotate(180, 1, 0, 0);
+    modelStack.Scale(120, 1, 150);
+    RenderMesh(meshList[GEO_FACILITYCEILINGS], true);
+    modelStack.PopMatrix();
+
 }
 //void SceneLevelOneB::
 // renders the Starting level
@@ -423,10 +432,12 @@ void SceneLevelOneB::MobsSpawn()
     
     if (proximitycheck(216, 240, -256, -248) && PuzzleGhost1.health >0)
     {
+        std::cout << "check1" << std::endl;
         PuzzleGhost1.Spawn = true;
     }
     if (proximitycheck(216, 240, -256, -248) && PuzzleGhost2.health >0)
     {
+        std::cout << "check2" << std::endl;
         PuzzleGhost2.Spawn = true;
     }
     if (proximitycheck(-304, -280, -392, -384) && BossOne.health>0)
@@ -597,7 +608,7 @@ void SceneLevelOneB::RenderPickUpPickTools()
 	{
 		modelStack.PushMatrix();
 			modelStack.Translate(100, 6, -160);
-			modelStack.Scale(1.8, 0.6, 1.8);
+			modelStack.Scale(1.8f, 0.6f, 1.8f);
 			modelStack.Rotate(Variables.f_rotatingTool, 0, 1, 0);
 			modelStack.Rotate(15, 1, 0, 0);
 			RenderMesh(meshList[GEO_BAT], true);
@@ -608,7 +619,7 @@ void SceneLevelOneB::RenderPickUpPickTools()
 	{
 		modelStack.PushMatrix();
 			modelStack.Translate(-200, 6, -440);
-			modelStack.Scale(1.8, 0.6, 1.8);
+			modelStack.Scale(1.8f, 0.6f, 1.8f);
 			modelStack.Rotate(Variables.f_rotatingTool, 0, 1, 0);
 			modelStack.Rotate(15, 1, 0, 0);
 			RenderMesh(meshList[GEO_SWORD], true);

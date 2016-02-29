@@ -186,6 +186,9 @@ void SceneLevelTwo::Init()
 	meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
 	meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
 
+    meshList[GEO_LEVER] = MeshBuilder::GenerateOBJ("lever", "OBJ//PuzzleLever.obj");
+    meshList[GEO_LEVER]->textureID = LoadTGA("Image//PuzzleLever.tga");
+
 	/*--------------------[Used as a background for Dead Scene]--------------------*/
 	meshList[GEO_DEADCOLOR] = MeshBuilder::GenerateQuad("DeadScreen", Color(1, 0, 0));
 	meshList[GEO_DEADBLACKSCREEN] = MeshBuilder::GenerateQuad("DeadSCreenTwo", Color(0, 0, 0));
@@ -208,7 +211,8 @@ void SceneLevelTwo::Reset()
 	Explorer::instance()->PlayerLife = 3;
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
-
+	transSpikeDoor = 0;
+	closeDoors = false;
 	for (int i = 0; i < 4; ++i)
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
@@ -217,10 +221,10 @@ void SceneLevelTwo::Reset()
 
 void SceneLevelTwo::Collision(float smallx, float largex, float smallz, float largez)
 {
-    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 3.f)){ camera.position.z = smallz; }
-    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 3.f)){ camera.position.z = largez; }
-    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 3.f)){ camera.position.x = smallx; }
-    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 3.f)){ camera.position.x = largex; }
+    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 5.f)){ camera.position.z = smallz; }
+    if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 5.f)){ camera.position.z = largez; }
+    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 5.f)){ camera.position.x = smallx; }
+    if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 5.f)){ camera.position.x = largex; }
 
 	camera.target = Vector3(
 		sin(Math::DegreeToRadian(camera.rotationY)) * cos(Math::DegreeToRadian(camera.rotationX)) + camera.position.x,
@@ -479,6 +483,23 @@ void SceneLevelTwo::Update(double dt)
     //worldspin += (float)(dt);
 	checkPlayerPosMisc();
 
+	if (anima.OpenDoor6)
+	{
+		anima.OpenSlideDoor1(dt);
+	}
+	else
+	{
+		Collision(-96, -80, -20, 22);
+	}
+
+	if (anima.OpenDoor7)
+	{
+		anima.OpenSlideDoor2(dt);
+	}
+	else
+    {
+		Collision(80, 96, -20, 22);
+	}
 
 	if (Misc.WithinArea(-76,76,128,360))
 
@@ -498,7 +519,7 @@ void SceneLevelTwo::Update(double dt)
 	if (closeDoors == true)
 	{
 		anima.CloseSlideDoor5(dt);
-		Collision(-13,13,120,125);
+		Collision(-20,20,115,125);
 	}
 	
 	if (transSpikeDoor > 140)
@@ -517,6 +538,7 @@ void SceneLevelTwo::Update(double dt)
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
     camera.Update(dt);
+    SwitchCheck(dt);
     //wall collision
     for (int i = 0; i < 60; i++)
     {
@@ -739,6 +761,11 @@ void SceneLevelTwo::Render()
     if (displayInteract1 /*|| displayInteract2 || displayInteract3*/)
     {
         RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
+    }
+
+    if (Switch1Int || Switch2Int)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "Press Right mouse to interact", Color(1, 0, 0), 3, 8.75f, 8);
     }
 
 	RenderPlayerDiesInteraction();

@@ -116,10 +116,23 @@ public:
 	bool ClosingDoorTop5 = true;
 	bool ClosingDoorBtm5 = true;
 
+
 	float MovingShip;
 	float MovingShip2;
 	bool shipCheck1 = true;
 	bool shipCheck2 = false;
+
+	bool OpenDoor6 = false;
+
+	bool OpenDoor7 = false;
+
+	bool OpenDoor8 = false;
+
+	bool OpenDoor9 = false;
+
+	bool OpenDoor10 = false;
+
+
 };
 
 #endif

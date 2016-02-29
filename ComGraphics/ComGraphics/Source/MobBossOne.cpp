@@ -2,7 +2,6 @@
 
 MobBossOne::MobBossOne()
 {
-    //global variables for use in entire project
     Spawn = false;
 
     //mob position variables
@@ -16,8 +15,8 @@ MobBossOne::MobBossOne()
     //timer variable
     mobTimeCount = 0;
 
-    health = 1;
-    AttackDamage = 1;
+    health = 24;
+    AttackDamage = 0.5;
     kenaWhack = false;
     AttackAnimation = true;
 
@@ -101,11 +100,13 @@ void MobBossOne::setSpawnBossOne(float xpos, float zpos)
 }
 void MobBossOne::TakeDamage(int damage)
 {
+    std::cout << "Boss hit" << std::endl;
 	health -= damage;
 }
 
 void MobBossOne::attack(float damage)
 {
+   
 	this->AttackDamage = damage;
 	Explorer::instance()->MinusHP((float)(AttackDamage));
     if (health <= 0)
