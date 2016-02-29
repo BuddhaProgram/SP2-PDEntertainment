@@ -65,7 +65,7 @@ class SceneLevelTwo : public Scene
 
         GEO_SLIDEDOORTOP,
         GEO_SLIDEDOORBTM,
-
+        GEO_LEVER,
         //player related
 
 		GEO_DEADCOLOR,
@@ -121,6 +121,8 @@ private:
     //scene renders
     void RenderScene();
     void RenderFloorCeiling();
+    void RenderSwitches();
+
 
     //map rendering
     void RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber);//positive Z facing wall
@@ -140,6 +142,7 @@ private:
     void checkPlayerPosMisc();
     void Collision(float smallx, float largex, float smallz, float largez);
     bool proximitycheck(float smallx, float largex, float smallz, float largez);
+    void SwitchCheck(double dt);
 
     // Switches Functions for puzzles
     void PuzzleOneSwitchCheck(double dt);
@@ -185,6 +188,12 @@ private:
     float CollZLarge[60];
     float CollZSmall[60];
 
+    bool Switch1Int = false;
+    bool Switch2Int = false;
+    float Switch1Rot = 45.f;
+    float Switch2Rot = 45.f;
+    bool Switch1Press = false;
+    bool Switch2Press = false;
 	float transSpikeDoor;
 	bool closeDoors = false;
     MobGhost Ghost;

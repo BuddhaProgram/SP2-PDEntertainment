@@ -229,8 +229,8 @@ void SceneEnd::RenderRepairText()
 
 		if (b_startRepair[1] == true && b_RepairDone[1] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand)
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Repairing ...", Color(0.1, 0.3, 1), 3, 10.0f, 8.0f);
-			RenderTextOnScreen(meshList[GEO_TEXT], std::to_string(f_RepairProcess) + " %", Color(0.1, 0.3, 1), 3, 10.0f, 7.0f);
+			RenderTextOnScreen(meshList[GEO_TEXT], "Repairing ...", Color(0.1f, 0.3f, 1), 3, 10.0f, 8.0f);
+			RenderTextOnScreen(meshList[GEO_TEXT], std::to_string(f_RepairProcess) + " %", Color(0.1f, 0.3f, 1), 3, 10.0f, 7.0f);
 		}
 
 		else if (b_startRepair[1] == true && b_RepairDone[1] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) != ToolUI::Hand)
@@ -248,8 +248,8 @@ void SceneEnd::RenderRepairText()
 
 		if (b_startRepair[0] == true && b_RepairDone[0] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand)
 		{
-			RenderTextOnScreen(meshList[GEO_TEXT], "Repairing ...", Color(0.1, 0.3, 1), 3, 10.0f, 8.0f);
-			RenderTextOnScreen(meshList[GEO_TEXT], std::to_string(f_RepairProcess) + " %", Color(0.1, 0.3, 1), 3, 10.0f, 7.0f);
+			RenderTextOnScreen(meshList[GEO_TEXT], "Repairing ...", Color(0.1f, 0.3f, 1), 3, 10.0f, 8.0f);
+			RenderTextOnScreen(meshList[GEO_TEXT], std::to_string(f_RepairProcess) + " %", Color(0.1f, 0.3f, 1), 3, 10.0f, 7.0f);
 		}
 
 		else if (b_startRepair[0] == true && b_RepairDone[0] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) != ToolUI::Hand)

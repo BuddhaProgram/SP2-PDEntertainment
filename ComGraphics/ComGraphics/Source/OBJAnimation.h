@@ -90,6 +90,16 @@ public:
 	bool ClosingDoorTop5 = true;
 	bool ClosingDoorBtm5 = true;
 
+	bool OpenDoor6 = false;
+
+	bool OpenDoor7 = false;
+
+	bool OpenDoor8 = false;
+
+	bool OpenDoor9 = false;
+
+	bool OpenDoor10 = false;
+
 };
 
 #endif

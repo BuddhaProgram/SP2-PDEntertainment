@@ -724,6 +724,7 @@ void SceneLevelOneB::Update(double dt)
 
 	/*-------------------------[Death of the Explorer]-------------------------------*/
 	Explorer::instance()->checkDead();
+
 	UpdatePlayerDiesInteraction(dt);
 	ContinueGameOrNot();
 
@@ -761,6 +762,8 @@ void SceneLevelOneB::Update(double dt)
         Collision(BossOne.MobPosX - 20, BossOne.MobPosX + 20, BossOne.MobPosZ - 20, BossOne.MobPosZ + 20);
     }
 
+   /* std::cout << "Ghost1: " << PuzzleGhost1.Spawn << std::endl;
+    std::cout << "Ghost2: " << PuzzleGhost2.Spawn << std::endl;*/
 
 
 }
