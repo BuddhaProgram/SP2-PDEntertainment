@@ -698,7 +698,7 @@ void SceneEnd::RenderDownWall(int xPos, int zPos)//positive Z facing wall
     modelStack.Scale(1, 8, 1);
 
     modelStack.PushMatrix();
-    modelStack.Translate(xPos,0,zPos);
+	modelStack.Translate((float)xPos, 0, (float)zPos);
     modelStack.Rotate(-90, 1, 0, 0);
     modelStack.Rotate(90, 0, 1, 0);
     modelStack.Scale(8, 8, 1000);

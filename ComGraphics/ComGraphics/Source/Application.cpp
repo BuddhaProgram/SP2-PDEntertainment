@@ -142,9 +142,12 @@ void Application::Run()
     LevelOneB = new SceneLevelOneB();
     LevelTwo = new SceneLevelTwo();
 	End = new SceneEnd();
+	EndScene = new SceneEndCutScene();
 
-	scene = LevelOneB;
-    scene-> Init();
+
+	
+	scene = LevelTwo;
+	scene->Init();
 
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
@@ -191,64 +194,58 @@ void Application::Exit()
 void Application::OpenGame()
 {
 	scene = Opening;
-    scene->Init();
+	scene->Init();
 }
 
 void Application::StartingScene()
 {
     scene = Start;
-    scene->Init();
+	scene->Init();
 }
 
 void Application::FirstCutScene()
 {
     scene = CutScene1;
-    scene->Init();
-
+	scene->Init();
 }
 void Application::SceneLevel1A()
 {
 	scene = LevelOneA;
-    scene->Init();
-
+	scene->Init();
 }
 
 void Application::SceneLevel1B()
 {
 	scene = LevelOneB;
-    scene->Init();
-
+	scene->Init();
 }
 
 void Application::SceneLevel2()
 {
     scene = LevelTwo;
-    scene->Init();
-
+	scene->Init();
 }
 
 void Application::EndingScene()
 {
     scene = End;
-    scene->Init();
-
+	scene->Init();
 }
 
 void Application::OpenCutScene()
 {
 	scene = IntroScene;
-    scene->Init();
-
+	scene->Init();
 }
 
 void Application::OpenCutScene2()
 {
 	scene = IntroScene2;
-    scene->Init();
-
+	scene->Init();
 }
 
 void Application::EndingCutScene()
 {
 	scene = EndScene;
+	scene->Init();
 }

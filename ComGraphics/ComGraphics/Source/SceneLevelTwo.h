@@ -196,6 +196,9 @@ private:
     bool Switch2Press = false;
 	float transSpikeDoor;
 	bool closeDoors = false;
+	float timerDoor = 3;
+	bool openDoor1 = false;
+	bool openDoor2 = false;
     MobGhost Ghost;
 
 };

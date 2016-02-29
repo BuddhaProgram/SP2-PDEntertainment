@@ -357,5 +357,4 @@ void SceneEndCutScene::RenderShipAndPod()
 	modelStack.Scale(15, 15, 15);
 	RenderMesh(meshList[GEO_SPACESHIP], true);
 	modelStack.PopMatrix();
-
 }
