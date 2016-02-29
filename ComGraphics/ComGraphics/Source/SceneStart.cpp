@@ -138,6 +138,12 @@ void SceneStart::Init()
 	meshList[GEO_TOOLUIFOUR] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
 	meshList[GEO_TOOLUIFOUR]->textureID = LoadTGA("Image//ToolsUIBoxFour.tga");
 
+	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
+	meshList[GEO_RHAND]->textureID = LoadTGA("Image//RightHand.tga");
+
+	meshList[GEO_LHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//LeftHand.obj");
+	meshList[GEO_LHAND]->textureID = LoadTGA("Image//LeftHand.tga");
+
 	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
 	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
 
@@ -221,36 +227,29 @@ void SceneStart::checkPlayerPosMisc()
 
 void SceneStart::ToolsUI()
 {
-	if (Application::IsKeyPressed('Z'))
-		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
 
-	if (Application::IsKeyPressed('X'))
-		Explorer::instance()->InsertToolSlot(ToolUI::BaseballBat);
-
-	if (Application::IsKeyPressed('C'))
-		Explorer::instance()->InsertToolSlot(ToolUI::Sword);
 }
 
 void SceneStart::MouseScrollToolSlot()
 {
 	if (Application::mouse_scroll > 0)
 	{
-		Variables.i_SlotIndex++;
+		Explorer::instance()->i_SlotIndex--;
 	}
 
 	else if (Application::mouse_scroll < 0)
 	{
-		Variables.i_SlotIndex--;
+		Explorer::instance()->i_SlotIndex++;
 	}
 
-	if (Variables.i_SlotIndex > 4)
+	if (Explorer::instance()->i_SlotIndex > 4)
 	{
-		Variables.i_SlotIndex = 1;
+		Explorer::instance()->i_SlotIndex = 1;
 	}
 
-	else if (Variables.i_SlotIndex < 1)
+	else if (Explorer::instance()->i_SlotIndex < 1)
 	{
-		Variables.i_SlotIndex = 4;
+		Explorer::instance()->i_SlotIndex = 4;
 	}
 }
 
@@ -258,16 +257,16 @@ void SceneStart::RenderMouseScrollToolSlot()
 {
 	if (Explorer::instance()->isDead == false)
 	{
-		if (Variables.i_SlotIndex == 1)
+		if (Explorer::instance()->i_SlotIndex == 1)
 			RenderModelOnScreen(meshList[GEO_TOOLUIONE], 7.0f, 7.0f, 7.0f, 0.0f, 1.0f, 0.0f, 0.0f, 5.75f, 0.0f, 0.0f, false);
 
-		if (Variables.i_SlotIndex == 2)
+		if (Explorer::instance()->i_SlotIndex == 2)
 			RenderModelOnScreen(meshList[GEO_TOOLUITWO], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
 
-		if (Variables.i_SlotIndex == 3)
+		if (Explorer::instance()->i_SlotIndex == 3)
 			RenderModelOnScreen(meshList[GEO_TOOLUITHREE], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
 
-		if (Variables.i_SlotIndex == 4)
+		if (Explorer::instance()->i_SlotIndex == 4)
 			RenderModelOnScreen(meshList[GEO_TOOLUIFOUR], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
 	}
 }
@@ -276,21 +275,27 @@ void SceneStart::ToolSelectionMouseScroll()
 {
 	if (Explorer::instance()->isDead == false)
 	{
-		if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Pickaxe)
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand)
+		{
+			RenderModelOnScreen(meshList[GEO_RHAND], 15, 15, 15, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, -1.0f, false);
+			RenderModelOnScreen(meshList[GEO_LHAND], 15, 15, 15, Variables.RotateX, 1, 0, 0, 0.75f, 0.0f, -1.0f, false);
+		}
+
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe)
 		{
 			modelStack.PushMatrix();
 			RenderModelOnScreen(meshList[GEO_PICKAXE], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
 			modelStack.PopMatrix();
 		}
 
-		else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::BaseballBat)
+		else if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::BaseballBat)
 		{
 			modelStack.PushMatrix();
 			RenderModelOnScreen(meshList[GEO_BAT], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
 			modelStack.PopMatrix();
 		}
 
-		else if (Explorer::instance()->GetToolType(Variables.i_SlotIndex) == ToolUI::Sword)
+		else if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Sword)
 		{
 			modelStack.PushMatrix();
 			RenderModelOnScreen(meshList[GEO_SWORD], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
@@ -335,7 +340,7 @@ void SceneStart::RenderToolIcon()
 
 		if (Explorer::instance()->GetToolType(3) == ToolUI::Pickaxe)
 		{
-			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.7f, 0.775f, 1.0f, false);
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
 		}
 
 		else if (Explorer::instance()->GetToolType(3) == ToolUI::BaseballBat)
@@ -346,6 +351,21 @@ void SceneStart::RenderToolIcon()
 		else if (Explorer::instance()->GetToolType(3) == ToolUI::Sword)
 		{
 			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+		}
+
+		if (Explorer::instance()->GetToolType(4) == ToolUI::Pickaxe)
+		{
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(4) == ToolUI::BaseballBat)
+		{
+			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+		}
+
+		else if (Explorer::instance()->GetToolType(4) == ToolUI::Sword)
+		{
+			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.275f, 0.775f, 1.0f, false);
 		}
 	}
 }

@@ -79,22 +79,16 @@ void SceneEnd::RenderFloor()
     }
 }
 
-
-
-//void SceneEnd::
-
 //render the exit level
 void SceneEnd::RenderSceneEnd()
 {
     //structure renders
     modelStack.PushMatrix();
-    modelStack.Translate(0, 0, 90);
-    modelStack.Rotate(180, 0, 1, 0);
-    modelStack.Scale(6, 6, 4);
-    RenderMesh(meshList[GEO_FACILITYOUT], true);
-    modelStack.PopMatrix();
-    RenderSkyBox();
-
+		modelStack.Translate(0, 0, 90);
+		modelStack.Rotate(180, 0, 1, 0);
+		modelStack.Scale(6, 6, 4);
+		RenderMesh(meshList[GEO_FACILITYOUT], true);
+		modelStack.PopMatrix();
     //object renders
 
 }
@@ -130,6 +124,116 @@ void SceneEnd::RenderPlayerDiesInteraction()
 				RenderTextOnScreen(meshList[GEO_TEXT], "You are Dead!", Color(1, 0.2f, 1), 5.0f, 4.5f, 9.0f);
 				RenderTextOnScreen(meshList[GEO_TEXT], "Game Over!", Color(1, 1, 1), 5.0f, 5.0f, 8.0f);
 			}
+		}
+	}
+}
+
+void SceneEnd::RenderShipAndPod()
+{
+	modelStack.PushMatrix();
+		modelStack.Translate(0, 0, -200);
+		modelStack.Scale(15, 15, 15);
+		RenderMesh(meshList[GEO_SPACESHIP], true);
+	modelStack.PopMatrix();
+
+	if (b_RepairDone[0] == false)
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(0, 0, -240);
+			modelStack.Scale(12, 12, 12);
+			modelStack.Rotate(45, 0, 1, 0);
+			RenderMesh(meshList[GEO_REPAIRPOD], true);
+		modelStack.PopMatrix();
+	}
+
+	else
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(0, 0, -240);
+			modelStack.Scale(12, 12, 12);
+			modelStack.Rotate(45, 0, 1, 0);
+			RenderMesh(meshList[GEO_REPAIRDONE], true);
+		modelStack.PopMatrix();
+	}
+
+	if (b_RepairDone[1] == false)
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(0, 0, -160);
+			modelStack.Scale(12, 12, 12);
+			modelStack.Rotate(45, 0, 1, 0);
+			RenderMesh(meshList[GEO_REPAIRPOD], true);
+		modelStack.PopMatrix();
+	}
+
+	else
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(0, 0, -160);
+			modelStack.Scale(12, 12, 12);
+			modelStack.Rotate(45, 0, 1, 0);
+			RenderMesh(meshList[GEO_REPAIRDONE], true);
+		modelStack.PopMatrix();
+	}
+
+	if (b_RepairDone[2] == false)
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(-50, 0, -200);
+			modelStack.Scale(12, 12, 12);
+			modelStack.Rotate(45, 0, 1, 0);
+			RenderMesh(meshList[GEO_REPAIRPOD], true);
+		modelStack.PopMatrix();
+	}
+
+	else
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(-50, 0, -200);
+			modelStack.Scale(12, 12, 12);
+			modelStack.Rotate(45, 0, 1, 0);
+			RenderMesh(meshList[GEO_REPAIRDONE], true);
+		modelStack.PopMatrix();
+	}
+}
+
+void SceneEnd::RenderRepairText()
+{
+	if (camera.position.x > -6.0f && camera.position.x < 6.0f && camera.position.z > -166.0f && camera.position.z < -154.0f)
+	{
+		if (b_RepairDone[1] == true && b_startRepair == false)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Repair is done!", Color(0.1f, 0.3f, 1.0f), 3, 10.0f, 8.0f);
+		}
+
+		if (b_startRepair == true && b_RepairDone[1] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Repairing ...", Color(0.1, 0.3, 1), 3, 10.0f, 8.0f);
+			RenderTextOnScreen(meshList[GEO_TEXT], std::to_string(f_RepairProcess) + " %", Color(0.1, 0.3, 1), 3, 10.0f, 7.0f);
+		}
+
+		else if (b_startRepair == true && b_RepairDone[1] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) != ToolUI::Hand)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Use Hands for repair!", Color(0.1f, 0.3f, 1.0f), 3, 8.0f, 8.0f);
+		}
+	}
+
+	if (camera.position.x > -6.0f && camera.position.x < 6.0f && camera.position.z > -246.0f && camera.position.z < -234.0f)
+	{
+		if (b_RepairDone[0] == true && b_startRepair == false)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Repair is done!", Color(0.1f, 0.3f, 1.0f), 3, 10.0f, 8.0f);
+		}
+
+		if (b_startRepair == true && b_RepairDone[0] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Repairing ...", Color(0.1, 0.3, 1), 3, 10.0f, 8.0f);
+			RenderTextOnScreen(meshList[GEO_TEXT], std::to_string(f_RepairProcess) + " %", Color(0.1, 0.3, 1), 3, 10.0f, 7.0f);
+		}
+
+		else if (b_startRepair == true && b_RepairDone[0] == false && Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) != ToolUI::Hand)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Use Hands for repair!", Color(0.1f, 0.3f, 1.0f), 3, 8.0f, 8.0f);
 		}
 	}
 }

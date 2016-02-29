@@ -9,7 +9,6 @@ GlobalVariables::GlobalVariables()
 	b_LockSwingDebounce = false;
 	start_Animation = false;
 	
-	i_SlotIndex = 1;
     f_SwitchDebounce = 0.0f;
 
 	f_SwitchRotateOne = 0.0f;
@@ -22,6 +21,8 @@ GlobalVariables::GlobalVariables()
 	}
 
 	f_redScreenTimer = 0.0f;
+
+	f_SuitcaseRotateY = 0.0f;
 }
 
 GlobalVariables::~GlobalVariables()

@@ -21,12 +21,15 @@ void SceneLevelOneA::RenderFloorCeiling()
 
 void SceneLevelOneA::RenderSuitCase()
 {
-    modelStack.PushMatrix();
-    modelStack.Translate(280, 5, 120);
-    modelStack.Rotate(EnvRotateY, 0, 1, 0);
-    modelStack.Scale(4, 4, 4);
-    RenderMesh(meshList[GEO_SUITCASE], true);
-    modelStack.PopMatrix();
+	if (Explorer::instance()->b_pickUpSuitCase[0] == false)
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(280, 5, 120);
+			modelStack.Rotate(Variables.f_SuitcaseRotateY, 0, 1, 0);
+			modelStack.Scale(4, 4, 4);
+			RenderMesh(meshList[GEO_SUITCASE], true);
+		modelStack.PopMatrix();
+	}
 }
 
 //void SceneLevelOneA::
@@ -49,7 +52,7 @@ void SceneLevelOneA::RenderScene()
     //firstsave
     modelStack.PushMatrix();
 		modelStack.Translate(120, 5, 75);
-        modelStack.Rotate(EnvRotateY, 0, 1, 0);
+        modelStack.Rotate(Variables.f_savePointRotateY, 0, 1, 0);
 		modelStack.Scale(4, 4, 4);
 		RenderMesh(meshList[GEO_SPAWNPOINT], true);
 	modelStack.PopMatrix();
@@ -377,7 +380,8 @@ void SceneLevelOneA::DropPortrait()
 
 void SceneLevelOneA::EnvironmentAnimation(double dt)
 {
-    EnvRotateY += (float)(20.f * dt);
+    Variables.f_SuitcaseRotateY += (float)(20.f * dt);
+	Variables.f_savePointRotateY += (float)(20.0f * dt);
 }
 void SceneLevelOneA::AttackCheck()
 {
@@ -385,7 +389,7 @@ void SceneLevelOneA::AttackCheck()
 
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(20.f, Ghost.MobPosX, Ghost.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
-        Ghost.TakeDamage(Explorer::instance()->itemAttack[Variables.i_SlotIndex - 1]);//temporary variable is 1
+		Ghost.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);//temporary variable is 1
     }
 }
 
@@ -447,6 +451,31 @@ void SceneLevelOneA::RenderPlayerDiesInteraction()
 				RenderTextOnScreen(meshList[GEO_TEXT], "You are Dead!", Color(1, 0.2f, 1), 5.0f, 4.5f, 9.0f);
 				RenderTextOnScreen(meshList[GEO_TEXT], "Game Over!", Color(1, 1, 1), 5.0f, 5.0f, 8.0f);
 			}
+		}
+	}
+}
+
+void SceneLevelOneA::RenderPickUpPickAxe()
+{
+	if (Explorer::instance()->b_PickUpTool[0] == false)
+	{
+		modelStack.PushMatrix();
+			modelStack.Translate(0, 6, 360);
+			modelStack.Scale(1.8, 0.6, 1.8);
+			modelStack.Rotate(Variables.f_rotatingTool, 0, 1, 0);
+			modelStack.Rotate(45, 1, 0, 0);
+			RenderMesh(meshList[GEO_PICKAXE], true);
+		modelStack.PopMatrix();
+	}
+}
+
+void SceneLevelOneA::RenderPickUpSuitcaseText()
+{
+	if (camera.position.x > 265.0f && camera.position.x < 295.0f && camera.position.z > 105.0f && camera.position.z < 135.0f)
+	{
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) != ToolUI::Hand && Explorer::instance()->b_pickUpSuitCase[0] == false)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT], "Use your hands!", Color(0, 0.5f, 1.0f), 5.0f, 4.f, 5.0f);
 		}
 	}
 }

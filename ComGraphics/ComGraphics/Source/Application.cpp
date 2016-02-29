@@ -1,4 +1,4 @@
-#include "Application.h"
+	#include "Application.h"
 
 
 //Include the standard C++ headers
@@ -129,7 +129,7 @@ void Application::Run()
 {
 	musics = new Music();
 	musics->init();
-	musics->OpeningMusic();
+	/*musics->OpeningMusic();*/
 
 	Opening = new SceneOpening();
 	Opening->Init();
@@ -147,12 +147,14 @@ void Application::Run()
     LevelOneB->Init();
     LevelTwo = new SceneLevelTwo();
     LevelTwo->Init();
+	End = new SceneEnd();
+	End->Init();
 
 	//Main Loop
 	//SceneStart *scene = new SceneStart();
 	//scene->Init();
 
-	scene = LevelTwo;
+	scene = End;
 
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame

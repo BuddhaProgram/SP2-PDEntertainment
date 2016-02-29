@@ -7,13 +7,12 @@ Explorer::Explorer()
 
 	Explorer::instance()->f_hpBarScaleX = 10.f;
 
-	for (int i = 0; i < 4; ++i)
-	{
-		Explorer::instance()->itemAttack[i] = 0;
-	}
+	Explorer::instance()->i_SlotIndex = 1;
 
 	for (int i = 0; i < 4; ++i)
 	{
+		Explorer::instance()->itemAttack[i] = 0;
+		Explorer::instance()->checkSavePoint[i] = false;
 		Explorer::instance()->TotalTools.push_back(ToolUI(ToolUI::Empty));
 	}
 
@@ -24,7 +23,22 @@ Explorer::Explorer()
 	
 	for (int i = 0; i < 4; ++i)
 	{
-		Explorer::instance()->checkSavePoint[i] = false;
+		Explorer::instance()->b_PickUpTool[i] = false;
+	}
+
+	for (std::list<ToolUI>::iterator TS = TotalTools.begin(); TS != TotalTools.end(); ++TS)
+	{
+		if (TS->tool == ToolUI::Empty)
+		{
+			TS->tool = ToolUI::Hand;
+			break;
+		}
+	}
+
+	i_SuitcaseCount = 0;
+	for (int i = 0; i < 5; ++i)
+	{
+		b_pickUpSuitCase[i] = false;
 	}
 }
 
@@ -102,6 +116,9 @@ ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 	switch (SlotNumber)
 	{
 	case 1:
+		if (it->tool == ToolUI::Hand)
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 1;
+
 		if (it->tool == ToolUI::Pickaxe)
 			Explorer::instance()->itemAttack[SlotNumber - 1] = 1;
 
@@ -110,11 +127,17 @@ ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 
 		else if (it->tool == ToolUI::Sword)
 			Explorer::instance()->itemAttack[SlotNumber - 1] = 4;
+
+		else if (it->tool == ToolUI::Empty)
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 0;
 
 		return it->tool;
 		break;
 	case 2:
 		std::advance(it, 1);
+		if (it->tool == ToolUI::Hand)
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 1;
+
 		if (it->tool == ToolUI::Pickaxe)
 			Explorer::instance()->itemAttack[SlotNumber - 1] = 1;
 
@@ -123,11 +146,17 @@ ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 
 		else if (it->tool == ToolUI::Sword)
 			Explorer::instance()->itemAttack[SlotNumber - 1] = 4;
+
+		else if (it->tool == ToolUI::Empty)
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 0;
 
 		return it->tool;
 		break;
 	case 3:
 		std::advance(it, 2);
+		if (it->tool == ToolUI::Hand)
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 1;
+
 		if (it->tool == ToolUI::Pickaxe)
 			Explorer::instance()->itemAttack[SlotNumber - 1] = 1;
 
@@ -136,11 +165,17 @@ ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 
 		else if (it->tool == ToolUI::Sword)
 			Explorer::instance()->itemAttack[SlotNumber - 1] = 4;
+
+		else if (it->tool == ToolUI::Empty)
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 0;
 
 		return it->tool;
 		break;
 	case 4:
 		std::advance(it, 3);
+		if (it->tool == ToolUI::Hand)
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 1;
+
 		if (it->tool == ToolUI::Pickaxe)
 			Explorer::instance()->itemAttack[SlotNumber - 1] = 1;
 
@@ -149,6 +184,9 @@ ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 
 		else if (it->tool == ToolUI::Sword)
 			Explorer::instance()->itemAttack[SlotNumber - 1] = 4;
+
+		else if (it->tool == ToolUI::Empty)
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 0;
 
 		return it->tool;
 		break;

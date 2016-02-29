@@ -40,9 +40,6 @@ class SceneLevelOneA : public Scene
         GEO_FACILITYCEILINGS,
 		GEO_TV,
 
-        GEO_LHAND,
-        GEO_RHAND,
-
         GEO_SPAWNPOINT,
 
         // Tools Interface and It's Icons
@@ -50,6 +47,9 @@ class SceneLevelOneA : public Scene
 		GEO_TOOLUITWO,
 		GEO_TOOLUITHREE,
 		GEO_TOOLUIFOUR,
+
+		GEO_LHAND,
+		GEO_RHAND,
 
 		GEO_PICKAXE,
 		GEO_PICKAXEICON,
@@ -163,6 +163,8 @@ private:
 
 	void MouseClickFunction(double dt);
 
+	void RenderPickUpPickAxe();
+
 	// Updates save point position
 	void UpdateSavePoint();
 	void RenderSavePointText();
@@ -184,6 +186,10 @@ private:
 
 	void ContinueGameOrNot();
 
+	// Checkers and interaction with suitcases
+	void PickUpSuitcaseInteraction();
+	void RenderPickUpSuitcaseText();
+
     //objects and mob animation variables
     bool displayInteract1;
     bool displayInteract2;
@@ -197,8 +203,6 @@ private:
     bool Notice2 = false;
     bool willDrop = false;
     bool Key1Active = false;
-    float EnvRotateY = 0;
-
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
@@ -225,7 +229,6 @@ private:
     float CollXSmall[28];
     float CollZLarge[28];
     float CollZSmall[28];
-   
 };
 
 

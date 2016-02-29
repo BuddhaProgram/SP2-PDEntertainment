@@ -157,9 +157,6 @@ private:
     void attackCheck();
     void MobsSpawn();
 	void AnimationCheck(double dt);
-    //objects and mob animation variables
-    float EnvRotateY = 0;
-
 
     // Switches Functions for puzzles
     void PuzzleOneSwitchCheck(double dt);
@@ -176,11 +173,17 @@ private:
 
 	void MouseClickFunction(double dt);
 
+	void RenderPickUpPickTools();
+
 	// Checkers and interaction when player dies
 	void RenderPlayerDiesInteraction();
 	void UpdatePlayerDiesInteraction(double dt);
 
 	void ContinueGameOrNot();
+
+	// Checkers and interaction with suitcases
+	void PickUpSuitcaseInteraction();
+	void RenderPickUpSuitcaseText();
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];

@@ -97,48 +97,76 @@ void SceneLevelTwo::RenderScene()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(0, 0, 123);
+	modelStack.Translate(0, anima.DoorSlideTop_5, 123);
 	modelStack.Scale(6.5f, 4, 5);
-
-		modelStack.PushMatrix();
-		RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
-		modelStack.PopMatrix();
-
-		modelStack.PushMatrix();
-		RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
-		modelStack.PopMatrix();
-
+	RenderMesh(meshList[GEO_SLIDEDOORTOP], true);
 	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, anima.DoorSlideBtm_5, 123);
+	modelStack.Scale(6.5f, 4, 5);
+	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
+	modelStack.PopMatrix();
+
 }
 
 void SceneLevelTwo::RenderTraps()
 {
 	modelStack.PushMatrix();
 	modelStack.Translate(-75+transSpikeDoor, 0, 244);
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Scale(4.8f, 4, 4);
+	modelStack.Scale(7, 7, 7.25f);
 
 		modelStack.PushMatrix();
 		RenderMesh(meshList[GEO_TRAPWALL], true);
 		modelStack.PopMatrix();
 
 		modelStack.PushMatrix();
-		modelStack.Translate(10, 0, 0);
+		modelStack.Translate(0, 0, 3);
 		RenderMesh(meshList[GEO_TRAPWALL], true);
 		modelStack.PopMatrix();
 
 		modelStack.PushMatrix();
-		modelStack.Translate(20, 0, 0);
+		modelStack.Translate(0, 0, 6);
 		RenderMesh(meshList[GEO_TRAPWALL], true);
 		modelStack.PopMatrix();
 
 		modelStack.PushMatrix();
-		modelStack.Translate(-10, 0, 0);
+		modelStack.Translate(0, 0, 9);
 		RenderMesh(meshList[GEO_TRAPWALL], true);
 		modelStack.PopMatrix();
 
 		modelStack.PushMatrix();
-		modelStack.Translate(-20, 0, 0);
+		modelStack.Translate(0, 0, 12);
+		RenderMesh(meshList[GEO_TRAPWALL], true);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+		modelStack.Translate(0, 0, 15);
+		RenderMesh(meshList[GEO_TRAPWALL], true);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+		modelStack.Translate(0, 0, -3);
+		RenderMesh(meshList[GEO_TRAPWALL], true);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+		modelStack.Translate(0, 0, -6);
+		RenderMesh(meshList[GEO_TRAPWALL], true);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+		modelStack.Translate(0, 0, -9);
+		RenderMesh(meshList[GEO_TRAPWALL], true);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+		modelStack.Translate(0, 0, -12);
+		RenderMesh(meshList[GEO_TRAPWALL], true);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+		modelStack.Translate(0, 0, -15);
 		RenderMesh(meshList[GEO_TRAPWALL], true);
 		modelStack.PopMatrix();
 

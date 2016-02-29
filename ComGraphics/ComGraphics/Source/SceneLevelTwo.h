@@ -186,8 +186,9 @@ private:
     float CollZSmall[60];
 
 	float transSpikeDoor;
-	bool closeDoors;
+	bool closeDoors = false;
     MobGhost Ghost;
+
 };
 
 

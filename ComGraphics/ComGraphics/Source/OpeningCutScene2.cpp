@@ -177,6 +177,14 @@ void OpeningCutScene2::Update(double dt)
 		if (camera_check2)
 		{
 			MoveCamera1 += (float)(20.f * dt);
+			if (MoveCamera1 >= -25)
+			{
+				text2 = true;
+				if (MoveCamera1 >= 25)
+				{
+					text2 = false;
+				}
+			}
 		}
 		if (camera_check3)
 		{
@@ -206,6 +214,14 @@ void OpeningCutScene2::Update(double dt)
 		{
 			rotateCamY = false;
 			rotateCamX = true;
+		}
+		if (RotateCamera >= 10)
+		{
+			text1 = true;
+			if (RotateCamera >= 40)
+			{
+				text1 = false;
+			}
 		}
 	}
 
@@ -383,6 +399,22 @@ void OpeningCutScene2::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float
 	modelStack.PopMatrix();
 }
 
+void OpeningCutScene2::RenderTextWord()
+{
+	if (text1)
+	{
+		modelStack.PushMatrix();
+		RenderTextOnScreen(meshList[GEO_TEXT], "...ugh...Where am....i??", Color(0, 1, 0), 4, 4, 1);
+		modelStack.PopMatrix();
+	}
+	if (text2)
+	{
+		modelStack.PushMatrix();
+		RenderTextOnScreen(meshList[GEO_TEXT], ".....Why are there dead bodies?!?!", Color(0, 1, 0), 4, 1, 1);
+		modelStack.PopMatrix();
+	}
+}
+
 void OpeningCutScene2::Render()
 {
 	// Render VBO here
@@ -401,6 +433,7 @@ void OpeningCutScene2::Render()
 	modelStack.LoadIdentity();
 
 	RenderSceneStart();
+	RenderTextWord();
 
 	// Light Source 1
 	if (light[0].type == Light::LIGHT_DIRECTIONAL)

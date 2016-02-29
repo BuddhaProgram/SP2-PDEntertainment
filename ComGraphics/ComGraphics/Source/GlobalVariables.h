@@ -16,7 +16,7 @@ class GlobalVariables
 		bool b_LockSwingDebounce = false;
 		bool start_Animation = false;
 
-		int i_SlotIndex;
+
         float f_SwitchDebounce;
 
 		float f_SwitchRotateOne;
@@ -26,6 +26,11 @@ class GlobalVariables
 		bool b_SwitchAnimate[5];
 
 		float f_redScreenTimer;
+
+		float f_rotatingTool;
+
+		float f_SuitcaseRotateY;
+		float f_savePointRotateY;
 };
 
 #endif

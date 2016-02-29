@@ -45,14 +45,14 @@ class SceneEnd : public Scene
 		GEO_FACILITYWALLS,
 		GEO_FACILITYCEILINGS,
 
-		GEO_LHAND,
-		GEO_RHAND,
-
 		// Tools Interface and It's Icons
 		GEO_TOOLUIONE,
 		GEO_TOOLUITWO,
 		GEO_TOOLUITHREE,
 		GEO_TOOLUIFOUR,
+
+		GEO_LHAND,
+		GEO_RHAND,
 
 		GEO_PICKAXE,
 		GEO_PICKAXEICON,
@@ -69,6 +69,9 @@ class SceneEnd : public Scene
 		GEO_DEADCOLOR,
 		GEO_DEADBLACKSCREEN,
 
+		GEO_SPACESHIP,
+		GEO_REPAIRPOD,
+		GEO_REPAIRDONE,
 
 		NUM_GEOMETRY,
 	};
@@ -144,12 +147,24 @@ private:
 	// Switches Functions for puzzles
 	void PuzzleOneSwitchCheck(double dt);
 
+	// Spaceship and Pod function
+	bool b_RepairDone[3];
+	bool b_startRepair;
+	float f_RepairProcess;
+	void RenderShipAndPod();
+
+	void RenderRepairText();
+	void UpdateRepairs(double dt);
+
+	// Combat
+
 	// Tool UI functions
-	void ToolsUI();
 	void MouseScrollToolSlot();
+	void RenderMouseScrollToolSlot();
 	void ToolSelectionMouseScroll();
 	void RenderToolIcon();
-	void RenderToolUI();
+
+	void MouseClickFunction(double dt);
 
 	// Checkers and interaction when player dies
 	void RenderPlayerDiesInteraction();
