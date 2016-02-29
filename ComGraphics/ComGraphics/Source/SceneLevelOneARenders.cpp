@@ -51,7 +51,7 @@ void SceneLevelOneA::RenderScene()
         modelStack.Translate(-230, 7, 100);
         modelStack.Rotate(SwitchRot, 1, 0, 0);
         modelStack.Rotate(90, 0, 1, 0);
-        modelStack.Scale(2, 1.8, 2);
+        modelStack.Scale(2, 1.8f, 2);
         RenderMesh(meshList[GEO_DOORSWITCH], true);
         modelStack.PopMatrix();
     //modelStack.PopMatrix();
