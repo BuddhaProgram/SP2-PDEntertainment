@@ -489,6 +489,18 @@ void SceneLevelTwo::Update(double dt)
 	{
 		timerDoor = 0;
 	}
+	if (openDoor1 == true)
+	{
+		anima.QP_TOPDOOR1 = true;
+		anima.QP_BOTDOOR1 = true;
+	}
+
+	if (openDoor2 == true)
+	{
+		anima.QP_TOPDOOR2 = true;
+		anima.QP_BOTDOOR2 = true;
+	}
+
 	if (anima.QP_TOPDOOR1 && anima.QP_BOTDOOR1)//left door
 	{
 		anima.OpenQPDOOR1(dt);
@@ -538,6 +550,16 @@ void SceneLevelTwo::Update(double dt)
 	else
 	{
 		Collision(320,360,-30,-10);
+	}
+
+	if (openDoor1 == false && proximitycheck(-96, -80, -20, 22) && Application::IsKeyPressed('E'))
+	{
+		openDoor1 = true;
+	}
+
+	if (openDoor2 == false && proximitycheck(80, 96, -20, 22) && Application::IsKeyPressed('E'))
+	{
+		openDoor2 = true;
 	}
 
 	if (Misc.WithinArea(-76,76,128,360))
