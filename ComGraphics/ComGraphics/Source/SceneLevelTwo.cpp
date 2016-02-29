@@ -213,6 +213,7 @@ void SceneLevelTwo::Reset()
 	Variables.f_redScreenTimer = 0.0f;
 	transSpikeDoor = 0;
 	closeDoors = false;
+	timerDoor = 3;
 	for (int i = 0; i < 4; ++i)
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
@@ -483,22 +484,54 @@ void SceneLevelTwo::Update(double dt)
     //worldspin += (float)(dt);
 	checkPlayerPosMisc();
 
-	if (anima.OpenDoor6)
+	//timerDoor -= (float)dt; //to modify condition for countdown
+	if (timerDoor <= 0)
 	{
-		anima.OpenSlideDoor1(dt);
+		timerDoor = 0;
+	}
+	if (anima.QP_TOPDOOR1)//left door
+	{
+		anima.OpenQPDOOR1(dt);
 	}
 	else
 	{
 		Collision(-96, -80, -20, 22);
 	}
 
-	if (anima.OpenDoor7)
+	if (anima.QP_TOPDOOR2)//right door
 	{
-		anima.OpenSlideDoor2(dt);
+		anima.OpenQPDOOR2(dt);
 	}
 	else
     {
 		Collision(80, 96, -20, 22);
+	}
+
+	if (anima.QP_TOPDOOR3)//first frontfacing door
+	{
+		anima.OpenQPDOOR3(dt);
+	}
+	else
+	{
+		//Collision(-20, 20, -105, -95); 
+	}
+
+	if (anima.QP_TOPDOOR4)
+	{
+		anima.OpenQPDOOR4(dt);
+	}
+	else
+	{
+		//Collision(-20, 20, -305, -295);
+	}
+
+	if (anima.QP_TOPDOOR5)
+	{
+		anima.OpenQPDOOR5(dt);
+	}
+	else
+	{
+		Collision(320,360,-30,-10);
 	}
 
 	if (Misc.WithinArea(-76,76,128,360))
