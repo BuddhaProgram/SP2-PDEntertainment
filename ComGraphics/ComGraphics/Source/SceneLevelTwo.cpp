@@ -186,6 +186,9 @@ void SceneLevelTwo::Init()
 	meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
 	meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
 
+    meshList[GEO_LEVER] = MeshBuilder::GenerateOBJ("lever", "OBJ//PuzzleLever.obj");
+    meshList[GEO_LEVER]->textureID = LoadTGA("Image//PuzzleLever.tga");
+
 	/*--------------------[Used as a background for Dead Scene]--------------------*/
 	meshList[GEO_DEADCOLOR] = MeshBuilder::GenerateQuad("DeadScreen", Color(1, 0, 0));
 	meshList[GEO_DEADBLACKSCREEN] = MeshBuilder::GenerateQuad("DeadSCreenTwo", Color(0, 0, 0));
@@ -485,7 +488,7 @@ void SceneLevelTwo::Update(double dt)
 	}
 	else
 	{
-		Collision(-86, -77, -8, 12);
+		//Collision(-86, -77, -8, 12);
 	}
 
 	if (anima.OpenDoor7)
@@ -494,7 +497,7 @@ void SceneLevelTwo::Update(double dt)
 	}
 	else
 	{
-		Collision(77, 86, -8, 12);
+		//Collision(77, 86, -8, 12);
 	}
 
 	if (Misc.WithinArea(-76,76,128,360))
@@ -534,6 +537,7 @@ void SceneLevelTwo::Update(double dt)
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
     camera.Update(dt);
+    SwitchCheck(dt);
     //wall collision
     for (int i = 0; i < 60; i++)
     {
@@ -756,6 +760,11 @@ void SceneLevelTwo::Render()
     if (displayInteract1 /*|| displayInteract2 || displayInteract3*/)
     {
         RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
+    }
+
+    if (Switch1Int || Switch2Int)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "Press Right mouse to interact", Color(1, 0, 0), 3, 8.75f, 8);
     }
 
 	RenderPlayerDiesInteraction();
