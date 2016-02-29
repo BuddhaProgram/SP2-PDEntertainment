@@ -218,7 +218,7 @@ void SceneLevelOneA::Init()
 static float LSPEED = 10.f;
 
 
-void SceneLevelOneA::Reset()
+void SceneLevelOneA::ResetSameScene()
 {
 	Explorer::instance()->hp = 100;
 	Explorer::instance()->isDead = false;
@@ -230,6 +230,20 @@ void SceneLevelOneA::Reset()
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
 	}
+}
+
+void SceneLevelOneA::ResetAll()
+{
+    Explorer::instance()->hp = 100;
+    Explorer::instance()->isDead = false;
+    Explorer::instance()->PlayerLife = 3;
+    Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
+    Variables.f_redScreenTimer = 0.0f;
+
+    for (int i = 0; i < 4; ++i)
+    {
+        Explorer::instance()->checkSavePoint[i] = false;
+    }
 }
 
 void SceneLevelOneA::Collision(float smallx, float largex, float smallz, float largez)
@@ -499,7 +513,6 @@ void SceneLevelOneA::ContinueGameOrNot()
 
 		else if (Application::IsKeyPressed('N'))
 		{
-			Reset();
 			Application::OpenGame();
 		}
 	}

@@ -40,7 +40,7 @@ void SceneLevelOneB::RenderFloorCeiling()
 
 void SceneLevelOneB::RenderScene()
 {
-
+    
     RenderPuzzle();
     //secondsave
     modelStack.PushMatrix();
@@ -224,6 +224,14 @@ void SceneLevelOneB::RenderDoor()
 	modelStack.Scale(4.9f, 4, 5);
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
+
+    modelStack.PushMatrix();
+    modelStack.Translate(30, 9, -488);
+    modelStack.Rotate(-90, 0, 0, 1);
+    modelStack.Rotate(90, 1, 0, 0);
+    modelStack.Scale(18, 18, 18);
+    RenderMesh(meshList[GEO_ELEVATOR], true);
+    modelStack.PopMatrix();
 
 }
 

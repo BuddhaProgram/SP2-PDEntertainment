@@ -20,7 +20,7 @@ MobGhost::MobGhost()
     mobTimeCount = 0.f;
     mobTimeCount2 = 0.f;
     AttackDamage = 10;
-    health = 4;
+    health = 8;
     kenaWhack = false;
     canHit = true;
 }

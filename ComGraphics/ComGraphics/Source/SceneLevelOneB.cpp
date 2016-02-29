@@ -196,6 +196,8 @@ void SceneLevelOneB::Init()
     meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
     meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
 
+    meshList[GEO_ELEVATOR] = MeshBuilder::GenerateQuad("elevator doors", Color(1, 0, 0));
+    meshList[GEO_ELEVATOR]->textureID = LoadTGA("Image//Elevator.tga");
     //puzzle inits
     meshList[GEO_LIGHTGREEN] = MeshBuilder::GenerateOBJ("green light", "OBJ//PuzzleLight.obj");
     meshList[GEO_LIGHTGREEN]->textureID = LoadTGA("Image//PuzzleLightGREEN.tga");
@@ -222,7 +224,7 @@ void SceneLevelOneB::Init()
 static float LSPEED = 10.f;
 
 
-void SceneLevelOneB::Reset()
+void SceneLevelOneB::ResetSameScene()
 {
 	Explorer::instance()->hp = 100;
 	Explorer::instance()->isDead = false;
@@ -234,6 +236,20 @@ void SceneLevelOneB::Reset()
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
 	}
+}
+
+void SceneLevelOneB::ResetAll()
+{
+    Explorer::instance()->hp = 100;
+    Explorer::instance()->isDead = false;
+    Explorer::instance()->PlayerLife = 3;
+    Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
+    Variables.f_redScreenTimer = 0.0f;
+
+    for (int i = 0; i < 4; ++i)
+    {
+        Explorer::instance()->checkSavePoint[i] = false;
+    }
 }
 
 void SceneLevelOneB::Collision(float smallx, float largex, float smallz, float largez)

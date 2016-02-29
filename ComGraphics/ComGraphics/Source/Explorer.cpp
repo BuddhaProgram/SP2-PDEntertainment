@@ -120,13 +120,13 @@ ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 			Explorer::instance()->itemAttack[SlotNumber - 1] = 1;
 
 		if (it->tool == ToolUI::Pickaxe)
-			Explorer::instance()->itemAttack[SlotNumber - 1] = 1;
-
-		else if (it->tool == ToolUI::BaseballBat)
 			Explorer::instance()->itemAttack[SlotNumber - 1] = 2;
 
-		else if (it->tool == ToolUI::Sword)
+		else if (it->tool == ToolUI::BaseballBat)
 			Explorer::instance()->itemAttack[SlotNumber - 1] = 4;
+
+		else if (it->tool == ToolUI::Sword)
+			Explorer::instance()->itemAttack[SlotNumber - 1] = 8;
 
 		else if (it->tool == ToolUI::Empty)
 			Explorer::instance()->itemAttack[SlotNumber - 1] = 0;
