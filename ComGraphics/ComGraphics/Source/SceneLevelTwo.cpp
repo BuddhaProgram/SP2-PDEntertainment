@@ -208,7 +208,8 @@ void SceneLevelTwo::Reset()
 	Explorer::instance()->PlayerLife = 3;
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
-
+	transSpikeDoor = 0;
+	closeDoors = false;
 	for (int i = 0; i < 4; ++i)
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
@@ -485,7 +486,7 @@ void SceneLevelTwo::Update(double dt)
 	}
 	else
 	{
-		Collision(-86, -77, -8, 12);
+		Collision(-90, -80, -12, 16);
 	}
 
 	if (anima.OpenDoor7)
@@ -494,7 +495,7 @@ void SceneLevelTwo::Update(double dt)
 	}
 	else
 	{
-		Collision(77, 86, -8, 12);
+		Collision(80, 90, -12, 16);
 	}
 
 	if (Misc.WithinArea(-76,76,128,360))
@@ -515,7 +516,7 @@ void SceneLevelTwo::Update(double dt)
 	if (closeDoors == true)
 	{
 		anima.CloseSlideDoor5(dt);
-		Collision(-13,13,120,125);
+		Collision(-20,20,115,125);
 	}
 	
 	if (transSpikeDoor > 140)
