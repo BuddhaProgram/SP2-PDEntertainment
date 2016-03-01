@@ -296,26 +296,23 @@ void SceneEnd::ContinueGameOrNot()
 	{
 		if (Application::IsKeyPressed('Y'))
 		{
-			if (Explorer::instance()->checkSavePoint[3] == false)
+			camera.position.x = 0;
+			camera.position.y = 10;
+			camera.position.z = 0;
+
+			--Explorer::instance()->PlayerLife;
+			Explorer::instance()->hp = 100;
+			Explorer::instance()->isDead = false;
+			Variables.f_redScreenTimer = 0.0f;
+
+			for (int i = 0; i < 3; ++i)
 			{
-				camera.position.x = 0;
-				camera.position.y = 10;
-				camera.position.z = 0;
-
-				--Explorer::instance()->PlayerLife;
-				Explorer::instance()->hp = 100;
-				Explorer::instance()->isDead = false;
-				Variables.f_redScreenTimer = 0.0f;
-
-				for (int i = 0; i < 3; ++i)
-				{
-					b_RepairDone[i] = false;
-					b_startRepair[i] = false;
-				}
-
-				f_RepairProcess = 0.0f;
-				f_rockY = 25.0f;
+				b_RepairDone[i] = false;
+				b_startRepair[i] = false;
 			}
+
+			f_RepairProcess = 0.0f;
+			f_rockY = 25.0f;
 		}
 
 		else if (Application::IsKeyPressed('N'))

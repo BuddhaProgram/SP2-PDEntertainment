@@ -111,7 +111,7 @@ void SceneLevelOneA::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    camera.Init(Vector3(0, 10, 424), Vector3(0, 10, 1), Vector3(0, 1, 0));
+    camera.Init(Vector3(0, 10, 420), Vector3(0, 10, 1), Vector3(0, 1, 0));
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("lightball", Color(1, 1, 1), 10, 20);
@@ -229,6 +229,7 @@ void SceneLevelOneA::Init()
     projectionStack.LoadMatrix(projection);
 
     Ghost.setSpawnGhost(-30, -15);
+	Explorer::instance()->SavePoint = camera.position;
 }
 
 static float LSPEED = 10.f;
@@ -501,16 +502,6 @@ void SceneLevelOneA::MouseClickFunction(double dt)
     }
 }
 
-void SceneLevelOneA::UpdateSavePoint()
-{
-	if (camera.position.x > 110.0f && camera.position.x < 130.0f && camera.position.z > 65.0f && camera.position.z < 85.0f && Application::IsKeyPressed('T'))
-	{
-		Explorer::instance()->ExplorerSavePoint(camera.position);
-	}
-}
-
-
-
 void SceneLevelOneA::UpdatePlayerDiesInteraction(double dt)
 {
 	if (Explorer::instance()->isDead == true)
@@ -527,32 +518,17 @@ void SceneLevelOneA::ContinueGameOrNot()
 	{
 		if (Application::IsKeyPressed('Y'))
 		{
-			if (Explorer::instance()->checkSavePoint[0] == false)
-			{
-				camera.position.x = 0;
-				camera.position.y = 10;
-				camera.position.z = 424;
+			camera.position = Explorer::instance()->SavePoint;
 
-				--Explorer::instance()->PlayerLife;
-				Explorer::instance()->hp = 100;
-				Explorer::instance()->isDead = false;
-				Variables.f_redScreenTimer = 0.0f;
+			--Explorer::instance()->PlayerLife;
+			Explorer::instance()->hp = 100;
+			Explorer::instance()->isDead = false;
+			Variables.f_redScreenTimer = 0.0f;
 
-				ResetSameScene();
+			ResetSameScene();
 
-				light[0].power = 1.0f;
-				glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
-			}
-
-			else if (Explorer::instance()->checkSavePoint[0] == true)
-			{
-				camera.position = Explorer::instance()->SavePoint;
-
-				--Explorer::instance()->PlayerLife;
-				Explorer::instance()->hp = 100;
-				Explorer::instance()->isDead = false;
-				Variables.f_redScreenTimer = 0.0f;
-			}
+			light[0].power = 1.0f;
+			glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 		}
 
 		else if (Application::IsKeyPressed('N'))
@@ -582,8 +558,7 @@ void SceneLevelOneA::Update(double dt)
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 	FPS = 1.f / (float)dt;
 	camera.Update(dt);
-    
-	Collision(115.0f, 125.0f, 70.0f, 80.0f);
+
 	Variables.f_rotatingTool += (float)(180 * dt);
 
 
@@ -631,7 +606,6 @@ void SceneLevelOneA::Update(double dt)
 	checkDoor3();
 	checkDrop();
 	EnvironmentAnimation(dt);
-	UpdateSavePoint();
 	AnimationCheck(dt);
 
 	//wall collision DO NOT TOUCH

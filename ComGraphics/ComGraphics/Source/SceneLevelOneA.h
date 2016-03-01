@@ -171,9 +171,6 @@ private:
 
 	void RenderPickUpPickAxe();
 
-	// Updates save point position
-	void UpdateSavePoint();
-
     //checkers and animation functions
 	void checkRubbleFall();
 	void checkDoor1(double dt);

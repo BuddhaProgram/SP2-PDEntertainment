@@ -226,6 +226,8 @@ void SceneLevelOneB::Init()
     PuzzleGhost1.setSpawnGhost(24, 31);
     PuzzleGhost2.setSpawnGhost(30, 31);
     BossOne.setSpawnBossOne(-30, 55);
+
+	Explorer::instance()->SavePoint = camera.position;
 }
 
 static float LSPEED = 10.f;
@@ -679,32 +681,17 @@ void SceneLevelOneB::ContinueGameOrNot()
 	{
 		if (Application::IsKeyPressed('Y'))
 		{
-			if (Explorer::instance()->checkSavePoint[1] == false)
-			{
-				camera.position.x = 204;
-				camera.position.y = 10;
-				camera.position.z = 0;
+			camera.position = Explorer::instance()->SavePoint;
 
-				--Explorer::instance()->PlayerLife;
-				Explorer::instance()->hp = 100;
-				Explorer::instance()->isDead = false;
-				Variables.f_redScreenTimer = 0.0f;
+			--Explorer::instance()->PlayerLife;
+			Explorer::instance()->hp = 100;
+			Explorer::instance()->isDead = false;
+			Variables.f_redScreenTimer = 0.0f;
 
-				ResetSameScene();
+			ResetSameScene();
 
-				light[0].power = 1.0f;
-				glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
-			}
-
-			else if (Explorer::instance()->checkSavePoint[1] == true)
-			{
-				camera.position = Explorer::instance()->SavePoint;
-
-				--Explorer::instance()->PlayerLife;
-				Explorer::instance()->hp = 100;
-				Explorer::instance()->isDead = false;
-				Variables.f_redScreenTimer = 0.0f;
-			}
+			light[0].power = 1.0f;
+			glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 		}
 
 		else if (Application::IsKeyPressed('N'))

@@ -37,8 +37,9 @@ public:
 	bool checkSavePoint[4];
 
 	void checkDead();
-	void ExplorerSavePoint(Vector3 pos);
 	Vector3 SavePoint;
+
+	float f_FlickeringLight;
 
 private:
 	Explorer();

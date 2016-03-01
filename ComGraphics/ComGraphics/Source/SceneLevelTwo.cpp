@@ -91,12 +91,12 @@ void SceneLevelTwo::Init()
 	light[0].type = Light::LIGHT_SPOT;
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 2.0f;
+	light[0].power = 1.0f;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(30));
-	light[0].cosInner = cos(Math::DegreeToRadian(15));
+	light[0].cosCutoff = cos(Math::DegreeToRadian(90));
+	light[0].cosInner = cos(Math::DegreeToRadian(1));
 	light[0].exponent = 3.f;
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 
@@ -114,8 +114,7 @@ void SceneLevelTwo::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    //camera.Init(Vector3(0, 10, -110), Vector3(0, 10, -1), Vector3(0, 1, 0));
-	camera.Init(Vector3(320, 10, -50), Vector3(0, 10, -1), Vector3(0, 1, 0));
+    camera.Init(Vector3(0, 10, 400), Vector3(0, 10, -1), Vector3(0, 1, 0));
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("lightball", Color(1, 1, 1), 10, 20);
@@ -226,6 +225,7 @@ void SceneLevelTwo::Init()
 
     //scene changer inits.............
     //scene changer init end.............
+	Explorer::instance()->SavePoint = camera.position;
 }
 
 static float LSPEED = 10.f;
@@ -532,31 +532,15 @@ void SceneLevelTwo::ContinueGameOrNot()
 	{
 		if (Application::IsKeyPressed('Y'))
 		{
-			if (Explorer::instance()->checkSavePoint[2] == false)
-			{
-				camera.position.x = 0;
-				camera.position.y = 10;
-				camera.position.z = 400;
+			camera.position = Explorer::instance()->SavePoint;
+			--Explorer::instance()->PlayerLife;
+			Explorer::instance()->hp = 100;
+			Explorer::instance()->isDead = false;
+			Variables.f_redScreenTimer = 0.0f;
 
-				--Explorer::instance()->PlayerLife;
-				Explorer::instance()->hp = 100;
-				Explorer::instance()->isDead = false;
-				Variables.f_redScreenTimer = 0.0f;
-
-				light[0].power = 1.0f;
-				glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
-				Reset();
-			}
-
-			else if (Explorer::instance()->checkSavePoint[2] == true)
-			{
-				camera.position = Explorer::instance()->SavePoint;
-
-				--Explorer::instance()->PlayerLife;
-				Explorer::instance()->hp = 100;
-				Explorer::instance()->isDead = false;
-				Variables.f_redScreenTimer = 0.0f;
-			}
+			light[0].power = 1.0f;
+			glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
+			Reset();
 		}
 
 		else if (Application::IsKeyPressed('N'))
@@ -961,13 +945,30 @@ void SceneLevelTwo::Update(double dt)
     if (Application::IsKeyPressed('4'))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-
+	Explorer::instance()->f_FlickeringLight += (float)dt;
     SwitchCheck(dt);
     //wall collision
     for (int i = 0; i < 60; i++)
     {
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
+
+	if (static_cast<int>(Explorer::instance()->f_FlickeringLight) < 2.0f)
+	{
+		light[0].power = 1.0f;
+		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
+	}
+
+	else if (Explorer::instance()->f_FlickeringLight < 2.2f)
+	{
+		light[0].power = 0.0f;
+		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
+	}
+
+	else if (Explorer::instance()->f_FlickeringLight < 2.4f)
+	{
+		Explorer::instance()->f_FlickeringLight = 0.0f;
+	}
 
 
 
@@ -990,9 +991,7 @@ void SceneLevelTwo::Update(double dt)
     MouseClickFunction(dt);
     /*-------------------------[End of Tool UI Functions]-------------------------------*/
 
-	std::cout << Variables.f_SwitchDebounce << std::endl;
-
-	//Variables.f_SwitchRotateOne -= (float)(10 * dt);
+	std::cout << Explorer::instance()->f_FlickeringLight << std::endl;
 	checkPlayerPosMisc();
 
 	/*-------------------------[Switches Function]-------------------------------*/
@@ -1004,6 +1003,11 @@ void SceneLevelTwo::Update(double dt)
 
 	SomeUpdates(dt);
 	camera.Update(dt);
+
+	if (Application::IsKeyPressed('Z'))
+	{
+		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
+	}
 }
 
 void SceneLevelTwo::RenderMesh(Mesh*mesh, bool enableLight)

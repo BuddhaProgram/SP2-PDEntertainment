@@ -40,6 +40,8 @@ Explorer::Explorer()
 	{
 		b_pickUpSuitCase[i] = false;
 	}
+
+	Explorer::instance()->f_FlickeringLight = 0.0f;
 }
 
 float Explorer::getHP()
@@ -196,8 +198,3 @@ ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 }
 
 //combat stuff
-
-void Explorer::ExplorerSavePoint(Vector3 pos)
-{
-	SavePoint = pos;
-}
