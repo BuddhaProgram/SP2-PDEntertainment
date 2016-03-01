@@ -399,3 +399,65 @@ void SceneLevelTwo::RenderPlayerDiesInteraction()
 		}
 	}
 }
+
+void SceneLevelTwo::RenderPuzzle()
+{
+	for (int i = 0, placing = 0; i < 60; i += 12, ++placing)
+	{
+		if (!Switches.b_PuzzleTwo[placing])
+		{
+			modelStack.PushMatrix();
+				modelStack.Translate((float)(312 - i), 17, -36);
+				modelStack.Scale(2, 2, 2);
+				modelStack.Rotate(90, 0, 1, 0);
+				RenderMesh(meshList[GEO_LIGHTRED], true);
+			modelStack.PopMatrix();
+		}
+
+		else if (Switches.b_PuzzleTwo[placing])
+		{
+			modelStack.PushMatrix();
+				modelStack.Translate((float)(312 - i), 17, -36);
+				modelStack.Scale(2, 2, 2);
+				modelStack.Rotate(90, 0, 1, 0);
+				RenderMesh(meshList[GEO_LIGHTGREEN], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	modelStack.PushMatrix();
+		modelStack.Translate(306, 5, -37);
+		modelStack.Scale(2, 2, 2);
+		modelStack.Rotate(-45, 1, 0, 0);
+		modelStack.Rotate(Variables.f_SwitchRotateOne, 1, 0, 0);
+		modelStack.Rotate(90, 0, 1, 0);
+		RenderMesh(meshList[GEO_LEVER], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+		modelStack.Translate(294, 5, -37);
+		modelStack.Scale(2, 2, 2);
+		modelStack.Rotate(-45, 1, 0, 0);
+		modelStack.Rotate(Variables.f_SwitchRotateTwo, 1, 0, 0);
+		modelStack.Rotate(90, 0, 1, 0);
+		RenderMesh(meshList[GEO_LEVER], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+		modelStack.Translate(282, 5, -37);
+		modelStack.Scale(2, 2, 2);
+		modelStack.Rotate(-45, 1, 0, 0);
+		modelStack.Rotate(Variables.f_SwitchRotateThree, 1, 0, 0);
+		modelStack.Rotate(90, 0, 1, 0);
+		RenderMesh(meshList[GEO_LEVER], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+		modelStack.Translate(270, 5, -37);
+		modelStack.Scale(2, 2, 2);
+		modelStack.Rotate(-45, 1, 0, 0);
+		modelStack.Rotate(Variables.f_SwitchRotateFour, 1, 0, 0);
+		modelStack.Rotate(90, 0, 1, 0);
+		RenderMesh(meshList[GEO_LEVER], true);
+	modelStack.PopMatrix();
+}

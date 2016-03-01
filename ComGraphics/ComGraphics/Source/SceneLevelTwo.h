@@ -156,6 +156,8 @@ private:
     // Switches Functions for puzzles
     void PuzzleTwoSwitchCheck(double dt);
 	void LogicAnimationSwitches(double dt);
+	void SwitchCollisionChecker();
+	void RenderPuzzle();
 
     // Tool UI functions
     void ToolsUI();

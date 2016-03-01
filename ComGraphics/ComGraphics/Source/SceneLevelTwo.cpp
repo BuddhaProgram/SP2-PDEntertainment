@@ -737,10 +737,15 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	}
 }
 
+void SceneLevelTwo::SwitchCollisionChecker()
+{
+	Collision(252, 320, -50, -34);
+}
+
 void SceneLevelTwo::PuzzleTwoSwitchCheck(double dt)
 {
 	Variables.f_SwitchDebounce += (float)dt;
-	if (camera.position.x > 301 && camera.position.x < 312 && camera.position.z > -55 && camera.position.z < -30)
+	if (camera.position.x > 300 && camera.position.x < 312 && camera.position.z > -55 && camera.position.z < -30)
 	{
 		if (Application::IsKeyPressed(VK_RBUTTON) && Variables.f_SwitchDebounce > 0.5f)
 		{
@@ -772,7 +777,7 @@ void SceneLevelTwo::PuzzleTwoSwitchCheck(double dt)
 		}
 	}
 
-	if (camera.position.x > 289 && camera.position.x < 299 && camera.position.z > -55 && camera.position.z < -30)
+	if (camera.position.x > 288 && camera.position.x < 300 && camera.position.z > -55 && camera.position.z < -30)
 	{
 		if (Application::IsKeyPressed(VK_RBUTTON) && Variables.f_SwitchDebounce > 0.5f)
 		{
@@ -792,7 +797,7 @@ void SceneLevelTwo::PuzzleTwoSwitchCheck(double dt)
 		}
 	}
 
-	if (camera.position.x > 277 && camera.position.x < 287 && camera.position.z > -55 && camera.position.z < -30)
+	if (camera.position.x > 276 && camera.position.x < 288 && camera.position.z > -55 && camera.position.z < -30)
 	{
 		if (Application::IsKeyPressed(VK_RBUTTON) && Variables.f_SwitchDebounce > 0.5f)
 		{
@@ -824,7 +829,7 @@ void SceneLevelTwo::PuzzleTwoSwitchCheck(double dt)
 		}
 	}
 
-	if (camera.position.x > 265 && camera.position.x < 275 && camera.position.z > -55 && camera.position.z < -30)
+	if (camera.position.x > 264 && camera.position.x < 276 && camera.position.z > -55 && camera.position.z < -30)
 	{
 		if (Application::IsKeyPressed(VK_RBUTTON) && Variables.f_SwitchDebounce > 0.5f)
 		{
@@ -869,7 +874,7 @@ void SceneLevelTwo::LogicAnimationSwitches(double dt)
 		}
 	}
 
-	else if (Variables.b_SwitchAnimate[0] == false)
+	if (Variables.b_SwitchAnimate[0] == false)
 	{
 		Variables.f_SwitchRotateOne += (float)(180.0f * dt);
 
@@ -889,7 +894,7 @@ void SceneLevelTwo::LogicAnimationSwitches(double dt)
 		}
 	}
 
-	else if (Variables.b_SwitchAnimate[1] == false)
+	if (Variables.b_SwitchAnimate[1] == false)
 	{
 		Variables.f_SwitchRotateTwo += (float)(180.0f * dt);
 
@@ -909,7 +914,7 @@ void SceneLevelTwo::LogicAnimationSwitches(double dt)
 		}
 	}
 
-	else if (Variables.b_SwitchAnimate[2] == false)
+	if (Variables.b_SwitchAnimate[2] == false)
 	{
 		Variables.f_SwitchRotateThree += (float)(180.0f * dt);
 
@@ -921,21 +926,21 @@ void SceneLevelTwo::LogicAnimationSwitches(double dt)
 
 	if (Variables.b_SwitchAnimate[3] == true)
 	{
-		Variables.f_SwitchRotateThree -= (float)(180.0f * dt);
+		Variables.f_SwitchRotateFour -= (float)(180.0f * dt);
 
-		if (Variables.f_SwitchRotateThree <= -90.0f)
+		if (Variables.f_SwitchRotateFour <= -90.0f)
 		{
-			Variables.f_SwitchRotateThree = -90.0f;
+			Variables.f_SwitchRotateFour = -90.0f;
 		}
 	}
 
-	else if (Variables.b_SwitchAnimate[3] == false)
+	if (Variables.b_SwitchAnimate[3] == false)
 	{
-		Variables.f_SwitchRotateThree += (float)(180.0f * dt);
+		Variables.f_SwitchRotateFour += (float)(180.0f * dt);
 
-		if (Variables.f_SwitchRotateThree >= 0.0f)
+		if (Variables.f_SwitchRotateFour >= 0.0f)
 		{
-			Variables.f_SwitchRotateThree = 0.0f;
+			Variables.f_SwitchRotateFour = 0.0f;
 		}
 	}
 }
@@ -964,11 +969,8 @@ void SceneLevelTwo::Update(double dt)
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
 
-	Collision(252 ,320, -50, -34); // switch collision
-	/*-------------------------[Switches Function]-------------------------------*/
-	PuzzleTwoSwitchCheck(dt);
-	LogicAnimationSwitches(dt);
-	Switches.SwitchPuzzleTwo(); // PLEASE USE THIS KEWPIE!
+
+
 	/*-------------------------[Death of the Explorer]-------------------------------*/
 	Explorer::instance()->checkDead();
 	UpdatePlayerDiesInteraction(dt);
@@ -992,6 +994,14 @@ void SceneLevelTwo::Update(double dt)
 
 	//Variables.f_SwitchRotateOne -= (float)(10 * dt);
 	checkPlayerPosMisc();
+
+	/*-------------------------[Switches Function]-------------------------------*/
+	LogicAnimationSwitches(dt);
+	PuzzleTwoSwitchCheck(dt);
+	SwitchCollisionChecker();
+	RenderPuzzle();
+	Switches.SwitchPuzzleTwo();
+
 	SomeUpdates(dt);
 	camera.Update(dt);
 }
@@ -1179,6 +1189,8 @@ void SceneLevelTwo::Render()
     RenderScene();
 	RenderTraps();
 
+	RenderPuzzle();
+
     RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
     RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
     RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
@@ -1210,61 +1222,6 @@ void SceneLevelTwo::Render()
 
 	for (float i = 0; i < Explorer::instance()->PlayerLife; ++i)
 		RenderModelOnScreen(meshList[GEO_HEALTHICON], 3.f, 3.f, 3.f, 90, 1, 0, 0, (22.f + i), 18.5f, 1.0f, false);
-
-	for (int i = 0, placing = 0; i < 60; i += 12, ++placing)
-	{
-		if (!Switches.b_PuzzleTwo[placing])
-		{
-			modelStack.PushMatrix();
-				modelStack.Translate((float)(312 - i), 17, -36);
-				modelStack.Scale(2, 2, 2);
-				modelStack.Rotate(90, 0, 1, 0);
-				RenderMesh(meshList[GEO_LIGHTRED], true);
-			modelStack.PopMatrix();
-		}
-
-		else if (Switches.b_PuzzleTwo[placing])
-		{
-			modelStack.PushMatrix();
-				modelStack.Translate((float)(312 - i), 17, -36);
-				modelStack.Scale(2, 2, 2);
-				modelStack.Rotate(90, 0, 1, 0);
-				RenderMesh(meshList[GEO_LIGHTGREEN], true);
-			modelStack.PopMatrix();
-		}
-	}
-
-		modelStack.PushMatrix();
-			modelStack.Translate(306, 5, -37);
-			modelStack.Scale(2, 2, 2);
-			modelStack.Rotate(Variables.f_SwitchRotateOne, 1, 0, 0);
-			modelStack.Rotate(90, 0, 1, 0);
-			RenderMesh(meshList[GEO_LEVER], true);
-		modelStack.PopMatrix();
-
-		modelStack.PushMatrix();
-			modelStack.Translate(294, 5, -37);
-			modelStack.Scale(2, 2, 2);
-			modelStack.Rotate(Variables.f_SwitchRotateTwo, 1, 0, 0);
-			modelStack.Rotate(90, 0, 1, 0);
-			RenderMesh(meshList[GEO_LEVER], true);
-		modelStack.PopMatrix();
-
-		modelStack.PushMatrix();
-			modelStack.Translate(282, 5, -37);
-			modelStack.Scale(2, 2, 2);
-			modelStack.Rotate(Variables.f_SwitchRotateThree, 1, 0, 0);
-			modelStack.Rotate(90, 0, 1, 0);
-			RenderMesh(meshList[GEO_LEVER], true);
-		modelStack.PopMatrix();
-
-		modelStack.PushMatrix();
-			modelStack.Translate(270, 5, -37);
-			modelStack.Scale(2, 2, 2);
-			modelStack.Rotate(Variables.f_SwitchRotateFour, 1, 0, 0);
-			modelStack.Rotate(90, 0, 1, 0);
-			RenderMesh(meshList[GEO_LEVER], true);
-		modelStack.PopMatrix();
 }
 
 void SceneLevelTwo::Exit()
