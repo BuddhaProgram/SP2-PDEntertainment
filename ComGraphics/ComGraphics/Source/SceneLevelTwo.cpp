@@ -213,7 +213,6 @@ void SceneLevelTwo::Reset()
 {
 	Explorer::instance()->hp = 100;
 	Explorer::instance()->isDead = false;
-	Explorer::instance()->PlayerLife = 3;
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
 	transSpikeDoor = 0;
@@ -472,6 +471,9 @@ void SceneLevelTwo::ContinueGameOrNot()
 				Explorer::instance()->hp = 100;
 				Explorer::instance()->isDead = false;
 				Variables.f_redScreenTimer = 0.0f;
+
+				light[0].power = 1.0f;
+				glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 				Reset();
 			}
 
@@ -488,7 +490,10 @@ void SceneLevelTwo::ContinueGameOrNot()
 
 		else if (Application::IsKeyPressed('N'))
 		{
-			Reset();
+			Explorer::instance()->hp = 100;
+			Explorer::instance()->isDead = false;
+			Explorer::instance()->PlayerLife = 3;
+			Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 			Application::OpenGame();
 		}
 	}
@@ -608,6 +613,11 @@ void SceneLevelTwo::SomeUpdates(double dt)
 		openDoor2 = true;
 	}
 
+	if (Misc.WithinArea(-76, 76, -272, -120) && timerDoor == 0)
+	{
+		Explorer::instance()->isDead = true;
+	}
+
 	if (Misc.WithinArea(-76, 76, 128, 360))
 
 		//trapwall collision
@@ -616,7 +626,7 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	if (Misc.WithinArea(-76, 76, 127, 361))
 
 	{
-		transSpikeDoor += 0.6f;
+		transSpikeDoor += 0.7f;
 	}
 	if (Misc.WithinArea(-12, 12, 80, 118))
 	{
@@ -626,7 +636,7 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	if (closeDoors == true)
 	{
 		anima.CloseSlideDoor5(dt);
-		//Collision(-20, 20, 115, 125);
+		Collision(-20, 20, 115, 125);
 	}
 
 	if (transSpikeDoor > 140)
@@ -642,7 +652,7 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	}
 	if (puzzling == true)
 	{
-		transSpikeWall2 += 0.5f;
+		transSpikeWall2 += (float)dt;
 	}
 	if (Misc.WithinArea(324, 356, -20, -4))
 	{

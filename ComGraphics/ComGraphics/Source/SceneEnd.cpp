@@ -600,6 +600,10 @@ void SceneEnd::Update(double dt)
 			Application::EndingCutScene();
 		}
 	}
+
+	if (Application::IsKeyPressed('E'))
+		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
+
     //door collision
     Collision(-40, 40, 70, 110);
     //unending wall collision
