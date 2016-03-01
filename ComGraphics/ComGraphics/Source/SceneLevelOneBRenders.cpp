@@ -34,14 +34,36 @@ void SceneLevelOneB::RenderFloorCeiling()
     modelStack.PopMatrix();
 
 }
-//void SceneLevelOneB::
-// renders the Starting level
+
+void SceneLevelOneB::ElevatorCheck()
+{
+    if (Misc.WithinArea(20, 40, -488, -468))
+    {
+        elevatorCheck = true;
+        if (Application::IsKeyPressed('E'))
+        {
+            Application::SceneLevel2();
+        }
+    }
+    else
+    {
+        elevatorCheck = false;
+    }
+}
 
 
 void SceneLevelOneB::RenderScene()
 {
     
     RenderPuzzle();
+    //elevator
+    modelStack.PushMatrix();
+    modelStack.Translate(30, 9, -488);
+    modelStack.Rotate(-90, 0, 0, 1);
+    modelStack.Rotate(90, 1, 0, 0);
+    modelStack.Scale(18, 18, 18);
+    RenderMesh(meshList[GEO_ELEVATOR], true);
+    modelStack.PopMatrix();
     //secondsave
     modelStack.PushMatrix();
 		modelStack.Translate(-200, 5, -200);
@@ -225,13 +247,7 @@ void SceneLevelOneB::RenderDoor()
 	RenderMesh(meshList[GEO_SLIDEDOORBTM], true);
 	modelStack.PopMatrix();
 
-    modelStack.PushMatrix();
-    modelStack.Translate(30, 9, -488);
-    modelStack.Rotate(-90, 0, 0, 1);
-    modelStack.Rotate(90, 1, 0, 0);
-    modelStack.Scale(18, 18, 18);
-    RenderMesh(meshList[GEO_ELEVATOR], true);
-    modelStack.PopMatrix();
+   
 
 }
 

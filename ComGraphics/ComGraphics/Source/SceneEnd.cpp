@@ -228,8 +228,13 @@ void SceneEnd::Init()
 	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
-	//scene changer inits.............
-	//scene changer init end.............
+    MobOne.setSpawnGhost(196, -60);
+    MobTwo.setSpawnGhost(210, -366);
+    MobThree.setSpawnGhost(-179, -333);
+
+    BossOne.setSpawnBossOne(-290, -45);
+
+
 }
 
 static float LSPEED = 10.f;

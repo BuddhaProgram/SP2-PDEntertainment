@@ -146,7 +146,7 @@ void Application::Run()
 
 
 
-	scene = Start;
+	scene = End;
 	scene->Init();
 
 

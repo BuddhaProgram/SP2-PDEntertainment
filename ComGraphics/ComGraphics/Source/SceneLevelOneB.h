@@ -160,6 +160,7 @@ private:
 	void checkDoor3();
 	void checkDoor4();
     void EnvironmentAnimation(double dt);
+    void ElevatorCheck();
     void attackCheck();
     void MobsSpawn();
 	void AnimationCheck(double dt);
@@ -216,6 +217,7 @@ private:
 	bool activateDoor3_1;
 	bool activateDoor3_2;
 	bool activateDoor4;
+    bool elevatorCheck;
 
     float CollXLarge[43];
     float CollXSmall[43];

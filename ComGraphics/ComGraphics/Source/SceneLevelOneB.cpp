@@ -242,6 +242,16 @@ void SceneLevelOneB::ResetSameScene()
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
 	}
+    //mob variables
+    PuzzleGhost1.health = 8;
+    PuzzleGhost2.health = 8;
+    BossOne.health = 32;
+    PuzzleGhost1.setSpawnGhost(24, 31);
+    PuzzleGhost2.setSpawnGhost(30, 31);
+    BossOne.setSpawnBossOne(-30, 55);
+    PuzzleGhost1.Spawn = false;
+    PuzzleGhost2.Spawn = false;
+    BossOne.Spawn = false;
 }
 
 void SceneLevelOneB::ResetAll()
@@ -668,7 +678,7 @@ void SceneLevelOneB::ContinueGameOrNot()
 
 		else if (Application::IsKeyPressed('N'))
 		{
-			Reset();
+			//Reset();
 			Application::OpenGame();
 		}
 	}
@@ -707,6 +717,7 @@ void SceneLevelOneB::Update(double dt)
     checkPlayerPosMisc();
 	checkDoor1();
 	checkDoor2();
+    ElevatorCheck();
 
 	//checkDoor3();
 	PuzzleOneSwitchCheck(dt);
@@ -968,7 +979,7 @@ void SceneLevelOneB::Render()
 
 
 
-	if (displayInteract1 || displayInteract2 || displayInteract3)
+	if (displayInteract1 || displayInteract2 || displayInteract3 || elevatorCheck)
 
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);

@@ -358,3 +358,30 @@ void SceneEndCutScene::RenderShipAndPod()
 	RenderMesh(meshList[GEO_SPACESHIP], true);
 	modelStack.PopMatrix();
 }
+
+void SceneEnd::RenderMobs()
+{
+    if (MobOne.Spawn)
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(MobOne.MobPosX, 5, MobOne.MobPosZ);
+        RenderMesh(meshList[GEO_GHOST1], true);
+        modelStack.PopMatrix();
+    }
+
+    if (MobTwo.Spawn)
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(MobTwo.MobPosX, 5, MobTwo.MobPosZ);
+        RenderMesh(meshList[GEO_GHOST1], true);
+        modelStack.PopMatrix();
+    }
+
+    if (MobThree.Spawn)
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(MobThree.MobPosX, 5, MobThree.MobPosZ);
+        RenderMesh(meshList[GEO_GHOST1], true);
+        modelStack.PopMatrix();
+    }
+}

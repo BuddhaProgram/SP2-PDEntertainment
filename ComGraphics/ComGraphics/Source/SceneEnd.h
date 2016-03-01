@@ -7,6 +7,8 @@
 #include "Mesh.h"
 #include "MatrixStack.h"
 #include "Light.h"
+#include "MobGhost.h"
+#include "MobBossOne.h"
 #include "OBJAnimation.h"
 #include <iomanip>
 
@@ -166,6 +168,7 @@ private:
 	float f_rockY;
 
 	// Combat
+    
 
 	// Tool UI functions
 	void MouseScrollToolSlot();
@@ -206,6 +209,18 @@ private:
 	Vector3 end;
 
 	float FPS;
+
+    MobGhost MobOne;
+    MobGhost MobTwo;
+    MobGhost MobThree;
+    MobBossOne BossOne;
+
+    int killCounter;
+    int waveCounter;
+
+    void RenderMobs();
+    void ResetMobs();
+
    
 };
 

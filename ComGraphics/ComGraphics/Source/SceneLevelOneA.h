@@ -79,7 +79,6 @@ class SceneLevelOneA : public Scene
 		GEO_DEADBLACKSCREEN,
 
 		GEO_HEALTHICON,
-
         GEO_SUITCASE,
         NUM_GEOMETRY,
     };
