@@ -1,0 +1,17 @@
+<map id="SceneLevelTwo::SomeUpdates" name="SceneLevelTwo::SomeUpdates">
+<area shape="rect" id="node2" href="$classAnimation.html#a4eb9c1532be1855d32190095634e78db" title="Animation::CloseSlideDoor5" alt="" coords="268,5,452,32"/>
+<area shape="rect" id="node3" href="$classSceneLevelTwo.html#a07e6440b5b6ca859dfda27ccb16d3129" title="SceneLevelTwo::Collision" alt="" coords="276,107,444,133"/>
+<area shape="rect" id="node5" href="$classApplication.html#ac90b614d3d19e689017ff91142f3b271" title="Application::EndingScene" alt="" coords="275,56,445,83"/>
+<area shape="rect" id="node7" href="$classExplorer.html#afc5637a94d6f094b796d80abf42d930b" title="Explorer::instance" alt="" coords="297,157,423,184"/>
+<area shape="rect" id="node8" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="273,208,447,235"/>
+<area shape="rect" id="node9" href="$classAnimation.html#adffb6929a72bfb13661572028b3f34d3" title="Animation::OpenQPDOOR1" alt="" coords="269,259,451,285"/>
+<area shape="rect" id="node10" href="$classAnimation.html#aea9a496c1380d474a48090aae15c7575" title="Animation::OpenQPDOOR2" alt="" coords="269,309,451,336"/>
+<area shape="rect" id="node11" href="$classAnimation.html#a8039cb2f548a9c56bd50ef8104e8a136" title="Animation::OpenQPDOOR3" alt="" coords="269,360,451,387"/>
+<area shape="rect" id="node12" href="$classAnimation.html#a735e62d46e2c9a7ea8a2911dba1a2da9" title="Animation::OpenQPDOOR4" alt="" coords="269,411,451,437"/>
+<area shape="rect" id="node13" href="$classAnimation.html#a4a153b5ee2aa52af33e750c24c311944" title="Animation::OpenQPDOOR5" alt="" coords="269,461,451,488"/>
+<area shape="rect" id="node14" href="$classSceneLevelTwo.html#a95ede72b1fd4719998405977356a3592" title="SceneLevelTwo::proximitycheck" alt="" coords="257,512,463,539"/>
+<area shape="rect" id="node15" href="$classSceneLevelTwo.html#ab1de6c7dd72b0416fdcc79040db55503" title="SceneLevelTwo::SpecialCollision" alt="" coords="255,563,465,589"/>
+<area shape="rect" id="node16" href="$classmisc.html#a0f8d72dfe38a0284899586da142daf8a" title="misc::WithinArea" alt="" coords="299,613,421,640"/>
+<area shape="rect" id="node4" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="513,335,668,361"/>
+<area shape="rect" id="node6" href="$classScene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478" title="Scene::Init" alt="" coords="549,56,633,83"/>
+</map>

@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="ik__IVirtualRefCounted_8h" kind="file" language="C++">
+    <compoundname>ik_IVirtualRefCounted.h</compoundname>
+    <includes refid="ik__irrKlangTypes_8h" local="yes">ik_irrKlangTypes.h</includes>
+    <includedby refid="ik__ISoundSource_8h" local="yes">ComGraphics/irrKlang/include/ik_ISoundSource.h</includedby>
+    <includedby refid="ik__ISound_8h" local="yes">ComGraphics/irrKlang/include/ik_ISound.h</includedby>
+    <includedby refid="ik__ISoundEffectControl_8h" local="yes">ComGraphics/irrKlang/include/ik_ISoundEffectControl.h</includedby>
+    <includedby refid="irrKlang_8h" local="yes">ComGraphics/irrKlang/include/irrKlang.h</includedby>
+    <incdepgraph>
+      <node id="4603">
+        <label>wchar.h</label>
+      </node>
+      <node id="4601">
+        <label>ComGraphics/irrKlang/include/ik_IVirtualRefCounted.h</label>
+        <link refid="ik_IVirtualRefCounted.h"/>
+        <childnode refid="4602" relation="include">
+        </childnode>
+      </node>
+      <node id="4602">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="4603" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4620">
+        <label>ComGraphics/Source/OpeningCutScene2.cpp</label>
+        <link refid="OpeningCutScene2_8cpp"/>
+      </node>
+      <node id="4629">
+        <label>ComGraphics/Source/SceneLevelTwoRenders.cpp</label>
+        <link refid="SceneLevelTwoRenders_8cpp"/>
+      </node>
+      <node id="4623">
+        <label>ComGraphics/Source/SceneEndRenders.cpp</label>
+        <link refid="SceneEndRenders_8cpp"/>
+      </node>
+      <node id="4618">
+        <label>ComGraphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="4609">
+        <label>ComGraphics/Source/Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="4610" relation="include">
+        </childnode>
+        <childnode refid="4631" relation="include">
+        </childnode>
+      </node>
+      <node id="4627">
+        <label>ComGraphics/Source/SceneLevelOneBRenders.cpp</label>
+        <link refid="SceneLevelOneBRenders_8cpp"/>
+      </node>
+      <node id="4615">
+        <label>ComGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="4608">
+        <label>ComGraphics/irrKlang/plugins/ikpMP3/ikpMP3.cpp</label>
+        <link refid="ikpMP3_8cpp"/>
+      </node>
+      <node id="4619">
+        <label>ComGraphics/Source/OpeningCutScene.cpp</label>
+        <link refid="OpeningCutScene_8cpp"/>
+      </node>
+      <node id="4607">
+        <label>ComGraphics/irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="4608" relation="include">
+        </childnode>
+        <childnode refid="4609" relation="include">
+        </childnode>
+      </node>
+      <node id="4610">
+        <label>ComGraphics/Source/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="4611" relation="include">
+        </childnode>
+        <childnode refid="4612" relation="include">
+        </childnode>
+        <childnode refid="4614" relation="include">
+        </childnode>
+        <childnode refid="4615" relation="include">
+        </childnode>
+        <childnode refid="4616" relation="include">
+        </childnode>
+        <childnode refid="4617" relation="include">
+        </childnode>
+        <childnode refid="4618" relation="include">
+        </childnode>
+        <childnode refid="4619" relation="include">
+        </childnode>
+        <childnode refid="4620" relation="include">
+        </childnode>
+        <childnode refid="4621" relation="include">
+        </childnode>
+        <childnode refid="4622" relation="include">
+        </childnode>
+        <childnode refid="4623" relation="include">
+        </childnode>
+        <childnode refid="4624" relation="include">
+        </childnode>
+        <childnode refid="4625" relation="include">
+        </childnode>
+        <childnode refid="4626" relation="include">
+        </childnode>
+        <childnode refid="4627" relation="include">
+        </childnode>
+        <childnode refid="4628" relation="include">
+        </childnode>
+        <childnode refid="4629" relation="include">
+        </childnode>
+        <childnode refid="4630" relation="include">
+        </childnode>
+      </node>
+      <node id="4616">
+        <label>ComGraphics/Source/Credits.cpp</label>
+        <link refid="Credits_8cpp"/>
+      </node>
+      <node id="4625">
+        <label>ComGraphics/Source/SceneLevelOneARenders.cpp</label>
+        <link refid="SceneLevelOneARenders_8cpp"/>
+      </node>
+      <node id="4621">
+        <label>ComGraphics/Source/SceneEnd.cpp</label>
+        <link refid="SceneEnd_8cpp"/>
+      </node>
+      <node id="4606">
+        <label>ComGraphics/irrKlang/include/ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="4607" relation="include">
+        </childnode>
+      </node>
+      <node id="4605">
+        <label>ComGraphics/irrKlang/include/ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="4606" relation="include">
+        </childnode>
+        <childnode refid="4632" relation="include">
+        </childnode>
+        <childnode refid="4607" relation="include">
+        </childnode>
+      </node>
+      <node id="4628">
+        <label>ComGraphics/Source/SceneLevelTwo.cpp</label>
+        <link refid="SceneLevelTwo_8cpp"/>
+      </node>
+      <node id="4612">
+        <label>ComGraphics/Source/SceneOpening.h</label>
+        <link refid="SceneOpening_8h"/>
+        <childnode refid="4611" relation="include">
+        </childnode>
+        <childnode refid="4613" relation="include">
+        </childnode>
+      </node>
+      <node id="4632">
+        <label>ComGraphics/irrKlang/include/ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="4607" relation="include">
+        </childnode>
+      </node>
+      <node id="4604">
+        <label>ComGraphics/irrKlang/include/ik_IVirtualRefCounted.h</label>
+        <link refid="ik_IVirtualRefCounted.h"/>
+        <childnode refid="4605" relation="include">
+        </childnode>
+        <childnode refid="4633" relation="include">
+        </childnode>
+        <childnode refid="4634" relation="include">
+        </childnode>
+        <childnode refid="4607" relation="include">
+        </childnode>
+      </node>
+      <node id="4614">
+        <label>ComGraphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
+      </node>
+      <node id="4626">
+        <label>ComGraphics/Source/SceneLevelOneB.cpp</label>
+        <link refid="SceneLevelOneB_8cpp"/>
+      </node>
+      <node id="4622">
+        <label>ComGraphics/Source/SceneEndCutScene.cpp</label>
+        <link refid="SceneEndCutScene_8cpp"/>
+      </node>
+      <node id="4611">
+        <label>ComGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="4624">
+        <label>ComGraphics/Source/SceneLevelOneA.cpp</label>
+        <link refid="SceneLevelOneA_8cpp"/>
+      </node>
+      <node id="4633">
+        <label>ComGraphics/irrKlang/include/ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="4632" relation="include">
+        </childnode>
+        <childnode refid="4607" relation="include">
+        </childnode>
+      </node>
+      <node id="4613">
+        <label>ComGraphics/Source/SceneOpening.cpp</label>
+        <link refid="SceneOpening_8cpp"/>
+      </node>
+      <node id="4634">
+        <label>ComGraphics/irrKlang/include/ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="4633" relation="include">
+        </childnode>
+        <childnode refid="4607" relation="include">
+        </childnode>
+      </node>
+      <node id="4630">
+        <label>ComGraphics/Source/SceneStart.cpp</label>
+        <link refid="SceneStart_8cpp"/>
+      </node>
+      <node id="4631">
+        <label>ComGraphics/Source/Music.cpp</label>
+        <link refid="Music_8cpp"/>
+      </node>
+      <node id="4617">
+        <label>ComGraphics/Source/CutSceneOne.cpp</label>
+        <link refid="CutSceneOne_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classirrklang_1_1IVirtualRefCounted" prot="public">irrklang::IVirtualRefCounted</innerclass>
+    <innernamespace refid="namespaceirrklang">irrklang</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>2002-2014<sp/>Nikolaus<sp/>Gebhardt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>&quot;irrKlang&quot;<sp/>library.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>copyright<sp/>notice<sp/>in<sp/>irrKlang.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__I_IRRKLANG_VIRTUAL_UNKNOWN_H_INCLUDED__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__I_IRRKLANG_VIRTUAL_UNKNOWN_H_INCLUDED__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ik__irrKlangTypes_8h" kindref="compound">ik_irrKlangTypes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceirrklang" kindref="compound">irrklang</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"></codeline>
+<codeline lineno="19" refid="classirrklang_1_1IVirtualRefCounted" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classirrklang_1_1IVirtualRefCounted" kindref="compound">IVirtualRefCounted</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classirrklang_1_1IVirtualRefCounted_1a54ed4b2c2bf1fd7666f7d78a9e768612" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classirrklang_1_1IVirtualRefCounted_1a54ed4b2c2bf1fd7666f7d78a9e768612" kindref="member">~IVirtualRefCounted</ref>()</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classirrklang_1_1IVirtualRefCounted_1a1720491c5a3a511985903bfa3c829018" kindref="member">grab</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classirrklang_1_1IVirtualRefCounted_1a6602c3d110f23410c5bca8a08b709aa4" kindref="member">drop</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>irrklang</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/irrKlang/include/ik_IVirtualRefCounted.h"/>
+  </compounddef>
+</doxygen>

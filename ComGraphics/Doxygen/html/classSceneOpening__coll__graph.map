@@ -1,0 +1,23 @@
+<map id="SceneOpening" name="SceneOpening">
+<area shape="rect" id="node2" href="$classScene.html" title="Scene" alt="" coords="917,435,975,461"/>
+<area shape="rect" id="node16" href="$classApplication.html" title="Application" alt="" coords="1143,241,1229,268"/>
+<area shape="rect" id="node3" href="$classSwitchLightPuzzle.html" title="SwitchLightPuzzle" alt="" coords="575,335,704,361"/>
+<area shape="rect" id="node5" href="$classGlobalVariables.html" title="GlobalVariables" alt="" coords="583,487,696,513"/>
+<area shape="rect" id="node8" href="$classmisc.html" title="misc" alt="" coords="614,385,665,412"/>
+<area shape="rect" id="node9" href="$structLight.html" title="Light" alt="" coords="921,708,971,735"/>
+<area shape="rect" id="node11" href="$structVector3.html" title="Defines a 3D vector and its methods. " alt="" coords="606,891,673,917"/>
+<area shape="rect" id="node12" href="$structPosition.html" title="Position" alt="" coords="605,840,674,867"/>
+<area shape="rect" id="node13" href="$structColor.html" title="Color" alt="" coords="613,639,665,665"/>
+<area shape="rect" id="node14" href="$classCamera3.html" title="Camera3" alt="" coords="1149,849,1223,876"/>
+<area shape="rect" id="node30" href="$structMaterial.html" title="Material" alt="" coords="912,1015,980,1041"/>
+<area shape="rect" id="node31" href="$structComponent.html" title="Component" alt="" coords="595,1079,683,1105"/>
+<area shape="rect" id="node15" href="$classCamera.html" title="Camera" alt="" coords="913,888,979,915"/>
+<area shape="rect" id="node17" href="$classMusic.html" title="Music" alt="" coords="917,141,975,168"/>
+<area shape="rect" id="node18" href="$classirrklang_1_1ISoundEngine.html" title="Interface to the sound engine, for playing 3d and 2d sound and music. " alt="" coords="563,68,715,95"/>
+<area shape="rect" id="node19" href="$classirrklang_1_1IRefCounted.html" title="Base class of most objects of the irrKlang. " alt="" coords="218,63,361,89"/>
+<area shape="rect" id="node22" href="$classirrklang_1_1ISoundSource.html" title="A sound source describes an input file (.ogg, .mp3, .wav or similar) and its default settings..." alt="" coords="563,169,716,196"/>
+<area shape="rect" id="node23" href="$classirrklang_1_1IVirtualRefCounted.html" title="Reference counting base class for objects in the Irrlicht Engine similar to IRefCounted. " alt="" coords="200,169,379,196"/>
+<area shape="rect" id="node24" href="$classStopWatch.html" title="StopWatch" alt="" coords="903,241,989,268"/>
+<area shape="rect" id="node27" href="$classMS.html" title="Matrix Stack class. " alt="" coords="1165,1321,1207,1348"/>
+<area shape="rect" id="node29" href="$classMesh.html" title="To store VBO (vertex &amp; color buffer) and IBO (index buffer) " alt="" coords="1159,1064,1213,1091"/>
+</map>

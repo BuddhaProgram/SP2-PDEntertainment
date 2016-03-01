@@ -1,0 +1,6 @@
+<map id="MobBossOne::checkAttack" name="MobBossOne::checkAttack">
+<area shape="rect" id="node2" href="$classMobBossOne.html#a9c3de91039994e9339c3f5a14f093a27" title="MobBossOne::move" alt="" coords="236,31,375,57"/>
+<area shape="rect" id="node3" href="$classSceneEnd.html#ab7bfa2bfcb6149aecb24f587a8d1e462" title="SceneEnd::moveMob" alt="" coords="435,5,581,32"/>
+<area shape="rect" id="node5" href="$classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="423,56,593,83"/>
+<area shape="rect" id="node4" href="$classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="641,5,772,32"/>
+</map>

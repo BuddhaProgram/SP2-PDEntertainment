@@ -1,0 +1,67 @@
+<map id="SceneLevelOneB::Update" name="SceneLevelOneB::Update">
+<area shape="rect" id="node2" href="$classSceneLevelOneB.html#ab1bba86d23948ef21b989a4ff319d65e" title="SceneLevelOneB::Animation\lCheck" alt="" coords="240,150,427,191"/>
+<area shape="rect" id="node4" href="$classAnimation.html#a62d995267b5aad0480edb98f2ccecd20" title="Animation::OpenSlideDoor1" alt="" coords="508,5,691,32"/>
+<area shape="rect" id="node9" href="$classExplorer.html#afad219513d65c2efdc84490bd8c06bde" title="Explorer::checkDead" alt="" coords="528,563,671,589"/>
+<area shape="rect" id="node10" href="$classExplorer.html#afc5637a94d6f094b796d80abf42d930b" title="Explorer::instance" alt="" coords="1287,867,1414,893"/>
+<area shape="rect" id="node11" href="$classSceneLevelOneB.html#a3177b86100055be275d4f9738af818fa" title="SceneLevelOneB::checkDoor1" alt="" coords="234,1596,433,1623"/>
+<area shape="rect" id="node12" href="$classSceneLevelOneB.html#ae689e8e0ff0bc56a3882d27ac0cb0b99" title="SceneLevelOneB::Collision" alt="" coords="510,1221,689,1248"/>
+<area shape="rect" id="node14" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="768,1551,943,1577"/>
+<area shape="rect" id="node16" href="$classSceneLevelOneB.html#a2bdf27321c331a118c470bf750c6e461" title="SceneLevelOneB::checkDoor2" alt="" coords="234,1159,433,1185"/>
+<area shape="rect" id="node17" href="$classSceneLevelOneB.html#af76b3c4469afe2cbf2349095fede55e2" title="SceneLevelOneB::checkDoor3" alt="" coords="234,1697,433,1724"/>
+<area shape="rect" id="node18" href="$classSceneLevelOneB.html#a0319f20e60159cf5eb74489bff0860bc" title="SceneLevelOneB::checkDoor4" alt="" coords="234,1428,433,1455"/>
+<area shape="rect" id="node19" href="$classHostileMob.html#ae216bbb1e78623ca4fd1420d4ef90412" title="HostileMob::checkPlayerPos" alt="" coords="238,1931,429,1957"/>
+<area shape="rect" id="node20" href="$classSceneLevelOneB.html#adf46e437e991dca443d91b0ff689768d" title="SceneLevelOneB::checkPlayer\lPosMisc" alt="" coords="233,1982,434,2023"/>
+<area shape="rect" id="node21" href="$classSceneLevelOneB.html#ac92af3bf7c49f02f6e444af93d940150" title="SceneLevelOneB::Continue\lGameOrNot" alt="" coords="243,1479,423,1521"/>
+<area shape="rect" id="node22" href="$classApplication.html#adeed1a6fea5cbe66da30dfe5b9651b7e" title="Application::OpenGame" alt="" coords="519,1779,679,1805"/>
+<area shape="rect" id="node24" href="$classSceneLevelOneB.html#a9276588fd0ebaa37abfc2cf4048f5abd" title="SceneLevelOneB::Elevator\lCheck" alt="" coords="246,1865,421,1906"/>
+<area shape="rect" id="node27" href="$classSceneLevelOneB.html#aa10206c5123470e38283a1df66d8ab05" title="SceneLevelOneB::Environment\lAnimation" alt="" coords="233,2047,433,2089"/>
+<area shape="rect" id="node28" href="$classSceneLevelOneB.html#a5411c8c3f7e50aa41842774fd7e79d29" title="SceneLevelOneB::LogicAnimation\lSwitches" alt="" coords="224,2113,443,2154"/>
+<area shape="rect" id="node29" href="$classHostileMob.html#a9cf220ac33863bbdb5b45e9235e2e8ef" title="HostileMob::MobCollision" alt="" coords="249,2179,418,2205"/>
+<area shape="rect" id="node30" href="$classSceneLevelOneB.html#a7213352e416ca0f5e3b920a46048147a" title="SceneLevelOneB::MobsSpawn" alt="" coords="233,1647,433,1673"/>
+<area shape="rect" id="node31" href="$classSceneLevelOneB.html#af248f8f3063609e573e6c695898e91e8" title="SceneLevelOneB::MouseClick\lFunction" alt="" coords="235,761,432,802"/>
+<area shape="rect" id="node38" href="$classSceneLevelOneB.html#aede4cec07c3f4dd58fe4cd30b4996e3e" title="SceneLevelOneB::MouseScroll\lToolSlot" alt="" coords="1013,429,1215,470"/>
+<area shape="rect" id="node39" href="$classMobGhost.html#a60251190be4ba35ceb50a726ddbebf51" title="MobGhost::move" alt="" coords="273,1057,393,1084"/>
+<area shape="rect" id="node46" href="$classMobBossOne.html#a9c3de91039994e9339c3f5a14f093a27" title="MobBossOne::move" alt="" coords="264,1108,403,1135"/>
+<area shape="rect" id="node50" href="$classSceneLevelOneB.html#a147d7c92d2b42363f3c378f7492c30cb" title="SceneLevelOneB::PickUpSuitcase\lInteraction" alt="" coords="1003,1231,1225,1273"/>
+<area shape="rect" id="node51" href="$classSceneLevelOneB.html#a51da5bf853a804052fe9f04d4d3abba5" title="SceneLevelOneB::PuzzleOne\lSwitchCheck" alt="" coords="237,1799,430,1841"/>
+<area shape="rect" id="node52" href="$structPosition.html#a2919b2441baf7a2f799791d65a1cfc15" title="Position::Set" alt="" coords="285,2229,382,2256"/>
+<area shape="rect" id="node53" href="$structVector3.html#a9c25d604bd52b162cfcb56302ef032bb" title="Set the elements of this vector. " alt="" coords="286,2280,381,2307"/>
+<area shape="rect" id="node54" href="$classSceneLevelOneB.html#a4f25aba5b048f19a3e31fcf3869f51d7" title="SceneLevelOneB::SwitchCollision\lChecker" alt="" coords="225,1210,442,1251"/>
+<area shape="rect" id="node55" href="$classSwitchLightPuzzle.html#a135ad4967a276e350a712d66f37046ef" title="SwitchLightPuzzle::\lSwitchPuzzleOne" alt="" coords="265,2331,402,2373"/>
+<area shape="rect" id="node56" href="$classSceneLevelOneB.html#abc979783622fe908a8bb929429da8141" title="SceneLevelOneB::ToolsUI" alt="" coords="247,1377,419,1404"/>
+<area shape="rect" id="node59" href="$classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="Camera3::Update" alt="" coords="272,896,395,923"/>
+<area shape="rect" id="node66" href="$classSceneLevelOneB.html#aacabdc244496e67cdc2ad550345489b1" title="SceneLevelOneB::UpdatePlayer\lDiesInteraction" alt="" coords="1011,529,1217,570"/>
+<area shape="rect" id="node3" href="$classAnimation.html#aa6d2f3161c6e868bd02613956b465192" title="Animation::CloseSlideDoor_Boss" alt="" coords="492,259,707,285"/>
+<area shape="rect" id="node5" href="$classAnimation.html#a62932edc6c94a6875c71953457c375d8" title="Animation::OpenSlideDoor2" alt="" coords="508,56,691,83"/>
+<area shape="rect" id="node6" href="$classAnimation.html#ae899456275cfec205bb45f8f248650f2" title="Animation::OpenSlideDoor3" alt="" coords="508,107,691,133"/>
+<area shape="rect" id="node7" href="$classAnimation.html#aecad4a9323a0c5e23833d153c7194dae" title="Animation::OpenSlideDoor4" alt="" coords="508,157,691,184"/>
+<area shape="rect" id="node8" href="$classAnimation.html#aff8def7dc6e98ecf67f411a98715c18d" title="Animation::OpenSlideDoor_Boss" alt="" coords="493,208,705,235"/>
+<area shape="rect" id="node15" href="$classSceneLevelOneB.html#ab8c8534175926113db5bffecd6bbe5a6" title="SceneLevelOneB::proximitycheck" alt="" coords="491,1677,708,1704"/>
+<area shape="rect" id="node13" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="778,917,933,944"/>
+<area shape="rect" id="node23" href="$classScene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478" title="Scene::Init" alt="" coords="813,1880,897,1907"/>
+<area shape="rect" id="node25" href="$classApplication.html#a71151e291360fac88840aa230e9adcd1" title="Application::SceneLevel2" alt="" coords="516,1981,683,2008"/>
+<area shape="rect" id="node26" href="$classmisc.html#a0f8d72dfe38a0284899586da142daf8a" title="misc::WithinArea" alt="" coords="538,1880,661,1907"/>
+<area shape="rect" id="node32" href="$classSceneLevelOneB.html#a2bfa4551ac0b1f099c42c2193b55df47" title="SceneLevelOneB::attackCheck" alt="" coords="498,512,701,539"/>
+<area shape="rect" id="node33" href="$classmisc.html#af425955855ed4c3d4f09621afdf11785" title="misc::hitting" alt="" coords="809,360,902,387"/>
+<area shape="rect" id="node36" href="$classMobGhost.html#abbd272b8574387f40995ae457cc423b2" title="MobGhost::TakeDamage" alt="" coords="772,563,939,589"/>
+<area shape="rect" id="node37" href="$classMobBossOne.html#a38f2b5f17d120031b88a7ddae9254fce" title="MobBossOne::TakeDamage" alt="" coords="763,512,948,539"/>
+<area shape="rect" id="node34" href="$Misc_8cpp.html#a15f09d45e07d38822b5ecf228e503e36" title="getAngle" alt="" coords="1077,360,1151,387"/>
+<area shape="rect" id="node35" href="$namespaceMath.html#a1a1d364c850f9d66fda85cf71598bbe5" title="Converts from radians to degrees. " alt="" coords="1273,360,1428,387"/>
+<area shape="rect" id="node40" href="$classMobGhost.html#ac91ee578e6e4ecbb26ea3c95044c7335" title="MobGhost::checkAttack" alt="" coords="518,1120,681,1147"/>
+<area shape="rect" id="node44" href="$structVector3.html#aaef4f25a38878a640ab4a48002a7eff8" title="Normalize this vector and return a reference to it. " alt="" coords="533,1019,666,1045"/>
+<area shape="rect" id="node41" href="$classMobGhost.html#a682a34b867af027921633a1a7f007070" title="MobGhost::attack" alt="" coords="792,1069,919,1096"/>
+<area shape="rect" id="node43" href="$classMobGhost.html#a80bf2d32c1b8c2550160d36ec79f8f84" title="MobGhost::proximitycheck" alt="" coords="766,1019,945,1045"/>
+<area shape="rect" id="node42" href="$classExplorer.html#a6827c0db7864e0bfb1716cc2767dec2d" title="Explorer::MinusHP" alt="" coords="1049,1069,1179,1096"/>
+<area shape="rect" id="node45" href="$structVector3.html#a200024a8442329de9a625ed58ffe7075" title="Return length of vector. " alt="" coords="798,867,913,893"/>
+<area shape="rect" id="node47" href="$classMobBossOne.html#a15cf315a37065c7e00aecd2f03ca9823" title="MobBossOne::checkAttack" alt="" coords="508,1171,691,1197"/>
+<area shape="rect" id="node48" href="$classMobBossOne.html#aecb3709f09de4706becf6754b1744682" title="MobBossOne::attack" alt="" coords="783,1171,928,1197"/>
+<area shape="rect" id="node49" href="$classMobBossOne.html#af5c21d147c9507ecdb5c2ca4b530a21b" title="MobBossOne::proximitycheck" alt="" coords="757,1120,954,1147"/>
+<area shape="rect" id="node57" href="$classExplorer.html#a2314ec87110e38517fe9c2952bcb0b31" title="Explorer::InsertToolSlot" alt="" coords="521,1323,678,1349"/>
+<area shape="rect" id="node58" href="$classExplorer.html#a227a8dd80aa001ea416b4ed403281198" title="Explorer::CheckForDoubleTool" alt="" coords="756,1323,955,1349"/>
+<area shape="rect" id="node60" href="$classCamera3.html#a576422f8f2d0660f27eed0fc817b2ae5" title="Camera3::CameraRotation" alt="" coords="512,917,687,944"/>
+<area shape="rect" id="node61" href="$structVector3.html#aa1cdc5357009b47fe585ddd61e263aad" title="Cross product of 2 vectors. " alt="" coords="545,715,654,741"/>
+<area shape="rect" id="node63" href="$classCamera3.html#a021022df76481c9e9fd5c3cf5fe51cf7" title="Camera3::HumanControl" alt="" coords="517,1069,681,1096"/>
+<area shape="rect" id="node64" href="$structVector3.html#a2da0f00c5529bced69763320dac9c414" title="Return a copy of this vector, normalized. " alt="" coords="529,765,669,792"/>
+<area shape="rect" id="node65" href="$classCamera3.html#a4b10106bcd89f21e3cf3e39f04d8c1cb" title="Camera3::Reset" alt="" coords="541,968,657,995"/>
+<area shape="rect" id="node62" href="$structVector3.html#afa5e0c801fc2c8a820a54ea99302fe08" title="Vector3 default constructor. " alt="" coords="795,816,915,843"/>
+</map>

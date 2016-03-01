@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="spawnPoints_8cpp" kind="file" language="C++">
+    <compoundname>spawnPoints.cpp</compoundname>
+    <includes refid="spawnPoints_8h" local="yes">spawnPoints.h</includes>
+    <incdepgraph>
+      <node id="7544">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="7545" relation="include">
+        </childnode>
+        <childnode refid="7550" relation="include">
+        </childnode>
+      </node>
+      <node id="7543">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="7544" relation="include">
+        </childnode>
+      </node>
+      <node id="7546">
+        <label>cmath</label>
+      </node>
+      <node id="7542">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="7543" relation="include">
+        </childnode>
+      </node>
+      <node id="7540">
+        <label>ComGraphics/Source/spawnPoints.cpp</label>
+        <link refid="spawnPoints.cpp"/>
+        <childnode refid="7541" relation="include">
+        </childnode>
+      </node>
+      <node id="7547">
+        <label>exception</label>
+      </node>
+      <node id="7548">
+        <label>ctime</label>
+      </node>
+      <node id="7541">
+        <label>spawnPoints.h</label>
+        <link refid="spawnPoints_8h"/>
+        <childnode refid="7542" relation="include">
+        </childnode>
+      </node>
+      <node id="7549">
+        <label>cstdlib</label>
+      </node>
+      <node id="7550">
+        <label>iostream</label>
+      </node>
+      <node id="7545">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="7546" relation="include">
+        </childnode>
+        <childnode refid="7547" relation="include">
+        </childnode>
+        <childnode refid="7548" relation="include">
+        </childnode>
+        <childnode refid="7549" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="spawnPoints_8cpp_1a8dac6933c975fbceb83e55ecc7918a1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setSpawns</definition>
+        <argsstring>()</argsstring>
+        <name>setSpawns</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/spawnPoints.cpp" line="3" column="1" bodyfile="ComGraphics/Source/spawnPoints.cpp" bodystart="3" bodyend="7"/>
+        <references refid="spawnPoints_8h_1a7c3f38e2185641cbc08b5bf1769c3b85aefb9e8594261ed20e79bbdfb359606ad">SPAWN_DEFAULT</references>
+      </memberdef>
+      <memberdef kind="function" id="spawnPoints_8cpp_1a1800ceb0821e943a2f33d6efd6e69dab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SpawnLOC</definition>
+        <argsstring>()</argsstring>
+        <name>SpawnLOC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/spawnPoints.cpp" line="9" column="1" bodyfile="ComGraphics/Source/spawnPoints.cpp" bodystart="9" bodyend="16"/>
+        <references refid="spawnPoints_8h_1a7c3f38e2185641cbc08b5bf1769c3b85a7cef9a658816822399b68986058b1ba8">NUM_SPAWNS</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="spawnPoints_8h" kindref="compound">spawnPoints.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="spawnPoints_8h_1a8dac6933c975fbceb83e55ecc7918a1b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spawnPoints_8cpp_1a8dac6933c975fbceb83e55ecc7918a1b" kindref="member">setSpawns</ref>()</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="spawnPoints_8h_1a7c3f38e2185641cbc08b5bf1769c3b85" kindref="member">SpawnPoints</ref><sp/>current;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current<sp/>=<sp/><ref refid="spawnPoints_8h_1a7c3f38e2185641cbc08b5bf1769c3b85aefb9e8594261ed20e79bbdfb359606ad" kindref="member">SpawnPoints::SPAWN_DEFAULT</ref>;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="spawnPoints_8cpp_1a1800ceb0821e943a2f33d6efd6e69dab" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spawnPoints_8cpp_1a1800ceb0821e943a2f33d6efd6e69dab" kindref="member">SpawnLOC</ref>()</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>spawnCoords[(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>int)<ref refid="spawnPoints_8h_1a7c3f38e2185641cbc08b5bf1769c3b85a7cef9a658816822399b68986058b1ba8" kindref="member">SpawnPoints::NUM_SPAWNS</ref>][2]<sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0,<sp/>424},</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{120,<sp/>72}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/spawnPoints.cpp"/>
+  </compounddef>
+</doxygen>

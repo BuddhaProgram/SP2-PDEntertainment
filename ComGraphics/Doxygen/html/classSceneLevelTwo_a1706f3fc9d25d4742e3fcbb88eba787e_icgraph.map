@@ -1,0 +1,7 @@
+<map id="SceneLevelTwo::RenderModelOnScreen" name="SceneLevelTwo::RenderModelOnScreen">
+<area shape="rect" id="node2" href="$classSceneLevelTwo.html#a63a16f9a1a71dd298d6e45edaa5efef4" title="SceneLevelTwo::Render" alt="" coords="504,112,664,139"/>
+<area shape="rect" id="node3" href="$classSceneLevelTwo.html#a8d7121cab8a18887aa6758bc0261adda" title="SceneLevelTwo::RenderMouse\lScrollToolSlot" alt="" coords="253,40,451,81"/>
+<area shape="rect" id="node4" href="$classSceneLevelTwo.html#adaa0eed551db1c3d36f574296f37317c" title="SceneLevelTwo::RenderPlayer\lDiesInteraction" alt="" coords="253,105,451,146"/>
+<area shape="rect" id="node5" href="$classSceneLevelTwo.html#ae32156c2a1654c8fecbbef68ec7acd25" title="SceneLevelTwo::RenderToolIcon" alt="" coords="248,171,456,198"/>
+<area shape="rect" id="node6" href="$classSceneLevelTwo.html#a66bd889c75f1be5353890c7b52867372" title="SceneLevelTwo::ToolSelection\lMouseScroll" alt="" coords="253,222,451,264"/>
+</map>

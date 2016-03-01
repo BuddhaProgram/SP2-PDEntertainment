@@ -1,0 +1,549 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classMeshBuilder" kind="class" language="C++" prot="public">
+    <compoundname>MeshBuilder</compoundname>
+    <includes refid="MeshBuilder_8h" local="no">MeshBuilder.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classMeshBuilder_1aba87550d7726a610c911fbb977fd3575" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh * MeshBuilder::GenerateOBJ</definition>
+        <argsstring>(const std::string &amp;meshName, const std::string &amp;file_path)</argsstring>
+        <name>GenerateOBJ</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>meshName</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>file_path</declname>
+        </param>
+        <briefdescription>
+<para>Generate the vertices of a reference Axes; Use red for x-axis, green for y-axis, blue for z-axis Then generate the VBO/IBO and store them in <ref refid="classMesh" kindref="compound">Mesh</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>meshName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- name of mesh </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lengthX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- x-axis should start at -lengthX / 2 and end at lengthX / 2 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lengthY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- y-axis should start at -lengthY / 2 and end at lengthY / 2 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lengthZ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- z-axis should start at -lengthZ / 2 and end at lengthZ / 2</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to mesh storing VBO/IBO of reference axes </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MeshBuilder.h" line="18" column="1" bodyfile="ComGraphics/Source/MeshBuilder.cpp" bodystart="19" bodyend="45"/>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a0f1cef52a562b3047017043dd427e2a9" compoundref="Mesh_8h" startline="18">Mesh::DRAW_TRIANGLES</references>
+        <references refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" compoundref="Mesh_8h" startline="32">Mesh::indexBuffer</references>
+        <references refid="classMesh_1ac6d6f70d161b9dd66c5ca79a187d86df" compoundref="Mesh_8h" startline="33">Mesh::indexSize</references>
+        <references refid="LoadOBJ_8cpp_1aa99ef9426a57205ed8acb8f7d41f3bae" compoundref="LoadOBJ_8cpp" startline="149" endline="189">IndexVBO</references>
+        <references refid="LoadOBJ_8cpp_1aa634e9cac0a72d751731db6b4479cbda" compoundref="LoadOBJ_8cpp" startline="7" endline="121">LoadOBJ</references>
+        <references refid="classMesh_1ae12937ea9bdacb3b7b786f60fe42448e" compoundref="Mesh_8h" startline="29">Mesh::mode</references>
+        <references refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" compoundref="Mesh_8h" startline="30">Mesh::vertexBuffer</references>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMeshBuilder_1a78d37e2b0cc068eec801f17c367100e7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh * MeshBuilder::GenerateAxes</definition>
+        <argsstring>(const std::string &amp;meshName, float lengthX, float lengthY, float lengthZ)</argsstring>
+        <name>GenerateAxes</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>meshName</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>lengthX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>lengthY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>lengthZ</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MeshBuilder.h" line="19" column="1" bodyfile="ComGraphics/Source/MeshBuilder.cpp" bodystart="49" bodyend="81"/>
+        <references refid="structVertex_1a3a3ff3f6cf46b1848795991e8159b922" compoundref="Vertex_8h" startline="35">Vertex::color</references>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a2eacb69a1ffbcde68e12fb36f8c88639" compoundref="Mesh_8h" startline="20">Mesh::DRAW_LINES</references>
+        <references refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" compoundref="Mesh_8h" startline="32">Mesh::indexBuffer</references>
+        <references refid="classMesh_1ac6d6f70d161b9dd66c5ca79a187d86df" compoundref="Mesh_8h" startline="33">Mesh::indexSize</references>
+        <references refid="classMesh_1ae12937ea9bdacb3b7b786f60fe42448e" compoundref="Mesh_8h" startline="29">Mesh::mode</references>
+        <references refid="structVertex_1a8791e77df49f6996a19a8dd17cee8d5c" compoundref="Vertex_8h" startline="34">Vertex::pos</references>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
+        <references refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="29" endline="29">Color::Set</references>
+        <references refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" compoundref="Mesh_8h" startline="30">Mesh::vertexBuffer</references>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMeshBuilder_1aa3751076aa9f74324d49a999a3c3fa55" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh * MeshBuilder::GenerateQuad</definition>
+        <argsstring>(const std::string &amp;meshName, Color color)</argsstring>
+        <name>GenerateQuad</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>meshName</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Generate the vertices of a quad; Use random color for each vertex Then generate the VBO/IBO and store them in <ref refid="classMesh" kindref="compound">Mesh</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>meshName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- name of mesh </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lengthX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- width of quad </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lengthY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- height of quad</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to mesh storing VBO/IBO of quad </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MeshBuilder.h" line="20" column="1" bodyfile="ComGraphics/Source/MeshBuilder.cpp" bodystart="247" bodyend="278"/>
+        <references refid="structVertex_1a3a3ff3f6cf46b1848795991e8159b922" compoundref="Vertex_8h" startline="35">Vertex::color</references>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a0f1cef52a562b3047017043dd427e2a9" compoundref="Mesh_8h" startline="18">Mesh::DRAW_TRIANGLES</references>
+        <references refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" compoundref="Mesh_8h" startline="32">Mesh::indexBuffer</references>
+        <references refid="classMesh_1ac6d6f70d161b9dd66c5ca79a187d86df" compoundref="Mesh_8h" startline="33">Mesh::indexSize</references>
+        <references refid="classMesh_1ae12937ea9bdacb3b7b786f60fe42448e" compoundref="Mesh_8h" startline="29">Mesh::mode</references>
+        <references refid="structVertex_1adce2d4b3d1191c69328519bdf231c344" compoundref="Vertex_8h" startline="36">Vertex::normal</references>
+        <references refid="structVertex_1a8791e77df49f6996a19a8dd17cee8d5c" compoundref="Vertex_8h" startline="34">Vertex::pos</references>
+        <references refid="structTexCoord_1a64b4ceeb1733c478cb4b5b1216146c32" compoundref="Vertex_8h" startline="14" endline="14">TexCoord::Set</references>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
+        <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
+        <references refid="structVertex_1a717d827da388b9c4847d1f5343959c78" compoundref="Vertex_8h" startline="37">Vertex::texCoord</references>
+        <references refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" compoundref="Mesh_8h" startline="30">Mesh::vertexBuffer</references>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMeshBuilder_1a5e777328dc946f483beb5645d8f24c4a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh * MeshBuilder::GenerateCube</definition>
+        <argsstring>(const std::string &amp;meshName, Color color)</argsstring>
+        <name>GenerateCube</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>meshName</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Generate the vertices of a cube; Use random color for each vertex Then generate the VBO/IBO and store them in <ref refid="classMesh" kindref="compound">Mesh</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>meshName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- name of mesh </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lengthX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- width of cube </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lengthY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- height of cube </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lengthZ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- depth of cube</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to mesh storing VBO/IBO of cube </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MeshBuilder.h" line="21" column="1" bodyfile="ComGraphics/Source/MeshBuilder.cpp" bodystart="336" bodyend="400"/>
+        <references refid="structVertex_1a3a3ff3f6cf46b1848795991e8159b922" compoundref="Vertex_8h" startline="35">Vertex::color</references>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a0f1cef52a562b3047017043dd427e2a9" compoundref="Mesh_8h" startline="18">Mesh::DRAW_TRIANGLES</references>
+        <references refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" compoundref="Mesh_8h" startline="32">Mesh::indexBuffer</references>
+        <references refid="classMesh_1ac6d6f70d161b9dd66c5ca79a187d86df" compoundref="Mesh_8h" startline="33">Mesh::indexSize</references>
+        <references refid="classMesh_1ae12937ea9bdacb3b7b786f60fe42448e" compoundref="Mesh_8h" startline="29">Mesh::mode</references>
+        <references refid="structVertex_1adce2d4b3d1191c69328519bdf231c344" compoundref="Vertex_8h" startline="36">Vertex::normal</references>
+        <references refid="structVertex_1a8791e77df49f6996a19a8dd17cee8d5c" compoundref="Vertex_8h" startline="34">Vertex::pos</references>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
+        <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
+        <references refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" compoundref="Mesh_8h" startline="30">Mesh::vertexBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="classMeshBuilder_1a68d491a27ed57b66b7a8161a2b230951" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh * MeshBuilder::GenerateCircle</definition>
+        <argsstring>(const std::string &amp;meshName, Color color, unsigned numSlices=36)</argsstring>
+        <name>GenerateCircle</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>meshName</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>numSlices</declname>
+          <defval>36</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MeshBuilder.h" line="22" column="1" bodyfile="ComGraphics/Source/MeshBuilder.cpp" bodystart="93" bodyend="129"/>
+        <references refid="MeshBuilder_8cpp_1a452206fa7621781c2b35fcd17b816239" compoundref="MeshBuilder_8cpp" startline="83" endline="86">CircleX</references>
+        <references refid="MeshBuilder_8cpp_1aede6465b0e45fc027ae0e8ec50d68ffb" compoundref="MeshBuilder_8cpp" startline="88" endline="91">CircleZ</references>
+        <references refid="structVertex_1a3a3ff3f6cf46b1848795991e8159b922" compoundref="Vertex_8h" startline="35">Vertex::color</references>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a76fb83917a3507580897f6e86656927d" compoundref="Mesh_8h" startline="19">Mesh::DRAW_TRIANGLE_STRIP</references>
+        <references refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" compoundref="Mesh_8h" startline="32">Mesh::indexBuffer</references>
+        <references refid="classMesh_1ac6d6f70d161b9dd66c5ca79a187d86df" compoundref="Mesh_8h" startline="33">Mesh::indexSize</references>
+        <references refid="classMesh_1ae12937ea9bdacb3b7b786f60fe42448e" compoundref="Mesh_8h" startline="29">Mesh::mode</references>
+        <references refid="structVertex_1adce2d4b3d1191c69328519bdf231c344" compoundref="Vertex_8h" startline="36">Vertex::normal</references>
+        <references refid="structVertex_1a8791e77df49f6996a19a8dd17cee8d5c" compoundref="Vertex_8h" startline="34">Vertex::pos</references>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
+        <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
+        <references refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" compoundref="Mesh_8h" startline="30">Mesh::vertexBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="classMeshBuilder_1a44a784dbd2cee7b6adc21c697a945501" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh * MeshBuilder::GenerateRing</definition>
+        <argsstring>(const std::string &amp;meshName, Color color, float innerRadius, unsigned numSlices=36)</argsstring>
+        <name>GenerateRing</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>meshName</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>innerRadius</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>numSlices</declname>
+          <defval>36</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MeshBuilder.h" line="23" column="1" bodyfile="ComGraphics/Source/MeshBuilder.cpp" bodystart="131" bodyend="169"/>
+        <references refid="MeshBuilder_8cpp_1a452206fa7621781c2b35fcd17b816239" compoundref="MeshBuilder_8cpp" startline="83" endline="86">CircleX</references>
+        <references refid="MeshBuilder_8cpp_1aede6465b0e45fc027ae0e8ec50d68ffb" compoundref="MeshBuilder_8cpp" startline="88" endline="91">CircleZ</references>
+        <references refid="structVertex_1a3a3ff3f6cf46b1848795991e8159b922" compoundref="Vertex_8h" startline="35">Vertex::color</references>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a76fb83917a3507580897f6e86656927d" compoundref="Mesh_8h" startline="19">Mesh::DRAW_TRIANGLE_STRIP</references>
+        <references refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" compoundref="Mesh_8h" startline="32">Mesh::indexBuffer</references>
+        <references refid="classMesh_1ac6d6f70d161b9dd66c5ca79a187d86df" compoundref="Mesh_8h" startline="33">Mesh::indexSize</references>
+        <references refid="classMesh_1ae12937ea9bdacb3b7b786f60fe42448e" compoundref="Mesh_8h" startline="29">Mesh::mode</references>
+        <references refid="structVertex_1adce2d4b3d1191c69328519bdf231c344" compoundref="Vertex_8h" startline="36">Vertex::normal</references>
+        <references refid="structVertex_1a8791e77df49f6996a19a8dd17cee8d5c" compoundref="Vertex_8h" startline="34">Vertex::pos</references>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
+        <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
+        <references refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" compoundref="Mesh_8h" startline="30">Mesh::vertexBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="classMeshBuilder_1af47d15fbc1d2a4e2ef45c387acc0d6db" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh * MeshBuilder::GenerateSphere</definition>
+        <argsstring>(const std::string &amp;meshName, Color color, unsigned numStacks, unsigned numSlices=36, float numSpins=1, bool Wire=false)</argsstring>
+        <name>GenerateSphere</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>meshName</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>numStacks</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>numSlices</declname>
+          <defval>36</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>numSpins</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>Wire</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MeshBuilder.h" line="24" column="1" bodyfile="ComGraphics/Source/MeshBuilder.cpp" bodystart="186" bodyend="229"/>
+        <references refid="structVertex_1a3a3ff3f6cf46b1848795991e8159b922" compoundref="Vertex_8h" startline="35">Vertex::color</references>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a2eacb69a1ffbcde68e12fb36f8c88639" compoundref="Mesh_8h" startline="20">Mesh::DRAW_LINES</references>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a76fb83917a3507580897f6e86656927d" compoundref="Mesh_8h" startline="19">Mesh::DRAW_TRIANGLE_STRIP</references>
+        <references refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" compoundref="Mesh_8h" startline="32">Mesh::indexBuffer</references>
+        <references refid="classMesh_1ac6d6f70d161b9dd66c5ca79a187d86df" compoundref="Mesh_8h" startline="33">Mesh::indexSize</references>
+        <references refid="classMesh_1ae12937ea9bdacb3b7b786f60fe42448e" compoundref="Mesh_8h" startline="29">Mesh::mode</references>
+        <references refid="structVertex_1adce2d4b3d1191c69328519bdf231c344" compoundref="Vertex_8h" startline="36">Vertex::normal</references>
+        <references refid="structVertex_1a8791e77df49f6996a19a8dd17cee8d5c" compoundref="Vertex_8h" startline="34">Vertex::pos</references>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
+        <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
+        <references refid="MeshBuilder_8cpp_1aef75a362a1bdb0980ed4abcf8241da69" compoundref="MeshBuilder_8cpp" startline="171" endline="174">SphereX</references>
+        <references refid="MeshBuilder_8cpp_1af7655f1bbe33f114c8c2457bb80d8d56" compoundref="MeshBuilder_8cpp" startline="176" endline="179">SphereY</references>
+        <references refid="MeshBuilder_8cpp_1a635e807e82196e114ec59993fe28838a" compoundref="MeshBuilder_8cpp" startline="181" endline="184">SphereZ</references>
+        <references refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" compoundref="Mesh_8h" startline="30">Mesh::vertexBuffer</references>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMeshBuilder_1aa0fd7de9ef15dbc113a3f84b859ebe95" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh * MeshBuilder::GenerateTorus</definition>
+        <argsstring>(const std::string &amp;meshName, Color color, unsigned numStack, unsigned numSlice, float outerR, float innerR)</argsstring>
+        <name>GenerateTorus</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>meshName</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>numStack</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>numSlice</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>outerR</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>innerR</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MeshBuilder.h" line="25" column="1" bodyfile="ComGraphics/Source/MeshBuilder.cpp" bodystart="402" bodyend="450"/>
+        <references refid="structVertex_1a3a3ff3f6cf46b1848795991e8159b922" compoundref="Vertex_8h" startline="35">Vertex::color</references>
+        <references refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" compoundref="MyMath_8h" startline="49" endline="52">Math::DegreeToRadian</references>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a76fb83917a3507580897f6e86656927d" compoundref="Mesh_8h" startline="19">Mesh::DRAW_TRIANGLE_STRIP</references>
+        <references refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" compoundref="Mesh_8h" startline="32">Mesh::indexBuffer</references>
+        <references refid="classMesh_1ac6d6f70d161b9dd66c5ca79a187d86df" compoundref="Mesh_8h" startline="33">Mesh::indexSize</references>
+        <references refid="classMesh_1ae12937ea9bdacb3b7b786f60fe42448e" compoundref="Mesh_8h" startline="29">Mesh::mode</references>
+        <references refid="structVertex_1adce2d4b3d1191c69328519bdf231c344" compoundref="Vertex_8h" startline="36">Vertex::normal</references>
+        <references refid="structVertex_1a8791e77df49f6996a19a8dd17cee8d5c" compoundref="Vertex_8h" startline="34">Vertex::pos</references>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
+        <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
+        <references refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" compoundref="Mesh_8h" startline="30">Mesh::vertexBuffer</references>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMeshBuilder_1af5fd00cbcb2716df65d167c638edaafe" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh * MeshBuilder::GenerateCylinder</definition>
+        <argsstring>(const std::string &amp;meshName, Color color, unsigned numSlice, float top=1, float Partial=1)</argsstring>
+        <name>GenerateCylinder</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>meshName</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>numSlice</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>top</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>Partial</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MeshBuilder.h" line="26" column="1" bodyfile="ComGraphics/Source/MeshBuilder.cpp" bodystart="452" bodyend="515"/>
+        <references refid="MeshBuilder_8cpp_1a452206fa7621781c2b35fcd17b816239" compoundref="MeshBuilder_8cpp" startline="83" endline="86">CircleX</references>
+        <references refid="MeshBuilder_8cpp_1aede6465b0e45fc027ae0e8ec50d68ffb" compoundref="MeshBuilder_8cpp" startline="88" endline="91">CircleZ</references>
+        <references refid="structVertex_1a3a3ff3f6cf46b1848795991e8159b922" compoundref="Vertex_8h" startline="35">Vertex::color</references>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a76fb83917a3507580897f6e86656927d" compoundref="Mesh_8h" startline="19">Mesh::DRAW_TRIANGLE_STRIP</references>
+        <references refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" compoundref="Mesh_8h" startline="32">Mesh::indexBuffer</references>
+        <references refid="classMesh_1ac6d6f70d161b9dd66c5ca79a187d86df" compoundref="Mesh_8h" startline="33">Mesh::indexSize</references>
+        <references refid="classMesh_1ae12937ea9bdacb3b7b786f60fe42448e" compoundref="Mesh_8h" startline="29">Mesh::mode</references>
+        <references refid="structVertex_1adce2d4b3d1191c69328519bdf231c344" compoundref="Vertex_8h" startline="36">Vertex::normal</references>
+        <references refid="structVertex_1a8791e77df49f6996a19a8dd17cee8d5c" compoundref="Vertex_8h" startline="34">Vertex::pos</references>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
+        <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
+        <references refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" compoundref="Mesh_8h" startline="30">Mesh::vertexBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh * MeshBuilder::GenerateText</definition>
+        <argsstring>(const std::string &amp;meshName, unsigned numRow, unsigned numCol)</argsstring>
+        <name>GenerateText</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>meshName</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>numRow</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>numCol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MeshBuilder.h" line="27" column="1" bodyfile="ComGraphics/Source/MeshBuilder.cpp" bodystart="280" bodyend="320"/>
+        <references refid="classMesh_1a3d73fcae9980b9a36297a8481cf1a307a0f1cef52a562b3047017043dd427e2a9" compoundref="Mesh_8h" startline="18">Mesh::DRAW_TRIANGLES</references>
+        <references refid="classMesh_1ad5efa4d45e469674dfa3765e479e4a73" compoundref="Mesh_8h" startline="32">Mesh::indexBuffer</references>
+        <references refid="classMesh_1ac6d6f70d161b9dd66c5ca79a187d86df" compoundref="Mesh_8h" startline="33">Mesh::indexSize</references>
+        <references refid="classMesh_1ae12937ea9bdacb3b7b786f60fe42448e" compoundref="Mesh_8h" startline="29">Mesh::mode</references>
+        <references refid="structVertex_1adce2d4b3d1191c69328519bdf231c344" compoundref="Vertex_8h" startline="36">Vertex::normal</references>
+        <references refid="structVertex_1a8791e77df49f6996a19a8dd17cee8d5c" compoundref="Vertex_8h" startline="34">Vertex::pos</references>
+        <references refid="structTexCoord_1a64b4ceeb1733c478cb4b5b1216146c32" compoundref="Vertex_8h" startline="14" endline="14">TexCoord::Set</references>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
+        <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
+        <references refid="structVertex_1a717d827da388b9c4847d1f5343959c78" compoundref="Vertex_8h" startline="37">Vertex::texCoord</references>
+        <references refid="classMesh_1a1e99394b36ad335804acd2461a736cfb" compoundref="Mesh_8h" startline="30">Mesh::vertexBuffer</references>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Provides methods to generate mesh of different shapes. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="classMeshBuilder" kindref="compound">MeshBuilder</ref>: </para>    </detaileddescription>
+    <location file="ComGraphics/Source/MeshBuilder.h" line="16" column="1" bodyfile="ComGraphics/Source/MeshBuilder.h" bodystart="15" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classMeshBuilder_1a78d37e2b0cc068eec801f17c367100e7" prot="public" virt="non-virtual"><scope>MeshBuilder</scope><name>GenerateAxes</name></member>
+      <member refid="classMeshBuilder_1a68d491a27ed57b66b7a8161a2b230951" prot="public" virt="non-virtual"><scope>MeshBuilder</scope><name>GenerateCircle</name></member>
+      <member refid="classMeshBuilder_1a5e777328dc946f483beb5645d8f24c4a" prot="public" virt="non-virtual"><scope>MeshBuilder</scope><name>GenerateCube</name></member>
+      <member refid="classMeshBuilder_1af5fd00cbcb2716df65d167c638edaafe" prot="public" virt="non-virtual"><scope>MeshBuilder</scope><name>GenerateCylinder</name></member>
+      <member refid="classMeshBuilder_1aba87550d7726a610c911fbb977fd3575" prot="public" virt="non-virtual"><scope>MeshBuilder</scope><name>GenerateOBJ</name></member>
+      <member refid="classMeshBuilder_1aa3751076aa9f74324d49a999a3c3fa55" prot="public" virt="non-virtual"><scope>MeshBuilder</scope><name>GenerateQuad</name></member>
+      <member refid="classMeshBuilder_1a44a784dbd2cee7b6adc21c697a945501" prot="public" virt="non-virtual"><scope>MeshBuilder</scope><name>GenerateRing</name></member>
+      <member refid="classMeshBuilder_1af47d15fbc1d2a4e2ef45c387acc0d6db" prot="public" virt="non-virtual"><scope>MeshBuilder</scope><name>GenerateSphere</name></member>
+      <member refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" prot="public" virt="non-virtual"><scope>MeshBuilder</scope><name>GenerateText</name></member>
+      <member refid="classMeshBuilder_1aa0fd7de9ef15dbc113a3f84b859ebe95" prot="public" virt="non-virtual"><scope>MeshBuilder</scope><name>GenerateTorus</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

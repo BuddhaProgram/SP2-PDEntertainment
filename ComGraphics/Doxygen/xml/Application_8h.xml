@@ -1,0 +1,574 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Application_8h" kind="file" language="C++">
+    <compoundname>Application.h</compoundname>
+    <includes refid="timer_8h" local="yes">timer.h</includes>
+    <includes refid="Scene_8h" local="yes">Scene.h</includes>
+    <includes local="no">GL/glew.h</includes>
+    <includes local="no">GLFW/glfw3.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">crtdbg.h</includes>
+    <includes refid="Music_8h" local="yes">Music.h</includes>
+    <includedby refid="Application_8cpp" local="yes">ComGraphics/Source/Application.cpp</includedby>
+    <includedby refid="SceneOpening_8h" local="yes">ComGraphics/Source/SceneOpening.h</includedby>
+    <includedby refid="Camera_8cpp" local="yes">ComGraphics/Source/Camera.cpp</includedby>
+    <includedby refid="Camera3_8cpp" local="yes">ComGraphics/Source/Camera3.cpp</includedby>
+    <includedby refid="Credits_8cpp" local="yes">ComGraphics/Source/Credits.cpp</includedby>
+    <includedby refid="CutSceneOne_8cpp" local="yes">ComGraphics/Source/CutSceneOne.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">ComGraphics/Source/main.cpp</includedby>
+    <includedby refid="OpeningCutScene_8cpp" local="yes">ComGraphics/Source/OpeningCutScene.cpp</includedby>
+    <includedby refid="OpeningCutScene2_8cpp" local="yes">ComGraphics/Source/OpeningCutScene2.cpp</includedby>
+    <includedby refid="SceneEnd_8cpp" local="yes">ComGraphics/Source/SceneEnd.cpp</includedby>
+    <includedby refid="SceneEndCutScene_8cpp" local="yes">ComGraphics/Source/SceneEndCutScene.cpp</includedby>
+    <includedby refid="SceneEndRenders_8cpp" local="yes">ComGraphics/Source/SceneEndRenders.cpp</includedby>
+    <includedby refid="SceneLevelOneA_8cpp" local="yes">ComGraphics/Source/SceneLevelOneA.cpp</includedby>
+    <includedby refid="SceneLevelOneARenders_8cpp" local="yes">ComGraphics/Source/SceneLevelOneARenders.cpp</includedby>
+    <includedby refid="SceneLevelOneB_8cpp" local="yes">ComGraphics/Source/SceneLevelOneB.cpp</includedby>
+    <includedby refid="SceneLevelOneBRenders_8cpp" local="yes">ComGraphics/Source/SceneLevelOneBRenders.cpp</includedby>
+    <includedby refid="SceneLevelTwo_8cpp" local="yes">ComGraphics/Source/SceneLevelTwo.cpp</includedby>
+    <includedby refid="SceneLevelTwoRenders_8cpp" local="yes">ComGraphics/Source/SceneLevelTwoRenders.cpp</includedby>
+    <includedby refid="SceneStart_8cpp" local="yes">ComGraphics/Source/SceneStart.cpp</includedby>
+    <incdepgraph>
+      <node id="5004">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="4994" relation="include">
+        </childnode>
+      </node>
+      <node id="4974">
+        <label>list</label>
+      </node>
+      <node id="5009">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="4994" relation="include">
+        </childnode>
+        <childnode refid="4999" relation="include">
+        </childnode>
+      </node>
+      <node id="4967">
+        <label>windows.h</label>
+      </node>
+      <node id="4968">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+        <childnode refid="4969" relation="include">
+        </childnode>
+        <childnode refid="4970" relation="include">
+        </childnode>
+        <childnode refid="4971" relation="include">
+        </childnode>
+        <childnode refid="4982" relation="include">
+        </childnode>
+      </node>
+      <node id="4987">
+        <label>Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="4973" relation="include">
+        </childnode>
+        <childnode refid="4988" relation="include">
+        </childnode>
+        <childnode refid="4989" relation="include">
+        </childnode>
+      </node>
+      <node id="4966">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="4967" relation="include">
+        </childnode>
+      </node>
+      <node id="4999">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="4994" relation="include">
+        </childnode>
+      </node>
+      <node id="4985">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4975">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="4976" relation="include">
+        </childnode>
+        <childnode refid="4981" relation="include">
+        </childnode>
+      </node>
+      <node id="4996">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="4977">
+        <label>cmath</label>
+      </node>
+      <node id="4989">
+        <label>../irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="4990" relation="include">
+        </childnode>
+        <childnode refid="4992" relation="include">
+        </childnode>
+        <childnode refid="4994" relation="include">
+        </childnode>
+        <childnode refid="4995" relation="include">
+        </childnode>
+        <childnode refid="4996" relation="include">
+        </childnode>
+        <childnode refid="4997" relation="include">
+        </childnode>
+        <childnode refid="4998" relation="include">
+        </childnode>
+        <childnode refid="4999" relation="include">
+        </childnode>
+        <childnode refid="5000" relation="include">
+        </childnode>
+        <childnode refid="5001" relation="include">
+        </childnode>
+        <childnode refid="5002" relation="include">
+        </childnode>
+        <childnode refid="5006" relation="include">
+        </childnode>
+        <childnode refid="5007" relation="include">
+        </childnode>
+        <childnode refid="5003" relation="include">
+        </childnode>
+        <childnode refid="5009" relation="include">
+        </childnode>
+        <childnode refid="5004" relation="include">
+        </childnode>
+        <childnode refid="5008" relation="include">
+        </childnode>
+        <childnode refid="5010" relation="include">
+        </childnode>
+        <childnode refid="5011" relation="include">
+        </childnode>
+        <childnode refid="5005" relation="include">
+        </childnode>
+      </node>
+      <node id="4982">
+        <label>Misc.h</label>
+        <link refid="Misc_8h"/>
+        <childnode refid="4975" relation="include">
+        </childnode>
+      </node>
+      <node id="5005">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="4994" relation="include">
+        </childnode>
+        <childnode refid="4999" relation="include">
+        </childnode>
+      </node>
+      <node id="4988">
+        <label>string</label>
+      </node>
+      <node id="4983">
+        <label>GL/glew.h</label>
+      </node>
+      <node id="4965">
+        <label>ComGraphics/Source/Application.h</label>
+        <link refid="Application.h"/>
+        <childnode refid="4966" relation="include">
+        </childnode>
+        <childnode refid="4968" relation="include">
+        </childnode>
+        <childnode refid="4983" relation="include">
+        </childnode>
+        <childnode refid="4984" relation="include">
+        </childnode>
+        <childnode refid="4985" relation="include">
+        </childnode>
+        <childnode refid="4986" relation="include">
+        </childnode>
+        <childnode refid="4987" relation="include">
+        </childnode>
+      </node>
+      <node id="5007">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="4994" relation="include">
+        </childnode>
+        <childnode refid="5008" relation="include">
+        </childnode>
+      </node>
+      <node id="4984">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="4978">
+        <label>exception</label>
+      </node>
+      <node id="5011">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="4994" relation="include">
+        </childnode>
+        <childnode refid="5001" relation="include">
+        </childnode>
+      </node>
+      <node id="5001">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="4995" relation="include">
+        </childnode>
+        <childnode refid="4992" relation="include">
+        </childnode>
+        <childnode refid="4998" relation="include">
+        </childnode>
+        <childnode refid="4999" relation="include">
+        </childnode>
+      </node>
+      <node id="5006">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="4994" relation="include">
+        </childnode>
+        <childnode refid="4999" relation="include">
+        </childnode>
+      </node>
+      <node id="5008">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="4994" relation="include">
+        </childnode>
+      </node>
+      <node id="4991">
+        <label>wchar.h</label>
+      </node>
+      <node id="4992">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="4993" relation="include">
+        </childnode>
+        <childnode refid="4990" relation="include">
+        </childnode>
+      </node>
+      <node id="5000">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="4994" relation="include">
+        </childnode>
+        <childnode refid="4992" relation="include">
+        </childnode>
+        <childnode refid="5001" relation="include">
+        </childnode>
+        <childnode refid="5002" relation="include">
+        </childnode>
+        <childnode refid="4998" relation="include">
+        </childnode>
+        <childnode refid="5004" relation="include">
+        </childnode>
+        <childnode refid="5005" relation="include">
+        </childnode>
+      </node>
+      <node id="4979">
+        <label>ctime</label>
+      </node>
+      <node id="4995">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="4990" relation="include">
+        </childnode>
+      </node>
+      <node id="4973">
+        <label>vector</label>
+      </node>
+      <node id="4986">
+        <label>crtdbg.h</label>
+      </node>
+      <node id="4969">
+        <label>GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+      </node>
+      <node id="4997">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="4993">
+        <label>math.h</label>
+      </node>
+      <node id="5010">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="4994" relation="include">
+        </childnode>
+      </node>
+      <node id="4980">
+        <label>cstdlib</label>
+      </node>
+      <node id="5002">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="4995" relation="include">
+        </childnode>
+        <childnode refid="5003" relation="include">
+        </childnode>
+        <childnode refid="4992" relation="include">
+        </childnode>
+      </node>
+      <node id="4981">
+        <label>iostream</label>
+      </node>
+      <node id="4971">
+        <label>Explorer.h</label>
+        <link refid="Explorer_8h"/>
+        <childnode refid="4972" relation="include">
+        </childnode>
+        <childnode refid="4975" relation="include">
+        </childnode>
+      </node>
+      <node id="4972">
+        <label>ToolUI.h</label>
+        <link refid="ToolUI_8h"/>
+        <childnode refid="4973" relation="include">
+        </childnode>
+        <childnode refid="4974" relation="include">
+        </childnode>
+      </node>
+      <node id="5003">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="4995" relation="include">
+        </childnode>
+        <childnode refid="4992" relation="include">
+        </childnode>
+      </node>
+      <node id="4994">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="4990" relation="include">
+        </childnode>
+      </node>
+      <node id="4970">
+        <label>SwitchLightPuzzle.h</label>
+        <link refid="SwitchLightPuzzle_8h"/>
+      </node>
+      <node id="4990">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="4991" relation="include">
+        </childnode>
+      </node>
+      <node id="4998">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="4976">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="4977" relation="include">
+        </childnode>
+        <childnode refid="4978" relation="include">
+        </childnode>
+        <childnode refid="4979" relation="include">
+        </childnode>
+        <childnode refid="4980" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5022">
+        <label>ComGraphics/Source/OpeningCutScene2.cpp</label>
+        <link refid="OpeningCutScene2_8cpp"/>
+      </node>
+      <node id="5031">
+        <label>ComGraphics/Source/SceneLevelTwoRenders.cpp</label>
+        <link refid="SceneLevelTwoRenders_8cpp"/>
+      </node>
+      <node id="5025">
+        <label>ComGraphics/Source/SceneEndRenders.cpp</label>
+        <link refid="SceneEndRenders_8cpp"/>
+      </node>
+      <node id="5020">
+        <label>ComGraphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="5029">
+        <label>ComGraphics/Source/SceneLevelOneBRenders.cpp</label>
+        <link refid="SceneLevelOneBRenders_8cpp"/>
+      </node>
+      <node id="5017">
+        <label>ComGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="5021">
+        <label>ComGraphics/Source/OpeningCutScene.cpp</label>
+        <link refid="OpeningCutScene_8cpp"/>
+      </node>
+      <node id="5012">
+        <label>ComGraphics/Source/Application.h</label>
+        <link refid="Application.h"/>
+        <childnode refid="5013" relation="include">
+        </childnode>
+        <childnode refid="5014" relation="include">
+        </childnode>
+        <childnode refid="5016" relation="include">
+        </childnode>
+        <childnode refid="5017" relation="include">
+        </childnode>
+        <childnode refid="5018" relation="include">
+        </childnode>
+        <childnode refid="5019" relation="include">
+        </childnode>
+        <childnode refid="5020" relation="include">
+        </childnode>
+        <childnode refid="5021" relation="include">
+        </childnode>
+        <childnode refid="5022" relation="include">
+        </childnode>
+        <childnode refid="5023" relation="include">
+        </childnode>
+        <childnode refid="5024" relation="include">
+        </childnode>
+        <childnode refid="5025" relation="include">
+        </childnode>
+        <childnode refid="5026" relation="include">
+        </childnode>
+        <childnode refid="5027" relation="include">
+        </childnode>
+        <childnode refid="5028" relation="include">
+        </childnode>
+        <childnode refid="5029" relation="include">
+        </childnode>
+        <childnode refid="5030" relation="include">
+        </childnode>
+        <childnode refid="5031" relation="include">
+        </childnode>
+        <childnode refid="5032" relation="include">
+        </childnode>
+      </node>
+      <node id="5018">
+        <label>ComGraphics/Source/Credits.cpp</label>
+        <link refid="Credits_8cpp"/>
+      </node>
+      <node id="5027">
+        <label>ComGraphics/Source/SceneLevelOneARenders.cpp</label>
+        <link refid="SceneLevelOneARenders_8cpp"/>
+      </node>
+      <node id="5023">
+        <label>ComGraphics/Source/SceneEnd.cpp</label>
+        <link refid="SceneEnd_8cpp"/>
+      </node>
+      <node id="5030">
+        <label>ComGraphics/Source/SceneLevelTwo.cpp</label>
+        <link refid="SceneLevelTwo_8cpp"/>
+      </node>
+      <node id="5014">
+        <label>ComGraphics/Source/SceneOpening.h</label>
+        <link refid="SceneOpening_8h"/>
+        <childnode refid="5013" relation="include">
+        </childnode>
+        <childnode refid="5015" relation="include">
+        </childnode>
+      </node>
+      <node id="5016">
+        <label>ComGraphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
+      </node>
+      <node id="5028">
+        <label>ComGraphics/Source/SceneLevelOneB.cpp</label>
+        <link refid="SceneLevelOneB_8cpp"/>
+      </node>
+      <node id="5024">
+        <label>ComGraphics/Source/SceneEndCutScene.cpp</label>
+        <link refid="SceneEndCutScene_8cpp"/>
+      </node>
+      <node id="5013">
+        <label>ComGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5026">
+        <label>ComGraphics/Source/SceneLevelOneA.cpp</label>
+        <link refid="SceneLevelOneA_8cpp"/>
+      </node>
+      <node id="5015">
+        <label>ComGraphics/Source/SceneOpening.cpp</label>
+        <link refid="SceneOpening_8cpp"/>
+      </node>
+      <node id="5032">
+        <label>ComGraphics/Source/SceneStart.cpp</label>
+        <link refid="SceneStart_8cpp"/>
+      </node>
+      <node id="5019">
+        <label>ComGraphics/Source/CutSceneOne.cpp</label>
+        <link refid="CutSceneOne_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classApplication" prot="public">Application</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="Application_8h_1afc30e481f763a8d68a861dba91be7316" prot="public" static="no">
+        <name>_CRTDBG_MAP_ALLOC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Application.h" line="9" column="9" bodyfile="ComGraphics/Source/Application.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>APPLICATION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>APPLICATION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="timer_8h" kindref="compound">timer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Scene_8h" kindref="compound">Scene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;GL/glew.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;GLFW/glfw3.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//memory<sp/>leak<sp/>checks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="Application_8h_1afc30e481f763a8d68a861dba91be7316" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_CRTDBG_MAP_ALLOC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;crtdbg.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Music_8h" kindref="compound">Music.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classApplication" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classApplication" kindref="compound">Application</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" kindref="member">Application</ref>();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a748bca84fefb9c12661cfaa2f623748d" kindref="member">~Application</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" kindref="member">Run</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" kindref="member">Exit</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">IsKeyPressed</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>key);</highlight></codeline>
+<codeline lineno="23" refid="classApplication_1aa3c321afd7560255872564024a9204a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classApplication_1aa3c321afd7560255872564024a9204a4" kindref="member">mouse_scroll</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9417ed2dddc2277e1989cc8614e3d0c9" kindref="member">OpenCutScene</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1abf06415c31de1aed7b2f93c6c6c7f636" kindref="member">OpenCutScene2</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1adeed1a6fea5cbe66da30dfe5b9651b7e" kindref="member">OpenGame</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a56085045bcb5006289240a263f1bab4b" kindref="member">SceneLevel1A</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9871855d65ba1cba5a67647c58ce1eb1" kindref="member">SceneLevel1B</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a71151e291360fac88840aa230e9adcd1" kindref="member">SceneLevel2</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a41920db676f4ab014b9ee32c2043ff9b" kindref="member">FirstCutScene</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a06a51f73e8d25ad6a4cf668957d52096" kindref="member">StartingScene</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1ac90b614d3d19e689017ff91142f3b271" kindref="member">EndingScene</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a13c9b7e48999e988dce3c88912d08974" kindref="member">EndingCutScene</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9b60b70359c959d4f7cd1d8ffe4ab7a0" kindref="member">End_Credits</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classApplication_1abf70af746e708ec070d0132e810955e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classMusic" kindref="compound">Music</ref><sp/>*<ref refid="classApplication_1abf70af746e708ec070d0132e810955e0" kindref="member">musics</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref><sp/>*<ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>;</highlight></codeline>
+<codeline lineno="40" refid="classApplication_1a78d4ff8f31ed85a5f678895bdf033010" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref><sp/>*<ref refid="classApplication_1a78d4ff8f31ed85a5f678895bdf033010" kindref="member">IntroScene</ref>;</highlight></codeline>
+<codeline lineno="41" refid="classApplication_1a9c7242d477d27afd976d36dfbf32e8ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref><sp/>*<ref refid="classApplication_1a9c7242d477d27afd976d36dfbf32e8ed" kindref="member">IntroScene2</ref>;</highlight></codeline>
+<codeline lineno="42" refid="classApplication_1a70f137bc91d7ea94620f308955df3488" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref><sp/>*<ref refid="classApplication_1a70f137bc91d7ea94620f308955df3488" kindref="member">Opening</ref>;</highlight></codeline>
+<codeline lineno="43" refid="classApplication_1a9e4d6b83b53c49be398826e54e4e302b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref><sp/>*<ref refid="classApplication_1a9e4d6b83b53c49be398826e54e4e302b" kindref="member">Start</ref>;</highlight></codeline>
+<codeline lineno="44" refid="classApplication_1acb29e9d3a26d0f49362fcb36e817c7a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref><sp/>*<ref refid="classApplication_1acb29e9d3a26d0f49362fcb36e817c7a2" kindref="member">LevelOneA</ref>;</highlight></codeline>
+<codeline lineno="45" refid="classApplication_1a5f146343c64158b5d853c0c04de34f23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref><sp/>*<ref refid="classApplication_1a5f146343c64158b5d853c0c04de34f23" kindref="member">LevelOneB</ref>;</highlight></codeline>
+<codeline lineno="46" refid="classApplication_1a5ae3483e72f7ba85c4f11175f3d303ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref><sp/>*<ref refid="classApplication_1a5ae3483e72f7ba85c4f11175f3d303ba" kindref="member">LevelTwo</ref>;</highlight></codeline>
+<codeline lineno="47" refid="classApplication_1a2ba9a04cbc014df1460af205eb84d44c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref><sp/>*<ref refid="classApplication_1a2ba9a04cbc014df1460af205eb84d44c" kindref="member">End</ref>;</highlight></codeline>
+<codeline lineno="48" refid="classApplication_1aa8746ce1082d87c92cf5b4d02a4704e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref><sp/>*<ref refid="classApplication_1aa8746ce1082d87c92cf5b4d02a4704e6" kindref="member">CutScene1</ref>;</highlight></codeline>
+<codeline lineno="49" refid="classApplication_1a1dd1dd46dd3fdd34c33974fa696aa21e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref><sp/>*<ref refid="classApplication_1a1dd1dd46dd3fdd34c33974fa696aa21e" kindref="member">EndScene</ref>;</highlight></codeline>
+<codeline lineno="50" refid="classApplication_1a3b85ac1e471c03bea8aa973cefcb5746" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref>*<sp/><ref refid="classApplication_1a3b85ac1e471c03bea8aa973cefcb5746" kindref="member">EndCredits</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Declare<sp/>a<sp/>window<sp/>object</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classStopWatch" kindref="compound">StopWatch</ref><sp/><ref refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" kindref="member">m_timer</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/Application.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1453 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classOpeningCutScene" kind="class" language="C++" prot="public">
+    <compoundname>OpeningCutScene</compoundname>
+    <basecompoundref refid="classScene" prot="public" virt="non-virtual">Scene</basecompoundref>
+    <includes refid="OpeningCutScene_8h" local="no">OpeningCutScene.h</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classOpeningCutScene_1ad36cbd8efa42b2af74000e7539462057" prot="private" static="no">
+        <name>GEOMETRY_TYPE</name>
+        <enumvalue id="classOpeningCutScene_1ad36cbd8efa42b2af74000e7539462057a09b458e0c15b8a5470882b6b711bfc14" prot="private">
+          <name>GEO_TEXT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1ad36cbd8efa42b2af74000e7539462057a1d06e8996f608f5c00abc8fe84de7873" prot="private">
+          <name>GEO_TEXTBACKGROUND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1ad36cbd8efa42b2af74000e7539462057a227b482c34d5855561f9c2e17f631cd7" prot="private">
+          <name>NUM_GEOMETRY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="22" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="21" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="enum" id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abff" prot="private" static="no">
+        <name>UNIFORM_TYPE</name>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffaea09f6b082d05f69a4abe4df96efe6fe" prot="private">
+          <name>U_MVP</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa7b37911274a76ad5423a63b4c39946b8" prot="private">
+          <name>U_MODELVIEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa6711dab04bb89d17107fc40282bdda03" prot="private">
+          <name>U_MODELVIEW_INVERSE_TRANSPOSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa8ee88a070265b62418eb4476cc7f77d1" prot="private">
+          <name>U_MATERIAL_AMBIENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffad8754fe309313762a5972c6ef9b84736" prot="private">
+          <name>U_MATERIAL_DIFFUSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffac29aedc0df2bf32bb8eb232f64420a2b" prot="private">
+          <name>U_MATERIAL_SPECULAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa06259389193c462a40ef2d40cdc19b0d" prot="private">
+          <name>U_MATERIAL_SHININESS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa2ec229bcfdb15f411e5f99887c79be3e" prot="private">
+          <name>U_LIGHT0_POSITION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffabcd72c51c063d48d9540660a30895302" prot="private">
+          <name>U_LIGHT0_COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffac3af852895a560c1fe9b283502dfba91" prot="private">
+          <name>U_LIGHT0_POWER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffacedb8fe4f3c1727225e14d76722fddf6" prot="private">
+          <name>U_LIGHT0_KC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa6b60ab540d6cd718c388834eedb9ab98" prot="private">
+          <name>U_LIGHT0_KL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa7a03f01d28d08be060deed808636c6a9" prot="private">
+          <name>U_LIGHT0_KQ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa452a811ca712016d5f1521b0074105d3" prot="private">
+          <name>U_LIGHTENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffae4d1adf3f3a4b85c88d0dd10808fb9f4" prot="private">
+          <name>U_LIGHT0_TYPE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa5991b5e21da76862c43c317dd2abac4d" prot="private">
+          <name>U_LIGHT0_SPOTDIRECTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffade773bafdfd9846a12bc5735426c698b" prot="private">
+          <name>U_LIGHT0_COSCUTOFF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa4a5753b30867fa91d4a7785d45171dfc" prot="private">
+          <name>U_LIGHT0_COSINNER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffac26c5af2def6fadcd4829348854c15f4" prot="private">
+          <name>U_LIGHT0_EXPONENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa82580bbcb57f079b638aa748968dfb3f" prot="private">
+          <name>U_NUMLIGHTS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffae04241da9f297808f0dab53779093816" prot="private">
+          <name>U_COLOR_TEXTURE_ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffafc000a25be1871fb9c576100ffc725a3" prot="private">
+          <name>U_COLOR_TEXTURE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffabb482d8c2ab70460b54ecd3e81501a58" prot="private">
+          <name>U_TEXT_ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa77d119327e87ada9e26b735982c695bf" prot="private">
+          <name>U_TEXT_COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffab96a1546a0b9800eedd85152382de9fe" prot="private">
+          <name>U_TOTAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="29" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="28" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classOpeningCutScene_1a489d5cc346000631dd1dfb1995519cc7" prot="public" static="no" mutable="no">
+        <type><ref refid="classCamera3" kindref="compound">Camera3</ref></type>
+        <definition>Camera3 OpeningCutScene::camera</definition>
+        <argsstring></argsstring>
+        <name>camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="68" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">Render</referencedby>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a69c3e0a416a51bceaa815a92140273c5" prot="public" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; OpeningCutScene::readText</definition>
+        <argsstring></argsstring>
+        <name>readText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="70" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a180b32f17f005c5358a5ca5e1439f37e" compoundref="OpeningCutScene_8cpp" startline="123" endline="146">ReadFromText</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a63254ec82feea01ef4ace39249d5773d" prot="public" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; OpeningCutScene::TestYou</definition>
+        <argsstring></argsstring>
+        <name>TestYou</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="72" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">Render</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1ee7d7762e02e860cb10da08bc4e46d0" compoundref="OpeningCutScene_8cpp" startline="149" endline="180">RenderOpeningCutScene</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a9bd650474f33cc9f03a38c319c826a6f" prot="public" static="no" mutable="no">
+        <type>vector&lt; string &gt;::iterator</type>
+        <definition>vector&lt;string&gt;::iterator OpeningCutScene::its</definition>
+        <argsstring></argsstring>
+        <name>its</name>
+        <initializer>= readText.begin()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="73" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="73" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a1ee7d7762e02e860cb10da08bc4e46d0" compoundref="OpeningCutScene_8cpp" startline="149" endline="180">RenderOpeningCutScene</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classOpeningCutScene_1a5eeb65fc956786cdedc6084500c63378" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned OpeningCutScene::m_vertexArrayID</definition>
+        <argsstring></argsstring>
+        <name>m_vertexArrayID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="83" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a8ad63249dce01443be4ddd2b804002e8" compoundref="OpeningCutScene_8cpp" startline="392" endline="396">Exit</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a1fa57d00889fbd1bbf3c8d62e3afa693" prot="private" static="no" mutable="no">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh* OpeningCutScene::meshList[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>meshList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="84" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="84" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1ee7d7762e02e860cb10da08bc4e46d0" compoundref="OpeningCutScene_8cpp" startline="149" endline="180">RenderOpeningCutScene</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a31a2d98317835c80b2e682c63524f424" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned OpeningCutScene::m_programID</definition>
+        <argsstring></argsstring>
+        <name>m_programID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="86" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a8ad63249dce01443be4ddd2b804002e8" compoundref="OpeningCutScene_8cpp" startline="392" endline="396">Exit</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1ad029e488c5128c40605b99d60105383b" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned OpeningCutScene::m_parameters[U_TOTAL]</definition>
+        <argsstring>[U_TOTAL]</argsstring>
+        <name>m_parameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="87" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="87" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">Render</referencedby>
+        <referencedby refid="classOpeningCutScene_1a84343ff789a716159f276ddd8f59e8bd" compoundref="OpeningCutScene_8cpp" startline="243" endline="285">RenderMesh</referencedby>
+        <referencedby refid="classOpeningCutScene_1aba42fcde4e25e6471e06eda32a91fa28" compoundref="OpeningCutScene_8cpp" startline="287" endline="331">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1af5e800f697376ed2c01cc16ca1f72c7e" prot="private" static="no" mutable="no">
+        <type><ref refid="classAnimation" kindref="compound">Animation</ref></type>
+        <definition>Animation OpeningCutScene::anima</definition>
+        <argsstring></argsstring>
+        <name>anima</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="89" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a53bc5f80ee75add1c58e984086b8eda0" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS OpeningCutScene::modelStack</definition>
+        <argsstring></argsstring>
+        <name>modelStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="91" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="91" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">Render</referencedby>
+        <referencedby refid="classOpeningCutScene_1a84343ff789a716159f276ddd8f59e8bd" compoundref="OpeningCutScene_8cpp" startline="243" endline="285">RenderMesh</referencedby>
+        <referencedby refid="classOpeningCutScene_1adb9ba1e60deb592fcadc0a5ffd0159a6" compoundref="OpeningCutScene_8cpp" startline="333" endline="352">RenderModelOnScreen</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1ee7d7762e02e860cb10da08bc4e46d0" compoundref="OpeningCutScene_8cpp" startline="149" endline="180">RenderOpeningCutScene</referencedby>
+        <referencedby refid="classOpeningCutScene_1aba42fcde4e25e6471e06eda32a91fa28" compoundref="OpeningCutScene_8cpp" startline="287" endline="331">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a3d96146e18a349d345143e2359991f1b" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS OpeningCutScene::viewStack</definition>
+        <argsstring></argsstring>
+        <name>viewStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="91" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="91" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">Render</referencedby>
+        <referencedby refid="classOpeningCutScene_1a84343ff789a716159f276ddd8f59e8bd" compoundref="OpeningCutScene_8cpp" startline="243" endline="285">RenderMesh</referencedby>
+        <referencedby refid="classOpeningCutScene_1adb9ba1e60deb592fcadc0a5ffd0159a6" compoundref="OpeningCutScene_8cpp" startline="333" endline="352">RenderModelOnScreen</referencedby>
+        <referencedby refid="classOpeningCutScene_1aba42fcde4e25e6471e06eda32a91fa28" compoundref="OpeningCutScene_8cpp" startline="287" endline="331">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1af3b7d8e1434e364720beb202bc6105f6" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS OpeningCutScene::projectionStack</definition>
+        <argsstring></argsstring>
+        <name>projectionStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="91" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="91" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a84343ff789a716159f276ddd8f59e8bd" compoundref="OpeningCutScene_8cpp" startline="243" endline="285">RenderMesh</referencedby>
+        <referencedby refid="classOpeningCutScene_1adb9ba1e60deb592fcadc0a5ffd0159a6" compoundref="OpeningCutScene_8cpp" startline="333" endline="352">RenderModelOnScreen</referencedby>
+        <referencedby refid="classOpeningCutScene_1aba42fcde4e25e6471e06eda32a91fa28" compoundref="OpeningCutScene_8cpp" startline="287" endline="331">RenderTextOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a0450692c648383322b7cf4ec28e9e42c" prot="private" static="no" mutable="no">
+        <type><ref refid="structLight" kindref="compound">Light</ref></type>
+        <definition>Light OpeningCutScene::light[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>light</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="93" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="93" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">Render</referencedby>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a2df64a283723c8467053bcad3c5f2294" prot="private" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 OpeningCutScene::start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="95" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a8ff65b38941eaedb7b2754d513cbcf84" prot="private" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 OpeningCutScene::end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="96" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a2f25f54b2f36b43a2940beef59df0594" prot="private" static="no" mutable="no">
+        <type><ref refid="classGlobalVariables" kindref="compound">GlobalVariables</ref></type>
+        <definition>GlobalVariables OpeningCutScene::Variables</definition>
+        <argsstring></argsstring>
+        <name>Variables</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="97" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a55f0a0d09c0c8ba1ee0c212392346de9" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float OpeningCutScene::TextMove</definition>
+        <argsstring></argsstring>
+        <name>TextMove</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="99" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a1ee7d7762e02e860cb10da08bc4e46d0" compoundref="OpeningCutScene_8cpp" startline="149" endline="180">RenderOpeningCutScene</referencedby>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a5d2901b9fea1eaa2a87952a692757ed4" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool OpeningCutScene::toMoveText</definition>
+        <argsstring></argsstring>
+        <name>toMoveText</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="100" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="100" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a6d1a8a9bac770acb949879895379d3ce" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool OpeningCutScene::appearText</definition>
+        <argsstring></argsstring>
+        <name>appearText</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="101" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="101" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a68c4487192203595e182d536ba765142" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float OpeningCutScene::BGMove</definition>
+        <argsstring></argsstring>
+        <name>BGMove</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="102" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="102" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a1ee7d7762e02e860cb10da08bc4e46d0" compoundref="OpeningCutScene_8cpp" startline="149" endline="180">RenderOpeningCutScene</referencedby>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1aad0b26a8517e919bad61d8689cae9d17" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool OpeningCutScene::toMoveBG</definition>
+        <argsstring></argsstring>
+        <name>toMoveBG</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="103" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a1ee7d7762e02e860cb10da08bc4e46d0" compoundref="OpeningCutScene_8cpp" startline="149" endline="180">RenderOpeningCutScene</referencedby>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1ad80f2bf6d7bf898f9fce7c7317c0f240" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool OpeningCutScene::appearBG</definition>
+        <argsstring></argsstring>
+        <name>appearBG</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="104" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="104" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a340249ba567a295e758e0d21f6f4b086" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool OpeningCutScene::startTimer</definition>
+        <argsstring></argsstring>
+        <name>startTimer</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="106" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="106" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a1ee7d7762e02e860cb10da08bc4e46d0" compoundref="OpeningCutScene_8cpp" startline="149" endline="180">RenderOpeningCutScene</referencedby>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a99622eec6bb3b02397e8fbff1b0c894c" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float OpeningCutScene::timercount</definition>
+        <argsstring></argsstring>
+        <name>timercount</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="107" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="107" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classOpeningCutScene_1a76c23ac9cf18c6b94eabf271f1ee114f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool OpeningCutScene::changeScene</definition>
+        <argsstring></argsstring>
+        <name>changeScene</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="109" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="109" bodyend="-1"/>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classOpeningCutScene_1af89a6279bb06745631ad590877f17413" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpeningCutScene::OpeningCutScene</definition>
+        <argsstring>()</argsstring>
+        <name>OpeningCutScene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="59" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classOpeningCutScene_1ae5ea3121ac3d8ee74be2efd0f6a4c77e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OpeningCutScene::~OpeningCutScene</definition>
+        <argsstring>()</argsstring>
+        <name>~OpeningCutScene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="60" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.cpp" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpeningCutScene::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <reimplements refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="62" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.cpp" bodystart="24" bodyend="114"/>
+        <references refid="classOpeningCutScene_1a489d5cc346000631dd1dfb1995519cc7" compoundref="OpeningCutScene_8h" startline="68">camera</references>
+        <references refid="structLight_1ad7a168d26aed1bf7cca1a8d8e6f8ada4" compoundref="Light_8h" startline="8">Light::color</references>
+        <references refid="structLight_1af4ce5bbfbf33af96db9b8a222d073298" compoundref="Light_8h" startline="27">Light::cosCutoff</references>
+        <references refid="structLight_1a8c843f5d1af5c6f4f4928e9906f5d0db" compoundref="Light_8h" startline="28">Light::cosInner</references>
+        <references refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" compoundref="MyMath_8h" startline="49" endline="52">Math::DegreeToRadian</references>
+        <references refid="structLight_1a4eb4fd0f025fb66d1934675ffff0e661" compoundref="Light_8h" startline="29">Light::exponent</references>
+        <references refid="classMeshBuilder_1aa3751076aa9f74324d49a999a3c3fa55" compoundref="MeshBuilder_8cpp" startline="247" endline="278">MeshBuilder::GenerateQuad</references>
+        <references refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" compoundref="MeshBuilder_8cpp" startline="280" endline="320">MeshBuilder::GenerateText</references>
+        <references refid="classOpeningCutScene_1ad36cbd8efa42b2af74000e7539462057a09b458e0c15b8a5470882b6b711bfc14" compoundref="OpeningCutScene_8h" startline="23">GEO_TEXT</references>
+        <references refid="classOpeningCutScene_1ad36cbd8efa42b2af74000e7539462057a1d06e8996f608f5c00abc8fe84de7873" compoundref="OpeningCutScene_8h" startline="24">GEO_TEXTBACKGROUND</references>
+        <references refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="17" endline="30">Camera3::Init</references>
+        <references refid="structLight_1a888f11000d2baf1228d9e5c8d8c90fcb" compoundref="Light_8h" startline="10">Light::kC</references>
+        <references refid="structLight_1ab3918c449fb40fa5c6cc5283f2c9687d" compoundref="Light_8h" startline="10">Light::kL</references>
+        <references refid="structLight_1a79c8e47de58f131ff5403fc2d823cc21" compoundref="Light_8h" startline="10">Light::kQ</references>
+        <references refid="classOpeningCutScene_1a0450692c648383322b7cf4ec28e9e42c" compoundref="OpeningCutScene_8h" startline="93">light</references>
+        <references refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba69dd6d65ad12b410709ae74c8d9b1e16" compoundref="Light_8h" startline="23">Light::LIGHT_SPOT</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="shader_8cpp_1a833f10cca6a76fe34ae9efa23ac5e73c" compoundref="shader_8cpp" startline="16" endline="107">LoadShaders</references>
+        <references refid="LoadTGA_8cpp_1a459a80ca6de67a1e3493bfb66ae317e4" compoundref="LoadTGA_8cpp" startline="8" endline="68">LoadTGA</references>
+        <references refid="classOpeningCutScene_1ad029e488c5128c40605b99d60105383b" compoundref="OpeningCutScene_8h" startline="87">m_parameters</references>
+        <references refid="classOpeningCutScene_1a31a2d98317835c80b2e682c63524f424" compoundref="OpeningCutScene_8h" startline="86">m_programID</references>
+        <references refid="classOpeningCutScene_1a5eeb65fc956786cdedc6084500c63378" compoundref="OpeningCutScene_8h" startline="83">m_vertexArrayID</references>
+        <references refid="classOpeningCutScene_1a1fa57d00889fbd1bbf3c8d62e3afa693" compoundref="OpeningCutScene_8h" startline="84">meshList</references>
+        <references refid="structLight_1afeb738db41e987719e359166ef93314f" compoundref="Light_8h" startline="7">Light::position</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
+        <references refid="structLight_1a6c4c401141c4cdb3b9b9b3bab7dd6fbb" compoundref="Light_8h" startline="9">Light::power</references>
+        <references refid="classOpeningCutScene_1af3b7d8e1434e364720beb202bc6105f6" compoundref="OpeningCutScene_8h" startline="91">projectionStack</references>
+        <references refid="classOpeningCutScene_1a180b32f17f005c5358a5ca5e1439f37e" compoundref="OpeningCutScene_8cpp" startline="123" endline="146">ReadFromText</references>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
+        <references refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="29" endline="29">Color::Set</references>
+        <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
+        <references refid="classMtx44_1ac6e6521111d78ff36d539bf111a902c6" compoundref="Mtx44_8cpp" startline="466" endline="472">Mtx44::SetToPerspective</references>
+        <references refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" compoundref="Light_8h" startline="26">Light::spotDirection</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
+        <references refid="classOpeningCutScene_1a63254ec82feea01ef4ace39249d5773d" compoundref="OpeningCutScene_8h" startline="72">TestYou</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="structLight_1a5dcdb101afc28979b5aaff0a2ec79ba5" compoundref="Light_8h" startline="25">Light::type</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffafc000a25be1871fb9c576100ffc725a3" compoundref="OpeningCutScene_8h" startline="53">U_COLOR_TEXTURE</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffae04241da9f297808f0dab53779093816" compoundref="OpeningCutScene_8h" startline="52">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffabcd72c51c063d48d9540660a30895302" compoundref="OpeningCutScene_8h" startline="39">U_LIGHT0_COLOR</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffade773bafdfd9846a12bc5735426c698b" compoundref="OpeningCutScene_8h" startline="47">U_LIGHT0_COSCUTOFF</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa4a5753b30867fa91d4a7785d45171dfc" compoundref="OpeningCutScene_8h" startline="48">U_LIGHT0_COSINNER</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffac26c5af2def6fadcd4829348854c15f4" compoundref="OpeningCutScene_8h" startline="49">U_LIGHT0_EXPONENT</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffacedb8fe4f3c1727225e14d76722fddf6" compoundref="OpeningCutScene_8h" startline="41">U_LIGHT0_KC</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa6b60ab540d6cd718c388834eedb9ab98" compoundref="OpeningCutScene_8h" startline="42">U_LIGHT0_KL</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa7a03f01d28d08be060deed808636c6a9" compoundref="OpeningCutScene_8h" startline="43">U_LIGHT0_KQ</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa2ec229bcfdb15f411e5f99887c79be3e" compoundref="OpeningCutScene_8h" startline="38">U_LIGHT0_POSITION</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffac3af852895a560c1fe9b283502dfba91" compoundref="OpeningCutScene_8h" startline="40">U_LIGHT0_POWER</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa5991b5e21da76862c43c317dd2abac4d" compoundref="OpeningCutScene_8h" startline="46">U_LIGHT0_SPOTDIRECTION</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffae4d1adf3f3a4b85c88d0dd10808fb9f4" compoundref="OpeningCutScene_8h" startline="45">U_LIGHT0_TYPE</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa452a811ca712016d5f1521b0074105d3" compoundref="OpeningCutScene_8h" startline="44">U_LIGHTENABLED</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa8ee88a070265b62418eb4476cc7f77d1" compoundref="OpeningCutScene_8h" startline="33">U_MATERIAL_AMBIENT</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffad8754fe309313762a5972c6ef9b84736" compoundref="OpeningCutScene_8h" startline="34">U_MATERIAL_DIFFUSE</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa06259389193c462a40ef2d40cdc19b0d" compoundref="OpeningCutScene_8h" startline="36">U_MATERIAL_SHININESS</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffac29aedc0df2bf32bb8eb232f64420a2b" compoundref="OpeningCutScene_8h" startline="35">U_MATERIAL_SPECULAR</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa7b37911274a76ad5423a63b4c39946b8" compoundref="OpeningCutScene_8h" startline="31">U_MODELVIEW</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa6711dab04bb89d17107fc40282bdda03" compoundref="OpeningCutScene_8h" startline="32">U_MODELVIEW_INVERSE_TRANSPOSE</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffaea09f6b082d05f69a4abe4df96efe6fe" compoundref="OpeningCutScene_8h" startline="30">U_MVP</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa82580bbcb57f079b638aa748968dfb3f" compoundref="OpeningCutScene_8h" startline="51">U_NUMLIGHTS</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa77d119327e87ada9e26b735982c695bf" compoundref="OpeningCutScene_8h" startline="55">U_TEXT_COLOR</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffabb482d8c2ab70460b54ecd3e81501a58" compoundref="OpeningCutScene_8h" startline="54">U_TEXT_ENABLED</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpeningCutScene::Update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>Update</name>
+        <reimplements refid="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91">Update</reimplements>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="63" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.cpp" bodystart="182" bodyend="241"/>
+        <references refid="classOpeningCutScene_1ad80f2bf6d7bf898f9fce7c7317c0f240" compoundref="OpeningCutScene_8h" startline="104">appearBG</references>
+        <references refid="classOpeningCutScene_1a6d1a8a9bac770acb949879895379d3ce" compoundref="OpeningCutScene_8h" startline="101">appearText</references>
+        <references refid="classOpeningCutScene_1a68c4487192203595e182d536ba765142" compoundref="OpeningCutScene_8h" startline="102">BGMove</references>
+        <references refid="classOpeningCutScene_1a489d5cc346000631dd1dfb1995519cc7" compoundref="OpeningCutScene_8h" startline="68">camera</references>
+        <references refid="classOpeningCutScene_1a76c23ac9cf18c6b94eabf271f1ee114f" compoundref="OpeningCutScene_8h" startline="109">changeScene</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="42" endline="45">Application::IsKeyPressed</references>
+        <references refid="classOpeningCutScene_1a0450692c648383322b7cf4ec28e9e42c" compoundref="OpeningCutScene_8h" startline="93">light</references>
+        <references refid="classApplication_1abf06415c31de1aed7b2f93c6c6c7f636" compoundref="Application_8cpp" startline="244" endline="248">Application::OpenCutScene2</references>
+        <references refid="structLight_1afeb738db41e987719e359166ef93314f" compoundref="Light_8h" startline="7">Light::position</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
+        <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
+        <references refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" compoundref="Light_8h" startline="26">Light::spotDirection</references>
+        <references refid="classApplication_1a06a51f73e8d25ad6a4cf668957d52096" compoundref="Application_8cpp" startline="203" endline="207">Application::StartingScene</references>
+        <references refid="classOpeningCutScene_1a340249ba567a295e758e0d21f6f4b086" compoundref="OpeningCutScene_8h" startline="106">startTimer</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
+        <references refid="classOpeningCutScene_1a55f0a0d09c0c8ba1ee0c212392346de9" compoundref="OpeningCutScene_8h" startline="99">TextMove</references>
+        <references refid="classOpeningCutScene_1a99622eec6bb3b02397e8fbff1b0c894c" compoundref="OpeningCutScene_8h" startline="107">timercount</references>
+        <references refid="classOpeningCutScene_1aad0b26a8517e919bad61d8689cae9d17" compoundref="OpeningCutScene_8h" startline="103">toMoveBG</references>
+        <references refid="classOpeningCutScene_1a5d2901b9fea1eaa2a87952a692757ed4" compoundref="OpeningCutScene_8h" startline="100">toMoveText</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpeningCutScene::Render</definition>
+        <argsstring>()</argsstring>
+        <name>Render</name>
+        <reimplements refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Render</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="64" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.cpp" bodystart="354" bodyend="390"/>
+        <references refid="classOpeningCutScene_1a489d5cc346000631dd1dfb1995519cc7" compoundref="OpeningCutScene_8h" startline="68">camera</references>
+        <references refid="classOpeningCutScene_1a0450692c648383322b7cf4ec28e9e42c" compoundref="OpeningCutScene_8h" startline="93">light</references>
+        <references refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba9bf1f515ab954cb3379615aab42f30b6" compoundref="Light_8h" startline="22">Light::LIGHT_DIRECTIONAL</references>
+        <references refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba69dd6d65ad12b410709ae74c8d9b1e16" compoundref="Light_8h" startline="23">Light::LIGHT_SPOT</references>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classMS_1a2638cd3249260877cc31329978fb6b38" compoundref="MatrixStack_8cpp" startline="224" endline="231">MS::LookAt</references>
+        <references refid="classOpeningCutScene_1ad029e488c5128c40605b99d60105383b" compoundref="OpeningCutScene_8h" startline="87">m_parameters</references>
+        <references refid="classOpeningCutScene_1a53bc5f80ee75add1c58e984086b8eda0" compoundref="OpeningCutScene_8h" startline="91">modelStack</references>
+        <references refid="structLight_1afeb738db41e987719e359166ef93314f" compoundref="Light_8h" startline="7">Light::position</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
+        <references refid="classOpeningCutScene_1a1ee7d7762e02e860cb10da08bc4e46d0" compoundref="OpeningCutScene_8cpp" startline="149" endline="180">RenderOpeningCutScene</references>
+        <references refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" compoundref="Light_8h" startline="26">Light::spotDirection</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
+        <references refid="classOpeningCutScene_1a63254ec82feea01ef4ace39249d5773d" compoundref="OpeningCutScene_8h" startline="72">TestYou</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa2ec229bcfdb15f411e5f99887c79be3e" compoundref="OpeningCutScene_8h" startline="38">U_LIGHT0_POSITION</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa5991b5e21da76862c43c317dd2abac4d" compoundref="OpeningCutScene_8h" startline="46">U_LIGHT0_SPOTDIRECTION</references>
+        <references refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" compoundref="Camera_8h" startline="11">Camera::up</references>
+        <references refid="classOpeningCutScene_1a3d96146e18a349d345143e2359991f1b" compoundref="OpeningCutScene_8h" startline="91">viewStack</references>
+        <references refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" compoundref="Vertex_8h" startline="20">Position::x</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structPosition_1a54a6182b5f7539295b32255808897d3f" compoundref="Vertex_8h" startline="20">Position::y</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" compoundref="Vertex_8h" startline="20">Position::z</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="classOpeningCutScene_1a81aec9b25d5f22d6aef46c01f7da723b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpeningCutScene::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="65" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.cpp" bodystart="119" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classOpeningCutScene_1a8ad63249dce01443be4ddd2b804002e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OpeningCutScene::Exit</definition>
+        <argsstring>()</argsstring>
+        <name>Exit</name>
+        <reimplements refid="classScene_1aae8e24654ef98c79961c2b804b12852c">Exit</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="66" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.cpp" bodystart="392" bodyend="396"/>
+        <references refid="classOpeningCutScene_1a31a2d98317835c80b2e682c63524f424" compoundref="OpeningCutScene_8h" startline="86">m_programID</references>
+        <references refid="classOpeningCutScene_1a5eeb65fc956786cdedc6084500c63378" compoundref="OpeningCutScene_8h" startline="83">m_vertexArrayID</references>
+      </memberdef>
+      <memberdef kind="function" id="classOpeningCutScene_1a180b32f17f005c5358a5ca5e1439f37e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt; string &gt; OpeningCutScene::ReadFromText</definition>
+        <argsstring>(string link)</argsstring>
+        <name>ReadFromText</name>
+        <param>
+          <type>string</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="71" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.cpp" bodystart="123" bodyend="146"/>
+        <references refid="classOpeningCutScene_1a69c3e0a416a51bceaa815a92140273c5" compoundref="OpeningCutScene_8h" startline="70">readText</references>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">Init</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classOpeningCutScene_1a84343ff789a716159f276ddd8f59e8bd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpeningCutScene::RenderMesh</definition>
+        <argsstring>(Mesh *mesh, bool enableLight)</argsstring>
+        <name>RenderMesh</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enableLight</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="76" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.cpp" bodystart="243" bodyend="285"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classMtx44_1aac1ba21ddfc5f3c24baa4f58d9c5c256" compoundref="Mtx44_8cpp" startline="139" endline="195">Mtx44::GetInverse</references>
+        <references refid="classMtx44_1aebb16a0329c5237e314af0d75d8081fd" compoundref="Mtx44_8cpp" startline="123" endline="127">Mtx44::GetTranspose</references>
+        <references refid="structMaterial_1ab3819b3151cbf3ac1892195ab091e3b8" compoundref="Material_8h" startline="13">Material::kAmbient</references>
+        <references refid="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" compoundref="Material_8h" startline="14">Material::kDiffuse</references>
+        <references refid="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" compoundref="Material_8h" startline="16">Material::kShininess</references>
+        <references refid="structMaterial_1a97cc0bf34b02c758b198d12dd24e96e2" compoundref="Material_8h" startline="15">Material::kSpecular</references>
+        <references refid="classOpeningCutScene_1ad029e488c5128c40605b99d60105383b" compoundref="OpeningCutScene_8h" startline="87">m_parameters</references>
+        <references refid="classMesh_1a3368c3bc60dd176e522df1542b764847" compoundref="Mesh_8h" startline="36">Mesh::material</references>
+        <references refid="classOpeningCutScene_1a53bc5f80ee75add1c58e984086b8eda0" compoundref="OpeningCutScene_8h" startline="91">modelStack</references>
+        <references refid="classOpeningCutScene_1af3b7d8e1434e364720beb202bc6105f6" compoundref="OpeningCutScene_8h" startline="91">projectionStack</references>
+        <references refid="structComponent_1a490db57cde183ef5a233b6ff3386ef6f" compoundref="Material_8h" startline="6">Component::r</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="43" endline="80">Mesh::Render</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffafc000a25be1871fb9c576100ffc725a3" compoundref="OpeningCutScene_8h" startline="53">U_COLOR_TEXTURE</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffae04241da9f297808f0dab53779093816" compoundref="OpeningCutScene_8h" startline="52">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa452a811ca712016d5f1521b0074105d3" compoundref="OpeningCutScene_8h" startline="44">U_LIGHTENABLED</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa8ee88a070265b62418eb4476cc7f77d1" compoundref="OpeningCutScene_8h" startline="33">U_MATERIAL_AMBIENT</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffad8754fe309313762a5972c6ef9b84736" compoundref="OpeningCutScene_8h" startline="34">U_MATERIAL_DIFFUSE</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa06259389193c462a40ef2d40cdc19b0d" compoundref="OpeningCutScene_8h" startline="36">U_MATERIAL_SHININESS</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffac29aedc0df2bf32bb8eb232f64420a2b" compoundref="OpeningCutScene_8h" startline="35">U_MATERIAL_SPECULAR</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa7b37911274a76ad5423a63b4c39946b8" compoundref="OpeningCutScene_8h" startline="31">U_MODELVIEW</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa6711dab04bb89d17107fc40282bdda03" compoundref="OpeningCutScene_8h" startline="32">U_MODELVIEW_INVERSE_TRANSPOSE</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffaea09f6b082d05f69a4abe4df96efe6fe" compoundref="OpeningCutScene_8h" startline="30">U_MVP</references>
+        <references refid="classOpeningCutScene_1a3d96146e18a349d345143e2359991f1b" compoundref="OpeningCutScene_8h" startline="91">viewStack</references>
+        <referencedby refid="classOpeningCutScene_1adb9ba1e60deb592fcadc0a5ffd0159a6" compoundref="OpeningCutScene_8cpp" startline="333" endline="352">RenderModelOnScreen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classOpeningCutScene_1aba42fcde4e25e6471e06eda32a91fa28" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpeningCutScene::RenderTextOnScreen</definition>
+        <argsstring>(Mesh *mesh, std::string text, Color color, float size, float x, float y)</argsstring>
+        <name>RenderTextOnScreen</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type><ref refid="structColor" kindref="compound">Color</ref></type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="77" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.cpp" bodystart="287" bodyend="331"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="classOpeningCutScene_1ad029e488c5128c40605b99d60105383b" compoundref="OpeningCutScene_8h" startline="87">m_parameters</references>
+        <references refid="classOpeningCutScene_1a53bc5f80ee75add1c58e984086b8eda0" compoundref="OpeningCutScene_8h" startline="91">modelStack</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classOpeningCutScene_1af3b7d8e1434e364720beb202bc6105f6" compoundref="OpeningCutScene_8h" startline="91">projectionStack</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" compoundref="Vertex_8h" startline="27">Color::r</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="43" endline="80">Mesh::Render</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classMtx44_1a0a4c7818be7c1aeb0601ad069c1a591d" compoundref="Mtx44_8cpp" startline="492" endline="497">Mtx44::SetToOrtho</references>
+        <references refid="classMtx44_1a0cc88cc5c648da14effba480c4d2ac70" compoundref="Mtx44_8cpp" startline="376" endline="381">Mtx44::SetToTranslation</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffafc000a25be1871fb9c576100ffc725a3" compoundref="OpeningCutScene_8h" startline="53">U_COLOR_TEXTURE</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffae04241da9f297808f0dab53779093816" compoundref="OpeningCutScene_8h" startline="52">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa452a811ca712016d5f1521b0074105d3" compoundref="OpeningCutScene_8h" startline="44">U_LIGHTENABLED</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffaea09f6b082d05f69a4abe4df96efe6fe" compoundref="OpeningCutScene_8h" startline="30">U_MVP</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa77d119327e87ada9e26b735982c695bf" compoundref="OpeningCutScene_8h" startline="55">U_TEXT_COLOR</references>
+        <references refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffabb482d8c2ab70460b54ecd3e81501a58" compoundref="OpeningCutScene_8h" startline="54">U_TEXT_ENABLED</references>
+        <references refid="classOpeningCutScene_1a3d96146e18a349d345143e2359991f1b" compoundref="OpeningCutScene_8h" startline="91">viewStack</references>
+        <referencedby refid="classOpeningCutScene_1a1ee7d7762e02e860cb10da08bc4e46d0" compoundref="OpeningCutScene_8cpp" startline="149" endline="180">RenderOpeningCutScene</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classOpeningCutScene_1adb9ba1e60deb592fcadc0a5ffd0159a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpeningCutScene::RenderModelOnScreen</definition>
+        <argsstring>(Mesh *mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float x, float y, float z, bool LightYN)</argsstring>
+        <name>RenderModelOnScreen</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>Sx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>Sy</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>Sz</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>Rotate</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rZ</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>LightYN</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="78" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.cpp" bodystart="333" bodyend="352"/>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="classOpeningCutScene_1a53bc5f80ee75add1c58e984086b8eda0" compoundref="OpeningCutScene_8h" startline="91">modelStack</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classOpeningCutScene_1af3b7d8e1434e364720beb202bc6105f6" compoundref="OpeningCutScene_8h" startline="91">projectionStack</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="classOpeningCutScene_1a84343ff789a716159f276ddd8f59e8bd" compoundref="OpeningCutScene_8cpp" startline="243" endline="285">RenderMesh</references>
+        <references refid="classMS_1a6ce592114042b920b648bca5519690cd" compoundref="MatrixStack_8cpp" startline="130" endline="134">MS::Rotate</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classMtx44_1a0a4c7818be7c1aeb0601ad069c1a591d" compoundref="Mtx44_8cpp" startline="492" endline="497">Mtx44::SetToOrtho</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <references refid="classOpeningCutScene_1a3d96146e18a349d345143e2359991f1b" compoundref="OpeningCutScene_8h" startline="91">viewStack</references>
+        <referencedby refid="classOpeningCutScene_1a1ee7d7762e02e860cb10da08bc4e46d0" compoundref="OpeningCutScene_8cpp" startline="149" endline="180">RenderOpeningCutScene</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classOpeningCutScene_1a1ee7d7762e02e860cb10da08bc4e46d0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OpeningCutScene::RenderOpeningCutScene</definition>
+        <argsstring>(vector&lt; string &gt; Test)</argsstring>
+        <name>RenderOpeningCutScene</name>
+        <param>
+          <type>vector&lt; string &gt;</type>
+          <declname>Test</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/OpeningCutScene.h" line="81" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.cpp" bodystart="149" bodyend="180"/>
+        <references refid="classOpeningCutScene_1a68c4487192203595e182d536ba765142" compoundref="OpeningCutScene_8h" startline="102">BGMove</references>
+        <references refid="classOpeningCutScene_1ad36cbd8efa42b2af74000e7539462057a09b458e0c15b8a5470882b6b711bfc14" compoundref="OpeningCutScene_8h" startline="23">GEO_TEXT</references>
+        <references refid="classOpeningCutScene_1ad36cbd8efa42b2af74000e7539462057a1d06e8996f608f5c00abc8fe84de7873" compoundref="OpeningCutScene_8h" startline="24">GEO_TEXTBACKGROUND</references>
+        <references refid="classOpeningCutScene_1a9bd650474f33cc9f03a38c319c826a6f" compoundref="OpeningCutScene_8h" startline="73">its</references>
+        <references refid="classOpeningCutScene_1a1fa57d00889fbd1bbf3c8d62e3afa693" compoundref="OpeningCutScene_8h" startline="84">meshList</references>
+        <references refid="classOpeningCutScene_1a53bc5f80ee75add1c58e984086b8eda0" compoundref="OpeningCutScene_8h" startline="91">modelStack</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="classOpeningCutScene_1adb9ba1e60deb592fcadc0a5ffd0159a6" compoundref="OpeningCutScene_8cpp" startline="333" endline="352">RenderModelOnScreen</references>
+        <references refid="classOpeningCutScene_1aba42fcde4e25e6471e06eda32a91fa28" compoundref="OpeningCutScene_8cpp" startline="287" endline="331">RenderTextOnScreen</references>
+        <references refid="classOpeningCutScene_1a340249ba567a295e758e0d21f6f4b086" compoundref="OpeningCutScene_8h" startline="106">startTimer</references>
+        <references refid="classOpeningCutScene_1a63254ec82feea01ef4ace39249d5773d" compoundref="OpeningCutScene_8h" startline="72">TestYou</references>
+        <references refid="classOpeningCutScene_1a55f0a0d09c0c8ba1ee0c212392346de9" compoundref="OpeningCutScene_8h" startline="99">TextMove</references>
+        <references refid="classOpeningCutScene_1aad0b26a8517e919bad61d8689cae9d17" compoundref="OpeningCutScene_8h" startline="103">toMoveBG</references>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">Render</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="916">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="915">
+        <label>OpeningCutScene</label>
+        <link refid="classOpeningCutScene"/>
+        <childnode refid="916" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="924">
+        <label>misc</label>
+        <link refid="classmisc"/>
+        <childnode refid="922" relation="usage">
+          <edgelabel>camX</edgelabel>
+          <edgelabel>camY</edgelabel>
+          <edgelabel>camZ</edgelabel>
+        </childnode>
+      </node>
+      <node id="928">
+        <label>Position</label>
+        <link refid="structPosition"/>
+        <childnode refid="922" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+      <node id="933">
+        <label>stack&lt; Mtx44 &gt;</label>
+      </node>
+      <node id="938">
+        <label>Component</label>
+        <link refid="structComponent"/>
+        <childnode refid="922" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="926">
+        <label>LIGHT_TYPE</label>
+      </node>
+      <node id="934">
+        <label>vector&lt; string &gt;</label>
+      </node>
+      <node id="936">
+        <label>Mesh</label>
+        <link refid="classMesh"/>
+        <childnode refid="937" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+        <childnode refid="939" relation="usage">
+          <edgelabel>mode</edgelabel>
+        </childnode>
+        <childnode refid="940" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="941" relation="usage">
+          <edgelabel>colorBuffer</edgelabel>
+          <edgelabel>textureID</edgelabel>
+          <edgelabel>indexBuffer</edgelabel>
+          <edgelabel>indexSize</edgelabel>
+          <edgelabel>vertexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="935">
+        <label>Animation</label>
+        <link refid="classAnimation"/>
+        <childnode refid="930" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+        <childnode refid="922" relation="usage">
+          <edgelabel>QPDOOR1_BOT</edgelabel>
+          <edgelabel>AsteroidMoveS</edgelabel>
+          <edgelabel>QPDOOR5_TOP</edgelabel>
+          <edgelabel>QPDOOR2_BOT</edgelabel>
+          <edgelabel>DoorSlideTop_Boss</edgelabel>
+          <edgelabel>DoorSlideTop_2</edgelabel>
+          <edgelabel>cam_pos_X</edgelabel>
+          <edgelabel>DoorSlideTop_3</edgelabel>
+          <edgelabel>QPDOOR3_TOP</edgelabel>
+          <edgelabel>DoorSlideTop_4</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="920" relation="usage">
+          <edgelabel>toSlideDoorTop2</edgelabel>
+          <edgelabel>cameramove3</edgelabel>
+          <edgelabel>QP_TOPDOOR1</edgelabel>
+          <edgelabel>toSlideDoorBtm_Boss</edgelabel>
+          <edgelabel>toSlideDoorTop3</edgelabel>
+          <edgelabel>QP_TOPDOOR2</edgelabel>
+          <edgelabel>toSlideDoorTop4</edgelabel>
+          <edgelabel>Collapse</edgelabel>
+          <edgelabel>toOpenDoorL</edgelabel>
+          <edgelabel>QP_TOPDOOR3</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+      <node id="921">
+        <label>GlobalVariables</label>
+        <link refid="classGlobalVariables"/>
+        <childnode refid="922" relation="usage">
+          <edgelabel>f_SwitchRotateTwo</edgelabel>
+          <edgelabel>f_redScreenTimer</edgelabel>
+          <edgelabel>f_SwitchRotateOne</edgelabel>
+          <edgelabel>f_savePointRotateY</edgelabel>
+          <edgelabel>f_SwitchRotateThree</edgelabel>
+          <edgelabel>RotateX</edgelabel>
+          <edgelabel>f_rotatingTool</edgelabel>
+          <edgelabel>f_Worldspin</edgelabel>
+          <edgelabel>f_SuitcaseRotateY</edgelabel>
+          <edgelabel>f_SwitchDebounce</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="920" relation="usage">
+          <edgelabel>b_SwitchAnimate</edgelabel>
+          <edgelabel>start_Animation</edgelabel>
+          <edgelabel>b_LockSwingDebounce</edgelabel>
+          <edgelabel>b_LockSwing</edgelabel>
+        </childnode>
+      </node>
+      <node id="939">
+        <label>DRAW_MODE</label>
+      </node>
+      <node id="931">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+        <childnode refid="927" relation="usage">
+          <edgelabel>target</edgelabel>
+          <edgelabel>position</edgelabel>
+          <edgelabel>up</edgelabel>
+        </childnode>
+      </node>
+      <node id="940">
+        <label>string</label>
+      </node>
+      <node id="937">
+        <label>Material</label>
+        <link refid="structMaterial"/>
+        <childnode refid="922" relation="usage">
+          <edgelabel>kShininess</edgelabel>
+        </childnode>
+        <childnode refid="938" relation="usage">
+          <edgelabel>kDiffuse</edgelabel>
+          <edgelabel>kAmbient</edgelabel>
+          <edgelabel>kSpecular</edgelabel>
+        </childnode>
+      </node>
+      <node id="922">
+        <label>float</label>
+      </node>
+      <node id="932">
+        <label>MS</label>
+        <link refid="classMS"/>
+        <childnode refid="933" relation="usage">
+          <edgelabel>ms</edgelabel>
+        </childnode>
+      </node>
+      <node id="918">
+        <label>Scene</label>
+        <link refid="classScene"/>
+        <childnode refid="919" relation="usage">
+          <edgelabel>Switches</edgelabel>
+        </childnode>
+        <childnode refid="921" relation="usage">
+          <edgelabel>Variables</edgelabel>
+        </childnode>
+        <childnode refid="923" relation="usage">
+          <edgelabel>Tool</edgelabel>
+        </childnode>
+        <childnode refid="924" relation="usage">
+          <edgelabel>Misc</edgelabel>
+        </childnode>
+      </node>
+      <node id="919">
+        <label>SwitchLightPuzzle</label>
+        <link refid="classSwitchLightPuzzle"/>
+        <childnode refid="920" relation="usage">
+          <edgelabel>b_PuzzleTwo</edgelabel>
+          <edgelabel>b_PuzzleOne</edgelabel>
+        </childnode>
+      </node>
+      <node id="925">
+        <label>Light</label>
+        <link refid="structLight"/>
+        <childnode refid="926" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="922" relation="usage">
+          <edgelabel>exponent</edgelabel>
+          <edgelabel>kL</edgelabel>
+          <edgelabel>cosCutoff</edgelabel>
+          <edgelabel>cosInner</edgelabel>
+          <edgelabel>kQ</edgelabel>
+          <edgelabel>kC</edgelabel>
+          <edgelabel>power</edgelabel>
+        </childnode>
+        <childnode refid="927" relation="usage">
+          <edgelabel>spotDirection</edgelabel>
+        </childnode>
+        <childnode refid="928" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+        <childnode refid="929" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+      </node>
+      <node id="930">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="931" relation="public-inheritance">
+        </childnode>
+        <childnode refid="922" relation="usage">
+          <edgelabel>rotationX</edgelabel>
+          <edgelabel>rotationY</edgelabel>
+          <edgelabel>MarginofError</edgelabel>
+        </childnode>
+        <childnode refid="927" relation="usage">
+          <edgelabel>defaultTarget</edgelabel>
+          <edgelabel>defaultPosition</edgelabel>
+          <edgelabel>right</edgelabel>
+          <edgelabel>view</edgelabel>
+          <edgelabel>defaultUp</edgelabel>
+        </childnode>
+      </node>
+      <node id="929">
+        <label>Color</label>
+        <link refid="structColor"/>
+        <childnode refid="922" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="917">
+        <label>OpeningCutScene</label>
+        <link refid="classOpeningCutScene"/>
+        <childnode refid="918" relation="public-inheritance">
+        </childnode>
+        <childnode refid="925" relation="usage">
+          <edgelabel>light</edgelabel>
+        </childnode>
+        <childnode refid="921" relation="usage">
+          <edgelabel>Variables</edgelabel>
+        </childnode>
+        <childnode refid="930" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+        <childnode refid="922" relation="usage">
+          <edgelabel>TextMove</edgelabel>
+          <edgelabel>BGMove</edgelabel>
+          <edgelabel>timercount</edgelabel>
+        </childnode>
+        <childnode refid="932" relation="usage">
+          <edgelabel>projectionStack</edgelabel>
+          <edgelabel>modelStack</edgelabel>
+          <edgelabel>viewStack</edgelabel>
+        </childnode>
+        <childnode refid="927" relation="usage">
+          <edgelabel>end</edgelabel>
+          <edgelabel>start</edgelabel>
+        </childnode>
+        <childnode refid="920" relation="usage">
+          <edgelabel>toMoveBG</edgelabel>
+          <edgelabel>changeScene</edgelabel>
+          <edgelabel>toMoveText</edgelabel>
+          <edgelabel>appearText</edgelabel>
+          <edgelabel>startTimer</edgelabel>
+          <edgelabel>appearBG</edgelabel>
+        </childnode>
+        <childnode refid="934" relation="usage">
+          <edgelabel>TestYou</edgelabel>
+          <edgelabel>its</edgelabel>
+          <edgelabel>readText</edgelabel>
+        </childnode>
+        <childnode refid="935" relation="usage">
+          <edgelabel>anima</edgelabel>
+        </childnode>
+        <childnode refid="936" relation="usage">
+          <edgelabel>meshList</edgelabel>
+        </childnode>
+        <childnode refid="941" relation="usage">
+          <edgelabel>m_parameters</edgelabel>
+          <edgelabel>m_programID</edgelabel>
+          <edgelabel>m_vertexArrayID</edgelabel>
+        </childnode>
+      </node>
+      <node id="941">
+        <label>unsigned</label>
+      </node>
+      <node id="920">
+        <label>bool</label>
+      </node>
+      <node id="923">
+        <label>ToolType</label>
+      </node>
+      <node id="927">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="922" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ComGraphics/Source/OpeningCutScene.h" line="20" column="1" bodyfile="ComGraphics/Source/OpeningCutScene.h" bodystart="19" bodyend="110"/>
+    <listofallmembers>
+      <member refid="classOpeningCutScene_1af5e800f697376ed2c01cc16ca1f72c7e" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>anima</name></member>
+      <member refid="classOpeningCutScene_1ad80f2bf6d7bf898f9fce7c7317c0f240" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>appearBG</name></member>
+      <member refid="classOpeningCutScene_1a6d1a8a9bac770acb949879895379d3ce" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>appearText</name></member>
+      <member refid="classOpeningCutScene_1a68c4487192203595e182d536ba765142" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>BGMove</name></member>
+      <member refid="classOpeningCutScene_1a489d5cc346000631dd1dfb1995519cc7" prot="public" virt="non-virtual"><scope>OpeningCutScene</scope><name>camera</name></member>
+      <member refid="classOpeningCutScene_1a76c23ac9cf18c6b94eabf271f1ee114f" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>changeScene</name></member>
+      <member refid="classOpeningCutScene_1a8ff65b38941eaedb7b2754d513cbcf84" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>end</name></member>
+      <member refid="classOpeningCutScene_1a8ad63249dce01443be4ddd2b804002e8" prot="public" virt="virtual"><scope>OpeningCutScene</scope><name>Exit</name></member>
+      <member refid="classOpeningCutScene_1ad36cbd8efa42b2af74000e7539462057a09b458e0c15b8a5470882b6b711bfc14" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>GEO_TEXT</name></member>
+      <member refid="classOpeningCutScene_1ad36cbd8efa42b2af74000e7539462057a1d06e8996f608f5c00abc8fe84de7873" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>GEO_TEXTBACKGROUND</name></member>
+      <member refid="classOpeningCutScene_1ad36cbd8efa42b2af74000e7539462057" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>GEOMETRY_TYPE</name></member>
+      <member refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" prot="public" virt="virtual"><scope>OpeningCutScene</scope><name>Init</name></member>
+      <member refid="classOpeningCutScene_1a9bd650474f33cc9f03a38c319c826a6f" prot="public" virt="non-virtual"><scope>OpeningCutScene</scope><name>its</name></member>
+      <member refid="classOpeningCutScene_1a0450692c648383322b7cf4ec28e9e42c" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>light</name></member>
+      <member refid="classOpeningCutScene_1ad029e488c5128c40605b99d60105383b" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>m_parameters</name></member>
+      <member refid="classOpeningCutScene_1a31a2d98317835c80b2e682c63524f424" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>m_programID</name></member>
+      <member refid="classOpeningCutScene_1a5eeb65fc956786cdedc6084500c63378" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>m_vertexArrayID</name></member>
+      <member refid="classOpeningCutScene_1a1fa57d00889fbd1bbf3c8d62e3afa693" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>meshList</name></member>
+      <member refid="classScene_1aca2cbf744d1f05412d6b7a8e9842a26d" prot="public" virt="non-virtual"><scope>OpeningCutScene</scope><name>Misc</name></member>
+      <member refid="classOpeningCutScene_1a53bc5f80ee75add1c58e984086b8eda0" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>modelStack</name></member>
+      <member refid="classOpeningCutScene_1ad36cbd8efa42b2af74000e7539462057a227b482c34d5855561f9c2e17f631cd7" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>NUM_GEOMETRY</name></member>
+      <member refid="classOpeningCutScene_1af89a6279bb06745631ad590877f17413" prot="public" virt="non-virtual"><scope>OpeningCutScene</scope><name>OpeningCutScene</name></member>
+      <member refid="classOpeningCutScene_1af3b7d8e1434e364720beb202bc6105f6" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>projectionStack</name></member>
+      <member refid="classOpeningCutScene_1a180b32f17f005c5358a5ca5e1439f37e" prot="public" virt="non-virtual"><scope>OpeningCutScene</scope><name>ReadFromText</name></member>
+      <member refid="classOpeningCutScene_1a69c3e0a416a51bceaa815a92140273c5" prot="public" virt="non-virtual"><scope>OpeningCutScene</scope><name>readText</name></member>
+      <member refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" prot="public" virt="virtual"><scope>OpeningCutScene</scope><name>Render</name></member>
+      <member refid="classOpeningCutScene_1a84343ff789a716159f276ddd8f59e8bd" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>RenderMesh</name></member>
+      <member refid="classOpeningCutScene_1adb9ba1e60deb592fcadc0a5ffd0159a6" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>RenderModelOnScreen</name></member>
+      <member refid="classOpeningCutScene_1a1ee7d7762e02e860cb10da08bc4e46d0" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>RenderOpeningCutScene</name></member>
+      <member refid="classOpeningCutScene_1aba42fcde4e25e6471e06eda32a91fa28" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>RenderTextOnScreen</name></member>
+      <member refid="classOpeningCutScene_1a81aec9b25d5f22d6aef46c01f7da723b" prot="public" virt="virtual"><scope>OpeningCutScene</scope><name>Reset</name></member>
+      <member refid="classScene_1ad10176d75a9cc0da56626f682d083507" prot="public" virt="non-virtual"><scope>OpeningCutScene</scope><name>Scene</name></member>
+      <member refid="classOpeningCutScene_1a2df64a283723c8467053bcad3c5f2294" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>start</name></member>
+      <member refid="classOpeningCutScene_1a340249ba567a295e758e0d21f6f4b086" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>startTimer</name></member>
+      <member refid="classScene_1aa80b5e3775f5d699ae775965f1103785" prot="public" virt="non-virtual"><scope>OpeningCutScene</scope><name>Switches</name></member>
+      <member refid="classOpeningCutScene_1a63254ec82feea01ef4ace39249d5773d" prot="public" virt="non-virtual"><scope>OpeningCutScene</scope><name>TestYou</name></member>
+      <member refid="classOpeningCutScene_1a55f0a0d09c0c8ba1ee0c212392346de9" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>TextMove</name></member>
+      <member refid="classOpeningCutScene_1a99622eec6bb3b02397e8fbff1b0c894c" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>timercount</name></member>
+      <member refid="classOpeningCutScene_1aad0b26a8517e919bad61d8689cae9d17" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>toMoveBG</name></member>
+      <member refid="classOpeningCutScene_1a5d2901b9fea1eaa2a87952a692757ed4" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>toMoveText</name></member>
+      <member refid="classScene_1ae5caf654febe086544d9dae6f3d57a90" prot="public" virt="non-virtual"><scope>OpeningCutScene</scope><name>Tool</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffafc000a25be1871fb9c576100ffc725a3" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_COLOR_TEXTURE</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffae04241da9f297808f0dab53779093816" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_COLOR_TEXTURE_ENABLED</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffabcd72c51c063d48d9540660a30895302" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_LIGHT0_COLOR</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffade773bafdfd9846a12bc5735426c698b" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_LIGHT0_COSCUTOFF</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa4a5753b30867fa91d4a7785d45171dfc" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_LIGHT0_COSINNER</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffac26c5af2def6fadcd4829348854c15f4" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_LIGHT0_EXPONENT</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffacedb8fe4f3c1727225e14d76722fddf6" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_LIGHT0_KC</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa6b60ab540d6cd718c388834eedb9ab98" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_LIGHT0_KL</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa7a03f01d28d08be060deed808636c6a9" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_LIGHT0_KQ</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa2ec229bcfdb15f411e5f99887c79be3e" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_LIGHT0_POSITION</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffac3af852895a560c1fe9b283502dfba91" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_LIGHT0_POWER</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa5991b5e21da76862c43c317dd2abac4d" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_LIGHT0_SPOTDIRECTION</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffae4d1adf3f3a4b85c88d0dd10808fb9f4" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_LIGHT0_TYPE</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa452a811ca712016d5f1521b0074105d3" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_LIGHTENABLED</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa8ee88a070265b62418eb4476cc7f77d1" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_MATERIAL_AMBIENT</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffad8754fe309313762a5972c6ef9b84736" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_MATERIAL_DIFFUSE</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa06259389193c462a40ef2d40cdc19b0d" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_MATERIAL_SHININESS</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffac29aedc0df2bf32bb8eb232f64420a2b" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_MATERIAL_SPECULAR</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa7b37911274a76ad5423a63b4c39946b8" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_MODELVIEW</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa6711dab04bb89d17107fc40282bdda03" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_MODELVIEW_INVERSE_TRANSPOSE</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffaea09f6b082d05f69a4abe4df96efe6fe" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_MVP</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa82580bbcb57f079b638aa748968dfb3f" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_NUMLIGHTS</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffa77d119327e87ada9e26b735982c695bf" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_TEXT_COLOR</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffabb482d8c2ab70460b54ecd3e81501a58" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_TEXT_ENABLED</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abffab96a1546a0b9800eedd85152382de9fe" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>U_TOTAL</name></member>
+      <member refid="classOpeningCutScene_1a6cf42158aefc55ef05e6ed10cb55abff" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>UNIFORM_TYPE</name></member>
+      <member refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" prot="public" virt="virtual"><scope>OpeningCutScene</scope><name>Update</name></member>
+      <member refid="classOpeningCutScene_1a2f25f54b2f36b43a2940beef59df0594" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>Variables</name></member>
+      <member refid="classOpeningCutScene_1a3d96146e18a349d345143e2359991f1b" prot="private" virt="non-virtual"><scope>OpeningCutScene</scope><name>viewStack</name></member>
+      <member refid="classOpeningCutScene_1ae5ea3121ac3d8ee74be2efd0f6a4c77e" prot="public" virt="non-virtual"><scope>OpeningCutScene</scope><name>~OpeningCutScene</name></member>
+      <member refid="classScene_1a3b8cec2e32546713915f8c6303c951f1" prot="public" virt="non-virtual"><scope>OpeningCutScene</scope><name>~Scene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

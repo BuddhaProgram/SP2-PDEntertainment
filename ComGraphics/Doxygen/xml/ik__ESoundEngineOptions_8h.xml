@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="ik__ESoundEngineOptions_8h" kind="file" language="C++">
+    <compoundname>ik_ESoundEngineOptions.h</compoundname>
+    <includedby refid="irrKlang_8h" local="yes">ComGraphics/irrKlang/include/irrKlang.h</includedby>
+    <invincdepgraph>
+      <node id="4033">
+        <label>ComGraphics/Source/OpeningCutScene2.cpp</label>
+        <link refid="OpeningCutScene2_8cpp"/>
+      </node>
+      <node id="4042">
+        <label>ComGraphics/Source/SceneLevelTwoRenders.cpp</label>
+        <link refid="SceneLevelTwoRenders_8cpp"/>
+      </node>
+      <node id="4036">
+        <label>ComGraphics/Source/SceneEndRenders.cpp</label>
+        <link refid="SceneEndRenders_8cpp"/>
+      </node>
+      <node id="4031">
+        <label>ComGraphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="4022">
+        <label>ComGraphics/Source/Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="4023" relation="include">
+        </childnode>
+        <childnode refid="4044" relation="include">
+        </childnode>
+      </node>
+      <node id="4040">
+        <label>ComGraphics/Source/SceneLevelOneBRenders.cpp</label>
+        <link refid="SceneLevelOneBRenders_8cpp"/>
+      </node>
+      <node id="4028">
+        <label>ComGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="4021">
+        <label>ComGraphics/irrKlang/plugins/ikpMP3/ikpMP3.cpp</label>
+        <link refid="ikpMP3_8cpp"/>
+      </node>
+      <node id="4032">
+        <label>ComGraphics/Source/OpeningCutScene.cpp</label>
+        <link refid="OpeningCutScene_8cpp"/>
+      </node>
+      <node id="4020">
+        <label>ComGraphics/irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="4021" relation="include">
+        </childnode>
+        <childnode refid="4022" relation="include">
+        </childnode>
+      </node>
+      <node id="4023">
+        <label>ComGraphics/Source/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="4024" relation="include">
+        </childnode>
+        <childnode refid="4025" relation="include">
+        </childnode>
+        <childnode refid="4027" relation="include">
+        </childnode>
+        <childnode refid="4028" relation="include">
+        </childnode>
+        <childnode refid="4029" relation="include">
+        </childnode>
+        <childnode refid="4030" relation="include">
+        </childnode>
+        <childnode refid="4031" relation="include">
+        </childnode>
+        <childnode refid="4032" relation="include">
+        </childnode>
+        <childnode refid="4033" relation="include">
+        </childnode>
+        <childnode refid="4034" relation="include">
+        </childnode>
+        <childnode refid="4035" relation="include">
+        </childnode>
+        <childnode refid="4036" relation="include">
+        </childnode>
+        <childnode refid="4037" relation="include">
+        </childnode>
+        <childnode refid="4038" relation="include">
+        </childnode>
+        <childnode refid="4039" relation="include">
+        </childnode>
+        <childnode refid="4040" relation="include">
+        </childnode>
+        <childnode refid="4041" relation="include">
+        </childnode>
+        <childnode refid="4042" relation="include">
+        </childnode>
+        <childnode refid="4043" relation="include">
+        </childnode>
+      </node>
+      <node id="4029">
+        <label>ComGraphics/Source/Credits.cpp</label>
+        <link refid="Credits_8cpp"/>
+      </node>
+      <node id="4038">
+        <label>ComGraphics/Source/SceneLevelOneARenders.cpp</label>
+        <link refid="SceneLevelOneARenders_8cpp"/>
+      </node>
+      <node id="4034">
+        <label>ComGraphics/Source/SceneEnd.cpp</label>
+        <link refid="SceneEnd_8cpp"/>
+      </node>
+      <node id="4041">
+        <label>ComGraphics/Source/SceneLevelTwo.cpp</label>
+        <link refid="SceneLevelTwo_8cpp"/>
+      </node>
+      <node id="4025">
+        <label>ComGraphics/Source/SceneOpening.h</label>
+        <link refid="SceneOpening_8h"/>
+        <childnode refid="4024" relation="include">
+        </childnode>
+        <childnode refid="4026" relation="include">
+        </childnode>
+      </node>
+      <node id="4027">
+        <label>ComGraphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
+      </node>
+      <node id="4019">
+        <label>ComGraphics/irrKlang/include/ik_ESoundEngineOptions.h</label>
+        <link refid="ik_ESoundEngineOptions.h"/>
+        <childnode refid="4020" relation="include">
+        </childnode>
+      </node>
+      <node id="4039">
+        <label>ComGraphics/Source/SceneLevelOneB.cpp</label>
+        <link refid="SceneLevelOneB_8cpp"/>
+      </node>
+      <node id="4035">
+        <label>ComGraphics/Source/SceneEndCutScene.cpp</label>
+        <link refid="SceneEndCutScene_8cpp"/>
+      </node>
+      <node id="4024">
+        <label>ComGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="4037">
+        <label>ComGraphics/Source/SceneLevelOneA.cpp</label>
+        <link refid="SceneLevelOneA_8cpp"/>
+      </node>
+      <node id="4026">
+        <label>ComGraphics/Source/SceneOpening.cpp</label>
+        <link refid="SceneOpening_8cpp"/>
+      </node>
+      <node id="4043">
+        <label>ComGraphics/Source/SceneStart.cpp</label>
+        <link refid="SceneStart_8cpp"/>
+      </node>
+      <node id="4044">
+        <label>ComGraphics/Source/Music.cpp</label>
+        <link refid="Music_8cpp"/>
+      </node>
+      <node id="4030">
+        <label>ComGraphics/Source/CutSceneOne.cpp</label>
+        <link refid="CutSceneOne_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceirrklang">irrklang</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>2002-2014<sp/>Nikolaus<sp/>Gebhardt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>&quot;irrKlang&quot;<sp/>library.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>copyright<sp/>notice<sp/>in<sp/>irrKlang.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__E_IRRKLANG_SOUND_ENGINE_OPTIONS_H_INCLUDED__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__E_IRRKLANG_SOUND_ENGINE_OPTIONS_H_INCLUDED__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="namespaceirrklang" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceirrklang" kindref="compound">irrklang</ref><sp/><sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"></codeline>
+<codeline lineno="15" refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7f" kindref="member">E_SOUND_ENGINE_OPTIONS</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="18"></codeline>
+<codeline lineno="23" refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fa83d61c032b77336f4a4a2b506e1c9e24" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fa83d61c032b77336f4a4a2b506e1c9e24" kindref="member">ESEO_MULTI_THREADED</ref><sp/>=<sp/>0x01,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"></codeline>
+<codeline lineno="27" refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7faf7a3169d7e1fa394035639eaf1bd5b1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7faf7a3169d7e1fa394035639eaf1bd5b1e" kindref="member">ESEO_MUTE_IF_NOT_FOCUSED</ref><sp/>=<sp/>0x02,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"></codeline>
+<codeline lineno="37" refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fafda608a17564b562a9a43b7934a387e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fafda608a17564b562a9a43b7934a387e8" kindref="member">ESEO_LOAD_PLUGINS</ref><sp/>=<sp/>0x04,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"></codeline>
+<codeline lineno="43" refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fa76f687a07c0fe42e0af47098a6c58286" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fa76f687a07c0fe42e0af47098a6c58286" kindref="member">ESEO_USE_3D_BUFFERS</ref><sp/>=<sp/>0x08,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"></codeline>
+<codeline lineno="49" refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7faa5b12b3061e7ba5898e9a502de47bb8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7faa5b12b3061e7ba5898e9a502de47bb8e" kindref="member">ESEO_PRINT_DEBUG_INFO_TO_DEBUGGER</ref><sp/>=<sp/>0x10,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"></codeline>
+<codeline lineno="53" refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fa6a103ac05a294aea210fd0bb14dd8241" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fa6a103ac05a294aea210fd0bb14dd8241" kindref="member">ESEO_PRINT_DEBUG_INFO_TO_STDOUT</ref><sp/>=<sp/>0x20,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"></codeline>
+<codeline lineno="64" refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fa4600bc37a0bf0b999562d59bec094c05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fa4600bc37a0bf0b999562d59bec094c05" kindref="member">ESEO_LINEAR_ROLLOFF</ref><sp/>=<sp/>0x40,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7facca58ad3ee7e3c2e874bc4015f36f2a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7facca58ad3ee7e3c2e874bc4015f36f2a9" kindref="member">ESEO_DEFAULT_OPTIONS</ref><sp/>=<sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fa83d61c032b77336f4a4a2b506e1c9e24" kindref="member">ESEO_MULTI_THREADED</ref><sp/>|<sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fafda608a17564b562a9a43b7934a387e8" kindref="member">ESEO_LOAD_PLUGINS</ref><sp/>|<sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fa76f687a07c0fe42e0af47098a6c58286" kindref="member">ESEO_USE_3D_BUFFERS</ref><sp/>|<sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7faa5b12b3061e7ba5898e9a502de47bb8e" kindref="member">ESEO_PRINT_DEBUG_INFO_TO_DEBUGGER</ref><sp/>|<sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fa6a103ac05a294aea210fd0bb14dd8241" kindref="member">ESEO_PRINT_DEBUG_INFO_TO_STDOUT</ref>,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"></codeline>
+<codeline lineno="71" refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fada32d5c6ec9eb5cfa818184faf87eb6a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceirrklang_1ac9155ff55b347df6e905462100762d7fada32d5c6ec9eb5cfa818184faf87eb6a" kindref="member">ESEO_FORCE_32_BIT</ref><sp/>=<sp/>0x7fffffff</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>irrklang</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/irrKlang/include/ik_ESoundEngineOptions.h"/>
+  </compounddef>
+</doxygen>

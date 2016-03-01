@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="HostileMob_8cpp" kind="file" language="C++">
+    <compoundname>HostileMob.cpp</compoundname>
+    <includes refid="HostileMob_8h" local="yes">HostileMob.h</includes>
+    <incdepgraph>
+      <node id="5576">
+        <label>list</label>
+      </node>
+      <node id="5577">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5578" relation="include">
+        </childnode>
+        <childnode refid="5583" relation="include">
+        </childnode>
+      </node>
+      <node id="5579">
+        <label>cmath</label>
+      </node>
+      <node id="5580">
+        <label>exception</label>
+      </node>
+      <node id="5581">
+        <label>ctime</label>
+      </node>
+      <node id="5575">
+        <label>vector</label>
+      </node>
+      <node id="5572">
+        <label>HostileMob.h</label>
+        <link refid="HostileMob_8h"/>
+        <childnode refid="5573" relation="include">
+        </childnode>
+        <childnode refid="5577" relation="include">
+        </childnode>
+      </node>
+      <node id="5571">
+        <label>ComGraphics/Source/HostileMob.cpp</label>
+        <link refid="HostileMob.cpp"/>
+        <childnode refid="5572" relation="include">
+        </childnode>
+      </node>
+      <node id="5582">
+        <label>cstdlib</label>
+      </node>
+      <node id="5583">
+        <label>iostream</label>
+      </node>
+      <node id="5573">
+        <label>Explorer.h</label>
+        <link refid="Explorer_8h"/>
+        <childnode refid="5574" relation="include">
+        </childnode>
+        <childnode refid="5577" relation="include">
+        </childnode>
+      </node>
+      <node id="5574">
+        <label>ToolUI.h</label>
+        <link refid="ToolUI_8h"/>
+        <childnode refid="5575" relation="include">
+        </childnode>
+        <childnode refid="5576" relation="include">
+        </childnode>
+      </node>
+      <node id="5578">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5579" relation="include">
+        </childnode>
+        <childnode refid="5580" relation="include">
+        </childnode>
+        <childnode refid="5581" relation="include">
+        </childnode>
+        <childnode refid="5582" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="HostileMob_8h" kindref="compound">HostileMob.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="classHostileMob_1a6d5086ee741d22461a3471e0800930b6" refkind="member"><highlight class="normal"><ref refid="classHostileMob_1a6d5086ee741d22461a3471e0800930b6" kindref="member">HostileMob::HostileMob</ref>()</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//global<sp/>variables<sp/>for<sp/>use<sp/>in<sp/>entire<sp/>project</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1ad3df732f04e4701cc0ee6efc98b7f9bb" kindref="member">Spawn</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//mob<sp/>position<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1abf8d99cebf0a451a57cdcf6f4fc916d3" kindref="member">MobPosY</ref><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>=<sp/>15;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//player<sp/>detection<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" kindref="member">TargetDetectX</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" kindref="member">TargetDetectZ</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//timer<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a5af899b3b3c363eee35ce50334f7b875" kindref="member">mobTimeCount</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1af38e5a0ff2f970620b1ed34c1ca37b19" kindref="member">health</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classHostileMob_1a675414efc54fe0e3ea35ad85ee724759" refkind="member"><highlight class="normal"><ref refid="classHostileMob_1a675414efc54fe0e3ea35ad85ee724759" kindref="member">HostileMob::~HostileMob</ref>()</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classHostileMob_1ae216bbb1e78623ca4fd1420d4ef90412" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classHostileMob_1ae216bbb1e78623ca4fd1420d4ef90412" kindref="member">HostileMob::checkPlayerPos</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>checkRate<sp/>=<sp/>1,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lessenSpeed<sp/>=<sp/>1,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>xpos<sp/>=<sp/>0,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>zpos<sp/>=<sp/>0)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a5af899b3b3c363eee35ce50334f7b875" kindref="member">mobTimeCount</ref><sp/>+=<sp/>(((float)(dt)*<sp/>checkRate)<sp/>/<sp/>lessenSpeed);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classHostileMob_1a5af899b3b3c363eee35ce50334f7b875" kindref="member">mobTimeCount</ref><sp/>&gt;=<sp/>1)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" kindref="member">TargetDetectX</ref><sp/>=<sp/>xpos;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" kindref="member">TargetDetectZ</ref><sp/>=<sp/>zpos;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a5af899b3b3c363eee35ce50334f7b875" kindref="member">mobTimeCount</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classHostileMob_1a9cf220ac33863bbdb5b45e9235e2e8ef" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classHostileMob_1a9cf220ac33863bbdb5b45e9235e2e8ef" kindref="member">HostileMob::MobCollision</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>smallx,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>largex,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>smallz,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>largez)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>&gt;=<sp/>smallx)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>&lt;=<sp/>largex)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>&gt;=<sp/>smallz)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>&lt;=<sp/>smallz<sp/>+<sp/>3.f)){<sp/><ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>=<sp/>smallz;<sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>&gt;=<sp/>smallx)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>&lt;=<sp/>largex)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>&lt;=<sp/>largez)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>&gt;=<sp/>largez<sp/>-<sp/>3.f)){<sp/><ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>=<sp/>largez;<sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>&gt;=<sp/>smallz)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>&lt;=<sp/>largez)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>&gt;=<sp/>smallx)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>&lt;=<sp/>smallx<sp/>+<sp/>3.f)){<sp/><ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>=<sp/>smallx;<sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>&gt;=<sp/>smallz)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>&lt;=<sp/>largez)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>&lt;=<sp/>largex)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>&gt;=<sp/>largex<sp/>-<sp/>3.f)){<sp/><ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>=<sp/>largex;<sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/HostileMob.cpp"/>
+  </compounddef>
+</doxygen>

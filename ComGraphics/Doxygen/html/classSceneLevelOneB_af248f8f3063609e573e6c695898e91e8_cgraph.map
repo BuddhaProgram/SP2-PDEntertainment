@@ -1,0 +1,10 @@
+<map id="SceneLevelOneB::MouseClickFunction" name="SceneLevelOneB::MouseClickFunction">
+<area shape="rect" id="node2" href="$classSceneLevelOneB.html#a2bfa4551ac0b1f099c42c2193b55df47" title="SceneLevelOneB::attackCheck" alt="" coords="251,107,453,133"/>
+<area shape="rect" id="node6" href="$classExplorer.html#afc5637a94d6f094b796d80abf42d930b" title="Explorer::instance" alt="" coords="531,5,657,32"/>
+<area shape="rect" id="node7" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="507,208,681,235"/>
+<area shape="rect" id="node3" href="$classmisc.html#af425955855ed4c3d4f09621afdf11785" title="misc::hitting" alt="" coords="547,56,641,83"/>
+<area shape="rect" id="node8" href="$classMobGhost.html#abbd272b8574387f40995ae457cc423b2" title="MobGhost::TakeDamage" alt="" coords="511,107,677,133"/>
+<area shape="rect" id="node9" href="$classMobBossOne.html#a38f2b5f17d120031b88a7ddae9254fce" title="MobBossOne::TakeDamage" alt="" coords="501,157,687,184"/>
+<area shape="rect" id="node4" href="$Misc_8cpp.html#a15f09d45e07d38822b5ecf228e503e36" title="getAngle" alt="" coords="735,56,808,83"/>
+<area shape="rect" id="node5" href="$namespaceMath.html#a1a1d364c850f9d66fda85cf71598bbe5" title="Converts from radians to degrees. " alt="" coords="856,56,1011,83"/>
+</map>

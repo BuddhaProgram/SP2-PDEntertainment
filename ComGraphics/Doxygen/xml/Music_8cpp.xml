@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Music_8cpp" kind="file" language="C++">
+    <compoundname>Music.cpp</compoundname>
+    <includes refid="Music_8h" local="yes">Music.h</includes>
+    <incdepgraph>
+      <node id="6113">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="6103" relation="include">
+        </childnode>
+      </node>
+      <node id="6118">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="6103" relation="include">
+        </childnode>
+        <childnode refid="6108" relation="include">
+        </childnode>
+      </node>
+      <node id="6095">
+        <label>Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="6096" relation="include">
+        </childnode>
+        <childnode refid="6097" relation="include">
+        </childnode>
+        <childnode refid="6098" relation="include">
+        </childnode>
+      </node>
+      <node id="6108">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="6103" relation="include">
+        </childnode>
+      </node>
+      <node id="6105">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="6098">
+        <label>../irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="6099" relation="include">
+        </childnode>
+        <childnode refid="6101" relation="include">
+        </childnode>
+        <childnode refid="6103" relation="include">
+        </childnode>
+        <childnode refid="6104" relation="include">
+        </childnode>
+        <childnode refid="6105" relation="include">
+        </childnode>
+        <childnode refid="6106" relation="include">
+        </childnode>
+        <childnode refid="6107" relation="include">
+        </childnode>
+        <childnode refid="6108" relation="include">
+        </childnode>
+        <childnode refid="6109" relation="include">
+        </childnode>
+        <childnode refid="6110" relation="include">
+        </childnode>
+        <childnode refid="6111" relation="include">
+        </childnode>
+        <childnode refid="6115" relation="include">
+        </childnode>
+        <childnode refid="6116" relation="include">
+        </childnode>
+        <childnode refid="6112" relation="include">
+        </childnode>
+        <childnode refid="6118" relation="include">
+        </childnode>
+        <childnode refid="6113" relation="include">
+        </childnode>
+        <childnode refid="6117" relation="include">
+        </childnode>
+        <childnode refid="6119" relation="include">
+        </childnode>
+        <childnode refid="6120" relation="include">
+        </childnode>
+        <childnode refid="6114" relation="include">
+        </childnode>
+      </node>
+      <node id="6114">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="6103" relation="include">
+        </childnode>
+        <childnode refid="6108" relation="include">
+        </childnode>
+      </node>
+      <node id="6097">
+        <label>string</label>
+      </node>
+      <node id="6116">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="6103" relation="include">
+        </childnode>
+        <childnode refid="6117" relation="include">
+        </childnode>
+      </node>
+      <node id="6120">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="6103" relation="include">
+        </childnode>
+        <childnode refid="6110" relation="include">
+        </childnode>
+      </node>
+      <node id="6110">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="6104" relation="include">
+        </childnode>
+        <childnode refid="6101" relation="include">
+        </childnode>
+        <childnode refid="6107" relation="include">
+        </childnode>
+        <childnode refid="6108" relation="include">
+        </childnode>
+      </node>
+      <node id="6115">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="6103" relation="include">
+        </childnode>
+        <childnode refid="6108" relation="include">
+        </childnode>
+      </node>
+      <node id="6117">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="6103" relation="include">
+        </childnode>
+      </node>
+      <node id="6100">
+        <label>wchar.h</label>
+      </node>
+      <node id="6101">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="6102" relation="include">
+        </childnode>
+        <childnode refid="6099" relation="include">
+        </childnode>
+      </node>
+      <node id="6109">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="6103" relation="include">
+        </childnode>
+        <childnode refid="6101" relation="include">
+        </childnode>
+        <childnode refid="6110" relation="include">
+        </childnode>
+        <childnode refid="6111" relation="include">
+        </childnode>
+        <childnode refid="6107" relation="include">
+        </childnode>
+        <childnode refid="6113" relation="include">
+        </childnode>
+        <childnode refid="6114" relation="include">
+        </childnode>
+      </node>
+      <node id="6104">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="6099" relation="include">
+        </childnode>
+      </node>
+      <node id="6096">
+        <label>vector</label>
+      </node>
+      <node id="6106">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="6102">
+        <label>math.h</label>
+      </node>
+      <node id="6119">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="6103" relation="include">
+        </childnode>
+      </node>
+      <node id="6111">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="6104" relation="include">
+        </childnode>
+        <childnode refid="6112" relation="include">
+        </childnode>
+        <childnode refid="6101" relation="include">
+        </childnode>
+      </node>
+      <node id="6112">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="6104" relation="include">
+        </childnode>
+        <childnode refid="6101" relation="include">
+        </childnode>
+      </node>
+      <node id="6103">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="6099" relation="include">
+        </childnode>
+      </node>
+      <node id="6094">
+        <label>ComGraphics/Source/Music.cpp</label>
+        <link refid="Music.cpp"/>
+        <childnode refid="6095" relation="include">
+        </childnode>
+      </node>
+      <node id="6099">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="6100" relation="include">
+        </childnode>
+      </node>
+      <node id="6107">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Music_8h" kindref="compound">Music.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="classMusic_1ab5143f67c021bc77894c8e91de2b916b" refkind="member"><highlight class="normal"><ref refid="classMusic_1ab5143f67c021bc77894c8e91de2b916b" kindref="member">Music::Music</ref>()</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMusic_1ab2a51561d3c251004e31d3cddde35b47" kindref="member">engine</ref><sp/>=<sp/><ref refid="namespaceirrklang_1ad9829f898bc0665fdd2554a6f5c7ca1c" kindref="member">irrklang::createIrrKlangDevice</ref>();</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMusic_1ae9d0d9625f1aa68028d6c98039f0ca00" kindref="member">BackgroundMusic</ref><sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;Music//MainMenu.mp3&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="classMusic_1a0b4f3b9a018207e0c08003505f1f87fe" refkind="member"><highlight class="normal"><ref refid="classMusic_1a0b4f3b9a018207e0c08003505f1f87fe" kindref="member">Music::~Music</ref>()</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMusic_1ab2a51561d3c251004e31d3cddde35b47" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1IRefCounted_1a869fe3adc6e49e8da105e95837a565b1" kindref="member">drop</ref>();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classMusic_1a791549e6c481f309ec3a41642f2bbd47" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMusic_1a791549e6c481f309ec3a41642f2bbd47" kindref="member">Music::init</ref>()</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMusic_1a71b7128f75779edd5aa1aafadc05d800" kindref="member">BackGround</ref><sp/>=<sp/><ref refid="classMusic_1ab2a51561d3c251004e31d3cddde35b47" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a4eed0fa6712872e55003b26462e21005" kindref="member">addSoundSourceFromFile</ref>(<ref refid="classMusic_1ae9d0d9625f1aa68028d6c98039f0ca00" kindref="member">BackgroundMusic</ref>[0].c_str());</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMusic_1a71b7128f75779edd5aa1aafadc05d800" kindref="member">BackGround</ref>-&gt;<ref refid="classirrklang_1_1ISoundSource_1a52accb16b3a554558f12f99d16f57a7d" kindref="member">setDefaultVolume</ref>(1.0f);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classMusic_1a93464811272d740f0d2cfcff2ce6c703" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMusic_1a93464811272d740f0d2cfcff2ce6c703" kindref="member">Music::OpeningMusic</ref>()</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMusic_1ab2a51561d3c251004e31d3cddde35b47" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1a25f612fe6479d3b22dc5bab2a2eaa927" kindref="member">play2D</ref>(<ref refid="classMusic_1a71b7128f75779edd5aa1aafadc05d800" kindref="member">BackGround</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/Music.cpp"/>
+  </compounddef>
+</doxygen>

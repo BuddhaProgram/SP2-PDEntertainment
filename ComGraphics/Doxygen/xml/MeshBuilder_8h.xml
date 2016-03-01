@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="MeshBuilder_8h" kind="file" language="C++">
+    <compoundname>MeshBuilder.h</compoundname>
+    <includes refid="Mesh_8h" local="yes">Mesh.h</includes>
+    <includes refid="Vertex_8h" local="yes">Vertex.h</includes>
+    <includes refid="MyMath_8h" local="yes">MyMath.h</includes>
+    <includes refid="LoadOBJ_8h" local="yes">LoadOBJ.h</includes>
+    <includedby refid="SceneOpening_8h" local="yes">ComGraphics/Source/SceneOpening.h</includedby>
+    <includedby refid="Credits_8cpp" local="yes">ComGraphics/Source/Credits.cpp</includedby>
+    <includedby refid="CutSceneOne_8cpp" local="yes">ComGraphics/Source/CutSceneOne.cpp</includedby>
+    <includedby refid="MeshBuilder_8cpp" local="yes">ComGraphics/Source/MeshBuilder.cpp</includedby>
+    <includedby refid="OpeningCutScene_8cpp" local="yes">ComGraphics/Source/OpeningCutScene.cpp</includedby>
+    <includedby refid="OpeningCutScene2_8cpp" local="yes">ComGraphics/Source/OpeningCutScene2.cpp</includedby>
+    <includedby refid="SceneEnd_8cpp" local="yes">ComGraphics/Source/SceneEnd.cpp</includedby>
+    <includedby refid="SceneEndCutScene_8cpp" local="yes">ComGraphics/Source/SceneEndCutScene.cpp</includedby>
+    <includedby refid="SceneLevelOneA_8cpp" local="yes">ComGraphics/Source/SceneLevelOneA.cpp</includedby>
+    <includedby refid="SceneLevelOneB_8cpp" local="yes">ComGraphics/Source/SceneLevelOneB.cpp</includedby>
+    <includedby refid="SceneLevelTwo_8cpp" local="yes">ComGraphics/Source/SceneLevelTwo.cpp</includedby>
+    <includedby refid="SceneStart_8cpp" local="yes">ComGraphics/Source/SceneStart.cpp</includedby>
+    <incdepgraph>
+      <node id="5923">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5924" relation="include">
+        </childnode>
+        <childnode refid="5929" relation="include">
+        </childnode>
+      </node>
+      <node id="5920">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+      </node>
+      <node id="5930">
+        <label>LoadOBJ.h</label>
+        <link refid="LoadOBJ_8h"/>
+        <childnode refid="5931" relation="include">
+        </childnode>
+        <childnode refid="5922" relation="include">
+        </childnode>
+        <childnode refid="5923" relation="include">
+        </childnode>
+      </node>
+      <node id="5925">
+        <label>cmath</label>
+      </node>
+      <node id="5921">
+        <label>string</label>
+      </node>
+      <node id="5919">
+        <label>Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="5920" relation="include">
+        </childnode>
+        <childnode refid="5921" relation="include">
+        </childnode>
+      </node>
+      <node id="5926">
+        <label>exception</label>
+      </node>
+      <node id="5927">
+        <label>ctime</label>
+      </node>
+      <node id="5931">
+        <label>vector</label>
+      </node>
+      <node id="5922">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="5923" relation="include">
+        </childnode>
+      </node>
+      <node id="5918">
+        <label>ComGraphics/Source/MeshBuilder.h</label>
+        <link refid="MeshBuilder.h"/>
+        <childnode refid="5919" relation="include">
+        </childnode>
+        <childnode refid="5922" relation="include">
+        </childnode>
+        <childnode refid="5924" relation="include">
+        </childnode>
+        <childnode refid="5930" relation="include">
+        </childnode>
+      </node>
+      <node id="5928">
+        <label>cstdlib</label>
+      </node>
+      <node id="5929">
+        <label>iostream</label>
+      </node>
+      <node id="5924">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5925" relation="include">
+        </childnode>
+        <childnode refid="5926" relation="include">
+        </childnode>
+        <childnode refid="5927" relation="include">
+        </childnode>
+        <childnode refid="5928" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5940">
+        <label>ComGraphics/Source/OpeningCutScene2.cpp</label>
+        <link refid="OpeningCutScene2_8cpp"/>
+      </node>
+      <node id="5938">
+        <label>ComGraphics/Source/MeshBuilder.cpp</label>
+        <link refid="MeshBuilder_8cpp"/>
+      </node>
+      <node id="5939">
+        <label>ComGraphics/Source/OpeningCutScene.cpp</label>
+        <link refid="OpeningCutScene_8cpp"/>
+      </node>
+      <node id="5936">
+        <label>ComGraphics/Source/Credits.cpp</label>
+        <link refid="Credits_8cpp"/>
+      </node>
+      <node id="5941">
+        <label>ComGraphics/Source/SceneEnd.cpp</label>
+        <link refid="SceneEnd_8cpp"/>
+      </node>
+      <node id="5945">
+        <label>ComGraphics/Source/SceneLevelTwo.cpp</label>
+        <link refid="SceneLevelTwo_8cpp"/>
+      </node>
+      <node id="5933">
+        <label>ComGraphics/Source/SceneOpening.h</label>
+        <link refid="SceneOpening_8h"/>
+        <childnode refid="5934" relation="include">
+        </childnode>
+        <childnode refid="5935" relation="include">
+        </childnode>
+      </node>
+      <node id="5932">
+        <label>ComGraphics/Source/MeshBuilder.h</label>
+        <link refid="MeshBuilder.h"/>
+        <childnode refid="5933" relation="include">
+        </childnode>
+        <childnode refid="5936" relation="include">
+        </childnode>
+        <childnode refid="5937" relation="include">
+        </childnode>
+        <childnode refid="5938" relation="include">
+        </childnode>
+        <childnode refid="5939" relation="include">
+        </childnode>
+        <childnode refid="5940" relation="include">
+        </childnode>
+        <childnode refid="5941" relation="include">
+        </childnode>
+        <childnode refid="5942" relation="include">
+        </childnode>
+        <childnode refid="5943" relation="include">
+        </childnode>
+        <childnode refid="5944" relation="include">
+        </childnode>
+        <childnode refid="5945" relation="include">
+        </childnode>
+        <childnode refid="5946" relation="include">
+        </childnode>
+      </node>
+      <node id="5944">
+        <label>ComGraphics/Source/SceneLevelOneB.cpp</label>
+        <link refid="SceneLevelOneB_8cpp"/>
+      </node>
+      <node id="5942">
+        <label>ComGraphics/Source/SceneEndCutScene.cpp</label>
+        <link refid="SceneEndCutScene_8cpp"/>
+      </node>
+      <node id="5934">
+        <label>ComGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5943">
+        <label>ComGraphics/Source/SceneLevelOneA.cpp</label>
+        <link refid="SceneLevelOneA_8cpp"/>
+      </node>
+      <node id="5935">
+        <label>ComGraphics/Source/SceneOpening.cpp</label>
+        <link refid="SceneOpening_8cpp"/>
+      </node>
+      <node id="5946">
+        <label>ComGraphics/Source/SceneStart.cpp</label>
+        <link refid="SceneStart_8cpp"/>
+      </node>
+      <node id="5937">
+        <label>ComGraphics/Source/CutSceneOne.cpp</label>
+        <link refid="CutSceneOne_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classMeshBuilder" prot="public">MeshBuilder</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>MESH_BUILDER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MESH_BUILDER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Mesh_8h" kindref="compound">Mesh.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vertex_8h" kindref="compound">Vertex.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MyMath_8h" kindref="compound">MyMath.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="LoadOBJ_8h" kindref="compound">LoadOBJ.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classMeshBuilder" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMeshBuilder" kindref="compound">MeshBuilder</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/><ref refid="classMeshBuilder_1aba87550d7726a610c911fbb977fd3575" kindref="member">GenerateOBJ</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;meshName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;file_path);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/><ref refid="classMeshBuilder_1a78d37e2b0cc068eec801f17c367100e7" kindref="member">GenerateAxes</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;meshName,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>lengthX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>lengthY,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>lengthZ);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/><ref refid="classMeshBuilder_1aa3751076aa9f74324d49a999a3c3fa55" kindref="member">GenerateQuad</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;meshName,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/><ref refid="classMeshBuilder_1a5e777328dc946f483beb5645d8f24c4a" kindref="member">GenerateCube</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;meshName,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/><ref refid="classMeshBuilder_1a68d491a27ed57b66b7a8161a2b230951" kindref="member">GenerateCircle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;meshName,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>numSlices<sp/>=<sp/>36);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/><ref refid="classMeshBuilder_1a44a784dbd2cee7b6adc21c697a945501" kindref="member">GenerateRing</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;meshName,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>innerRadius,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>numSlices<sp/>=<sp/>36);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/><ref refid="classMeshBuilder_1af47d15fbc1d2a4e2ef45c387acc0d6db" kindref="member">GenerateSphere</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;meshName,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>numStacks,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>numSlices<sp/>=<sp/>36,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>numSpins<sp/>=<sp/>1<sp/>,</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Wire<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/><ref refid="classMeshBuilder_1aa0fd7de9ef15dbc113a3f84b859ebe95" kindref="member">GenerateTorus</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;meshName,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>numStack,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>numSlice,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>outerR,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>innerR);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/><ref refid="classMeshBuilder_1af5fd00cbcb2716df65d167c638edaafe" kindref="member">GenerateCylinder</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>meshName,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>numSlice,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>top<sp/>=<sp/>1<sp/>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Partial<sp/>=<sp/>1);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/><ref refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" kindref="member">GenerateText</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;meshName,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>numRow,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>numCol);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/MeshBuilder.h"/>
+  </compounddef>
+</doxygen>

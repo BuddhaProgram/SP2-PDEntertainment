@@ -1,0 +1,6 @@
+<map id="SceneStart::RenderModelOnScreen" name="SceneStart::RenderModelOnScreen">
+<area shape="rect" id="node2" href="$classSceneStart.html#a09a1444c2c592ed917229e5853db6db5" title="SceneStart::Render" alt="" coords="497,71,633,97"/>
+<area shape="rect" id="node3" href="$classSceneStart.html#ae9753fedb906b42ab3789dd54780a141" title="SceneStart::RenderMouseScroll\lToolSlot" alt="" coords="241,34,449,75"/>
+<area shape="rect" id="node4" href="$classSceneStart.html#a23e3dffbbc678a8b5e3577d86fefcb42" title="SceneStart::RenderToolIcon" alt="" coords="253,100,437,127"/>
+<area shape="rect" id="node5" href="$classSceneStart.html#a6192586ef4a24beef41be68a7daf2aab" title="SceneStart::ToolSelection\lMouseScroll" alt="" coords="259,151,432,193"/>
+</map>

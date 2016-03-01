@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classCamera" kind="class" language="C++" prot="public">
+    <compoundname>Camera</compoundname>
+    <derivedcompoundref refid="classCamera3" prot="public" virt="non-virtual">Camera3</derivedcompoundref>
+    <includes refid="Camera_8h" local="no">Camera.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classCamera_1a3b229874a00253021a1b6c61657fa5ab" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Camera::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Camera.h" line="9" column="1" bodyfile="ComGraphics/Source/Camera.h" bodystart="9" bodyend="-1"/>
+        <referencedby refid="classSceneLevelOneB_1a2bfa4551ac0b1f099c42c2193b55df47" compoundref="SceneLevelOneBRenders_8cpp" startline="435" endline="455">SceneLevelOneB::attackCheck</referencedby>
+        <referencedby refid="classSceneLevelOneA_1acae5c28ab518704326877b73c6df4e55" compoundref="SceneLevelOneARenders_8cpp" startline="398" endline="407">SceneLevelOneA::AttackCheck</referencedby>
+        <referencedby refid="classCamera3_1a576422f8f2d0660f27eed0fc817b2ae5" compoundref="Camera3_8cpp" startline="32" endline="65">Camera3::CameraRotation</referencedby>
+        <referencedby refid="classSceneEnd_1a31fef5d67de3a3dfd2ae15d4bbcea2b6" compoundref="SceneEndRenders_8cpp" startline="424" endline="456">SceneEnd::checkAttack</referencedby>
+        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="204" endline="252">SceneLevelOneA::checkDoor2</referencedby>
+        <referencedby refid="classSceneLevelTwo_1af756d75e45a09234a01aa03de6670cd6" compoundref="SceneLevelTwo_8cpp" startline="504" endline="509">SceneLevelTwo::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneStart_1a2c33e692fa8ba05e7a5e081b2d1688e2" compoundref="SceneStart_8cpp" startline="225" endline="230">SceneStart::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf46e437e991dca443d91b0ff689768d" compoundref="SceneLevelOneBRenders_8cpp" startline="510" endline="515">SceneLevelOneB::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a9d569863371f766599660dd6f78cdc47" compoundref="SceneLevelOneARenders_8cpp" startline="124" endline="139">SceneLevelOneA::checkRubbleFall</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a07e6440b5b6ca859dfda27ccb16d3129" compoundref="SceneLevelTwo_8cpp" startline="241" endline="253">SceneLevelTwo::Collision</referencedby>
+        <referencedby refid="classSceneStart_1adb6da316beba5b19afe7fad5cc3887ce" compoundref="SceneStart_8cpp" startline="209" endline="221">SceneStart::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ae689e8e0ff0bc56a3882d27ac0cb0b99" compoundref="SceneLevelOneB_8cpp" startline="292" endline="304">SceneLevelOneB::Collision</referencedby>
+        <referencedby refid="classSceneEnd_1ad14fa4bc25f557a3cd964a35c3b20d01" compoundref="SceneEnd_8cpp" startline="264" endline="276">SceneEnd::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a595fed7869b1c41878bb629e7994cad0" compoundref="SceneLevelOneA_8cpp" startline="298" endline="310">SceneLevelOneA::Collision</referencedby>
+        <referencedby refid="classSceneLevelTwo_1acb34d2e8f029102a0cbcc4a2818f0e55" compoundref="SceneLevelTwo_8cpp" startline="460" endline="502">SceneLevelTwo::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ac92af3bf7c49f02f6e444af93d940150" compoundref="SceneLevelOneB_8cpp" startline="675" endline="710">SceneLevelOneB::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneEnd_1ad27d89ab1ad40e1b57a307e4a27c2683" compoundref="SceneEnd_8cpp" startline="468" endline="504">SceneEnd::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a972ee40bd5b9481a464e3028f4d496b5" compoundref="SceneLevelOneA_8cpp" startline="528" endline="565">SceneLevelOneA::ContinueGameOrNot</referencedby>
+        <referencedby refid="classCamera3_1a021022df76481c9e9fd5c3cf5fe51cf7" compoundref="Camera3_8cpp" startline="67" endline="106">Camera3::HumanControl</referencedby>
+        <referencedby refid="classCamera_1a609775f7ec4cd936ad7add808cd7354c" compoundref="Camera_8cpp" startline="14" endline="19">Init</referencedby>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="17" endline="30">Camera3::Init</referencedby>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a147d7c92d2b42363f3c378f7492c30cb" compoundref="SceneLevelOneB_8cpp" startline="712" endline="722">SceneLevelOneB::PickUpSuitcaseInteraction</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab344d7ebfab7631145e0665914cc4819" compoundref="SceneLevelOneA_8cpp" startline="567" endline="577">SceneLevelOneA::PickUpSuitcaseInteraction</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a95ede72b1fd4719998405977356a3592" compoundref="SceneLevelTwo_8cpp" startline="269" endline="278">SceneLevelTwo::proximitycheck</referencedby>
+        <referencedby refid="classSceneStart_1a13ffa609089ada96e41281c0a49c8e6b" compoundref="SceneStart_8cpp" startline="399" endline="408">SceneStart::proximitycheck</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ab8c8534175926113db5bffecd6bbe5a6" compoundref="SceneLevelOneB_8cpp" startline="306" endline="315">SceneLevelOneB::proximitycheck</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a0faf61e907dce7e94916816d5fbed070" compoundref="SceneLevelOneA_8cpp" startline="312" endline="321">SceneLevelOneA::proximitycheck</referencedby>
+        <referencedby refid="classSceneEnd_1a948e17a1e58d73e2920a78314594e300" compoundref="SceneEnd_8cpp" startline="278" endline="287">SceneEnd::proximitycheck</referencedby>
+        <referencedby refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" compoundref="CutSceneOne_8cpp" startline="226" endline="262">CutSceneOne::Render</referencedby>
+        <referencedby refid="classSceneOpening_1a3edf8ad9f05db1071e3e4505af7cd4df" compoundref="SceneOpening_8cpp" startline="335" endline="380">SceneOpening::Render</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">OpeningCutScene::Render</referencedby>
+        <referencedby refid="classCredits_1a91dd5e5260a92e2a3e99360c7e30d81c" compoundref="Credits_8cpp" startline="477" endline="513">Credits::Render</referencedby>
+        <referencedby refid="classOpeningCutScene2_1a0f31817dad741723119d91d7e47fbd56" compoundref="OpeningCutScene2_8cpp" startline="418" endline="473">OpeningCutScene2::Render</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a5428359a53500a14af874d45fed5ac76" compoundref="SceneEndCutScene_8cpp" startline="395" endline="441">SceneEndCutScene::Render</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a63a16f9a1a71dd298d6e45edaa5efef4" compoundref="SceneLevelTwo_8cpp" startline="849" endline="922">SceneLevelTwo::Render</referencedby>
+        <referencedby refid="classSceneStart_1a09a1444c2c592ed917229e5853db6db5" compoundref="SceneStart_8cpp" startline="608" endline="669">SceneStart::Render</referencedby>
+        <referencedby refid="classSceneLevelOneA_1adb83e3122dc7ac3a5d5b85add1c771bb" compoundref="SceneLevelOneA_8cpp" startline="803" endline="899">SceneLevelOneA::Render</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a5c7f4cef0669b49cd80c284d9c9864ce" compoundref="SceneLevelOneB_8cpp" startline="963" endline="1056">SceneLevelOneB::Render</referencedby>
+        <referencedby refid="classSceneEnd_1a06fac012bd3a1df369c5722c8cf662b0" compoundref="SceneEnd_8cpp" startline="773" endline="869">SceneEnd::Render</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf19187831a508b5541fdb085bfef099" compoundref="SceneLevelOneBRenders_8cpp" startline="393" endline="428">SceneLevelOneB::RenderBoss</referencedby>
+        <referencedby refid="classSceneEnd_1aa7eb2cf11f655cf77cc1c854c26e6f57" compoundref="SceneEndRenders_8cpp" startline="385" endline="423">SceneEnd::RenderBoss</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a5c7b2f57a7e884e4beed73a4fcbdbbb7" compoundref="SceneLevelOneARenders_8cpp" startline="352" endline="369">SceneLevelOneA::RenderGhost</referencedby>
+        <referencedby refid="classSceneLevelOneB_1af05b4b11f0ad4afd0adf8883135e4136" compoundref="SceneLevelOneBRenders_8cpp" startline="374" endline="391">SceneLevelOneB::RenderGhost</referencedby>
+        <referencedby refid="classSceneEnd_1a8e3e53fce369d27d432d2c162deecb72" compoundref="SceneEndRenders_8cpp" startline="201" endline="220">SceneEnd::RenderMineText</referencedby>
+        <referencedby refid="classSceneEnd_1a9d9231ad28d1067c1c951cf37ef16db6" compoundref="SceneEndRenders_8cpp" startline="363" endline="383">SceneEnd::RenderMobs</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a3a43488434df2dd9fcef0b606e6147ab" compoundref="SceneLevelOneBRenders_8cpp" startline="657" endline="666">SceneLevelOneB::RenderPickUpSuitcaseText</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a227176473f59ddd7142977da8382249d" compoundref="SceneLevelOneARenders_8cpp" startline="485" endline="494">SceneLevelOneA::RenderPickUpSuitcaseText</referencedby>
+        <referencedby refid="classSceneEnd_1ab32854734562ab2433617b145a1971f7" compoundref="SceneEndRenders_8cpp" startline="222" endline="261">SceneEnd::RenderRepairText</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a6cdedb4f21d64c4f85ca5d8ae1bc4bcc" compoundref="SceneLevelOneA_8cpp" startline="510" endline="516">SceneLevelOneA::RenderSavePointText</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ad511ad540839c9ec9ab03c02784f1949" compoundref="SceneLevelTwoRenders_8cpp" startline="27" endline="193">SceneLevelTwo::RenderScene</referencedby>
+        <referencedby refid="classCamera_1aa46f58b32270a571ab56dde4caca46db" compoundref="Camera_8cpp" startline="21" endline="26">Reset</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ab1de6c7dd72b0416fdcc79040db55503" compoundref="SceneLevelTwo_8cpp" startline="255" endline="267">SceneLevelTwo::SpecialCollision</referencedby>
+        <referencedby refid="classSceneLevelOneA_1aafc92d0bb482c6182f12873f0001ef7d" compoundref="SceneLevelOneA_8cpp" startline="323" endline="330">SceneLevelOneA::ToolsUI</referencedby>
+        <referencedby refid="classSceneLevelOneB_1abc979783622fe908a8bb929429da8141" compoundref="SceneLevelOneB_8cpp" startline="317" endline="330">SceneLevelOneB::ToolsUI</referencedby>
+        <referencedby refid="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6" compoundref="Camera_8cpp" startline="28" endline="47">Update</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="112" endline="155">Camera3::Update</referencedby>
+        <referencedby refid="classCutSceneOne_1a3bde2eed67da74e3c33e3b4e10542438" compoundref="CutSceneOne_8cpp" startline="125" endline="180">CutSceneOne::Update</referencedby>
+        <referencedby refid="classSceneOpening_1af3ca641709d7608947d8ae81b273b089" compoundref="SceneOpening_8cpp" startline="175" endline="192">SceneOpening::Update</referencedby>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">OpeningCutScene::Update</referencedby>
+        <referencedby refid="classCredits_1aac9dbb74267d8870c07139e33b75eca4" compoundref="Credits_8cpp" startline="346" endline="364">Credits::Update</referencedby>
+        <referencedby refid="classOpeningCutScene2_1ad228d3ddd1fc4564382de47e85cad2dc" compoundref="OpeningCutScene2_8cpp" startline="151" endline="259">OpeningCutScene2::Update</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a47f7840540cca37d431a5702cafc357a" compoundref="SceneEndCutScene_8cpp" startline="192" endline="252">SceneEndCutScene::Update</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" compoundref="SceneLevelTwo_8cpp" startline="665" endline="706">SceneLevelTwo::Update</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="579" endline="660">SceneLevelOneA::Update</referencedby>
+        <referencedby refid="classSceneStart_1a2c3705b248156c1c352880af1be8049c" compoundref="SceneStart_8cpp" startline="430" endline="465">SceneStart::Update</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="724" endline="820">SceneLevelOneB::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="555" endline="630">SceneEnd::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a48eddb41d1eff6f332eeef2b95e1e4fb" compoundref="SceneEnd_8cpp" startline="506" endline="539">SceneEnd::UpdateRepairs</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a8cdf4a86b4d9e080f1a6f70d5061c3d5" compoundref="SceneLevelOneA_8cpp" startline="502" endline="508">SceneLevelOneA::UpdateSavePoint</referencedby>
+        <referencedby refid="classAnimation_1a1d3d575d344a9a7586ec6277b01dbb35" compoundref="OBJAnimation_8cpp" startline="497" endline="510">Animation::WithinArea</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Camera::target</definition>
+        <argsstring></argsstring>
+        <name>target</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Camera.h" line="10" column="1" bodyfile="ComGraphics/Source/Camera.h" bodystart="10" bodyend="-1"/>
+        <referencedby refid="classCamera3_1a576422f8f2d0660f27eed0fc817b2ae5" compoundref="Camera3_8cpp" startline="32" endline="65">Camera3::CameraRotation</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a07e6440b5b6ca859dfda27ccb16d3129" compoundref="SceneLevelTwo_8cpp" startline="241" endline="253">SceneLevelTwo::Collision</referencedby>
+        <referencedby refid="classSceneStart_1adb6da316beba5b19afe7fad5cc3887ce" compoundref="SceneStart_8cpp" startline="209" endline="221">SceneStart::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ae689e8e0ff0bc56a3882d27ac0cb0b99" compoundref="SceneLevelOneB_8cpp" startline="292" endline="304">SceneLevelOneB::Collision</referencedby>
+        <referencedby refid="classSceneEnd_1ad14fa4bc25f557a3cd964a35c3b20d01" compoundref="SceneEnd_8cpp" startline="264" endline="276">SceneEnd::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a595fed7869b1c41878bb629e7994cad0" compoundref="SceneLevelOneA_8cpp" startline="298" endline="310">SceneLevelOneA::Collision</referencedby>
+        <referencedby refid="classCamera3_1a021022df76481c9e9fd5c3cf5fe51cf7" compoundref="Camera3_8cpp" startline="67" endline="106">Camera3::HumanControl</referencedby>
+        <referencedby refid="classCamera_1a609775f7ec4cd936ad7add808cd7354c" compoundref="Camera_8cpp" startline="14" endline="19">Init</referencedby>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="17" endline="30">Camera3::Init</referencedby>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+        <referencedby refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" compoundref="CutSceneOne_8cpp" startline="226" endline="262">CutSceneOne::Render</referencedby>
+        <referencedby refid="classSceneOpening_1a3edf8ad9f05db1071e3e4505af7cd4df" compoundref="SceneOpening_8cpp" startline="335" endline="380">SceneOpening::Render</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">OpeningCutScene::Render</referencedby>
+        <referencedby refid="classCredits_1a91dd5e5260a92e2a3e99360c7e30d81c" compoundref="Credits_8cpp" startline="477" endline="513">Credits::Render</referencedby>
+        <referencedby refid="classOpeningCutScene2_1a0f31817dad741723119d91d7e47fbd56" compoundref="OpeningCutScene2_8cpp" startline="418" endline="473">OpeningCutScene2::Render</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a5428359a53500a14af874d45fed5ac76" compoundref="SceneEndCutScene_8cpp" startline="395" endline="441">SceneEndCutScene::Render</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a63a16f9a1a71dd298d6e45edaa5efef4" compoundref="SceneLevelTwo_8cpp" startline="849" endline="922">SceneLevelTwo::Render</referencedby>
+        <referencedby refid="classSceneStart_1a09a1444c2c592ed917229e5853db6db5" compoundref="SceneStart_8cpp" startline="608" endline="669">SceneStart::Render</referencedby>
+        <referencedby refid="classSceneLevelOneA_1adb83e3122dc7ac3a5d5b85add1c771bb" compoundref="SceneLevelOneA_8cpp" startline="803" endline="899">SceneLevelOneA::Render</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a5c7f4cef0669b49cd80c284d9c9864ce" compoundref="SceneLevelOneB_8cpp" startline="963" endline="1056">SceneLevelOneB::Render</referencedby>
+        <referencedby refid="classSceneEnd_1a06fac012bd3a1df369c5722c8cf662b0" compoundref="SceneEnd_8cpp" startline="773" endline="869">SceneEnd::Render</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf19187831a508b5541fdb085bfef099" compoundref="SceneLevelOneBRenders_8cpp" startline="393" endline="428">SceneLevelOneB::RenderBoss</referencedby>
+        <referencedby refid="classSceneEnd_1aa7eb2cf11f655cf77cc1c854c26e6f57" compoundref="SceneEndRenders_8cpp" startline="385" endline="423">SceneEnd::RenderBoss</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a5c7b2f57a7e884e4beed73a4fcbdbbb7" compoundref="SceneLevelOneARenders_8cpp" startline="352" endline="369">SceneLevelOneA::RenderGhost</referencedby>
+        <referencedby refid="classSceneLevelOneB_1af05b4b11f0ad4afd0adf8883135e4136" compoundref="SceneLevelOneBRenders_8cpp" startline="374" endline="391">SceneLevelOneB::RenderGhost</referencedby>
+        <referencedby refid="classSceneEnd_1a9d9231ad28d1067c1c951cf37ef16db6" compoundref="SceneEndRenders_8cpp" startline="363" endline="383">SceneEnd::RenderMobs</referencedby>
+        <referencedby refid="classCamera_1aa46f58b32270a571ab56dde4caca46db" compoundref="Camera_8cpp" startline="21" endline="26">Reset</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ab1de6c7dd72b0416fdcc79040db55503" compoundref="SceneLevelTwo_8cpp" startline="255" endline="267">SceneLevelTwo::SpecialCollision</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="112" endline="155">Camera3::Update</referencedby>
+        <referencedby refid="classCutSceneOne_1a3bde2eed67da74e3c33e3b4e10542438" compoundref="CutSceneOne_8cpp" startline="125" endline="180">CutSceneOne::Update</referencedby>
+        <referencedby refid="classSceneOpening_1af3ca641709d7608947d8ae81b273b089" compoundref="SceneOpening_8cpp" startline="175" endline="192">SceneOpening::Update</referencedby>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">OpeningCutScene::Update</referencedby>
+        <referencedby refid="classCredits_1aac9dbb74267d8870c07139e33b75eca4" compoundref="Credits_8cpp" startline="346" endline="364">Credits::Update</referencedby>
+        <referencedby refid="classOpeningCutScene2_1ad228d3ddd1fc4564382de47e85cad2dc" compoundref="OpeningCutScene2_8cpp" startline="151" endline="259">OpeningCutScene2::Update</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a47f7840540cca37d431a5702cafc357a" compoundref="SceneEndCutScene_8cpp" startline="192" endline="252">SceneEndCutScene::Update</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" compoundref="SceneLevelTwo_8cpp" startline="665" endline="706">SceneLevelTwo::Update</referencedby>
+        <referencedby refid="classSceneStart_1a2c3705b248156c1c352880af1be8049c" compoundref="SceneStart_8cpp" startline="430" endline="465">SceneStart::Update</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="579" endline="660">SceneLevelOneA::Update</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="724" endline="820">SceneLevelOneB::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="555" endline="630">SceneEnd::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera_1ab76ce866ca2acd6ab54447f474077245" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Camera::up</definition>
+        <argsstring></argsstring>
+        <name>up</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Camera.h" line="11" column="1" bodyfile="ComGraphics/Source/Camera.h" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classCamera_1a609775f7ec4cd936ad7add808cd7354c" compoundref="Camera_8cpp" startline="14" endline="19">Init</referencedby>
+        <referencedby refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" compoundref="CutSceneOne_8cpp" startline="226" endline="262">CutSceneOne::Render</referencedby>
+        <referencedby refid="classSceneOpening_1a3edf8ad9f05db1071e3e4505af7cd4df" compoundref="SceneOpening_8cpp" startline="335" endline="380">SceneOpening::Render</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">OpeningCutScene::Render</referencedby>
+        <referencedby refid="classCredits_1a91dd5e5260a92e2a3e99360c7e30d81c" compoundref="Credits_8cpp" startline="477" endline="513">Credits::Render</referencedby>
+        <referencedby refid="classOpeningCutScene2_1a0f31817dad741723119d91d7e47fbd56" compoundref="OpeningCutScene2_8cpp" startline="418" endline="473">OpeningCutScene2::Render</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a5428359a53500a14af874d45fed5ac76" compoundref="SceneEndCutScene_8cpp" startline="395" endline="441">SceneEndCutScene::Render</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a63a16f9a1a71dd298d6e45edaa5efef4" compoundref="SceneLevelTwo_8cpp" startline="849" endline="922">SceneLevelTwo::Render</referencedby>
+        <referencedby refid="classSceneStart_1a09a1444c2c592ed917229e5853db6db5" compoundref="SceneStart_8cpp" startline="608" endline="669">SceneStart::Render</referencedby>
+        <referencedby refid="classSceneLevelOneA_1adb83e3122dc7ac3a5d5b85add1c771bb" compoundref="SceneLevelOneA_8cpp" startline="803" endline="899">SceneLevelOneA::Render</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a5c7f4cef0669b49cd80c284d9c9864ce" compoundref="SceneLevelOneB_8cpp" startline="963" endline="1056">SceneLevelOneB::Render</referencedby>
+        <referencedby refid="classSceneEnd_1a06fac012bd3a1df369c5722c8cf662b0" compoundref="SceneEnd_8cpp" startline="773" endline="869">SceneEnd::Render</referencedby>
+        <referencedby refid="classCamera_1aa46f58b32270a571ab56dde4caca46db" compoundref="Camera_8cpp" startline="21" endline="26">Reset</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="112" endline="155">Camera3::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCamera_1a01f94c3543f56ede7af49dc778f19331" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Camera::Camera</definition>
+        <argsstring>()</argsstring>
+        <name>Camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Camera.h" line="13" column="1" bodyfile="ComGraphics/Source/Camera.cpp" bodystart="5" bodyend="8"/>
+        <references refid="classCamera_1aa46f58b32270a571ab56dde4caca46db" compoundref="Camera_8cpp" startline="21" endline="26">Reset</references>
+      </memberdef>
+      <memberdef kind="function" id="classCamera_1ad1897942d0ccf91052386388a497349f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Camera::~Camera</definition>
+        <argsstring>()</argsstring>
+        <name>~Camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Camera.h" line="14" column="1" bodyfile="ComGraphics/Source/Camera.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classCamera_1a609775f7ec4cd936ad7add808cd7354c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Camera::Init</definition>
+        <argsstring>(const Vector3 &amp;pos, const Vector3 &amp;target, const Vector3 &amp;up)</argsstring>
+        <name>Init</name>
+        <reimplementedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f">Init</reimplementedby>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>up</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Camera.h" line="15" column="1" bodyfile="ComGraphics/Source/Camera.cpp" bodystart="14" bodyend="19"/>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">position</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">target</references>
+        <references refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" compoundref="Camera_8h" startline="11">up</references>
+      </memberdef>
+      <memberdef kind="function" id="classCamera_1aa46f58b32270a571ab56dde4caca46db" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Camera::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <reimplementedby refid="classCamera3_1a4b10106bcd89f21e3cf3e39f04d8c1cb">Reset</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Camera.h" line="16" column="1" bodyfile="ComGraphics/Source/Camera.cpp" bodystart="21" bodyend="26"/>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">position</references>
+        <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">target</references>
+        <references refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" compoundref="Camera_8h" startline="11">up</references>
+        <referencedby refid="classCamera_1a01f94c3543f56ede7af49dc778f19331" compoundref="Camera_8cpp" startline="5" endline="8">Camera</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Camera::Update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>Update</name>
+        <reimplementedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe">Update</reimplementedby>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Camera.h" line="17" column="1" bodyfile="ComGraphics/Source/Camera.cpp" bodystart="28" bodyend="47"/>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="42" endline="45">Application::IsKeyPressed</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">position</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="650">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+      </node>
+      <node id="651">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="650" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="652">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+        <childnode refid="653" relation="usage">
+          <edgelabel>target</edgelabel>
+          <edgelabel>position</edgelabel>
+          <edgelabel>up</edgelabel>
+        </childnode>
+      </node>
+      <node id="654">
+        <label>float</label>
+      </node>
+      <node id="653">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="654" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ComGraphics/Source/Camera.h" line="7" column="1" bodyfile="ComGraphics/Source/Camera.h" bodystart="6" bodyend="18"/>
+    <listofallmembers>
+      <member refid="classCamera_1a01f94c3543f56ede7af49dc778f19331" prot="public" virt="non-virtual"><scope>Camera</scope><name>Camera</name></member>
+      <member refid="classCamera_1a609775f7ec4cd936ad7add808cd7354c" prot="public" virt="virtual"><scope>Camera</scope><name>Init</name></member>
+      <member refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" prot="public" virt="non-virtual"><scope>Camera</scope><name>position</name></member>
+      <member refid="classCamera_1aa46f58b32270a571ab56dde4caca46db" prot="public" virt="virtual"><scope>Camera</scope><name>Reset</name></member>
+      <member refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" prot="public" virt="non-virtual"><scope>Camera</scope><name>target</name></member>
+      <member refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" prot="public" virt="non-virtual"><scope>Camera</scope><name>up</name></member>
+      <member refid="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6" prot="public" virt="virtual"><scope>Camera</scope><name>Update</name></member>
+      <member refid="classCamera_1ad1897942d0ccf91052386388a497349f" prot="public" virt="non-virtual"><scope>Camera</scope><name>~Camera</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

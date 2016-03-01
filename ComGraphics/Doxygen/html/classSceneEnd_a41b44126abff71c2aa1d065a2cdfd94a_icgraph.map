@@ -1,0 +1,7 @@
+<map id="SceneEnd::RenderModelOnScreen" name="SceneEnd::RenderModelOnScreen">
+<area shape="rect" id="node2" href="$classSceneEnd.html#a06fac012bd3a1df369c5722c8cf662b0" title="SceneEnd::Render" alt="" coords="532,113,663,139"/>
+<area shape="rect" id="node3" href="$classSceneEnd.html#a60474abf07183e63810d76f25a9f8c9b" title="SceneEnd::RenderMouseScroll\lToolSlot" alt="" coords="279,40,482,81"/>
+<area shape="rect" id="node4" href="$classSceneEnd.html#a9b50e6b7daac08e79d1f95ea821e5369" title="SceneEnd::RenderPlayerDies\lInteraction" alt="" coords="283,105,478,147"/>
+<area shape="rect" id="node5" href="$classSceneEnd.html#abf2862ad581c4bb92e99475e9c7f107b" title="SceneEnd::RenderToolIcon" alt="" coords="291,171,470,198"/>
+<area shape="rect" id="node6" href="$classSceneEnd.html#a0cec4a5dc38e55660f06a335a8ee2c43" title="SceneEnd::ToolSelectionMouse\lScroll" alt="" coords="277,223,484,264"/>
+</map>

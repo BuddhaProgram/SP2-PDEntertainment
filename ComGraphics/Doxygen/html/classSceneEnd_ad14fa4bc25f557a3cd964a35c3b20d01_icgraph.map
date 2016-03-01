@@ -1,0 +1,5 @@
+<map id="SceneEnd::Collision" name="SceneEnd::Collision">
+<area shape="rect" id="node2" href="$classSceneEnd.html#a31fef5d67de3a3dfd2ae15d4bbcea2b6" title="SceneEnd::checkAttack" alt="" coords="192,5,355,32"/>
+<area shape="rect" id="node4" href="$classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="659,31,789,57"/>
+<area shape="rect" id="node3" href="$classSceneEnd.html#ad6c2d9939a867eb0ced3ee2c02d9d33f" title="SceneEnd::MouseClickFunction" alt="" coords="403,5,611,32"/>
+</map>

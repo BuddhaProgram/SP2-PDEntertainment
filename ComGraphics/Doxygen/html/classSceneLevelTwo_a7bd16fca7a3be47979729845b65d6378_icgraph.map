@@ -1,0 +1,4 @@
+<map id="SceneLevelTwo::Reset" name="SceneLevelTwo::Reset">
+<area shape="rect" id="node2" href="$classSceneLevelTwo.html#acb34d2e8f029102a0cbcc4a2818f0e55" title="SceneLevelTwo::ContinueGame\lOrNot" alt="" coords="207,5,412,47"/>
+<area shape="rect" id="node3" href="$classSceneLevelTwo.html#a51b7e15c60d59ae388400a420efbbae5" title="SceneLevelTwo::Update" alt="" coords="460,13,620,39"/>
+</map>

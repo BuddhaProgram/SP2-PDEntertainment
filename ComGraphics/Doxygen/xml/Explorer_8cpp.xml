@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Explorer_8cpp" kind="file" language="C++">
+    <compoundname>Explorer.cpp</compoundname>
+    <includes refid="Explorer_8h" local="yes">Explorer.h</includes>
+    <incdepgraph>
+      <node id="5467">
+        <label>list</label>
+      </node>
+      <node id="5468">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5469" relation="include">
+        </childnode>
+        <childnode refid="5474" relation="include">
+        </childnode>
+      </node>
+      <node id="5470">
+        <label>cmath</label>
+      </node>
+      <node id="5471">
+        <label>exception</label>
+      </node>
+      <node id="5463">
+        <label>ComGraphics/Source/Explorer.cpp</label>
+        <link refid="Explorer.cpp"/>
+        <childnode refid="5464" relation="include">
+        </childnode>
+      </node>
+      <node id="5472">
+        <label>ctime</label>
+      </node>
+      <node id="5466">
+        <label>vector</label>
+      </node>
+      <node id="5473">
+        <label>cstdlib</label>
+      </node>
+      <node id="5474">
+        <label>iostream</label>
+      </node>
+      <node id="5464">
+        <label>Explorer.h</label>
+        <link refid="Explorer_8h"/>
+        <childnode refid="5465" relation="include">
+        </childnode>
+        <childnode refid="5468" relation="include">
+        </childnode>
+      </node>
+      <node id="5465">
+        <label>ToolUI.h</label>
+        <link refid="ToolUI_8h"/>
+        <childnode refid="5466" relation="include">
+        </childnode>
+        <childnode refid="5467" relation="include">
+        </childnode>
+      </node>
+      <node id="5469">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5470" relation="include">
+        </childnode>
+        <childnode refid="5471" relation="include">
+        </childnode>
+        <childnode refid="5472" relation="include">
+        </childnode>
+        <childnode refid="5473" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Explorer_8h" kindref="compound">Explorer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="classExplorer_1acbedef0262785b6983d1fe9b4f2c6242" refkind="member"><highlight class="normal"><ref refid="classExplorer_1acbedef0262785b6983d1fe9b4f2c6242" kindref="member">Explorer::Explorer</ref>()</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1aa2bac7c3d609db4fb0ef34e11b124f14" kindref="member">hp</ref><sp/>=<sp/>100;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1a50eaeb6553de278fdf9293d7470baabc" kindref="member">stamina</ref><sp/>=<sp/>100;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af67d3feeb0a4b4f99c1b6315032a022b" kindref="member">f_hpBarScaleX</ref><sp/>=<sp/>10.f;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1a2f78182bd57d353e371ab9748a61a202" kindref="member">i_SlotIndex</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>4;<sp/>++i)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[i]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1a5793bc8fed71824443022babd625f0ef" kindref="member">checkSavePoint</ref>[i]<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1a10103ad5529369f594478cbc61b9979f" kindref="member">TotalTools</ref>.push_back(<ref refid="classToolUI" kindref="compound">ToolUI</ref>(<ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6a30ae1840530da649b58a0bc945b91bcb" kindref="member">ToolUI::Empty</ref>));</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1ab5e4808c3e1bcdce10820358b9a51ae9" kindref="member">SavePoint</ref><sp/>=<sp/>(0.f,<sp/>0.f,<sp/>0.f);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1aed7ea4d85c2108ff30de293a38047011" kindref="member">PlayerLife</ref><sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1adadd4225520dd41a45ab5a02f3526e5f" kindref="member">isDead</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>4;<sp/>++i)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1a18ea547702f107000256978db497ca9a" kindref="member">b_PickUpTool</ref>[i]<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::list&lt;ToolUI&gt;::iterator<sp/>TS<sp/>=<sp/><ref refid="classExplorer_1a10103ad5529369f594478cbc61b9979f" kindref="member">TotalTools</ref>.begin();<sp/>TS<sp/>!=<sp/><ref refid="classExplorer_1a10103ad5529369f594478cbc61b9979f" kindref="member">TotalTools</ref>.end();<sp/>++TS)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(TS-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6a30ae1840530da649b58a0bc945b91bcb" kindref="member">ToolUI::Empty</ref>)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TS-&gt;tool<sp/>=<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6ac456e1546ba455900c91df2286ceeae0" kindref="member">ToolUI::Hand</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1a6da9c21d6829a48f468fccda2e492dd3" kindref="member">i_SuitcaseCount</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>++i)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1aef834c5f679f71ed371b3eb4eb952fe5" kindref="member">b_pickUpSuitCase</ref>[i]<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classExplorer_1a980cc6c17454f75fa042c46247b93a9d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1a980cc6c17454f75fa042c46247b93a9d" kindref="member">Explorer::getHP</ref>()</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1aa2bac7c3d609db4fb0ef34e11b124f14" kindref="member">hp</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classExplorer_1a6827c0db7864e0bfb1716cc2767dec2d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1a6827c0db7864e0bfb1716cc2767dec2d" kindref="member">Explorer::MinusHP</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>TakeDamage)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1aa2bac7c3d609db4fb0ef34e11b124f14" kindref="member">hp</ref><sp/>-=<sp/>TakeDamage;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1aa2bac7c3d609db4fb0ef34e11b124f14" kindref="member">hp</ref><sp/>&lt;=<sp/>0)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1aa2bac7c3d609db4fb0ef34e11b124f14" kindref="member">hp</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1aa2bac7c3d609db4fb0ef34e11b124f14" kindref="member">hp</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classExplorer_1afad219513d65c2efdc84490bd8c06bde" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1afad219513d65c2efdc84490bd8c06bde" kindref="member">Explorer::checkDead</ref>()</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1aa2bac7c3d609db4fb0ef34e11b124f14" kindref="member">hp</ref><sp/>&lt;=<sp/>0)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1adadd4225520dd41a45ab5a02f3526e5f" kindref="member">isDead</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classExplorer_1ab13dc4924a6abfd05e29c1cf4c927c70" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1ab13dc4924a6abfd05e29c1cf4c927c70" kindref="member">Explorer::getStamina</ref>()</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1a50eaeb6553de278fdf9293d7470baabc" kindref="member">stamina</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classExplorer_1a152031dbfe83b09c3c292a8b8edae6e5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1a152031dbfe83b09c3c292a8b8edae6e5" kindref="member">Explorer::setHP</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>HP)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1aa2bac7c3d609db4fb0ef34e11b124f14" kindref="member">hp</ref><sp/>=<sp/>HP;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classExplorer_1a9d134304afaf635d4b3c97f465711e49" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1a9d134304afaf635d4b3c97f465711e49" kindref="member">Explorer::setStamina</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Stam)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1a50eaeb6553de278fdf9293d7470baabc" kindref="member">stamina</ref><sp/>=<sp/>Stam;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classExplorer_1a2314ec87110e38517fe9c2952bcb0b31" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1a2314ec87110e38517fe9c2952bcb0b31" kindref="member">Explorer::InsertToolSlot</ref>(<ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6" kindref="member">ToolUI::ToolType</ref><sp/>ChooseTools)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classExplorer_1a227a8dd80aa001ea416b4ed403281198" kindref="member">CheckForDoubleTool</ref>(ChooseTools)<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::list&lt;ToolUI&gt;::iterator<sp/>TS<sp/>=<sp/><ref refid="classExplorer_1a10103ad5529369f594478cbc61b9979f" kindref="member">TotalTools</ref>.begin();<sp/>TS<sp/>!=<sp/><ref refid="classExplorer_1a10103ad5529369f594478cbc61b9979f" kindref="member">TotalTools</ref>.end();<sp/>++TS)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(TS-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6a30ae1840530da649b58a0bc945b91bcb" kindref="member">ToolUI::Empty</ref>)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TS-&gt;tool<sp/>=<sp/>ChooseTools;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="classExplorer_1a227a8dd80aa001ea416b4ed403281198" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1a227a8dd80aa001ea416b4ed403281198" kindref="member">Explorer::CheckForDoubleTool</ref>(<ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6" kindref="member">ToolUI::ToolType</ref><sp/>DoubleTool)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::list&lt;ToolUI&gt;::iterator<sp/>TS<sp/>=<sp/><ref refid="classExplorer_1a10103ad5529369f594478cbc61b9979f" kindref="member">TotalTools</ref>.begin();<sp/>TS<sp/>!=<sp/><ref refid="classExplorer_1a10103ad5529369f594478cbc61b9979f" kindref="member">TotalTools</ref>.end();<sp/>++TS)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(TS-&gt;tool<sp/>==<sp/>DoubleTool)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classExplorer_1a3689518b92695ed7af8c35f1c88764e1" refkind="member"><highlight class="normal"><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6" kindref="member">ToolUI::ToolType</ref><sp/><ref refid="classExplorer_1a3689518b92695ed7af8c35f1c88764e1" kindref="member">Explorer::GetToolType</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SlotNumber)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::list&lt;ToolUI&gt;::iterator<sp/>it<sp/>=<sp/><ref refid="classExplorer_1a10103ad5529369f594478cbc61b9979f" kindref="member">TotalTools</ref>.begin();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(SlotNumber)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>1:</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6ac456e1546ba455900c91df2286ceeae0" kindref="member">ToolUI::Hand</ref>)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6ab392e6d5502a74453e1473dfddd5021a" kindref="member">ToolUI::Pickaxe</ref>)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6ae3bc3e9b3da6121844c721a47684091f" kindref="member">ToolUI::BaseballBat</ref>)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6a12dc59577ab7b5f97b828a3d895c9163" kindref="member">ToolUI::Sword</ref>)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6a30ae1840530da649b58a0bc945b91bcb" kindref="member">ToolUI::Empty</ref>)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>it-&gt;tool;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>2:</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::advance(it,<sp/>1);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6ac456e1546ba455900c91df2286ceeae0" kindref="member">ToolUI::Hand</ref>)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6ab392e6d5502a74453e1473dfddd5021a" kindref="member">ToolUI::Pickaxe</ref>)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6ae3bc3e9b3da6121844c721a47684091f" kindref="member">ToolUI::BaseballBat</ref>)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6a12dc59577ab7b5f97b828a3d895c9163" kindref="member">ToolUI::Sword</ref>)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6a30ae1840530da649b58a0bc945b91bcb" kindref="member">ToolUI::Empty</ref>)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>it-&gt;tool;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>3:</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::advance(it,<sp/>2);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6ac456e1546ba455900c91df2286ceeae0" kindref="member">ToolUI::Hand</ref>)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6ab392e6d5502a74453e1473dfddd5021a" kindref="member">ToolUI::Pickaxe</ref>)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6ae3bc3e9b3da6121844c721a47684091f" kindref="member">ToolUI::BaseballBat</ref>)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6a12dc59577ab7b5f97b828a3d895c9163" kindref="member">ToolUI::Sword</ref>)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6a30ae1840530da649b58a0bc945b91bcb" kindref="member">ToolUI::Empty</ref>)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>it-&gt;tool;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>4:</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::advance(it,<sp/>3);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6ac456e1546ba455900c91df2286ceeae0" kindref="member">ToolUI::Hand</ref>)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6ab392e6d5502a74453e1473dfddd5021a" kindref="member">ToolUI::Pickaxe</ref>)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6ae3bc3e9b3da6121844c721a47684091f" kindref="member">ToolUI::BaseballBat</ref>)</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6a12dc59577ab7b5f97b828a3d895c9163" kindref="member">ToolUI::Sword</ref>)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;tool<sp/>==<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6a30ae1840530da649b58a0bc945b91bcb" kindref="member">ToolUI::Empty</ref>)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1af31f3ed6accc31051bb3aa2b66b05a9e" kindref="member">itemAttack</ref>[SlotNumber<sp/>-<sp/>1]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>it-&gt;tool;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>it-&gt;tool;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="comment">//combat<sp/>stuff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="classExplorer_1ae12def922703559f8098a0ac04b6d2d1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1ae12def922703559f8098a0ac04b6d2d1" kindref="member">Explorer::ExplorerSavePoint</ref>(<ref refid="structVector3" kindref="compound">Vector3</ref><sp/>pos)</highlight></codeline>
+<codeline lineno="201"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1ab5e4808c3e1bcdce10820358b9a51ae9" kindref="member">SavePoint</ref><sp/>=<sp/>pos;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/Explorer.cpp"/>
+  </compounddef>
+</doxygen>

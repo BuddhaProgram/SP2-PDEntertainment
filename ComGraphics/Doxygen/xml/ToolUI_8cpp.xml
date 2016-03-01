@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="ToolUI_8cpp" kind="file" language="C++">
+    <compoundname>ToolUI.cpp</compoundname>
+    <includes refid="ToolUI_8h" local="yes">ToolUI.h</includes>
+    <incdepgraph>
+      <node id="7608">
+        <label>list</label>
+      </node>
+      <node id="7605">
+        <label>ComGraphics/Source/ToolUI.cpp</label>
+        <link refid="ToolUI.cpp"/>
+        <childnode refid="7606" relation="include">
+        </childnode>
+      </node>
+      <node id="7607">
+        <label>vector</label>
+      </node>
+      <node id="7606">
+        <label>ToolUI.h</label>
+        <link refid="ToolUI_8h"/>
+        <childnode refid="7607" relation="include">
+        </childnode>
+        <childnode refid="7608" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ToolUI_8h" kindref="compound">ToolUI.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="classToolUI_1a36c57eb36d77805b321511f5af395246" refkind="member"><highlight class="normal"><ref refid="classToolUI_1a36c57eb36d77805b321511f5af395246" kindref="member">ToolUI::ToolUI</ref>()</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classToolUI_1aa6a5147e4c28c352135283fbbea3e7c7" kindref="member">tool</ref><sp/>=<sp/><ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6a30ae1840530da649b58a0bc945b91bcb" kindref="member">Empty</ref>;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="classToolUI_1aa93798af661bfb55a453f74b53c0e9c5" refkind="member"><highlight class="normal"><ref refid="classToolUI_1a36c57eb36d77805b321511f5af395246" kindref="member">ToolUI::ToolUI</ref>(<ref refid="classToolUI_1a5d5a2d7ff86afa69e0e495db139cd6c6" kindref="member">ToolType</ref><sp/>tool)</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;tool<sp/>=<sp/><ref refid="classToolUI_1aa6a5147e4c28c352135283fbbea3e7c7" kindref="member">tool</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classToolUI_1a81ba1d09d7813ceae7510773aff6c102" refkind="member"><highlight class="normal"><ref refid="classToolUI_1a81ba1d09d7813ceae7510773aff6c102" kindref="member">ToolUI::~ToolUI</ref>()</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/ToolUI.cpp"/>
+  </compounddef>
+</doxygen>

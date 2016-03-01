@@ -1,0 +1,12 @@
+<map id="Application" name="Application">
+<area shape="rect" id="node2" href="$classMusic.html" title="Music" alt="" coords="888,121,945,148"/>
+<area shape="rect" id="node3" href="$classirrklang_1_1ISoundEngine.html" title="Interface to the sound engine, for playing 3d and 2d sound and music. " alt="" coords="563,68,715,95"/>
+<area shape="rect" id="node4" href="$classirrklang_1_1IRefCounted.html" title="Base class of most objects of the irrKlang. " alt="" coords="218,63,361,89"/>
+<area shape="rect" id="node7" href="$classirrklang_1_1ISoundSource.html" title="A sound source describes an input file (.ogg, .mp3, .wav or similar) and its default settings..." alt="" coords="563,169,716,196"/>
+<area shape="rect" id="node8" href="$classirrklang_1_1IVirtualRefCounted.html" title="Reference counting base class for objects in the Irrlicht Engine similar to IRefCounted. " alt="" coords="200,169,379,196"/>
+<area shape="rect" id="node9" href="$classStopWatch.html" title="StopWatch" alt="" coords="873,217,960,244"/>
+<area shape="rect" id="node12" href="$classScene.html" title="Scene" alt="" coords="887,393,946,420"/>
+<area shape="rect" id="node13" href="$classSwitchLightPuzzle.html" title="SwitchLightPuzzle" alt="" coords="575,343,704,369"/>
+<area shape="rect" id="node15" href="$classGlobalVariables.html" title="GlobalVariables" alt="" coords="583,393,696,420"/>
+<area shape="rect" id="node18" href="$classmisc.html" title="misc" alt="" coords="614,444,665,471"/>
+</map>

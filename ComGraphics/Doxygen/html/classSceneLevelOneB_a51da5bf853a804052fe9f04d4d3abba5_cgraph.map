@@ -1,0 +1,4 @@
+<map id="SceneLevelOneB::PuzzleOneSwitchCheck" name="SceneLevelOneB::PuzzleOneSwitchCheck">
+<area shape="rect" id="node2" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="247,5,421,32"/>
+<area shape="rect" id="node3" href="$classmisc.html#a0f8d72dfe38a0284899586da142daf8a" title="misc::WithinArea" alt="" coords="273,56,395,83"/>
+</map>

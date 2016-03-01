@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="MobBossOne_8cpp" kind="file" language="C++">
+    <compoundname>MobBossOne.cpp</compoundname>
+    <includes refid="MobBossOne_8h" local="yes">MobBossOne.h</includes>
+    <incdepgraph>
+      <node id="6009">
+        <label>list</label>
+      </node>
+      <node id="6003">
+        <label>ComGraphics/Source/MobBossOne.cpp</label>
+        <link refid="MobBossOne.cpp"/>
+        <childnode refid="6004" relation="include">
+        </childnode>
+      </node>
+      <node id="6010">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="6011" relation="include">
+        </childnode>
+        <childnode refid="6016" relation="include">
+        </childnode>
+      </node>
+      <node id="6012">
+        <label>cmath</label>
+      </node>
+      <node id="6013">
+        <label>exception</label>
+      </node>
+      <node id="6004">
+        <label>MobBossOne.h</label>
+        <link refid="MobBossOne_8h"/>
+        <childnode refid="6005" relation="include">
+        </childnode>
+      </node>
+      <node id="6014">
+        <label>ctime</label>
+      </node>
+      <node id="6008">
+        <label>vector</label>
+      </node>
+      <node id="6005">
+        <label>HostileMob.h</label>
+        <link refid="HostileMob_8h"/>
+        <childnode refid="6006" relation="include">
+        </childnode>
+        <childnode refid="6010" relation="include">
+        </childnode>
+      </node>
+      <node id="6015">
+        <label>cstdlib</label>
+      </node>
+      <node id="6016">
+        <label>iostream</label>
+      </node>
+      <node id="6006">
+        <label>Explorer.h</label>
+        <link refid="Explorer_8h"/>
+        <childnode refid="6007" relation="include">
+        </childnode>
+        <childnode refid="6010" relation="include">
+        </childnode>
+      </node>
+      <node id="6007">
+        <label>ToolUI.h</label>
+        <link refid="ToolUI_8h"/>
+        <childnode refid="6008" relation="include">
+        </childnode>
+        <childnode refid="6009" relation="include">
+        </childnode>
+      </node>
+      <node id="6011">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="6012" relation="include">
+        </childnode>
+        <childnode refid="6013" relation="include">
+        </childnode>
+        <childnode refid="6014" relation="include">
+        </childnode>
+        <childnode refid="6015" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MobBossOne_8h" kindref="compound">MobBossOne.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="classMobBossOne_1a809cec43b2d7469fab972572fce295a3" refkind="member"><highlight class="normal"><ref refid="classMobBossOne_1a809cec43b2d7469fab972572fce295a3" kindref="member">MobBossOne::MobBossOne</ref>()</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1ad3df732f04e4701cc0ee6efc98b7f9bb" kindref="member">Spawn</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//mob<sp/>position<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1abf8d99cebf0a451a57cdcf6f4fc916d3" kindref="member">MobPosY</ref><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//player<sp/>detection<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" kindref="member">TargetDetectX</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" kindref="member">TargetDetectZ</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//timer<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a5af899b3b3c363eee35ce50334f7b875" kindref="member">mobTimeCount</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1af38e5a0ff2f970620b1ed34c1ca37b19" kindref="member">health</ref><sp/>=<sp/>32;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a6a79344c05310ce035da0ac40a2ef7f8" kindref="member">AttackDamage</ref><sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMobBossOne_1a504bda39d911397e58dea535b12b5317" kindref="member">kenaWhack</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMobBossOne_1a3e761124aa5645800d3c3b7a73e04ef5" kindref="member">AttackAnimation</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMobBossOne_1a4eec5b91c1b01cde6298c308cfb8e7bc" kindref="member">BossDies</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classMobBossOne_1a0bc0a62e0b05a763a2bba9395e123a86" refkind="member"><highlight class="normal"><ref refid="classMobBossOne_1a0bc0a62e0b05a763a2bba9395e123a86" kindref="member">MobBossOne::~MobBossOne</ref>()</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classMobBossOne_1a637b0f010be745f4fc461771752ad91d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMobBossOne_1a637b0f010be745f4fc461771752ad91d" kindref="member">MobBossOne::knockback</ref>()</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMobBossOne_1a504bda39d911397e58dea535b12b5317" kindref="member">kenaWhack</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35" refid="classMobBossOne_1af5c21d147c9507ecdb5c2ca4b530a21b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classMobBossOne_1af5c21d147c9507ecdb5c2ca4b530a21b" kindref="member">MobBossOne::proximitycheck</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>smallx,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>largex,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>smallz,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>largez)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//this<sp/>function<sp/>checks<sp/>if<sp/>the<sp/>camera<sp/>is<sp/>close<sp/>to<sp/>a<sp/>side<sp/>of<sp/>the<sp/>object</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>result<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" kindref="member">TargetDetectX</ref><sp/>&gt;=<sp/>smallx<sp/>-<sp/>2.f)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" kindref="member">TargetDetectX</ref><sp/>&lt;=<sp/>smallx)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" kindref="member">TargetDetectZ</ref><sp/>&gt;=<sp/>smallz)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" kindref="member">TargetDetectZ</ref><sp/>&lt;=<sp/>largez)){<sp/>result<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" kindref="member">TargetDetectX</ref><sp/>&lt;=<sp/>largex<sp/>+<sp/>2.f)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" kindref="member">TargetDetectX</ref><sp/>&gt;=<sp/>largex)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" kindref="member">TargetDetectZ</ref><sp/>&gt;=<sp/>smallz)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" kindref="member">TargetDetectZ</ref><sp/>&lt;=<sp/>largez)){<sp/>result<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" kindref="member">TargetDetectX</ref><sp/>&gt;=<sp/>smallx)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" kindref="member">TargetDetectX</ref><sp/>&lt;=<sp/>largex)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" kindref="member">TargetDetectZ</ref><sp/>&gt;=<sp/>smallz<sp/>-<sp/>2.f)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" kindref="member">TargetDetectZ</ref><sp/>&lt;=<sp/>smallz)){<sp/>result<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" kindref="member">TargetDetectX</ref><sp/>&gt;=<sp/>smallx)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" kindref="member">TargetDetectX</ref><sp/>&lt;=<sp/>largex)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" kindref="member">TargetDetectZ</ref><sp/>&lt;=<sp/>largez<sp/>+<sp/>2.f)<sp/>&amp;&amp;<sp/>(<ref refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" kindref="member">TargetDetectZ</ref><sp/>&gt;=<sp/>largez)){<sp/>result<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45" refid="classMobBossOne_1a15cf315a37065c7e00aecd2f03ca9823" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMobBossOne_1a15cf315a37065c7e00aecd2f03ca9823" kindref="member">MobBossOne::checkAttack</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classMobBossOne_1af5c21d147c9507ecdb5c2ca4b530a21b" kindref="member">proximitycheck</ref>(<ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>-<sp/>20,<sp/><ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>+<sp/>20,<sp/><ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>-<sp/>20,<sp/><ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>+<sp/>20)<sp/>&amp;&amp;<sp/><ref refid="classMobBossOne_1a3e761124aa5645800d3c3b7a73e04ef5" kindref="member">AttackAnimation</ref>)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMobBossOne_1aecb3709f09de4706becf6754b1744682" kindref="member">attack</ref>(<ref refid="classHostileMob_1a6a79344c05310ce035da0ac40a2ef7f8" kindref="member">AttackDamage</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classMobBossOne_1a3e761124aa5645800d3c3b7a73e04ef5" kindref="member">AttackAnimation</ref>)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMobBossOne_1ad900ea5306a88baa255f73c78e9dbe24" kindref="member">animtimer</ref><sp/>+=<sp/>((float)(dt));</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classMobBossOne_1ad900ea5306a88baa255f73c78e9dbe24" kindref="member">animtimer</ref><sp/>&gt;=<sp/>8)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMobBossOne_1a3e761124aa5645800d3c3b7a73e04ef5" kindref="member">AttackAnimation</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMobBossOne_1ad900ea5306a88baa255f73c78e9dbe24" kindref="member">animtimer</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classMobBossOne_1a3e761124aa5645800d3c3b7a73e04ef5" kindref="member">AttackAnimation</ref>)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMobBossOne_1ad900ea5306a88baa255f73c78e9dbe24" kindref="member">animtimer</ref><sp/>+=<sp/>((float)(dt));</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classMobBossOne_1ad900ea5306a88baa255f73c78e9dbe24" kindref="member">animtimer</ref><sp/>&gt;=<sp/>3)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMobBossOne_1a3e761124aa5645800d3c3b7a73e04ef5" kindref="member">AttackAnimation</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMobBossOne_1ad900ea5306a88baa255f73c78e9dbe24" kindref="member">animtimer</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="classMobBossOne_1a9c3de91039994e9339c3f5a14f093a27" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMobBossOne_1a9c3de91039994e9339c3f5a14f093a27" kindref="member">MobBossOne::move</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>movespeed<sp/>=<sp/>10)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//note:<sp/>target<sp/>detect<sp/>x<sp/>and<sp/>y<sp/>is<sp/>player<sp/>position,<sp/>its<sp/>function<sp/>is<sp/>in<sp/>scene<sp/>cpp<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>start<sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(<ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref>,<sp/><ref refid="classHostileMob_1abf8d99cebf0a451a57cdcf6f4fc916d3" kindref="member">MobPosY</ref>,<sp/><ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>end<sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(<ref refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" kindref="member">TargetDetectX</ref>,<sp/>15,<sp/><ref refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" kindref="member">TargetDetectZ</ref>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>toNorm<sp/>=<sp/>end<sp/>-<sp/>start;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>mob<sp/>=<sp/>start;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distance<sp/>=<sp/>sqrt(<ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>*<sp/><ref refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" kindref="member">TargetDetectX</ref><sp/>+<sp/><ref refid="classHostileMob_1abf8d99cebf0a451a57cdcf6f4fc916d3" kindref="member">MobPosY</ref><sp/>*<sp/>15<sp/>+<sp/><ref refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" kindref="member">TargetDetectZ</ref><sp/>*<sp/><ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>direction<sp/>=<sp/>toNorm.<ref refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" kindref="member">Normalize</ref>();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mob<sp/>+=<sp/>direction<sp/>*<sp/>(float)(movespeed<sp/>*<sp/>dt);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>=<sp/>mob.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MobPosZ<sp/>=<sp/>mob.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMobBossOne_1a15cf315a37065c7e00aecd2f03ca9823" kindref="member">checkAttack</ref>(dt);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMobBossOne_1a57ef694c85ac174d3a884b5ffb0a4eda" kindref="member">CrystalAnim</ref><sp/>+=<sp/>200<sp/>*<sp/>(float)(dt);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classMobBossOne_1a291a94db26b9cd068da3c41ea013a16a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMobBossOne_1a291a94db26b9cd068da3c41ea013a16a" kindref="member">MobBossOne::setSpawnBossOne</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>xpos,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>zpos)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" kindref="member">MobPosX</ref><sp/>=<sp/>xpos<sp/>*<sp/>8;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" kindref="member">MobPosZ</ref><sp/>=<sp/>-(zpos<sp/>*<sp/>8);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101" refid="classMobBossOne_1a38f2b5f17d120031b88a7ddae9254fce" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMobBossOne_1a38f2b5f17d120031b88a7ddae9254fce" kindref="member">MobBossOne::TakeDamage</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>damage)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Boss<sp/>hit&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1af38e5a0ff2f970620b1ed34c1ca37b19" kindref="member">health</ref><sp/>-=<sp/>damage;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="classMobBossOne_1aecb3709f09de4706becf6754b1744682" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMobBossOne_1aecb3709f09de4706becf6754b1744682" kindref="member">MobBossOne::attack</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>damage)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classHostileMob_1a6a79344c05310ce035da0ac40a2ef7f8" kindref="member">AttackDamage</ref><sp/>=<sp/>damage;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1a6827c0db7864e0bfb1716cc2767dec2d" kindref="member">MinusHP</ref>((</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)(<ref refid="classHostileMob_1a6a79344c05310ce035da0ac40a2ef7f8" kindref="member">AttackDamage</ref>));</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classHostileMob_1af38e5a0ff2f970620b1ed34c1ca37b19" kindref="member">health</ref><sp/>&lt;=<sp/>0)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classHostileMob_1ad3df732f04e4701cc0ee6efc98b7f9bb" kindref="member">Spawn</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMobBossOne_1a4eec5b91c1b01cde6298c308cfb8e7bc" kindref="member">BossDies</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/MobBossOne.cpp"/>
+  </compounddef>
+</doxygen>

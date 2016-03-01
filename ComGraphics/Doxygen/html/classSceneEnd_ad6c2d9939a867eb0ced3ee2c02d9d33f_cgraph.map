@@ -1,0 +1,12 @@
+<map id="SceneEnd::MouseClickFunction" name="SceneEnd::MouseClickFunction">
+<area shape="rect" id="node2" href="$classSceneEnd.html#a31fef5d67de3a3dfd2ae15d4bbcea2b6" title="SceneEnd::checkAttack" alt="" coords="261,132,424,159"/>
+<area shape="rect" id="node8" href="$classExplorer.html#afc5637a94d6f094b796d80abf42d930b" title="Explorer::instance" alt="" coords="501,5,628,32"/>
+<area shape="rect" id="node9" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="477,259,652,285"/>
+<area shape="rect" id="node3" href="$classSceneEnd.html#ad14fa4bc25f557a3cd964a35c3b20d01" title="SceneEnd::Collision" alt="" coords="495,56,634,83"/>
+<area shape="rect" id="node5" href="$classmisc.html#af425955855ed4c3d4f09621afdf11785" title="misc::hitting" alt="" coords="518,107,611,133"/>
+<area shape="rect" id="node10" href="$classMobGhost.html#abbd272b8574387f40995ae457cc423b2" title="MobGhost::TakeDamage" alt="" coords="481,157,648,184"/>
+<area shape="rect" id="node11" href="$classMobBossOne.html#a38f2b5f17d120031b88a7ddae9254fce" title="MobBossOne::TakeDamage" alt="" coords="472,208,657,235"/>
+<area shape="rect" id="node4" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="705,56,860,83"/>
+<area shape="rect" id="node6" href="$Misc_8cpp.html#a15f09d45e07d38822b5ecf228e503e36" title="getAngle" alt="" coords="746,107,819,133"/>
+<area shape="rect" id="node7" href="$namespaceMath.html#a1a1d364c850f9d66fda85cf71598bbe5" title="Converts from radians to degrees. " alt="" coords="908,107,1063,133"/>
+</map>

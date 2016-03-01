@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classmisc" kind="class" language="C++" prot="public">
+    <compoundname>misc</compoundname>
+    <includes refid="Misc_8h" local="no">Misc.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmisc_1afd385934888e7e21a9c3c178b7fd465d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float misc::camX</definition>
+        <argsstring></argsstring>
+        <name>camX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Misc.h" line="15" column="1" bodyfile="ComGraphics/Source/Misc.h" bodystart="15" bodyend="-1"/>
+        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="204" endline="252">SceneLevelOneA::checkDoor2</referencedby>
+        <referencedby refid="classSceneLevelTwo_1af756d75e45a09234a01aa03de6670cd6" compoundref="SceneLevelTwo_8cpp" startline="504" endline="509">SceneLevelTwo::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneStart_1a2c33e692fa8ba05e7a5e081b2d1688e2" compoundref="SceneStart_8cpp" startline="225" endline="230">SceneStart::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf46e437e991dca443d91b0ff689768d" compoundref="SceneLevelOneBRenders_8cpp" startline="510" endline="515">SceneLevelOneB::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ad511ad540839c9ec9ab03c02784f1949" compoundref="SceneLevelTwoRenders_8cpp" startline="27" endline="193">SceneLevelTwo::RenderScene</referencedby>
+        <referencedby refid="classmisc_1a0f8d72dfe38a0284899586da142daf8a" compoundref="Misc_8cpp" startline="40" endline="46">WithinArea</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classmisc_1a258dc895e8b8081de36e396744cb24d7" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float misc::camY</definition>
+        <argsstring></argsstring>
+        <name>camY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Misc.h" line="15" column="1" bodyfile="ComGraphics/Source/Misc.h" bodystart="15" bodyend="-1"/>
+        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="204" endline="252">SceneLevelOneA::checkDoor2</referencedby>
+        <referencedby refid="classSceneLevelTwo_1af756d75e45a09234a01aa03de6670cd6" compoundref="SceneLevelTwo_8cpp" startline="504" endline="509">SceneLevelTwo::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneStart_1a2c33e692fa8ba05e7a5e081b2d1688e2" compoundref="SceneStart_8cpp" startline="225" endline="230">SceneStart::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf46e437e991dca443d91b0ff689768d" compoundref="SceneLevelOneBRenders_8cpp" startline="510" endline="515">SceneLevelOneB::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ad511ad540839c9ec9ab03c02784f1949" compoundref="SceneLevelTwoRenders_8cpp" startline="27" endline="193">SceneLevelTwo::RenderScene</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classmisc_1a65813e82056f0e24ccf36088618001f1" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float misc::camZ</definition>
+        <argsstring></argsstring>
+        <name>camZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Misc.h" line="15" column="1" bodyfile="ComGraphics/Source/Misc.h" bodystart="15" bodyend="-1"/>
+        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="204" endline="252">SceneLevelOneA::checkDoor2</referencedby>
+        <referencedby refid="classSceneLevelTwo_1af756d75e45a09234a01aa03de6670cd6" compoundref="SceneLevelTwo_8cpp" startline="504" endline="509">SceneLevelTwo::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneStart_1a2c33e692fa8ba05e7a5e081b2d1688e2" compoundref="SceneStart_8cpp" startline="225" endline="230">SceneStart::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf46e437e991dca443d91b0ff689768d" compoundref="SceneLevelOneBRenders_8cpp" startline="510" endline="515">SceneLevelOneB::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ad511ad540839c9ec9ab03c02784f1949" compoundref="SceneLevelTwoRenders_8cpp" startline="27" endline="193">SceneLevelTwo::RenderScene</referencedby>
+        <referencedby refid="classmisc_1a0f8d72dfe38a0284899586da142daf8a" compoundref="Misc_8cpp" startline="40" endline="46">WithinArea</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmisc_1a49469fb4e803e779cd3b63531d59a9d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>misc::misc</definition>
+        <argsstring>()</argsstring>
+        <name>misc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Misc.h" line="9" column="1" bodyfile="ComGraphics/Source/Misc.cpp" bodystart="2" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classmisc_1ae3266418d93ee3ea5a16ac291fb43e3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>misc::~misc</definition>
+        <argsstring>()</argsstring>
+        <name>~misc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Misc.h" line="10" column="1" bodyfile="ComGraphics/Source/Misc.cpp" bodystart="6" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classmisc_1a0f8d72dfe38a0284899586da142daf8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool misc::WithinArea</definition>
+        <argsstring>(float smallx, float largex, float smallz, float largez)</argsstring>
+        <name>WithinArea</name>
+        <param>
+          <type>float</type>
+          <declname>smallx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>largex</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>smallz</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>largez</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Misc.h" line="12" column="1" bodyfile="ComGraphics/Source/Misc.cpp" bodystart="40" bodyend="46"/>
+        <references refid="classmisc_1afd385934888e7e21a9c3c178b7fd465d" compoundref="Misc_8h" startline="15">camX</references>
+        <references refid="classmisc_1a65813e82056f0e24ccf36088618001f1" compoundref="Misc_8h" startline="15">camZ</references>
+        <referencedby refid="classSceneLevelOneA_1a60782020f72e2e1a287b1ef4b9d82646" compoundref="SceneLevelOneARenders_8cpp" startline="141" endline="202">SceneLevelOneA::checkDoor1</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a9276588fd0ebaa37abfc2cf4048f5abd" compoundref="SceneLevelOneBRenders_8cpp" startline="38" endline="52">SceneLevelOneB::ElevatorCheck</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a51da5bf853a804052fe9f04d4d3abba5" compoundref="SceneLevelOneB_8cpp" startline="507" endline="600">SceneLevelOneB::PuzzleOneSwitchCheck</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a57e4fa45b2b3e694d0742e631bfd7d45" compoundref="SceneLevelTwo_8cpp" startline="511" endline="663">SceneLevelTwo::SomeUpdates</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ab2eac71e880e3d6044cd6a42e4dbcfe2" compoundref="SceneLevelTwoRenders_8cpp" startline="316" endline="360">SceneLevelTwo::SwitchCheck</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmisc_1af425955855ed4c3d4f09621afdf11785" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool misc::hitting</definition>
+        <argsstring>(float distance, float mobx, float mobz, float AOA, float camX, float camZ, Vector3 view, Vector3 position)</argsstring>
+        <name>hitting</name>
+        <param>
+          <type>float</type>
+          <declname>distance</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>mobx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>mobz</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>AOA</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>camX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>camZ</declname>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>view</declname>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Misc.h" line="13" column="1" bodyfile="ComGraphics/Source/Misc.cpp" bodystart="22" bodyend="38"/>
+        <references refid="Misc_8cpp_1a15f09d45e07d38822b5ecf228e503e36" compoundref="Misc_8cpp" startline="11" endline="20">getAngle</references>
+        <referencedby refid="classSceneLevelOneB_1a2bfa4551ac0b1f099c42c2193b55df47" compoundref="SceneLevelOneBRenders_8cpp" startline="435" endline="455">SceneLevelOneB::attackCheck</referencedby>
+        <referencedby refid="classSceneLevelOneA_1acae5c28ab518704326877b73c6df4e55" compoundref="SceneLevelOneARenders_8cpp" startline="398" endline="407">SceneLevelOneA::AttackCheck</referencedby>
+        <referencedby refid="classSceneEnd_1a31fef5d67de3a3dfd2ae15d4bbcea2b6" compoundref="SceneEndRenders_8cpp" startline="424" endline="456">SceneEnd::checkAttack</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="875">
+        <label>misc</label>
+        <link refid="classmisc"/>
+        <childnode refid="876" relation="usage">
+          <edgelabel>camX</edgelabel>
+          <edgelabel>camY</edgelabel>
+          <edgelabel>camZ</edgelabel>
+        </childnode>
+      </node>
+      <node id="876">
+        <label>float</label>
+      </node>
+    </collaborationgraph>
+    <location file="ComGraphics/Source/Misc.h" line="7" column="1" bodyfile="ComGraphics/Source/Misc.h" bodystart="6" bodyend="16"/>
+    <listofallmembers>
+      <member refid="classmisc_1afd385934888e7e21a9c3c178b7fd465d" prot="public" virt="non-virtual"><scope>misc</scope><name>camX</name></member>
+      <member refid="classmisc_1a258dc895e8b8081de36e396744cb24d7" prot="public" virt="non-virtual"><scope>misc</scope><name>camY</name></member>
+      <member refid="classmisc_1a65813e82056f0e24ccf36088618001f1" prot="public" virt="non-virtual"><scope>misc</scope><name>camZ</name></member>
+      <member refid="classmisc_1af425955855ed4c3d4f09621afdf11785" prot="public" virt="non-virtual"><scope>misc</scope><name>hitting</name></member>
+      <member refid="classmisc_1a49469fb4e803e779cd3b63531d59a9d5" prot="public" virt="non-virtual"><scope>misc</scope><name>misc</name></member>
+      <member refid="classmisc_1a0f8d72dfe38a0284899586da142daf8a" prot="public" virt="non-virtual"><scope>misc</scope><name>WithinArea</name></member>
+      <member refid="classmisc_1ae3266418d93ee3ea5a16ac291fb43e3d" prot="public" virt="non-virtual"><scope>misc</scope><name>~misc</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

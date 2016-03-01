@@ -1,0 +1,10 @@
+<map id="SceneLevelOneB::Collision" name="SceneLevelOneB::Collision">
+<area shape="rect" id="node2" href="$classSceneLevelOneB.html#a3177b86100055be275d4f9738af818fa" title="SceneLevelOneB::checkDoor1" alt="" coords="241,5,440,32"/>
+<area shape="rect" id="node3" href="$classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="497,132,668,159"/>
+<area shape="rect" id="node4" href="$classSceneLevelOneB.html#a2bdf27321c331a118c470bf750c6e461" title="SceneLevelOneB::checkDoor2" alt="" coords="241,107,440,133"/>
+<area shape="rect" id="node5" href="$classSceneLevelOneB.html#af76b3c4469afe2cbf2349095fede55e2" title="SceneLevelOneB::checkDoor3" alt="" coords="241,157,440,184"/>
+<area shape="rect" id="node6" href="$classSceneLevelOneB.html#a0319f20e60159cf5eb74489bff0860bc" title="SceneLevelOneB::checkDoor4" alt="" coords="241,208,440,235"/>
+<area shape="rect" id="node7" href="$classSceneLevelOneB.html#ac89978f77cc8c610726abc26401b1bcf" title="SceneLevelOneB::RenderDoor" alt="" coords="242,325,439,352"/>
+<area shape="rect" id="node9" href="$classSceneLevelOneB.html#a4f25aba5b048f19a3e31fcf3869f51d7" title="SceneLevelOneB::SwitchCollision\lChecker" alt="" coords="232,259,449,301"/>
+<area shape="rect" id="node8" href="$classSceneLevelOneB.html#a5c7f4cef0669b49cd80c284d9c9864ce" title="SceneLevelOneB::Render" alt="" coords="497,325,668,352"/>
+</map>
