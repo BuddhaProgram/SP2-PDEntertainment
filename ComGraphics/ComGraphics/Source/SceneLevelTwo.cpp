@@ -616,7 +616,7 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	if (Misc.WithinArea(-76, 76, 127, 361))
 
 	{
-		transSpikeDoor += 0.8f;
+		transSpikeDoor += 0.6f;
 	}
 	if (Misc.WithinArea(-12, 12, 80, 118))
 	{
@@ -626,7 +626,7 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	if (closeDoors == true)
 	{
 		anima.CloseSlideDoor5(dt);
-		Collision(-20, 20, 115, 125);
+		//Collision(-20, 20, 115, 125);
 	}
 
 	if (transSpikeDoor > 140)
@@ -642,7 +642,7 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	}
 	if (puzzling == true)
 	{
-		transSpikeWall2 += (float)dt;
+		transSpikeWall2 += 0.5f;
 	}
 	if (Misc.WithinArea(324, 356, -20, -4))
 	{
