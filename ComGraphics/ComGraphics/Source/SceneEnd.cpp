@@ -506,32 +506,6 @@ void SceneEnd::MouseClickFunction(double dt)
     }
 }
 
-				--Explorer::instance()->PlayerLife;
-				Explorer::instance()->hp = 100;
-				Explorer::instance()->isDead = false;
-				Variables.f_redScreenTimer = 0.0f;
-
-			}
-
-			else if (Explorer::instance()->checkSavePoint[3] == true)
-			{
-				camera.position = Explorer::instance()->SavePoint;
-
-				--Explorer::instance()->PlayerLife;
-				Explorer::instance()->hp = 100;
-				Explorer::instance()->isDead = false;
-				Variables.f_redScreenTimer = 0.0f;
-			}
-		}
-
-		else if (Application::IsKeyPressed('N'))
-		{
-			Reset();
-			Application::OpenGame();
-		}
-	}
-}
-
 void SceneEnd::UpdateRepairs(double dt)
 {
 	if (camera.position.x > -6.0f && camera.position.x < 6.0f && camera.position.z > -166.0f && camera.position.z < -154.0f)

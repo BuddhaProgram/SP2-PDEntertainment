@@ -962,7 +962,7 @@ void SceneLevelTwo::Update(double dt)
 	/*-------------------------[Switches Function]-------------------------------*/
 	PuzzleTwoSwitchCheck(dt);
 	LogicAnimationSwitches(dt);
-	Switches.SwitchPuzzleTwo; // PLEASE USE THIS KEWPIE!
+	Switches.SwitchPuzzleTwo(); // PLEASE USE THIS KEWPIE!
 	/*-------------------------[Death of the Explorer]-------------------------------*/
 	Explorer::instance()->checkDead();
 	UpdatePlayerDiesInteraction(dt);
