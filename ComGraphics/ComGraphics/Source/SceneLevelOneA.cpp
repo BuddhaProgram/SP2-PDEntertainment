@@ -25,6 +25,8 @@ SceneLevelOneA::SceneLevelOneA()
 	 Notice2 = false;
 	 willDrop = false;
 	 Key1Active = false;
+     CrosshairHit = false;
+     SwitchRot = 45.f;
 }
 
 SceneLevelOneA::~SceneLevelOneA()
@@ -507,13 +509,7 @@ void SceneLevelOneA::UpdateSavePoint()
 	}
 }
 
-void SceneLevelOneA::RenderSavePointText()
-{
-	if (camera.position.x > 110.0f && camera.position.x < 130.0f && camera.position.z > 65.0f && camera.position.z < 85.0f)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Press T to save your progress ...", Color(0.25f, 0.9f, 0.82f), 3, 5, 5);
-	}
-}
+
 
 void SceneLevelOneA::UpdatePlayerDiesInteraction(double dt)
 {
@@ -843,10 +839,6 @@ void SceneLevelOneA::Render()
 	ToolSelectionMouseScroll();
 	RenderMouseScrollToolSlot();
 	RenderToolIcon();
-
-	
-
-	RenderSavePointText();
 
 	//mob renders
 	if (Ghost.Spawn)

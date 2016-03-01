@@ -25,6 +25,11 @@ SceneEnd::SceneEnd()
 	f_rockY = 25.0f;
 
     spawnWaveOne = false;
+    MobMS = 25.f;
+    BossMS = 15.f;
+    killCounter = 0;
+    waveCounter = 0;
+    CrosshairHit = false;
 }
 
 SceneEnd::~SceneEnd()

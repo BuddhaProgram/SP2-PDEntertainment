@@ -15,6 +15,21 @@
 
 SceneLevelTwo::SceneLevelTwo()
 {
+	Switch1Int = false;
+	Switch2Int = false;
+	Switch1Rot = 45.f;
+	Switch2Rot = 45.f;
+	Switch1Press = false;
+	Switch2Press = false;
+	transSpikeDoor = false;
+	closeDoors = false;
+	timerDoor = 3;
+	openDoor1 = false;
+	openDoor2 = false;
+	invisWALLDisappear = false;
+	puzzling = false;
+	transSpikeWall2 = 0;
+	hitWall = false;
 }
 
 SceneLevelTwo::~SceneLevelTwo()
@@ -212,24 +227,58 @@ static float LSPEED = 10.f;
 void SceneLevelTwo::Reset()
 {
 	Explorer::instance()->hp = 100;
+	Explorer::instance()->stamina = 100;
 	Explorer::instance()->isDead = false;
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
-	transSpikeDoor = 0;
-	closeDoors = false;
-	timerDoor = 3;
-	Switch1Press = false;
-	Switch2Press = false;
 	Switch1Int = false;
 	Switch2Int = false;
 	Switch1Rot = 45.f;
 	Switch2Rot = 45.f;
+	Switch1Press = false;
+	Switch2Press = false;
+	transSpikeDoor = false;
+	closeDoors = false;
+	timerDoor = 3;
 	openDoor1 = false;
 	openDoor2 = false;
 	invisWALLDisappear = false;
 	puzzling = false;
 	transSpikeWall2 = 0;
 	hitWall = false;
+
+
+
+	anima.QPDOOR1_BOT = 0;
+	anima.QPDOOR1_TOP = 0;
+	anima.QP_TOPDOOR1 = false;
+	anima.QP_BOTDOOR1 = false;
+
+	anima.QPDOOR2_TOP = 0;
+	anima.QPDOOR2_BOT = 0;
+	anima.QP_TOPDOOR2 = false;
+	anima.QP_BOTDOOR2 = false;
+
+	anima.QPDOOR3_TOP = 0;
+	anima.QPDOOR3_BOT = 0;
+	anima.QP_TOPDOOR3 = false;
+	anima.QP_BOTDOOR3 = false;
+
+	anima.QPDOOR4_TOP = 10;
+	anima.QPDOOR4_BOT = -6;
+	anima.QP_TOPDOOR4 = false;
+	anima.QP_BOTDOOR4 = false;
+
+	anima.QPDOOR5_TOP = 0;
+	anima.QPDOOR5_BOT = 0;
+	anima.QP_TOPDOOR5 = false;
+	anima.QP_BOTDOOR5 = false;
+
+	anima.DoorSlideTop_5 = 10;
+	anima.DoorSlideBtm_5 = -6;
+	anima.ClosingDoorTop5 = true;
+	anima.ClosingDoorBtm5 = true;
+
 	for (int i = 0; i < 4; ++i)
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
@@ -539,7 +588,7 @@ void SceneLevelTwo::SomeUpdates(double dt)
 		Collision(-20, 20, -305, -295);
 	}
 
-	if (Misc.WithinArea(-12, 12, -105, -95) && Application::IsKeyPressed('E'))
+	if (Misc.WithinArea(-12, 12, -105, -95) && Application::IsKeyPressed('E') && openDoor1 == true && openDoor2 == true)
 	{
 		invisWALLDisappear = true;
 	}

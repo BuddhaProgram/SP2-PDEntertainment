@@ -223,8 +223,8 @@ private:
     MobBossOne BossOne;
 
     bool spawnWaveOne =false;
-    int killCounter =0;
-    int waveCounter=0;
+    int killCounter;
+    int waveCounter;
 
     void moveMob(double dt);
     void RenderMobs(float xpos, float zpos);
@@ -233,10 +233,10 @@ private:
     void MobCheck();
     void checkAttack();
 
-    float MobMS = 25.f;
-    float BossMS = 15.f;
+    int MobMS;
+    int BossMS;
 
-    bool CrosshairHit = false;
+    bool CrosshairHit;
    
 };
 

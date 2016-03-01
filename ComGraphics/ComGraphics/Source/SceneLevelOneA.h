@@ -173,7 +173,6 @@ private:
 
 	// Updates save point position
 	void UpdateSavePoint();
-	void RenderSavePointText();
 
     //checkers and animation functions
 	void checkRubbleFall();
@@ -209,7 +208,7 @@ private:
     bool Notice2;
     bool willDrop;
     bool Key1Active;
-    float SwitchRot = 45.f;
+    float SwitchRot;
 
     unsigned m_vertexArrayID;
     Mesh *meshList[NUM_GEOMETRY];
@@ -229,7 +228,7 @@ private:
     MobGhost Ghost;
 
     float FPS;
-    bool CrosshairHit = false;
+    bool CrosshairHit;
 
     //collision variables 
     float CollXLarge[28];
