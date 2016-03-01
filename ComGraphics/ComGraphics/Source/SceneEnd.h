@@ -82,6 +82,10 @@ class SceneEnd : public Scene
 
 		GEO_HEALTHICON,
 
+		//player related
+		GEO_HEALTHBAR,
+		GEO_STAMINABAR,
+
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE

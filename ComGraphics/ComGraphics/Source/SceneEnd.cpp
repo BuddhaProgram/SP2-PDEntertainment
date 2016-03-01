@@ -217,6 +217,9 @@ void SceneEnd::Init()
 
     meshList[GEO_BOSS] = MeshBuilder::GenerateOBJ("boss", "OBJ//Boss1.obj");
     meshList[GEO_BOSS]->textureID = LoadTGA("Image//Boss1.tga");
+	// meshList for health bar
+	meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
+	meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
@@ -598,6 +601,10 @@ void SceneEnd::Update(double dt)
 			Application::EndingCutScene();
 		}
 	}
+
+	if (Application::IsKeyPressed('E'))
+		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
+
     //door collision
     Collision(-40, 40, 70, 110);
     //unending wall collision
@@ -797,7 +804,7 @@ void SceneEnd::Render()
 
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
 	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
+	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
 
 	if (b_RepairDone[2] == false)
 	{
@@ -807,6 +814,9 @@ void SceneEnd::Render()
 			RenderMesh(meshList[GEO_ROCK], true);
 		modelStack.PopMatrix();
 	}
+
+	RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57.0f, 0, false);
+	RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56.0f, 0, false);
 
 	for (float i = 0; i < Explorer::instance()->PlayerLife; ++i)
 		RenderModelOnScreen(meshList[GEO_HEALTHICON], 3.f, 3.f, 3.f, 90, 1, 0, 0, (22.f + i), 18.5f, 1.0f, false);
