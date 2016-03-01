@@ -71,7 +71,7 @@ class SceneEnd : public Scene
 		GEO_SWORDICON,
 
 		GEO_GHOST1,
-
+        GEO_BOSS,
 		// Animations when player dies
 		GEO_DEADCOLOR,
 		GEO_DEADBLACKSCREEN,
@@ -215,11 +215,13 @@ private:
     MobGhost MobThree;
     MobBossOne BossOne;
 
+    bool spawnWaveOne;
     int killCounter;
     int waveCounter;
 
     void RenderMobs();
     void ResetMobs();
+    void MobCheck();
 
    
 };

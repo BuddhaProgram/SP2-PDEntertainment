@@ -23,6 +23,8 @@ SceneEnd::SceneEnd()
 
 	f_RepairProcess = 0.0f;
 	f_rockY = 25.0f;
+
+    spawnWaveOne = false;
 }
 
 SceneEnd::~SceneEnd()
@@ -195,17 +197,6 @@ void SceneEnd::Init()
 	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
 	meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
 
-	meshList[GEO_FACILITYFLOOR] = MeshBuilder::GenerateQuad("Facility Floor", Color(0.623f, 0.467f, 0.467f));
-	meshList[GEO_FACILITYFLOOR]->material.kAmbient.Set(0.3f, 0.3f, 0.3f);
-	meshList[GEO_FACILITYFLOOR]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
-	meshList[GEO_FACILITYFLOOR]->material.kSpecular.Set(1, 1, 1);
-
-	meshList[GEO_FACILITYWALLS] = MeshBuilder::GenerateQuad("Facility Wall", Color(1, 1, 1));
-	meshList[GEO_FACILITYWALLS]->textureID = LoadTGA("Image//InsideWALL.tga");
-
-	meshList[GEO_FACILITYCEILINGS] = MeshBuilder::GenerateQuad("Facility Ceiling", Color(1, 1, 1));
-	meshList[GEO_FACILITYCEILINGS]->textureID = LoadTGA("Image//InsideCEILING.tga");
-
 	meshList[GEO_FACILITYOUT] = MeshBuilder::GenerateOBJ("FacilityOut", "OBJ//FacilityOUT.obj");
 	meshList[GEO_FACILITYOUT]->textureID = LoadTGA("Image//FacilityOUT.tga");
 	meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("Facility Wall Outside", Color(1, 1, 1));
@@ -223,6 +214,9 @@ void SceneEnd::Init()
 
 	meshList[GEO_HEALTHICON] = MeshBuilder::GenerateQuad("HealthIcon", Color(1, 1, 1));
 	meshList[GEO_HEALTHICON]->textureID = LoadTGA("Image//Heart1.tga");
+
+    meshList[GEO_BOSS] = MeshBuilder::GenerateOBJ("boss", "OBJ//Boss1.obj");
+    meshList[GEO_BOSS]->textureID = LoadTGA("Image//Boss1.tga");
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
@@ -592,7 +586,11 @@ void SceneEnd::Update(double dt)
 	camera.Update(dt);
 	anima.OBJAnimation(dt);
 	UpdateRepairs(dt);
-
+    MobOne.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
+    MobTwo.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
+    MobThree.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
+    BossOne.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
+    MobCheck();
 	if (b_ReadyToFly() && camera.position.x >= -60 && camera.position.x <= 80 && camera.position.z >= -250 && camera.position.z <= -150)
 	{
 		if (Application::IsKeyPressed('E'))
@@ -793,7 +791,7 @@ void SceneEnd::Render()
 	ToolSelectionMouseScroll();
 	RenderMouseScrollToolSlot();
 	RenderToolIcon();
-
+    RenderMobs();
 	RenderRepairText();
 	RenderMineText();
 

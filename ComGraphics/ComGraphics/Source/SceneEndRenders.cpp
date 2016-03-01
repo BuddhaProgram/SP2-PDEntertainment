@@ -384,4 +384,93 @@ void SceneEnd::RenderMobs()
         RenderMesh(meshList[GEO_GHOST1], true);
         modelStack.PopMatrix();
     }
+    if (BossOne.Spawn)
+    {
+        modelStack.PushMatrix();
+        modelStack.Translate(BossOne.MobPosX, 5, BossOne.MobPosZ);
+        RenderMesh(meshList[GEO_BOSS], true);
+        modelStack.PopMatrix();
+    }
+}
+
+void SceneEnd::MobCheck()
+{
+    if (proximitycheck(-14, 15, -160, 137))
+    {
+        spawnWaveOne = true;
+    }
+    if (MobOne.health <= 0)
+    {
+        killCounter += 1;
+    }
+    if (MobTwo.health <= 0)
+    {
+        killCounter += 1;
+    }
+    if (MobThree.health <= 0)
+    {
+        killCounter += 1;
+    }
+    if (BossOne.health <= 0)
+    {
+        killCounter = 0;
+        ResetMobs();
+        waveCounter += 1;
+    }
+   
+    else
+    {
+        BossOne.Spawn = false;
+    }
+    if (spawnWaveOne)
+    {
+        if (MobOne.health > 0)
+        {
+            MobOne.Spawn = true;
+        }
+        else
+        {
+            MobOne.Spawn = false;
+        }
+
+        if (MobTwo.health > 0)
+        {
+            MobTwo.Spawn = true;
+        }
+        else
+        {
+            MobTwo.Spawn = false;
+        }
+
+        if (MobThree.health > 0)
+        {
+            MobThree.Spawn = true;
+        }
+        else
+        {
+            MobTwo.Spawn = false;
+        }
+
+        if (killCounter == 3 && BossOne.health > 0)
+        {
+            BossOne.Spawn = true;
+        }
+        else
+        {
+            BossOne.Spawn = false;
+        }
+    }
+}
+
+void SceneEnd::ResetMobs()
+{
+    MobOne.health += waveCounter * 4;
+    MobTwo.health += waveCounter * 4;
+    MobThree.health += waveCounter * 4;
+    BossOne.health += waveCounter * 4;
+
+    MobOne.setSpawnGhost(196, -60);
+    MobTwo.setSpawnGhost(210, -366);
+    MobThree.setSpawnGhost(-179, -333);
+    BossOne.setSpawnBossOne(-290, -45);
 }
