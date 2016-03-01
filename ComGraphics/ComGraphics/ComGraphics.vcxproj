@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Application.cpp" />
+    <ClCompile Include="Source\Credits.cpp" />
     <ClCompile Include="source\CutSceneOneRenders.cpp" />
     <ClCompile Include="Source\GlobalVariables.cpp" />
     <ClCompile Include="source\MapRender.cpp" />
@@ -53,6 +54,7 @@
   <ItemGroup>
     <ClInclude Include="irrKlang\include\irrKlang.h" />
     <ClInclude Include="Source\Application.h" />
+    <ClInclude Include="Source\Credits.h" />
     <ClInclude Include="Source\GlobalVariables.h" />
     <ClInclude Include="Source\Music.h" />
     <ClInclude Include="Source\OpeningCutScene.h" />

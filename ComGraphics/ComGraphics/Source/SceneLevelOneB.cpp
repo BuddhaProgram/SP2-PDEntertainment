@@ -234,7 +234,6 @@ void SceneLevelOneB::ResetSameScene()
 {
 	Explorer::instance()->hp = 100;
 	Explorer::instance()->isDead = false;
-	Explorer::instance()->PlayerLife = 3;
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
 
@@ -242,6 +241,26 @@ void SceneLevelOneB::ResetSameScene()
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
 	}
+
+
+	activateDoor1 = false;
+	activateDoor2 = false;
+	activateDoor3_1 = false;
+	activateDoor3_2 = false;
+	activateDoor4 = false;
+
+	anima.DoorSlideTop_Boss = 0;
+	anima.DoorSlideBtm_Boss = 0;
+	anima.toSlideDoorTop_Boss = true;
+	anima.toSlideDoorBtm_Boss = true;
+	anima.ClosingDoorTop_Boss = true;
+	anima.ClosingDoorBtm_Boss = true;
+
+	anima.DoorSlideTop_5 = 10;
+	anima.DoorSlideBtm_5 = -6;
+	anima.ClosingDoorTop5 = true;
+	anima.ClosingDoorBtm5 = true;
+
     //mob variables
     PuzzleGhost1.health = 8;
     PuzzleGhost2.health = 8;
@@ -266,7 +285,9 @@ void SceneLevelOneB::ResetAll()
     {
         Explorer::instance()->checkSavePoint[i] = false;
     }
+
 }
+
 
 void SceneLevelOneB::Collision(float smallx, float largex, float smallz, float largez)
 {

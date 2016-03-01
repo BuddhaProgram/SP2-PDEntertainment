@@ -423,10 +423,10 @@ void SceneLevelOneA::AnimationCheck(double dt)
 	}
 	if (activateDoor3) { anima.OpenSlideDoor3(dt); }
 
-	if (!(proximitycheck(192, 217, 60, 64)))
+	/*if (!(proximitycheck(192, 217, 60, 64)))
 	{
 		anima.CloseSlideDoor3(dt);
-	}
+	}*/
 	if (willDrop)
 	{
 		anima.Portraits(dt);

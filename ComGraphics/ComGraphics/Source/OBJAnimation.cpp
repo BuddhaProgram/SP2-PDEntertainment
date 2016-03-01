@@ -98,24 +98,6 @@ void Animation::Collapsing(double dt)
 	
 }
 
-void Animation::OBJAnimation(double dt)
-{
-	PlanetRotate += (float)(50 * dt);
-	AsteroidRotate += (float)(50 * dt);
-	AsteroidRotateF += (float)(150 * dt);
-
-	AsteroidMove += (float)(10 * dt);
-	if (AsteroidMove >= 100)
-	{
-		AsteroidMove = -100;
-	}
-	AsteroidMoveS += (float)(1 * dt);
-	if (AsteroidMoveS >= 100)
-	{
-		AsteroidMoveS = -100;
-	}
-}
-
 void Animation::OpenMainDoor(double dt)
 {
 	//left door

@@ -19,7 +19,7 @@ SceneLevelOneA::SceneLevelOneA()
 	 activateDoor1 = false;
 	 activateDoor2_1 = false;
 	 activateDoor2_2 = false;
-	 activateDoor3 = false; //if true open door
+	 activateDoor3 = false;
 	 Key_1 = false;
 	 Notice = false;
 	 Notice2 = false;
@@ -244,6 +244,41 @@ void SceneLevelOneA::ResetSameScene()
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
 	}
+
+	activateDoor1 = false;
+	activateDoor2_1 = false;
+	activateDoor2_2 = false;
+	activateDoor3 = false;
+	Key_1 = false;
+	Notice = false;
+	Notice2 = false;
+	willDrop = false;
+	Key1Active = false;
+
+	anima.RubbleCollapse = 100;
+	anima.Collapse = false;
+	anima.f_PortraitDrop = 6;
+	anima.f_PortraitFall = 0;
+	anima.b_toPortraitDrop = false;
+	anima.b_toPortraitFall = false;
+
+	anima.DoorSlideTop = 0;
+	anima.DoorSlideBtm = 0;
+	anima.toSlideDoorTop = true;
+	anima.toSlideDoorBtm = true;
+
+	anima.DoorSlideTop_2 = 0;
+	anima.DoorSlideBtm_2 = 0;
+	anima.toSlideDoorTop2 = true;
+	anima.toSlideDoorBtm2 = true;
+	anima.ClosingDoorTop2 = true;
+	anima.ClosingDoorBtm2 = true;
+
+	anima.DoorSlideTop_3 = 0;
+	anima.DoorSlideBtm_3 = 0;
+	anima.toSlideDoorTop3 = true;
+	anima.toSlideDoorBtm3 = true;
+
 }
 
 void SceneLevelOneA::ResetAll()
@@ -586,7 +621,6 @@ void SceneLevelOneA::Update(double dt)
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-	anima.OBJAnimation(dt);
 	anima.Collapsing(dt);
 	checkRubbleFall();
 	checkDoor1(dt);

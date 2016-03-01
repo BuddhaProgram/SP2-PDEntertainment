@@ -481,6 +481,7 @@ void SceneEnd::ContinueGameOrNot()
 				Explorer::instance()->hp = 100;
 				Explorer::instance()->isDead = false;
 				Variables.f_redScreenTimer = 0.0f;
+
 			}
 
 			else if (Explorer::instance()->checkSavePoint[3] == true)
@@ -601,7 +602,6 @@ void SceneEnd::Update(double dt)
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
 	camera.Update(dt);
-	anima.OBJAnimation(dt);
 	UpdateRepairs(dt);
     MobOne.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
     MobTwo.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);

@@ -8,6 +8,12 @@
 #include "MatrixStack.h"
 #include "Light.h"
 #include "OBJAnimation.h"
+#include <vector>
+#include <fstream>
+
+using std::vector;
+using std::ifstream;
+using std::string;
 
 class SceneEndCutScene : public Scene
 {
@@ -96,6 +102,11 @@ public:
 	virtual void Exit();
 
 	Camera3 camera;
+
+	vector<string> readText;
+	vector<string> ReadFromText(string link);
+	vector<string> TestYou;
+	vector<string>::iterator its = readText.begin();
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 
@@ -103,7 +114,7 @@ private:
 	void RenderLevel1();
 	void RenderFloor();
 	void RenderSkyBox();
-	void RenderSceneEndCutScene();
+	void RenderSceneEndCutScene(vector<string> Test);
 
 	//render functions 
 	void RenderText(Mesh* mesh, std::string text, Color color);
@@ -154,6 +165,7 @@ private:
 
 	float MoveQuad;
 	bool QuadMove;
+
 };
 
 
