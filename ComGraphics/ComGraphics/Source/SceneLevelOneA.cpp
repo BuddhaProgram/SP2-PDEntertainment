@@ -16,7 +16,15 @@
 
 SceneLevelOneA::SceneLevelOneA()
 {
-
+	 activateDoor1 = false;
+	 activateDoor2_1 = false;
+	 activateDoor2_2 = false;
+	 activateDoor3 = false; //if true open door
+	 Key_1 = false;
+	 Notice = false;
+	 Notice2 = false;
+	 willDrop = false;
+	 Key1Active = false;
 }
 
 SceneLevelOneA::~SceneLevelOneA()
@@ -138,6 +146,9 @@ void SceneLevelOneA::Init()
 	meshList[GEO_LHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//LeftHand.obj");
 	meshList[GEO_LHAND]->textureID = LoadTGA("Image//LeftHand.tga");
 
+	meshList[GEO_HANDICON] = MeshBuilder::GenerateQuad("HandIcon", Color(1, 1, 1));
+	meshList[GEO_HANDICON]->textureID = LoadTGA("Image//HandIcon.tga");
+
 	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
 	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
 
@@ -203,6 +214,9 @@ void SceneLevelOneA::Init()
 
 	meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
 	meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
+
+	meshList[GEO_HEALTHICON] = MeshBuilder::GenerateQuad("HealthIcon", Color(1, 1, 1));
+	meshList[GEO_HEALTHICON]->textureID = LoadTGA("Image//Heart1.tga");
 
 	/*--------------------[Used as a background for Dead Scene]--------------------*/
 	meshList[GEO_DEADCOLOR] = MeshBuilder::GenerateQuad("DeadScreen", Color(1, 0, 0));
@@ -317,64 +331,57 @@ void SceneLevelOneA::RenderToolIcon()
 {
 	if (Explorer::instance()->isDead == false)
 	{
-		if (Explorer::instance()->GetToolType(1) == ToolUI::Pickaxe)
+		if (Explorer::instance()->isDead == false)
 		{
-			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
-		}
+			if (Explorer::instance()->GetToolType(1) == ToolUI::Hand)
+			{
+				RenderModelOnScreen(meshList[GEO_HANDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
+			}
 
-		else if (Explorer::instance()->GetToolType(1) == ToolUI::BaseballBat)
-		{
-			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
-		}
+			if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
+			{
+				RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
+			}
 
-		else if (Explorer::instance()->GetToolType(1) == ToolUI::Sword)
-		{
-			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
-		}
+			else if (Explorer::instance()->GetToolType(2) == ToolUI::BaseballBat)
+			{
+				RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
+			}
 
-		if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
-		{
-			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
-		}
+			else if (Explorer::instance()->GetToolType(2) == ToolUI::Sword)
+			{
+				RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
+			}
 
-		else if (Explorer::instance()->GetToolType(2) == ToolUI::BaseballBat)
-		{
-			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
-		}
+			if (Explorer::instance()->GetToolType(3) == ToolUI::Pickaxe)
+			{
+				RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+			}
 
-		else if (Explorer::instance()->GetToolType(2) == ToolUI::Sword)
-		{
-			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
-		}
+			else if (Explorer::instance()->GetToolType(3) == ToolUI::BaseballBat)
+			{
+				RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+			}
 
-		if (Explorer::instance()->GetToolType(3) == ToolUI::Pickaxe)
-		{
-			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
-		}
+			else if (Explorer::instance()->GetToolType(3) == ToolUI::Sword)
+			{
+				RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+			}
 
-		else if (Explorer::instance()->GetToolType(3) == ToolUI::BaseballBat)
-		{
-			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
-		}
+			if (Explorer::instance()->GetToolType(4) == ToolUI::Pickaxe)
+			{
+				RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+			}
 
-		else if (Explorer::instance()->GetToolType(3) == ToolUI::Sword)
-		{
-			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
-		}
+			else if (Explorer::instance()->GetToolType(4) == ToolUI::BaseballBat)
+			{
+				RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+			}
 
-		if (Explorer::instance()->GetToolType(4) == ToolUI::Pickaxe)
-		{
-			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
-		}
-
-		else if (Explorer::instance()->GetToolType(4) == ToolUI::BaseballBat)
-		{
-			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
-		}
-
-		else if (Explorer::instance()->GetToolType(4) == ToolUI::Sword)
-		{
-			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.275f, 0.775f, 1.0f, false);
+			else if (Explorer::instance()->GetToolType(4) == ToolUI::Sword)
+			{
+				RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.275f, 0.775f, 1.0f, false);
+			}
 		}
 	}
 }
@@ -840,6 +847,9 @@ void SceneLevelOneA::Render()
 
 	RenderPickUpPickAxe();
 	RenderPickUpSuitcaseText();
+
+	for (float i = 0; i < Explorer::instance()->PlayerLife; ++i)
+		RenderModelOnScreen(meshList[GEO_HEALTHICON], 3.f, 3.f, 3.f, 90, 1, 0, 0, (22.f + i), 18.5f, 1.0f, false);
 }
 
 void SceneLevelOneA::Exit()

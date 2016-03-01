@@ -142,7 +142,10 @@ void SceneStart::Init()
 	meshList[GEO_RHAND]->textureID = LoadTGA("Image//RightHand.tga");
 
 	meshList[GEO_LHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//LeftHand.obj");
-	meshList[GEO_LHAND]->textureID = LoadTGA("Image//LeftHand.tga");
+	meshList[GEO_LHAND]->textureID = LoadTGA("Image//LeftHand.tga"); 
+
+	meshList[GEO_HANDICON] = MeshBuilder::GenerateQuad("HandIcon", Color(1, 1, 1));
+	meshList[GEO_HANDICON]->textureID = LoadTGA("Image//HandIcon.tga");
 
 	meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
 	meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
@@ -170,11 +173,12 @@ void SceneStart::Init()
 
     meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("FacilityOUT wall", Color(1, 1, 1));
     meshList[GEO_FACILITYOUTWALL]->textureID = LoadTGA("Image//OutsideWALL.tga");
-    
 
 	meshList[GEO_DEADBODY] = MeshBuilder::GenerateOBJ("Pile of dead body", "OBJ//DeadBody.obj");
 	meshList[GEO_DEADBODY]->textureID = LoadTGA("Image//DeadBody.tga");
 	
+	meshList[GEO_HEALTHICON] = MeshBuilder::GenerateQuad("HealthIcon", Color(1, 1, 1));
+	meshList[GEO_HEALTHICON]->textureID = LoadTGA("Image//Heart1.tga");
 
     //change to correct textured quad later
 	meshList[GEO_RHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//RightHand.obj");
@@ -308,19 +312,9 @@ void SceneStart::RenderToolIcon()
 {
 	if (Explorer::instance()->isDead == false)
 	{
-		if (Explorer::instance()->GetToolType(1) == ToolUI::Pickaxe)
+		if (Explorer::instance()->GetToolType(1) == ToolUI::Hand)
 		{
-			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
-		}
-
-		else if (Explorer::instance()->GetToolType(1) == ToolUI::BaseballBat)
-		{
-			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
-		}
-
-		else if (Explorer::instance()->GetToolType(1) == ToolUI::Sword)
-		{
-			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
+			RenderModelOnScreen(meshList[GEO_HANDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
 		}
 
 		if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
@@ -669,6 +663,9 @@ void SceneStart::Render()
 	RenderModelOnScreen(meshList[GEO_HEALTHBAR], Explorer::instance()->hp/5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 57.0f, 0, false);
 	RenderModelOnScreen(meshList[GEO_STAMINABAR], Explorer::instance()->stamina / 5, 1.0f, 1.0f, 90, 1, 0, 0, 0, 56.0f, 0, false);
     modelStack.PopMatrix();
+
+	for (float i = 0; i < Explorer::instance()->PlayerLife; ++i)
+	RenderModelOnScreen(meshList[GEO_HEALTHICON], 3.f, 3.f, 3.f, 90, 1, 0, 0, (22.f + i), 18.5f, 1.0f, false);
 }
 	
 

@@ -99,8 +99,8 @@ void SceneLevelTwo::Init()
     glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 
     //Initialize camera settings
-    camera.Init(Vector3(0, 10, 400), Vector3(0, 10, -1), Vector3(0, 1, 0));
-
+    //camera.Init(Vector3(0, 10, -110), Vector3(0, 10, -1), Vector3(0, 1, 0));
+	camera.Init(Vector3(0, 10, 400), Vector3(0, 10, -1), Vector3(0, 1, 0));
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("lightball", Color(1, 1, 1), 10, 20);
@@ -136,6 +136,9 @@ void SceneLevelTwo::Init()
 	meshList[GEO_LHAND] = MeshBuilder::GenerateOBJ("Hand", "OBJ//LeftHand.obj");
 	meshList[GEO_LHAND]->textureID = LoadTGA("Image//LeftHand.tga");
 
+	meshList[GEO_HANDICON] = MeshBuilder::GenerateQuad("HandIcon", Color(1, 1, 1));
+	meshList[GEO_HANDICON]->textureID = LoadTGA("Image//HandIcon.tga");
+
     meshList[GEO_PICKAXE] = MeshBuilder::GenerateOBJ("Pickaxe", "OBJ//Pickaxe.obj");
     meshList[GEO_PICKAXE]->textureID = LoadTGA("Image//Pickaxe.tga");
 
@@ -153,6 +156,9 @@ void SceneLevelTwo::Init()
 
 	meshList[GEO_SWORDICON] = MeshBuilder::GenerateQuad("SwordIcon", Color(1, 1, 1));
 	meshList[GEO_SWORDICON]->textureID = LoadTGA("Image//SwordIcon.tga");
+
+	meshList[GEO_HEALTHICON] = MeshBuilder::GenerateQuad("HealthIcon", Color(1, 1, 1));
+	meshList[GEO_HEALTHICON]->textureID = LoadTGA("Image//Heart1.tga");
 
     meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
     meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
@@ -203,7 +209,6 @@ void SceneLevelTwo::Init()
 
 static float LSPEED = 10.f;
 
-
 void SceneLevelTwo::Reset()
 {
 	Explorer::instance()->hp = 100;
@@ -214,6 +219,18 @@ void SceneLevelTwo::Reset()
 	transSpikeDoor = 0;
 	closeDoors = false;
 	timerDoor = 3;
+	Switch1Press = false;
+	Switch2Press = false;
+	Switch1Int = false;
+	Switch2Int = false;
+	Switch1Rot = 45.f;
+	Switch2Rot = 45.f;
+	openDoor1 = false;
+	openDoor2 = false;
+	invisWALLDisappear = false;
+	puzzling = false;
+	transSpikeWall2 = 0;
+	hitWall = false;
 	for (int i = 0; i < 4; ++i)
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
@@ -226,6 +243,20 @@ void SceneLevelTwo::Collision(float smallx, float largex, float smallz, float la
     if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 5.f)){ camera.position.z = largez; }
     if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 5.f)){ camera.position.x = smallx; }
     if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 5.f)){ camera.position.x = largex; }
+
+	camera.target = Vector3(
+		sin(Math::DegreeToRadian(camera.rotationY)) * cos(Math::DegreeToRadian(camera.rotationX)) + camera.position.x,
+		sin(Math::DegreeToRadian(camera.rotationX)) + camera.position.y,
+		cos(Math::DegreeToRadian(camera.rotationX)) * cos(Math::DegreeToRadian(camera.rotationY)) + camera.position.z
+		);
+}
+
+void SceneLevelTwo::SpecialCollision(float smallx, float largex, float smallz, float largez)
+{
+	if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 5.f)){ camera.position.z = smallz; hitWall = true; }
+	if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z < largez) && (camera.position.z > largez - 5.f)){ camera.position.z = largez; hitWall = true; }
+	if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x > smallx) && (camera.position.x < smallx + 5.f)){ camera.position.x = smallx; hitWall = true; }
+	if ((camera.position.z > smallz) && (camera.position.z < largez) && (camera.position.x < largex) && (camera.position.x > largex - 5.f)){ camera.position.x = largex; hitWall = true; }
 
 	camera.target = Vector3(
 		sin(Math::DegreeToRadian(camera.rotationY)) * cos(Math::DegreeToRadian(camera.rotationX)) + camera.position.x,
@@ -287,64 +318,57 @@ void SceneLevelTwo::RenderToolIcon()
 {
 	if (Explorer::instance()->isDead == false)
 	{
-		if (Explorer::instance()->GetToolType(1) == ToolUI::Pickaxe)
+		if (Explorer::instance()->isDead == false)
 		{
-			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
-		}
+			if (Explorer::instance()->GetToolType(1) == ToolUI::Hand)
+			{
+				RenderModelOnScreen(meshList[GEO_HANDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
+			}
 
-		else if (Explorer::instance()->GetToolType(1) == ToolUI::BaseballBat)
-		{
-			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
-		}
+			if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
+			{
+				RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
+			}
 
-		else if (Explorer::instance()->GetToolType(1) == ToolUI::Sword)
-		{
-			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 6.6f, 0.775f, 1.0f, false);
-		}
+			else if (Explorer::instance()->GetToolType(2) == ToolUI::BaseballBat)
+			{
+				RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
+			}
 
-		if (Explorer::instance()->GetToolType(2) == ToolUI::Pickaxe)
-		{
-			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
-		}
+			else if (Explorer::instance()->GetToolType(2) == ToolUI::Sword)
+			{
+				RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
+			}
 
-		else if (Explorer::instance()->GetToolType(2) == ToolUI::BaseballBat)
-		{
-			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
-		}
+			if (Explorer::instance()->GetToolType(3) == ToolUI::Pickaxe)
+			{
+				RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+			}
 
-		else if (Explorer::instance()->GetToolType(2) == ToolUI::Sword)
-		{
-			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 8.175f, 0.775f, 1.0f, false);
-		}
+			else if (Explorer::instance()->GetToolType(3) == ToolUI::BaseballBat)
+			{
+				RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+			}
 
-		if (Explorer::instance()->GetToolType(3) == ToolUI::Pickaxe)
-		{
-			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
-		}
+			else if (Explorer::instance()->GetToolType(3) == ToolUI::Sword)
+			{
+				RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
+			}
 
-		else if (Explorer::instance()->GetToolType(3) == ToolUI::BaseballBat)
-		{
-			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
-		}
+			if (Explorer::instance()->GetToolType(4) == ToolUI::Pickaxe)
+			{
+				RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+			}
 
-		else if (Explorer::instance()->GetToolType(3) == ToolUI::Sword)
-		{
-			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 9.725f, 0.775f, 1.0f, false);
-		}
+			else if (Explorer::instance()->GetToolType(4) == ToolUI::BaseballBat)
+			{
+				RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+			}
 
-		if (Explorer::instance()->GetToolType(4) == ToolUI::Pickaxe)
-		{
-			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
-		}
-
-		else if (Explorer::instance()->GetToolType(4) == ToolUI::BaseballBat)
-		{
-			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
-		}
-
-		else if (Explorer::instance()->GetToolType(4) == ToolUI::Sword)
-		{
-			RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.275f, 0.775f, 1.0f, false);
+			else if (Explorer::instance()->GetToolType(4) == ToolUI::Sword)
+			{
+				RenderModelOnScreen(meshList[GEO_SWORDICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.275f, 0.775f, 1.0f, false);
+			}
 		}
 	}
 }
@@ -442,12 +466,13 @@ void SceneLevelTwo::ContinueGameOrNot()
 			{
 				camera.position.x = 0;
 				camera.position.y = 10;
-				camera.position.z = 424;
+				camera.position.z = 400;
 
 				--Explorer::instance()->PlayerLife;
 				Explorer::instance()->hp = 100;
 				Explorer::instance()->isDead = false;
 				Variables.f_redScreenTimer = 0.0f;
+				Reset();
 			}
 
 			else if (Explorer::instance()->checkSavePoint[2] == true)
@@ -476,19 +501,14 @@ void SceneLevelTwo::checkPlayerPosMisc()
 	Misc.camZ = camera.position.z;
 }
 
-void SceneLevelTwo::Update(double dt)
+void SceneLevelTwo::SomeUpdates(double dt)
 {
-    light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
-    light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
-    FPS = 1.f / (float)dt;
-    //worldspin += (float)(dt);
-	checkPlayerPosMisc();
-
-	//timerDoor -= (float)dt; //to modify condition for countdown
-	if (timerDoor <= 0)
+	//check if touch wall
+	if (hitWall == true)
 	{
-		timerDoor = 0;
+		Explorer::instance()->isDead = true;
 	}
+	//stuff
 	if (openDoor1 == true)
 	{
 		anima.QP_TOPDOOR1 = true;
@@ -499,6 +519,35 @@ void SceneLevelTwo::Update(double dt)
 	{
 		anima.QP_TOPDOOR2 = true;
 		anima.QP_BOTDOOR2 = true;
+	}
+
+	if (timerDoor == 0)
+	{
+		anima.QP_TOPDOOR4 = true;
+		if (anima.QPDOOR4_TOP <= 0)
+		{
+			anima.QP_TOPDOOR4 = false;
+		}
+		anima.QP_BOTDOOR4 = true;
+		Collision(-20, 20, -305, -295);
+	}
+
+	if (Misc.WithinArea(-12, 12, -105, -95) && Application::IsKeyPressed('E'))
+	{
+		invisWALLDisappear = true;
+	}
+
+	if (invisWALLDisappear == false)
+	{
+		Collision(-20, 20, -110, -100);
+	}
+	else
+	{
+		timerDoor -= (float)dt;
+		if (timerDoor <= 0)
+		{
+			timerDoor = 0;
+		}
 	}
 
 	if (anima.QP_TOPDOOR1 && anima.QP_BOTDOOR1)//left door
@@ -515,7 +564,7 @@ void SceneLevelTwo::Update(double dt)
 		anima.OpenQPDOOR2(dt);
 	}
 	else
-    {
+	{
 		Collision(80, 96, -20, 22);
 	}
 
@@ -531,15 +580,12 @@ void SceneLevelTwo::Update(double dt)
 	}
 	else
 	{
-		Collision(-20, 20, -105, -95); 
+		Collision(-20, 20, -105, -95);
 	}
 
 	if (anima.QP_TOPDOOR4 && anima.QP_BOTDOOR4)
 	{
 		anima.OpenQPDOOR4(dt);
-	}
-	else
-	{
 		Collision(-20, 20, -305, -295);
 	}
 
@@ -549,7 +595,7 @@ void SceneLevelTwo::Update(double dt)
 	}
 	else
 	{
-		Collision(320,360,-30,-10);
+		Collision(320, 360, -30, -10);
 	}
 
 	if (openDoor1 == false && proximitycheck(-96, -80, -20, 22) && Application::IsKeyPressed('E'))
@@ -562,17 +608,17 @@ void SceneLevelTwo::Update(double dt)
 		openDoor2 = true;
 	}
 
-	if (Misc.WithinArea(-76,76,128,360))
+	if (Misc.WithinArea(-76, 76, 128, 360))
 
-	//trapwall collision
-	Collision(-76 + transSpikeDoor, -60 + transSpikeDoor, 127, 362);
+		//trapwall collision
+		SpecialCollision(-76 + transSpikeDoor, -60 + transSpikeDoor, 127, 362);
 
-	if (Misc.WithinArea(-76,76,127,361))
+	if (Misc.WithinArea(-76, 76, 127, 361))
 
 	{
-		transSpikeDoor+=0.8f;
+		transSpikeDoor += 0.8f;
 	}
-	if (Misc.WithinArea(-12,12,80,118))
+	if (Misc.WithinArea(-12, 12, 80, 118))
 	{
 		closeDoors = true;
 	}
@@ -580,15 +626,38 @@ void SceneLevelTwo::Update(double dt)
 	if (closeDoors == true)
 	{
 		anima.CloseSlideDoor5(dt);
-		Collision(-20,20,115,125);
+		Collision(-20, 20, 115, 125);
 	}
-	
+
 	if (transSpikeDoor > 140)
 	{
 		transSpikeDoor = 140;
 	}
 
+	SpecialCollision(240, 400, -392 + transSpikeWall2, -376 + transSpikeWall2);
 
+	if (Misc.WithinArea(244, 360, -60, -40))
+	{
+		puzzling = true;
+	}
+	if (puzzling == true)
+	{
+		transSpikeWall2 += (float)dt;
+	}
+	if (Misc.WithinArea(324, 356, -20, -4))
+	{
+		Application::EndingScene();
+	}
+}
+
+void SceneLevelTwo::Update(double dt)
+{
+    light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
+    light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
+    FPS = 1.f / (float)dt;
+    //worldspin += (float)(dt);
+	checkPlayerPosMisc();
+	SomeUpdates(dt);
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
     if (Application::IsKeyPressed('2')) //disable back face culling
@@ -829,7 +898,15 @@ void SceneLevelTwo::Render()
         RenderTextOnScreen(meshList[GEO_TEXT], "Press Right mouse to interact", Color(1, 0, 0), 3, 8.75f, 8);
     }
 
+	if (timerDoor != 0 && invisWALLDisappear == true)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], "YOU HAVE " + std::to_string((int)timerDoor) +  "SECONDS. RUN.", Color(1, 0, 0), 3, 8.75f, 8);
+	}
+
 	RenderPlayerDiesInteraction();
+
+	for (float i = 0; i < Explorer::instance()->PlayerLife; ++i)
+		RenderModelOnScreen(meshList[GEO_HEALTHICON], 3.f, 3.f, 3.f, 90, 1, 0, 0, (22.f + i), 18.5f, 1.0f, false);
 }
 
 void SceneLevelTwo::Exit()

@@ -145,8 +145,8 @@ void Application::Run()
 	EndScene = new SceneEndCutScene();
 
 
-	
-	scene = LevelOneB;
+
+	scene = Start;
 	scene->Init();
 
 

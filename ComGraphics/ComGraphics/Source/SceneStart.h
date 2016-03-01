@@ -57,6 +57,8 @@ class SceneStart : public Scene
 		GEO_TOOLUITHREE,
 		GEO_TOOLUIFOUR,
 
+		GEO_HANDICON,
+
 		GEO_PICKAXE,
 		GEO_PICKAXEICON,
 
@@ -75,6 +77,8 @@ class SceneStart : public Scene
         //player related
 		GEO_HEALTHBAR,
 		GEO_STAMINABAR,
+
+		GEO_HEALTHICON,
 
 		NUM_GEOMETRY,
 	};

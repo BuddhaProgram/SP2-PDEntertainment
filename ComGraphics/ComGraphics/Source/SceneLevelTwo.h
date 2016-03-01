@@ -51,6 +51,8 @@ class SceneLevelTwo : public Scene
 		GEO_TOOLUITHREE,
 		GEO_TOOLUIFOUR,
 
+		GEO_HANDICON,
+
 		GEO_PICKAXE,
 		GEO_PICKAXEICON,
 
@@ -71,6 +73,7 @@ class SceneLevelTwo : public Scene
 		GEO_DEADCOLOR,
 		GEO_DEADBLACKSCREEN,
 
+		GEO_HEALTHICON,
 
         NUM_GEOMETRY,
     };
@@ -117,7 +120,7 @@ public:
     Camera3 camera;
 private:
     void RenderMesh(Mesh *mesh, bool enableLight);
-
+	void SomeUpdates(double dt);
     //scene renders
     void RenderScene();
     void RenderFloorCeiling();
@@ -141,9 +144,10 @@ private:
     //checks
     void checkPlayerPosMisc();
     void Collision(float smallx, float largex, float smallz, float largez);
+	void SpecialCollision(float smallx, float largex, float smallz, float largez);
     bool proximitycheck(float smallx, float largex, float smallz, float largez);
     void SwitchCheck(double dt);
-
+	
     // Switches Functions for puzzles
     void PuzzleOneSwitchCheck(double dt);
 
@@ -199,8 +203,11 @@ private:
 	float timerDoor = 3;
 	bool openDoor1 = false;
 	bool openDoor2 = false;
+	bool invisWALLDisappear = false;
+	bool puzzling;
+	float transSpikeWall2;
+	bool hitWall;
     MobGhost Ghost;
-
 };
 
 

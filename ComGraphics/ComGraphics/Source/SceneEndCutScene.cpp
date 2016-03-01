@@ -15,7 +15,11 @@
 
 SceneEndCutScene::SceneEndCutScene()
 {
+	 CameraMove1 = false;
+	 CameraMove2 = false;
 
+	 MoveQuad = -0.5f;
+	 QuadMove = false;
 }
 
 SceneEndCutScene::~SceneEndCutScene()
