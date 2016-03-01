@@ -93,9 +93,11 @@ void Application::Init()
 
 
 	//Create a window and create its OpenGL context
+
 	//m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
 	//m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", NULL, NULL);
     m_window = glfwCreateWindow(800, 600, "Computer Graphics", NULL, NULL);
+
 	glfwSetScrollCallback(m_window, scroll_callback);
 
 	//If the window couldn't be created
@@ -147,7 +149,7 @@ void Application::Run()
 	EndScene = new SceneEndCutScene();
 	EndCredits = new Credits();
 
-	scene = EndCredits;
+	scene = Opening;
 	scene->Init();
 
 

@@ -213,7 +213,6 @@ void SceneLevelTwo::Reset()
 {
 	Explorer::instance()->hp = 100;
 	Explorer::instance()->isDead = false;
-	Explorer::instance()->PlayerLife = 3;
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
 	transSpikeDoor = 0;
@@ -474,6 +473,9 @@ void SceneLevelTwo::ContinueGameOrNot()
 				Explorer::instance()->hp = 100;
 				Explorer::instance()->isDead = false;
 				Variables.f_redScreenTimer = 0.0f;
+
+				light[0].power = 1.0f;
+				glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 				Reset();
 			}
 
@@ -490,7 +492,10 @@ void SceneLevelTwo::ContinueGameOrNot()
 
 		else if (Application::IsKeyPressed('N'))
 		{
-			Reset();
+			Explorer::instance()->hp = 100;
+			Explorer::instance()->isDead = false;
+			Explorer::instance()->PlayerLife = 3;
+			Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 			Application::OpenGame();
 		}
 	}
@@ -610,6 +615,11 @@ void SceneLevelTwo::SomeUpdates(double dt)
 		openDoor2 = true;
 	}
 
+	if (Misc.WithinArea(-76, 76, -272, -120) && timerDoor == 0)
+	{
+		Explorer::instance()->isDead = true;
+	}
+
 	if (Misc.WithinArea(-76, 76, 128, 360))
 
 		//trapwall collision
@@ -618,7 +628,7 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	if (Misc.WithinArea(-76, 76, 127, 361))
 
 	{
-		transSpikeDoor += 0.8f;
+		transSpikeDoor += 0.7f;
 	}
 	if (Misc.WithinArea(-12, 12, 80, 118))
 	{
@@ -880,7 +890,7 @@ void SceneLevelTwo::Render()
 
     RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
     RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-    RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 10, 7);
+    RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
 
 	if (Explorer::instance()->isDead == false)
 	{

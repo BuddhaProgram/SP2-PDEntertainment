@@ -399,7 +399,7 @@ void SceneLevelOneA::AttackCheck()
 {
     //Ghost combat checker
 
-    if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(25.f, Ghost.MobPosX, Ghost.MobPosZ, 270, camera.position.x, camera.position.z, camera.view, camera.position))
+    if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(40.f, Ghost.MobPosX, Ghost.MobPosZ, 270, camera.position.x, camera.position.z, camera.view, camera.position))
     {
 		Ghost.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);//temporary variable is 1
     }
