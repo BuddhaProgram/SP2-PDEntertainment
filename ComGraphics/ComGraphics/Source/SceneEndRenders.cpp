@@ -534,8 +534,8 @@ void SceneEnd::ResetMobs()
     MobThree.health = 8 + waveCounter * 4;
     BossOne.health = 32 + waveCounter * 8;
 
-    MobMS += 5.f;
-    BossMS += 5.f;
+    MobMS += 5;
+    BossMS += 5;
 
     MobOne.setSpawnGhost(25, -8);
     MobTwo.setSpawnGhost(26, 73);

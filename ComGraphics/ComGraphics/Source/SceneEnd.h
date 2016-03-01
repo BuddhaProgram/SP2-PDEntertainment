@@ -233,8 +233,8 @@ private:
     void MobCheck();
     void checkAttack();
 
-    float MobMS;
-    float BossMS;
+    int MobMS;
+    int BossMS;
 
     bool CrosshairHit;
    
