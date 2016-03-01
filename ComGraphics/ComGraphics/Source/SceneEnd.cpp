@@ -465,6 +465,7 @@ void SceneEnd::ContinueGameOrNot()
 				Explorer::instance()->hp = 100;
 				Explorer::instance()->isDead = false;
 				Variables.f_redScreenTimer = 0.0f;
+
 			}
 
 			else if (Explorer::instance()->checkSavePoint[3] == true)
@@ -585,7 +586,6 @@ void SceneEnd::Update(double dt)
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/
 
 	camera.Update(dt);
-	anima.OBJAnimation(dt);
 	UpdateRepairs(dt);
 
 	if (b_ReadyToFly() && camera.position.x >= -60 && camera.position.x <= 80 && camera.position.z >= -250 && camera.position.z <= -150)

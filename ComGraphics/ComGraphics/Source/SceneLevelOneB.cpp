@@ -240,7 +240,26 @@ void SceneLevelOneB::Reset()
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
 	}
+
+	activateDoor1 = false;
+	activateDoor2 = false;
+	activateDoor3_1 = false;
+	activateDoor3_2 = false;
+	activateDoor4 = false;
+
+	anima.DoorSlideTop_Boss = 0;
+	anima.DoorSlideBtm_Boss = 0;
+	anima.toSlideDoorTop_Boss = true;
+	anima.toSlideDoorBtm_Boss = true;
+	anima.ClosingDoorTop_Boss = true;
+	anima.ClosingDoorBtm_Boss = true;
+
+	anima.DoorSlideTop_5 = 10;
+	anima.DoorSlideBtm_5 = -6;
+	anima.ClosingDoorTop5 = true;
+	anima.ClosingDoorBtm5 = true;
 }
+
 
 void SceneLevelOneB::Collision(float smallx, float largex, float smallz, float largez)
 {

@@ -235,6 +235,8 @@ void SceneLevelTwo::Reset()
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
 	}
+
+	activateDoor1 = false;
 }
 
 void SceneLevelTwo::Collision(float smallx, float largex, float smallz, float largez)
