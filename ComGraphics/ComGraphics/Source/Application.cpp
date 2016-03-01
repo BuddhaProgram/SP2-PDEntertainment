@@ -146,7 +146,7 @@ void Application::Run()
 
 
 
-	scene = LevelTwo;
+	scene = End;
 	scene->Init();
 
 

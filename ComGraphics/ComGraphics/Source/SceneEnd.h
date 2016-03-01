@@ -72,6 +72,8 @@ class SceneEnd : public Scene
 
 		GEO_GHOST1,
         GEO_BOSS,
+        GEO_CRYSTAL1,
+        GEO_CRYSTAL2,
 		// Animations when player dies
 		GEO_DEADCOLOR,
 		GEO_DEADBLACKSCREEN,
@@ -214,19 +216,25 @@ private:
 
 	float FPS;
 
+    //mobs 
     MobGhost MobOne;
     MobGhost MobTwo;
     MobGhost MobThree;
     MobBossOne BossOne;
 
-    bool spawnWaveOne;
-    int killCounter;
-    int waveCounter;
+    bool spawnWaveOne =false;
+    int killCounter =0;
+    int waveCounter=0;
 
-    void RenderMobs();
+    void moveMob(double dt);
+    void RenderMobs(float xpos, float zpos);
+    void RenderBoss(float xpos, float zpos);
     void ResetMobs();
     void MobCheck();
+    void checkAttack();
 
+    float MobMS = 25.f;
+    float BossMS = 15.f;
    
 };
 

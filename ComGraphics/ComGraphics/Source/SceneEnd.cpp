@@ -217,6 +217,16 @@ void SceneEnd::Init()
 
     meshList[GEO_BOSS] = MeshBuilder::GenerateOBJ("boss", "OBJ//Boss1.obj");
     meshList[GEO_BOSS]->textureID = LoadTGA("Image//Boss1.tga");
+
+    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("Alien", "OBJ//AlienOne.obj");
+    meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Alien1.tga");
+
+    meshList[GEO_CRYSTAL1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//Crystal1.obj");
+    meshList[GEO_CRYSTAL1]->textureID = LoadTGA("Image//Crystal.tga");
+    meshList[GEO_CRYSTAL2] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//Crystal2.obj");
+    meshList[GEO_CRYSTAL2]->textureID = LoadTGA("Image//Crystal.tga");
+
+
 	// meshList for health bar
 	meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
 	meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
@@ -225,11 +235,11 @@ void SceneEnd::Init()
 	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
-    MobOne.setSpawnGhost(196, -60);
-    MobTwo.setSpawnGhost(210, -366);
-    MobThree.setSpawnGhost(-179, -333);
+    MobOne.setSpawnGhost(25, -8);
+    MobTwo.setSpawnGhost(26, 73);
+    MobThree.setSpawnGhost(-22, 42);
 
-    BossOne.setSpawnBossOne(-290, -45);
+    BossOne.setSpawnBossOne(-36, -6);
 
 
 }
@@ -436,6 +446,7 @@ void SceneEnd::MouseClickFunction(double dt)
 		{
 			Variables.RotateX = -45.0f;
 			Variables.b_LockSwingDebounce = false;
+            //checkAttack();
 		}
 	}
 
@@ -594,6 +605,7 @@ void SceneEnd::Update(double dt)
     MobThree.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
     BossOne.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
     MobCheck();
+    moveMob(dt);
 	if (b_ReadyToFly() && camera.position.x >= -60 && camera.position.x <= 80 && camera.position.z >= -250 && camera.position.z <= -150)
 	{
 		if (Application::IsKeyPressed('E'))
@@ -601,6 +613,8 @@ void SceneEnd::Update(double dt)
 			Application::EndingCutScene();
 		}
 	}
+
+    
 
 	if (Application::IsKeyPressed('E'))
 		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
@@ -787,6 +801,27 @@ void SceneEnd::Render()
 		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
+    //mobs
+    if (MobOne.Spawn)
+    {
+        std::cout << "mob 1" << std::endl;
+        RenderMobs(MobOne.MobPosX, MobOne.MobPosZ);
+    }
+    if (MobTwo.Spawn)
+    {
+        std::cout << "mob 2" << std::endl;
+        RenderMobs(MobTwo.MobPosX, MobTwo.MobPosZ);
+    }
+    if (MobThree.Spawn)
+    {
+        std::cout << "mob 3" << std::endl;
+        RenderMobs(MobThree.MobPosX, MobThree.MobPosZ);
+    }
+    if (BossOne.Spawn)
+    {
+        RenderBoss(BossOne.MobPosX, BossOne.MobPosZ);
+    }
+
 	RenderSkyBox();
 	RenderSceneEnd();
 	RenderFloor();
@@ -798,7 +833,6 @@ void SceneEnd::Render()
 	ToolSelectionMouseScroll();
 	RenderMouseScrollToolSlot();
 	RenderToolIcon();
-    RenderMobs();
 	RenderRepairText();
 	RenderMineText();
 
