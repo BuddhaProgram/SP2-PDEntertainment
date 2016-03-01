@@ -77,8 +77,9 @@ class SceneLevelOneB : public Scene
         GEO_PUZZLELEVER,
         //player related
 
-		GEO_DEADCOLOR,
-		GEO_DEADBLACKSCREEN,
+        GEO_DEADCOLOR,
+        GEO_DEADBLACKSCREEN,
+        GEO_ELEVATOR,
 
 		GEO_HEALTHICON,
 
@@ -121,7 +122,8 @@ public:
     virtual void Init();
     virtual void Update(double dt);
     virtual void Render();
-    virtual void Reset();
+    virtual void ResetSameScene();
+    virtual void ResetAll();
     virtual void Exit();
 
     Camera3 camera;
@@ -158,6 +160,7 @@ private:
 	void checkDoor3();
 	void checkDoor4();
     void EnvironmentAnimation(double dt);
+    void ElevatorCheck();
     void attackCheck();
     void MobsSpawn();
 	void AnimationCheck(double dt);
@@ -214,6 +217,7 @@ private:
 	bool activateDoor3_1;
 	bool activateDoor3_2;
 	bool activateDoor4;
+    bool elevatorCheck;
 
     float CollXLarge[43];
     float CollXSmall[43];

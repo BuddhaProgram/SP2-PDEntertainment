@@ -79,7 +79,6 @@ class SceneLevelOneA : public Scene
 		GEO_DEADBLACKSCREEN,
 
 		GEO_HEALTHICON,
-
         GEO_SUITCASE,
         NUM_GEOMETRY,
     };
@@ -120,7 +119,8 @@ public:
     virtual void Init();
     virtual void Update(double dt);
     virtual void Render();
-    virtual void Reset();
+    virtual void ResetSameScene();
+    virtual void ResetAll();
     virtual void Exit();
 
     Camera3 camera;

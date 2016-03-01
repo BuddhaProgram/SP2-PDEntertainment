@@ -202,6 +202,8 @@ void SceneLevelOneB::Init()
     meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
     meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
 
+    meshList[GEO_ELEVATOR] = MeshBuilder::GenerateQuad("elevator doors", Color(1, 0, 0));
+    meshList[GEO_ELEVATOR]->textureID = LoadTGA("Image//Elevator.tga");
     //puzzle inits
     meshList[GEO_LIGHTGREEN] = MeshBuilder::GenerateOBJ("green light", "OBJ//PuzzleLight.obj");
     meshList[GEO_LIGHTGREEN]->textureID = LoadTGA("Image//PuzzleLightGREEN.tga");
@@ -228,7 +230,7 @@ void SceneLevelOneB::Init()
 static float LSPEED = 10.f;
 
 
-void SceneLevelOneB::Reset()
+void SceneLevelOneB::ResetSameScene()
 {
 	Explorer::instance()->hp = 100;
 	Explorer::instance()->isDead = false;
@@ -240,6 +242,7 @@ void SceneLevelOneB::Reset()
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
 	}
+
 
 	activateDoor1 = false;
 	activateDoor2 = false;
@@ -258,6 +261,32 @@ void SceneLevelOneB::Reset()
 	anima.DoorSlideBtm_5 = -6;
 	anima.ClosingDoorTop5 = true;
 	anima.ClosingDoorBtm5 = true;
+
+    //mob variables
+    PuzzleGhost1.health = 8;
+    PuzzleGhost2.health = 8;
+    BossOne.health = 32;
+    PuzzleGhost1.setSpawnGhost(24, 31);
+    PuzzleGhost2.setSpawnGhost(30, 31);
+    BossOne.setSpawnBossOne(-30, 55);
+    PuzzleGhost1.Spawn = false;
+    PuzzleGhost2.Spawn = false;
+    BossOne.Spawn = false;
+}
+
+void SceneLevelOneB::ResetAll()
+{
+    Explorer::instance()->hp = 100;
+    Explorer::instance()->isDead = false;
+    Explorer::instance()->PlayerLife = 3;
+    Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
+    Variables.f_redScreenTimer = 0.0f;
+
+    for (int i = 0; i < 4; ++i)
+    {
+        Explorer::instance()->checkSavePoint[i] = false;
+    }
+
 }
 
 
@@ -671,7 +700,7 @@ void SceneLevelOneB::ContinueGameOrNot()
 
 		else if (Application::IsKeyPressed('N'))
 		{
-			Reset();
+			//Reset();
 			Application::OpenGame();
 		}
 	}
@@ -710,6 +739,7 @@ void SceneLevelOneB::Update(double dt)
     checkPlayerPosMisc();
 	checkDoor1();
 	checkDoor2();
+    ElevatorCheck();
 
 	//checkDoor3();
 	PuzzleOneSwitchCheck(dt);
@@ -971,7 +1001,7 @@ void SceneLevelOneB::Render()
 
 
 
-	if (displayInteract1 || displayInteract2 || displayInteract3)
+	if (displayInteract1 || displayInteract2 || displayInteract3 || elevatorCheck)
 
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);

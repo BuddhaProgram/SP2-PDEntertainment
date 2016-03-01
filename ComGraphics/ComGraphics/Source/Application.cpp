@@ -145,7 +145,6 @@ void Application::Run()
 	EndScene = new SceneEndCutScene();
 
 
-	
 	scene = Opening;
 	scene->Init();
 
