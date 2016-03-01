@@ -1,0 +1,4 @@
+<map id="SwitchLightPuzzle::SwitchPuzzleOne" name="SwitchLightPuzzle::SwitchPuzzleOne">
+<area shape="rect" id="node2" href="$classSceneStart.html#a2c3705b248156c1c352880af1be8049c" title="SceneStart::Update" alt="" coords="208,5,344,32"/>
+<area shape="rect" id="node3" href="$classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="191,56,361,83"/>
+</map>

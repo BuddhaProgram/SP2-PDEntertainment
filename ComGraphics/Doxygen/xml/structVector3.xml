@@ -1,0 +1,1173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="structVector3" kind="struct" language="C++" prot="public">
+    <compoundname>Vector3</compoundname>
+    <includes refid="Vector3_8h" local="no">Vector3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Vector3::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="27" column="1" bodyfile="Common/Source/Vector3.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classSceneLevelOneB_1a2bfa4551ac0b1f099c42c2193b55df47" compoundref="SceneLevelOneBRenders_8cpp" startline="435" endline="455">SceneLevelOneB::attackCheck</referencedby>
+        <referencedby refid="classSceneLevelOneA_1acae5c28ab518704326877b73c6df4e55" compoundref="SceneLevelOneARenders_8cpp" startline="398" endline="407">SceneLevelOneA::AttackCheck</referencedby>
+        <referencedby refid="classCamera3_1a576422f8f2d0660f27eed0fc817b2ae5" compoundref="Camera3_8cpp" startline="32" endline="65">Camera3::CameraRotation</referencedby>
+        <referencedby refid="classSceneEnd_1a31fef5d67de3a3dfd2ae15d4bbcea2b6" compoundref="SceneEndRenders_8cpp" startline="424" endline="456">SceneEnd::checkAttack</referencedby>
+        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="204" endline="252">SceneLevelOneA::checkDoor2</referencedby>
+        <referencedby refid="classSceneLevelTwo_1af756d75e45a09234a01aa03de6670cd6" compoundref="SceneLevelTwo_8cpp" startline="504" endline="509">SceneLevelTwo::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneStart_1a2c33e692fa8ba05e7a5e081b2d1688e2" compoundref="SceneStart_8cpp" startline="225" endline="230">SceneStart::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf46e437e991dca443d91b0ff689768d" compoundref="SceneLevelOneBRenders_8cpp" startline="510" endline="515">SceneLevelOneB::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a9d569863371f766599660dd6f78cdc47" compoundref="SceneLevelOneARenders_8cpp" startline="124" endline="139">SceneLevelOneA::checkRubbleFall</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a07e6440b5b6ca859dfda27ccb16d3129" compoundref="SceneLevelTwo_8cpp" startline="241" endline="253">SceneLevelTwo::Collision</referencedby>
+        <referencedby refid="classSceneStart_1adb6da316beba5b19afe7fad5cc3887ce" compoundref="SceneStart_8cpp" startline="209" endline="221">SceneStart::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ae689e8e0ff0bc56a3882d27ac0cb0b99" compoundref="SceneLevelOneB_8cpp" startline="292" endline="304">SceneLevelOneB::Collision</referencedby>
+        <referencedby refid="classSceneEnd_1ad14fa4bc25f557a3cd964a35c3b20d01" compoundref="SceneEnd_8cpp" startline="264" endline="276">SceneEnd::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a595fed7869b1c41878bb629e7994cad0" compoundref="SceneLevelOneA_8cpp" startline="298" endline="310">SceneLevelOneA::Collision</referencedby>
+        <referencedby refid="classSceneLevelTwo_1acb34d2e8f029102a0cbcc4a2818f0e55" compoundref="SceneLevelTwo_8cpp" startline="460" endline="502">SceneLevelTwo::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ac92af3bf7c49f02f6e444af93d940150" compoundref="SceneLevelOneB_8cpp" startline="675" endline="710">SceneLevelOneB::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneEnd_1ad27d89ab1ad40e1b57a307e4a27c2683" compoundref="SceneEnd_8cpp" startline="468" endline="504">SceneEnd::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a972ee40bd5b9481a464e3028f4d496b5" compoundref="SceneLevelOneA_8cpp" startline="528" endline="565">SceneLevelOneA::ContinueGameOrNot</referencedby>
+        <referencedby refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" compoundref="Vector3_8cpp" startline="319" endline="322">Cross</referencedby>
+        <referencedby refid="structVector3_1a71b1271deb064c65f9dc7dba638c5b57" compoundref="Vector3_8cpp" startline="303" endline="306">Dot</referencedby>
+        <referencedby refid="Misc_8cpp_1a15f09d45e07d38822b5ecf228e503e36" compoundref="Misc_8cpp" startline="11" endline="20">getAngle</referencedby>
+        <referencedby refid="classCamera3_1a021022df76481c9e9fd5c3cf5fe51cf7" compoundref="Camera3_8cpp" startline="67" endline="106">Camera3::HumanControl</referencedby>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+        <referencedby refid="structVector3_1affeb6d657b146584b5cb0b42a0d6eaeb" compoundref="Vector3_8cpp" startline="91" endline="94">IsZero</referencedby>
+        <referencedby refid="structVector3_1a200024a8442329de9a625ed58ffe7075" compoundref="Vector3_8cpp" startline="273" endline="276">Length</referencedby>
+        <referencedby refid="structVector3_1a87c90f81b4044393fe18f7a1e90f26df" compoundref="Vector3_8cpp" startline="287" endline="290">LengthSquared</referencedby>
+        <referencedby refid="LoadOBJ_8h_1aa634e9cac0a72d751731db6b4479cbda" compoundref="LoadOBJ_8cpp" startline="7" endline="121">LoadOBJ</referencedby>
+        <referencedby refid="classMobGhost_1a60251190be4ba35ceb50a726ddbebf51" compoundref="MobGhost_8cpp" startline="64" endline="99">MobGhost::move</referencedby>
+        <referencedby refid="classMobBossOne_1a9c3de91039994e9339c3f5a14f093a27" compoundref="MobBossOne_8cpp" startline="73" endline="94">MobBossOne::move</referencedby>
+        <referencedby refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" compoundref="Vector3_8cpp" startline="358" endline="367">Normalize</referencedby>
+        <referencedby refid="structVector3_1a2da0f00c5529bced69763320dac9c414" compoundref="Vector3_8cpp" startline="337" endline="343">Normalized</referencedby>
+        <referencedby refid="structVector3_1a27ba9abc0d1b5cd47a0365a4ebcfeb7c" compoundref="Vector3_8cpp" startline="241" endline="244">operator!=</referencedby>
+        <referencedby refid="classMtx44_1a20fe7d5d35374ea122848a8778de25e6" compoundref="Mtx44_8cpp" startline="294" endline="300">Mtx44::operator*</referencedby>
+        <referencedby refid="structVector3_1ab8bb1a236776d951a2e43b3ca9448bb2" compoundref="Vector3_8cpp" startline="189" endline="192">operator*</referencedby>
+        <referencedby refid="structVector3_1ab337fe4b0c5fd44657f42427e265c982" compoundref="Vector3_8cpp" startline="205" endline="211">operator*=</referencedby>
+        <referencedby refid="structVector3_1a90c345c2a67d220a474a6f209102634d" compoundref="Vector3_8cpp" startline="107" endline="110">operator+</referencedby>
+        <referencedby refid="structVector3_1a339c80afd026abb2e35a4ae88301928b" compoundref="Vector3_8cpp" startline="123" endline="129">operator+=</referencedby>
+        <referencedby refid="structVector3_1a224d913ac29766a57a5d7c96eb226b92" compoundref="Vector3_8cpp" startline="141" endline="144">operator-</referencedby>
+        <referencedby refid="structVector3_1af0c657bdd493fcece630dc985a8e7378" compoundref="Vector3_8cpp" startline="157" endline="163">operator-=</referencedby>
+        <referencedby refid="Vector3_8cpp_1a2bb22d81325ba847b6c54c8ad769b5d1" compoundref="Vector3_8cpp" startline="369" endline="373">operator&lt;&lt;</referencedby>
+        <referencedby refid="structVector3_1afbfdb69cef54e84d72d05c3c141e315f" compoundref="Vector3_8cpp" startline="256" endline="262">operator=</referencedby>
+        <referencedby refid="structVector3_1ae084cfb19c537457f52bfb3cb3a7054d" compoundref="Vector3_8cpp" startline="225" endline="228">operator==</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a147d7c92d2b42363f3c378f7492c30cb" compoundref="SceneLevelOneB_8cpp" startline="712" endline="722">SceneLevelOneB::PickUpSuitcaseInteraction</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab344d7ebfab7631145e0665914cc4819" compoundref="SceneLevelOneA_8cpp" startline="567" endline="577">SceneLevelOneA::PickUpSuitcaseInteraction</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a95ede72b1fd4719998405977356a3592" compoundref="SceneLevelTwo_8cpp" startline="269" endline="278">SceneLevelTwo::proximitycheck</referencedby>
+        <referencedby refid="classSceneStart_1a13ffa609089ada96e41281c0a49c8e6b" compoundref="SceneStart_8cpp" startline="399" endline="408">SceneStart::proximitycheck</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ab8c8534175926113db5bffecd6bbe5a6" compoundref="SceneLevelOneB_8cpp" startline="306" endline="315">SceneLevelOneB::proximitycheck</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a0faf61e907dce7e94916816d5fbed070" compoundref="SceneLevelOneA_8cpp" startline="312" endline="321">SceneLevelOneA::proximitycheck</referencedby>
+        <referencedby refid="classSceneEnd_1a948e17a1e58d73e2920a78314594e300" compoundref="SceneEnd_8cpp" startline="278" endline="287">SceneEnd::proximitycheck</referencedby>
+        <referencedby refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" compoundref="CutSceneOne_8cpp" startline="226" endline="262">CutSceneOne::Render</referencedby>
+        <referencedby refid="classSceneOpening_1a3edf8ad9f05db1071e3e4505af7cd4df" compoundref="SceneOpening_8cpp" startline="335" endline="380">SceneOpening::Render</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">OpeningCutScene::Render</referencedby>
+        <referencedby refid="classCredits_1a91dd5e5260a92e2a3e99360c7e30d81c" compoundref="Credits_8cpp" startline="477" endline="513">Credits::Render</referencedby>
+        <referencedby refid="classOpeningCutScene2_1a0f31817dad741723119d91d7e47fbd56" compoundref="OpeningCutScene2_8cpp" startline="418" endline="473">OpeningCutScene2::Render</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a5428359a53500a14af874d45fed5ac76" compoundref="SceneEndCutScene_8cpp" startline="395" endline="441">SceneEndCutScene::Render</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a63a16f9a1a71dd298d6e45edaa5efef4" compoundref="SceneLevelTwo_8cpp" startline="849" endline="922">SceneLevelTwo::Render</referencedby>
+        <referencedby refid="classSceneLevelOneA_1adb83e3122dc7ac3a5d5b85add1c771bb" compoundref="SceneLevelOneA_8cpp" startline="803" endline="899">SceneLevelOneA::Render</referencedby>
+        <referencedby refid="classSceneStart_1a09a1444c2c592ed917229e5853db6db5" compoundref="SceneStart_8cpp" startline="608" endline="669">SceneStart::Render</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a5c7f4cef0669b49cd80c284d9c9864ce" compoundref="SceneLevelOneB_8cpp" startline="963" endline="1056">SceneLevelOneB::Render</referencedby>
+        <referencedby refid="classSceneEnd_1a06fac012bd3a1df369c5722c8cf662b0" compoundref="SceneEnd_8cpp" startline="773" endline="869">SceneEnd::Render</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf19187831a508b5541fdb085bfef099" compoundref="SceneLevelOneBRenders_8cpp" startline="393" endline="428">SceneLevelOneB::RenderBoss</referencedby>
+        <referencedby refid="classSceneEnd_1aa7eb2cf11f655cf77cc1c854c26e6f57" compoundref="SceneEndRenders_8cpp" startline="385" endline="423">SceneEnd::RenderBoss</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a5c7b2f57a7e884e4beed73a4fcbdbbb7" compoundref="SceneLevelOneARenders_8cpp" startline="352" endline="369">SceneLevelOneA::RenderGhost</referencedby>
+        <referencedby refid="classSceneLevelOneB_1af05b4b11f0ad4afd0adf8883135e4136" compoundref="SceneLevelOneBRenders_8cpp" startline="374" endline="391">SceneLevelOneB::RenderGhost</referencedby>
+        <referencedby refid="classSceneEnd_1a8e3e53fce369d27d432d2c162deecb72" compoundref="SceneEndRenders_8cpp" startline="201" endline="220">SceneEnd::RenderMineText</referencedby>
+        <referencedby refid="classSceneEnd_1a9d9231ad28d1067c1c951cf37ef16db6" compoundref="SceneEndRenders_8cpp" startline="363" endline="383">SceneEnd::RenderMobs</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a3a43488434df2dd9fcef0b606e6147ab" compoundref="SceneLevelOneBRenders_8cpp" startline="657" endline="666">SceneLevelOneB::RenderPickUpSuitcaseText</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a227176473f59ddd7142977da8382249d" compoundref="SceneLevelOneARenders_8cpp" startline="485" endline="494">SceneLevelOneA::RenderPickUpSuitcaseText</referencedby>
+        <referencedby refid="classSceneEnd_1ab32854734562ab2433617b145a1971f7" compoundref="SceneEndRenders_8cpp" startline="222" endline="261">SceneEnd::RenderRepairText</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a6cdedb4f21d64c4f85ca5d8ae1bc4bcc" compoundref="SceneLevelOneA_8cpp" startline="510" endline="516">SceneLevelOneA::RenderSavePointText</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ad511ad540839c9ec9ab03c02784f1949" compoundref="SceneLevelTwoRenders_8cpp" startline="27" endline="193">SceneLevelTwo::RenderScene</referencedby>
+        <referencedby refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Set</referencedby>
+        <referencedby refid="classMtx44_1a7c3d2d30d9ed5bfca2ba97d0e570930f" compoundref="Mtx44_8cpp" startline="433" endline="450">Mtx44::SetToLookAt</referencedby>
+        <referencedby refid="structVector3_1ac6c9b941ccefd7744eace77ceab16b56" compoundref="Vector3_8cpp" startline="79" endline="82">SetZero</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ab1de6c7dd72b0416fdcc79040db55503" compoundref="SceneLevelTwo_8cpp" startline="255" endline="267">SceneLevelTwo::SpecialCollision</referencedby>
+        <referencedby refid="classSceneLevelOneA_1aafc92d0bb482c6182f12873f0001ef7d" compoundref="SceneLevelOneA_8cpp" startline="323" endline="330">SceneLevelOneA::ToolsUI</referencedby>
+        <referencedby refid="classSceneLevelOneB_1abc979783622fe908a8bb929429da8141" compoundref="SceneLevelOneB_8cpp" startline="317" endline="330">SceneLevelOneB::ToolsUI</referencedby>
+        <referencedby refid="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6" compoundref="Camera_8cpp" startline="28" endline="47">Camera::Update</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="112" endline="155">Camera3::Update</referencedby>
+        <referencedby refid="classCutSceneOne_1a3bde2eed67da74e3c33e3b4e10542438" compoundref="CutSceneOne_8cpp" startline="125" endline="180">CutSceneOne::Update</referencedby>
+        <referencedby refid="classSceneOpening_1af3ca641709d7608947d8ae81b273b089" compoundref="SceneOpening_8cpp" startline="175" endline="192">SceneOpening::Update</referencedby>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">OpeningCutScene::Update</referencedby>
+        <referencedby refid="classCredits_1aac9dbb74267d8870c07139e33b75eca4" compoundref="Credits_8cpp" startline="346" endline="364">Credits::Update</referencedby>
+        <referencedby refid="classOpeningCutScene2_1ad228d3ddd1fc4564382de47e85cad2dc" compoundref="OpeningCutScene2_8cpp" startline="151" endline="259">OpeningCutScene2::Update</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a47f7840540cca37d431a5702cafc357a" compoundref="SceneEndCutScene_8cpp" startline="192" endline="252">SceneEndCutScene::Update</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" compoundref="SceneLevelTwo_8cpp" startline="665" endline="706">SceneLevelTwo::Update</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="579" endline="660">SceneLevelOneA::Update</referencedby>
+        <referencedby refid="classSceneStart_1a2c3705b248156c1c352880af1be8049c" compoundref="SceneStart_8cpp" startline="430" endline="465">SceneStart::Update</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="724" endline="820">SceneLevelOneB::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="555" endline="630">SceneEnd::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a48eddb41d1eff6f332eeef2b95e1e4fb" compoundref="SceneEnd_8cpp" startline="506" endline="539">SceneEnd::UpdateRepairs</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a8cdf4a86b4d9e080f1a6f70d5061c3d5" compoundref="SceneLevelOneA_8cpp" startline="502" endline="508">SceneLevelOneA::UpdateSavePoint</referencedby>
+        <referencedby refid="classAnimation_1a1d3d575d344a9a7586ec6277b01dbb35" compoundref="OBJAnimation_8cpp" startline="497" endline="510">Animation::WithinArea</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Vector3::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="27" column="1" bodyfile="Common/Source/Vector3.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classCamera3_1a576422f8f2d0660f27eed0fc817b2ae5" compoundref="Camera3_8cpp" startline="32" endline="65">Camera3::CameraRotation</referencedby>
+        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="204" endline="252">SceneLevelOneA::checkDoor2</referencedby>
+        <referencedby refid="classSceneLevelTwo_1af756d75e45a09234a01aa03de6670cd6" compoundref="SceneLevelTwo_8cpp" startline="504" endline="509">SceneLevelTwo::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneStart_1a2c33e692fa8ba05e7a5e081b2d1688e2" compoundref="SceneStart_8cpp" startline="225" endline="230">SceneStart::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf46e437e991dca443d91b0ff689768d" compoundref="SceneLevelOneBRenders_8cpp" startline="510" endline="515">SceneLevelOneB::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a07e6440b5b6ca859dfda27ccb16d3129" compoundref="SceneLevelTwo_8cpp" startline="241" endline="253">SceneLevelTwo::Collision</referencedby>
+        <referencedby refid="classSceneStart_1adb6da316beba5b19afe7fad5cc3887ce" compoundref="SceneStart_8cpp" startline="209" endline="221">SceneStart::Collision</referencedby>
+        <referencedby refid="classSceneEnd_1ad14fa4bc25f557a3cd964a35c3b20d01" compoundref="SceneEnd_8cpp" startline="264" endline="276">SceneEnd::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a595fed7869b1c41878bb629e7994cad0" compoundref="SceneLevelOneA_8cpp" startline="298" endline="310">SceneLevelOneA::Collision</referencedby>
+        <referencedby refid="classSceneLevelTwo_1acb34d2e8f029102a0cbcc4a2818f0e55" compoundref="SceneLevelTwo_8cpp" startline="460" endline="502">SceneLevelTwo::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ac92af3bf7c49f02f6e444af93d940150" compoundref="SceneLevelOneB_8cpp" startline="675" endline="710">SceneLevelOneB::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneEnd_1ad27d89ab1ad40e1b57a307e4a27c2683" compoundref="SceneEnd_8cpp" startline="468" endline="504">SceneEnd::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a972ee40bd5b9481a464e3028f4d496b5" compoundref="SceneLevelOneA_8cpp" startline="528" endline="565">SceneLevelOneA::ContinueGameOrNot</referencedby>
+        <referencedby refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" compoundref="Vector3_8cpp" startline="319" endline="322">Cross</referencedby>
+        <referencedby refid="structVector3_1a71b1271deb064c65f9dc7dba638c5b57" compoundref="Vector3_8cpp" startline="303" endline="306">Dot</referencedby>
+        <referencedby refid="Misc_8cpp_1a15f09d45e07d38822b5ecf228e503e36" compoundref="Misc_8cpp" startline="11" endline="20">getAngle</referencedby>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="17" endline="30">Camera3::Init</referencedby>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+        <referencedby refid="structVector3_1affeb6d657b146584b5cb0b42a0d6eaeb" compoundref="Vector3_8cpp" startline="91" endline="94">IsZero</referencedby>
+        <referencedby refid="structVector3_1a200024a8442329de9a625ed58ffe7075" compoundref="Vector3_8cpp" startline="273" endline="276">Length</referencedby>
+        <referencedby refid="structVector3_1a87c90f81b4044393fe18f7a1e90f26df" compoundref="Vector3_8cpp" startline="287" endline="290">LengthSquared</referencedby>
+        <referencedby refid="LoadOBJ_8h_1aa634e9cac0a72d751731db6b4479cbda" compoundref="LoadOBJ_8cpp" startline="7" endline="121">LoadOBJ</referencedby>
+        <referencedby refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" compoundref="Vector3_8cpp" startline="358" endline="367">Normalize</referencedby>
+        <referencedby refid="structVector3_1a2da0f00c5529bced69763320dac9c414" compoundref="Vector3_8cpp" startline="337" endline="343">Normalized</referencedby>
+        <referencedby refid="structVector3_1a27ba9abc0d1b5cd47a0365a4ebcfeb7c" compoundref="Vector3_8cpp" startline="241" endline="244">operator!=</referencedby>
+        <referencedby refid="classMtx44_1a20fe7d5d35374ea122848a8778de25e6" compoundref="Mtx44_8cpp" startline="294" endline="300">Mtx44::operator*</referencedby>
+        <referencedby refid="structVector3_1ab8bb1a236776d951a2e43b3ca9448bb2" compoundref="Vector3_8cpp" startline="189" endline="192">operator*</referencedby>
+        <referencedby refid="structVector3_1ab337fe4b0c5fd44657f42427e265c982" compoundref="Vector3_8cpp" startline="205" endline="211">operator*=</referencedby>
+        <referencedby refid="structVector3_1a90c345c2a67d220a474a6f209102634d" compoundref="Vector3_8cpp" startline="107" endline="110">operator+</referencedby>
+        <referencedby refid="structVector3_1a339c80afd026abb2e35a4ae88301928b" compoundref="Vector3_8cpp" startline="123" endline="129">operator+=</referencedby>
+        <referencedby refid="structVector3_1a224d913ac29766a57a5d7c96eb226b92" compoundref="Vector3_8cpp" startline="141" endline="144">operator-</referencedby>
+        <referencedby refid="structVector3_1af0c657bdd493fcece630dc985a8e7378" compoundref="Vector3_8cpp" startline="157" endline="163">operator-=</referencedby>
+        <referencedby refid="Vector3_8cpp_1a2bb22d81325ba847b6c54c8ad769b5d1" compoundref="Vector3_8cpp" startline="369" endline="373">operator&lt;&lt;</referencedby>
+        <referencedby refid="structVector3_1afbfdb69cef54e84d72d05c3c141e315f" compoundref="Vector3_8cpp" startline="256" endline="262">operator=</referencedby>
+        <referencedby refid="structVector3_1ae084cfb19c537457f52bfb3cb3a7054d" compoundref="Vector3_8cpp" startline="225" endline="228">operator==</referencedby>
+        <referencedby refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" compoundref="CutSceneOne_8cpp" startline="226" endline="262">CutSceneOne::Render</referencedby>
+        <referencedby refid="classSceneOpening_1a3edf8ad9f05db1071e3e4505af7cd4df" compoundref="SceneOpening_8cpp" startline="335" endline="380">SceneOpening::Render</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">OpeningCutScene::Render</referencedby>
+        <referencedby refid="classCredits_1a91dd5e5260a92e2a3e99360c7e30d81c" compoundref="Credits_8cpp" startline="477" endline="513">Credits::Render</referencedby>
+        <referencedby refid="classOpeningCutScene2_1a0f31817dad741723119d91d7e47fbd56" compoundref="OpeningCutScene2_8cpp" startline="418" endline="473">OpeningCutScene2::Render</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a5428359a53500a14af874d45fed5ac76" compoundref="SceneEndCutScene_8cpp" startline="395" endline="441">SceneEndCutScene::Render</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a63a16f9a1a71dd298d6e45edaa5efef4" compoundref="SceneLevelTwo_8cpp" startline="849" endline="922">SceneLevelTwo::Render</referencedby>
+        <referencedby refid="classSceneLevelOneA_1adb83e3122dc7ac3a5d5b85add1c771bb" compoundref="SceneLevelOneA_8cpp" startline="803" endline="899">SceneLevelOneA::Render</referencedby>
+        <referencedby refid="classSceneStart_1a09a1444c2c592ed917229e5853db6db5" compoundref="SceneStart_8cpp" startline="608" endline="669">SceneStart::Render</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a5c7f4cef0669b49cd80c284d9c9864ce" compoundref="SceneLevelOneB_8cpp" startline="963" endline="1056">SceneLevelOneB::Render</referencedby>
+        <referencedby refid="classSceneEnd_1a06fac012bd3a1df369c5722c8cf662b0" compoundref="SceneEnd_8cpp" startline="773" endline="869">SceneEnd::Render</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ad511ad540839c9ec9ab03c02784f1949" compoundref="SceneLevelTwoRenders_8cpp" startline="27" endline="193">SceneLevelTwo::RenderScene</referencedby>
+        <referencedby refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Set</referencedby>
+        <referencedby refid="classMtx44_1a7c3d2d30d9ed5bfca2ba97d0e570930f" compoundref="Mtx44_8cpp" startline="433" endline="450">Mtx44::SetToLookAt</referencedby>
+        <referencedby refid="structVector3_1ac6c9b941ccefd7744eace77ceab16b56" compoundref="Vector3_8cpp" startline="79" endline="82">SetZero</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ab1de6c7dd72b0416fdcc79040db55503" compoundref="SceneLevelTwo_8cpp" startline="255" endline="267">SceneLevelTwo::SpecialCollision</referencedby>
+        <referencedby refid="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6" compoundref="Camera_8cpp" startline="28" endline="47">Camera::Update</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="112" endline="155">Camera3::Update</referencedby>
+        <referencedby refid="classCutSceneOne_1a3bde2eed67da74e3c33e3b4e10542438" compoundref="CutSceneOne_8cpp" startline="125" endline="180">CutSceneOne::Update</referencedby>
+        <referencedby refid="classSceneOpening_1af3ca641709d7608947d8ae81b273b089" compoundref="SceneOpening_8cpp" startline="175" endline="192">SceneOpening::Update</referencedby>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">OpeningCutScene::Update</referencedby>
+        <referencedby refid="classCredits_1aac9dbb74267d8870c07139e33b75eca4" compoundref="Credits_8cpp" startline="346" endline="364">Credits::Update</referencedby>
+        <referencedby refid="classOpeningCutScene2_1ad228d3ddd1fc4564382de47e85cad2dc" compoundref="OpeningCutScene2_8cpp" startline="151" endline="259">OpeningCutScene2::Update</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a47f7840540cca37d431a5702cafc357a" compoundref="SceneEndCutScene_8cpp" startline="192" endline="252">SceneEndCutScene::Update</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" compoundref="SceneLevelTwo_8cpp" startline="665" endline="706">SceneLevelTwo::Update</referencedby>
+        <referencedby refid="classSceneStart_1a2c3705b248156c1c352880af1be8049c" compoundref="SceneStart_8cpp" startline="430" endline="465">SceneStart::Update</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="579" endline="660">SceneLevelOneA::Update</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="724" endline="820">SceneLevelOneB::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="555" endline="630">SceneEnd::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Vector3::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="27" column="1" bodyfile="Common/Source/Vector3.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classSceneLevelOneB_1a2bfa4551ac0b1f099c42c2193b55df47" compoundref="SceneLevelOneBRenders_8cpp" startline="435" endline="455">SceneLevelOneB::attackCheck</referencedby>
+        <referencedby refid="classSceneLevelOneA_1acae5c28ab518704326877b73c6df4e55" compoundref="SceneLevelOneARenders_8cpp" startline="398" endline="407">SceneLevelOneA::AttackCheck</referencedby>
+        <referencedby refid="classCamera3_1a576422f8f2d0660f27eed0fc817b2ae5" compoundref="Camera3_8cpp" startline="32" endline="65">Camera3::CameraRotation</referencedby>
+        <referencedby refid="classSceneEnd_1a31fef5d67de3a3dfd2ae15d4bbcea2b6" compoundref="SceneEndRenders_8cpp" startline="424" endline="456">SceneEnd::checkAttack</referencedby>
+        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="204" endline="252">SceneLevelOneA::checkDoor2</referencedby>
+        <referencedby refid="classSceneLevelTwo_1af756d75e45a09234a01aa03de6670cd6" compoundref="SceneLevelTwo_8cpp" startline="504" endline="509">SceneLevelTwo::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneStart_1a2c33e692fa8ba05e7a5e081b2d1688e2" compoundref="SceneStart_8cpp" startline="225" endline="230">SceneStart::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf46e437e991dca443d91b0ff689768d" compoundref="SceneLevelOneBRenders_8cpp" startline="510" endline="515">SceneLevelOneB::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a9d569863371f766599660dd6f78cdc47" compoundref="SceneLevelOneARenders_8cpp" startline="124" endline="139">SceneLevelOneA::checkRubbleFall</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a07e6440b5b6ca859dfda27ccb16d3129" compoundref="SceneLevelTwo_8cpp" startline="241" endline="253">SceneLevelTwo::Collision</referencedby>
+        <referencedby refid="classSceneStart_1adb6da316beba5b19afe7fad5cc3887ce" compoundref="SceneStart_8cpp" startline="209" endline="221">SceneStart::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ae689e8e0ff0bc56a3882d27ac0cb0b99" compoundref="SceneLevelOneB_8cpp" startline="292" endline="304">SceneLevelOneB::Collision</referencedby>
+        <referencedby refid="classSceneEnd_1ad14fa4bc25f557a3cd964a35c3b20d01" compoundref="SceneEnd_8cpp" startline="264" endline="276">SceneEnd::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a595fed7869b1c41878bb629e7994cad0" compoundref="SceneLevelOneA_8cpp" startline="298" endline="310">SceneLevelOneA::Collision</referencedby>
+        <referencedby refid="classSceneLevelTwo_1acb34d2e8f029102a0cbcc4a2818f0e55" compoundref="SceneLevelTwo_8cpp" startline="460" endline="502">SceneLevelTwo::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ac92af3bf7c49f02f6e444af93d940150" compoundref="SceneLevelOneB_8cpp" startline="675" endline="710">SceneLevelOneB::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneEnd_1ad27d89ab1ad40e1b57a307e4a27c2683" compoundref="SceneEnd_8cpp" startline="468" endline="504">SceneEnd::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a972ee40bd5b9481a464e3028f4d496b5" compoundref="SceneLevelOneA_8cpp" startline="528" endline="565">SceneLevelOneA::ContinueGameOrNot</referencedby>
+        <referencedby refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" compoundref="Vector3_8cpp" startline="319" endline="322">Cross</referencedby>
+        <referencedby refid="structVector3_1a71b1271deb064c65f9dc7dba638c5b57" compoundref="Vector3_8cpp" startline="303" endline="306">Dot</referencedby>
+        <referencedby refid="Misc_8cpp_1a15f09d45e07d38822b5ecf228e503e36" compoundref="Misc_8cpp" startline="11" endline="20">getAngle</referencedby>
+        <referencedby refid="classCamera3_1a021022df76481c9e9fd5c3cf5fe51cf7" compoundref="Camera3_8cpp" startline="67" endline="106">Camera3::HumanControl</referencedby>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+        <referencedby refid="structVector3_1affeb6d657b146584b5cb0b42a0d6eaeb" compoundref="Vector3_8cpp" startline="91" endline="94">IsZero</referencedby>
+        <referencedby refid="structVector3_1a200024a8442329de9a625ed58ffe7075" compoundref="Vector3_8cpp" startline="273" endline="276">Length</referencedby>
+        <referencedby refid="structVector3_1a87c90f81b4044393fe18f7a1e90f26df" compoundref="Vector3_8cpp" startline="287" endline="290">LengthSquared</referencedby>
+        <referencedby refid="LoadOBJ_8h_1aa634e9cac0a72d751731db6b4479cbda" compoundref="LoadOBJ_8cpp" startline="7" endline="121">LoadOBJ</referencedby>
+        <referencedby refid="classMobGhost_1a60251190be4ba35ceb50a726ddbebf51" compoundref="MobGhost_8cpp" startline="64" endline="99">MobGhost::move</referencedby>
+        <referencedby refid="classMobBossOne_1a9c3de91039994e9339c3f5a14f093a27" compoundref="MobBossOne_8cpp" startline="73" endline="94">MobBossOne::move</referencedby>
+        <referencedby refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" compoundref="Vector3_8cpp" startline="358" endline="367">Normalize</referencedby>
+        <referencedby refid="structVector3_1a2da0f00c5529bced69763320dac9c414" compoundref="Vector3_8cpp" startline="337" endline="343">Normalized</referencedby>
+        <referencedby refid="structVector3_1a27ba9abc0d1b5cd47a0365a4ebcfeb7c" compoundref="Vector3_8cpp" startline="241" endline="244">operator!=</referencedby>
+        <referencedby refid="classMtx44_1a20fe7d5d35374ea122848a8778de25e6" compoundref="Mtx44_8cpp" startline="294" endline="300">Mtx44::operator*</referencedby>
+        <referencedby refid="structVector3_1ab8bb1a236776d951a2e43b3ca9448bb2" compoundref="Vector3_8cpp" startline="189" endline="192">operator*</referencedby>
+        <referencedby refid="structVector3_1ab337fe4b0c5fd44657f42427e265c982" compoundref="Vector3_8cpp" startline="205" endline="211">operator*=</referencedby>
+        <referencedby refid="structVector3_1a90c345c2a67d220a474a6f209102634d" compoundref="Vector3_8cpp" startline="107" endline="110">operator+</referencedby>
+        <referencedby refid="structVector3_1a339c80afd026abb2e35a4ae88301928b" compoundref="Vector3_8cpp" startline="123" endline="129">operator+=</referencedby>
+        <referencedby refid="structVector3_1a224d913ac29766a57a5d7c96eb226b92" compoundref="Vector3_8cpp" startline="141" endline="144">operator-</referencedby>
+        <referencedby refid="structVector3_1af0c657bdd493fcece630dc985a8e7378" compoundref="Vector3_8cpp" startline="157" endline="163">operator-=</referencedby>
+        <referencedby refid="Vector3_8cpp_1a2bb22d81325ba847b6c54c8ad769b5d1" compoundref="Vector3_8cpp" startline="369" endline="373">operator&lt;&lt;</referencedby>
+        <referencedby refid="structVector3_1afbfdb69cef54e84d72d05c3c141e315f" compoundref="Vector3_8cpp" startline="256" endline="262">operator=</referencedby>
+        <referencedby refid="structVector3_1ae084cfb19c537457f52bfb3cb3a7054d" compoundref="Vector3_8cpp" startline="225" endline="228">operator==</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a147d7c92d2b42363f3c378f7492c30cb" compoundref="SceneLevelOneB_8cpp" startline="712" endline="722">SceneLevelOneB::PickUpSuitcaseInteraction</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab344d7ebfab7631145e0665914cc4819" compoundref="SceneLevelOneA_8cpp" startline="567" endline="577">SceneLevelOneA::PickUpSuitcaseInteraction</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a95ede72b1fd4719998405977356a3592" compoundref="SceneLevelTwo_8cpp" startline="269" endline="278">SceneLevelTwo::proximitycheck</referencedby>
+        <referencedby refid="classSceneStart_1a13ffa609089ada96e41281c0a49c8e6b" compoundref="SceneStart_8cpp" startline="399" endline="408">SceneStart::proximitycheck</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ab8c8534175926113db5bffecd6bbe5a6" compoundref="SceneLevelOneB_8cpp" startline="306" endline="315">SceneLevelOneB::proximitycheck</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a0faf61e907dce7e94916816d5fbed070" compoundref="SceneLevelOneA_8cpp" startline="312" endline="321">SceneLevelOneA::proximitycheck</referencedby>
+        <referencedby refid="classSceneEnd_1a948e17a1e58d73e2920a78314594e300" compoundref="SceneEnd_8cpp" startline="278" endline="287">SceneEnd::proximitycheck</referencedby>
+        <referencedby refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" compoundref="CutSceneOne_8cpp" startline="226" endline="262">CutSceneOne::Render</referencedby>
+        <referencedby refid="classSceneOpening_1a3edf8ad9f05db1071e3e4505af7cd4df" compoundref="SceneOpening_8cpp" startline="335" endline="380">SceneOpening::Render</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">OpeningCutScene::Render</referencedby>
+        <referencedby refid="classCredits_1a91dd5e5260a92e2a3e99360c7e30d81c" compoundref="Credits_8cpp" startline="477" endline="513">Credits::Render</referencedby>
+        <referencedby refid="classOpeningCutScene2_1a0f31817dad741723119d91d7e47fbd56" compoundref="OpeningCutScene2_8cpp" startline="418" endline="473">OpeningCutScene2::Render</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a5428359a53500a14af874d45fed5ac76" compoundref="SceneEndCutScene_8cpp" startline="395" endline="441">SceneEndCutScene::Render</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a63a16f9a1a71dd298d6e45edaa5efef4" compoundref="SceneLevelTwo_8cpp" startline="849" endline="922">SceneLevelTwo::Render</referencedby>
+        <referencedby refid="classSceneLevelOneA_1adb83e3122dc7ac3a5d5b85add1c771bb" compoundref="SceneLevelOneA_8cpp" startline="803" endline="899">SceneLevelOneA::Render</referencedby>
+        <referencedby refid="classSceneStart_1a09a1444c2c592ed917229e5853db6db5" compoundref="SceneStart_8cpp" startline="608" endline="669">SceneStart::Render</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a5c7f4cef0669b49cd80c284d9c9864ce" compoundref="SceneLevelOneB_8cpp" startline="963" endline="1056">SceneLevelOneB::Render</referencedby>
+        <referencedby refid="classSceneEnd_1a06fac012bd3a1df369c5722c8cf662b0" compoundref="SceneEnd_8cpp" startline="773" endline="869">SceneEnd::Render</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf19187831a508b5541fdb085bfef099" compoundref="SceneLevelOneBRenders_8cpp" startline="393" endline="428">SceneLevelOneB::RenderBoss</referencedby>
+        <referencedby refid="classSceneEnd_1aa7eb2cf11f655cf77cc1c854c26e6f57" compoundref="SceneEndRenders_8cpp" startline="385" endline="423">SceneEnd::RenderBoss</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a5c7b2f57a7e884e4beed73a4fcbdbbb7" compoundref="SceneLevelOneARenders_8cpp" startline="352" endline="369">SceneLevelOneA::RenderGhost</referencedby>
+        <referencedby refid="classSceneLevelOneB_1af05b4b11f0ad4afd0adf8883135e4136" compoundref="SceneLevelOneBRenders_8cpp" startline="374" endline="391">SceneLevelOneB::RenderGhost</referencedby>
+        <referencedby refid="classSceneEnd_1a8e3e53fce369d27d432d2c162deecb72" compoundref="SceneEndRenders_8cpp" startline="201" endline="220">SceneEnd::RenderMineText</referencedby>
+        <referencedby refid="classSceneEnd_1a9d9231ad28d1067c1c951cf37ef16db6" compoundref="SceneEndRenders_8cpp" startline="363" endline="383">SceneEnd::RenderMobs</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a3a43488434df2dd9fcef0b606e6147ab" compoundref="SceneLevelOneBRenders_8cpp" startline="657" endline="666">SceneLevelOneB::RenderPickUpSuitcaseText</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a227176473f59ddd7142977da8382249d" compoundref="SceneLevelOneARenders_8cpp" startline="485" endline="494">SceneLevelOneA::RenderPickUpSuitcaseText</referencedby>
+        <referencedby refid="classSceneEnd_1ab32854734562ab2433617b145a1971f7" compoundref="SceneEndRenders_8cpp" startline="222" endline="261">SceneEnd::RenderRepairText</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a6cdedb4f21d64c4f85ca5d8ae1bc4bcc" compoundref="SceneLevelOneA_8cpp" startline="510" endline="516">SceneLevelOneA::RenderSavePointText</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ad511ad540839c9ec9ab03c02784f1949" compoundref="SceneLevelTwoRenders_8cpp" startline="27" endline="193">SceneLevelTwo::RenderScene</referencedby>
+        <referencedby refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Set</referencedby>
+        <referencedby refid="classMtx44_1a7c3d2d30d9ed5bfca2ba97d0e570930f" compoundref="Mtx44_8cpp" startline="433" endline="450">Mtx44::SetToLookAt</referencedby>
+        <referencedby refid="structVector3_1ac6c9b941ccefd7744eace77ceab16b56" compoundref="Vector3_8cpp" startline="79" endline="82">SetZero</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ab1de6c7dd72b0416fdcc79040db55503" compoundref="SceneLevelTwo_8cpp" startline="255" endline="267">SceneLevelTwo::SpecialCollision</referencedby>
+        <referencedby refid="classSceneLevelOneA_1aafc92d0bb482c6182f12873f0001ef7d" compoundref="SceneLevelOneA_8cpp" startline="323" endline="330">SceneLevelOneA::ToolsUI</referencedby>
+        <referencedby refid="classSceneLevelOneB_1abc979783622fe908a8bb929429da8141" compoundref="SceneLevelOneB_8cpp" startline="317" endline="330">SceneLevelOneB::ToolsUI</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="112" endline="155">Camera3::Update</referencedby>
+        <referencedby refid="classCutSceneOne_1a3bde2eed67da74e3c33e3b4e10542438" compoundref="CutSceneOne_8cpp" startline="125" endline="180">CutSceneOne::Update</referencedby>
+        <referencedby refid="classSceneOpening_1af3ca641709d7608947d8ae81b273b089" compoundref="SceneOpening_8cpp" startline="175" endline="192">SceneOpening::Update</referencedby>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">OpeningCutScene::Update</referencedby>
+        <referencedby refid="classCredits_1aac9dbb74267d8870c07139e33b75eca4" compoundref="Credits_8cpp" startline="346" endline="364">Credits::Update</referencedby>
+        <referencedby refid="classOpeningCutScene2_1ad228d3ddd1fc4564382de47e85cad2dc" compoundref="OpeningCutScene2_8cpp" startline="151" endline="259">OpeningCutScene2::Update</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a47f7840540cca37d431a5702cafc357a" compoundref="SceneEndCutScene_8cpp" startline="192" endline="252">SceneEndCutScene::Update</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" compoundref="SceneLevelTwo_8cpp" startline="665" endline="706">SceneLevelTwo::Update</referencedby>
+        <referencedby refid="classSceneStart_1a2c3705b248156c1c352880af1be8049c" compoundref="SceneStart_8cpp" startline="430" endline="465">SceneStart::Update</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="579" endline="660">SceneLevelOneA::Update</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="724" endline="820">SceneLevelOneB::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="555" endline="630">SceneEnd::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a48eddb41d1eff6f332eeef2b95e1e4fb" compoundref="SceneEnd_8cpp" startline="506" endline="539">SceneEnd::UpdateRepairs</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a8cdf4a86b4d9e080f1a6f70d5061c3d5" compoundref="SceneLevelOneA_8cpp" startline="502" endline="508">SceneLevelOneA::UpdateSavePoint</referencedby>
+        <referencedby refid="classAnimation_1a1d3d575d344a9a7586ec6277b01dbb35" compoundref="OBJAnimation_8cpp" startline="497" endline="510">Animation::WithinArea</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structVector3_1abdc9a7f223e3628ed1cbccd107d49c44" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Vector3::IsEqual</definition>
+        <argsstring>(float a, float b) const </argsstring>
+        <name>IsEqual</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="28" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="13" bodyend="16"/>
+        <references refid="namespaceMath_1a5ee876d5cb049f0b3b71f3c54ed8efa0" compoundref="MyMath_8h" startline="27">Math::EPSILON</references>
+        <referencedby refid="structVector3_1affeb6d657b146584b5cb0b42a0d6eaeb" compoundref="Vector3_8cpp" startline="91" endline="94">IsZero</referencedby>
+        <referencedby refid="structVector3_1a27ba9abc0d1b5cd47a0365a4ebcfeb7c" compoundref="Vector3_8cpp" startline="241" endline="244">operator!=</referencedby>
+        <referencedby refid="structVector3_1ae084cfb19c537457f52bfb3cb3a7054d" compoundref="Vector3_8cpp" startline="225" endline="228">operator==</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1afa5e0c801fc2c8a820a54ea99302fe08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Vector3::Vector3</definition>
+        <argsstring>(float a=0.0, float b=0.0, float c=0.0)</argsstring>
+        <name>Vector3</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+          <defval>0.0</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+          <defval>0.0</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>c</declname>
+          <defval>0.0</defval>
+        </param>
+        <briefdescription>
+<para><ref refid="structVector3" kindref="compound">Vector3</ref> default constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>x value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>y value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>z value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="30" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="30" bodyend="32"/>
+        <referencedby refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" compoundref="Vector3_8cpp" startline="319" endline="322">Cross</referencedby>
+        <referencedby refid="structVector3_1a2da0f00c5529bced69763320dac9c414" compoundref="Vector3_8cpp" startline="337" endline="343">Normalized</referencedby>
+        <referencedby refid="structVector3_1ab8bb1a236776d951a2e43b3ca9448bb2" compoundref="Vector3_8cpp" startline="189" endline="192">operator*</referencedby>
+        <referencedby refid="structVector3_1a90c345c2a67d220a474a6f209102634d" compoundref="Vector3_8cpp" startline="107" endline="110">operator+</referencedby>
+        <referencedby refid="structVector3_1a224d913ac29766a57a5d7c96eb226b92" compoundref="Vector3_8cpp" startline="141" endline="144">operator-</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1ae1d084ff898241c341e322fba12ceed7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Vector3::Vector3</definition>
+        <argsstring>(const Vector3 &amp;rhs)</argsstring>
+        <name>Vector3</name>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="structVector3" kindref="compound">Vector3</ref> copy constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector to copy from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="31" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="42" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1a5545e13e2e2861ece8f14b12a6a8101f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Vector3::~Vector3</definition>
+        <argsstring>()</argsstring>
+        <name>~Vector3</name>
+        <briefdescription>
+<para><ref refid="structVector3" kindref="compound">Vector3</ref> destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="32" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="51" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vector3::Set</definition>
+        <argsstring>(float a=0, float b=0, float c=0)</argsstring>
+        <name>Set</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>c</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Set the elements of this vector. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>x value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>y value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>z value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="34" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="67" bodyend="72"/>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+        <referencedby refid="classMeshBuilder_1a68d491a27ed57b66b7a8161a2b230951" compoundref="MeshBuilder_8cpp" startline="93" endline="129">MeshBuilder::GenerateCircle</referencedby>
+        <referencedby refid="classMeshBuilder_1a5e777328dc946f483beb5645d8f24c4a" compoundref="MeshBuilder_8cpp" startline="336" endline="400">MeshBuilder::GenerateCube</referencedby>
+        <referencedby refid="classMeshBuilder_1af5fd00cbcb2716df65d167c638edaafe" compoundref="MeshBuilder_8cpp" startline="452" endline="515">MeshBuilder::GenerateCylinder</referencedby>
+        <referencedby refid="classMeshBuilder_1aa3751076aa9f74324d49a999a3c3fa55" compoundref="MeshBuilder_8cpp" startline="247" endline="278">MeshBuilder::GenerateQuad</referencedby>
+        <referencedby refid="classMeshBuilder_1a44a784dbd2cee7b6adc21c697a945501" compoundref="MeshBuilder_8cpp" startline="131" endline="169">MeshBuilder::GenerateRing</referencedby>
+        <referencedby refid="classMeshBuilder_1af47d15fbc1d2a4e2ef45c387acc0d6db" compoundref="MeshBuilder_8cpp" startline="186" endline="229">MeshBuilder::GenerateSphere</referencedby>
+        <referencedby refid="classMeshBuilder_1aac7c87881dbc08f8d41f2068e0f40c76" compoundref="MeshBuilder_8cpp" startline="280" endline="320">MeshBuilder::GenerateText</referencedby>
+        <referencedby refid="classMeshBuilder_1aa0fd7de9ef15dbc113a3f84b859ebe95" compoundref="MeshBuilder_8cpp" startline="402" endline="450">MeshBuilder::GenerateTorus</referencedby>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+        <referencedby refid="classCamera_1aa46f58b32270a571ab56dde4caca46db" compoundref="Camera_8cpp" startline="21" endline="26">Camera::Reset</referencedby>
+        <referencedby refid="classCutSceneOne_1a3bde2eed67da74e3c33e3b4e10542438" compoundref="CutSceneOne_8cpp" startline="125" endline="180">CutSceneOne::Update</referencedby>
+        <referencedby refid="classSceneOpening_1af3ca641709d7608947d8ae81b273b089" compoundref="SceneOpening_8cpp" startline="175" endline="192">SceneOpening::Update</referencedby>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">OpeningCutScene::Update</referencedby>
+        <referencedby refid="classCredits_1aac9dbb74267d8870c07139e33b75eca4" compoundref="Credits_8cpp" startline="346" endline="364">Credits::Update</referencedby>
+        <referencedby refid="classOpeningCutScene2_1ad228d3ddd1fc4564382de47e85cad2dc" compoundref="OpeningCutScene2_8cpp" startline="151" endline="259">OpeningCutScene2::Update</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a47f7840540cca37d431a5702cafc357a" compoundref="SceneEndCutScene_8cpp" startline="192" endline="252">SceneEndCutScene::Update</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" compoundref="SceneLevelTwo_8cpp" startline="665" endline="706">SceneLevelTwo::Update</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="579" endline="660">SceneLevelOneA::Update</referencedby>
+        <referencedby refid="classSceneStart_1a2c3705b248156c1c352880af1be8049c" compoundref="SceneStart_8cpp" startline="430" endline="465">SceneStart::Update</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="724" endline="820">SceneLevelOneB::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="555" endline="630">SceneEnd::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1ac6c9b941ccefd7744eace77ceab16b56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vector3::SetZero</definition>
+        <argsstring>(void)</argsstring>
+        <name>SetZero</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Set all elements to zero. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="35" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="79" bodyend="82"/>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1affeb6d657b146584b5cb0b42a0d6eaeb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Vector3::IsZero</definition>
+        <argsstring>(void) const </argsstring>
+        <name>IsZero</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Check if vector is zero, using Math::Epsilon. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>TRUE if vector is zero </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="36" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="91" bodyend="94"/>
+        <references refid="structVector3_1abdc9a7f223e3628ed1cbccd107d49c44" compoundref="Vector3_8cpp" startline="13" endline="16">IsEqual</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1a90c345c2a67d220a474a6f209102634d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::operator+</definition>
+        <argsstring>(const Vector3 &amp;rhs) const </argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>operator+ overload for vector addition </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structVector3" kindref="compound">Vector3</ref> to add with </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Resulting vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="38" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="107" bodyend="110"/>
+        <references refid="structVector3_1afa5e0c801fc2c8a820a54ea99302fe08" compoundref="Vector3_8cpp" startline="30" endline="32">Vector3</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1a339c80afd026abb2e35a4ae88301928b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+        <definition>Vector3 &amp; Vector3::operator+=</definition>
+        <argsstring>(const Vector3 &amp;rhs)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>operator+= overload for vector addition and assignment </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structVector3" kindref="compound">Vector3</ref> to add with </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Resulting vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="39" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="123" bodyend="129"/>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1a224d913ac29766a57a5d7c96eb226b92" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::operator-</definition>
+        <argsstring>(const Vector3 &amp;rhs) const </argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>operator- overload for vector subtraction </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structVector3" kindref="compound">Vector3</ref> to subtract with </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Resulting vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="41" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="141" bodyend="144"/>
+        <references refid="structVector3_1afa5e0c801fc2c8a820a54ea99302fe08" compoundref="Vector3_8cpp" startline="30" endline="32">Vector3</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1af0c657bdd493fcece630dc985a8e7378" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+        <definition>Vector3 &amp; Vector3::operator-=</definition>
+        <argsstring>(const Vector3 &amp;rhs)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>operator-= overload for vector subtraction and assignment </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structVector3" kindref="compound">Vector3</ref> to subtract with </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Resulting vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="42" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="157" bodyend="163"/>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1a7b7b7aa32bab9c687c193ffe2b169252" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::operator-</definition>
+        <argsstring>(void) const </argsstring>
+        <name>operator-</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>operator- overload for unary negation </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Resulting vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="44" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="174" bodyend="177"/>
+        <references refid="structVector3_1afa5e0c801fc2c8a820a54ea99302fe08" compoundref="Vector3_8cpp" startline="30" endline="32">Vector3</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1ab8bb1a236776d951a2e43b3ca9448bb2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::operator*</definition>
+        <argsstring>(float scalar) const </argsstring>
+        <name>operator*</name>
+        <param>
+          <type>float</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+<para>operator* overload for scalar multiplication </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- float to multiply with</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Resulting vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="46" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="189" bodyend="192"/>
+        <references refid="structVector3_1afa5e0c801fc2c8a820a54ea99302fe08" compoundref="Vector3_8cpp" startline="30" endline="32">Vector3</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1ab337fe4b0c5fd44657f42427e265c982" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+        <definition>Vector3 &amp; Vector3::operator*=</definition>
+        <argsstring>(float scalar)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>float</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+<para>operator*= overload for scalar multiplication and assignment </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>float to multiply with </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Resulting vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="47" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="205" bodyend="211"/>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1ae084cfb19c537457f52bfb3cb3a7054d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Vector3::operator==</definition>
+        <argsstring>(const Vector3 &amp;rhs) const </argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>operator== overload for equality check, using <ref refid="namespaceMath_1a5ee876d5cb049f0b3b71f3c54ed8efa0" kindref="member">Math::EPSILON</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector to compare with</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Resulting vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="49" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="225" bodyend="228"/>
+        <references refid="structVector3_1abdc9a7f223e3628ed1cbccd107d49c44" compoundref="Vector3_8cpp" startline="13" endline="16">IsEqual</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1a27ba9abc0d1b5cd47a0365a4ebcfeb7c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Vector3::operator!=</definition>
+        <argsstring>(const Vector3 &amp;rhs) const </argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>operator!= overload for inequality check, using <ref refid="namespaceMath_1a5ee876d5cb049f0b3b71f3c54ed8efa0" kindref="member">Math::EPSILON</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector to compare with </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Resulting vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="50" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="241" bodyend="244"/>
+        <references refid="structVector3_1abdc9a7f223e3628ed1cbccd107d49c44" compoundref="Vector3_8cpp" startline="13" endline="16">IsEqual</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1afbfdb69cef54e84d72d05c3c141e315f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+        <definition>Vector3 &amp; Vector3::operator=</definition>
+        <argsstring>(const Vector3 &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operation (assign a vector to this vector) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector to assign </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="52" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="256" bodyend="262"/>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1a200024a8442329de9a625ed58ffe7075" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Vector3::Length</definition>
+        <argsstring>(void) const </argsstring>
+        <name>Length</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Return length of vector. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Length </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="54" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="273" bodyend="276"/>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+        <referencedby refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" compoundref="Vector3_8cpp" startline="358" endline="367">Normalize</referencedby>
+        <referencedby refid="structVector3_1a2da0f00c5529bced69763320dac9c414" compoundref="Vector3_8cpp" startline="337" endline="343">Normalized</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1a87c90f81b4044393fe18f7a1e90f26df" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Vector3::LengthSquared</definition>
+        <argsstring>(void) const </argsstring>
+        <name>LengthSquared</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Return square of length of vector. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Length square </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="55" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="287" bodyend="290"/>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1a71b1271deb064c65f9dc7dba638c5b57" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Vector3::Dot</definition>
+        <argsstring>(const Vector3 &amp;rhs) const </argsstring>
+        <name>Dot</name>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Dot product of 2 vectors. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to calculate dot product with </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>float value of dot product </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="57" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="303" bodyend="306"/>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::Cross</definition>
+        <argsstring>(const Vector3 &amp;rhs) const </argsstring>
+        <name>Cross</name>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Cross product of 2 vectors. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to calculate cross product with </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of cross product </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="58" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="319" bodyend="322"/>
+        <references refid="structVector3_1afa5e0c801fc2c8a820a54ea99302fe08" compoundref="Vector3_8cpp" startline="30" endline="32">Vector3</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="17" endline="30">Camera3::Init</referencedby>
+        <referencedby refid="classMtx44_1a7c3d2d30d9ed5bfca2ba97d0e570930f" compoundref="Mtx44_8cpp" startline="433" endline="450">Mtx44::SetToLookAt</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="112" endline="155">Camera3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1a2da0f00c5529bced69763320dac9c414" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Vector3::Normalized</definition>
+        <argsstring>(void) const </argsstring>
+        <name>Normalized</name>
+        <param>
+          <type>void</type>
+        </param>
+        <exceptions> throw ( <ref refid="classDivideByZero" kindref="compound">DivideByZero</ref> )</exceptions>
+        <briefdescription>
+<para>Return a copy of this vector, normalized. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to calculate distance from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Divide</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>by zero thrown if normalizing a zero vector </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Resulting normalized vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="62" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="337" bodyend="343"/>
+        <references refid="namespaceMath_1a5ee876d5cb049f0b3b71f3c54ed8efa0" compoundref="MyMath_8h" startline="27">Math::EPSILON</references>
+        <references refid="structVector3_1a200024a8442329de9a625ed58ffe7075" compoundref="Vector3_8cpp" startline="273" endline="276">Length</references>
+        <references refid="structVector3_1afa5e0c801fc2c8a820a54ea99302fe08" compoundref="Vector3_8cpp" startline="30" endline="32">Vector3</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="17" endline="30">Camera3::Init</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="112" endline="155">Camera3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+        <definition>Vector3 &amp; Vector3::Normalize</definition>
+        <argsstring>(void)</argsstring>
+        <name>Normalize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <exceptions> throw ( <ref refid="classDivideByZero" kindref="compound">DivideByZero</ref> )</exceptions>
+        <briefdescription>
+<para>Normalize this vector and return a reference to it. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point to calculate distance from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Divide</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>by zero thrown if normalizing a zero vector </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to this vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="66" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="358" bodyend="367"/>
+        <references refid="namespaceMath_1a5ee876d5cb049f0b3b71f3c54ed8efa0" compoundref="MyMath_8h" startline="27">Math::EPSILON</references>
+        <references refid="structVector3_1a200024a8442329de9a625ed58ffe7075" compoundref="Vector3_8cpp" startline="273" endline="276">Length</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">z</references>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="17" endline="30">Camera3::Init</referencedby>
+        <referencedby refid="classMobGhost_1a60251190be4ba35ceb50a726ddbebf51" compoundref="MobGhost_8cpp" startline="64" endline="99">MobGhost::move</referencedby>
+        <referencedby refid="classMobBossOne_1a9c3de91039994e9339c3f5a14f093a27" compoundref="MobBossOne_8cpp" startline="73" endline="94">MobBossOne::move</referencedby>
+        <referencedby refid="classMtx44_1a7c3d2d30d9ed5bfca2ba97d0e570930f" compoundref="Mtx44_8cpp" startline="433" endline="450">Mtx44::SetToLookAt</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="112" endline="155">Camera3::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="structVector3_1a2bb22d81325ba847b6c54c8ad769b5d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, Vector3 &amp;rhs)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="68" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="369" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="friend" id="structVector3_1ad0633cb4e51ffd5188e6b69e72209ab0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 operator*</definition>
+        <argsstring>(float scalar, const Vector3 &amp;rhs)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>float</type>
+          <declname>scalar</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Scalar product of scalar with vector. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>scalar value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Resulting vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Common/Source/Vector3.h" line="70" column="1" bodyfile="Common/Source/Vector3.cpp" bodystart="388" bodyend="391"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Defines a 3D vector and its methods. </para>    </briefdescription>
+    <detaileddescription>
+<para>Class <ref refid="structVector3" kindref="compound">Vector3</ref>: </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="1236">
+        <label>float</label>
+      </node>
+      <node id="1235">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="1236" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Common/Source/Vector3.h" line="26" column="1" bodyfile="Common/Source/Vector3.h" bodystart="25" bodyend="71"/>
+    <listofallmembers>
+      <member refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" prot="public" virt="non-virtual"><scope>Vector3</scope><name>Cross</name></member>
+      <member refid="structVector3_1a71b1271deb064c65f9dc7dba638c5b57" prot="public" virt="non-virtual"><scope>Vector3</scope><name>Dot</name></member>
+      <member refid="structVector3_1abdc9a7f223e3628ed1cbccd107d49c44" prot="public" virt="non-virtual"><scope>Vector3</scope><name>IsEqual</name></member>
+      <member refid="structVector3_1affeb6d657b146584b5cb0b42a0d6eaeb" prot="public" virt="non-virtual"><scope>Vector3</scope><name>IsZero</name></member>
+      <member refid="structVector3_1a200024a8442329de9a625ed58ffe7075" prot="public" virt="non-virtual"><scope>Vector3</scope><name>Length</name></member>
+      <member refid="structVector3_1a87c90f81b4044393fe18f7a1e90f26df" prot="public" virt="non-virtual"><scope>Vector3</scope><name>LengthSquared</name></member>
+      <member refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" prot="public" virt="non-virtual"><scope>Vector3</scope><name>Normalize</name></member>
+      <member refid="structVector3_1a2da0f00c5529bced69763320dac9c414" prot="public" virt="non-virtual"><scope>Vector3</scope><name>Normalized</name></member>
+      <member refid="structVector3_1a27ba9abc0d1b5cd47a0365a4ebcfeb7c" prot="public" virt="non-virtual"><scope>Vector3</scope><name>operator!=</name></member>
+      <member refid="structVector3_1ab8bb1a236776d951a2e43b3ca9448bb2" prot="public" virt="non-virtual"><scope>Vector3</scope><name>operator*</name></member>
+      <member refid="structVector3_1ad0633cb4e51ffd5188e6b69e72209ab0" prot="public" virt="non-virtual"><scope>Vector3</scope><name>operator*</name></member>
+      <member refid="structVector3_1ab337fe4b0c5fd44657f42427e265c982" prot="public" virt="non-virtual"><scope>Vector3</scope><name>operator*=</name></member>
+      <member refid="structVector3_1a90c345c2a67d220a474a6f209102634d" prot="public" virt="non-virtual"><scope>Vector3</scope><name>operator+</name></member>
+      <member refid="structVector3_1a339c80afd026abb2e35a4ae88301928b" prot="public" virt="non-virtual"><scope>Vector3</scope><name>operator+=</name></member>
+      <member refid="structVector3_1a224d913ac29766a57a5d7c96eb226b92" prot="public" virt="non-virtual"><scope>Vector3</scope><name>operator-</name></member>
+      <member refid="structVector3_1a7b7b7aa32bab9c687c193ffe2b169252" prot="public" virt="non-virtual"><scope>Vector3</scope><name>operator-</name></member>
+      <member refid="structVector3_1af0c657bdd493fcece630dc985a8e7378" prot="public" virt="non-virtual"><scope>Vector3</scope><name>operator-=</name></member>
+      <member refid="structVector3_1a2bb22d81325ba847b6c54c8ad769b5d1" prot="public" virt="non-virtual"><scope>Vector3</scope><name>operator&lt;&lt;</name></member>
+      <member refid="structVector3_1afbfdb69cef54e84d72d05c3c141e315f" prot="public" virt="non-virtual"><scope>Vector3</scope><name>operator=</name></member>
+      <member refid="structVector3_1ae084cfb19c537457f52bfb3cb3a7054d" prot="public" virt="non-virtual"><scope>Vector3</scope><name>operator==</name></member>
+      <member refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" prot="public" virt="non-virtual"><scope>Vector3</scope><name>Set</name></member>
+      <member refid="structVector3_1ac6c9b941ccefd7744eace77ceab16b56" prot="public" virt="non-virtual"><scope>Vector3</scope><name>SetZero</name></member>
+      <member refid="structVector3_1afa5e0c801fc2c8a820a54ea99302fe08" prot="public" virt="non-virtual"><scope>Vector3</scope><name>Vector3</name></member>
+      <member refid="structVector3_1ae1d084ff898241c341e322fba12ceed7" prot="public" virt="non-virtual"><scope>Vector3</scope><name>Vector3</name></member>
+      <member refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" prot="public" virt="non-virtual"><scope>Vector3</scope><name>x</name></member>
+      <member refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" prot="public" virt="non-virtual"><scope>Vector3</scope><name>y</name></member>
+      <member refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" prot="public" virt="non-virtual"><scope>Vector3</scope><name>z</name></member>
+      <member refid="structVector3_1a5545e13e2e2861ece8f14b12a6a8101f" prot="public" virt="non-virtual"><scope>Vector3</scope><name>~Vector3</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

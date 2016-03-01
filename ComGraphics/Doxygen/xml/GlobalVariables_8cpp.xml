@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="GlobalVariables_8cpp" kind="file" language="C++">
+    <compoundname>GlobalVariables.cpp</compoundname>
+    <includes refid="GlobalVariables_8h" local="yes">GlobalVariables.h</includes>
+    <incdepgraph>
+      <node id="5530">
+        <label>ComGraphics/Source/GlobalVariables.cpp</label>
+        <link refid="GlobalVariables.cpp"/>
+        <childnode refid="5531" relation="include">
+        </childnode>
+      </node>
+      <node id="5531">
+        <label>GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GlobalVariables_8h" kindref="compound">GlobalVariables.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="classGlobalVariables_1a4631d1ecf5fe11e440926a3464028eb0" refkind="member"><highlight class="normal"><ref refid="classGlobalVariables_1a4631d1ecf5fe11e440926a3464028eb0" kindref="member">GlobalVariables::GlobalVariables</ref>()</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1aaa0de2a44c4eed2398aa59ff2f78a6da" kindref="member">RotateX</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1aa1050efe922196c1f849e9ce923dc70c" kindref="member">f_Worldspin</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a6502a90cd00c51e14421f47c56217885" kindref="member">b_LockSwing</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1adcc468b8a418353ab4da5069dc43312d" kindref="member">b_LockSwingDebounce</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a3cd4f183d364a5c58fb483744ad16c12" kindref="member">start_Animation</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1ad73bac88dfc809c3fb6123520fce228e" kindref="member">f_SwitchDebounce</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a9cfbae7b5e9bb6764b6ebd6b815bc482" kindref="member">f_SwitchRotateOne</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a0d47efa9693f6eeec3cdffe7ad479bd4" kindref="member">f_SwitchRotateTwo</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a8970d821ca7c3e5a72db6992a1fc9210" kindref="member">f_SwitchRotateThree</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>++i)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1aee2b21c3601cb02595c635d50d714667" kindref="member">b_SwitchAnimate</ref>[i]<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a5f9907e937b1bb9b3723e7525837964e" kindref="member">f_redScreenTimer</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a91cf38ffb1ec77fe9c7267826d9250f1" kindref="member">f_SuitcaseRotateY</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classGlobalVariables_1ae39d8e11c0dcc06db7bfde5d8772aae2" refkind="member"><highlight class="normal"><ref refid="classGlobalVariables_1ae39d8e11c0dcc06db7bfde5d8772aae2" kindref="member">GlobalVariables::~GlobalVariables</ref>()</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/GlobalVariables.cpp"/>
+  </compounddef>
+</doxygen>

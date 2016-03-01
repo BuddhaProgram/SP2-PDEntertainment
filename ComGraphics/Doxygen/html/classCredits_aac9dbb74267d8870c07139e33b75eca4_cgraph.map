@@ -1,0 +1,8 @@
+<map id="Credits::Update" name="Credits::Update">
+<area shape="rect" id="node2" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="175,5,349,32"/>
+<area shape="rect" id="node3" href="$classCredits.html#a5bd03d117e7f95ba4d83394fcb821030" title="Credits::RenderMovingCredits" alt="" coords="165,56,359,83"/>
+<area shape="rect" id="node6" href="$structPosition.html#a2919b2441baf7a2f799791d65a1cfc15" title="Position::Set" alt="" coords="213,107,311,133"/>
+<area shape="rect" id="node7" href="$structVector3.html#a9c25d604bd52b162cfcb56302ef032bb" title="Set the elements of this vector. " alt="" coords="215,157,309,184"/>
+<area shape="rect" id="node4" href="$classApplication.html#adeed1a6fea5cbe66da30dfe5b9651b7e" title="Application::OpenGame" alt="" coords="407,56,567,83"/>
+<area shape="rect" id="node5" href="$classScene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478" title="Scene::Init" alt="" coords="615,56,699,83"/>
+</map>

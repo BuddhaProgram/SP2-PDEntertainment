@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="CutSceneOneRenders_8cpp" kind="file" language="C++">
+    <compoundname>CutSceneOneRenders.cpp</compoundname>
+    <includes refid="CutSceneOne_8h" local="yes">CutSceneOne.h</includes>
+    <includes refid="OBJAnimation_8h" local="yes">OBJAnimation.h</includes>
+    <incdepgraph>
+      <node id="5442">
+        <label>list</label>
+      </node>
+      <node id="5436">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+        <childnode refid="5437" relation="include">
+        </childnode>
+        <childnode refid="5438" relation="include">
+        </childnode>
+        <childnode refid="5439" relation="include">
+        </childnode>
+        <childnode refid="5450" relation="include">
+        </childnode>
+      </node>
+      <node id="5443">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5444" relation="include">
+        </childnode>
+        <childnode refid="5449" relation="include">
+        </childnode>
+      </node>
+      <node id="5454">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+      </node>
+      <node id="5452">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="5443" relation="include">
+        </childnode>
+      </node>
+      <node id="5445">
+        <label>cmath</label>
+      </node>
+      <node id="5451">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="5452" relation="include">
+        </childnode>
+      </node>
+      <node id="5450">
+        <label>Misc.h</label>
+        <link refid="Misc_8h"/>
+        <childnode refid="5443" relation="include">
+        </childnode>
+      </node>
+      <node id="5455">
+        <label>string</label>
+      </node>
+      <node id="5453">
+        <label>Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="5454" relation="include">
+        </childnode>
+        <childnode refid="5455" relation="include">
+        </childnode>
+      </node>
+      <node id="5446">
+        <label>exception</label>
+      </node>
+      <node id="5435">
+        <label>CutSceneOne.h</label>
+        <link refid="CutSceneOne_8h"/>
+        <childnode refid="5436" relation="include">
+        </childnode>
+        <childnode refid="5451" relation="include">
+        </childnode>
+        <childnode refid="5443" relation="include">
+        </childnode>
+        <childnode refid="5453" relation="include">
+        </childnode>
+        <childnode refid="5456" relation="include">
+        </childnode>
+        <childnode refid="5459" relation="include">
+        </childnode>
+        <childnode refid="5461" relation="include">
+        </childnode>
+        <childnode refid="5437" relation="include">
+        </childnode>
+      </node>
+      <node id="5447">
+        <label>ctime</label>
+      </node>
+      <node id="5457">
+        <label>stack</label>
+      </node>
+      <node id="5441">
+        <label>vector</label>
+      </node>
+      <node id="5460">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="5443" relation="include">
+        </childnode>
+      </node>
+      <node id="5437">
+        <label>GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+      </node>
+      <node id="5458">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="5444" relation="include">
+        </childnode>
+        <childnode refid="5443" relation="include">
+        </childnode>
+      </node>
+      <node id="5448">
+        <label>cstdlib</label>
+      </node>
+      <node id="5449">
+        <label>iostream</label>
+      </node>
+      <node id="5459">
+        <label>Light.h</label>
+        <link refid="Light_8h"/>
+        <childnode refid="5460" relation="include">
+        </childnode>
+      </node>
+      <node id="5456">
+        <label>MatrixStack.h</label>
+        <link refid="MatrixStack_8h"/>
+        <childnode refid="5457" relation="include">
+        </childnode>
+        <childnode refid="5458" relation="include">
+        </childnode>
+      </node>
+      <node id="5439">
+        <label>Explorer.h</label>
+        <link refid="Explorer_8h"/>
+        <childnode refid="5440" relation="include">
+        </childnode>
+        <childnode refid="5443" relation="include">
+        </childnode>
+      </node>
+      <node id="5440">
+        <label>ToolUI.h</label>
+        <link refid="ToolUI_8h"/>
+        <childnode refid="5441" relation="include">
+        </childnode>
+        <childnode refid="5442" relation="include">
+        </childnode>
+      </node>
+      <node id="5461">
+        <label>OBJAnimation.h</label>
+        <link refid="OBJAnimation_8h"/>
+        <childnode refid="5451" relation="include">
+        </childnode>
+      </node>
+      <node id="5438">
+        <label>SwitchLightPuzzle.h</label>
+        <link refid="SwitchLightPuzzle_8h"/>
+      </node>
+      <node id="5444">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5445" relation="include">
+        </childnode>
+        <childnode refid="5446" relation="include">
+        </childnode>
+        <childnode refid="5447" relation="include">
+        </childnode>
+        <childnode refid="5448" relation="include">
+        </childnode>
+      </node>
+      <node id="5434">
+        <label>ComGraphics/Source/CutSceneOneRenders.cpp</label>
+        <link refid="CutSceneOneRenders.cpp"/>
+        <childnode refid="5435" relation="include">
+        </childnode>
+        <childnode refid="5461" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CutSceneOne_8h" kindref="compound">CutSceneOne.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="OBJAnimation_8h" kindref="compound">OBJAnimation.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//renders<sp/>the<sp/>default<sp/>sky<sp/>box</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="classCutSceneOne_1a4e2396896a5804e3f041a3071ec7a84c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCutSceneOne_1a4e2396896a5804e3f041a3071ec7a84c" kindref="member">CutSceneOne::RenderCutSceneOne</ref>()</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" kindref="member">modelStack</ref>.<ref refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" kindref="member">PushMatrix</ref>();</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" kindref="member">modelStack</ref>.<ref refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" kindref="member">Translate</ref>(10,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" kindref="member">modelStack</ref>.<ref refid="classMS_1a6ce592114042b920b648bca5519690cd" kindref="member">Rotate</ref>(<ref refid="classCutSceneOne_1a551d89cf467e61c0ccbc5a55180cb222" kindref="member">anima</ref>.<ref refid="classAnimation_1ac04ef292ab6339da0094a83a5d54b1d0" kindref="member">OpenDoorL</ref>,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" kindref="member">modelStack</ref>.<ref refid="classMS_1a52109795de960e24663b315e9128533f" kindref="member">Scale</ref>(5,<sp/>5,<sp/>5);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCutSceneOne_1a37dadb6ea7febef48e522f82a9f9cb26" kindref="member">RenderMesh</ref>(<ref refid="classCutSceneOne_1aeca6f8df86f0d88a3dc6e751d327d7d2" kindref="member">meshList</ref>[<ref refid="classCutSceneOne_1a3617f23299052dbd25854296ee3c9eb9a839c15df64723ddfe904438d8f1ac6a9" kindref="member">GEO_MAINDOORLEFT</ref>],<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" kindref="member">modelStack</ref>.<ref refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" kindref="member">PopMatrix</ref>();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" kindref="member">modelStack</ref>.<ref refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" kindref="member">PushMatrix</ref>();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" kindref="member">modelStack</ref>.<ref refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" kindref="member">Translate</ref>(-10,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" kindref="member">modelStack</ref>.<ref refid="classMS_1a6ce592114042b920b648bca5519690cd" kindref="member">Rotate</ref>(<ref refid="classCutSceneOne_1a551d89cf467e61c0ccbc5a55180cb222" kindref="member">anima</ref>.<ref refid="classAnimation_1a815d154110f2bc075129e2689f8d54f8" kindref="member">OpenDoorR</ref>,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" kindref="member">modelStack</ref>.<ref refid="classMS_1a52109795de960e24663b315e9128533f" kindref="member">Scale</ref>(5,<sp/>5,<sp/>5);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCutSceneOne_1a37dadb6ea7febef48e522f82a9f9cb26" kindref="member">RenderMesh</ref>(<ref refid="classCutSceneOne_1aeca6f8df86f0d88a3dc6e751d327d7d2" kindref="member">meshList</ref>[<ref refid="classCutSceneOne_1a3617f23299052dbd25854296ee3c9eb9ae49b5de7588e23a9b25e8b3c7c896158" kindref="member">GEO_MAINDOORRIGHT</ref>],<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" kindref="member">modelStack</ref>.<ref refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" kindref="member">PopMatrix</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/CutSceneOneRenders.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1060 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classCutSceneOne" kind="class" language="C++" prot="public">
+    <compoundname>CutSceneOne</compoundname>
+    <basecompoundref refid="classScene" prot="public" virt="non-virtual">Scene</basecompoundref>
+    <includes refid="CutSceneOne_8h" local="no">CutSceneOne.h</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classCutSceneOne_1a3617f23299052dbd25854296ee3c9eb9" prot="private" static="no">
+        <name>GEOMETRY_TYPE</name>
+        <enumvalue id="classCutSceneOne_1a3617f23299052dbd25854296ee3c9eb9a839c15df64723ddfe904438d8f1ac6a9" prot="private">
+          <name>GEO_MAINDOORLEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a3617f23299052dbd25854296ee3c9eb9ae49b5de7588e23a9b25e8b3c7c896158" prot="private">
+          <name>GEO_MAINDOORRIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a3617f23299052dbd25854296ee3c9eb9ab484e8494f0446763a7f4b67750018f9" prot="private">
+          <name>NUM_GEOMETRY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="16" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="15" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="enum" id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530" prot="private" static="no">
+        <name>UNIFORM_TYPE</name>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530adbd51e571a33d1660bfb439f87509eb1" prot="private">
+          <name>U_MVP</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ac071730bab36ac839af7f3015fce38e5" prot="private">
+          <name>U_MODELVIEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a29be686293253cfe6269ef843135e11e" prot="private">
+          <name>U_MODELVIEW_INVERSE_TRANSPOSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a2afa503646f85e5aa6dfa859a464d8a7" prot="private">
+          <name>U_MATERIAL_AMBIENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ab661e8ed0aaab937313e6a7ecad88fef" prot="private">
+          <name>U_MATERIAL_DIFFUSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a4eeac688e19ee93d013ef33166466e37" prot="private">
+          <name>U_MATERIAL_SPECULAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a091831e9411194433b3e7364ef28e4c3" prot="private">
+          <name>U_MATERIAL_SHININESS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a94a9a0d453223348263e03ffec3387ce" prot="private">
+          <name>U_LIGHT0_POSITION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a84ff0affaab6ef9c660c77c87c9757ad" prot="private">
+          <name>U_LIGHT0_COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a0c4561acb5c40742cfd395175efb9337" prot="private">
+          <name>U_LIGHT0_POWER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ab21c54cc63d275ca3e922459de33a8d0" prot="private">
+          <name>U_LIGHT0_KC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ab8fcc31895578f3c6d70a051ad468ac5" prot="private">
+          <name>U_LIGHT0_KL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a131e7cf98c7cd8db0c6e3bae97cd614d" prot="private">
+          <name>U_LIGHT0_KQ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a422e92d6284691d7ad449957a49e813d" prot="private">
+          <name>U_LIGHTENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a664fc284bb891ece6d471dded16e0573" prot="private">
+          <name>U_LIGHT0_TYPE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ad1e851159424ad4efee309f8845e4c82" prot="private">
+          <name>U_LIGHT0_SPOTDIRECTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a001c34c9c84ea4870be55c922fbf732f" prot="private">
+          <name>U_LIGHT0_COSCUTOFF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a2a23fe70a6ebf0368da54213ab4b11fb" prot="private">
+          <name>U_LIGHT0_COSINNER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a1b1a3b91a1ada71d9485ccfbecafc439" prot="private">
+          <name>U_LIGHT0_EXPONENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a61c26e6192b5e5d07395e9bd21fad710" prot="private">
+          <name>U_NUMLIGHTS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a87cece195eb01890f40df8bf53b70df2" prot="private">
+          <name>U_COLOR_TEXTURE_ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a9289bf69c6b3b5aac7a8fde25215c712" prot="private">
+          <name>U_COLOR_TEXTURE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530aa54247488566ef329ceb39c9257ab9af" prot="private">
+          <name>U_TEXT_ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530af1b8626482dd38166765e9e3171504b6" prot="private">
+          <name>U_TEXT_COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a76c9c44910ed8c86b5e3e73f5a586eeb" prot="private">
+          <name>U_TOTAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="23" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="22" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classCutSceneOne_1aa7048bb5a6c7612f4863cec127f67e62" prot="public" static="no" mutable="no">
+        <type><ref refid="classCamera3" kindref="compound">Camera3</ref></type>
+        <definition>Camera3 CutSceneOne::camera</definition>
+        <argsstring></argsstring>
+        <name>camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="62" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">Init</referencedby>
+        <referencedby refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" compoundref="CutSceneOne_8cpp" startline="226" endline="262">Render</referencedby>
+        <referencedby refid="classCutSceneOne_1a3bde2eed67da74e3c33e3b4e10542438" compoundref="CutSceneOne_8cpp" startline="125" endline="180">Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classCutSceneOne_1a0d7564db4c3b8266ae25c1ac410eb94f" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned CutSceneOne::m_vertexArrayID</definition>
+        <argsstring></argsstring>
+        <name>m_vertexArrayID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="69" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1ae6812fe3cd128eee619f2a5dd13dbb80" compoundref="CutSceneOne_8cpp" startline="264" endline="268">Exit</referencedby>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCutSceneOne_1aeca6f8df86f0d88a3dc6e751d327d7d2" prot="private" static="no" mutable="no">
+        <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+        <definition>Mesh* CutSceneOne::meshList[NUM_GEOMETRY]</definition>
+        <argsstring>[NUM_GEOMETRY]</argsstring>
+        <name>meshList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="70" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">Init</referencedby>
+        <referencedby refid="classCutSceneOne_1a4e2396896a5804e3f041a3071ec7a84c" compoundref="CutSceneOneRenders_8cpp" startline="8" endline="23">RenderCutSceneOne</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCutSceneOne_1ae58cced96bc78981b57e4d1a56e4ca43" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned CutSceneOne::m_programID</definition>
+        <argsstring></argsstring>
+        <name>m_programID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="72" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1ae6812fe3cd128eee619f2a5dd13dbb80" compoundref="CutSceneOne_8cpp" startline="264" endline="268">Exit</referencedby>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCutSceneOne_1ae282a1947ab7d177c7bcf0074527eb38" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned CutSceneOne::m_parameters[U_TOTAL]</definition>
+        <argsstring>[U_TOTAL]</argsstring>
+        <name>m_parameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="73" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="73" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">Init</referencedby>
+        <referencedby refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" compoundref="CutSceneOne_8cpp" startline="226" endline="262">Render</referencedby>
+        <referencedby refid="classCutSceneOne_1a37dadb6ea7febef48e522f82a9f9cb26" compoundref="CutSceneOne_8cpp" startline="182" endline="224">RenderMesh</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCutSceneOne_1a551d89cf467e61c0ccbc5a55180cb222" prot="private" static="no" mutable="no">
+        <type><ref refid="classAnimation" kindref="compound">Animation</ref></type>
+        <definition>Animation CutSceneOne::anima</definition>
+        <argsstring></argsstring>
+        <name>anima</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="75" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="75" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1a4e2396896a5804e3f041a3071ec7a84c" compoundref="CutSceneOneRenders_8cpp" startline="8" endline="23">RenderCutSceneOne</referencedby>
+        <referencedby refid="classCutSceneOne_1a3bde2eed67da74e3c33e3b4e10542438" compoundref="CutSceneOne_8cpp" startline="125" endline="180">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS CutSceneOne::modelStack</definition>
+        <argsstring></argsstring>
+        <name>modelStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="77" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" compoundref="CutSceneOne_8cpp" startline="226" endline="262">Render</referencedby>
+        <referencedby refid="classCutSceneOne_1a4e2396896a5804e3f041a3071ec7a84c" compoundref="CutSceneOneRenders_8cpp" startline="8" endline="23">RenderCutSceneOne</referencedby>
+        <referencedby refid="classCutSceneOne_1a37dadb6ea7febef48e522f82a9f9cb26" compoundref="CutSceneOne_8cpp" startline="182" endline="224">RenderMesh</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCutSceneOne_1a9050bb794c8b59da1bb2e3316637e19b" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS CutSceneOne::viewStack</definition>
+        <argsstring></argsstring>
+        <name>viewStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="77" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" compoundref="CutSceneOne_8cpp" startline="226" endline="262">Render</referencedby>
+        <referencedby refid="classCutSceneOne_1a37dadb6ea7febef48e522f82a9f9cb26" compoundref="CutSceneOne_8cpp" startline="182" endline="224">RenderMesh</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCutSceneOne_1a716803a2964ed15a1dcf317cde272894" prot="private" static="no" mutable="no">
+        <type><ref refid="classMS" kindref="compound">MS</ref></type>
+        <definition>MS CutSceneOne::projectionStack</definition>
+        <argsstring></argsstring>
+        <name>projectionStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="77" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">Init</referencedby>
+        <referencedby refid="classCutSceneOne_1a37dadb6ea7febef48e522f82a9f9cb26" compoundref="CutSceneOne_8cpp" startline="182" endline="224">RenderMesh</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCutSceneOne_1ad69c99af12afd26d70314ff107f98d78" prot="private" static="no" mutable="no">
+        <type><ref refid="structLight" kindref="compound">Light</ref></type>
+        <definition>Light CutSceneOne::light[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>light</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="79" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="79" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">Init</referencedby>
+        <referencedby refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" compoundref="CutSceneOne_8cpp" startline="226" endline="262">Render</referencedby>
+        <referencedby refid="classCutSceneOne_1a3bde2eed67da74e3c33e3b4e10542438" compoundref="CutSceneOne_8cpp" startline="125" endline="180">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCutSceneOne_1a36bc809ff71733339ba476f6b31646af" prot="private" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 CutSceneOne::start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="81" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCutSceneOne_1a4a4b66bceb2acab3a66c8a07cb07b856" prot="private" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 CutSceneOne::end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="82" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCutSceneOne_1a11aefd7cd12e0b0ebbd8aa56172d0c69" prot="private" static="no" mutable="no">
+        <type><ref refid="classGlobalVariables" kindref="compound">GlobalVariables</ref></type>
+        <definition>GlobalVariables CutSceneOne::Variables</definition>
+        <argsstring></argsstring>
+        <name>Variables</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="83" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCutSceneOne_1a54f022df3eb7573c81ca053b452142b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CutSceneOne::CutSceneOne</definition>
+        <argsstring>()</argsstring>
+        <name>CutSceneOne</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="53" column="1" bodyfile="ComGraphics/Source/CutSceneOne.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classCutSceneOne_1a7f3fc6a1bc769243167f4fc5f8e0318d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CutSceneOne::~CutSceneOne</definition>
+        <argsstring>()</argsstring>
+        <name>~CutSceneOne</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="54" column="1" bodyfile="ComGraphics/Source/CutSceneOne.cpp" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CutSceneOne::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <reimplements refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="56" column="1" bodyfile="ComGraphics/Source/CutSceneOne.cpp" bodystart="24" bodyend="114"/>
+        <references refid="classCutSceneOne_1aa7048bb5a6c7612f4863cec127f67e62" compoundref="CutSceneOne_8h" startline="62">camera</references>
+        <references refid="structLight_1ad7a168d26aed1bf7cca1a8d8e6f8ada4" compoundref="Light_8h" startline="8">Light::color</references>
+        <references refid="structLight_1af4ce5bbfbf33af96db9b8a222d073298" compoundref="Light_8h" startline="27">Light::cosCutoff</references>
+        <references refid="structLight_1a8c843f5d1af5c6f4f4928e9906f5d0db" compoundref="Light_8h" startline="28">Light::cosInner</references>
+        <references refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" compoundref="MyMath_8h" startline="49" endline="52">Math::DegreeToRadian</references>
+        <references refid="structLight_1a4eb4fd0f025fb66d1934675ffff0e661" compoundref="Light_8h" startline="29">Light::exponent</references>
+        <references refid="classMeshBuilder_1aba87550d7726a610c911fbb977fd3575" compoundref="MeshBuilder_8cpp" startline="19" endline="45">MeshBuilder::GenerateOBJ</references>
+        <references refid="classCutSceneOne_1a3617f23299052dbd25854296ee3c9eb9a839c15df64723ddfe904438d8f1ac6a9" compoundref="CutSceneOne_8h" startline="17">GEO_MAINDOORLEFT</references>
+        <references refid="classCutSceneOne_1a3617f23299052dbd25854296ee3c9eb9ae49b5de7588e23a9b25e8b3c7c896158" compoundref="CutSceneOne_8h" startline="18">GEO_MAINDOORRIGHT</references>
+        <references refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="17" endline="30">Camera3::Init</references>
+        <references refid="structLight_1a888f11000d2baf1228d9e5c8d8c90fcb" compoundref="Light_8h" startline="10">Light::kC</references>
+        <references refid="structLight_1ab3918c449fb40fa5c6cc5283f2c9687d" compoundref="Light_8h" startline="10">Light::kL</references>
+        <references refid="structLight_1a79c8e47de58f131ff5403fc2d823cc21" compoundref="Light_8h" startline="10">Light::kQ</references>
+        <references refid="classCutSceneOne_1ad69c99af12afd26d70314ff107f98d78" compoundref="CutSceneOne_8h" startline="79">light</references>
+        <references refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba69dd6d65ad12b410709ae74c8d9b1e16" compoundref="Light_8h" startline="23">Light::LIGHT_SPOT</references>
+        <references refid="classMS_1a86606fe9f575ccb747d77195c8aefdaf" compoundref="MatrixStack_8cpp" startline="98" endline="100">MS::LoadMatrix</references>
+        <references refid="shader_8cpp_1a833f10cca6a76fe34ae9efa23ac5e73c" compoundref="shader_8cpp" startline="16" endline="107">LoadShaders</references>
+        <references refid="LoadTGA_8cpp_1a459a80ca6de67a1e3493bfb66ae317e4" compoundref="LoadTGA_8cpp" startline="8" endline="68">LoadTGA</references>
+        <references refid="classCutSceneOne_1ae282a1947ab7d177c7bcf0074527eb38" compoundref="CutSceneOne_8h" startline="73">m_parameters</references>
+        <references refid="classCutSceneOne_1ae58cced96bc78981b57e4d1a56e4ca43" compoundref="CutSceneOne_8h" startline="72">m_programID</references>
+        <references refid="classCutSceneOne_1a0d7564db4c3b8266ae25c1ac410eb94f" compoundref="CutSceneOne_8h" startline="69">m_vertexArrayID</references>
+        <references refid="classCutSceneOne_1aeca6f8df86f0d88a3dc6e751d327d7d2" compoundref="CutSceneOne_8h" startline="70">meshList</references>
+        <references refid="structLight_1afeb738db41e987719e359166ef93314f" compoundref="Light_8h" startline="7">Light::position</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
+        <references refid="structLight_1a6c4c401141c4cdb3b9b9b3bab7dd6fbb" compoundref="Light_8h" startline="9">Light::power</references>
+        <references refid="classCutSceneOne_1a716803a2964ed15a1dcf317cde272894" compoundref="CutSceneOne_8h" startline="77">projectionStack</references>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
+        <references refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="29" endline="29">Color::Set</references>
+        <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
+        <references refid="classMtx44_1ac6e6521111d78ff36d539bf111a902c6" compoundref="Mtx44_8cpp" startline="466" endline="472">Mtx44::SetToPerspective</references>
+        <references refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" compoundref="Light_8h" startline="26">Light::spotDirection</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="structLight_1a5dcdb101afc28979b5aaff0a2ec79ba5" compoundref="Light_8h" startline="25">Light::type</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a9289bf69c6b3b5aac7a8fde25215c712" compoundref="CutSceneOne_8h" startline="47">U_COLOR_TEXTURE</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a87cece195eb01890f40df8bf53b70df2" compoundref="CutSceneOne_8h" startline="46">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a84ff0affaab6ef9c660c77c87c9757ad" compoundref="CutSceneOne_8h" startline="33">U_LIGHT0_COLOR</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a001c34c9c84ea4870be55c922fbf732f" compoundref="CutSceneOne_8h" startline="41">U_LIGHT0_COSCUTOFF</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a2a23fe70a6ebf0368da54213ab4b11fb" compoundref="CutSceneOne_8h" startline="42">U_LIGHT0_COSINNER</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a1b1a3b91a1ada71d9485ccfbecafc439" compoundref="CutSceneOne_8h" startline="43">U_LIGHT0_EXPONENT</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ab21c54cc63d275ca3e922459de33a8d0" compoundref="CutSceneOne_8h" startline="35">U_LIGHT0_KC</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ab8fcc31895578f3c6d70a051ad468ac5" compoundref="CutSceneOne_8h" startline="36">U_LIGHT0_KL</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a131e7cf98c7cd8db0c6e3bae97cd614d" compoundref="CutSceneOne_8h" startline="37">U_LIGHT0_KQ</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a94a9a0d453223348263e03ffec3387ce" compoundref="CutSceneOne_8h" startline="32">U_LIGHT0_POSITION</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a0c4561acb5c40742cfd395175efb9337" compoundref="CutSceneOne_8h" startline="34">U_LIGHT0_POWER</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ad1e851159424ad4efee309f8845e4c82" compoundref="CutSceneOne_8h" startline="40">U_LIGHT0_SPOTDIRECTION</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a664fc284bb891ece6d471dded16e0573" compoundref="CutSceneOne_8h" startline="39">U_LIGHT0_TYPE</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a422e92d6284691d7ad449957a49e813d" compoundref="CutSceneOne_8h" startline="38">U_LIGHTENABLED</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a2afa503646f85e5aa6dfa859a464d8a7" compoundref="CutSceneOne_8h" startline="27">U_MATERIAL_AMBIENT</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ab661e8ed0aaab937313e6a7ecad88fef" compoundref="CutSceneOne_8h" startline="28">U_MATERIAL_DIFFUSE</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a091831e9411194433b3e7364ef28e4c3" compoundref="CutSceneOne_8h" startline="30">U_MATERIAL_SHININESS</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a4eeac688e19ee93d013ef33166466e37" compoundref="CutSceneOne_8h" startline="29">U_MATERIAL_SPECULAR</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ac071730bab36ac839af7f3015fce38e5" compoundref="CutSceneOne_8h" startline="25">U_MODELVIEW</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a29be686293253cfe6269ef843135e11e" compoundref="CutSceneOne_8h" startline="26">U_MODELVIEW_INVERSE_TRANSPOSE</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530adbd51e571a33d1660bfb439f87509eb1" compoundref="CutSceneOne_8h" startline="24">U_MVP</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a61c26e6192b5e5d07395e9bd21fad710" compoundref="CutSceneOne_8h" startline="45">U_NUMLIGHTS</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530af1b8626482dd38166765e9e3171504b6" compoundref="CutSceneOne_8h" startline="49">U_TEXT_COLOR</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530aa54247488566ef329ceb39c9257ab9af" compoundref="CutSceneOne_8h" startline="48">U_TEXT_ENABLED</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="classCutSceneOne_1a3bde2eed67da74e3c33e3b4e10542438" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CutSceneOne::Update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>Update</name>
+        <reimplements refid="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91">Update</reimplements>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="57" column="1" bodyfile="ComGraphics/Source/CutSceneOne.cpp" bodystart="125" bodyend="180"/>
+        <references refid="classCutSceneOne_1a551d89cf467e61c0ccbc5a55180cb222" compoundref="CutSceneOne_8h" startline="75">anima</references>
+        <references refid="classCutSceneOne_1aa7048bb5a6c7612f4863cec127f67e62" compoundref="CutSceneOne_8h" startline="62">camera</references>
+        <references refid="classAnimation_1a7e3a0391a42b72e15470f22ba8147d7d" compoundref="OBJAnimation_8h" startline="84">Animation::cameramove2</references>
+        <references refid="classAnimation_1a190caa048758c24990b887f623176bb2" compoundref="OBJAnimation_8h" startline="85">Animation::cameramove3</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="42" endline="45">Application::IsKeyPressed</references>
+        <references refid="classCutSceneOne_1ad69c99af12afd26d70314ff107f98d78" compoundref="CutSceneOne_8h" startline="79">light</references>
+        <references refid="classAnimation_1ac04ef292ab6339da0094a83a5d54b1d0" compoundref="OBJAnimation_8h" startline="70">Animation::OpenDoorL</references>
+        <references refid="classAnimation_1a75aa36d13db6dd233614771928296cd1" compoundref="OBJAnimation_8cpp" startline="101" endline="145">Animation::OpenMainDoor</references>
+        <references refid="structLight_1afeb738db41e987719e359166ef93314f" compoundref="Light_8h" startline="7">Light::position</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
+        <references refid="classApplication_1a56085045bcb5006289240a263f1bab4b" compoundref="Application_8cpp" startline="214" endline="218">Application::SceneLevel1A</references>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
+        <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
+        <references refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" compoundref="Light_8h" startline="26">Light::spotDirection</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CutSceneOne::Render</definition>
+        <argsstring>()</argsstring>
+        <name>Render</name>
+        <reimplements refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Render</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="58" column="1" bodyfile="ComGraphics/Source/CutSceneOne.cpp" bodystart="226" bodyend="262"/>
+        <references refid="classCutSceneOne_1aa7048bb5a6c7612f4863cec127f67e62" compoundref="CutSceneOne_8h" startline="62">camera</references>
+        <references refid="classCutSceneOne_1ad69c99af12afd26d70314ff107f98d78" compoundref="CutSceneOne_8h" startline="79">light</references>
+        <references refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba9bf1f515ab954cb3379615aab42f30b6" compoundref="Light_8h" startline="22">Light::LIGHT_DIRECTIONAL</references>
+        <references refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba69dd6d65ad12b410709ae74c8d9b1e16" compoundref="Light_8h" startline="23">Light::LIGHT_SPOT</references>
+        <references refid="classMS_1a77c5f7e4a21ea48dcf902a7ff6824a11" compoundref="MatrixStack_8cpp" startline="83" endline="87">MS::LoadIdentity</references>
+        <references refid="classMS_1a2638cd3249260877cc31329978fb6b38" compoundref="MatrixStack_8cpp" startline="224" endline="231">MS::LookAt</references>
+        <references refid="classCutSceneOne_1ae282a1947ab7d177c7bcf0074527eb38" compoundref="CutSceneOne_8h" startline="73">m_parameters</references>
+        <references refid="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" compoundref="CutSceneOne_8h" startline="77">modelStack</references>
+        <references refid="structLight_1afeb738db41e987719e359166ef93314f" compoundref="Light_8h" startline="7">Light::position</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
+        <references refid="classCutSceneOne_1a4e2396896a5804e3f041a3071ec7a84c" compoundref="CutSceneOneRenders_8cpp" startline="8" endline="23">RenderCutSceneOne</references>
+        <references refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" compoundref="Light_8h" startline="26">Light::spotDirection</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a94a9a0d453223348263e03ffec3387ce" compoundref="CutSceneOne_8h" startline="32">U_LIGHT0_POSITION</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ad1e851159424ad4efee309f8845e4c82" compoundref="CutSceneOne_8h" startline="40">U_LIGHT0_SPOTDIRECTION</references>
+        <references refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" compoundref="Camera_8h" startline="11">Camera::up</references>
+        <references refid="classCutSceneOne_1a9050bb794c8b59da1bb2e3316637e19b" compoundref="CutSceneOne_8h" startline="77">viewStack</references>
+        <references refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" compoundref="Vertex_8h" startline="20">Position::x</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structPosition_1a54a6182b5f7539295b32255808897d3f" compoundref="Vertex_8h" startline="20">Position::y</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" compoundref="Vertex_8h" startline="20">Position::z</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="classCutSceneOne_1aa4216304c1dfa4ddc498dd63a93e11ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CutSceneOne::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="59" column="1" bodyfile="ComGraphics/Source/CutSceneOne.cpp" bodystart="119" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classCutSceneOne_1ae6812fe3cd128eee619f2a5dd13dbb80" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CutSceneOne::Exit</definition>
+        <argsstring>()</argsstring>
+        <name>Exit</name>
+        <reimplements refid="classScene_1aae8e24654ef98c79961c2b804b12852c">Exit</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="60" column="1" bodyfile="ComGraphics/Source/CutSceneOne.cpp" bodystart="264" bodyend="268"/>
+        <references refid="classCutSceneOne_1ae58cced96bc78981b57e4d1a56e4ca43" compoundref="CutSceneOne_8h" startline="72">m_programID</references>
+        <references refid="classCutSceneOne_1a0d7564db4c3b8266ae25c1ac410eb94f" compoundref="CutSceneOne_8h" startline="69">m_vertexArrayID</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classCutSceneOne_1a37dadb6ea7febef48e522f82a9f9cb26" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CutSceneOne::RenderMesh</definition>
+        <argsstring>(Mesh *mesh, bool enableLight)</argsstring>
+        <name>RenderMesh</name>
+        <param>
+          <type><ref refid="classMesh" kindref="compound">Mesh</ref> *</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enableLight</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="64" column="1" bodyfile="ComGraphics/Source/CutSceneOne.cpp" bodystart="182" bodyend="224"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="classMtx44_1aac1ba21ddfc5f3c24baa4f58d9c5c256" compoundref="Mtx44_8cpp" startline="139" endline="195">Mtx44::GetInverse</references>
+        <references refid="classMtx44_1aebb16a0329c5237e314af0d75d8081fd" compoundref="Mtx44_8cpp" startline="123" endline="127">Mtx44::GetTranspose</references>
+        <references refid="structMaterial_1ab3819b3151cbf3ac1892195ab091e3b8" compoundref="Material_8h" startline="13">Material::kAmbient</references>
+        <references refid="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" compoundref="Material_8h" startline="14">Material::kDiffuse</references>
+        <references refid="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" compoundref="Material_8h" startline="16">Material::kShininess</references>
+        <references refid="structMaterial_1a97cc0bf34b02c758b198d12dd24e96e2" compoundref="Material_8h" startline="15">Material::kSpecular</references>
+        <references refid="classCutSceneOne_1ae282a1947ab7d177c7bcf0074527eb38" compoundref="CutSceneOne_8h" startline="73">m_parameters</references>
+        <references refid="classMesh_1a3368c3bc60dd176e522df1542b764847" compoundref="Mesh_8h" startline="36">Mesh::material</references>
+        <references refid="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" compoundref="CutSceneOne_8h" startline="77">modelStack</references>
+        <references refid="classCutSceneOne_1a716803a2964ed15a1dcf317cde272894" compoundref="CutSceneOne_8h" startline="77">projectionStack</references>
+        <references refid="structComponent_1a490db57cde183ef5a233b6ff3386ef6f" compoundref="Material_8h" startline="6">Component::r</references>
+        <references refid="classMesh_1a75e66bcd90c09492676a4cfe5b23c3af" compoundref="Mesh_8cpp" startline="43" endline="80">Mesh::Render</references>
+        <references refid="classMesh_1a7abd957a6487641e00c8fb855397bccd" compoundref="Mesh_8h" startline="34">Mesh::textureID</references>
+        <references refid="classMS_1a21291d7fb488f63c589bdc9bd620ba58" compoundref="MatrixStack_8cpp" startline="42" endline="44">MS::Top</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a9289bf69c6b3b5aac7a8fde25215c712" compoundref="CutSceneOne_8h" startline="47">U_COLOR_TEXTURE</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a87cece195eb01890f40df8bf53b70df2" compoundref="CutSceneOne_8h" startline="46">U_COLOR_TEXTURE_ENABLED</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a422e92d6284691d7ad449957a49e813d" compoundref="CutSceneOne_8h" startline="38">U_LIGHTENABLED</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a2afa503646f85e5aa6dfa859a464d8a7" compoundref="CutSceneOne_8h" startline="27">U_MATERIAL_AMBIENT</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ab661e8ed0aaab937313e6a7ecad88fef" compoundref="CutSceneOne_8h" startline="28">U_MATERIAL_DIFFUSE</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a091831e9411194433b3e7364ef28e4c3" compoundref="CutSceneOne_8h" startline="30">U_MATERIAL_SHININESS</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a4eeac688e19ee93d013ef33166466e37" compoundref="CutSceneOne_8h" startline="29">U_MATERIAL_SPECULAR</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ac071730bab36ac839af7f3015fce38e5" compoundref="CutSceneOne_8h" startline="25">U_MODELVIEW</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a29be686293253cfe6269ef843135e11e" compoundref="CutSceneOne_8h" startline="26">U_MODELVIEW_INVERSE_TRANSPOSE</references>
+        <references refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530adbd51e571a33d1660bfb439f87509eb1" compoundref="CutSceneOne_8h" startline="24">U_MVP</references>
+        <references refid="classCutSceneOne_1a9050bb794c8b59da1bb2e3316637e19b" compoundref="CutSceneOne_8h" startline="77">viewStack</references>
+        <referencedby refid="classCutSceneOne_1a4e2396896a5804e3f041a3071ec7a84c" compoundref="CutSceneOneRenders_8cpp" startline="8" endline="23">RenderCutSceneOne</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCutSceneOne_1a4e2396896a5804e3f041a3071ec7a84c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CutSceneOne::RenderCutSceneOne</definition>
+        <argsstring>()</argsstring>
+        <name>RenderCutSceneOne</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/CutSceneOne.h" line="67" column="1" bodyfile="ComGraphics/Source/CutSceneOneRenders.cpp" bodystart="8" bodyend="23"/>
+        <references refid="classCutSceneOne_1a551d89cf467e61c0ccbc5a55180cb222" compoundref="CutSceneOne_8h" startline="75">anima</references>
+        <references refid="classCutSceneOne_1a3617f23299052dbd25854296ee3c9eb9a839c15df64723ddfe904438d8f1ac6a9" compoundref="CutSceneOne_8h" startline="17">GEO_MAINDOORLEFT</references>
+        <references refid="classCutSceneOne_1a3617f23299052dbd25854296ee3c9eb9ae49b5de7588e23a9b25e8b3c7c896158" compoundref="CutSceneOne_8h" startline="18">GEO_MAINDOORRIGHT</references>
+        <references refid="classCutSceneOne_1aeca6f8df86f0d88a3dc6e751d327d7d2" compoundref="CutSceneOne_8h" startline="70">meshList</references>
+        <references refid="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" compoundref="CutSceneOne_8h" startline="77">modelStack</references>
+        <references refid="classAnimation_1ac04ef292ab6339da0094a83a5d54b1d0" compoundref="OBJAnimation_8h" startline="70">Animation::OpenDoorL</references>
+        <references refid="classAnimation_1a815d154110f2bc075129e2689f8d54f8" compoundref="OBJAnimation_8h" startline="72">Animation::OpenDoorR</references>
+        <references refid="classMS_1aac22e39d0ac437fcb85403a9f0a7a25f" compoundref="MatrixStack_8cpp" startline="52" endline="54">MS::PopMatrix</references>
+        <references refid="classMS_1a9fb4fff5036f3f197b893f9a579c97b2" compoundref="MatrixStack_8cpp" startline="62" endline="64">MS::PushMatrix</references>
+        <references refid="classCutSceneOne_1a37dadb6ea7febef48e522f82a9f9cb26" compoundref="CutSceneOne_8cpp" startline="182" endline="224">RenderMesh</references>
+        <references refid="classMS_1a6ce592114042b920b648bca5519690cd" compoundref="MatrixStack_8cpp" startline="130" endline="134">MS::Rotate</references>
+        <references refid="classMS_1a52109795de960e24663b315e9128533f" compoundref="MatrixStack_8cpp" startline="149" endline="153">MS::Scale</references>
+        <references refid="classMS_1a7e94a35ce566fe3ec49c92b6c4bb663a" compoundref="MatrixStack_8cpp" startline="169" endline="173">MS::Translate</references>
+        <referencedby refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" compoundref="CutSceneOne_8cpp" startline="226" endline="262">Render</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="718">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="717">
+        <label>CutSceneOne</label>
+        <link refid="classCutSceneOne"/>
+        <childnode refid="718" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="726">
+        <label>misc</label>
+        <link refid="classmisc"/>
+        <childnode refid="724" relation="usage">
+          <edgelabel>camX</edgelabel>
+          <edgelabel>camY</edgelabel>
+          <edgelabel>camZ</edgelabel>
+        </childnode>
+      </node>
+      <node id="730">
+        <label>Position</label>
+        <link refid="structPosition"/>
+        <childnode refid="724" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+      <node id="735">
+        <label>stack&lt; Mtx44 &gt;</label>
+      </node>
+      <node id="739">
+        <label>Component</label>
+        <link refid="structComponent"/>
+        <childnode refid="724" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="728">
+        <label>LIGHT_TYPE</label>
+      </node>
+      <node id="737">
+        <label>Mesh</label>
+        <link refid="classMesh"/>
+        <childnode refid="738" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+        <childnode refid="740" relation="usage">
+          <edgelabel>mode</edgelabel>
+        </childnode>
+        <childnode refid="741" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="742" relation="usage">
+          <edgelabel>colorBuffer</edgelabel>
+          <edgelabel>textureID</edgelabel>
+          <edgelabel>indexBuffer</edgelabel>
+          <edgelabel>indexSize</edgelabel>
+          <edgelabel>vertexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="736">
+        <label>Animation</label>
+        <link refid="classAnimation"/>
+        <childnode refid="732" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+        <childnode refid="724" relation="usage">
+          <edgelabel>QPDOOR1_BOT</edgelabel>
+          <edgelabel>AsteroidMoveS</edgelabel>
+          <edgelabel>QPDOOR5_TOP</edgelabel>
+          <edgelabel>QPDOOR2_BOT</edgelabel>
+          <edgelabel>DoorSlideTop_Boss</edgelabel>
+          <edgelabel>DoorSlideTop_2</edgelabel>
+          <edgelabel>cam_pos_X</edgelabel>
+          <edgelabel>DoorSlideTop_3</edgelabel>
+          <edgelabel>QPDOOR3_TOP</edgelabel>
+          <edgelabel>DoorSlideTop_4</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="722" relation="usage">
+          <edgelabel>toSlideDoorTop2</edgelabel>
+          <edgelabel>cameramove3</edgelabel>
+          <edgelabel>QP_TOPDOOR1</edgelabel>
+          <edgelabel>toSlideDoorBtm_Boss</edgelabel>
+          <edgelabel>toSlideDoorTop3</edgelabel>
+          <edgelabel>QP_TOPDOOR2</edgelabel>
+          <edgelabel>toSlideDoorTop4</edgelabel>
+          <edgelabel>Collapse</edgelabel>
+          <edgelabel>toOpenDoorL</edgelabel>
+          <edgelabel>QP_TOPDOOR3</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+      <node id="723">
+        <label>GlobalVariables</label>
+        <link refid="classGlobalVariables"/>
+        <childnode refid="724" relation="usage">
+          <edgelabel>f_SwitchRotateTwo</edgelabel>
+          <edgelabel>f_redScreenTimer</edgelabel>
+          <edgelabel>f_SwitchRotateOne</edgelabel>
+          <edgelabel>f_savePointRotateY</edgelabel>
+          <edgelabel>f_SwitchRotateThree</edgelabel>
+          <edgelabel>RotateX</edgelabel>
+          <edgelabel>f_rotatingTool</edgelabel>
+          <edgelabel>f_Worldspin</edgelabel>
+          <edgelabel>f_SuitcaseRotateY</edgelabel>
+          <edgelabel>f_SwitchDebounce</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="722" relation="usage">
+          <edgelabel>b_SwitchAnimate</edgelabel>
+          <edgelabel>start_Animation</edgelabel>
+          <edgelabel>b_LockSwingDebounce</edgelabel>
+          <edgelabel>b_LockSwing</edgelabel>
+        </childnode>
+      </node>
+      <node id="740">
+        <label>DRAW_MODE</label>
+      </node>
+      <node id="733">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+        <childnode refid="729" relation="usage">
+          <edgelabel>target</edgelabel>
+          <edgelabel>position</edgelabel>
+          <edgelabel>up</edgelabel>
+        </childnode>
+      </node>
+      <node id="741">
+        <label>string</label>
+      </node>
+      <node id="738">
+        <label>Material</label>
+        <link refid="structMaterial"/>
+        <childnode refid="724" relation="usage">
+          <edgelabel>kShininess</edgelabel>
+        </childnode>
+        <childnode refid="739" relation="usage">
+          <edgelabel>kDiffuse</edgelabel>
+          <edgelabel>kAmbient</edgelabel>
+          <edgelabel>kSpecular</edgelabel>
+        </childnode>
+      </node>
+      <node id="724">
+        <label>float</label>
+      </node>
+      <node id="734">
+        <label>MS</label>
+        <link refid="classMS"/>
+        <childnode refid="735" relation="usage">
+          <edgelabel>ms</edgelabel>
+        </childnode>
+      </node>
+      <node id="720">
+        <label>Scene</label>
+        <link refid="classScene"/>
+        <childnode refid="721" relation="usage">
+          <edgelabel>Switches</edgelabel>
+        </childnode>
+        <childnode refid="723" relation="usage">
+          <edgelabel>Variables</edgelabel>
+        </childnode>
+        <childnode refid="725" relation="usage">
+          <edgelabel>Tool</edgelabel>
+        </childnode>
+        <childnode refid="726" relation="usage">
+          <edgelabel>Misc</edgelabel>
+        </childnode>
+      </node>
+      <node id="721">
+        <label>SwitchLightPuzzle</label>
+        <link refid="classSwitchLightPuzzle"/>
+        <childnode refid="722" relation="usage">
+          <edgelabel>b_PuzzleTwo</edgelabel>
+          <edgelabel>b_PuzzleOne</edgelabel>
+        </childnode>
+      </node>
+      <node id="727">
+        <label>Light</label>
+        <link refid="structLight"/>
+        <childnode refid="728" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="724" relation="usage">
+          <edgelabel>exponent</edgelabel>
+          <edgelabel>kL</edgelabel>
+          <edgelabel>cosCutoff</edgelabel>
+          <edgelabel>cosInner</edgelabel>
+          <edgelabel>kQ</edgelabel>
+          <edgelabel>kC</edgelabel>
+          <edgelabel>power</edgelabel>
+        </childnode>
+        <childnode refid="729" relation="usage">
+          <edgelabel>spotDirection</edgelabel>
+        </childnode>
+        <childnode refid="730" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+        <childnode refid="731" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+      </node>
+      <node id="732">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="733" relation="public-inheritance">
+        </childnode>
+        <childnode refid="724" relation="usage">
+          <edgelabel>rotationX</edgelabel>
+          <edgelabel>rotationY</edgelabel>
+          <edgelabel>MarginofError</edgelabel>
+        </childnode>
+        <childnode refid="729" relation="usage">
+          <edgelabel>defaultTarget</edgelabel>
+          <edgelabel>defaultPosition</edgelabel>
+          <edgelabel>right</edgelabel>
+          <edgelabel>view</edgelabel>
+          <edgelabel>defaultUp</edgelabel>
+        </childnode>
+      </node>
+      <node id="731">
+        <label>Color</label>
+        <link refid="structColor"/>
+        <childnode refid="724" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="742">
+        <label>unsigned</label>
+      </node>
+      <node id="722">
+        <label>bool</label>
+      </node>
+      <node id="719">
+        <label>CutSceneOne</label>
+        <link refid="classCutSceneOne"/>
+        <childnode refid="720" relation="public-inheritance">
+        </childnode>
+        <childnode refid="727" relation="usage">
+          <edgelabel>light</edgelabel>
+        </childnode>
+        <childnode refid="723" relation="usage">
+          <edgelabel>Variables</edgelabel>
+        </childnode>
+        <childnode refid="732" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+        <childnode refid="734" relation="usage">
+          <edgelabel>projectionStack</edgelabel>
+          <edgelabel>modelStack</edgelabel>
+          <edgelabel>viewStack</edgelabel>
+        </childnode>
+        <childnode refid="729" relation="usage">
+          <edgelabel>end</edgelabel>
+          <edgelabel>start</edgelabel>
+        </childnode>
+        <childnode refid="736" relation="usage">
+          <edgelabel>anima</edgelabel>
+        </childnode>
+        <childnode refid="737" relation="usage">
+          <edgelabel>meshList</edgelabel>
+        </childnode>
+        <childnode refid="742" relation="usage">
+          <edgelabel>m_parameters</edgelabel>
+          <edgelabel>m_programID</edgelabel>
+          <edgelabel>m_vertexArrayID</edgelabel>
+        </childnode>
+      </node>
+      <node id="725">
+        <label>ToolType</label>
+      </node>
+      <node id="729">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="724" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ComGraphics/Source/CutSceneOne.h" line="14" column="1" bodyfile="ComGraphics/Source/CutSceneOne.h" bodystart="13" bodyend="86"/>
+    <listofallmembers>
+      <member refid="classCutSceneOne_1a551d89cf467e61c0ccbc5a55180cb222" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>anima</name></member>
+      <member refid="classCutSceneOne_1aa7048bb5a6c7612f4863cec127f67e62" prot="public" virt="non-virtual"><scope>CutSceneOne</scope><name>camera</name></member>
+      <member refid="classCutSceneOne_1a54f022df3eb7573c81ca053b452142b9" prot="public" virt="non-virtual"><scope>CutSceneOne</scope><name>CutSceneOne</name></member>
+      <member refid="classCutSceneOne_1a4a4b66bceb2acab3a66c8a07cb07b856" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>end</name></member>
+      <member refid="classCutSceneOne_1ae6812fe3cd128eee619f2a5dd13dbb80" prot="public" virt="virtual"><scope>CutSceneOne</scope><name>Exit</name></member>
+      <member refid="classCutSceneOne_1a3617f23299052dbd25854296ee3c9eb9a839c15df64723ddfe904438d8f1ac6a9" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>GEO_MAINDOORLEFT</name></member>
+      <member refid="classCutSceneOne_1a3617f23299052dbd25854296ee3c9eb9ae49b5de7588e23a9b25e8b3c7c896158" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>GEO_MAINDOORRIGHT</name></member>
+      <member refid="classCutSceneOne_1a3617f23299052dbd25854296ee3c9eb9" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>GEOMETRY_TYPE</name></member>
+      <member refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" prot="public" virt="virtual"><scope>CutSceneOne</scope><name>Init</name></member>
+      <member refid="classCutSceneOne_1ad69c99af12afd26d70314ff107f98d78" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>light</name></member>
+      <member refid="classCutSceneOne_1ae282a1947ab7d177c7bcf0074527eb38" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>m_parameters</name></member>
+      <member refid="classCutSceneOne_1ae58cced96bc78981b57e4d1a56e4ca43" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>m_programID</name></member>
+      <member refid="classCutSceneOne_1a0d7564db4c3b8266ae25c1ac410eb94f" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>m_vertexArrayID</name></member>
+      <member refid="classCutSceneOne_1aeca6f8df86f0d88a3dc6e751d327d7d2" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>meshList</name></member>
+      <member refid="classScene_1aca2cbf744d1f05412d6b7a8e9842a26d" prot="public" virt="non-virtual"><scope>CutSceneOne</scope><name>Misc</name></member>
+      <member refid="classCutSceneOne_1ab2c5bfa6094af109008887b5e5f05f3a" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>modelStack</name></member>
+      <member refid="classCutSceneOne_1a3617f23299052dbd25854296ee3c9eb9ab484e8494f0446763a7f4b67750018f9" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>NUM_GEOMETRY</name></member>
+      <member refid="classCutSceneOne_1a716803a2964ed15a1dcf317cde272894" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>projectionStack</name></member>
+      <member refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" prot="public" virt="virtual"><scope>CutSceneOne</scope><name>Render</name></member>
+      <member refid="classCutSceneOne_1a4e2396896a5804e3f041a3071ec7a84c" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>RenderCutSceneOne</name></member>
+      <member refid="classCutSceneOne_1a37dadb6ea7febef48e522f82a9f9cb26" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>RenderMesh</name></member>
+      <member refid="classCutSceneOne_1aa4216304c1dfa4ddc498dd63a93e11ab" prot="public" virt="virtual"><scope>CutSceneOne</scope><name>Reset</name></member>
+      <member refid="classScene_1ad10176d75a9cc0da56626f682d083507" prot="public" virt="non-virtual"><scope>CutSceneOne</scope><name>Scene</name></member>
+      <member refid="classCutSceneOne_1a36bc809ff71733339ba476f6b31646af" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>start</name></member>
+      <member refid="classScene_1aa80b5e3775f5d699ae775965f1103785" prot="public" virt="non-virtual"><scope>CutSceneOne</scope><name>Switches</name></member>
+      <member refid="classScene_1ae5caf654febe086544d9dae6f3d57a90" prot="public" virt="non-virtual"><scope>CutSceneOne</scope><name>Tool</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a9289bf69c6b3b5aac7a8fde25215c712" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_COLOR_TEXTURE</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a87cece195eb01890f40df8bf53b70df2" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_COLOR_TEXTURE_ENABLED</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a84ff0affaab6ef9c660c77c87c9757ad" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_LIGHT0_COLOR</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a001c34c9c84ea4870be55c922fbf732f" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_LIGHT0_COSCUTOFF</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a2a23fe70a6ebf0368da54213ab4b11fb" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_LIGHT0_COSINNER</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a1b1a3b91a1ada71d9485ccfbecafc439" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_LIGHT0_EXPONENT</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ab21c54cc63d275ca3e922459de33a8d0" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_LIGHT0_KC</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ab8fcc31895578f3c6d70a051ad468ac5" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_LIGHT0_KL</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a131e7cf98c7cd8db0c6e3bae97cd614d" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_LIGHT0_KQ</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a94a9a0d453223348263e03ffec3387ce" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_LIGHT0_POSITION</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a0c4561acb5c40742cfd395175efb9337" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_LIGHT0_POWER</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ad1e851159424ad4efee309f8845e4c82" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_LIGHT0_SPOTDIRECTION</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a664fc284bb891ece6d471dded16e0573" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_LIGHT0_TYPE</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a422e92d6284691d7ad449957a49e813d" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_LIGHTENABLED</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a2afa503646f85e5aa6dfa859a464d8a7" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_MATERIAL_AMBIENT</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ab661e8ed0aaab937313e6a7ecad88fef" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_MATERIAL_DIFFUSE</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a091831e9411194433b3e7364ef28e4c3" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_MATERIAL_SHININESS</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a4eeac688e19ee93d013ef33166466e37" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_MATERIAL_SPECULAR</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530ac071730bab36ac839af7f3015fce38e5" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_MODELVIEW</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a29be686293253cfe6269ef843135e11e" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_MODELVIEW_INVERSE_TRANSPOSE</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530adbd51e571a33d1660bfb439f87509eb1" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_MVP</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a61c26e6192b5e5d07395e9bd21fad710" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_NUMLIGHTS</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530af1b8626482dd38166765e9e3171504b6" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_TEXT_COLOR</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530aa54247488566ef329ceb39c9257ab9af" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_TEXT_ENABLED</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530a76c9c44910ed8c86b5e3e73f5a586eeb" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>U_TOTAL</name></member>
+      <member refid="classCutSceneOne_1a7830e4c5a9253da662594ca59e371530" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>UNIFORM_TYPE</name></member>
+      <member refid="classCutSceneOne_1a3bde2eed67da74e3c33e3b4e10542438" prot="public" virt="virtual"><scope>CutSceneOne</scope><name>Update</name></member>
+      <member refid="classCutSceneOne_1a11aefd7cd12e0b0ebbd8aa56172d0c69" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>Variables</name></member>
+      <member refid="classCutSceneOne_1a9050bb794c8b59da1bb2e3316637e19b" prot="private" virt="non-virtual"><scope>CutSceneOne</scope><name>viewStack</name></member>
+      <member refid="classCutSceneOne_1a7f3fc6a1bc769243167f4fc5f8e0318d" prot="public" virt="non-virtual"><scope>CutSceneOne</scope><name>~CutSceneOne</name></member>
+      <member refid="classScene_1a3b8cec2e32546713915f8c6303c951f1" prot="public" virt="non-virtual"><scope>CutSceneOne</scope><name>~Scene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

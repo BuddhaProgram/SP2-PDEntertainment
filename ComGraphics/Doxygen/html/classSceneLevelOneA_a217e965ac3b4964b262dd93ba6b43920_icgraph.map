@@ -1,0 +1,7 @@
+<map id="SceneLevelOneA::RenderTextOnScreen" name="SceneLevelOneA::RenderTextOnScreen">
+<area shape="rect" id="node2" href="$classSceneLevelOneA.html#adb83e3122dc7ac3a5d5b85add1c771bb" title="SceneLevelOneA::Render" alt="" coords="509,95,680,122"/>
+<area shape="rect" id="node3" href="$classSceneLevelOneA.html#a8b803f3d37f46c46a181bbcc6f29f50c" title="SceneLevelOneA::RenderInteract" alt="" coords="248,37,461,63"/>
+<area shape="rect" id="node4" href="$classSceneLevelOneA.html#a227176473f59ddd7142977da8382249d" title="SceneLevelOneA::RenderPick\lUpSuitcaseText" alt="" coords="257,88,453,129"/>
+<area shape="rect" id="node5" href="$classSceneLevelOneA.html#af11f423226d8db27352ac20fcc607dc3" title="SceneLevelOneA::RenderPlayer\lDiesInteraction" alt="" coords="251,153,458,195"/>
+<area shape="rect" id="node6" href="$classSceneLevelOneA.html#a6cdedb4f21d64c4f85ca5d8ae1bc4bcc" title="SceneLevelOneA::RenderSave\lPointText" alt="" coords="255,219,454,260"/>
+</map>

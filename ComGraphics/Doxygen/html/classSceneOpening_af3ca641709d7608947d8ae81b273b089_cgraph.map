@@ -1,0 +1,22 @@
+<map id="SceneOpening::Update" name="SceneOpening::Update">
+<area shape="rect" id="node2" href="$classSceneOpening.html#a9465ec79972cc4feca2008cc2dfa1510" title="SceneOpening::ChangeScene" alt="" coords="210,81,406,108"/>
+<area shape="rect" id="node4" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="685,157,860,184"/>
+<area shape="rect" id="node7" href="$classSceneOpening.html#a0d6b8c548b24b6378459f447f8e09048" title="SceneOpening::OptionChange" alt="" coords="209,208,407,235"/>
+<area shape="rect" id="node8" href="$structPosition.html#a2919b2441baf7a2f799791d65a1cfc15" title="Position::Set" alt="" coords="259,259,357,285"/>
+<area shape="rect" id="node9" href="$structVector3.html#a9c25d604bd52b162cfcb56302ef032bb" title="Set the elements of this vector. " alt="" coords="261,309,355,336"/>
+<area shape="rect" id="node10" href="$classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="Camera3::Update" alt="" coords="247,385,369,412"/>
+<area shape="rect" id="node3" href="$classApplication.html#a9d410604b39b8374a884b1f2a1f2a5ba" title="Application::Exit" alt="" coords="487,5,605,32"/>
+<area shape="rect" id="node5" href="$classApplication.html#a9417ed2dddc2277e1989cc8614e3d0c9" title="Application::OpenCutScene" alt="" coords="455,56,637,83"/>
+<area shape="rect" id="node6" href="$classScene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478" title="Scene::Init" alt="" coords="731,56,815,83"/>
+<area shape="rect" id="node11" href="$classCamera3.html#a576422f8f2d0660f27eed0fc817b2ae5" title="Camera3::CameraRotation" alt="" coords="459,208,633,235"/>
+<area shape="rect" id="node12" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="695,259,850,285"/>
+<area shape="rect" id="node13" href="$classExplorer.html#afad219513d65c2efdc84490bd8c06bde" title="Explorer::checkDead" alt="" coords="475,360,617,387"/>
+<area shape="rect" id="node14" href="$classExplorer.html#afc5637a94d6f094b796d80abf42d930b" title="Explorer::instance" alt="" coords="709,360,836,387"/>
+<area shape="rect" id="node15" href="$structVector3.html#aa1cdc5357009b47fe585ddd61e263aad" title="Cross product of 2 vectors. " alt="" coords="491,461,601,488"/>
+<area shape="rect" id="node17" href="$classCamera3.html#a021022df76481c9e9fd5c3cf5fe51cf7" title="Camera3::HumanControl" alt="" coords="464,309,628,336"/>
+<area shape="rect" id="node18" href="$structVector3.html#aaef4f25a38878a640ab4a48002a7eff8" title="Normalize this vector and return a reference to it. " alt="" coords="479,563,613,589"/>
+<area shape="rect" id="node20" href="$structVector3.html#a2da0f00c5529bced69763320dac9c414" title="Return a copy of this vector, normalized. " alt="" coords="476,512,616,539"/>
+<area shape="rect" id="node21" href="$classCamera3.html#a4b10106bcd89f21e3cf3e39f04d8c1cb" title="Camera3::Reset" alt="" coords="488,613,604,640"/>
+<area shape="rect" id="node16" href="$structVector3.html#afa5e0c801fc2c8a820a54ea99302fe08" title="Vector3 default constructor. " alt="" coords="713,475,833,501"/>
+<area shape="rect" id="node19" href="$structVector3.html#a200024a8442329de9a625ed58ffe7075" title="Return length of vector. " alt="" coords="715,551,830,577"/>
+</map>

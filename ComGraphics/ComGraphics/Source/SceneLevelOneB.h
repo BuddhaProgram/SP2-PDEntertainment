@@ -230,6 +230,7 @@ private:
     MobGhost ElevatorGhost2;
     MobGhost ElevatorGhost3;
     MobBossOne BossOne;
+    bool CrosshairHit;
 };
 
 

@@ -81,7 +81,7 @@ void SceneEndCutScene::Init()
 	light[0].type = Light::LIGHT_SPOT;
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].color.Set(1, 1, 1);
-	light[0].power = 2.0f;
+	light[0].power = 0.0f;
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
@@ -133,17 +133,6 @@ void SceneEndCutScene::Init()
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
-	meshList[GEO_EARTH] = MeshBuilder::GenerateOBJ("Earth", "OBJ//Earth.obj");
-	meshList[GEO_EARTH]->textureID = LoadTGA("Image//Earth.tga");
-	meshList[GEO_MOON] = MeshBuilder::GenerateOBJ("Moon", "OBJ//Moon.obj");
-	meshList[GEO_MOON]->textureID = LoadTGA("Image//Moon.tga");
-	meshList[GEO_PLANET] = MeshBuilder::GenerateOBJ("Planet", "OBJ//Planet.obj");
-	meshList[GEO_PLANET]->textureID = LoadTGA("Image//Planet.tga");
-	meshList[GEO_ASTEROID1] = MeshBuilder::GenerateOBJ("Asteroid1", "OBJ//Asteroid1.obj");
-	meshList[GEO_ASTEROID1]->textureID = LoadTGA("Image//Asteroid1.tga");
-	meshList[GEO_ASTEROID2] = MeshBuilder::GenerateOBJ("Asteroid2", "OBJ//Asteroid2.obj");
-	meshList[GEO_ASTEROID2]->textureID = LoadTGA("Image//Asteroid1.tga");
-
 	// Tools Interface and It's Icons
 	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
 	meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
@@ -173,6 +162,31 @@ static float LSPEED = 10.f;
 
 void SceneEndCutScene::Reset()
 {
+}
+
+vector<string> SceneEndCutScene::ReadFromText(string link)
+{
+	ifstream txtData;
+	txtData.open(link, std::ifstream::in);
+
+	if (!txtData)
+	{
+		std::cout << "Error Opening" << link << std::endl;
+		exit(1);
+	}
+
+	if (txtData.good())
+	{
+		while (txtData.good())
+		{
+			string data;
+			std::getline(txtData, data);
+			readText.push_back(data);
+		}
+	}
+
+	txtData.close();
+	return readText;
 }
 
 void SceneEndCutScene::Update(double dt)
@@ -229,12 +243,12 @@ void SceneEndCutScene::Update(double dt)
 		if (MoveQuad <= 0.49f)
 		{
 			MoveQuad += (float)(0.5f * dt);
+			if (MoveQuad >= 0.45f)
+			{
+				Application::End_Credits();
+			}
 		}
 	}
-
-
-	std::cout << anima.MovingShip2 << std::endl;
-
 }
 
 void SceneEndCutScene::RenderMesh(Mesh*mesh, bool enableLight)
@@ -414,15 +428,16 @@ void SceneEndCutScene::Render()
 		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
+
 	RenderSkyBox();
-	RenderSceneEndCutScene();
+	RenderSceneEndCutScene(TestYou);
 	RenderFloor();
+	RenderShipAndPod();
 
 	modelStack.PushMatrix();
-	RenderModelOnScreen(meshList[GEO_QUAD], 80, 60, 5, 90, 1, 0, 0, MoveQuad, 0.5f, 1, false);
+	RenderModelOnScreen(meshList[GEO_QUAD], 80, 60, 5, 90, 1, 0, 0, MoveQuad, 0.5f, -1, false);
 	modelStack.PopMatrix();
 
-	RenderShipAndPod();
 }
 
 void SceneEndCutScene::Exit()

@@ -1,0 +1,7 @@
+<map id="SceneLevelTwo::ContinueGameOrNot" name="SceneLevelTwo::ContinueGameOrNot">
+<area shape="rect" id="node2" href="$classExplorer.html#afc5637a94d6f094b796d80abf42d930b" title="Explorer::instance" alt="" coords="481,26,608,52"/>
+<area shape="rect" id="node3" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="259,26,433,52"/>
+<area shape="rect" id="node4" href="$classApplication.html#adeed1a6fea5cbe66da30dfe5b9651b7e" title="Application::OpenGame" alt="" coords="266,127,426,154"/>
+<area shape="rect" id="node6" href="$classSceneLevelTwo.html#a7bd16fca7a3be47979729845b65d6378" title="SceneLevelTwo::Reset" alt="" coords="269,76,423,103"/>
+<area shape="rect" id="node5" href="$classScene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478" title="Scene::Init" alt="" coords="503,127,587,154"/>
+</map>

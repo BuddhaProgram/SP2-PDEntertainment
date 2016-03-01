@@ -15,6 +15,7 @@
 #include "OpeningCutScene.h"
 #include "OpeningCutScene2.h"
 #include "SceneEndCutScene.h"
+#include "Credits.h"
 
 
 
@@ -63,6 +64,7 @@ Scene* Application::LevelOneB;
 Scene* Application::LevelTwo;
 Scene* Application::CutScene1;
 Scene* Application::EndScene;
+Scene* Application::EndCredits;
 
 void resize_callback(GLFWwindow* window, int w, int h)
 {
@@ -91,7 +93,12 @@ void Application::Init()
 
 
 	//Create a window and create its OpenGL context
+
 	//m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
+
+
+	m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", glfwGetPrimaryMonitor(), NULL);
+
 	//m_window = glfwCreateWindow(1920, 1080, "Computer Graphics", NULL, NULL);
     m_window = glfwCreateWindow(800, 600, "Computer Graphics", NULL, NULL);
 	glfwSetScrollCallback(m_window, scroll_callback);
@@ -143,8 +150,10 @@ void Application::Run()
     LevelTwo = new SceneLevelTwo();
 	End = new SceneEnd();
 	EndScene = new SceneEndCutScene();
+	EndCredits = new Credits();
+	
 
-	scene = LevelTwo;
+	scene = LevelOneB;
 	scene->Init();
 
 
@@ -179,6 +188,7 @@ void Application::Run()
     delete LevelOneA;
     delete LevelOneB;
 	delete EndScene;
+	delete EndCredits;
 }
 
 void Application::Exit()
@@ -245,5 +255,11 @@ void Application::OpenCutScene2()
 void Application::EndingCutScene()
 {
 	scene = EndScene;
+	scene->Init();
+}
+
+void Application::End_Credits()
+{
+	scene = EndCredits;
 	scene->Init();
 }

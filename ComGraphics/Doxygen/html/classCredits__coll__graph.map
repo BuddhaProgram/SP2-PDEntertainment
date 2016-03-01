@@ -1,0 +1,17 @@
+<map id="Credits" name="Credits">
+<area shape="rect" id="node2" href="$classScene.html" title="Scene" alt="" coords="967,99,1025,125"/>
+<area shape="rect" id="node3" href="$classSwitchLightPuzzle.html" title="SwitchLightPuzzle" alt="" coords="703,125,832,152"/>
+<area shape="rect" id="node5" href="$classGlobalVariables.html" title="GlobalVariables" alt="" coords="711,187,824,213"/>
+<area shape="rect" id="node18" href="$classAnimation.html" title="Define Animation and its method make object move on it owns. " alt="" coords="956,708,1036,735"/>
+<area shape="rect" id="node8" href="$classmisc.html" title="misc" alt="" coords="295,5,345,32"/>
+<area shape="rect" id="node9" href="$structLight.html" title="Light" alt="" coords="436,1036,487,1063"/>
+<area shape="rect" id="node11" href="$structVector3.html" title="Defines a 3D vector and its methods. " alt="" coords="153,852,220,879"/>
+<area shape="rect" id="node12" href="$structPosition.html" title="Position" alt="" coords="152,1053,221,1080"/>
+<area shape="rect" id="node13" href="$structColor.html" title="Color" alt="" coords="161,1104,213,1131"/>
+<area shape="rect" id="node14" href="$classCamera3.html" title="Camera3" alt="" coords="730,804,805,831"/>
+<area shape="rect" id="node20" href="$structMaterial.html" title="Material" alt="" coords="427,1219,495,1245"/>
+<area shape="rect" id="node21" href="$structComponent.html" title="Component" alt="" coords="143,1208,231,1235"/>
+<area shape="rect" id="node15" href="$classCamera.html" title="Camera" alt="" coords="428,895,495,921"/>
+<area shape="rect" id="node16" href="$classMS.html" title="Matrix Stack class. " alt="" coords="975,1356,1017,1383"/>
+<area shape="rect" id="node19" href="$classMesh.html" title="To store VBO (vertex &amp; color buffer) and IBO (index buffer) " alt="" coords="969,1109,1023,1136"/>
+</map>

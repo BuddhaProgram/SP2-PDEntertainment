@@ -1,18 +1,38 @@
+/**************************************************************************/
+/*!
+\file			OBJAnimation.h
+\author			Matsuda Kenichi
+\par			email: 150450F\@mymail.nyp.edu.sg
+\brief
+Class to define all animation
+*/
+/**************************************************************************/
+
 #ifndef OBJANIMATION_H
 #define OBJANIMATION_H
 
 #include "Camera3.h"
 
+
+/**************************************************************************/
+/*!
+Class Animation:
+\brief
+Define Animation and its method make object move on it owns.
+*/
+/**************************************************************************/
+
 class Animation
 {
 public:
-	Animation();
-	~Animation();
+	Animation(); //Default constructor
+	~Animation(); //Destructor
 
-	void Collapsing(double dt);
-	void OBJAnimation(double dt);
-	void OpenMainDoor(double dt);
-	void Portraits(double dt);
+	void Collapsing(double dt);		//Function for falling rubble animation
+	void OpenMainDoor(double dt);	//Function for CutScene animation after Start
+	void Portraits(double dt);		//Function for falling portrait animation
+
+	//Functions for Door's animation
 	void OpenSlideDoor1(double dt);
 	void OpenSlideDoor2(double dt);
 	void CloseSlideDoor2(double dt);
@@ -30,11 +50,14 @@ public:
 	void OpenQPDOOR4(double dt);
 	void OpenQPDOOR5(double dt);
 
+	//Function for ship animation
 	void ShipTakeOff(double dt);
 
-
+	//Check function to see if char is within certain area
 	bool WithinArea(float smallx, float largex, float smallz, float largez);
 	float cam_pos_X, cam_poz_Z;
+
+	/*Variables and Bools*/
 
 	float PlanetRotate;
 	float AsteroidRotate;

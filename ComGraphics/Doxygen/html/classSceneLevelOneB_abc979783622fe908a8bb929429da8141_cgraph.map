@@ -1,0 +1,5 @@
+<map id="SceneLevelOneB::ToolsUI" name="SceneLevelOneB::ToolsUI">
+<area shape="rect" id="node2" href="$classExplorer.html#a2314ec87110e38517fe9c2952bcb0b31" title="Explorer::InsertToolSlot" alt="" coords="225,5,383,32"/>
+<area shape="rect" id="node4" href="$classExplorer.html#afc5637a94d6f094b796d80abf42d930b" title="Explorer::instance" alt="" coords="241,56,367,83"/>
+<area shape="rect" id="node3" href="$classExplorer.html#a227a8dd80aa001ea416b4ed403281198" title="Explorer::CheckForDoubleTool" alt="" coords="431,5,629,32"/>
+</map>

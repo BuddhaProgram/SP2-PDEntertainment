@@ -1,0 +1,396 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="classMobBossOne" kind="class" language="C++" prot="public">
+    <compoundname>MobBossOne</compoundname>
+    <basecompoundref refid="classHostileMob" prot="public" virt="non-virtual">HostileMob</basecompoundref>
+    <includes refid="MobBossOne_8h" local="no">MobBossOne.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classMobBossOne_1a3e761124aa5645800d3c3b7a73e04ef5" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MobBossOne::AttackAnimation</definition>
+        <argsstring></argsstring>
+        <name>AttackAnimation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MobBossOne.h" line="20" column="1" bodyfile="ComGraphics/Source/MobBossOne.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classMobBossOne_1a15cf315a37065c7e00aecd2f03ca9823" compoundref="MobBossOne_8cpp" startline="45" endline="71">checkAttack</referencedby>
+        <referencedby refid="classMobBossOne_1a809cec43b2d7469fab972572fce295a3" compoundref="MobBossOne_8cpp" startline="3" endline="24">MobBossOne</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf19187831a508b5541fdb085bfef099" compoundref="SceneLevelOneBRenders_8cpp" startline="393" endline="428">SceneLevelOneB::RenderBoss</referencedby>
+        <referencedby refid="classSceneEnd_1aa7eb2cf11f655cf77cc1c854c26e6f57" compoundref="SceneEndRenders_8cpp" startline="385" endline="423">SceneEnd::RenderBoss</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMobBossOne_1a57ef694c85ac174d3a884b5ffb0a4eda" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float MobBossOne::CrystalAnim</definition>
+        <argsstring></argsstring>
+        <name>CrystalAnim</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MobBossOne.h" line="21" column="1" bodyfile="ComGraphics/Source/MobBossOne.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classMobBossOne_1a9c3de91039994e9339c3f5a14f093a27" compoundref="MobBossOne_8cpp" startline="73" endline="94">move</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf19187831a508b5541fdb085bfef099" compoundref="SceneLevelOneBRenders_8cpp" startline="393" endline="428">SceneLevelOneB::RenderBoss</referencedby>
+        <referencedby refid="classSceneEnd_1aa7eb2cf11f655cf77cc1c854c26e6f57" compoundref="SceneEndRenders_8cpp" startline="385" endline="423">SceneEnd::RenderBoss</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMobBossOne_1a4eec5b91c1b01cde6298c308cfb8e7bc" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MobBossOne::BossDies</definition>
+        <argsstring></argsstring>
+        <name>BossDies</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MobBossOne.h" line="23" column="1" bodyfile="ComGraphics/Source/MobBossOne.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="classMobBossOne_1aecb3709f09de4706becf6754b1744682" compoundref="MobBossOne_8cpp" startline="107" endline="117">attack</referencedby>
+        <referencedby refid="classMobBossOne_1a809cec43b2d7469fab972572fce295a3" compoundref="MobBossOne_8cpp" startline="3" endline="24">MobBossOne</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a417bbb3831728aad7ab5ebee0ffe1355" compoundref="SceneLevelOneBRenders_8cpp" startline="632" endline="655">SceneLevelOneB::RenderPickUpPickTools</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classMobBossOne_1a504bda39d911397e58dea535b12b5317" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MobBossOne::kenaWhack</definition>
+        <argsstring></argsstring>
+        <name>kenaWhack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MobBossOne.h" line="26" column="1" bodyfile="ComGraphics/Source/MobBossOne.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classMobBossOne_1a637b0f010be745f4fc461771752ad91d" compoundref="MobBossOne_8cpp" startline="31" endline="34">knockback</referencedby>
+        <referencedby refid="classMobBossOne_1a809cec43b2d7469fab972572fce295a3" compoundref="MobBossOne_8cpp" startline="3" endline="24">MobBossOne</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classMobBossOne_1ad900ea5306a88baa255f73c78e9dbe24" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float MobBossOne::animtimer</definition>
+        <argsstring></argsstring>
+        <name>animtimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MobBossOne.h" line="28" column="1" bodyfile="ComGraphics/Source/MobBossOne.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classMobBossOne_1a15cf315a37065c7e00aecd2f03ca9823" compoundref="MobBossOne_8cpp" startline="45" endline="71">checkAttack</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMobBossOne_1a809cec43b2d7469fab972572fce295a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MobBossOne::MobBossOne</definition>
+        <argsstring>()</argsstring>
+        <name>MobBossOne</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MobBossOne.h" line="10" column="1" bodyfile="ComGraphics/Source/MobBossOne.cpp" bodystart="3" bodyend="24"/>
+        <references refid="classMobBossOne_1a3e761124aa5645800d3c3b7a73e04ef5" compoundref="MobBossOne_8h" startline="20">AttackAnimation</references>
+        <references refid="classHostileMob_1a6a79344c05310ce035da0ac40a2ef7f8" compoundref="HostileMob_8h" startline="21">HostileMob::AttackDamage</references>
+        <references refid="classMobBossOne_1a4eec5b91c1b01cde6298c308cfb8e7bc" compoundref="MobBossOne_8h" startline="23">BossDies</references>
+        <references refid="classHostileMob_1af38e5a0ff2f970620b1ed34c1ca37b19" compoundref="HostileMob_8h" startline="20">HostileMob::health</references>
+        <references refid="classMobBossOne_1a504bda39d911397e58dea535b12b5317" compoundref="MobBossOne_8h" startline="26">kenaWhack</references>
+        <references refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" compoundref="HostileMob_8h" startline="24">HostileMob::MobPosX</references>
+        <references refid="classHostileMob_1abf8d99cebf0a451a57cdcf6f4fc916d3" compoundref="HostileMob_8h" startline="25">HostileMob::MobPosY</references>
+        <references refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" compoundref="HostileMob_8h" startline="26">HostileMob::MobPosZ</references>
+        <references refid="classHostileMob_1a5af899b3b3c363eee35ce50334f7b875" compoundref="HostileMob_8h" startline="31">HostileMob::mobTimeCount</references>
+        <references refid="classHostileMob_1ad3df732f04e4701cc0ee6efc98b7f9bb" compoundref="HostileMob_8h" startline="18">HostileMob::Spawn</references>
+        <references refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" compoundref="HostileMob_8h" startline="29">HostileMob::TargetDetectX</references>
+        <references refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" compoundref="HostileMob_8h" startline="30">HostileMob::TargetDetectZ</references>
+      </memberdef>
+      <memberdef kind="function" id="classMobBossOne_1a0bc0a62e0b05a763a2bba9395e123a86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MobBossOne::~MobBossOne</definition>
+        <argsstring>()</argsstring>
+        <name>~MobBossOne</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MobBossOne.h" line="11" column="1" bodyfile="ComGraphics/Source/MobBossOne.cpp" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classMobBossOne_1a291a94db26b9cd068da3c41ea013a16a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MobBossOne::setSpawnBossOne</definition>
+        <argsstring>(float xpos, float zpos)</argsstring>
+        <name>setSpawnBossOne</name>
+        <param>
+          <type>float</type>
+          <declname>xpos</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>zpos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MobBossOne.h" line="13" column="1" bodyfile="ComGraphics/Source/MobBossOne.cpp" bodystart="96" bodyend="100"/>
+        <references refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" compoundref="HostileMob_8h" startline="24">HostileMob::MobPosX</references>
+        <references refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" compoundref="HostileMob_8h" startline="26">HostileMob::MobPosZ</references>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+        <referencedby refid="classSceneEnd_1ab29fc3e6d0e1ac757a922f7592141bd4" compoundref="SceneEndRenders_8cpp" startline="527" endline="545">SceneEnd::ResetMobs</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a7d2a46122596c3f7040c275a1b5e8b23" compoundref="SceneLevelOneB_8cpp" startline="233" endline="274">SceneLevelOneB::ResetSameScene</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMobBossOne_1a9c3de91039994e9339c3f5a14f093a27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MobBossOne::move</definition>
+        <argsstring>(double dt, int movespeed)</argsstring>
+        <name>move</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>movespeed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MobBossOne.h" line="14" column="1" bodyfile="ComGraphics/Source/MobBossOne.cpp" bodystart="73" bodyend="94"/>
+        <references refid="classMobBossOne_1a15cf315a37065c7e00aecd2f03ca9823" compoundref="MobBossOne_8cpp" startline="45" endline="71">checkAttack</references>
+        <references refid="classMobBossOne_1a57ef694c85ac174d3a884b5ffb0a4eda" compoundref="MobBossOne_8h" startline="21">CrystalAnim</references>
+        <references refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" compoundref="HostileMob_8h" startline="24">HostileMob::MobPosX</references>
+        <references refid="classHostileMob_1abf8d99cebf0a451a57cdcf6f4fc916d3" compoundref="HostileMob_8h" startline="25">HostileMob::MobPosY</references>
+        <references refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" compoundref="HostileMob_8h" startline="26">HostileMob::MobPosZ</references>
+        <references refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" compoundref="Vector3_8cpp" startline="358" endline="367">Vector3::Normalize</references>
+        <references refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" compoundref="HostileMob_8h" startline="29">HostileMob::TargetDetectX</references>
+        <references refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" compoundref="HostileMob_8h" startline="30">HostileMob::TargetDetectZ</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classSceneEnd_1ab7bfa2bfcb6149aecb24f587a8d1e462" compoundref="SceneEndRenders_8cpp" startline="506" endline="525">SceneEnd::moveMob</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="724" endline="820">SceneLevelOneB::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMobBossOne_1aecb3709f09de4706becf6754b1744682" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MobBossOne::attack</definition>
+        <argsstring>(float damage)</argsstring>
+        <name>attack</name>
+        <param>
+          <type>float</type>
+          <declname>damage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MobBossOne.h" line="15" column="1" bodyfile="ComGraphics/Source/MobBossOne.cpp" bodystart="107" bodyend="117"/>
+        <references refid="classHostileMob_1a6a79344c05310ce035da0ac40a2ef7f8" compoundref="HostileMob_8h" startline="21">HostileMob::AttackDamage</references>
+        <references refid="classMobBossOne_1a4eec5b91c1b01cde6298c308cfb8e7bc" compoundref="MobBossOne_8h" startline="23">BossDies</references>
+        <references refid="classHostileMob_1af38e5a0ff2f970620b1ed34c1ca37b19" compoundref="HostileMob_8h" startline="20">HostileMob::health</references>
+        <references refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" compoundref="Explorer_8h" startline="10" endline="10">Explorer::instance</references>
+        <references refid="classExplorer_1a6827c0db7864e0bfb1716cc2767dec2d" compoundref="Explorer_8cpp" startline="50" endline="60">Explorer::MinusHP</references>
+        <references refid="classHostileMob_1ad3df732f04e4701cc0ee6efc98b7f9bb" compoundref="HostileMob_8h" startline="18">HostileMob::Spawn</references>
+        <referencedby refid="classMobBossOne_1a15cf315a37065c7e00aecd2f03ca9823" compoundref="MobBossOne_8cpp" startline="45" endline="71">checkAttack</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMobBossOne_1a637b0f010be745f4fc461771752ad91d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MobBossOne::knockback</definition>
+        <argsstring>()</argsstring>
+        <name>knockback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MobBossOne.h" line="16" column="1" bodyfile="ComGraphics/Source/MobBossOne.cpp" bodystart="31" bodyend="34"/>
+        <references refid="classMobBossOne_1a504bda39d911397e58dea535b12b5317" compoundref="MobBossOne_8h" startline="26">kenaWhack</references>
+      </memberdef>
+      <memberdef kind="function" id="classMobBossOne_1a38f2b5f17d120031b88a7ddae9254fce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MobBossOne::TakeDamage</definition>
+        <argsstring>(int damage)</argsstring>
+        <name>TakeDamage</name>
+        <param>
+          <type>int</type>
+          <declname>damage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MobBossOne.h" line="17" column="1" bodyfile="ComGraphics/Source/MobBossOne.cpp" bodystart="101" bodyend="105"/>
+        <references refid="classHostileMob_1af38e5a0ff2f970620b1ed34c1ca37b19" compoundref="HostileMob_8h" startline="20">HostileMob::health</references>
+        <referencedby refid="classSceneLevelOneB_1a2bfa4551ac0b1f099c42c2193b55df47" compoundref="SceneLevelOneBRenders_8cpp" startline="435" endline="455">SceneLevelOneB::attackCheck</referencedby>
+        <referencedby refid="classSceneEnd_1a31fef5d67de3a3dfd2ae15d4bbcea2b6" compoundref="SceneEndRenders_8cpp" startline="424" endline="456">SceneEnd::checkAttack</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMobBossOne_1a15cf315a37065c7e00aecd2f03ca9823" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MobBossOne::checkAttack</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>checkAttack</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MobBossOne.h" line="18" column="1" bodyfile="ComGraphics/Source/MobBossOne.cpp" bodystart="45" bodyend="71"/>
+        <references refid="classMobBossOne_1ad900ea5306a88baa255f73c78e9dbe24" compoundref="MobBossOne_8h" startline="28">animtimer</references>
+        <references refid="classMobBossOne_1aecb3709f09de4706becf6754b1744682" compoundref="MobBossOne_8cpp" startline="107" endline="117">attack</references>
+        <references refid="classMobBossOne_1a3e761124aa5645800d3c3b7a73e04ef5" compoundref="MobBossOne_8h" startline="20">AttackAnimation</references>
+        <references refid="classHostileMob_1a6a79344c05310ce035da0ac40a2ef7f8" compoundref="HostileMob_8h" startline="21">HostileMob::AttackDamage</references>
+        <references refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" compoundref="HostileMob_8h" startline="24">HostileMob::MobPosX</references>
+        <references refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" compoundref="HostileMob_8h" startline="26">HostileMob::MobPosZ</references>
+        <references refid="classMobBossOne_1af5c21d147c9507ecdb5c2ca4b530a21b" compoundref="MobBossOne_8cpp" startline="35" endline="44">proximitycheck</references>
+        <referencedby refid="classMobBossOne_1a9c3de91039994e9339c3f5a14f093a27" compoundref="MobBossOne_8cpp" startline="73" endline="94">move</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMobBossOne_1af5c21d147c9507ecdb5c2ca4b530a21b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MobBossOne::proximitycheck</definition>
+        <argsstring>(float smallx, float largex, float smallz, float largez)</argsstring>
+        <name>proximitycheck</name>
+        <param>
+          <type>float</type>
+          <declname>smallx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>largex</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>smallz</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>largez</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/MobBossOne.h" line="19" column="1" bodyfile="ComGraphics/Source/MobBossOne.cpp" bodystart="35" bodyend="44"/>
+        <references refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" compoundref="HostileMob_8h" startline="29">HostileMob::TargetDetectX</references>
+        <references refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" compoundref="HostileMob_8h" startline="30">HostileMob::TargetDetectZ</references>
+        <referencedby refid="classMobBossOne_1a15cf315a37065c7e00aecd2f03ca9823" compoundref="MobBossOne_8cpp" startline="45" endline="71">checkAttack</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="878">
+        <label>HostileMob</label>
+        <link refid="classHostileMob"/>
+      </node>
+      <node id="877">
+        <label>MobBossOne</label>
+        <link refid="classMobBossOne"/>
+        <childnode refid="878" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="880">
+        <label>HostileMob</label>
+        <link refid="classHostileMob"/>
+        <childnode refid="881" relation="usage">
+          <edgelabel>MobPosX</edgelabel>
+          <edgelabel>MobPosY</edgelabel>
+          <edgelabel>TargetDetectX</edgelabel>
+          <edgelabel>MobPosZ</edgelabel>
+          <edgelabel>mobTimeCount</edgelabel>
+          <edgelabel>TargetDetectZ</edgelabel>
+          <edgelabel>AttackDamage</edgelabel>
+        </childnode>
+        <childnode refid="882" relation="usage">
+          <edgelabel>health</edgelabel>
+        </childnode>
+        <childnode refid="883" relation="usage">
+          <edgelabel>Spawn</edgelabel>
+        </childnode>
+      </node>
+      <node id="879">
+        <label>MobBossOne</label>
+        <link refid="classMobBossOne"/>
+        <childnode refid="880" relation="public-inheritance">
+        </childnode>
+        <childnode refid="881" relation="usage">
+          <edgelabel>animtimer</edgelabel>
+          <edgelabel>CrystalAnim</edgelabel>
+        </childnode>
+        <childnode refid="883" relation="usage">
+          <edgelabel>AttackAnimation</edgelabel>
+          <edgelabel>BossDies</edgelabel>
+          <edgelabel>kenaWhack</edgelabel>
+        </childnode>
+      </node>
+      <node id="881">
+        <label>float</label>
+      </node>
+      <node id="882">
+        <label>int</label>
+      </node>
+      <node id="883">
+        <label>bool</label>
+      </node>
+    </collaborationgraph>
+    <location file="ComGraphics/Source/MobBossOne.h" line="8" column="1" bodyfile="ComGraphics/Source/MobBossOne.h" bodystart="7" bodyend="33"/>
+    <listofallmembers>
+      <member refid="classMobBossOne_1ad900ea5306a88baa255f73c78e9dbe24" prot="private" virt="non-virtual"><scope>MobBossOne</scope><name>animtimer</name></member>
+      <member refid="classMobBossOne_1aecb3709f09de4706becf6754b1744682" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>attack</name></member>
+      <member refid="classMobBossOne_1a3e761124aa5645800d3c3b7a73e04ef5" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>AttackAnimation</name></member>
+      <member refid="classHostileMob_1a6a79344c05310ce035da0ac40a2ef7f8" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>AttackDamage</name></member>
+      <member refid="classMobBossOne_1a4eec5b91c1b01cde6298c308cfb8e7bc" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>BossDies</name></member>
+      <member refid="classMobBossOne_1a15cf315a37065c7e00aecd2f03ca9823" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>checkAttack</name></member>
+      <member refid="classHostileMob_1ae216bbb1e78623ca4fd1420d4ef90412" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>checkPlayerPos</name></member>
+      <member refid="classMobBossOne_1a57ef694c85ac174d3a884b5ffb0a4eda" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>CrystalAnim</name></member>
+      <member refid="classHostileMob_1af38e5a0ff2f970620b1ed34c1ca37b19" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>health</name></member>
+      <member refid="classHostileMob_1a6d5086ee741d22461a3471e0800930b6" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>HostileMob</name></member>
+      <member refid="classMobBossOne_1a504bda39d911397e58dea535b12b5317" prot="private" virt="non-virtual"><scope>MobBossOne</scope><name>kenaWhack</name></member>
+      <member refid="classMobBossOne_1a637b0f010be745f4fc461771752ad91d" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>knockback</name></member>
+      <member refid="classMobBossOne_1a809cec43b2d7469fab972572fce295a3" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>MobBossOne</name></member>
+      <member refid="classHostileMob_1a9cf220ac33863bbdb5b45e9235e2e8ef" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>MobCollision</name></member>
+      <member refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>MobPosX</name></member>
+      <member refid="classHostileMob_1abf8d99cebf0a451a57cdcf6f4fc916d3" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>MobPosY</name></member>
+      <member refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>MobPosZ</name></member>
+      <member refid="classHostileMob_1a5af899b3b3c363eee35ce50334f7b875" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>mobTimeCount</name></member>
+      <member refid="classMobBossOne_1a9c3de91039994e9339c3f5a14f093a27" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>move</name></member>
+      <member refid="classMobBossOne_1af5c21d147c9507ecdb5c2ca4b530a21b" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>proximitycheck</name></member>
+      <member refid="classMobBossOne_1a291a94db26b9cd068da3c41ea013a16a" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>setSpawnBossOne</name></member>
+      <member refid="classHostileMob_1ad3df732f04e4701cc0ee6efc98b7f9bb" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>Spawn</name></member>
+      <member refid="classMobBossOne_1a38f2b5f17d120031b88a7ddae9254fce" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>TakeDamage</name></member>
+      <member refid="classHostileMob_1a53cb64d90e91151303db26138a4a9d74" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>TargetDetectX</name></member>
+      <member refid="classHostileMob_1a02f542ee7bc8d64d876a8ac8f7f08ecf" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>TargetDetectZ</name></member>
+      <member refid="classHostileMob_1a675414efc54fe0e3ea35ad85ee724759" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>~HostileMob</name></member>
+      <member refid="classMobBossOne_1a0bc0a62e0b05a763a2bba9395e123a86" prot="public" virt="non-virtual"><scope>MobBossOne</scope><name>~MobBossOne</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

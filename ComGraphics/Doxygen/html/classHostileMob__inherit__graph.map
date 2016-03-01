@@ -1,0 +1,4 @@
+<map id="HostileMob" name="HostileMob">
+<area shape="rect" id="node2" href="$classMobBossOne.html" title="MobBossOne" alt="" coords="5,80,107,107"/>
+<area shape="rect" id="node3" href="$classMobGhost.html" title="MobGhost" alt="" coords="131,80,213,107"/>
+</map>

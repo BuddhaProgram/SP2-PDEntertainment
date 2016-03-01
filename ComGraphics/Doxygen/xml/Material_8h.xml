@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Material_8h" kind="file" language="C++">
+    <compoundname>Material.h</compoundname>
+    <includedby refid="Mesh_8h" local="yes">ComGraphics/Source/Mesh.h</includedby>
+    <invincdepgraph>
+      <node id="5844">
+        <label>ComGraphics/Source/OpeningCutScene.h</label>
+        <link refid="OpeningCutScene_8h"/>
+        <childnode refid="5817" relation="include">
+        </childnode>
+        <childnode refid="5822" relation="include">
+        </childnode>
+      </node>
+      <node id="5823">
+        <label>ComGraphics/Source/OpeningCutScene2.cpp</label>
+        <link refid="OpeningCutScene2_8cpp"/>
+      </node>
+      <node id="5843">
+        <label>ComGraphics/Source/SceneLevelTwoRenders.cpp</label>
+        <link refid="SceneLevelTwoRenders_8cpp"/>
+      </node>
+      <node id="5847">
+        <label>ComGraphics/Source/Credits.h</label>
+        <link refid="Credits_8h"/>
+        <childnode refid="5817" relation="include">
+        </childnode>
+        <childnode refid="5819" relation="include">
+        </childnode>
+      </node>
+      <node id="5832">
+        <label>ComGraphics/Source/SceneStartRenders.cpp</label>
+        <link refid="SceneStartRenders_8cpp"/>
+      </node>
+      <node id="5835">
+        <label>ComGraphics/Source/SceneEndRenders.cpp</label>
+        <link refid="SceneEndRenders_8cpp"/>
+      </node>
+      <node id="5848">
+        <label>ComGraphics/Source/Mesh.cpp</label>
+        <link refid="Mesh_8cpp"/>
+      </node>
+      <node id="5821">
+        <label>ComGraphics/Source/MeshBuilder.cpp</label>
+        <link refid="MeshBuilder_8cpp"/>
+      </node>
+      <node id="5841">
+        <label>ComGraphics/Source/SceneLevelOneBRenders.cpp</label>
+        <link refid="SceneLevelOneBRenders_8cpp"/>
+      </node>
+      <node id="5831">
+        <label>ComGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="5813">
+        <label>ComGraphics/Source/Material.h</label>
+        <link refid="Material.h"/>
+        <childnode refid="5814" relation="include">
+        </childnode>
+      </node>
+      <node id="5822">
+        <label>ComGraphics/Source/OpeningCutScene.cpp</label>
+        <link refid="OpeningCutScene_8cpp"/>
+      </node>
+      <node id="5833">
+        <label>ComGraphics/Source/SceneEnd.h</label>
+        <link refid="SceneEnd_8h"/>
+        <childnode refid="5817" relation="include">
+        </childnode>
+        <childnode refid="5834" relation="include">
+        </childnode>
+        <childnode refid="5824" relation="include">
+        </childnode>
+        <childnode refid="5835" relation="include">
+        </childnode>
+      </node>
+      <node id="5842">
+        <label>ComGraphics/Source/SceneLevelTwo.h</label>
+        <link refid="SceneLevelTwo_8h"/>
+        <childnode refid="5817" relation="include">
+        </childnode>
+        <childnode refid="5834" relation="include">
+        </childnode>
+        <childnode refid="5828" relation="include">
+        </childnode>
+        <childnode refid="5843" relation="include">
+        </childnode>
+      </node>
+      <node id="5819">
+        <label>ComGraphics/Source/Credits.cpp</label>
+        <link refid="Credits_8cpp"/>
+      </node>
+      <node id="5839">
+        <label>ComGraphics/Source/SceneLevelOneARenders.cpp</label>
+        <link refid="SceneLevelOneARenders_8cpp"/>
+      </node>
+      <node id="5824">
+        <label>ComGraphics/Source/SceneEnd.cpp</label>
+        <link refid="SceneEnd_8cpp"/>
+      </node>
+      <node id="5814">
+        <label>ComGraphics/Source/Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="5815" relation="include">
+        </childnode>
+        <childnode refid="5816" relation="include">
+        </childnode>
+        <childnode refid="5830" relation="include">
+        </childnode>
+        <childnode refid="5833" relation="include">
+        </childnode>
+        <childnode refid="5836" relation="include">
+        </childnode>
+        <childnode refid="5838" relation="include">
+        </childnode>
+        <childnode refid="5840" relation="include">
+        </childnode>
+        <childnode refid="5842" relation="include">
+        </childnode>
+        <childnode refid="5844" relation="include">
+        </childnode>
+        <childnode refid="5845" relation="include">
+        </childnode>
+        <childnode refid="5846" relation="include">
+        </childnode>
+        <childnode refid="5847" relation="include">
+        </childnode>
+        <childnode refid="5848" relation="include">
+        </childnode>
+      </node>
+      <node id="5836">
+        <label>ComGraphics/Source/CutSceneOne.h</label>
+        <link refid="CutSceneOne_8h"/>
+        <childnode refid="5817" relation="include">
+        </childnode>
+        <childnode refid="5820" relation="include">
+        </childnode>
+        <childnode refid="5837" relation="include">
+        </childnode>
+      </node>
+      <node id="5828">
+        <label>ComGraphics/Source/SceneLevelTwo.cpp</label>
+        <link refid="SceneLevelTwo_8cpp"/>
+      </node>
+      <node id="5816">
+        <label>ComGraphics/Source/SceneOpening.h</label>
+        <link refid="SceneOpening_8h"/>
+        <childnode refid="5817" relation="include">
+        </childnode>
+        <childnode refid="5818" relation="include">
+        </childnode>
+      </node>
+      <node id="5838">
+        <label>ComGraphics/Source/SceneLevelOneA.h</label>
+        <link refid="SceneLevelOneA_8h"/>
+        <childnode refid="5817" relation="include">
+        </childnode>
+        <childnode refid="5834" relation="include">
+        </childnode>
+        <childnode refid="5826" relation="include">
+        </childnode>
+        <childnode refid="5839" relation="include">
+        </childnode>
+      </node>
+      <node id="5815">
+        <label>ComGraphics/Source/MeshBuilder.h</label>
+        <link refid="MeshBuilder_8h"/>
+        <childnode refid="5816" relation="include">
+        </childnode>
+        <childnode refid="5819" relation="include">
+        </childnode>
+        <childnode refid="5820" relation="include">
+        </childnode>
+        <childnode refid="5821" relation="include">
+        </childnode>
+        <childnode refid="5822" relation="include">
+        </childnode>
+        <childnode refid="5823" relation="include">
+        </childnode>
+        <childnode refid="5824" relation="include">
+        </childnode>
+        <childnode refid="5825" relation="include">
+        </childnode>
+        <childnode refid="5826" relation="include">
+        </childnode>
+        <childnode refid="5827" relation="include">
+        </childnode>
+        <childnode refid="5828" relation="include">
+        </childnode>
+        <childnode refid="5829" relation="include">
+        </childnode>
+      </node>
+      <node id="5827">
+        <label>ComGraphics/Source/SceneLevelOneB.cpp</label>
+        <link refid="SceneLevelOneB_8cpp"/>
+      </node>
+      <node id="5846">
+        <label>ComGraphics/Source/SceneEndCutScene.h</label>
+        <link refid="SceneEndCutScene_8h"/>
+        <childnode refid="5817" relation="include">
+        </childnode>
+        <childnode refid="5825" relation="include">
+        </childnode>
+        <childnode refid="5835" relation="include">
+        </childnode>
+      </node>
+      <node id="5825">
+        <label>ComGraphics/Source/SceneEndCutScene.cpp</label>
+        <link refid="SceneEndCutScene_8cpp"/>
+      </node>
+      <node id="5834">
+        <label>ComGraphics/Source/MapRender.cpp</label>
+        <link refid="MapRender_8cpp"/>
+      </node>
+      <node id="5817">
+        <label>ComGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5826">
+        <label>ComGraphics/Source/SceneLevelOneA.cpp</label>
+        <link refid="SceneLevelOneA_8cpp"/>
+      </node>
+      <node id="5818">
+        <label>ComGraphics/Source/SceneOpening.cpp</label>
+        <link refid="SceneOpening_8cpp"/>
+      </node>
+      <node id="5840">
+        <label>ComGraphics/Source/SceneLevelOneB.h</label>
+        <link refid="SceneLevelOneB_8h"/>
+        <childnode refid="5817" relation="include">
+        </childnode>
+        <childnode refid="5834" relation="include">
+        </childnode>
+        <childnode refid="5827" relation="include">
+        </childnode>
+        <childnode refid="5841" relation="include">
+        </childnode>
+      </node>
+      <node id="5829">
+        <label>ComGraphics/Source/SceneStart.cpp</label>
+        <link refid="SceneStart_8cpp"/>
+      </node>
+      <node id="5830">
+        <label>ComGraphics/Source/SceneStart.h</label>
+        <link refid="SceneStart_8h"/>
+        <childnode refid="5817" relation="include">
+        </childnode>
+        <childnode refid="5831" relation="include">
+        </childnode>
+        <childnode refid="5829" relation="include">
+        </childnode>
+        <childnode refid="5832" relation="include">
+        </childnode>
+      </node>
+      <node id="5845">
+        <label>ComGraphics/Source/OpeningCutScene2.h</label>
+        <link refid="OpeningCutScene2_8h"/>
+        <childnode refid="5817" relation="include">
+        </childnode>
+        <childnode refid="5823" relation="include">
+        </childnode>
+        <childnode refid="5832" relation="include">
+        </childnode>
+      </node>
+      <node id="5820">
+        <label>ComGraphics/Source/CutSceneOne.cpp</label>
+        <link refid="CutSceneOne_8cpp"/>
+      </node>
+      <node id="5837">
+        <label>ComGraphics/Source/CutSceneOneRenders.cpp</label>
+        <link refid="CutSceneOneRenders_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structComponent" prot="public">Component</innerclass>
+    <innerclass refid="structMaterial" prot="public">Material</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>MATERIAL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MATERIAL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="structComponent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structComponent" kindref="compound">Component</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6" refid="structComponent_1a490db57cde183ef5a233b6ff3386ef6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structComponent_1a490db57cde183ef5a233b6ff3386ef6f" kindref="member">r</ref>,<sp/><ref refid="structComponent_1a6cf7bfac62ac8aa4a8aa8c3f847428d8" kindref="member">g</ref>,<sp/><ref refid="structComponent_1abd55184abe2aaf269b38f5913721821c" kindref="member">b</ref>;</highlight></codeline>
+<codeline lineno="7" refid="structComponent_1ae110a300786be861f7ea647ef77d9d18" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structComponent_1ae110a300786be861f7ea647ef77d9d18" kindref="member">Component</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>0.1f,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>g<sp/>=<sp/>0.1f,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b<sp/>=<sp/>0.1f)<sp/>{<sp/><ref refid="structComponent_1a85f599b839327709953f0115dc5dfd49" kindref="member">Set</ref>(r,<sp/>g,<sp/>b);<sp/>}</highlight></codeline>
+<codeline lineno="8" refid="structComponent_1a85f599b839327709953f0115dc5dfd49" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structComponent_1a85f599b839327709953f0115dc5dfd49" kindref="member">Set</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>r,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>g,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b)<sp/>{<sp/>this-&gt;r<sp/>=<sp/><ref refid="structComponent_1a490db57cde183ef5a233b6ff3386ef6f" kindref="member">r</ref>;<sp/>this-&gt;g<sp/>=<sp/><ref refid="structComponent_1a6cf7bfac62ac8aa4a8aa8c3f847428d8" kindref="member">g</ref>;<sp/>this-&gt;b<sp/>=<sp/><ref refid="structComponent_1abd55184abe2aaf269b38f5913721821c" kindref="member">b</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="structMaterial" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structMaterial" kindref="compound">Material</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13" refid="structMaterial_1ab3819b3151cbf3ac1892195ab091e3b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structComponent" kindref="compound">Component</ref><sp/><ref refid="structMaterial_1ab3819b3151cbf3ac1892195ab091e3b8" kindref="member">kAmbient</ref>;</highlight></codeline>
+<codeline lineno="14" refid="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structComponent" kindref="compound">Component</ref><sp/><ref refid="structMaterial_1aa88dd619cacf46e2f26ddd23fe032898" kindref="member">kDiffuse</ref>;</highlight></codeline>
+<codeline lineno="15" refid="structMaterial_1a97cc0bf34b02c758b198d12dd24e96e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structComponent" kindref="compound">Component</ref><sp/><ref refid="structMaterial_1a97cc0bf34b02c758b198d12dd24e96e2" kindref="member">kSpecular</ref>;</highlight></codeline>
+<codeline lineno="16" refid="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structMaterial_1a07cec8956c43f81adeb6ba7aea104915" kindref="member">kShininess</ref>;</highlight></codeline>
+<codeline lineno="17" refid="structMaterial_1a137e987401b63eb7c6c27c3e38bc74b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMaterial_1a137e987401b63eb7c6c27c3e38bc74b5" kindref="member">Material</ref>()</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kAmbient.<ref refid="structComponent_1a85f599b839327709953f0115dc5dfd49" kindref="member">Set</ref>(0.15f,<sp/>0.15f,<sp/>0.15f);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kDiffuse.<ref refid="structComponent_1a85f599b839327709953f0115dc5dfd49" kindref="member">Set</ref>(0.6f,<sp/>0.6f,<sp/>0.6f);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kSpecular.<ref refid="structComponent_1a85f599b839327709953f0115dc5dfd49" kindref="member">Set</ref>(0.2f,<sp/>0.2f,<sp/>0.2f);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kShininess<sp/>=<sp/>1.f;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/Material.h"/>
+  </compounddef>
+</doxygen>

@@ -337,7 +337,7 @@ void SceneEndCutScene::RenderFloor()
 	}
 }
 
-void SceneEndCutScene::RenderSceneEndCutScene()
+void SceneEndCutScene::RenderSceneEndCutScene(vector<string> Test)
 {
 	//structure renders
 	modelStack.PushMatrix();
@@ -359,29 +359,187 @@ void SceneEndCutScene::RenderShipAndPod()
 	modelStack.PopMatrix();
 }
 
-void SceneEnd::RenderMobs()
+
+void SceneEnd::RenderMobs(float xpos, float zpos)
+{
+    float rotGhost;
+    Vector3 view = (Vector3(xpos, 0, zpos) - camera.position).Normalize();
+    if (camera.target.z > camera.position.z)
+    {
+        rotGhost = Math::RadianToDegree(atan(view.x / view.z)) - 180;
+    }
+    else
+    {
+        rotGhost = Math::RadianToDegree(atan(view.x / view.z));
+    }
+   
+        modelStack.PushMatrix();
+        modelStack.Translate(xpos, 5, zpos);
+        modelStack.Rotate(rotGhost - 90, 0, 1, 0);
+        modelStack.Scale(4, 4, 4);
+        RenderMesh(meshList[GEO_GHOST1], true);
+        modelStack.PopMatrix();  
+   
+}
+
+void SceneEnd::RenderBoss(float xpos, float zpos)
+{
+    float rotGhost;
+    Vector3 view = (Vector3(xpos, 0, zpos) - camera.position).Normalize();
+    if (camera.target.z > camera.position.z)
+    {
+        rotGhost = Math::RadianToDegree(atan(view.x / view.z)) - 180;
+    }
+    else
+    {
+        rotGhost = Math::RadianToDegree(atan(view.x / view.z));
+    }
+   
+        std::cout << "Boss" << std::endl;
+        //std::cout << BossOne.MobPosX << BossOne.MobPosZ << std::endl;
+        modelStack.PushMatrix();
+        modelStack.Translate(xpos, 5, zpos);
+        modelStack.Scale(6, 6, 6);
+        modelStack.PushMatrix();
+        modelStack.Rotate(rotGhost - 90, 0, 1, 0);
+        RenderMesh(meshList[GEO_BOSS], true);
+        modelStack.PopMatrix();
+        if (BossOne.AttackAnimation)
+        {
+            modelStack.PushMatrix();
+            modelStack.Translate(0, 4, 0);
+            modelStack.Rotate(BossOne.CrystalAnim, 1, 1, 0);
+            RenderMesh(meshList[GEO_CRYSTAL1], true);
+            modelStack.PopMatrix();
+
+            modelStack.PushMatrix();
+            modelStack.Translate(0, 4, 0);
+            modelStack.Rotate(BossOne.CrystalAnim, -1, 1, 0);
+            RenderMesh(meshList[GEO_CRYSTAL2], true);
+            modelStack.PopMatrix();
+        }
+        modelStack.PopMatrix();
+    
+}
+void SceneEnd::checkAttack()
+{
+    //combat
+    if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(30.f, MobOne.MobPosX, MobOne.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    {
+        MobOne.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);
+        CrosshairHit = true;
+    }
+   
+    if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(30.f, MobTwo.MobPosX, MobTwo.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    {
+        MobTwo.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);
+        CrosshairHit = true;
+    }
+   
+    if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(30.f, MobThree.MobPosX, MobThree.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    {
+        MobThree.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);
+        CrosshairHit = true;
+    }
+    
+    if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(100.f, BossOne.MobPosX, BossOne.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+    {
+        BossOne.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);//temporary variable is 1
+        CrosshairHit = true;
+    }
+    
+    Collision(BossOne.MobPosX - 20, BossOne.MobPosX + 20, BossOne.MobPosZ - 20, BossOne.MobPosZ + 20);
+    Collision(MobOne.MobPosX - 4, BossOne.MobPosX + 4, MobOne.MobPosZ - 4, MobOne.MobPosZ + 4);
+    Collision(MobTwo.MobPosX - 4, MobTwo.MobPosX + 4, MobTwo.MobPosZ - 4, MobTwo.MobPosZ + 4);
+    Collision(MobThree.MobPosX - 4, MobThree.MobPosX + 4, MobThree.MobPosZ - 4, MobThree.MobPosZ + 4);
+
+}
+void SceneEnd::MobCheck()
+{
+    if (BossOne.health <= 0)
+    {
+        ResetMobs();
+    }
+    else
+    {
+        BossOne.Spawn = false;
+    }
+
+        if (MobOne.health > 0)
+        {
+            MobOne.Spawn = true;
+        }
+        else
+        {
+            MobOne.Spawn = false;
+        }
+
+        if (MobTwo.health > 0)
+        {
+            MobTwo.Spawn = true;
+        }
+        else
+        {
+            MobTwo.Spawn = false;
+        }
+
+        if (MobThree.health > 0)
+        {
+            MobThree.Spawn = true;
+        }
+        else
+        {
+            MobTwo.Spawn = false;
+        }
+
+        if (!MobOne.Spawn && !MobTwo.Spawn && !MobThree.Spawn && BossOne.health >= 0)
+        {
+            BossOne.Spawn = true;
+        }
+        else
+        {
+            BossOne.Spawn = false;
+        }
+    //checkAttack();   
+}
+
+void SceneEnd::moveMob(double dt)
 {
     if (MobOne.Spawn)
     {
-        modelStack.PushMatrix();
-        modelStack.Translate(MobOne.MobPosX, 5, MobOne.MobPosZ);
-        RenderMesh(meshList[GEO_GHOST1], true);
-        modelStack.PopMatrix();
+        MobOne.move(dt, MobMS);
     }
 
     if (MobTwo.Spawn)
     {
-        modelStack.PushMatrix();
-        modelStack.Translate(MobTwo.MobPosX, 5, MobTwo.MobPosZ);
-        RenderMesh(meshList[GEO_GHOST1], true);
-        modelStack.PopMatrix();
+        MobTwo.move(dt, MobMS);
     }
-
     if (MobThree.Spawn)
     {
-        modelStack.PushMatrix();
-        modelStack.Translate(MobThree.MobPosX, 5, MobThree.MobPosZ);
-        RenderMesh(meshList[GEO_GHOST1], true);
-        modelStack.PopMatrix();
+        MobThree.move(dt, MobMS);
     }
+    if (BossOne.Spawn)
+    {
+        BossOne.move(dt, BossMS);
+    }
+}
+
+void SceneEnd::ResetMobs()
+{
+    std::cout << "Reset" << std::endl;
+    waveCounter += 1;
+
+    MobOne.health = 8 + waveCounter * 4;
+    MobTwo.health = 8 + waveCounter * 4;
+    MobThree.health = 8 + waveCounter * 4;
+    BossOne.health = 32 + waveCounter * 8;
+
+    MobMS += 5;
+    BossMS += 5;
+
+    MobOne.setSpawnGhost(25, -8);
+    MobTwo.setSpawnGhost(26, 73);
+    MobThree.setSpawnGhost(-22, 42);
+
+    BossOne.setSpawnBossOne(-36, -6);
 }

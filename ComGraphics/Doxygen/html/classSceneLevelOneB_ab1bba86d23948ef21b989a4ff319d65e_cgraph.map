@@ -1,0 +1,8 @@
+<map id="SceneLevelOneB::AnimationCheck" name="SceneLevelOneB::AnimationCheck">
+<area shape="rect" id="node2" href="$classAnimation.html#aa6d2f3161c6e868bd02613956b465192" title="Animation::CloseSlideDoor_Boss" alt="" coords="240,5,455,32"/>
+<area shape="rect" id="node3" href="$classAnimation.html#a62d995267b5aad0480edb98f2ccecd20" title="Animation::OpenSlideDoor1" alt="" coords="256,56,439,83"/>
+<area shape="rect" id="node4" href="$classAnimation.html#a62932edc6c94a6875c71953457c375d8" title="Animation::OpenSlideDoor2" alt="" coords="256,107,439,133"/>
+<area shape="rect" id="node5" href="$classAnimation.html#ae899456275cfec205bb45f8f248650f2" title="Animation::OpenSlideDoor3" alt="" coords="256,157,439,184"/>
+<area shape="rect" id="node6" href="$classAnimation.html#aecad4a9323a0c5e23833d153c7194dae" title="Animation::OpenSlideDoor4" alt="" coords="256,208,439,235"/>
+<area shape="rect" id="node7" href="$classAnimation.html#aff8def7dc6e98ecf67f411a98715c18d" title="Animation::OpenSlideDoor_Boss" alt="" coords="241,259,453,285"/>
+</map>

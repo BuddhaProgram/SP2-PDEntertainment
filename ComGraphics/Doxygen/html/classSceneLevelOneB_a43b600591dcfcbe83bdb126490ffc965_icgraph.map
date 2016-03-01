@@ -1,0 +1,7 @@
+<map id="SceneLevelOneB::RenderModelOnScreen" name="SceneLevelOneB::RenderModelOnScreen">
+<area shape="rect" id="node2" href="$classSceneLevelOneB.html#a5c7f4cef0669b49cd80c284d9c9864ce" title="SceneLevelOneB::Render" alt="" coords="525,113,696,139"/>
+<area shape="rect" id="node3" href="$classSceneLevelOneB.html#ad4d85604b9366950b231b3d462da5812" title="SceneLevelOneB::RenderMouse\lScrollToolSlot" alt="" coords="263,40,473,81"/>
+<area shape="rect" id="node4" href="$classSceneLevelOneB.html#a59ee1de931ecf1cb4b5a2089b7907583" title="SceneLevelOneB::RenderPlayer\lDiesInteraction" alt="" coords="265,105,471,147"/>
+<area shape="rect" id="node5" href="$classSceneLevelOneB.html#a3cf48f20516d5d102e2fc21a2a3d66a2" title="SceneLevelOneB::RenderToolIcon" alt="" coords="259,171,477,198"/>
+<area shape="rect" id="node6" href="$classSceneLevelOneB.html#a062f461de2a83a33b292bf692a90f0d8" title="SceneLevelOneB::ToolSelection\lMouseScroll" alt="" coords="265,223,471,264"/>
+</map>

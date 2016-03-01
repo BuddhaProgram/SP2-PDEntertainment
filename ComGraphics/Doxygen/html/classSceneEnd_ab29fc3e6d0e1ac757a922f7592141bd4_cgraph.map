@@ -1,0 +1,4 @@
+<map id="SceneEnd::ResetMobs" name="SceneEnd::ResetMobs">
+<area shape="rect" id="node2" href="$classMobBossOne.html#a291a94db26b9cd068da3c41ea013a16a" title="MobBossOne::setSpawnBossOne" alt="" coords="209,5,429,32"/>
+<area shape="rect" id="node3" href="$classMobGhost.html#afe5cf062e0887acb5e610c63a721e24c" title="MobGhost::setSpawnGhost" alt="" coords="228,56,411,83"/>
+</map>

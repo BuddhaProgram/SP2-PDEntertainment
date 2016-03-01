@@ -1,0 +1,39 @@
+<map id="Vector3::Vector3" name="Vector3::Vector3">
+<area shape="rect" id="node2" href="$structVector3.html#aa1cdc5357009b47fe585ddd61e263aad" title="Cross product of 2 vectors. " alt="" coords="189,537,298,564"/>
+<area shape="rect" id="node35" href="$structVector3.html#a2da0f00c5529bced69763320dac9c414" title="Return a copy of this vector, normalized. " alt="" coords="173,487,313,513"/>
+<area shape="rect" id="node36" href="$structVector3.html#ab8bb1a236776d951a2e43b3ca9448bb2" title="operator* overload for scalar multiplication " alt="" coords="180,588,307,615"/>
+<area shape="rect" id="node37" href="$structVector3.html#a90c345c2a67d220a474a6f209102634d" title="operator+ overload for vector addition " alt="" coords="178,639,309,665"/>
+<area shape="rect" id="node38" href="$structVector3.html#a224d913ac29766a57a5d7c96eb226b92" title="operator&#45; overload for vector subtraction " alt="" coords="180,689,307,716"/>
+<area shape="rect" id="node3" href="$classCamera3.html#a19ed99e698e764c1da3a985cf75eb93f" title="Camera3::Init" alt="" coords="383,537,481,564"/>
+<area shape="rect" id="node15" href="$classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="Camera3::Update" alt="" coords="371,183,493,209"/>
+<area shape="rect" id="node22" href="$classMtx44.html#a7c3d2d30d9ed5bfca2ba97d0e570930f" title="Set matrix to be a lookat matrix. " alt="" coords="361,715,503,741"/>
+<area shape="rect" id="node4" href="$classCutSceneOne.html#af39ea65e0e56831019520e7d583d4250" title="CutSceneOne::Init" alt="" coords="572,765,700,792"/>
+<area shape="rect" id="node5" href="$classSceneOpening.html#a7cd511dbe911b5c190b9fa9451064b6d" title="SceneOpening::Init" alt="" coords="570,816,702,843"/>
+<area shape="rect" id="node6" href="$classOpeningCutScene.html#a1effccbedf90e3a9ad93d05c685a56a7" title="OpeningCutScene::Init" alt="" coords="560,309,712,336"/>
+<area shape="rect" id="node7" href="$classCredits.html#aa0119304dd0fbe68d2d6827333411721" title="Credits::Init" alt="" coords="592,360,680,387"/>
+<area shape="rect" id="node8" href="$classOpeningCutScene2.html#adda87568b9dd0bb57e3e45bf49fbfa9a" title="OpeningCutScene2::Init" alt="" coords="557,411,715,437"/>
+<area shape="rect" id="node9" href="$classSceneEndCutScene.html#adda42eba4567d774064b795dcd450ff2" title="SceneEndCutScene::Init" alt="" coords="554,461,718,488"/>
+<area shape="rect" id="node10" href="$classSceneLevelTwo.html#a6b80b4345b5398ef898bdceedf583696" title="SceneLevelTwo::Init" alt="" coords="568,512,704,539"/>
+<area shape="rect" id="node11" href="$classSceneStart.html#a738dcb24a23f6cf752998573ac25c1b6" title="SceneStart::Init" alt="" coords="580,563,692,589"/>
+<area shape="rect" id="node12" href="$classSceneLevelOneA.html#a7336a77a93113ea8d9d5f722229bb020" title="SceneLevelOneA::Init" alt="" coords="563,613,709,640"/>
+<area shape="rect" id="node13" href="$classSceneLevelOneB.html#a49faf352ee609e184dd144b12f6b5c5e" title="SceneLevelOneB::Init" alt="" coords="563,664,709,691"/>
+<area shape="rect" id="node14" href="$classSceneEnd.html#a3b35476550d40f16fc4398dc1e954c9c" title="SceneEnd::Init" alt="" coords="583,715,689,741"/>
+<area shape="rect" id="node16" href="$classSceneOpening.html#af3ca641709d7608947d8ae81b273b089" title="SceneOpening::Update" alt="" coords="558,56,714,83"/>
+<area shape="rect" id="node17" href="$classSceneLevelTwo.html#a51b7e15c60d59ae388400a420efbbae5" title="SceneLevelTwo::Update" alt="" coords="556,107,716,133"/>
+<area shape="rect" id="node18" href="$classSceneLevelOneA.html#ab862a65fd43b0fdb56187f7dedb917b8" title="SceneLevelOneA::Update" alt="" coords="551,157,721,184"/>
+<area shape="rect" id="node19" href="$classSceneStart.html#a2c3705b248156c1c352880af1be8049c" title="SceneStart::Update" alt="" coords="568,208,704,235"/>
+<area shape="rect" id="node20" href="$classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="551,259,721,285"/>
+<area shape="rect" id="node21" href="$classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="571,5,701,32"/>
+<area shape="rect" id="node23" href="$classMS.html#a2638cd3249260877cc31329978fb6b38" title="Setup lookat matrix and push to matrix stack. " alt="" coords="591,867,681,893"/>
+<area shape="rect" id="node24" href="$classCutSceneOne.html#a504360676ddc85d4bb239e263036d53a" title="CutSceneOne::Render" alt="" coords="787,613,939,640"/>
+<area shape="rect" id="node25" href="$classSceneOpening.html#a3edf8ad9f05db1071e3e4505af7cd4df" title="SceneOpening::Render" alt="" coords="785,664,941,691"/>
+<area shape="rect" id="node26" href="$classOpeningCutScene.html#a1d4af4c58c91a2df61b8ad7ea1cc18a1" title="OpeningCutScene::Render" alt="" coords="775,715,951,741"/>
+<area shape="rect" id="node27" href="$classCredits.html#a91dd5e5260a92e2a3e99360c7e30d81c" title="Credits::Render" alt="" coords="807,765,919,792"/>
+<area shape="rect" id="node28" href="$classOpeningCutScene2.html#a0f31817dad741723119d91d7e47fbd56" title="OpeningCutScene2::Render" alt="" coords="772,816,955,843"/>
+<area shape="rect" id="node29" href="$classSceneEndCutScene.html#a5428359a53500a14af874d45fed5ac76" title="SceneEndCutScene::Render" alt="" coords="769,867,957,893"/>
+<area shape="rect" id="node30" href="$classSceneLevelTwo.html#a63a16f9a1a71dd298d6e45edaa5efef4" title="SceneLevelTwo::Render" alt="" coords="783,917,943,944"/>
+<area shape="rect" id="node31" href="$classSceneStart.html#a09a1444c2c592ed917229e5853db6db5" title="SceneStart::Render" alt="" coords="795,968,931,995"/>
+<area shape="rect" id="node32" href="$classSceneLevelOneA.html#adb83e3122dc7ac3a5d5b85add1c771bb" title="SceneLevelOneA::Render" alt="" coords="778,1019,949,1045"/>
+<area shape="rect" id="node33" href="$classSceneLevelOneB.html#a5c7f4cef0669b49cd80c284d9c9864ce" title="SceneLevelOneB::Render" alt="" coords="778,1069,949,1096"/>
+<area shape="rect" id="node34" href="$classSceneEnd.html#a06fac012bd3a1df369c5722c8cf662b0" title="SceneEnd::Render" alt="" coords="798,1120,929,1147"/>
+</map>

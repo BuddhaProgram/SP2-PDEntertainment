@@ -1,0 +1,27 @@
+<map id="SceneStart::Update" name="SceneStart::Update">
+<area shape="rect" id="node2" href="$classSceneStart.html#afbbd413201db9a36d22e7ac627b25283" title="SceneStart::ChangeFirstCut\lScene" alt="" coords="206,70,391,111"/>
+<area shape="rect" id="node5" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="717,183,892,209"/>
+<area shape="rect" id="node7" href="$classExplorer.html#afad219513d65c2efdc84490bd8c06bde" title="Explorer::checkDead" alt="" coords="491,360,634,387"/>
+<area shape="rect" id="node8" href="$classExplorer.html#afc5637a94d6f094b796d80abf42d930b" title="Explorer::instance" alt="" coords="741,335,868,361"/>
+<area shape="rect" id="node9" href="$classSceneStart.html#a2c33e692fa8ba05e7a5e081b2d1688e2" title="SceneStart::checkPlayerPosMisc" alt="" coords="189,309,408,336"/>
+<area shape="rect" id="node10" href="$classSceneStart.html#adb6da316beba5b19afe7fad5cc3887ce" title="SceneStart::Collision" alt="" coords="227,731,371,757"/>
+<area shape="rect" id="node12" href="$classSceneStart.html#abbd7450cbedda11ad8b03a0b30d85f51" title="SceneStart::MouseClickFunction" alt="" coords="456,208,669,235"/>
+<area shape="rect" id="node13" href="$classSceneStart.html#ab57d50dda55864e8489d8887c0ce7f0e" title="SceneStart::MouseScrollToolSlot" alt="" coords="191,360,406,387"/>
+<area shape="rect" id="node14" href="$structPosition.html#a2919b2441baf7a2f799791d65a1cfc15" title="Position::Set" alt="" coords="250,512,347,539"/>
+<area shape="rect" id="node15" href="$structVector3.html#a9c25d604bd52b162cfcb56302ef032bb" title="Set the elements of this vector. " alt="" coords="251,563,346,589"/>
+<area shape="rect" id="node16" href="$classSwitchLightPuzzle.html#a135ad4967a276e350a712d66f37046ef" title="SwitchLightPuzzle::\lSwitchPuzzleOne" alt="" coords="230,614,367,655"/>
+<area shape="rect" id="node17" href="$classSceneStart.html#a19c7e086d1b2cf0e6241dc064c845253" title="SceneStart::ToolsUI" alt="" coords="229,680,368,707"/>
+<area shape="rect" id="node18" href="$classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="Camera3::Update" alt="" coords="237,461,360,488"/>
+<area shape="rect" id="node3" href="$classApplication.html#a41920db676f4ab014b9ee32c2043ff9b" title="Application::FirstCutScene" alt="" coords="474,5,651,32"/>
+<area shape="rect" id="node6" href="$classSceneStart.html#a13ffa609089ada96e41281c0a49c8e6b" title="SceneStart::proximitycheck" alt="" coords="471,56,654,83"/>
+<area shape="rect" id="node4" href="$classScene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478" title="Scene::Init" alt="" coords="763,5,847,32"/>
+<area shape="rect" id="node11" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="727,588,882,615"/>
+<area shape="rect" id="node19" href="$classCamera3.html#a576422f8f2d0660f27eed0fc817b2ae5" title="Camera3::CameraRotation" alt="" coords="475,563,650,589"/>
+<area shape="rect" id="node20" href="$structVector3.html#aa1cdc5357009b47fe585ddd61e263aad" title="Cross product of 2 vectors. " alt="" coords="508,664,617,691"/>
+<area shape="rect" id="node22" href="$classCamera3.html#a021022df76481c9e9fd5c3cf5fe51cf7" title="Camera3::HumanControl" alt="" coords="481,461,645,488"/>
+<area shape="rect" id="node23" href="$structVector3.html#aaef4f25a38878a640ab4a48002a7eff8" title="Normalize this vector and return a reference to it. " alt="" coords="496,816,629,843"/>
+<area shape="rect" id="node25" href="$structVector3.html#a2da0f00c5529bced69763320dac9c414" title="Return a copy of this vector, normalized. " alt="" coords="493,765,633,792"/>
+<area shape="rect" id="node26" href="$classCamera3.html#a4b10106bcd89f21e3cf3e39f04d8c1cb" title="Camera3::Reset" alt="" coords="505,512,621,539"/>
+<area shape="rect" id="node21" href="$structVector3.html#afa5e0c801fc2c8a820a54ea99302fe08" title="Vector3 default constructor. " alt="" coords="745,740,865,767"/>
+<area shape="rect" id="node24" href="$structVector3.html#a200024a8442329de9a625ed58ffe7075" title="Return length of vector. " alt="" coords="747,791,862,817"/>
+</map>

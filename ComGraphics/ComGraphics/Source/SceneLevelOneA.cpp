@@ -19,12 +19,14 @@ SceneLevelOneA::SceneLevelOneA()
 	 activateDoor1 = false;
 	 activateDoor2_1 = false;
 	 activateDoor2_2 = false;
-	 activateDoor3 = false; //if true open door
+	 activateDoor3 = false;
 	 Key_1 = false;
 	 Notice = false;
 	 Notice2 = false;
 	 willDrop = false;
 	 Key1Active = false;
+     CrosshairHit = false;
+     SwitchRot = 45.f;
 }
 
 SceneLevelOneA::~SceneLevelOneA()
@@ -244,6 +246,41 @@ void SceneLevelOneA::ResetSameScene()
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
 	}
+
+	activateDoor1 = false;
+	activateDoor2_1 = false;
+	activateDoor2_2 = false;
+	activateDoor3 = false;
+	Key_1 = false;
+	Notice = false;
+	Notice2 = false;
+	willDrop = false;
+	Key1Active = false;
+
+	anima.RubbleCollapse = 100;
+	anima.Collapse = false;
+	anima.f_PortraitDrop = 6;
+	anima.f_PortraitFall = 0;
+	anima.b_toPortraitDrop = false;
+	anima.b_toPortraitFall = false;
+
+	anima.DoorSlideTop = 0;
+	anima.DoorSlideBtm = 0;
+	anima.toSlideDoorTop = true;
+	anima.toSlideDoorBtm = true;
+
+	anima.DoorSlideTop_2 = 0;
+	anima.DoorSlideBtm_2 = 0;
+	anima.toSlideDoorTop2 = true;
+	anima.toSlideDoorBtm2 = true;
+	anima.ClosingDoorTop2 = true;
+	anima.ClosingDoorBtm2 = true;
+
+	anima.DoorSlideTop_3 = 0;
+	anima.DoorSlideBtm_3 = 0;
+	anima.toSlideDoorTop3 = true;
+	anima.toSlideDoorBtm3 = true;
+
 }
 
 void SceneLevelOneA::ResetAll()
@@ -458,6 +495,10 @@ void SceneLevelOneA::MouseClickFunction(double dt)
 			Variables.b_LockSwing = false;
 		}
 	}
+    if (!Variables.b_LockSwing)
+    {
+        CrosshairHit = false;
+    }
 }
 
 void SceneLevelOneA::UpdateSavePoint()
@@ -468,13 +509,7 @@ void SceneLevelOneA::UpdateSavePoint()
 	}
 }
 
-void SceneLevelOneA::RenderSavePointText()
-{
-	if (camera.position.x > 110.0f && camera.position.x < 130.0f && camera.position.z > 65.0f && camera.position.z < 85.0f)
-	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Press T to save your progress ...", Color(0.25f, 0.9f, 0.82f), 3, 5, 5);
-	}
-}
+
 
 void SceneLevelOneA::UpdatePlayerDiesInteraction(double dt)
 {
@@ -589,7 +624,6 @@ void SceneLevelOneA::Update(double dt)
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-	anima.OBJAnimation(dt);
 	anima.Collapsing(dt);
 	checkRubbleFall();
 	checkDoor1(dt);
@@ -813,10 +847,6 @@ void SceneLevelOneA::Render()
 	RenderMouseScrollToolSlot();
 	RenderToolIcon();
 
-	
-
-	RenderSavePointText();
-
 	//mob renders
 	if (Ghost.Spawn)
 	{
@@ -825,11 +855,19 @@ void SceneLevelOneA::Render()
 
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
 	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
+    if (!CrosshairHit)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
+    }
+    if (CrosshairHit)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(1.0f, 0.0f, 0.0f), 4, 9.8f, 7);
+
+    }
 
 	if (Notice)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "NO KEY", Color(0, 1, 0), 4, 10, 7);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Door is locked", Color(0, 1, 0), 4, 8, 7);
 	}
 	if (displayInteract1 || displayInteract2 || displayInteract3)
 	{

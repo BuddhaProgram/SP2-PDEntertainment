@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="LoadTGA_8h" kind="file" language="C++">
+    <compoundname>LoadTGA.h</compoundname>
+    <includedby refid="Credits_8cpp" local="yes">ComGraphics/Source/Credits.cpp</includedby>
+    <includedby refid="CutSceneOne_8cpp" local="yes">ComGraphics/Source/CutSceneOne.cpp</includedby>
+    <includedby refid="LoadTGA_8cpp" local="yes">ComGraphics/Source/LoadTGA.cpp</includedby>
+    <includedby refid="OpeningCutScene_8cpp" local="yes">ComGraphics/Source/OpeningCutScene.cpp</includedby>
+    <includedby refid="OpeningCutScene2_8cpp" local="yes">ComGraphics/Source/OpeningCutScene2.cpp</includedby>
+    <includedby refid="SceneEnd_8cpp" local="yes">ComGraphics/Source/SceneEnd.cpp</includedby>
+    <includedby refid="SceneEndCutScene_8cpp" local="yes">ComGraphics/Source/SceneEndCutScene.cpp</includedby>
+    <includedby refid="SceneLevelOneA_8cpp" local="yes">ComGraphics/Source/SceneLevelOneA.cpp</includedby>
+    <includedby refid="SceneLevelOneB_8cpp" local="yes">ComGraphics/Source/SceneLevelOneB.cpp</includedby>
+    <includedby refid="SceneLevelTwo_8cpp" local="yes">ComGraphics/Source/SceneLevelTwo.cpp</includedby>
+    <includedby refid="SceneOpening_8cpp" local="yes">ComGraphics/Source/SceneOpening.cpp</includedby>
+    <includedby refid="SceneStart_8cpp" local="yes">ComGraphics/Source/SceneStart.cpp</includedby>
+    <invincdepgraph>
+      <node id="5719">
+        <label>ComGraphics/Source/OpeningCutScene2.cpp</label>
+        <link refid="OpeningCutScene2_8cpp"/>
+      </node>
+      <node id="5718">
+        <label>ComGraphics/Source/OpeningCutScene.cpp</label>
+        <link refid="OpeningCutScene_8cpp"/>
+      </node>
+      <node id="5715">
+        <label>ComGraphics/Source/Credits.cpp</label>
+        <link refid="Credits_8cpp"/>
+      </node>
+      <node id="5720">
+        <label>ComGraphics/Source/SceneEnd.cpp</label>
+        <link refid="SceneEnd_8cpp"/>
+      </node>
+      <node id="5724">
+        <label>ComGraphics/Source/SceneLevelTwo.cpp</label>
+        <link refid="SceneLevelTwo_8cpp"/>
+      </node>
+      <node id="5717">
+        <label>ComGraphics/Source/LoadTGA.cpp</label>
+        <link refid="LoadTGA_8cpp"/>
+      </node>
+      <node id="5723">
+        <label>ComGraphics/Source/SceneLevelOneB.cpp</label>
+        <link refid="SceneLevelOneB_8cpp"/>
+      </node>
+      <node id="5714">
+        <label>ComGraphics/Source/LoadTGA.h</label>
+        <link refid="LoadTGA.h"/>
+        <childnode refid="5715" relation="include">
+        </childnode>
+        <childnode refid="5716" relation="include">
+        </childnode>
+        <childnode refid="5717" relation="include">
+        </childnode>
+        <childnode refid="5718" relation="include">
+        </childnode>
+        <childnode refid="5719" relation="include">
+        </childnode>
+        <childnode refid="5720" relation="include">
+        </childnode>
+        <childnode refid="5721" relation="include">
+        </childnode>
+        <childnode refid="5722" relation="include">
+        </childnode>
+        <childnode refid="5723" relation="include">
+        </childnode>
+        <childnode refid="5724" relation="include">
+        </childnode>
+        <childnode refid="5725" relation="include">
+        </childnode>
+        <childnode refid="5726" relation="include">
+        </childnode>
+      </node>
+      <node id="5721">
+        <label>ComGraphics/Source/SceneEndCutScene.cpp</label>
+        <link refid="SceneEndCutScene_8cpp"/>
+      </node>
+      <node id="5722">
+        <label>ComGraphics/Source/SceneLevelOneA.cpp</label>
+        <link refid="SceneLevelOneA_8cpp"/>
+      </node>
+      <node id="5725">
+        <label>ComGraphics/Source/SceneOpening.cpp</label>
+        <link refid="SceneOpening_8cpp"/>
+      </node>
+      <node id="5726">
+        <label>ComGraphics/Source/SceneStart.cpp</label>
+        <link refid="SceneStart_8cpp"/>
+      </node>
+      <node id="5716">
+        <label>ComGraphics/Source/CutSceneOne.cpp</label>
+        <link refid="CutSceneOne_8cpp"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="LoadTGA_8h_1a459a80ca6de67a1e3493bfb66ae317e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GLuint</type>
+        <definition>GLuint LoadTGA</definition>
+        <argsstring>(const char *file_path)</argsstring>
+        <name>LoadTGA</name>
+        <param>
+          <type>const char *</type>
+          <declname>file_path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/LoadTGA.h" line="4" column="1" bodyfile="ComGraphics/Source/LoadTGA.cpp" bodystart="8" bodyend="68"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>LOAD_TGA_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOAD_TGA_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">GLuint<sp/><ref refid="LoadTGA_8h_1a459a80ca6de67a1e3493bfb66ae317e4" kindref="member">LoadTGA</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*file_path);</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/LoadTGA.h"/>
+  </compounddef>
+</doxygen>

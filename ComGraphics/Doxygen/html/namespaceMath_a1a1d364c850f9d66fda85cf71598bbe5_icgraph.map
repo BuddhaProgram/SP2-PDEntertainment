@@ -1,0 +1,21 @@
+<map id="Math::RadianToDegree" name="Math::RadianToDegree">
+<area shape="rect" id="node2" href="$Misc_8cpp.html#a15f09d45e07d38822b5ecf228e503e36" title="getAngle" alt="" coords="274,78,347,105"/>
+<area shape="rect" id="node13" href="$classSceneLevelOneB.html#adf19187831a508b5541fdb085bfef099" title="SceneLevelOneB::RenderBoss" alt="" coords="211,129,411,155"/>
+<area shape="rect" id="node15" href="$classSceneEnd.html#aa7eb2cf11f655cf77cc1c854c26e6f57" title="SceneEnd::RenderBoss" alt="" coords="230,230,391,257"/>
+<area shape="rect" id="node17" href="$classSceneLevelOneA.html#a5c7b2f57a7e884e4beed73a4fcbdbbb7" title="SceneLevelOneA::RenderGhost" alt="" coords="208,331,413,358"/>
+<area shape="rect" id="node19" href="$classSceneLevelOneB.html#af05b4b11f0ad4afd0adf8883135e4136" title="SceneLevelOneB::RenderGhost" alt="" coords="208,179,413,206"/>
+<area shape="rect" id="node20" href="$classSceneEnd.html#a9d9231ad28d1067c1c951cf37ef16db6" title="SceneEnd::RenderMobs" alt="" coords="229,281,392,307"/>
+<area shape="rect" id="node3" href="$classmisc.html#af425955855ed4c3d4f09621afdf11785" title="misc::hitting" alt="" coords="500,78,593,105"/>
+<area shape="rect" id="node4" href="$classSceneLevelOneB.html#a2bfa4551ac0b1f099c42c2193b55df47" title="SceneLevelOneB::attackCheck" alt="" coords="681,21,883,47"/>
+<area shape="rect" id="node7" href="$classSceneLevelOneA.html#acae5c28ab518704326877b73c6df4e55" title="SceneLevelOneA::AttackCheck" alt="" coords="680,78,884,105"/>
+<area shape="rect" id="node10" href="$classSceneEnd.html#a31fef5d67de3a3dfd2ae15d4bbcea2b6" title="SceneEnd::checkAttack" alt="" coords="701,133,863,159"/>
+<area shape="rect" id="node5" href="$classSceneLevelOneB.html#af248f8f3063609e573e6c695898e91e8" title="SceneLevelOneB::MouseClick\lFunction" alt="" coords="937,5,1135,47"/>
+<area shape="rect" id="node6" href="$classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="1188,13,1359,39"/>
+<area shape="rect" id="node8" href="$classSceneLevelOneA.html#a6557be92037519a0cb4af0deb6340fb1" title="SceneLevelOneA::MouseClick\lFunction" alt="" coords="937,71,1135,112"/>
+<area shape="rect" id="node9" href="$classSceneLevelOneA.html#ab862a65fd43b0fdb56187f7dedb917b8" title="SceneLevelOneA::Update" alt="" coords="1188,78,1359,105"/>
+<area shape="rect" id="node11" href="$classSceneEnd.html#ad6c2d9939a867eb0ced3ee2c02d9d33f" title="SceneEnd::MouseClickFunction" alt="" coords="932,137,1140,163"/>
+<area shape="rect" id="node12" href="$classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="1208,137,1339,163"/>
+<area shape="rect" id="node14" href="$classSceneLevelOneB.html#a5c7f4cef0669b49cd80c284d9c9864ce" title="SceneLevelOneB::Render" alt="" coords="461,154,632,181"/>
+<area shape="rect" id="node16" href="$classSceneEnd.html#a06fac012bd3a1df369c5722c8cf662b0" title="SceneEnd::Render" alt="" coords="481,255,612,282"/>
+<area shape="rect" id="node18" href="$classSceneLevelOneA.html#adb83e3122dc7ac3a5d5b85add1c771bb" title="SceneLevelOneA::Render" alt="" coords="461,331,632,358"/>
+</map>

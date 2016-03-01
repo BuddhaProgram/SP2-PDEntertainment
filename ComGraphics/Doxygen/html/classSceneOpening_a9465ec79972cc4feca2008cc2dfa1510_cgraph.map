@@ -1,0 +1,6 @@
+<map id="SceneOpening::ChangeScene" name="SceneOpening::ChangeScene">
+<area shape="rect" id="node2" href="$classApplication.html#a9d410604b39b8374a884b1f2a1f2a5ba" title="Application::Exit" alt="" coords="282,5,399,32"/>
+<area shape="rect" id="node3" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="253,56,428,83"/>
+<area shape="rect" id="node4" href="$classApplication.html#a9417ed2dddc2277e1989cc8614e3d0c9" title="Application::OpenCutScene" alt="" coords="249,107,432,133"/>
+<area shape="rect" id="node5" href="$classScene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478" title="Scene::Init" alt="" coords="480,107,564,133"/>
+</map>

@@ -1,0 +1,389 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="OpeningCutScene2_8h" kind="file" language="C++">
+    <compoundname>OpeningCutScene2.h</compoundname>
+    <includes refid="Scene_8h" local="yes">Scene.h</includes>
+    <includes refid="Camera3_8h" local="yes">Camera3.h</includes>
+    <includes refid="Vector3_8h" local="yes">Vector3.h</includes>
+    <includes refid="Mesh_8h" local="yes">Mesh.h</includes>
+    <includes refid="Misc_8h" local="yes">Misc.h</includes>
+    <includes refid="MatrixStack_8h" local="yes">MatrixStack.h</includes>
+    <includes refid="Light_8h" local="yes">Light.h</includes>
+    <includes refid="OBJAnimation_8h" local="yes">OBJAnimation.h</includes>
+    <includes refid="HostileMob_8h" local="yes">HostileMob.h</includes>
+    <includes refid="MobGhost_8h" local="yes">MobGhost.h</includes>
+    <includedby refid="Application_8cpp" local="yes">ComGraphics/Source/Application.cpp</includedby>
+    <includedby refid="OpeningCutScene2_8cpp" local="yes">ComGraphics/Source/OpeningCutScene2.cpp</includedby>
+    <includedby refid="SceneStartRenders_8cpp" local="yes">ComGraphics/Source/SceneStartRenders.cpp</includedby>
+    <incdepgraph>
+      <node id="6400">
+        <label>list</label>
+      </node>
+      <node id="6394">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+        <childnode refid="6395" relation="include">
+        </childnode>
+        <childnode refid="6396" relation="include">
+        </childnode>
+        <childnode refid="6397" relation="include">
+        </childnode>
+        <childnode refid="6408" relation="include">
+        </childnode>
+      </node>
+      <node id="6401">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="6402" relation="include">
+        </childnode>
+        <childnode refid="6407" relation="include">
+        </childnode>
+      </node>
+      <node id="6412">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+      </node>
+      <node id="6410">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="6401" relation="include">
+        </childnode>
+      </node>
+      <node id="6403">
+        <label>cmath</label>
+      </node>
+      <node id="6409">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="6410" relation="include">
+        </childnode>
+      </node>
+      <node id="6408">
+        <label>Misc.h</label>
+        <link refid="Misc_8h"/>
+        <childnode refid="6401" relation="include">
+        </childnode>
+      </node>
+      <node id="6413">
+        <label>string</label>
+      </node>
+      <node id="6411">
+        <label>Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="6412" relation="include">
+        </childnode>
+        <childnode refid="6413" relation="include">
+        </childnode>
+      </node>
+      <node id="6404">
+        <label>exception</label>
+      </node>
+      <node id="6405">
+        <label>ctime</label>
+      </node>
+      <node id="6415">
+        <label>stack</label>
+      </node>
+      <node id="6399">
+        <label>vector</label>
+      </node>
+      <node id="6418">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="6401" relation="include">
+        </childnode>
+      </node>
+      <node id="6420">
+        <label>HostileMob.h</label>
+        <link refid="HostileMob_8h"/>
+        <childnode refid="6397" relation="include">
+        </childnode>
+        <childnode refid="6401" relation="include">
+        </childnode>
+      </node>
+      <node id="6395">
+        <label>GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+      </node>
+      <node id="6421">
+        <label>MobGhost.h</label>
+        <link refid="MobGhost_8h"/>
+        <childnode refid="6420" relation="include">
+        </childnode>
+      </node>
+      <node id="6416">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="6402" relation="include">
+        </childnode>
+        <childnode refid="6401" relation="include">
+        </childnode>
+      </node>
+      <node id="6406">
+        <label>cstdlib</label>
+      </node>
+      <node id="6407">
+        <label>iostream</label>
+      </node>
+      <node id="6417">
+        <label>Light.h</label>
+        <link refid="Light_8h"/>
+        <childnode refid="6418" relation="include">
+        </childnode>
+      </node>
+      <node id="6414">
+        <label>MatrixStack.h</label>
+        <link refid="MatrixStack_8h"/>
+        <childnode refid="6415" relation="include">
+        </childnode>
+        <childnode refid="6416" relation="include">
+        </childnode>
+      </node>
+      <node id="6397">
+        <label>Explorer.h</label>
+        <link refid="Explorer_8h"/>
+        <childnode refid="6398" relation="include">
+        </childnode>
+        <childnode refid="6401" relation="include">
+        </childnode>
+      </node>
+      <node id="6398">
+        <label>ToolUI.h</label>
+        <link refid="ToolUI_8h"/>
+        <childnode refid="6399" relation="include">
+        </childnode>
+        <childnode refid="6400" relation="include">
+        </childnode>
+      </node>
+      <node id="6419">
+        <label>OBJAnimation.h</label>
+        <link refid="OBJAnimation_8h"/>
+        <childnode refid="6409" relation="include">
+        </childnode>
+      </node>
+      <node id="6396">
+        <label>SwitchLightPuzzle.h</label>
+        <link refid="SwitchLightPuzzle_8h"/>
+      </node>
+      <node id="6393">
+        <label>ComGraphics/Source/OpeningCutScene2.h</label>
+        <link refid="OpeningCutScene2.h"/>
+        <childnode refid="6394" relation="include">
+        </childnode>
+        <childnode refid="6409" relation="include">
+        </childnode>
+        <childnode refid="6401" relation="include">
+        </childnode>
+        <childnode refid="6411" relation="include">
+        </childnode>
+        <childnode refid="6408" relation="include">
+        </childnode>
+        <childnode refid="6414" relation="include">
+        </childnode>
+        <childnode refid="6417" relation="include">
+        </childnode>
+        <childnode refid="6419" relation="include">
+        </childnode>
+        <childnode refid="6420" relation="include">
+        </childnode>
+        <childnode refid="6421" relation="include">
+        </childnode>
+      </node>
+      <node id="6402">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="6403" relation="include">
+        </childnode>
+        <childnode refid="6404" relation="include">
+        </childnode>
+        <childnode refid="6405" relation="include">
+        </childnode>
+        <childnode refid="6406" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6424">
+        <label>ComGraphics/Source/OpeningCutScene2.cpp</label>
+        <link refid="OpeningCutScene2_8cpp"/>
+      </node>
+      <node id="6425">
+        <label>ComGraphics/Source/SceneStartRenders.cpp</label>
+        <link refid="SceneStartRenders_8cpp"/>
+      </node>
+      <node id="6423">
+        <label>ComGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="6422">
+        <label>ComGraphics/Source/OpeningCutScene2.h</label>
+        <link refid="OpeningCutScene2.h"/>
+        <childnode refid="6423" relation="include">
+        </childnode>
+        <childnode refid="6424" relation="include">
+        </childnode>
+        <childnode refid="6425" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classOpeningCutScene2" prot="public">OpeningCutScene2</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>OPENINGCUTSCENE2_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OPENINGCUTSCENE2_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Scene_8h" kindref="compound">Scene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera3_8h" kindref="compound">Camera3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3_8h" kindref="compound">Vector3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Mesh_8h" kindref="compound">Mesh.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Misc_8h" kindref="compound">Misc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MatrixStack_8h" kindref="compound">MatrixStack.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Light_8h" kindref="compound">Light.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="OBJAnimation_8h" kindref="compound">OBJAnimation.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="HostileMob_8h" kindref="compound">HostileMob.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MobGhost_8h" kindref="compound">MobGhost.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classOpeningCutScene2" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classOpeningCutScene2" kindref="compound">OpeningCutScene2</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864" kindref="member">GEOMETRY_TYPE</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="19" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a91ef207fb1f1d8662a25d39ed57d651f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a91ef207fb1f1d8662a25d39ed57d651f" kindref="member">GEO_AXES</ref>,</highlight></codeline>
+<codeline lineno="20" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864ab825fea3e9d31eb5ea34257e57b7bcdf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864ab825fea3e9d31eb5ea34257e57b7bcdf" kindref="member">GEO_BOTTOM</ref>,</highlight></codeline>
+<codeline lineno="21" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864ae66821fcce85c728c72ae77694af1b75" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864ae66821fcce85c728c72ae77694af1b75" kindref="member">GEO_TOP</ref>,</highlight></codeline>
+<codeline lineno="22" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864adcfbdd09914c9e85fbd986b89cccd208" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864adcfbdd09914c9e85fbd986b89cccd208" kindref="member">GEO_LEFT</ref>,</highlight></codeline>
+<codeline lineno="23" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a353537702bf0412d36cbd5bc56dd71db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a353537702bf0412d36cbd5bc56dd71db" kindref="member">GEO_RIGHT</ref>,</highlight></codeline>
+<codeline lineno="24" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a8eee397ebfbb82751f03c9d33009d5d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a8eee397ebfbb82751f03c9d33009d5d2" kindref="member">GEO_FRONT</ref>,</highlight></codeline>
+<codeline lineno="25" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a7e6b64d58a00101716d336ed92f02305" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a7e6b64d58a00101716d336ed92f02305" kindref="member">GEO_BACK</ref>,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864ab48b05af0cbe060c951c58e583148966" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864ab48b05af0cbe060c951c58e583148966" kindref="member">GEO_QUAD</ref>,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864af39c8445c1b7a66f4a4e9a7f672c7522" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864af39c8445c1b7a66f4a4e9a7f672c7522" kindref="member">GEO_LIGHTBALL</ref>,</highlight></codeline>
+<codeline lineno="30" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864af052827b664a31e85a7aad76527a62b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864af052827b664a31e85a7aad76527a62b4" kindref="member">GEO_TEXT</ref>,</highlight></codeline>
+<codeline lineno="31" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a07eed977638148c55735ff1169a3fddb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a07eed977638148c55735ff1169a3fddb" kindref="member">GEO_MOUNTTEXT</ref>,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a614a589c16fb23de1a9ec18b69f06ebf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a614a589c16fb23de1a9ec18b69f06ebf" kindref="member">GEO_PLANETFLOOR</ref>,</highlight></codeline>
+<codeline lineno="34" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a57794a72efa1f2d37021ee6ac359180a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a57794a72efa1f2d37021ee6ac359180a" kindref="member">GEO_FACILITYFLOOR</ref>,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a3d4d46632dd46a1fac2e518abe00d6d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a3d4d46632dd46a1fac2e518abe00d6d1" kindref="member">GEO_FACILITYOUT</ref>,</highlight></codeline>
+<codeline lineno="37" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a1a21468f0662a720c18dfaacbde235fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a1a21468f0662a720c18dfaacbde235fc" kindref="member">GEO_FACILITYOUTWALL</ref>,</highlight></codeline>
+<codeline lineno="38" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864ad15bad457fa4c06803f6741680ba6012" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864ad15bad457fa4c06803f6741680ba6012" kindref="member">GEO_FACILITYWALLS</ref>,</highlight></codeline>
+<codeline lineno="39" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864ad01695fef6189485b8682fe177ad4990" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864ad01695fef6189485b8682fe177ad4990" kindref="member">GEO_FACILITYCEILINGS</ref>,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a6248ef5788bb09fd3b2ef33a00c19a87" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a6248ef5788bb09fd3b2ef33a00c19a87" kindref="member">GEO_DEADBODY</ref>,</highlight></codeline>
+<codeline lineno="42" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a087e8974c4f93cc20527d424bb9f765d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864a087e8974c4f93cc20527d424bb9f765d" kindref="member">GEO_BLOOD1</ref>,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864ad732014a0406f7017b6bf351c50a7a0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864ad732014a0406f7017b6bf351c50a7a0b" kindref="member">NUM_GEOMETRY</ref>,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="47" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5" kindref="member">UNIFORM_TYPE</ref></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a2783acc2e9366602ce6f520c27cf6ff6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a2783acc2e9366602ce6f520c27cf6ff6" kindref="member">U_MVP</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="50" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5abeb30ed814f2a96a6e80dba1bd813605" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5abeb30ed814f2a96a6e80dba1bd813605" kindref="member">U_MODELVIEW</ref>,</highlight></codeline>
+<codeline lineno="51" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5af1519f63284aeeb6783a20ded07f1184" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5af1519f63284aeeb6783a20ded07f1184" kindref="member">U_MODELVIEW_INVERSE_TRANSPOSE</ref>,</highlight></codeline>
+<codeline lineno="52" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a060423c021b279bad656a6fde70c6782" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a060423c021b279bad656a6fde70c6782" kindref="member">U_MATERIAL_AMBIENT</ref>,</highlight></codeline>
+<codeline lineno="53" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a4a6e986a5e024241a9384739ba0658f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a4a6e986a5e024241a9384739ba0658f9" kindref="member">U_MATERIAL_DIFFUSE</ref>,</highlight></codeline>
+<codeline lineno="54" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a43dea4ad9b0d5810afcbd94afb9c59c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a43dea4ad9b0d5810afcbd94afb9c59c6" kindref="member">U_MATERIAL_SPECULAR</ref>,</highlight></codeline>
+<codeline lineno="55" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5ae60fbe94ae1ced7e19ddbd4f4b2f35b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5ae60fbe94ae1ced7e19ddbd4f4b2f35b7" kindref="member">U_MATERIAL_SHININESS</ref>,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5af5d56a9877c82b428c99cdfdb4981cd7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5af5d56a9877c82b428c99cdfdb4981cd7" kindref="member">U_LIGHT0_POSITION</ref>,</highlight></codeline>
+<codeline lineno="58" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a7b2a99ff36bef625276eb7e26e4234c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a7b2a99ff36bef625276eb7e26e4234c9" kindref="member">U_LIGHT0_COLOR</ref>,</highlight></codeline>
+<codeline lineno="59" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5ad2073be7de829285d3ad87faa1e46aa6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5ad2073be7de829285d3ad87faa1e46aa6" kindref="member">U_LIGHT0_POWER</ref>,</highlight></codeline>
+<codeline lineno="60" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a015e0fbf1dc26710f6f3bb171cde1e05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a015e0fbf1dc26710f6f3bb171cde1e05" kindref="member">U_LIGHT0_KC</ref>,</highlight></codeline>
+<codeline lineno="61" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a6b18246d9ba27fd0576def6ee5918402" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a6b18246d9ba27fd0576def6ee5918402" kindref="member">U_LIGHT0_KL</ref>,</highlight></codeline>
+<codeline lineno="62" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a6ff22bc941b0f5a37f13fdb911000436" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a6ff22bc941b0f5a37f13fdb911000436" kindref="member">U_LIGHT0_KQ</ref>,</highlight></codeline>
+<codeline lineno="63" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a5cb86b7beee21c3d91593c36a80fb3a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a5cb86b7beee21c3d91593c36a80fb3a0" kindref="member">U_LIGHTENABLED</ref>,</highlight></codeline>
+<codeline lineno="64" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5ac837868b9c802e044092259fb79d87fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5ac837868b9c802e044092259fb79d87fe" kindref="member">U_LIGHT0_TYPE</ref>,</highlight></codeline>
+<codeline lineno="65" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5ad437681861a747f28983873f85e9cb04" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5ad437681861a747f28983873f85e9cb04" kindref="member">U_LIGHT0_SPOTDIRECTION</ref>,</highlight></codeline>
+<codeline lineno="66" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a508625f6f1d751a3e1c7702a70fd7467" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a508625f6f1d751a3e1c7702a70fd7467" kindref="member">U_LIGHT0_COSCUTOFF</ref>,</highlight></codeline>
+<codeline lineno="67" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5afe474d2ceac40226920a447ff299503a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5afe474d2ceac40226920a447ff299503a" kindref="member">U_LIGHT0_COSINNER</ref>,</highlight></codeline>
+<codeline lineno="68" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a763df8482ae36645493102f76388d932" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a763df8482ae36645493102f76388d932" kindref="member">U_LIGHT0_EXPONENT</ref>,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a3738bdae828d46a7e0b265f1f6499e06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a3738bdae828d46a7e0b265f1f6499e06" kindref="member">U_NUMLIGHTS</ref>,</highlight></codeline>
+<codeline lineno="71" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a888abff58fcd31b18591cdeb536734b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a888abff58fcd31b18591cdeb536734b2" kindref="member">U_COLOR_TEXTURE_ENABLED</ref>,</highlight></codeline>
+<codeline lineno="72" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5ac0d3ba32bd7591d2a1fe0ff575ac9e88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5ac0d3ba32bd7591d2a1fe0ff575ac9e88" kindref="member">U_COLOR_TEXTURE</ref>,</highlight></codeline>
+<codeline lineno="73" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a5291006a3e4e4ff114d289c4d4dae56f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a5291006a3e4e4ff114d289c4d4dae56f" kindref="member">U_TEXT_ENABLED</ref>,</highlight></codeline>
+<codeline lineno="74" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a6cc94b55f70f7dc02c09bd244a3c05aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a6cc94b55f70f7dc02c09bd244a3c05aa" kindref="member">U_TEXT_COLOR</ref>,</highlight></codeline>
+<codeline lineno="75" refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a34c909bb2885a82a6cce1920c198634a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a34c909bb2885a82a6cce1920c198634a" kindref="member">U_TOTAL</ref>,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1af401c091895a98255b546f27db00ee1e" kindref="member">OpeningCutScene2</ref>();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classOpeningCutScene2_1aaa5c1cb6aa1041adf92f6af02bdaad4a" kindref="member">~OpeningCutScene2</ref>();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1ad228d3ddd1fc4564382de47e85cad2dc" kindref="member">Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a0f31817dad741723119d91d7e47fbd56" kindref="member">Render</ref>();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a58e8841da4a7782c69fe92fdd62f81a6" kindref="member">Reset</ref>();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1aaeee54fc6bc08fde7f1c5d34c66f8f9f" kindref="member">Exit</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="classOpeningCutScene2_1a15e7efe14b27eaf55cf5f14a9af5ec75" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3" kindref="compound">Camera3</ref><sp/><ref refid="classOpeningCutScene2_1a15e7efe14b27eaf55cf5f14a9af5ec75" kindref="member">camera</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a801a2a75d9604303cd62544c4b29c9f6" kindref="member">RenderMesh</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref><sp/>*mesh,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enableLight);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//scene<sp/>renders</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a40ebd81294e32d783434477c70ad9406" kindref="member">RenderSceneStart</ref>();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a0b3399a96a4050426908899c41189c4d" kindref="member">RenderSkyBox</ref>();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a7dac2150204e2cc624a6acca83de8247" kindref="member">RenderFloor</ref>();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//map<sp/>rendering</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a9908232efb4d7c2e49ee36dab3e43ab3" kindref="member">RenderDownWall</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xPosLarge,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xPosSmall,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>zPos);</highlight><highlight class="comment">//positive<sp/>Z<sp/>facing<sp/>wall</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a24f070b7ad0f8e3db3cc723741f44a50" kindref="member">RenderUpWall</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xPosLarge,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xPosSmall,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>zPos);</highlight><highlight class="comment">//negative<sp/>Z<sp/>facing<sp/>Wall</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1aae02b96a92e5ba978535ea4e9a111486" kindref="member">RenderRightWall</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>zPosLarge,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>zPosSmall,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xPos);</highlight><highlight class="comment">//<sp/>positive<sp/>X<sp/>facing<sp/>wall</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a5634520e56cfa55d746b33bef05a85fd" kindref="member">RenderLeftWall</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>zPosLarge,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>zPosSmall,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xPos);</highlight><highlight class="comment">//negative<sp/>X<sp/>facing<sp/>wall</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//render<sp/>functions<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a856f20c24206e8d026e0e6bdce83104c" kindref="member">RenderText</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/>std::string<sp/>text,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a60fabd28a592ad6e30d73aa5fb96a046" kindref="member">RenderTextOnScreen</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/>std::string<sp/>text,<sp/><ref refid="structColor" kindref="compound">Color</ref><sp/>color,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a27510d7c6b9844e50e6de0650d4f061f" kindref="member">RenderModelOnScreen</ref>(<ref refid="classMesh" kindref="compound">Mesh</ref>*<sp/>mesh,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Sx,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Sy,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Sz,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Rotate,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rY,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rZ,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>LightYN);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1ab5f3575d421d2ebf2d6f7b36cd6d4d54" kindref="member">RenderTextWord</ref>();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Interactions<sp/>to<sp/>change<sp/>to<sp/>FirstCutScene</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1ac8a46a304217ba0b4c9dc32fadbc084a" kindref="member">ChangeFirstCutScene</ref>();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="classOpeningCutScene2_1a9585a2727ef69cb14fcacdd44e76161f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a9585a2727ef69cb14fcacdd44e76161f" kindref="member">m_vertexArrayID</ref>;</highlight></codeline>
+<codeline lineno="112" refid="classOpeningCutScene2_1a54aa49a9926dda57e904c6f76f8a82bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMesh" kindref="compound">Mesh</ref><sp/>*<ref refid="classOpeningCutScene2_1a54aa49a9926dda57e904c6f76f8a82bf" kindref="member">meshList</ref>[<ref refid="classOpeningCutScene2_1a313c7f1cd8600d9219fcbef13290b864ad732014a0406f7017b6bf351c50a7a0b" kindref="member">NUM_GEOMETRY</ref>];</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="classOpeningCutScene2_1a7be9cd1229f747b517b8009540e0e09e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a7be9cd1229f747b517b8009540e0e09e" kindref="member">m_programID</ref>;</highlight></codeline>
+<codeline lineno="115" refid="classOpeningCutScene2_1a314ed95c3954e36b898925f27e54ed14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a314ed95c3954e36b898925f27e54ed14" kindref="member">m_parameters</ref>[<ref refid="classOpeningCutScene2_1aa596db9ca75d78e395091d1041b867e5a34c909bb2885a82a6cce1920c198634a" kindref="member">U_TOTAL</ref>];</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="classOpeningCutScene2_1a6925825df370c1a2b02643d3f5094671" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classAnimation" kindref="compound">Animation</ref><sp/><ref refid="classOpeningCutScene2_1a6925825df370c1a2b02643d3f5094671" kindref="member">anima</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="classOpeningCutScene2_1a203915d1ce9fbda723edb06c10580d29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMS" kindref="compound">MS</ref><sp/><ref refid="classOpeningCutScene2_1a0fbe81fdda45670e6374fe31862a2d16" kindref="member">modelStack</ref>,<sp/><ref refid="classOpeningCutScene2_1a203915d1ce9fbda723edb06c10580d29" kindref="member">viewStack</ref>,<sp/><ref refid="classOpeningCutScene2_1a12ae1dd5360900c524846b0b7d988ebd" kindref="member">projectionStack</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="classOpeningCutScene2_1ad293f27294f773f50020db94a8c88612" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight" kindref="compound">Light</ref><sp/><ref refid="classOpeningCutScene2_1ad293f27294f773f50020db94a8c88612" kindref="member">light</ref>[1];</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//variables<sp/>for<sp/>scene<sp/>changer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="classOpeningCutScene2_1ae97a6cecbc4cb233ba5b0419d1db25cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classOpeningCutScene2_1ae97a6cecbc4cb233ba5b0419d1db25cb" kindref="member">start</ref>;</highlight></codeline>
+<codeline lineno="127" refid="classOpeningCutScene2_1af42af8e964eb0060aeffc28bf7dfb791" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classOpeningCutScene2_1af42af8e964eb0060aeffc28bf7dfb791" kindref="member">end</ref>;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="classOpeningCutScene2_1a0d553e7fe35bddc8b4b650040435a49d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmisc" kindref="compound">misc</ref><sp/><ref refid="classOpeningCutScene2_1a0d553e7fe35bddc8b4b650040435a49d" kindref="member">Misc</ref>;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classOpeningCutScene2_1acd4b8066ffadf9a54538baea5db40c77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1acd4b8066ffadf9a54538baea5db40c77" kindref="member">rotateCamX</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="132" refid="classOpeningCutScene2_1a35da5908495891a8250956e1ab1311d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a35da5908495891a8250956e1ab1311d9" kindref="member">MoveCamera1</ref>;</highlight></codeline>
+<codeline lineno="133" refid="classOpeningCutScene2_1ad5cb66d9c8373229b54bb0dd9b3c0edb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1ad5cb66d9c8373229b54bb0dd9b3c0edb" kindref="member">camera_check1</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134" refid="classOpeningCutScene2_1ace953870bd296a753e8ba54da048aa88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1ace953870bd296a753e8ba54da048aa88" kindref="member">camera_check2</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135" refid="classOpeningCutScene2_1a5317127799e1e06e8efe9a08f0f4aaa8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a5317127799e1e06e8efe9a08f0f4aaa8" kindref="member">camera_check3</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="classOpeningCutScene2_1a697bc9ea5fe7f5a87597f78229d74bd6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a697bc9ea5fe7f5a87597f78229d74bd6" kindref="member">rotateCamY</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138" refid="classOpeningCutScene2_1ad788c9361ac46e8068aeaa5430702c8b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1ad788c9361ac46e8068aeaa5430702c8b" kindref="member">RotateCamera</ref>;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="classOpeningCutScene2_1a404f625b0c5cd68c96b6de6d7761b135" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a404f625b0c5cd68c96b6de6d7761b135" kindref="member">wokeUp</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141" refid="classOpeningCutScene2_1a7e8c3cabdfc3d1e5d67f8a2f64173000" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a7e8c3cabdfc3d1e5d67f8a2f64173000" kindref="member">check1</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="142" refid="classOpeningCutScene2_1a348f2710be8dbd84fb3999f5ea313df7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a348f2710be8dbd84fb3999f5ea313df7" kindref="member">check2</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="143" refid="classOpeningCutScene2_1af40acd3ffe3f1aef107e1aa56c8fb0a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1af40acd3ffe3f1aef107e1aa56c8fb0a5" kindref="member">check3</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="144" refid="classOpeningCutScene2_1a5c66d02c9c804d6dff5c49db19feabcd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a5c66d02c9c804d6dff5c49db19feabcd" kindref="member">eyeOpening</ref>;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="classOpeningCutScene2_1a1f2690b5cafbffff0a108a107338b82e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a1f2690b5cafbffff0a108a107338b82e" kindref="member">text1</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="147" refid="classOpeningCutScene2_1a306610418c0b8f30271df1c18d8aa9ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2_1a306610418c0b8f30271df1c18d8aa9ce" kindref="member">text2</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/OpeningCutScene2.h"/>
+  </compounddef>
+</doxygen>

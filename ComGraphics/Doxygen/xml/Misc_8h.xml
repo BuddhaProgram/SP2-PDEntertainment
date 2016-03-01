@@ -1,0 +1,382 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Misc_8h" kind="file" language="C++">
+    <compoundname>Misc.h</compoundname>
+    <includes refid="Vector3_8h" local="yes">Vector3.h</includes>
+    <includedby refid="Scene_8h" local="yes">ComGraphics/Source/Scene.h</includedby>
+    <includedby refid="SceneStart_8h" local="yes">ComGraphics/Source/SceneStart.h</includedby>
+    <includedby refid="OpeningCutScene2_8h" local="yes">ComGraphics/Source/OpeningCutScene2.h</includedby>
+    <includedby refid="Misc_8cpp" local="yes">ComGraphics/Source/Misc.cpp</includedby>
+    <includedby refid="MobGhost_8cpp" local="yes">ComGraphics/Source/MobGhost.cpp</includedby>
+    <includedby refid="SceneLevelOneARenders_8cpp" local="yes">ComGraphics/Source/SceneLevelOneARenders.cpp</includedby>
+    <includedby refid="SceneLevelTwoRenders_8cpp" local="yes">ComGraphics/Source/SceneLevelTwoRenders.cpp</includedby>
+    <incdepgraph>
+      <node id="5958">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5959" relation="include">
+        </childnode>
+        <childnode refid="5964" relation="include">
+        </childnode>
+      </node>
+      <node id="5960">
+        <label>cmath</label>
+      </node>
+      <node id="5957">
+        <label>ComGraphics/Source/Misc.h</label>
+        <link refid="Misc.h"/>
+        <childnode refid="5958" relation="include">
+        </childnode>
+      </node>
+      <node id="5961">
+        <label>exception</label>
+      </node>
+      <node id="5962">
+        <label>ctime</label>
+      </node>
+      <node id="5963">
+        <label>cstdlib</label>
+      </node>
+      <node id="5964">
+        <label>iostream</label>
+      </node>
+      <node id="5959">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5960" relation="include">
+        </childnode>
+        <childnode refid="5961" relation="include">
+        </childnode>
+        <childnode refid="5962" relation="include">
+        </childnode>
+        <childnode refid="5963" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5997">
+        <label>ComGraphics/Source/OpeningCutScene.h</label>
+        <link refid="OpeningCutScene_8h"/>
+        <childnode refid="5968" relation="include">
+        </childnode>
+        <childnode refid="5976" relation="include">
+        </childnode>
+      </node>
+      <node id="5977">
+        <label>ComGraphics/Source/OpeningCutScene2.cpp</label>
+        <link refid="OpeningCutScene2_8cpp"/>
+      </node>
+      <node id="5986">
+        <label>ComGraphics/Source/SceneLevelTwoRenders.cpp</label>
+        <link refid="SceneLevelTwoRenders_8cpp"/>
+      </node>
+      <node id="6000">
+        <label>ComGraphics/Source/Credits.h</label>
+        <link refid="Credits_8h"/>
+        <childnode refid="5968" relation="include">
+        </childnode>
+        <childnode refid="5973" relation="include">
+        </childnode>
+      </node>
+      <node id="5989">
+        <label>ComGraphics/Source/SceneStartRenders.cpp</label>
+        <link refid="SceneStartRenders_8cpp"/>
+      </node>
+      <node id="5980">
+        <label>ComGraphics/Source/SceneEndRenders.cpp</label>
+        <link refid="SceneEndRenders_8cpp"/>
+      </node>
+      <node id="5975">
+        <label>ComGraphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="5966">
+        <label>ComGraphics/Source/Scene.h</label>
+        <link refid="Scene_8h"/>
+        <childnode refid="5967" relation="include">
+        </childnode>
+        <childnode refid="5969" relation="include">
+        </childnode>
+        <childnode refid="5988" relation="include">
+        </childnode>
+        <childnode refid="5990" relation="include">
+        </childnode>
+        <childnode refid="5992" relation="include">
+        </childnode>
+        <childnode refid="5994" relation="include">
+        </childnode>
+        <childnode refid="5995" relation="include">
+        </childnode>
+        <childnode refid="5996" relation="include">
+        </childnode>
+        <childnode refid="5997" relation="include">
+        </childnode>
+        <childnode refid="5998" relation="include">
+        </childnode>
+        <childnode refid="5999" relation="include">
+        </childnode>
+        <childnode refid="6000" relation="include">
+        </childnode>
+      </node>
+      <node id="5984">
+        <label>ComGraphics/Source/SceneLevelOneBRenders.cpp</label>
+        <link refid="SceneLevelOneBRenders_8cpp"/>
+      </node>
+      <node id="5972">
+        <label>ComGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="5976">
+        <label>ComGraphics/Source/OpeningCutScene.cpp</label>
+        <link refid="OpeningCutScene_8cpp"/>
+      </node>
+      <node id="5990">
+        <label>ComGraphics/Source/SceneEnd.h</label>
+        <link refid="SceneEnd_8h"/>
+        <childnode refid="5968" relation="include">
+        </childnode>
+        <childnode refid="5991" relation="include">
+        </childnode>
+        <childnode refid="5978" relation="include">
+        </childnode>
+        <childnode refid="5980" relation="include">
+        </childnode>
+      </node>
+      <node id="5965">
+        <label>ComGraphics/Source/Misc.h</label>
+        <link refid="Misc.h"/>
+        <childnode refid="5966" relation="include">
+        </childnode>
+        <childnode refid="5988" relation="include">
+        </childnode>
+        <childnode refid="5998" relation="include">
+        </childnode>
+        <childnode refid="6001" relation="include">
+        </childnode>
+        <childnode refid="6002" relation="include">
+        </childnode>
+        <childnode refid="5982" relation="include">
+        </childnode>
+        <childnode refid="5986" relation="include">
+        </childnode>
+      </node>
+      <node id="5996">
+        <label>ComGraphics/Source/SceneLevelTwo.h</label>
+        <link refid="SceneLevelTwo_8h"/>
+        <childnode refid="5968" relation="include">
+        </childnode>
+        <childnode refid="5991" relation="include">
+        </childnode>
+        <childnode refid="5985" relation="include">
+        </childnode>
+        <childnode refid="5986" relation="include">
+        </childnode>
+      </node>
+      <node id="5967">
+        <label>ComGraphics/Source/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="5968" relation="include">
+        </childnode>
+        <childnode refid="5969" relation="include">
+        </childnode>
+        <childnode refid="5971" relation="include">
+        </childnode>
+        <childnode refid="5972" relation="include">
+        </childnode>
+        <childnode refid="5973" relation="include">
+        </childnode>
+        <childnode refid="5974" relation="include">
+        </childnode>
+        <childnode refid="5975" relation="include">
+        </childnode>
+        <childnode refid="5976" relation="include">
+        </childnode>
+        <childnode refid="5977" relation="include">
+        </childnode>
+        <childnode refid="5978" relation="include">
+        </childnode>
+        <childnode refid="5979" relation="include">
+        </childnode>
+        <childnode refid="5980" relation="include">
+        </childnode>
+        <childnode refid="5981" relation="include">
+        </childnode>
+        <childnode refid="5982" relation="include">
+        </childnode>
+        <childnode refid="5983" relation="include">
+        </childnode>
+        <childnode refid="5984" relation="include">
+        </childnode>
+        <childnode refid="5985" relation="include">
+        </childnode>
+        <childnode refid="5986" relation="include">
+        </childnode>
+        <childnode refid="5987" relation="include">
+        </childnode>
+      </node>
+      <node id="5973">
+        <label>ComGraphics/Source/Credits.cpp</label>
+        <link refid="Credits_8cpp"/>
+      </node>
+      <node id="5982">
+        <label>ComGraphics/Source/SceneLevelOneARenders.cpp</label>
+        <link refid="SceneLevelOneARenders_8cpp"/>
+      </node>
+      <node id="5978">
+        <label>ComGraphics/Source/SceneEnd.cpp</label>
+        <link refid="SceneEnd_8cpp"/>
+      </node>
+      <node id="5992">
+        <label>ComGraphics/Source/CutSceneOne.h</label>
+        <link refid="CutSceneOne_8h"/>
+        <childnode refid="5968" relation="include">
+        </childnode>
+        <childnode refid="5974" relation="include">
+        </childnode>
+        <childnode refid="5993" relation="include">
+        </childnode>
+      </node>
+      <node id="5985">
+        <label>ComGraphics/Source/SceneLevelTwo.cpp</label>
+        <link refid="SceneLevelTwo_8cpp"/>
+      </node>
+      <node id="5969">
+        <label>ComGraphics/Source/SceneOpening.h</label>
+        <link refid="SceneOpening_8h"/>
+        <childnode refid="5968" relation="include">
+        </childnode>
+        <childnode refid="5970" relation="include">
+        </childnode>
+      </node>
+      <node id="5994">
+        <label>ComGraphics/Source/SceneLevelOneA.h</label>
+        <link refid="SceneLevelOneA_8h"/>
+        <childnode refid="5968" relation="include">
+        </childnode>
+        <childnode refid="5991" relation="include">
+        </childnode>
+        <childnode refid="5981" relation="include">
+        </childnode>
+        <childnode refid="5982" relation="include">
+        </childnode>
+      </node>
+      <node id="5971">
+        <label>ComGraphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
+      </node>
+      <node id="5983">
+        <label>ComGraphics/Source/SceneLevelOneB.cpp</label>
+        <link refid="SceneLevelOneB_8cpp"/>
+      </node>
+      <node id="5999">
+        <label>ComGraphics/Source/SceneEndCutScene.h</label>
+        <link refid="SceneEndCutScene_8h"/>
+        <childnode refid="5968" relation="include">
+        </childnode>
+        <childnode refid="5979" relation="include">
+        </childnode>
+        <childnode refid="5980" relation="include">
+        </childnode>
+      </node>
+      <node id="5979">
+        <label>ComGraphics/Source/SceneEndCutScene.cpp</label>
+        <link refid="SceneEndCutScene_8cpp"/>
+      </node>
+      <node id="5991">
+        <label>ComGraphics/Source/MapRender.cpp</label>
+        <link refid="MapRender_8cpp"/>
+      </node>
+      <node id="6001">
+        <label>ComGraphics/Source/Misc.cpp</label>
+        <link refid="Misc_8cpp"/>
+      </node>
+      <node id="5968">
+        <label>ComGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5981">
+        <label>ComGraphics/Source/SceneLevelOneA.cpp</label>
+        <link refid="SceneLevelOneA_8cpp"/>
+      </node>
+      <node id="5970">
+        <label>ComGraphics/Source/SceneOpening.cpp</label>
+        <link refid="SceneOpening_8cpp"/>
+      </node>
+      <node id="5995">
+        <label>ComGraphics/Source/SceneLevelOneB.h</label>
+        <link refid="SceneLevelOneB_8h"/>
+        <childnode refid="5968" relation="include">
+        </childnode>
+        <childnode refid="5991" relation="include">
+        </childnode>
+        <childnode refid="5983" relation="include">
+        </childnode>
+        <childnode refid="5984" relation="include">
+        </childnode>
+      </node>
+      <node id="6002">
+        <label>ComGraphics/Source/MobGhost.cpp</label>
+        <link refid="MobGhost_8cpp"/>
+      </node>
+      <node id="5987">
+        <label>ComGraphics/Source/SceneStart.cpp</label>
+        <link refid="SceneStart_8cpp"/>
+      </node>
+      <node id="5988">
+        <label>ComGraphics/Source/SceneStart.h</label>
+        <link refid="SceneStart_8h"/>
+        <childnode refid="5968" relation="include">
+        </childnode>
+        <childnode refid="5972" relation="include">
+        </childnode>
+        <childnode refid="5987" relation="include">
+        </childnode>
+        <childnode refid="5989" relation="include">
+        </childnode>
+      </node>
+      <node id="5998">
+        <label>ComGraphics/Source/OpeningCutScene2.h</label>
+        <link refid="OpeningCutScene2_8h"/>
+        <childnode refid="5968" relation="include">
+        </childnode>
+        <childnode refid="5977" relation="include">
+        </childnode>
+        <childnode refid="5989" relation="include">
+        </childnode>
+      </node>
+      <node id="5974">
+        <label>ComGraphics/Source/CutSceneOne.cpp</label>
+        <link refid="CutSceneOne_8cpp"/>
+      </node>
+      <node id="5993">
+        <label>ComGraphics/Source/CutSceneOneRenders.cpp</label>
+        <link refid="CutSceneOneRenders_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classmisc" prot="public">misc</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>TOOLS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TOOLS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3_8h" kindref="compound">Vector3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="classmisc" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmisc" kindref="compound">misc</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmisc_1a49469fb4e803e779cd3b63531d59a9d5" kindref="member">misc</ref>();</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmisc_1ae3266418d93ee3ea5a16ac291fb43e3d" kindref="member">~misc</ref>();</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classmisc_1a0f8d72dfe38a0284899586da142daf8a" kindref="member">WithinArea</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>smallx,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>largex,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>smallz,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>largez);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classmisc_1af425955855ed4c3d4f09621afdf11785" kindref="member">hitting</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distance,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>mobx,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>mobz,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>AOA,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classmisc_1afd385934888e7e21a9c3c178b7fd465d" kindref="member">camX</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classmisc_1a65813e82056f0e24ccf36088618001f1" kindref="member">camZ</ref>,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>view,<sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>position);<sp/></highlight><highlight class="comment">//<sp/>AOA<sp/>is<sp/>angle<sp/>of<sp/>attack</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classmisc_1a65813e82056f0e24ccf36088618001f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classmisc_1afd385934888e7e21a9c3c178b7fd465d" kindref="member">camX</ref>,<sp/><ref refid="classmisc_1a258dc895e8b8081de36e396744cb24d7" kindref="member">camY</ref>,<sp/><ref refid="classmisc_1a65813e82056f0e24ccf36088618001f1" kindref="member">camZ</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/Misc.h"/>
+  </compounddef>
+</doxygen>

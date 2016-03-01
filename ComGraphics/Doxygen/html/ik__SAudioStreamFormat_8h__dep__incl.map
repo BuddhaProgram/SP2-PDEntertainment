@@ -1,0 +1,36 @@
+<map id="ComGraphics/irrKlang/include/ik_SAudioStreamFormat.h" name="ComGraphics/irrKlang/include/ik_SAudioStreamFormat.h">
+<area shape="rect" id="node2" href="$ik__ISoundSource_8h.html" title="ComGraphics/irrKlang\l/include/ik_ISoundSource.h" alt="" coords="1162,102,1342,143"/>
+<area shape="rect" id="node4" href="$irrKlang_8h.html" title="Main header file of the irrKlang sound library, the only file needed to include. " alt="" coords="1496,310,1645,351"/>
+<area shape="rect" id="node30" href="$ik__IAudioStream_8h.html" title="ComGraphics/irrKlang\l/include/ik_IAudioStream.h" alt="" coords="1794,102,1971,143"/>
+<area shape="rect" id="node34" href="$ik__ISoundMixedOutputReceiver_8h.html" title="ComGraphics/irrKlang\l/include/ik_ISoundMixedOutput\lReceiver.h" alt="" coords="1381,95,1584,151"/>
+<area shape="rect" id="node35" href="$ik__ISoundStopEventReceiver_8h.html" title="ComGraphics/irrKlang\l/include/ik_ISoundStopEvent\lReceiver.h" alt="" coords="1659,199,1845,255"/>
+<area shape="rect" id="node3" href="$ik__IAudioRecorder_8h.html" title="ComGraphics/irrKlang\l/include/ik_IAudioRecorder.h" alt="" coords="1144,206,1331,247"/>
+<area shape="rect" id="node29" href="$ik__ISoundEngine_8h.html" title="ComGraphics/irrKlang\l/include/ik_ISoundEngine.h" alt="" coords="1355,206,1533,247"/>
+<area shape="rect" id="node5" href="$ikpMP3_8cpp.html" title="ComGraphics/irrKlang\l/plugins/ikpMP3/ikpMP3.cpp" alt="" coords="1381,407,1569,448"/>
+<area shape="rect" id="node6" href="$Music_8h.html" title="ComGraphics/Source\l/Music.h" alt="" coords="1593,407,1740,448"/>
+<area shape="rect" id="node7" href="$Application_8h.html" title="ComGraphics/Source\l/Application.h" alt="" coords="1508,496,1655,537"/>
+<area shape="rect" id="node28" href="$Music_8cpp.html" title="ComGraphics/Source\l/Music.cpp" alt="" coords="1679,496,1825,537"/>
+<area shape="rect" id="node8" href="$Application_8cpp.html" title="ComGraphics/Source\l/Application.cpp" alt="" coords="5,675,152,716"/>
+<area shape="rect" id="node9" href="$SceneOpening_8h.html" title="ComGraphics/Source\l/SceneOpening.h" alt="" coords="116,585,263,627"/>
+<area shape="rect" id="node11" href="$Camera_8cpp.html" title="ComGraphics/Source\l/Camera.cpp" alt="" coords="287,585,433,627"/>
+<area shape="rect" id="node12" href="$Camera3_8cpp.html" title="ComGraphics/Source\l/Camera3.cpp" alt="" coords="457,585,604,627"/>
+<area shape="rect" id="node13" href="$Credits_8cpp.html" title="ComGraphics/Source\l/Credits.cpp" alt="" coords="628,585,775,627"/>
+<area shape="rect" id="node14" href="$CutSceneOne_8cpp.html" title="ComGraphics/Source\l/CutSceneOne.cpp" alt="" coords="799,585,945,627"/>
+<area shape="rect" id="node15" href="$main_8cpp.html" title="ComGraphics/Source\l/main.cpp" alt="" coords="969,585,1116,627"/>
+<area shape="rect" id="node16" href="$OpeningCutScene_8cpp.html" title="ComGraphics/Source\l/OpeningCutScene.cpp" alt="" coords="1141,585,1297,627"/>
+<area shape="rect" id="node17" href="$OpeningCutScene2_8cpp.html" title="ComGraphics/Source\l/OpeningCutScene2.cpp" alt="" coords="1321,585,1484,627"/>
+<area shape="rect" id="node18" href="$SceneEnd_8cpp.html" title="ComGraphics/Source\l/SceneEnd.cpp" alt="" coords="1508,585,1655,627"/>
+<area shape="rect" id="node19" href="$SceneEndCutScene_8cpp.html" title="ComGraphics/Source\l/SceneEndCutScene.cpp" alt="" coords="1679,585,1847,627"/>
+<area shape="rect" id="node20" href="$SceneEndRenders_8cpp.html" title="ComGraphics/Source\l/SceneEndRenders.cpp" alt="" coords="1871,585,2030,627"/>
+<area shape="rect" id="node21" href="$SceneLevelOneA_8cpp.html" title="ComGraphics/Source\l/SceneLevelOneA.cpp" alt="" coords="2054,585,2205,627"/>
+<area shape="rect" id="node22" href="$SceneLevelOneARenders_8cpp.html" title="ComGraphics/Source\l/SceneLevelOneARenders.cpp" alt="" coords="2229,585,2427,627"/>
+<area shape="rect" id="node23" href="$SceneLevelOneB_8cpp.html" title="ComGraphics/Source\l/SceneLevelOneB.cpp" alt="" coords="2451,585,2602,627"/>
+<area shape="rect" id="node24" href="$SceneLevelOneBRenders_8cpp.html" title="ComGraphics/Source\l/SceneLevelOneBRenders.cpp" alt="" coords="2626,585,2825,627"/>
+<area shape="rect" id="node25" href="$SceneLevelTwo_8cpp.html" title="ComGraphics/Source\l/SceneLevelTwo.cpp" alt="" coords="2849,585,2996,627"/>
+<area shape="rect" id="node26" href="$SceneLevelTwoRenders_8cpp.html" title="ComGraphics/Source\l/SceneLevelTwoRenders.cpp" alt="" coords="3021,585,3209,627"/>
+<area shape="rect" id="node27" href="$SceneStart_8cpp.html" title="ComGraphics/Source\l/SceneStart.cpp" alt="" coords="3233,585,3380,627"/>
+<area shape="rect" id="node10" href="$SceneOpening_8cpp.html" title="ComGraphics/Source\l/SceneOpening.cpp" alt="" coords="176,675,323,716"/>
+<area shape="rect" id="node31" href="$CIrrKlangAudioStreamMP3_8h.html" title="ComGraphics/irrKlang\l/plugins/ikpMP3/CIrrKlangAudio\lStreamMP3.h" alt="" coords="1920,199,2125,255"/>
+<area shape="rect" id="node32" href="$CIrrKlangAudioStreamLoaderMP3_8cpp.html" title="ComGraphics/irrKlang\l/plugins/ikpMP3/CIrrKlangAudio\lStreamLoaderMP3.cpp" alt="" coords="2035,303,2240,359"/>
+<area shape="rect" id="node33" href="$CIrrKlangAudioStreamMP3_8cpp.html" title="ComGraphics/irrKlang\l/plugins/ikpMP3/CIrrKlangAudio\lStreamMP3.cpp" alt="" coords="1805,303,2011,359"/>
+</map>

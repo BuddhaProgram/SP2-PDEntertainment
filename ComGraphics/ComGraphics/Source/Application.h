@@ -32,6 +32,7 @@ public:
     static void StartingScene();
     static void EndingScene();
 	static void EndingCutScene();
+	static void End_Credits();
 
 	static Music *musics;
 
@@ -46,6 +47,7 @@ public:
 	static Scene *End;
 	static Scene *CutScene1;
 	static Scene *EndScene;
+	static Scene* EndCredits;
 private:
 
 	//Declare a window object

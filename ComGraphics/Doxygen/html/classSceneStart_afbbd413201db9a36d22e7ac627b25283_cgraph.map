@@ -1,0 +1,6 @@
+<map id="SceneStart::ChangeFirstCutScene" name="SceneStart::ChangeFirstCutScene">
+<area shape="rect" id="node2" href="$classApplication.html#a41920db676f4ab014b9ee32c2043ff9b" title="Application::FirstCutScene" alt="" coords="241,5,419,32"/>
+<area shape="rect" id="node4" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="243,56,417,83"/>
+<area shape="rect" id="node5" href="$classSceneStart.html#a13ffa609089ada96e41281c0a49c8e6b" title="SceneStart::proximitycheck" alt="" coords="239,107,421,133"/>
+<area shape="rect" id="node3" href="$classScene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478" title="Scene::Init" alt="" coords="469,5,553,32"/>
+</map>

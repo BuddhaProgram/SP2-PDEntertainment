@@ -56,14 +56,6 @@ void SceneLevelOneA::RenderScene()
         modelStack.PopMatrix();
     //modelStack.PopMatrix();
 
-    //firstsave
-    modelStack.PushMatrix();
-		modelStack.Translate(120, 5, 75);
-        modelStack.Rotate(Variables.f_savePointRotateY, 0, 1, 0);
-		modelStack.Scale(4, 4, 4);
-		RenderMesh(meshList[GEO_SPAWNPOINT], true);
-	modelStack.PopMatrix();
-
     RenderFloorCeiling();
     RenderSuitCase();
 
@@ -284,7 +276,7 @@ void SceneLevelOneA::checkDoor3()
 
 	if (anima.toSlideDoorBtm3)
 	{
-		Collision(182, 227, 60, 64);
+		Collision(150, 250, 58, 64);
 	}
 
 }
@@ -402,6 +394,7 @@ void SceneLevelOneA::AttackCheck()
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(40.f, Ghost.MobPosX, Ghost.MobPosZ, 270, camera.position.x, camera.position.z, camera.view, camera.position))
     {
 		Ghost.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);//temporary variable is 1
+        CrosshairHit = true;
     }
 }
 
@@ -422,10 +415,10 @@ void SceneLevelOneA::AnimationCheck(double dt)
 	}
 	if (activateDoor3) { anima.OpenSlideDoor3(dt); }
 
-	if (!(proximitycheck(192, 217, 60, 64)))
+	/*if (!(proximitycheck(192, 217, 60, 64)))
 	{
 		anima.CloseSlideDoor3(dt);
-	}
+	}*/
 	if (willDrop)
 	{
 		anima.Portraits(dt);

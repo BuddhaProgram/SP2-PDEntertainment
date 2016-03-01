@@ -218,9 +218,13 @@ void OpeningCutScene::Update(double dt)
 
 	std::cout << timercount << std::endl;
 
-	if (changeScene)
+	if (Application::IsKeyPressed(VK_BACK))
 	{
-		
+		Application::StartingScene();
+	}
+
+	if (changeScene)
+	{	
 		Application::OpenCutScene2();
 	}
 	/*-------------------------[End of Tool UI Functions]-------------------------------*/

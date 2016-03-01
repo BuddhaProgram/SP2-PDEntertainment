@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="dir_3326c5576caa7a90aa06beb835d3fb54" kind="dir">
+    <compoundname>ComGraphics/Source</compoundname>
+    <innerfile refid="Application_8cpp">Application.cpp</innerfile>
+    <innerfile refid="Application_8h">Application.h</innerfile>
+    <innerfile refid="Camera_8cpp">Camera.cpp</innerfile>
+    <innerfile refid="Camera_8h">Camera.h</innerfile>
+    <innerfile refid="Camera3_8cpp">Camera3.cpp</innerfile>
+    <innerfile refid="Camera3_8h">Camera3.h</innerfile>
+    <innerfile refid="Credits_8cpp">Credits.cpp</innerfile>
+    <innerfile refid="Credits_8h">Credits.h</innerfile>
+    <innerfile refid="CutSceneOne_8cpp">CutSceneOne.cpp</innerfile>
+    <innerfile refid="CutSceneOne_8h">CutSceneOne.h</innerfile>
+    <innerfile refid="CutSceneOneRenders_8cpp">CutSceneOneRenders.cpp</innerfile>
+    <innerfile refid="Explorer_8cpp">Explorer.cpp</innerfile>
+    <innerfile refid="Explorer_8h">Explorer.h</innerfile>
+    <innerfile refid="GlobalVariables_8cpp">GlobalVariables.cpp</innerfile>
+    <innerfile refid="GlobalVariables_8h">GlobalVariables.h</innerfile>
+    <innerfile refid="HostileMob_8cpp">HostileMob.cpp</innerfile>
+    <innerfile refid="HostileMob_8h">HostileMob.h</innerfile>
+    <innerfile refid="Light_8h">Light.h</innerfile>
+    <innerfile refid="LoadOBJ_8cpp">LoadOBJ.cpp</innerfile>
+    <innerfile refid="LoadOBJ_8h">LoadOBJ.h</innerfile>
+    <innerfile refid="LoadTGA_8cpp">LoadTGA.cpp</innerfile>
+    <innerfile refid="LoadTGA_8h">LoadTGA.h</innerfile>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <innerfile refid="MapRender_8cpp">MapRender.cpp</innerfile>
+    <innerfile refid="Material_8h">Material.h</innerfile>
+    <innerfile refid="Mesh_8cpp">Mesh.cpp</innerfile>
+    <innerfile refid="Mesh_8h">Mesh.h</innerfile>
+    <innerfile refid="MeshBuilder_8cpp">MeshBuilder.cpp</innerfile>
+    <innerfile refid="MeshBuilder_8h">MeshBuilder.h</innerfile>
+    <innerfile refid="Misc_8cpp">Misc.cpp</innerfile>
+    <innerfile refid="Misc_8h">Misc.h</innerfile>
+    <innerfile refid="MobBossOne_8cpp">MobBossOne.cpp</innerfile>
+    <innerfile refid="MobBossOne_8h">MobBossOne.h</innerfile>
+    <innerfile refid="MobGhost_8cpp">MobGhost.cpp</innerfile>
+    <innerfile refid="MobGhost_8h">MobGhost.h</innerfile>
+    <innerfile refid="Music_8cpp">Music.cpp</innerfile>
+    <innerfile refid="Music_8h">Music.h</innerfile>
+    <innerfile refid="OBJAnimation_8cpp">OBJAnimation.cpp</innerfile>
+    <innerfile refid="OBJAnimation_8h">OBJAnimation.h</innerfile>
+    <innerfile refid="OpeningCutScene_8cpp">OpeningCutScene.cpp</innerfile>
+    <innerfile refid="OpeningCutScene_8h">OpeningCutScene.h</innerfile>
+    <innerfile refid="OpeningCutScene2_8cpp">OpeningCutScene2.cpp</innerfile>
+    <innerfile refid="OpeningCutScene2_8h">OpeningCutScene2.h</innerfile>
+    <innerfile refid="Scene_8h">Scene.h</innerfile>
+    <innerfile refid="SceneEnd_8cpp">SceneEnd.cpp</innerfile>
+    <innerfile refid="SceneEnd_8h">SceneEnd.h</innerfile>
+    <innerfile refid="SceneEndCutScene_8cpp">SceneEndCutScene.cpp</innerfile>
+    <innerfile refid="SceneEndCutScene_8h">SceneEndCutScene.h</innerfile>
+    <innerfile refid="SceneEndRenders_8cpp">SceneEndRenders.cpp</innerfile>
+    <innerfile refid="SceneLevelOneA_8cpp">SceneLevelOneA.cpp</innerfile>
+    <innerfile refid="SceneLevelOneA_8h">SceneLevelOneA.h</innerfile>
+    <innerfile refid="SceneLevelOneARenders_8cpp">SceneLevelOneARenders.cpp</innerfile>
+    <innerfile refid="SceneLevelOneB_8cpp">SceneLevelOneB.cpp</innerfile>
+    <innerfile refid="SceneLevelOneB_8h">SceneLevelOneB.h</innerfile>
+    <innerfile refid="SceneLevelOneBRenders_8cpp">SceneLevelOneBRenders.cpp</innerfile>
+    <innerfile refid="SceneLevelTwo_8cpp">SceneLevelTwo.cpp</innerfile>
+    <innerfile refid="SceneLevelTwo_8h">SceneLevelTwo.h</innerfile>
+    <innerfile refid="SceneLevelTwoRenders_8cpp">SceneLevelTwoRenders.cpp</innerfile>
+    <innerfile refid="SceneOpening_8cpp">SceneOpening.cpp</innerfile>
+    <innerfile refid="SceneOpening_8h">SceneOpening.h</innerfile>
+    <innerfile refid="SceneStart_8cpp">SceneStart.cpp</innerfile>
+    <innerfile refid="SceneStart_8h">SceneStart.h</innerfile>
+    <innerfile refid="SceneStartRenders_8cpp">SceneStartRenders.cpp</innerfile>
+    <innerfile refid="shader_8cpp">shader.cpp</innerfile>
+    <innerfile refid="shader_8hpp">shader.hpp</innerfile>
+    <innerfile refid="spawnPoints_8cpp">spawnPoints.cpp</innerfile>
+    <innerfile refid="spawnPoints_8h">spawnPoints.h</innerfile>
+    <innerfile refid="SwitchLightPuzzle_8cpp">SwitchLightPuzzle.cpp</innerfile>
+    <innerfile refid="SwitchLightPuzzle_8h">SwitchLightPuzzle.h</innerfile>
+    <innerfile refid="ToolUI_8cpp">ToolUI.cpp</innerfile>
+    <innerfile refid="ToolUI_8h">ToolUI.h</innerfile>
+    <innerfile refid="Utility_8cpp">Utility.cpp</innerfile>
+    <innerfile refid="Utility_8h">Utility.h</innerfile>
+    <innerfile refid="Vertex_8h">Vertex.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ComGraphics/Source/"/>
+  </compounddef>
+</doxygen>

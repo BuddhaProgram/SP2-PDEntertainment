@@ -15,6 +15,7 @@
 
 SceneLevelOneB::SceneLevelOneB()
 {
+    CrosshairHit = false;
 }
 
 SceneLevelOneB::~SceneLevelOneB()
@@ -241,6 +242,26 @@ void SceneLevelOneB::ResetSameScene()
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
 	}
+
+
+	activateDoor1 = false;
+	activateDoor2 = false;
+	activateDoor3_1 = false;
+	activateDoor3_2 = false;
+	activateDoor4 = false;
+
+	anima.DoorSlideTop_Boss = 0;
+	anima.DoorSlideBtm_Boss = 0;
+	anima.toSlideDoorTop_Boss = true;
+	anima.toSlideDoorBtm_Boss = true;
+	anima.ClosingDoorTop_Boss = true;
+	anima.ClosingDoorBtm_Boss = true;
+
+	anima.DoorSlideTop_5 = 10;
+	anima.DoorSlideBtm_5 = -6;
+	anima.ClosingDoorTop5 = true;
+	anima.ClosingDoorBtm5 = true;
+
     //mob variables
     PuzzleGhost1.health = 8;
     PuzzleGhost2.health = 8;
@@ -265,7 +286,9 @@ void SceneLevelOneB::ResetAll()
     {
         Explorer::instance()->checkSavePoint[i] = false;
     }
+
 }
+
 
 void SceneLevelOneB::Collision(float smallx, float largex, float smallz, float largez)
 {
@@ -471,6 +494,10 @@ void SceneLevelOneB::MouseClickFunction(double dt)
 			Variables.b_LockSwing = false;
 		}
 	}
+    if (!Variables.b_LockSwing)
+    {
+        CrosshairHit = false;
+    }
 }
 
 void SceneLevelOneB::SwitchCollisionChecker()
@@ -1023,7 +1050,15 @@ void SceneLevelOneB::Render()
 	RenderPickUpSuitcaseText();
     RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
     RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-    RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
+    if (!CrosshairHit)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
+    }
+    if (CrosshairHit)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(1.0f, 0.0f, 0.0f), 4, 9.8f, 7);
+
+    }
 
 	for (float i = 0; i < Explorer::instance()->PlayerLife; ++i)
 		RenderModelOnScreen(meshList[GEO_HEALTHICON], 3.f, 3.f, 3.f, 90, 1, 0, 0, (22.f + i), 18.5f, 1.0f, false);

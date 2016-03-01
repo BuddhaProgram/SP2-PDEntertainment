@@ -1,0 +1,668 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="Camera3_8cpp" kind="file" language="C++">
+    <compoundname>Camera3.cpp</compoundname>
+    <includes refid="Camera3_8h" local="yes">Camera3.h</includes>
+    <includes refid="Application_8h" local="yes">Application.h</includes>
+    <includes refid="Mtx44_8h" local="yes">Mtx44.h</includes>
+    <includes refid="SceneStart_8h" local="yes">SceneStart.h</includes>
+    <incdepgraph>
+      <node id="5172">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="5162" relation="include">
+        </childnode>
+      </node>
+      <node id="5149">
+        <label>list</label>
+      </node>
+      <node id="5177">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="5162" relation="include">
+        </childnode>
+        <childnode refid="5167" relation="include">
+        </childnode>
+      </node>
+      <node id="5142">
+        <label>windows.h</label>
+      </node>
+      <node id="5143">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+        <childnode refid="5144" relation="include">
+        </childnode>
+        <childnode refid="5145" relation="include">
+        </childnode>
+        <childnode refid="5146" relation="include">
+        </childnode>
+        <childnode refid="5150" relation="include">
+        </childnode>
+      </node>
+      <node id="5155">
+        <label>Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="5148" relation="include">
+        </childnode>
+        <childnode refid="5156" relation="include">
+        </childnode>
+        <childnode refid="5157" relation="include">
+        </childnode>
+      </node>
+      <node id="5141">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="5142" relation="include">
+        </childnode>
+      </node>
+      <node id="5130">
+        <label>ComGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3.cpp"/>
+        <childnode refid="5131" relation="include">
+        </childnode>
+        <childnode refid="5140" relation="include">
+        </childnode>
+        <childnode refid="5180" relation="include">
+        </childnode>
+        <childnode refid="5181" relation="include">
+        </childnode>
+      </node>
+      <node id="5167">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="5162" relation="include">
+        </childnode>
+      </node>
+      <node id="5153">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5133">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5134" relation="include">
+        </childnode>
+        <childnode refid="5139" relation="include">
+        </childnode>
+      </node>
+      <node id="5183">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+      </node>
+      <node id="5132">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="5133" relation="include">
+        </childnode>
+      </node>
+      <node id="5164">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="5135">
+        <label>cmath</label>
+      </node>
+      <node id="5131">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="5132" relation="include">
+        </childnode>
+      </node>
+      <node id="5157">
+        <label>../irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="5158" relation="include">
+        </childnode>
+        <childnode refid="5160" relation="include">
+        </childnode>
+        <childnode refid="5162" relation="include">
+        </childnode>
+        <childnode refid="5163" relation="include">
+        </childnode>
+        <childnode refid="5164" relation="include">
+        </childnode>
+        <childnode refid="5165" relation="include">
+        </childnode>
+        <childnode refid="5166" relation="include">
+        </childnode>
+        <childnode refid="5167" relation="include">
+        </childnode>
+        <childnode refid="5168" relation="include">
+        </childnode>
+        <childnode refid="5169" relation="include">
+        </childnode>
+        <childnode refid="5170" relation="include">
+        </childnode>
+        <childnode refid="5174" relation="include">
+        </childnode>
+        <childnode refid="5175" relation="include">
+        </childnode>
+        <childnode refid="5171" relation="include">
+        </childnode>
+        <childnode refid="5177" relation="include">
+        </childnode>
+        <childnode refid="5172" relation="include">
+        </childnode>
+        <childnode refid="5176" relation="include">
+        </childnode>
+        <childnode refid="5178" relation="include">
+        </childnode>
+        <childnode refid="5179" relation="include">
+        </childnode>
+        <childnode refid="5173" relation="include">
+        </childnode>
+      </node>
+      <node id="5150">
+        <label>Misc.h</label>
+        <link refid="Misc_8h"/>
+        <childnode refid="5133" relation="include">
+        </childnode>
+      </node>
+      <node id="5173">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="5162" relation="include">
+        </childnode>
+        <childnode refid="5167" relation="include">
+        </childnode>
+      </node>
+      <node id="5156">
+        <label>string</label>
+      </node>
+      <node id="5151">
+        <label>GL/glew.h</label>
+      </node>
+      <node id="5140">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="5141" relation="include">
+        </childnode>
+        <childnode refid="5143" relation="include">
+        </childnode>
+        <childnode refid="5151" relation="include">
+        </childnode>
+        <childnode refid="5152" relation="include">
+        </childnode>
+        <childnode refid="5153" relation="include">
+        </childnode>
+        <childnode refid="5154" relation="include">
+        </childnode>
+        <childnode refid="5155" relation="include">
+        </childnode>
+      </node>
+      <node id="5175">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="5162" relation="include">
+        </childnode>
+        <childnode refid="5176" relation="include">
+        </childnode>
+      </node>
+      <node id="5152">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="5182">
+        <label>Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="5183" relation="include">
+        </childnode>
+        <childnode refid="5156" relation="include">
+        </childnode>
+      </node>
+      <node id="5136">
+        <label>exception</label>
+      </node>
+      <node id="5179">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="5162" relation="include">
+        </childnode>
+        <childnode refid="5169" relation="include">
+        </childnode>
+      </node>
+      <node id="5169">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="5163" relation="include">
+        </childnode>
+        <childnode refid="5160" relation="include">
+        </childnode>
+        <childnode refid="5166" relation="include">
+        </childnode>
+        <childnode refid="5167" relation="include">
+        </childnode>
+      </node>
+      <node id="5174">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="5162" relation="include">
+        </childnode>
+        <childnode refid="5167" relation="include">
+        </childnode>
+      </node>
+      <node id="5176">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="5162" relation="include">
+        </childnode>
+      </node>
+      <node id="5159">
+        <label>wchar.h</label>
+      </node>
+      <node id="5160">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="5161" relation="include">
+        </childnode>
+        <childnode refid="5158" relation="include">
+        </childnode>
+      </node>
+      <node id="5168">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="5162" relation="include">
+        </childnode>
+        <childnode refid="5160" relation="include">
+        </childnode>
+        <childnode refid="5169" relation="include">
+        </childnode>
+        <childnode refid="5170" relation="include">
+        </childnode>
+        <childnode refid="5166" relation="include">
+        </childnode>
+        <childnode refid="5172" relation="include">
+        </childnode>
+        <childnode refid="5173" relation="include">
+        </childnode>
+      </node>
+      <node id="5137">
+        <label>ctime</label>
+      </node>
+      <node id="5163">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="5158" relation="include">
+        </childnode>
+      </node>
+      <node id="5185">
+        <label>stack</label>
+      </node>
+      <node id="5148">
+        <label>vector</label>
+      </node>
+      <node id="5187">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="5133" relation="include">
+        </childnode>
+      </node>
+      <node id="5154">
+        <label>crtdbg.h</label>
+      </node>
+      <node id="5189">
+        <label>HostileMob.h</label>
+        <link refid="HostileMob_8h"/>
+        <childnode refid="5146" relation="include">
+        </childnode>
+        <childnode refid="5133" relation="include">
+        </childnode>
+      </node>
+      <node id="5144">
+        <label>GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+      </node>
+      <node id="5165">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="5190">
+        <label>MobGhost.h</label>
+        <link refid="MobGhost_8h"/>
+        <childnode refid="5189" relation="include">
+        </childnode>
+      </node>
+      <node id="5180">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="5134" relation="include">
+        </childnode>
+        <childnode refid="5133" relation="include">
+        </childnode>
+      </node>
+      <node id="5161">
+        <label>math.h</label>
+      </node>
+      <node id="5178">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="5162" relation="include">
+        </childnode>
+      </node>
+      <node id="5138">
+        <label>cstdlib</label>
+      </node>
+      <node id="5170">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="5163" relation="include">
+        </childnode>
+        <childnode refid="5171" relation="include">
+        </childnode>
+        <childnode refid="5160" relation="include">
+        </childnode>
+      </node>
+      <node id="5139">
+        <label>iostream</label>
+      </node>
+      <node id="5186">
+        <label>Light.h</label>
+        <link refid="Light_8h"/>
+        <childnode refid="5187" relation="include">
+        </childnode>
+      </node>
+      <node id="5184">
+        <label>MatrixStack.h</label>
+        <link refid="MatrixStack_8h"/>
+        <childnode refid="5185" relation="include">
+        </childnode>
+        <childnode refid="5180" relation="include">
+        </childnode>
+      </node>
+      <node id="5146">
+        <label>Explorer.h</label>
+        <link refid="Explorer_8h"/>
+        <childnode refid="5147" relation="include">
+        </childnode>
+        <childnode refid="5133" relation="include">
+        </childnode>
+      </node>
+      <node id="5147">
+        <label>ToolUI.h</label>
+        <link refid="ToolUI_8h"/>
+        <childnode refid="5148" relation="include">
+        </childnode>
+        <childnode refid="5149" relation="include">
+        </childnode>
+      </node>
+      <node id="5171">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="5163" relation="include">
+        </childnode>
+        <childnode refid="5160" relation="include">
+        </childnode>
+      </node>
+      <node id="5162">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="5158" relation="include">
+        </childnode>
+      </node>
+      <node id="5188">
+        <label>OBJAnimation.h</label>
+        <link refid="OBJAnimation_8h"/>
+        <childnode refid="5131" relation="include">
+        </childnode>
+      </node>
+      <node id="5145">
+        <label>SwitchLightPuzzle.h</label>
+        <link refid="SwitchLightPuzzle_8h"/>
+      </node>
+      <node id="5181">
+        <label>SceneStart.h</label>
+        <link refid="SceneStart_8h"/>
+        <childnode refid="5143" relation="include">
+        </childnode>
+        <childnode refid="5131" relation="include">
+        </childnode>
+        <childnode refid="5133" relation="include">
+        </childnode>
+        <childnode refid="5182" relation="include">
+        </childnode>
+        <childnode refid="5150" relation="include">
+        </childnode>
+        <childnode refid="5184" relation="include">
+        </childnode>
+        <childnode refid="5186" relation="include">
+        </childnode>
+        <childnode refid="5188" relation="include">
+        </childnode>
+        <childnode refid="5189" relation="include">
+        </childnode>
+        <childnode refid="5190" relation="include">
+        </childnode>
+      </node>
+      <node id="5158">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="5159" relation="include">
+        </childnode>
+      </node>
+      <node id="5166">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="5134">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5135" relation="include">
+        </childnode>
+        <childnode refid="5136" relation="include">
+        </childnode>
+        <childnode refid="5137" relation="include">
+        </childnode>
+        <childnode refid="5138" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="Camera3_8cpp_1aa17e6283a8e28052d7b5692a8b12185c" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float regenDelay</definition>
+        <argsstring></argsstring>
+        <name>regenDelay</name>
+        <initializer>= 6.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Camera3.cpp" line="6" column="1" bodyfile="ComGraphics/Source/Camera3.cpp" bodystart="6" bodyend="-1"/>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="112" endline="155">Camera3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="Camera3_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" prot="public" static="no" mutable="no">
+        <type>GLFWwindow *</type>
+        <definition>GLFWwindow* m_window</definition>
+        <argsstring></argsstring>
+        <name>m_window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Camera3.cpp" line="7" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classCamera3_1a576422f8f2d0660f27eed0fc817b2ae5" compoundref="Camera3_8cpp" startline="32" endline="65">Camera3::CameraRotation</referencedby>
+        <referencedby refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" compoundref="Application_8cpp" startline="189" endline="195">Application::Exit</referencedby>
+        <referencedby refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="79" endline="131">Application::Init</referencedby>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="17" endline="30">Camera3::Init</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Application::Run</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="Camera3_8cpp_1a69922014754313e3edd29c720211c4e8" prot="public" static="no" mutable="no">
+        <type><ref refid="classSceneStart" kindref="compound">SceneStart</ref> *</type>
+        <definition>SceneStart* numScene</definition>
+        <argsstring></argsstring>
+        <name>numScene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Camera3.cpp" line="8" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor"><sp/>#include<sp/>&quot;<ref refid="Camera3_8h" kindref="compound">Camera3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Application_8h" kindref="compound">Application.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Mtx44_8h" kindref="compound">Mtx44.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SceneStart_8h" kindref="compound">SceneStart.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="Camera3_8cpp_1aa17e6283a8e28052d7b5692a8b12185c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="Camera3_8cpp_1aa17e6283a8e28052d7b5692a8b12185c" kindref="member">regenDelay</ref><sp/>=<sp/>6.f;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>GLFWwindow*<sp/><ref refid="Camera3_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="classSceneStart" kindref="compound">SceneStart</ref>*<sp/><ref refid="Camera3_8cpp_1a69922014754313e3edd29c720211c4e8" kindref="member">numScene</ref>;</highlight></codeline>
+<codeline lineno="9" refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" refkind="member"><highlight class="normal"><ref refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" kindref="member">Camera3::Camera3</ref>()</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classCamera3_1a386fa089e2507622ef79675cd95efd69" refkind="member"><highlight class="normal"><ref refid="classCamera3_1a386fa089e2507622ef79675cd95efd69" kindref="member">Camera3::~Camera3</ref>()</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" kindref="member">Camera3::Init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/>pos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/>target,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/>up)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1a9c35c725f8e312eeaeb0d13d2ba5ffe9" kindref="member">rotationX</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref><sp/>=<sp/><ref refid="classCamera3_1a0befffc59212bf28cffddc24f2b31e67" kindref="member">defaultPosition</ref><sp/>=<sp/>pos;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;target<sp/>=<sp/><ref refid="classCamera3_1a0c65c81ec5c614828b140c8125cf79da" kindref="member">defaultTarget</ref><sp/>=<sp/><ref refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" kindref="member">target</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" kindref="member">view</ref><sp/>=<sp/>(target<sp/>-<sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>).Normalized();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCamera3_1a99792d8c4ad637feee9162ae1a697e46" kindref="member">right</ref><sp/>=<sp/>view.<ref refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" kindref="member">Cross</ref>(up);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>right.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>right.<ref refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" kindref="member">Normalize</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;up<sp/>=<sp/><ref refid="classCamera3_1a089366725666df811a969aca24168cb6" kindref="member">defaultUp</ref><sp/>=<sp/>right.<ref refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" kindref="member">Cross</ref>(view).<ref refid="structVector3_1a2da0f00c5529bced69763320dac9c414" kindref="member">Normalized</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwSetInputMode(<ref refid="Camera3_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>,<sp/>GLFW_CURSOR,<sp/>GLFW_CURSOR_DISABLED);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classCamera3_1a576422f8f2d0660f27eed0fc817b2ae5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a576422f8f2d0660f27eed0fc817b2ae5" kindref="member">Camera3::CameraRotation</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>CAMERASPEED)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/>height;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwGetWindowSize(<ref refid="Camera3_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>,<sp/>&amp;width,<sp/>&amp;height);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>xpos,<sp/>ypos;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwGetCursorPos(<ref refid="Camera3_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>,<sp/>&amp;xpos,<sp/>&amp;ypos);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwSetCursorPos(<ref refid="Camera3_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>,<sp/>width<sp/>/<sp/>2.0f,<sp/>height<sp/>/<sp/>2.0f);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref><sp/>-=<sp/>((float)xpos<sp/>-<sp/>width<sp/>/<sp/>2.0f)<sp/>/<sp/>(1.0f<sp/>/<sp/>CAMERASPEED);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1a9c35c725f8e312eeaeb0d13d2ba5ffe9" kindref="member">rotationX</ref><sp/>-=<sp/>((float)ypos<sp/>-<sp/>height<sp/>/<sp/>2.0f)<sp/>/<sp/>(1.0f<sp/>/<sp/>CAMERASPEED);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classCamera3_1a9c35c725f8e312eeaeb0d13d2ba5ffe9" kindref="member">rotationX</ref><sp/>&gt;<sp/>50.0f)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1a9c35c725f8e312eeaeb0d13d2ba5ffe9" kindref="member">rotationX</ref><sp/>=<sp/>50.0f;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classCamera3_1a9c35c725f8e312eeaeb0d13d2ba5ffe9" kindref="member">rotationX</ref><sp/>&lt;<sp/>-50.0f)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1a9c35c725f8e312eeaeb0d13d2ba5ffe9" kindref="member">rotationX</ref><sp/>=<sp/>-50.0f;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref><sp/>&gt;<sp/>360.0f<sp/>||<sp/><ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref><sp/>&lt;<sp/>-360.0f)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" kindref="member">target</ref><sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sin(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref>))<sp/>*<sp/>cos(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a9c35c725f8e312eeaeb0d13d2ba5ffe9" kindref="member">rotationX</ref>))<sp/>+<sp/>this-&gt;<ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref>,<sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sin(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a9c35c725f8e312eeaeb0d13d2ba5ffe9" kindref="member">rotationX</ref>))<sp/>+<sp/>this-&gt;<ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref>,<sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cos(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a9c35c725f8e312eeaeb0d13d2ba5ffe9" kindref="member">rotationX</ref>))<sp/>*<sp/>cos(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref>))<sp/>+<sp/>this-&gt;<ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classCamera3_1a021022df76481c9e9fd5c3cf5fe51cf7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a021022df76481c9e9fd5c3cf5fe51cf7" kindref="member">Camera3::HumanControl</ref>()</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" kindref="member">view</ref><sp/>=<sp/>(<ref refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" kindref="member">target</ref><sp/>-<sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>).Normalized();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1adadd4225520dd41a45ab5a02f3526e5f" kindref="member">isDead</ref><sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref><sp/>-=<sp/><ref refid="classCamera3_1a99792d8c4ad637feee9162ae1a697e46" kindref="member">right</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(</highlight><highlight class="charliteral">&apos;D&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref><sp/>+=<sp/><ref refid="classCamera3_1a99792d8c4ad637feee9162ae1a697e46" kindref="member">right</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(</highlight><highlight class="charliteral">&apos;W&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>sprintFactor<sp/>=<sp/>1.5f;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>+=<sp/>sin(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref>));</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>+=<sp/>cos(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref>));</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(VK_LSHIFT)<sp/>&amp;&amp;<sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;stamina<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>+=<sp/>sprintFactor<sp/>*<sp/>sin(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref>));</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>+=<sp/>sprintFactor<sp/>*<sp/>cos(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref>));</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1a50eaeb6553de278fdf9293d7470baabc" kindref="member">stamina</ref><sp/>-=<sp/>1;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(</highlight><highlight class="charliteral">&apos;S&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref><sp/>-=<sp/>sin(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref>));</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref><sp/>-=<sp/>cos(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref>));</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="classCamera3_1a4b10106bcd89f21e3cf3e39f04d8c1cb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1a4b10106bcd89f21e3cf3e39f04d8c1cb" kindref="member">Camera3::Reset</ref>()</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" kindref="member">Camera3::Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1a021022df76481c9e9fd5c3cf5fe51cf7" kindref="member">HumanControl</ref>();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1a576422f8f2d0660f27eed0fc817b2ae5" kindref="member">CameraRotation</ref>(dt,<sp/>0.2f);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1afad219513d65c2efdc84490bd8c06bde" kindref="member">checkDead</ref>();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" kindref="member">target</ref><sp/>=<sp/><ref refid="structVector3" kindref="compound">Vector3</ref>(</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sin(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref>))<sp/>*<sp/>cos(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a9c35c725f8e312eeaeb0d13d2ba5ffe9" kindref="member">rotationX</ref>))<sp/>+<sp/>this-&gt;<ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" kindref="member">x</ref>,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sin(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a9c35c725f8e312eeaeb0d13d2ba5ffe9" kindref="member">rotationX</ref>))<sp/>+<sp/>this-&gt;<ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref>,</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cos(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a9c35c725f8e312eeaeb0d13d2ba5ffe9" kindref="member">rotationX</ref>))<sp/>*<sp/>cos(<ref refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" kindref="member">Math::DegreeToRadian</ref>(<ref refid="classCamera3_1a23d57478d2dc937420e42708c926cfb3" kindref="member">rotationY</ref>))<sp/>+<sp/>this-&gt;<ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>.<ref refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" kindref="member">z</ref></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" kindref="member">view</ref><sp/>=<sp/>(<ref refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" kindref="member">target</ref><sp/>-<sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>).Normalized();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1a99792d8c4ad637feee9162ae1a697e46" kindref="member">right</ref><sp/>=<sp/><ref refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" kindref="member">view</ref>.<ref refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" kindref="member">Cross</ref>(<ref refid="classCamera3_1a089366725666df811a969aca24168cb6" kindref="member">defaultUp</ref>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//right.y<sp/>=<sp/>0;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1a99792d8c4ad637feee9162ae1a697e46" kindref="member">right</ref>.<ref refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" kindref="member">Normalize</ref>();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" kindref="member">up</ref><sp/>=<sp/><ref refid="classCamera3_1a99792d8c4ad637feee9162ae1a697e46" kindref="member">right</ref>.<ref refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" kindref="member">Cross</ref>(<ref refid="classCamera3_1ab996f4fd3740bc6d9bc3c404fa0cab3f" kindref="member">view</ref>).<ref refid="structVector3_1a2da0f00c5529bced69763320dac9c414" kindref="member">Normalized</ref>();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>CAMERA_SPEED<sp/>=<sp/>50.f;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;stamina<sp/>&lt;=<sp/>0)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1a50eaeb6553de278fdf9293d7470baabc" kindref="member">stamina</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Camera3_8cpp_1aa17e6283a8e28052d7b5692a8b12185c" kindref="member">regenDelay</ref><sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Camera3_8cpp_1aa17e6283a8e28052d7b5692a8b12185c" kindref="member">regenDelay</ref><sp/>-=<sp/>(float)dt;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Camera3_8cpp_1aa17e6283a8e28052d7b5692a8b12185c" kindref="member">regenDelay</ref><sp/>&lt;=<sp/>0)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1a50eaeb6553de278fdf9293d7470baabc" kindref="member">stamina</ref><sp/>+=<sp/>15<sp/>*<sp/>(float)dt;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1a50eaeb6553de278fdf9293d7470baabc" kindref="member">stamina</ref><sp/>+=<sp/>15<sp/>*<sp/>(float)dt;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Camera3_8cpp_1aa17e6283a8e28052d7b5692a8b12185c" kindref="member">regenDelay</ref><sp/>=<sp/>6.f;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1a50eaeb6553de278fdf9293d7470baabc" kindref="member">stamina</ref><sp/>&gt;<sp/>100)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kindref="member">Explorer::instance</ref>()-&gt;<ref refid="classExplorer_1a50eaeb6553de278fdf9293d7470baabc" kindref="member">stamina</ref><sp/>=<sp/>100;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera3_1a4b10106bcd89f21e3cf3e39f04d8c1cb" kindref="member">Reset</ref>();</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="ComGraphics/Source/Camera3.cpp"/>
+  </compounddef>
+</doxygen>

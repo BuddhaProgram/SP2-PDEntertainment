@@ -1,0 +1,457 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="structLight" kind="struct" language="C++" prot="public">
+    <compoundname>Light</compoundname>
+    <includes refid="Light_8h" local="no">Light.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="structLight_1aa7ed22cab99d811d72896efaee6d07cb" prot="public" static="no">
+        <name>LIGHT_TYPE</name>
+        <enumvalue id="structLight_1aa7ed22cab99d811d72896efaee6d07cbab02ff4ee1e2a9673edac03cf11b66338" prot="public">
+          <name>LIGHT_POINT</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structLight_1aa7ed22cab99d811d72896efaee6d07cba9bf1f515ab954cb3379615aab42f30b6" prot="public">
+          <name>LIGHT_DIRECTIONAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structLight_1aa7ed22cab99d811d72896efaee6d07cba69dd6d65ad12b410709ae74c8d9b1e16" prot="public">
+          <name>LIGHT_SPOT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Light.h" line="20" column="1" bodyfile="ComGraphics/Source/Light.h" bodystart="19" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structLight_1afeb738db41e987719e359166ef93314f" prot="public" static="no" mutable="no">
+        <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+        <definition>Position Light::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Light.h" line="7" column="1" bodyfile="ComGraphics/Source/Light.h" bodystart="7" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+        <referencedby refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" compoundref="CutSceneOne_8cpp" startline="226" endline="262">CutSceneOne::Render</referencedby>
+        <referencedby refid="classSceneOpening_1a3edf8ad9f05db1071e3e4505af7cd4df" compoundref="SceneOpening_8cpp" startline="335" endline="380">SceneOpening::Render</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">OpeningCutScene::Render</referencedby>
+        <referencedby refid="classCredits_1a91dd5e5260a92e2a3e99360c7e30d81c" compoundref="Credits_8cpp" startline="477" endline="513">Credits::Render</referencedby>
+        <referencedby refid="classOpeningCutScene2_1a0f31817dad741723119d91d7e47fbd56" compoundref="OpeningCutScene2_8cpp" startline="418" endline="473">OpeningCutScene2::Render</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a5428359a53500a14af874d45fed5ac76" compoundref="SceneEndCutScene_8cpp" startline="395" endline="441">SceneEndCutScene::Render</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a63a16f9a1a71dd298d6e45edaa5efef4" compoundref="SceneLevelTwo_8cpp" startline="849" endline="922">SceneLevelTwo::Render</referencedby>
+        <referencedby refid="classSceneStart_1a09a1444c2c592ed917229e5853db6db5" compoundref="SceneStart_8cpp" startline="608" endline="669">SceneStart::Render</referencedby>
+        <referencedby refid="classSceneLevelOneA_1adb83e3122dc7ac3a5d5b85add1c771bb" compoundref="SceneLevelOneA_8cpp" startline="803" endline="899">SceneLevelOneA::Render</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a5c7f4cef0669b49cd80c284d9c9864ce" compoundref="SceneLevelOneB_8cpp" startline="963" endline="1056">SceneLevelOneB::Render</referencedby>
+        <referencedby refid="classSceneEnd_1a06fac012bd3a1df369c5722c8cf662b0" compoundref="SceneEnd_8cpp" startline="773" endline="869">SceneEnd::Render</referencedby>
+        <referencedby refid="classCutSceneOne_1a3bde2eed67da74e3c33e3b4e10542438" compoundref="CutSceneOne_8cpp" startline="125" endline="180">CutSceneOne::Update</referencedby>
+        <referencedby refid="classSceneOpening_1af3ca641709d7608947d8ae81b273b089" compoundref="SceneOpening_8cpp" startline="175" endline="192">SceneOpening::Update</referencedby>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">OpeningCutScene::Update</referencedby>
+        <referencedby refid="classCredits_1aac9dbb74267d8870c07139e33b75eca4" compoundref="Credits_8cpp" startline="346" endline="364">Credits::Update</referencedby>
+        <referencedby refid="classOpeningCutScene2_1ad228d3ddd1fc4564382de47e85cad2dc" compoundref="OpeningCutScene2_8cpp" startline="151" endline="259">OpeningCutScene2::Update</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a47f7840540cca37d431a5702cafc357a" compoundref="SceneEndCutScene_8cpp" startline="192" endline="252">SceneEndCutScene::Update</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" compoundref="SceneLevelTwo_8cpp" startline="665" endline="706">SceneLevelTwo::Update</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="579" endline="660">SceneLevelOneA::Update</referencedby>
+        <referencedby refid="classSceneStart_1a2c3705b248156c1c352880af1be8049c" compoundref="SceneStart_8cpp" startline="430" endline="465">SceneStart::Update</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="724" endline="820">SceneLevelOneB::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="555" endline="630">SceneEnd::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1ad7a168d26aed1bf7cca1a8d8e6f8ada4" prot="public" static="no" mutable="no">
+        <type><ref refid="structColor" kindref="compound">Color</ref></type>
+        <definition>Color Light::color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Light.h" line="8" column="1" bodyfile="ComGraphics/Source/Light.h" bodystart="8" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1a6c4c401141c4cdb3b9b9b3bab7dd6fbb" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Light::power</definition>
+        <argsstring></argsstring>
+        <name>power</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Light.h" line="9" column="1" bodyfile="ComGraphics/Source/Light.h" bodystart="9" bodyend="-1"/>
+        <referencedby refid="classSceneLevelTwo_1acb34d2e8f029102a0cbcc4a2818f0e55" compoundref="SceneLevelTwo_8cpp" startline="460" endline="502">SceneLevelTwo::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a972ee40bd5b9481a464e3028f4d496b5" compoundref="SceneLevelOneA_8cpp" startline="528" endline="565">SceneLevelOneA::ContinueGameOrNot</referencedby>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1afa7cb6178d4a7f338def67f91fdce07d" compoundref="SceneLevelTwo_8cpp" startline="450" endline="458">SceneLevelTwo::UpdatePlayerDiesInteraction</referencedby>
+        <referencedby refid="classSceneLevelOneB_1aacabdc244496e67cdc2ad550345489b1" compoundref="SceneLevelOneB_8cpp" startline="665" endline="673">SceneLevelOneB::UpdatePlayerDiesInteraction</referencedby>
+        <referencedby refid="classSceneEnd_1a1c9e2436a373a954a6214f469432459d" compoundref="SceneEnd_8cpp" startline="289" endline="297">SceneEnd::UpdatePlayerDiesInteraction</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a78a2543bfeb822922fc6ff3bf61519b3" compoundref="SceneLevelOneA_8cpp" startline="518" endline="526">SceneLevelOneA::UpdatePlayerDiesInteraction</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1a888f11000d2baf1228d9e5c8d8c90fcb" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Light::kC</definition>
+        <argsstring></argsstring>
+        <name>kC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Light.h" line="10" column="1" bodyfile="ComGraphics/Source/Light.h" bodystart="10" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1ab3918c449fb40fa5c6cc5283f2c9687d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Light::kL</definition>
+        <argsstring></argsstring>
+        <name>kL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Light.h" line="10" column="1" bodyfile="ComGraphics/Source/Light.h" bodystart="10" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1a79c8e47de58f131ff5403fc2d823cc21" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Light::kQ</definition>
+        <argsstring></argsstring>
+        <name>kQ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Light.h" line="10" column="1" bodyfile="ComGraphics/Source/Light.h" bodystart="10" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1a5dcdb101afc28979b5aaff0a2ec79ba5" prot="public" static="no" mutable="no">
+        <type><ref refid="structLight_1aa7ed22cab99d811d72896efaee6d07cb" kindref="member">LIGHT_TYPE</ref></type>
+        <definition>LIGHT_TYPE Light::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Light.h" line="25" column="1" bodyfile="ComGraphics/Source/Light.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1a6bd73eb0b27ef881f8442e20912d9258" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Light::spotDirection</definition>
+        <argsstring></argsstring>
+        <name>spotDirection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Light.h" line="26" column="1" bodyfile="ComGraphics/Source/Light.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+        <referencedby refid="classCutSceneOne_1a504360676ddc85d4bb239e263036d53a" compoundref="CutSceneOne_8cpp" startline="226" endline="262">CutSceneOne::Render</referencedby>
+        <referencedby refid="classSceneOpening_1a3edf8ad9f05db1071e3e4505af7cd4df" compoundref="SceneOpening_8cpp" startline="335" endline="380">SceneOpening::Render</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1d4af4c58c91a2df61b8ad7ea1cc18a1" compoundref="OpeningCutScene_8cpp" startline="354" endline="390">OpeningCutScene::Render</referencedby>
+        <referencedby refid="classCredits_1a91dd5e5260a92e2a3e99360c7e30d81c" compoundref="Credits_8cpp" startline="477" endline="513">Credits::Render</referencedby>
+        <referencedby refid="classOpeningCutScene2_1a0f31817dad741723119d91d7e47fbd56" compoundref="OpeningCutScene2_8cpp" startline="418" endline="473">OpeningCutScene2::Render</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a5428359a53500a14af874d45fed5ac76" compoundref="SceneEndCutScene_8cpp" startline="395" endline="441">SceneEndCutScene::Render</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a63a16f9a1a71dd298d6e45edaa5efef4" compoundref="SceneLevelTwo_8cpp" startline="849" endline="922">SceneLevelTwo::Render</referencedby>
+        <referencedby refid="classSceneStart_1a09a1444c2c592ed917229e5853db6db5" compoundref="SceneStart_8cpp" startline="608" endline="669">SceneStart::Render</referencedby>
+        <referencedby refid="classSceneLevelOneA_1adb83e3122dc7ac3a5d5b85add1c771bb" compoundref="SceneLevelOneA_8cpp" startline="803" endline="899">SceneLevelOneA::Render</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a5c7f4cef0669b49cd80c284d9c9864ce" compoundref="SceneLevelOneB_8cpp" startline="963" endline="1056">SceneLevelOneB::Render</referencedby>
+        <referencedby refid="classSceneEnd_1a06fac012bd3a1df369c5722c8cf662b0" compoundref="SceneEnd_8cpp" startline="773" endline="869">SceneEnd::Render</referencedby>
+        <referencedby refid="classCutSceneOne_1a3bde2eed67da74e3c33e3b4e10542438" compoundref="CutSceneOne_8cpp" startline="125" endline="180">CutSceneOne::Update</referencedby>
+        <referencedby refid="classSceneOpening_1af3ca641709d7608947d8ae81b273b089" compoundref="SceneOpening_8cpp" startline="175" endline="192">SceneOpening::Update</referencedby>
+        <referencedby refid="classOpeningCutScene_1a8bd21fae0373f848d60da5c62ed35d52" compoundref="OpeningCutScene_8cpp" startline="182" endline="241">OpeningCutScene::Update</referencedby>
+        <referencedby refid="classCredits_1aac9dbb74267d8870c07139e33b75eca4" compoundref="Credits_8cpp" startline="346" endline="364">Credits::Update</referencedby>
+        <referencedby refid="classOpeningCutScene2_1ad228d3ddd1fc4564382de47e85cad2dc" compoundref="OpeningCutScene2_8cpp" startline="151" endline="259">OpeningCutScene2::Update</referencedby>
+        <referencedby refid="classSceneEndCutScene_1a47f7840540cca37d431a5702cafc357a" compoundref="SceneEndCutScene_8cpp" startline="192" endline="252">SceneEndCutScene::Update</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" compoundref="SceneLevelTwo_8cpp" startline="665" endline="706">SceneLevelTwo::Update</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="579" endline="660">SceneLevelOneA::Update</referencedby>
+        <referencedby refid="classSceneStart_1a2c3705b248156c1c352880af1be8049c" compoundref="SceneStart_8cpp" startline="430" endline="465">SceneStart::Update</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="724" endline="820">SceneLevelOneB::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="555" endline="630">SceneEnd::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1af4ce5bbfbf33af96db9b8a222d073298" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Light::cosCutoff</definition>
+        <argsstring></argsstring>
+        <name>cosCutoff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Light.h" line="27" column="1" bodyfile="ComGraphics/Source/Light.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1a8c843f5d1af5c6f4f4928e9906f5d0db" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Light::cosInner</definition>
+        <argsstring></argsstring>
+        <name>cosInner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Light.h" line="28" column="1" bodyfile="ComGraphics/Source/Light.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1a4eb4fd0f025fb66d1934675ffff0e661" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Light::exponent</definition>
+        <argsstring></argsstring>
+        <name>exponent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Light.h" line="29" column="1" bodyfile="ComGraphics/Source/Light.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
+        <referencedby refid="classSceneOpening_1a7cd511dbe911b5c190b9fa9451064b6d" compoundref="SceneOpening_8cpp" startline="21" endline="116">SceneOpening::Init</referencedby>
+        <referencedby refid="classOpeningCutScene_1a1effccbedf90e3a9ad93d05c685a56a7" compoundref="OpeningCutScene_8cpp" startline="24" endline="114">OpeningCutScene::Init</referencedby>
+        <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
+        <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
+        <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structLight_1aeb5df09a25a32f19fdffa761268ba24f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Light::Light</definition>
+        <argsstring>()</argsstring>
+        <name>Light</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ComGraphics/Source/Light.h" line="11" column="1" bodyfile="ComGraphics/Source/Light.h" bodystart="11" bodyend="17"/>
+        <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
+        <references refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="29" endline="29">Color::Set</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="858">
+        <label>Position</label>
+        <link refid="structPosition"/>
+        <childnode refid="856" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+      <node id="855">
+        <label>LIGHT_TYPE</label>
+      </node>
+      <node id="856">
+        <label>float</label>
+      </node>
+      <node id="854">
+        <label>Light</label>
+        <link refid="structLight"/>
+        <childnode refid="855" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="856" relation="usage">
+          <edgelabel>exponent</edgelabel>
+          <edgelabel>kL</edgelabel>
+          <edgelabel>cosCutoff</edgelabel>
+          <edgelabel>cosInner</edgelabel>
+          <edgelabel>kQ</edgelabel>
+          <edgelabel>kC</edgelabel>
+          <edgelabel>power</edgelabel>
+        </childnode>
+        <childnode refid="857" relation="usage">
+          <edgelabel>spotDirection</edgelabel>
+        </childnode>
+        <childnode refid="858" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+        <childnode refid="859" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+      </node>
+      <node id="859">
+        <label>Color</label>
+        <link refid="structColor"/>
+        <childnode refid="856" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="857">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="856" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ComGraphics/Source/Light.h" line="6" column="1" bodyfile="ComGraphics/Source/Light.h" bodystart="5" bodyend="30"/>
+    <listofallmembers>
+      <member refid="structLight_1ad7a168d26aed1bf7cca1a8d8e6f8ada4" prot="public" virt="non-virtual"><scope>Light</scope><name>color</name></member>
+      <member refid="structLight_1af4ce5bbfbf33af96db9b8a222d073298" prot="public" virt="non-virtual"><scope>Light</scope><name>cosCutoff</name></member>
+      <member refid="structLight_1a8c843f5d1af5c6f4f4928e9906f5d0db" prot="public" virt="non-virtual"><scope>Light</scope><name>cosInner</name></member>
+      <member refid="structLight_1a4eb4fd0f025fb66d1934675ffff0e661" prot="public" virt="non-virtual"><scope>Light</scope><name>exponent</name></member>
+      <member refid="structLight_1a888f11000d2baf1228d9e5c8d8c90fcb" prot="public" virt="non-virtual"><scope>Light</scope><name>kC</name></member>
+      <member refid="structLight_1ab3918c449fb40fa5c6cc5283f2c9687d" prot="public" virt="non-virtual"><scope>Light</scope><name>kL</name></member>
+      <member refid="structLight_1a79c8e47de58f131ff5403fc2d823cc21" prot="public" virt="non-virtual"><scope>Light</scope><name>kQ</name></member>
+      <member refid="structLight_1aeb5df09a25a32f19fdffa761268ba24f" prot="public" virt="non-virtual"><scope>Light</scope><name>Light</name></member>
+      <member refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba9bf1f515ab954cb3379615aab42f30b6" prot="public" virt="non-virtual"><scope>Light</scope><name>LIGHT_DIRECTIONAL</name></member>
+      <member refid="structLight_1aa7ed22cab99d811d72896efaee6d07cbab02ff4ee1e2a9673edac03cf11b66338" prot="public" virt="non-virtual"><scope>Light</scope><name>LIGHT_POINT</name></member>
+      <member refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba69dd6d65ad12b410709ae74c8d9b1e16" prot="public" virt="non-virtual"><scope>Light</scope><name>LIGHT_SPOT</name></member>
+      <member refid="structLight_1aa7ed22cab99d811d72896efaee6d07cb" prot="public" virt="non-virtual"><scope>Light</scope><name>LIGHT_TYPE</name></member>
+      <member refid="structLight_1afeb738db41e987719e359166ef93314f" prot="public" virt="non-virtual"><scope>Light</scope><name>position</name></member>
+      <member refid="structLight_1a6c4c401141c4cdb3b9b9b3bab7dd6fbb" prot="public" virt="non-virtual"><scope>Light</scope><name>power</name></member>
+      <member refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" prot="public" virt="non-virtual"><scope>Light</scope><name>spotDirection</name></member>
+      <member refid="structLight_1a5dcdb101afc28979b5aaff0a2ec79ba5" prot="public" virt="non-virtual"><scope>Light</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

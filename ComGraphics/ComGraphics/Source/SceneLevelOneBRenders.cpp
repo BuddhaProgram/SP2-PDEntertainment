@@ -64,13 +64,7 @@ void SceneLevelOneB::RenderScene()
     modelStack.Scale(18, 18, 18);
     RenderMesh(meshList[GEO_ELEVATOR], true);
     modelStack.PopMatrix();
-    //secondsave
-    modelStack.PushMatrix();
-		modelStack.Translate(-200, 5, -200);
-		modelStack.Rotate(Variables.f_SuitcaseRotateY, 0, 1, 0);
-		modelStack.Scale(4, 4, 4);
-		RenderMesh(meshList[GEO_SPAWNPOINT], true);
-    modelStack.PopMatrix();
+   
 
     RenderFloorCeiling();
 
@@ -439,15 +433,18 @@ void SceneLevelOneB::attackCheck()
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(30.f, PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
 		PuzzleGhost1.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);
+        CrosshairHit = true;
     }
 
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(30.f, PuzzleGhost2.MobPosX, PuzzleGhost2.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
 		PuzzleGhost2.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);
+        CrosshairHit = true;
     }
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(100.f, BossOne.MobPosX, BossOne.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
 		BossOne.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);//temporary variable is 1
+        CrosshairHit = true;
     }
 }
 
