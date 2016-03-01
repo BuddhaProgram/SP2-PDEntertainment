@@ -729,6 +729,12 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	{
 		Application::EndingScene();
 	}
+
+	if ((Switches.SwitchPuzzleTwo() == true))
+	{
+		anima.QP_TOPDOOR5 = true;
+		anima.QP_BOTDOOR5 = true;
+	}
 }
 
 void SceneLevelTwo::PuzzleTwoSwitchCheck(double dt)
@@ -1210,7 +1216,7 @@ void SceneLevelTwo::Render()
 		if (!Switches.b_PuzzleTwo[placing])
 		{
 			modelStack.PushMatrix();
-				modelStack.Translate(312 - i, 17, -36);
+				modelStack.Translate((float)(312 - i), 17, -36);
 				modelStack.Scale(2, 2, 2);
 				modelStack.Rotate(90, 0, 1, 0);
 				RenderMesh(meshList[GEO_LIGHTRED], true);
@@ -1220,7 +1226,7 @@ void SceneLevelTwo::Render()
 		else if (Switches.b_PuzzleTwo[placing])
 		{
 			modelStack.PushMatrix();
-				modelStack.Translate(312 - i, 17, -36);
+				modelStack.Translate((float)(312 - i), 17, -36);
 				modelStack.Scale(2, 2, 2);
 				modelStack.Rotate(90, 0, 1, 0);
 				RenderMesh(meshList[GEO_LIGHTGREEN], true);
