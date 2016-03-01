@@ -15,6 +15,17 @@
 
 SceneLevelTwo::SceneLevelTwo()
 {
+    Switch1Int = false;
+    Switch2Int = false;
+    Switch1Rot = 45.f;
+    Switch2Rot = 45.f;
+    Switch1Press = false;
+    Switch2Press = false;
+    closeDoors = false;
+    timerDoor = 3;
+    openDoor1 = false;
+    openDoor2 = false;
+    invisWALLDisappear = false;
 }
 
 SceneLevelTwo::~SceneLevelTwo()

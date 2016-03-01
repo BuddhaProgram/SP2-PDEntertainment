@@ -15,6 +15,7 @@
 
 SceneLevelOneB::SceneLevelOneB()
 {
+    CrosshairHit = false;
 }
 
 SceneLevelOneB::~SceneLevelOneB()
@@ -493,7 +494,7 @@ void SceneLevelOneB::MouseClickFunction(double dt)
 			Variables.b_LockSwing = false;
 		}
 	}
-    if (Variables.b_LockSwing)
+    if (!Variables.b_LockSwing)
     {
         CrosshairHit = false;
     }

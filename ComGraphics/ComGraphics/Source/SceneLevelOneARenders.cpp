@@ -56,14 +56,6 @@ void SceneLevelOneA::RenderScene()
         modelStack.PopMatrix();
     //modelStack.PopMatrix();
 
-    //firstsave
-    modelStack.PushMatrix();
-		modelStack.Translate(120, 5, 75);
-        modelStack.Rotate(Variables.f_savePointRotateY, 0, 1, 0);
-		modelStack.Scale(4, 4, 4);
-		RenderMesh(meshList[GEO_SPAWNPOINT], true);
-	modelStack.PopMatrix();
-
     RenderFloorCeiling();
     RenderSuitCase();
 
