@@ -23,6 +23,8 @@ SceneEnd::SceneEnd()
 
 	f_RepairProcess = 0.0f;
 	f_rockY = 25.0f;
+
+    spawnWaveOne = false;
 }
 
 SceneEnd::~SceneEnd()
@@ -195,17 +197,6 @@ void SceneEnd::Init()
 	meshList[GEO_PLANETFLOOR] = MeshBuilder::GenerateQuad("planet floor", Color(1, 1, 1));
 	meshList[GEO_PLANETFLOOR]->textureID = LoadTGA("Image//PlanetFloor.tga");
 
-	meshList[GEO_FACILITYFLOOR] = MeshBuilder::GenerateQuad("Facility Floor", Color(0.623f, 0.467f, 0.467f));
-	meshList[GEO_FACILITYFLOOR]->material.kAmbient.Set(0.3f, 0.3f, 0.3f);
-	meshList[GEO_FACILITYFLOOR]->material.kDiffuse.Set(0.5f, 0.5f, 0.5f);
-	meshList[GEO_FACILITYFLOOR]->material.kSpecular.Set(1, 1, 1);
-
-	meshList[GEO_FACILITYWALLS] = MeshBuilder::GenerateQuad("Facility Wall", Color(1, 1, 1));
-	meshList[GEO_FACILITYWALLS]->textureID = LoadTGA("Image//InsideWALL.tga");
-
-	meshList[GEO_FACILITYCEILINGS] = MeshBuilder::GenerateQuad("Facility Ceiling", Color(1, 1, 1));
-	meshList[GEO_FACILITYCEILINGS]->textureID = LoadTGA("Image//InsideCEILING.tga");
-
 	meshList[GEO_FACILITYOUT] = MeshBuilder::GenerateOBJ("FacilityOut", "OBJ//FacilityOUT.obj");
 	meshList[GEO_FACILITYOUT]->textureID = LoadTGA("Image//FacilityOUT.tga");
 	meshList[GEO_FACILITYOUTWALL] = MeshBuilder::GenerateQuad("Facility Wall Outside", Color(1, 1, 1));
@@ -224,6 +215,18 @@ void SceneEnd::Init()
 	meshList[GEO_HEALTHICON] = MeshBuilder::GenerateQuad("HealthIcon", Color(1, 1, 1));
 	meshList[GEO_HEALTHICON]->textureID = LoadTGA("Image//Heart1.tga");
 
+    meshList[GEO_BOSS] = MeshBuilder::GenerateOBJ("boss", "OBJ//Boss1.obj");
+    meshList[GEO_BOSS]->textureID = LoadTGA("Image//Boss1.tga");
+
+    meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("Alien", "OBJ//AlienOne.obj");
+    meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Alien1.tga");
+
+    meshList[GEO_CRYSTAL1] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//Crystal1.obj");
+    meshList[GEO_CRYSTAL1]->textureID = LoadTGA("Image//Crystal.tga");
+    meshList[GEO_CRYSTAL2] = MeshBuilder::GenerateOBJ("ghost placeholder", "OBJ//Crystal2.obj");
+    meshList[GEO_CRYSTAL2]->textureID = LoadTGA("Image//Crystal.tga");
+
+
 	// meshList for health bar
 	meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
 	meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
@@ -232,11 +235,11 @@ void SceneEnd::Init()
 	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
-    MobOne.setSpawnGhost(196, -60);
-    MobTwo.setSpawnGhost(210, -366);
-    MobThree.setSpawnGhost(-179, -333);
+    MobOne.setSpawnGhost(25, -8);
+    MobTwo.setSpawnGhost(26, 73);
+    MobThree.setSpawnGhost(-22, 42);
 
-    BossOne.setSpawnBossOne(-290, -45);
+    BossOne.setSpawnBossOne(-36, -6);
 
 
 }
@@ -438,24 +441,28 @@ void SceneEnd::MouseClickFunction(double dt)
 	if (Variables.b_LockSwingDebounce == true)
 	{
 		Variables.RotateX -= 360.0f * (float)dt;
-
 		if (Variables.RotateX <= -45.0f)
 		{
 			Variables.RotateX = -45.0f;
-			Variables.b_LockSwingDebounce = false;
+			Variables.b_LockSwingDebounce = false;      
+            checkAttack();
 		}
 	}
 
 	if (Variables.b_LockSwingDebounce == false && Variables.b_LockSwing == true && Variables.RotateX <= 0.0f)
 	{
 		Variables.RotateX += 360.0f * (float)dt;
-
 		if (Variables.RotateX >= 0.0f)
 		{
 			Variables.RotateX = 0.0f;
 			Variables.b_LockSwing = false;
 		}
 	}
+
+    if (!Variables.b_LockSwing)
+    {
+        CrosshairHit = false;
+    }
 }
 
 void SceneEnd::ContinueGameOrNot()
@@ -596,7 +603,12 @@ void SceneEnd::Update(double dt)
 
 	camera.Update(dt);
 	UpdateRepairs(dt);
-
+    MobOne.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
+    MobTwo.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
+    MobThree.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
+    BossOne.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
+    MobCheck();
+    moveMob(dt);
 	if (b_ReadyToFly() && camera.position.x >= -60 && camera.position.x <= 80 && camera.position.z >= -250 && camera.position.z <= -150)
 	{
 		if (Application::IsKeyPressed('E'))
@@ -604,6 +616,8 @@ void SceneEnd::Update(double dt)
 			Application::EndingCutScene();
 		}
 	}
+
+    
 
 	if (Application::IsKeyPressed('E'))
 		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
@@ -790,6 +804,27 @@ void SceneEnd::Render()
 		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
+    //mobs
+    if (MobOne.Spawn)
+    {
+        std::cout << "mob 1" << std::endl;
+        RenderMobs(MobOne.MobPosX, MobOne.MobPosZ);
+    }
+    if (MobTwo.Spawn)
+    {
+        std::cout << "mob 2" << std::endl;
+        RenderMobs(MobTwo.MobPosX, MobTwo.MobPosZ);
+    }
+    if (MobThree.Spawn)
+    {
+        std::cout << "mob 3" << std::endl;
+        RenderMobs(MobThree.MobPosX, MobThree.MobPosZ);
+    }
+    if (BossOne.Spawn)
+    {
+        RenderBoss(BossOne.MobPosX, BossOne.MobPosZ);
+    }
+
 	RenderSkyBox();
 	RenderSceneEnd();
 	RenderFloor();
@@ -801,13 +836,20 @@ void SceneEnd::Render()
 	ToolSelectionMouseScroll();
 	RenderMouseScrollToolSlot();
 	RenderToolIcon();
-
 	RenderRepairText();
 	RenderMineText();
 
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
 	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
+    if (!CrosshairHit)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
+    }
+    if (CrosshairHit)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(1.0f, 0.0f, 0.0f), 4, 9.8f, 7);
+
+    }
 
 	if (b_RepairDone[2] == false)
 	{

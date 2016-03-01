@@ -493,6 +493,10 @@ void SceneLevelOneB::MouseClickFunction(double dt)
 			Variables.b_LockSwing = false;
 		}
 	}
+    if (Variables.b_LockSwing)
+    {
+        CrosshairHit = false;
+    }
 }
 
 void SceneLevelOneB::SwitchCollisionChecker()
@@ -1037,7 +1041,15 @@ void SceneLevelOneB::Render()
 	RenderPickUpSuitcaseText();
     RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
     RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-    RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
+    if (!CrosshairHit)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
+    }
+    if (CrosshairHit)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(1.0f, 0.0f, 0.0f), 4, 9.8f, 7);
+
+    }
 
 	for (float i = 0; i < Explorer::instance()->PlayerLife; ++i)
 		RenderModelOnScreen(meshList[GEO_HEALTHICON], 3.f, 3.f, 3.f, 90, 1, 0, 0, (22.f + i), 18.5f, 1.0f, false);

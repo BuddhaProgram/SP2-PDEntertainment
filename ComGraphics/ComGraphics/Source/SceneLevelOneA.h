@@ -229,7 +229,7 @@ private:
     MobGhost Ghost;
 
     float FPS;
-	
+    bool CrosshairHit = false;
 
     //collision variables 
     float CollXLarge[28];
