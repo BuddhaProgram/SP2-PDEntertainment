@@ -427,20 +427,27 @@ void SceneEnd::checkAttack()
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(30.f, MobOne.MobPosX, MobOne.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
         MobOne.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);
+        CrosshairHit = true;
     }
-
+   
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(30.f, MobTwo.MobPosX, MobTwo.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
         MobTwo.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);
+        CrosshairHit = true;
     }
+   
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(30.f, MobThree.MobPosX, MobThree.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
         MobThree.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);
+        CrosshairHit = true;
     }
+    
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(100.f, BossOne.MobPosX, BossOne.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
         BossOne.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);//temporary variable is 1
+        CrosshairHit = true;
     }
+    
     Collision(BossOne.MobPosX - 20, BossOne.MobPosX + 20, BossOne.MobPosZ - 20, BossOne.MobPosZ + 20);
     Collision(MobOne.MobPosX - 4, BossOne.MobPosX + 4, MobOne.MobPosZ - 4, MobOne.MobPosZ + 4);
     Collision(MobTwo.MobPosX - 4, MobTwo.MobPosX + 4, MobTwo.MobPosZ - 4, MobTwo.MobPosZ + 4);
@@ -493,7 +500,7 @@ void SceneEnd::MobCheck()
         {
             BossOne.Spawn = false;
         }
-    checkAttack();   
+    //checkAttack();   
 }
 
 void SceneEnd::moveMob(double dt)

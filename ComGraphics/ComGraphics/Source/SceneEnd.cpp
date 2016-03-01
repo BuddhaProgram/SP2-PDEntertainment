@@ -441,25 +441,28 @@ void SceneEnd::MouseClickFunction(double dt)
 	if (Variables.b_LockSwingDebounce == true)
 	{
 		Variables.RotateX -= 360.0f * (float)dt;
-
 		if (Variables.RotateX <= -45.0f)
 		{
 			Variables.RotateX = -45.0f;
-			Variables.b_LockSwingDebounce = false;
-            //checkAttack();
+			Variables.b_LockSwingDebounce = false;      
+            checkAttack();
 		}
 	}
 
 	if (Variables.b_LockSwingDebounce == false && Variables.b_LockSwing == true && Variables.RotateX <= 0.0f)
 	{
 		Variables.RotateX += 360.0f * (float)dt;
-
 		if (Variables.RotateX >= 0.0f)
 		{
 			Variables.RotateX = 0.0f;
 			Variables.b_LockSwing = false;
 		}
 	}
+
+    if (!Variables.b_LockSwing)
+    {
+        CrosshairHit = false;
+    }
 }
 
 void SceneEnd::ContinueGameOrNot()
@@ -838,7 +841,15 @@ void SceneEnd::Render()
 
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
 	RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-	RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
+    if (!CrosshairHit)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
+    }
+    if (CrosshairHit)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(1.0f, 0.0f, 0.0f), 4, 9.8f, 7);
+
+    }
 
 	if (b_RepairDone[2] == false)
 	{

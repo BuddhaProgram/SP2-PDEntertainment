@@ -235,6 +235,8 @@ private:
 
     float MobMS = 25.f;
     float BossMS = 15.f;
+
+    bool CrosshairHit = false;
    
 };
 
