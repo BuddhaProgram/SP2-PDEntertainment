@@ -856,7 +856,7 @@ void SceneLevelOneA::Render()
 
 	if (Notice)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "NO KEY", Color(0, 1, 0), 4, 10, 7);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Door is locked", Color(0, 1, 0), 4, 8, 7);
 	}
 	if (displayInteract1 || displayInteract2 || displayInteract3)
 	{

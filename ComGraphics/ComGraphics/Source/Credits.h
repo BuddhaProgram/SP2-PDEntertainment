@@ -24,6 +24,11 @@ class Credits : public Scene
 		GEO_TEXT,
 		GEO_TEXTBACKGROUND,
 
+		GEO_NAME1,
+		GEO_NAME2,
+		GEO_NAME3,
+		GEO_NAME4,
+
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE

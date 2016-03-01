@@ -112,6 +112,15 @@ void Credits::Init()
 
 	meshList[GEO_TEXTBACKGROUND] = MeshBuilder::GenerateQuad("text background", Color(1, 1, 1));
 
+	meshList[GEO_NAME1] = MeshBuilder::GenerateQuad("Benny", Color(1, 1, 1));
+	meshList[GEO_NAME1]->textureID = LoadTGA("Image//Benny.tga");
+	meshList[GEO_NAME2] = MeshBuilder::GenerateQuad("Kewpie", Color(1, 1, 1));
+	meshList[GEO_NAME2]->textureID = LoadTGA("Image//Kewpie.tga");
+	meshList[GEO_NAME3] = MeshBuilder::GenerateQuad("Lyk", Color(1, 1, 1));
+	meshList[GEO_NAME3]->textureID = LoadTGA("Image//Lyk.tga");
+	meshList[GEO_NAME4] = MeshBuilder::GenerateQuad("Kenichi", Color(1, 1, 1));
+	meshList[GEO_NAME4]->textureID = LoadTGA("Image//Kenichi.tga");
+
 	meshList[GEO_TITLE] = MeshBuilder::GenerateQuad("Title", Color(1, 1, 1));
 	meshList[GEO_TITLE]->textureID = LoadTGA("Image//Title.tga");
 
@@ -140,28 +149,32 @@ void Credits::RenderCredits()
 
 	if (second)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Lead", Color(1, 0, 0), 13, 8.f + secondcredits, 3.0f);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Programmer", Color(1, 0, 0), 13, 6.5f+secondcredits, 2.3f);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Benny", Color(0, 1, 1), 13, 8.f+secondcredits, 1.6f);
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_NAME1], 70.f, 70.f, 10.f, 90, 1, 0, 0, 1.56f+secondcredits, 0.4f, 1.0f, false);
+		modelStack.PopMatrix();
+
 	}
 
 	if (third)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Programmer", Color(1, 0, 0), 13, 6.6f + thirdcredits, 2.5f);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Kewpie", Color(0, 1, 1), 13, 7.9f + thirdcredits, 1.8f);
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_NAME2], 70.f, 70.f, 10.f, 90, 1, 0, 0, 1.56f+thirdcredits, 0.4f, 1.0f, false);
+		modelStack.PopMatrix();
 	}
 
 	if (fourth)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Programmer", Color(1, 0, 0), 13, 6.6f + fourthcredits, 2.5f);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Lyk", Color(0, 1, 1), 13, 8.2f + fourthcredits, 1.8f);
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_NAME3], 70.f, 70.f, 10.f, 90, 1, 0, 0, 1.56f+fourthcredits, 0.4f, 1.0f, false);
+		modelStack.PopMatrix();
 	}
 
 
 	if (fifth)
 	{
-		RenderTextOnScreen(meshList[GEO_TEXT], "Animator", Color(1, 0, 0), 13, 7.4f + fifthcredits, 2.5f);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Kenichi", Color(0, 1, 1), 13, 7.7f + fifthcredits, 1.8f);
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_NAME4], 70.f, 70.f, 10.f, 90, 1, 0, 0, 1.56f+fifthcredits, 0.4f, 1.0f, false);
+		modelStack.PopMatrix();
 	}
 
 	if (last)
@@ -187,19 +200,19 @@ void Credits::RenderMovingCredits(double dt)
 	}
 	if (move2)
 	{
-		secondcredits -= (float)(3 * dt);
+		secondcredits -= (float)(0.5f * dt);
 	}
 	if (move3)
 	{
-		thirdcredits -= (float)(3 * dt);
+		thirdcredits -= (float)(0.5f * dt);
 	}
 	if (move4)
 	{
-		fourthcredits -= (float)(3 * dt);
+		fourthcredits -= (float)(0.5f * dt);
 	}
 	if (move5)
 	{
-		fifthcredits -= (float)(3 * dt);
+		fifthcredits -= (float)(0.5f * dt);
 	}
 	if (move6)
 	{
@@ -231,7 +244,7 @@ void Credits::RenderMovingCredits(double dt)
 	if (second)
 	{
 		move2 = true;
-		if (secondcredits <= -6)
+		if (secondcredits <= -1)
 		{
 			move2 = false;
 			timer = true;
@@ -239,7 +252,7 @@ void Credits::RenderMovingCredits(double dt)
 			{
 				timer = false;
 				move2 = true;
-				if (secondcredits <= -12)
+				if (secondcredits <= -2.3f)
 				{
 					second = false;
 					third = true;
@@ -252,7 +265,7 @@ void Credits::RenderMovingCredits(double dt)
 	if (third)
 	{
 		move3 = true;
-		if (thirdcredits <= -6)
+		if (thirdcredits <= -1)
 		{
 			move3 = false;
 			timer = true;
@@ -260,7 +273,7 @@ void Credits::RenderMovingCredits(double dt)
 			{
 				timer = false;
 				move3 = true;
-				if (thirdcredits <= -12)
+				if (thirdcredits <= -2.3f)
 				{
 					third = false;
 					fourth = true;
@@ -273,7 +286,7 @@ void Credits::RenderMovingCredits(double dt)
 	if (fourth)
 	{
 		move4 = true;
-		if (fourthcredits <= -6)
+		if (fourthcredits <= -1)
 		{
 			move4 = false;
 			timer = true;
@@ -281,7 +294,7 @@ void Credits::RenderMovingCredits(double dt)
 			{
 				timer = false;
 				move4 = true;
-				if (fourthcredits <= -12)
+				if (fourthcredits <= -2.3f)
 				{
 					fourth = false;
 					fifth = true;
@@ -294,7 +307,7 @@ void Credits::RenderMovingCredits(double dt)
 	if (fifth)
 	{
 		move5 = true;
-		if (fifthcredits <= -6)
+		if (fifthcredits <= -1)
 		{
 			move5 = false;
 			timer = true;
@@ -302,7 +315,7 @@ void Credits::RenderMovingCredits(double dt)
 			{
 				timer = false;
 				move5 = true;
-				if (fifthcredits <= -12)
+				if (fifthcredits <= -2.3f)
 				{
 					fifth = false;
 					last = true;

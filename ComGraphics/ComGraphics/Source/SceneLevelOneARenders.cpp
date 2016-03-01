@@ -284,7 +284,7 @@ void SceneLevelOneA::checkDoor3()
 
 	if (anima.toSlideDoorBtm3)
 	{
-		Collision(182, 227, 60, 64);
+		Collision(150, 250, 58, 64);
 	}
 
 }
