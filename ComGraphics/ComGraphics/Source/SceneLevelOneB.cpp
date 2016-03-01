@@ -234,7 +234,6 @@ void SceneLevelOneB::ResetSameScene()
 {
 	Explorer::instance()->hp = 100;
 	Explorer::instance()->isDead = false;
-	Explorer::instance()->PlayerLife = 3;
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
 
@@ -626,7 +625,7 @@ void SceneLevelOneB::LogicAnimationSwitches(double dt)
 		}
 	}
 
-	else if (Variables.b_SwitchAnimate[1] == false)
+	else if (Variables.b_SwitchAnimate[2] == false)
 	{
 		Variables.f_SwitchRotateThree -= (float)(180.0f * dt);
 
@@ -655,14 +654,19 @@ void SceneLevelOneB::ContinueGameOrNot()
 		{
 			if (Explorer::instance()->checkSavePoint[1] == false)
 			{
-				camera.position.x = 0;
+				camera.position.x = 204;
 				camera.position.y = 10;
-				camera.position.z = 424;
+				camera.position.z = 0;
 
 				--Explorer::instance()->PlayerLife;
 				Explorer::instance()->hp = 100;
 				Explorer::instance()->isDead = false;
 				Variables.f_redScreenTimer = 0.0f;
+
+				ResetSameScene();
+
+				light[0].power = 1.0f;
+				glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 			}
 
 			else if (Explorer::instance()->checkSavePoint[1] == true)
@@ -678,7 +682,7 @@ void SceneLevelOneB::ContinueGameOrNot()
 
 		else if (Application::IsKeyPressed('N'))
 		{
-			//Reset();
+			ResetAll();
 			Application::OpenGame();
 		}
 	}
@@ -755,7 +759,10 @@ void SceneLevelOneB::Update(double dt)
 	ContinueGameOrNot();
 
 	if (Explorer::instance()->PlayerLife <= 0 && Variables.f_redScreenTimer > 8.0f)
+	{
+		ResetAll();
 		Application::OpenGame();
+	}
 	/*-------------------------[End of Death Functions]-------------------------------*/
 
 

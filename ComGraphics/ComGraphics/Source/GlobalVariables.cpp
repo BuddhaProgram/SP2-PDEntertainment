@@ -14,6 +14,8 @@ GlobalVariables::GlobalVariables()
 	f_SwitchRotateOne = 0.0f;
 	f_SwitchRotateTwo = 0.0f;
 	f_SwitchRotateThree = 0.0f;
+	f_SwitchRotateFour = 0.0f;
+	f_SwitchRotateFive = 0.0f;
 
 	for (int i = 0; i < 5; ++i)
 	{

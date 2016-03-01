@@ -293,6 +293,42 @@ void SceneEnd::UpdatePlayerDiesInteraction(double dt)
 	}
 }
 
+void SceneEnd::ContinueGameOrNot()
+{
+	if (Explorer::instance()->PlayerLife > 0 && Variables.f_redScreenTimer > 4.0f)
+	{
+		if (Application::IsKeyPressed('Y'))
+		{
+			if (Explorer::instance()->checkSavePoint[3] == false)
+			{
+				camera.position.x = 0;
+				camera.position.y = 10;
+				camera.position.z = 0;
+
+				--Explorer::instance()->PlayerLife;
+				Explorer::instance()->hp = 100;
+				Explorer::instance()->isDead = false;
+				Variables.f_redScreenTimer = 0.0f;
+
+				for (int i = 0; i < 3; ++i)
+				{
+					b_RepairDone[i] = false;
+					b_startRepair[i] = false;
+				}
+
+				f_RepairProcess = 0.0f;
+				f_rockY = 25.0f;
+			}
+		}
+
+		else if (Application::IsKeyPressed('N'))
+		{
+			Reset();
+			Application::OpenGame();
+		}
+	}
+}
+
 void SceneEnd::MouseScrollToolSlot()
 {
 	if (Application::mouse_scroll > 0)
@@ -458,42 +494,7 @@ void SceneEnd::MouseClickFunction(double dt)
 	}
 }
 
-void SceneEnd::ContinueGameOrNot()
-{
-	if (Explorer::instance()->PlayerLife > 0 && Variables.f_redScreenTimer > 4.0f)
-	{
-		if (Application::IsKeyPressed('Y'))
-		{
-			if (Explorer::instance()->checkSavePoint[3] == false)
-			{
-				camera.position.x = 0;
-				camera.position.y = 10;
-				camera.position.z = 424;
 
-				--Explorer::instance()->PlayerLife;
-				Explorer::instance()->hp = 100;
-				Explorer::instance()->isDead = false;
-				Variables.f_redScreenTimer = 0.0f;
-			}
-
-			else if (Explorer::instance()->checkSavePoint[3] == true)
-			{
-				camera.position = Explorer::instance()->SavePoint;
-
-				--Explorer::instance()->PlayerLife;
-				Explorer::instance()->hp = 100;
-				Explorer::instance()->isDead = false;
-				Variables.f_redScreenTimer = 0.0f;
-			}
-		}
-
-		else if (Application::IsKeyPressed('N'))
-		{
-			Reset();
-			Application::OpenGame();
-		}
-	}
-}
 
 void SceneEnd::UpdateRepairs(double dt)
 {
@@ -584,7 +585,15 @@ void SceneEnd::Update(double dt)
 	ContinueGameOrNot();
 
 	if (Explorer::instance()->PlayerLife <= 0 && Variables.f_redScreenTimer > 8.0f)
+	{
+		Reset();
 		Application::OpenGame();
+	}
+
+	if (Application::IsKeyPressed('Z'))
+	{
+		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
+	}
 
 	/*-------------------------[End of Death Functions]-------------------------------*/
 
@@ -605,8 +614,10 @@ void SceneEnd::Update(double dt)
 		}
 	}
 
-	if (Application::IsKeyPressed('E'))
-		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
+	//if (Application::IsKeyPressed('X'))
+	//Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
+	//Explorer::instance()->InsertToolSlot(ToolUI::BaseballBat);
+	//Explorer::instance()->InsertToolSlot(ToolUI::Sword);
 
     //door collision
     Collision(-40, 40, 70, 110);

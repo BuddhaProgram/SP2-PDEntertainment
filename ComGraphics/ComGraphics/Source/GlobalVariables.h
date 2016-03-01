@@ -22,6 +22,8 @@ class GlobalVariables
 		float f_SwitchRotateOne;
 		float f_SwitchRotateTwo;
 		float f_SwitchRotateThree;
+		float f_SwitchRotateFour;
+		float f_SwitchRotateFive;
 
 		bool b_SwitchAnimate[5];
 

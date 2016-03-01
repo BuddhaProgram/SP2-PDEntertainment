@@ -100,7 +100,7 @@ void SceneLevelTwo::Init()
 
     //Initialize camera settings
     //camera.Init(Vector3(0, 10, -110), Vector3(0, 10, -1), Vector3(0, 1, 0));
-	camera.Init(Vector3(0, 10, 400), Vector3(0, 10, -1), Vector3(0, 1, 0));
+	camera.Init(Vector3(320, 10, -50), Vector3(0, 10, -1), Vector3(0, 1, 0));
     meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
     meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("lightball", Color(1, 1, 1), 10, 20);
@@ -192,6 +192,12 @@ void SceneLevelTwo::Init()
 	meshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Healthbar", Color(1, 0, 0));
 	meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
 
+	meshList[GEO_LIGHTGREEN] = MeshBuilder::GenerateOBJ("green light", "OBJ//PuzzleLight.obj");
+	meshList[GEO_LIGHTGREEN]->textureID = LoadTGA("Image//PuzzleLightGREEN.tga");
+
+	meshList[GEO_LIGHTRED] = MeshBuilder::GenerateOBJ("red light", "OBJ//PuzzleLight.obj");
+	meshList[GEO_LIGHTRED]->textureID = LoadTGA("Image//PuzzleLightRED.tga");
+
     meshList[GEO_LEVER] = MeshBuilder::GenerateOBJ("lever", "OBJ//PuzzleLever.obj");
     meshList[GEO_LEVER]->textureID = LoadTGA("Image//PuzzleLever.tga");
 
@@ -230,6 +236,20 @@ void SceneLevelTwo::Reset()
 	puzzling = false;
 	transSpikeWall2 = 0;
 	hitWall = false;
+	for (int i = 0; i < 4; ++i)
+	{
+		Explorer::instance()->checkSavePoint[i] = false;
+	}
+}
+
+void SceneLevelTwo::ResetAll()
+{
+	Explorer::instance()->hp = 100;
+	Explorer::instance()->isDead = false;
+	Explorer::instance()->PlayerLife = 3;
+	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
+	Variables.f_redScreenTimer = 0.0f;
+
 	for (int i = 0; i < 4; ++i)
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
@@ -660,14 +680,216 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	}
 }
 
+void SceneLevelTwo::PuzzleTwoSwitchCheck(double dt)
+{
+	Variables.f_SwitchDebounce += (float)dt;
+	if (camera.position.x > 301 && camera.position.x < 312 && camera.position.z > -55 && camera.position.z < -30)
+	{
+		if (Application::IsKeyPressed(VK_RBUTTON) && Variables.f_SwitchDebounce > 0.5f)
+		{
+			if (Variables.b_SwitchAnimate[0] == false)
+				Variables.b_SwitchAnimate[0] = true;
+
+			else
+				Variables.b_SwitchAnimate[0] = false;
+
+			if (Switches.b_PuzzleTwo[0] == false)
+				Switches.b_PuzzleTwo[0] = true;
+
+			else
+				Switches.b_PuzzleOne[0] = false;
+
+			if (Switches.b_PuzzleTwo[3] == false)
+				Switches.b_PuzzleTwo[3] = true;
+
+			else
+				Switches.b_PuzzleTwo[3] = false;
+
+			if (Switches.b_PuzzleTwo[4] == false)
+				Switches.b_PuzzleTwo[4] = true;
+
+			else
+				Switches.b_PuzzleTwo[4] = false;
+
+			Variables.f_SwitchDebounce = 0.0f;
+		}
+	}
+
+	if (camera.position.x > 289 && camera.position.x < 299 && camera.position.z > -55 && camera.position.z < -30)
+	{
+		if (Application::IsKeyPressed(VK_RBUTTON) && Variables.f_SwitchDebounce > 0.5f)
+		{
+			if (Variables.b_SwitchAnimate[1] == false)
+				Variables.b_SwitchAnimate[1] = true;
+
+			else
+				Variables.b_SwitchAnimate[1] = false;
+
+			if (Switches.b_PuzzleTwo[0] == false)
+				Switches.b_PuzzleTwo[0] = true;
+
+			else
+				Switches.b_PuzzleTwo[0] = false;
+
+			Variables.f_SwitchDebounce = 0.0f;
+		}
+	}
+
+	if (camera.position.x > 277 && camera.position.x < 287 && camera.position.z > -55 && camera.position.z < -30)
+	{
+		if (Application::IsKeyPressed(VK_RBUTTON) && Variables.f_SwitchDebounce > 0.5f)
+		{
+			if (Variables.b_SwitchAnimate[2] == false)
+				Variables.b_SwitchAnimate[2] = true;
+
+			else
+				Variables.b_SwitchAnimate[2] = false;
+
+			if (Switches.b_PuzzleTwo[1] == false)
+				Switches.b_PuzzleTwo[1] = true;
+
+			else
+				Switches.b_PuzzleTwo[1] = false;
+
+			if (Switches.b_PuzzleTwo[3] == false)
+				Switches.b_PuzzleTwo[3] = true;
+
+			else
+				Switches.b_PuzzleTwo[3] = false;
+
+			if (Switches.b_PuzzleTwo[4] == false)
+				Switches.b_PuzzleTwo[4] = true;
+
+			else
+				Switches.b_PuzzleTwo[4] = false;
+
+			Variables.f_SwitchDebounce = 0.0f;
+		}
+	}
+
+	if (camera.position.x > 265 && camera.position.x < 275 && camera.position.z > -55 && camera.position.z < -30)
+	{
+		if (Application::IsKeyPressed(VK_RBUTTON) && Variables.f_SwitchDebounce > 0.5f)
+		{
+			if (Variables.b_SwitchAnimate[3] == false)
+				Variables.b_SwitchAnimate[3] = true;
+
+			else
+				Variables.b_SwitchAnimate[3] = false;
+
+			if (Switches.b_PuzzleTwo[0] == false)
+				Switches.b_PuzzleTwo[0] = true;
+
+			else
+				Switches.b_PuzzleTwo[0] = false;
+
+			if (Switches.b_PuzzleTwo[1] == false)
+				Switches.b_PuzzleTwo[1] = true;
+
+			else
+				Switches.b_PuzzleTwo[1] = false;
+
+			if (Switches.b_PuzzleTwo[2] == false)
+				Switches.b_PuzzleTwo[2] = true;
+
+			else
+				Switches.b_PuzzleTwo[2] = false;
+
+			Variables.f_SwitchDebounce = 0.0f;
+		}
+	}
+}
+
+void SceneLevelTwo::LogicAnimationSwitches(double dt)
+{
+	if (Variables.b_SwitchAnimate[0] == true)
+	{
+		Variables.f_SwitchRotateOne -= (float)(180.0f * dt);
+
+		if (Variables.f_SwitchRotateOne <= -90.0f)
+		{
+			Variables.f_SwitchRotateOne = -90.0f;
+		}
+	}
+
+	else if (Variables.b_SwitchAnimate[0] == false)
+	{
+		Variables.f_SwitchRotateOne += (float)(180.0f * dt);
+
+		if (Variables.f_SwitchRotateOne >= 0.0f)
+		{
+			Variables.f_SwitchRotateOne = 0.0f;
+		}
+	}
+
+	if (Variables.b_SwitchAnimate[1] == true)
+	{
+		Variables.f_SwitchRotateTwo -= (float)(180.0f * dt);
+
+		if (Variables.f_SwitchRotateTwo <= -90.0f)
+		{
+			Variables.f_SwitchRotateTwo = -90.0f;
+		}
+	}
+
+	else if (Variables.b_SwitchAnimate[1] == false)
+	{
+		Variables.f_SwitchRotateTwo += (float)(180.0f * dt);
+
+		if (Variables.f_SwitchRotateTwo >= 0.0f)
+		{
+			Variables.f_SwitchRotateTwo = 0.0f;
+		}
+	}
+
+	if (Variables.b_SwitchAnimate[2] == true)
+	{
+		Variables.f_SwitchRotateThree -= (float)(180.0f * dt);
+
+		if (Variables.f_SwitchRotateThree <= -90.0f)
+		{
+			Variables.f_SwitchRotateThree = -90.0f;
+		}
+	}
+
+	else if (Variables.b_SwitchAnimate[2] == false)
+	{
+		Variables.f_SwitchRotateThree += (float)(180.0f * dt);
+
+		if (Variables.f_SwitchRotateThree >= 0.0f)
+		{
+			Variables.f_SwitchRotateThree = 0.0f;
+		}
+	}
+
+	if (Variables.b_SwitchAnimate[3] == true)
+	{
+		Variables.f_SwitchRotateThree -= (float)(180.0f * dt);
+
+		if (Variables.f_SwitchRotateThree <= -90.0f)
+		{
+			Variables.f_SwitchRotateThree = -90.0f;
+		}
+	}
+
+	else if (Variables.b_SwitchAnimate[3] == false)
+	{
+		Variables.f_SwitchRotateThree += (float)(180.0f * dt);
+
+		if (Variables.f_SwitchRotateThree >= 0.0f)
+		{
+			Variables.f_SwitchRotateThree = 0.0f;
+		}
+	}
+}
+
 void SceneLevelTwo::Update(double dt)
 {
     light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
     light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
     FPS = 1.f / (float)dt;
     //worldspin += (float)(dt);
-	checkPlayerPosMisc();
-	SomeUpdates(dt);
+
     if (Application::IsKeyPressed('1')) //enable back face culling
         glEnable(GL_CULL_FACE);
     if (Application::IsKeyPressed('2')) //disable back face culling
@@ -677,7 +899,7 @@ void SceneLevelTwo::Update(double dt)
     if (Application::IsKeyPressed('4'))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-    camera.Update(dt);
+
     SwitchCheck(dt);
     //wall collision
     for (int i = 0; i < 60; i++)
@@ -685,13 +907,22 @@ void SceneLevelTwo::Update(double dt)
         Collision(CollXSmall[i], CollXLarge[i], CollZSmall[i], CollZLarge[i]);
     }
 
+	Collision(252 ,320, -50, -34); // switch collision
+	/*-------------------------[Switches Function]-------------------------------*/
+	PuzzleTwoSwitchCheck(dt);
+	LogicAnimationSwitches(dt);
+	Switches.SwitchPuzzleTwo; // PLEASE USE THIS KEWPIE!
 	/*-------------------------[Death of the Explorer]-------------------------------*/
 	Explorer::instance()->checkDead();
 	UpdatePlayerDiesInteraction(dt);
 	ContinueGameOrNot();
 
 	if (Explorer::instance()->PlayerLife <= 0 && Variables.f_redScreenTimer > 8.0f)
+	{
+		ResetAll();
 		Application::OpenGame();
+	}
+		
 	/*-------------------------[End of Death Functions]-------------------------------*/
 
     /*-------------------------[Tool UI Functions]-------------------------------*/
@@ -700,7 +931,12 @@ void SceneLevelTwo::Update(double dt)
     MouseClickFunction(dt);
     /*-------------------------[End of Tool UI Functions]-------------------------------*/
 
+	std::cout << Variables.f_SwitchDebounce << std::endl;
 
+	//Variables.f_SwitchRotateOne -= (float)(10 * dt);
+	checkPlayerPosMisc();
+	SomeUpdates(dt);
+	camera.Update(dt);
 }
 
 void SceneLevelTwo::RenderMesh(Mesh*mesh, bool enableLight)
@@ -917,6 +1153,61 @@ void SceneLevelTwo::Render()
 
 	for (float i = 0; i < Explorer::instance()->PlayerLife; ++i)
 		RenderModelOnScreen(meshList[GEO_HEALTHICON], 3.f, 3.f, 3.f, 90, 1, 0, 0, (22.f + i), 18.5f, 1.0f, false);
+
+	for (int i = 0, placing = 0; i < 60; i += 12, ++placing)
+	{
+		if (!Switches.b_PuzzleTwo[placing])
+		{
+			modelStack.PushMatrix();
+				modelStack.Translate(312 - i, 17, -36);
+				modelStack.Scale(2, 2, 2);
+				modelStack.Rotate(90, 0, 1, 0);
+				RenderMesh(meshList[GEO_LIGHTRED], true);
+			modelStack.PopMatrix();
+		}
+
+		else if (Switches.b_PuzzleTwo[placing])
+		{
+			modelStack.PushMatrix();
+				modelStack.Translate(312 - i, 17, -36);
+				modelStack.Scale(2, 2, 2);
+				modelStack.Rotate(90, 0, 1, 0);
+				RenderMesh(meshList[GEO_LIGHTGREEN], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+		modelStack.PushMatrix();
+			modelStack.Translate(306, 5, -37);
+			modelStack.Scale(2, 2, 2);
+			modelStack.Rotate(Variables.f_SwitchRotateOne, 1, 0, 0);
+			modelStack.Rotate(90, 0, 1, 0);
+			RenderMesh(meshList[GEO_LEVER], true);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+			modelStack.Translate(294, 5, -37);
+			modelStack.Scale(2, 2, 2);
+			modelStack.Rotate(Variables.f_SwitchRotateTwo, 1, 0, 0);
+			modelStack.Rotate(90, 0, 1, 0);
+			RenderMesh(meshList[GEO_LEVER], true);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+			modelStack.Translate(282, 5, -37);
+			modelStack.Scale(2, 2, 2);
+			modelStack.Rotate(Variables.f_SwitchRotateThree, 1, 0, 0);
+			modelStack.Rotate(90, 0, 1, 0);
+			RenderMesh(meshList[GEO_LEVER], true);
+		modelStack.PopMatrix();
+
+		modelStack.PushMatrix();
+			modelStack.Translate(270, 5, -37);
+			modelStack.Scale(2, 2, 2);
+			modelStack.Rotate(Variables.f_SwitchRotateFour, 1, 0, 0);
+			modelStack.Rotate(90, 0, 1, 0);
+			RenderMesh(meshList[GEO_LEVER], true);
+		modelStack.PopMatrix();
 }
 
 void SceneLevelTwo::Exit()

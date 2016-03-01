@@ -503,6 +503,8 @@ void SceneLevelOneA::ContinueGameOrNot()
 				Explorer::instance()->isDead = false;
 				Variables.f_redScreenTimer = 0.0f;
 
+				ResetSameScene();
+
 				light[0].power = 1.0f;
 				glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 			}
@@ -520,6 +522,7 @@ void SceneLevelOneA::ContinueGameOrNot()
 
 		else if (Application::IsKeyPressed('N'))
 		{
+			ResetAll();
 			Application::OpenGame();
 		}
 	}
@@ -558,7 +561,11 @@ void SceneLevelOneA::Update(double dt)
 	ContinueGameOrNot();
 
 	if (Explorer::instance()->PlayerLife <= 0 && Variables.f_redScreenTimer > 8.0f)
+	{
+		ResetAll();
 		Application::OpenGame();
+	}
+
 	/*-------------------------[End of Death Functions]-------------------------------*/
 
 
