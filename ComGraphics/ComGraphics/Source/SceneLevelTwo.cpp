@@ -704,12 +704,10 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	}
 	if (proximitycheck(-80, -76, -20, 22) && openDoor1 == false)
 	{
-		std::cout << "HI" << std::endl;
 		displayInteract1 = true;
 	}
 	else
 	{
-		std::cout << "BYE" << std::endl;
 		displayInteract1 = false;
 	}
 
@@ -719,12 +717,10 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	}
 	if (proximitycheck(80, 96, -20, 22) && openDoor2 == false)
 	{
-		std::cout << "HI" << std::endl;
 		displayInteract2 = true;
 	}
 	else
 	{
-		std::cout << "BYE" << std::endl;
 		displayInteract2 = false;
 	}
 
@@ -1080,7 +1076,6 @@ void SceneLevelTwo::Update(double dt)
 	{
 		ScareGhost.move(dt, 25);
 	}
-   
 }
 
 void SceneLevelTwo::RenderMesh(Mesh*mesh, bool enableLight)

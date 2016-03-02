@@ -152,6 +152,7 @@ void Application::Run()
 	EndScene = new SceneEndCutScene();
 	EndCredits = new Credits();
 
+
 	scene = Opening;
 	scene->Init();
 
