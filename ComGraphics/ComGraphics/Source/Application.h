@@ -9,7 +9,7 @@
 #define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
 #include <crtdbg.h>
-#include "Music.h"
+
 
 class Application
 {
@@ -35,6 +35,7 @@ public:
 	static void End_Credits();
 
 	static Music *musics;
+	static void MusicWillPlay(int index, bool loop);
 
     static Scene *scene;
 	static Scene *IntroScene;

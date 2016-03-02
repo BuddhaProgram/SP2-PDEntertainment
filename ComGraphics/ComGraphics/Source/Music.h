@@ -3,6 +3,9 @@
 
 #include <vector>
 #include <string>
+#include <fstream>
+#include <iostream>
+
 #include "../irrKlang/include/irrKlang.h"
 
 class Music
@@ -12,10 +15,11 @@ class Music
 		~Music();
 
 		void init();
-		void OpeningMusic();
+		void OpeningMusic(int index, bool loop);
+		std::vector<std::string>MusicReadFromText(std::string link);
 
 		irrklang::ISoundEngine *engine;
-		irrklang::ISoundSource *BackGround;
+		std::vector<irrklang::ISoundSource*> BackGround;
 		std::vector<std::string> BackgroundMusic;
 };
 

@@ -1,4 +1,4 @@
-	#include "Application.h"
+#include "Application.h"
 
 
 //Include the standard C++ headers
@@ -53,6 +53,7 @@ Application::~Application()
 {
 }
 Music* Application::musics;
+
 Scene* Application::scene;
 Scene* Application::IntroScene;
 Scene* Application::IntroScene2;
@@ -138,7 +139,6 @@ void Application::Run()
 {
 	musics = new Music();
 	musics->init();
-	/*musics->OpeningMusic();*/
 
 	Opening = new SceneOpening();
 	IntroScene = new OpeningCutScene();
@@ -194,6 +194,7 @@ void Application::Exit()
 {
 	//Close OpenGL window and terminate GLFW
 	glfwDestroyWindow(m_window);
+	glfwWindowShouldClose(m_window);
 	//Finalize and clean up GLFW
 	glfwTerminate();
 }
@@ -261,4 +262,9 @@ void Application::End_Credits()
 {
 	scene = EndCredits;
 	scene->Init();
+}
+
+void Application::MusicWillPlay(int index, bool loop)
+{
+	musics->OpeningMusic(index, loop);
 }

@@ -1,0 +1,7 @@
+Music//MainMenu.mp3
+Music//FallingRocks.mp3
+Music//CreakingDoorSound.mp3
+Music//GhostScreamSE.mp3
+Music//Wallhit.mp3
+Music//SCREAM.mp3
+Music//ZombieSE.mp3

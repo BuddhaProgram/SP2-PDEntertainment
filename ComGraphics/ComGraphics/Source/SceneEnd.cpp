@@ -21,7 +21,9 @@ SceneEnd::SceneEnd()
 		b_startRepair[i] = false;
 	}
 
-	f_RepairProcess = 0.0f;
+	for (int i = 0; i < 2; ++i)
+		f_RepairProcess[i] = 0.0f;
+
 	f_rockY = 25.0f;
 
     spawnWaveOne = false;
@@ -313,7 +315,9 @@ void SceneEnd::ContinueGameOrNot()
 				b_startRepair[i] = false;
 			}
 
-			f_RepairProcess = 0.0f;
+			for (int i = 0; i < 2; ++i)
+				f_RepairProcess[i] = 0.0f;
+
 			f_rockY = 25.0f;
 
             //
@@ -516,7 +520,7 @@ void SceneEnd::UpdateRepairs(double dt)
 		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand && b_RepairDone[1] == false)
 		{
 			b_startRepair[1] = true;
-			f_RepairProcess += (float)(5.0f * dt);
+			f_RepairProcess[1] += (float)(5.0f * dt);
 		}
 	}
 
@@ -525,22 +529,20 @@ void SceneEnd::UpdateRepairs(double dt)
 		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand && b_RepairDone[0] == false)
 		{
 			b_startRepair[0] = true;
-			f_RepairProcess += (float)(5.0f * dt);
+			f_RepairProcess[0] += (float)(5.0f * dt);
 		}
 	}
 
-	if (f_RepairProcess >= 100.0f && b_RepairDone[0] == false && b_startRepair[0] == true)
+	if (f_RepairProcess[0] >= 100.0f && b_RepairDone[0] == false && b_startRepair[0] == true)
 	{
 		b_startRepair[0] = false;
 		b_RepairDone[0] = true;
-		f_RepairProcess = 0.0f;
 	}
 
-	if (f_RepairProcess >= 100.0f && b_RepairDone[1] == false && b_startRepair[1] == true)
+	if (f_RepairProcess[1] >= 100.0f && b_RepairDone[1] == false && b_startRepair[1] == true)
 	{
 		b_startRepair[1] = false;
 		b_RepairDone[1] = true;
-		f_RepairProcess = 0.0f;
 	}
 }
 

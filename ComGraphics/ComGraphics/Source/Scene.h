@@ -4,7 +4,8 @@
 #include "GlobalVariables.h"
 #include "SwitchLightPuzzle.h"
 #include "Explorer.h"
-#include"Misc.h"
+#include "Misc.h"
+#include "Music.h"
 
 class Scene
 {

@@ -158,7 +158,7 @@ private:
 	bool b_RepairDone[3];
 	bool b_startRepair[3];
 	bool b_ReadyToFly();
-	float f_RepairProcess;
+	float f_RepairProcess[2];
 	void RenderShipAndPod();
 
 	void RenderRepairText();
