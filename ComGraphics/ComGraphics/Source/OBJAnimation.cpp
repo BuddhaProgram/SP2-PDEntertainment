@@ -151,7 +151,7 @@ void Animation::Portraits(double dt)
 		b_toPortraitDrop = true;
 	}
 
-	if (f_PortraitDrop <= 4.5f)
+	if (f_PortraitDrop <= 4.3f)
 	{
 		b_toPortraitDrop = false;
 		b_toPortraitFall = true;
@@ -164,7 +164,7 @@ void Animation::Portraits(double dt)
 
 	if (b_toPortraitFall)
 	{
-		f_PortraitFall += (float)(50 * dt);
+		f_PortraitFall += (float)(200 * dt);
 	}
 
 	if (f_PortraitFall >= 90)

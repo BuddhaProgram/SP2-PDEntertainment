@@ -421,6 +421,25 @@ void SceneLevelOneB::RenderBoss(float xpos, float zpos)
     modelStack.PopMatrix();//boss end
 }
 
+void SceneLevelOneB::RenderJumpScare()
+{
+	if (proximitycheck(-160, -130, -260, -240))
+	{
+		JumpScare = true;
+		timer = true;
+		if (countdown >= 200)
+		{
+			JumpScare = false;
+			timer = false;
+			ScareGhost.Spawn = true;
+		}
+	}
+	if (timer)
+	{
+		countdown += 1;
+	}
+}
+
 void SceneLevelOneB::EnvironmentAnimation(double dt)
 {
     Variables.f_SuitcaseRotateY += (float)(20.f * dt);
@@ -446,6 +465,11 @@ void SceneLevelOneB::attackCheck()
 		BossOne.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);//temporary variable is 1
         CrosshairHit = true;
     }
+	if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(100.f, ScareGhost.MobPosX, ScareGhost.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+	{
+		ScareGhost.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);//temporary variable is 1
+		CrosshairHit = true;
+	}
 }
 
 void SceneLevelOneB::MobsSpawn()

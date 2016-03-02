@@ -361,9 +361,28 @@ void SceneLevelTwo::SwitchCheck(double dt)
 void SceneLevelTwo::RenderGhost1()
 {
     modelStack.PushMatrix();
-    modelStack.Translate(Ghost.MobPosX, Ghost.MobPosY, Ghost.MobPosZ);
+	modelStack.Translate(ScareGhost.MobPosX, ScareGhost.MobPosY, ScareGhost.MobPosZ);
     RenderMesh(meshList[GEO_GHOST1], true);
     modelStack.PopMatrix();
+}
+
+void SceneLevelTwo::RenderJumpScare()
+{
+	if (proximitycheck(140, 150, -370, -350))
+	{
+		JumpScare = true;
+		timer = true;
+		if (countdown >= 200)
+		{
+			JumpScare = false;
+			timer = false;
+			ScareGhost.Spawn = true;
+		}
+	}
+	if (timer)
+	{
+		countdown += 1;
+	}
 }
 
 void SceneLevelTwo::RenderPlayerDiesInteraction()

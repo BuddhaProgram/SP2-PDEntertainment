@@ -144,6 +144,7 @@ private:
     void RenderGhost(float xpos, float zpos);
     void RenderBoss(float xpos, float zpos);
 	void RenderDoor();
+	void RenderJumpScare();
 
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
@@ -226,9 +227,13 @@ private:
 
     MobGhost PuzzleGhost1;
     MobGhost PuzzleGhost2;
-    MobGhost ScareGhost;
+	MobGhost ScareGhost;
     MobBossOne BossOne;
     bool CrosshairHit;
+
+	bool timer;
+	float countdown;
+	bool JumpScare;
 };
 
 
