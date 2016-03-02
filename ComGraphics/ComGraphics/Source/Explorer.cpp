@@ -198,3 +198,4 @@ ToolUI::ToolType Explorer::GetToolType(int SlotNumber)
 }
 
 //combat stuff
+

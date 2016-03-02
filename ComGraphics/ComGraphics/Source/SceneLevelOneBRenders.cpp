@@ -269,7 +269,7 @@ void SceneLevelOneB::checkDoor1()
 	}
 	if (anima.toSlideDoorBtm)
 	{
-		Collision(190, 216, -55, -45);
+		Collision(190, 216, -65, -45);
 	}
 }
 

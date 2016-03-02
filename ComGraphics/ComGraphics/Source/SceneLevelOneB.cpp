@@ -762,14 +762,13 @@ void SceneLevelOneB::Update(double dt)
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
 
-    camera.Update(dt);
-	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
-	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
-
 	if (!JumpScare)
 	{
 		camera.Update(dt);
 	}
+
+	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
+	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 
     checkPlayerPosMisc();
 	checkDoor1();
