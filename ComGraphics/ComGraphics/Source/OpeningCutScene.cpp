@@ -228,8 +228,6 @@ void OpeningCutScene::Update(double dt)
 		}
 	}
 
-	std::cout << timercount << std::endl;
-
 	if (Application::IsKeyPressed(VK_BACK))
 	{
 		Application::StartingScene();

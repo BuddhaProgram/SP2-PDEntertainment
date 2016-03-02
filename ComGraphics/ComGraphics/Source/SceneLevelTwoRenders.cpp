@@ -362,6 +362,7 @@ void SceneLevelTwo::RenderGhost1()
 {
     modelStack.PushMatrix();
 	modelStack.Translate(ScareGhost.MobPosX, ScareGhost.MobPosY, ScareGhost.MobPosZ);
+    modelStack.Scale(3, 3, 3);
     RenderMesh(meshList[GEO_GHOST1], true);
     modelStack.PopMatrix();
 }

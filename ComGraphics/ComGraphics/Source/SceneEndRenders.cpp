@@ -394,9 +394,6 @@ void SceneEnd::RenderBoss(float xpos, float zpos)
     {
         rotGhost = Math::RadianToDegree(atan(view.x / view.z));
     }
-   
-        std::cout << "Boss" << std::endl;
-        //std::cout << BossOne.MobPosX << BossOne.MobPosZ << std::endl;
         modelStack.PushMatrix();
         modelStack.Translate(xpos, 5, zpos);
         modelStack.Scale(6, 6, 6);
@@ -526,7 +523,6 @@ void SceneEnd::moveMob(double dt)
 
 void SceneEnd::ResetMobs()
 {
-    std::cout << "Reset" << std::endl;
     waveCounter += 1;
 
     MobOne.health = 8 + waveCounter * 4;
@@ -534,8 +530,8 @@ void SceneEnd::ResetMobs()
     MobThree.health = 8 + waveCounter * 4;
     BossOne.health = 32 + waveCounter * 8;
 
-    MobMS += 5;
-    BossMS += 5;
+    MobMS += 3;
+    BossMS += 2;
 
     MobOne.setSpawnGhost(25, -8);
     MobTwo.setSpawnGhost(26, 73);
