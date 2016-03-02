@@ -1,0 +1,4 @@
+<map id="SceneLevelOneB::ResetSameScene" name="SceneLevelOneB::ResetSameScene">
+<area shape="rect" id="node2" href="$classSceneLevelOneB.html#ac92af3bf7c49f02f6e444af93d940150" title="SceneLevelOneB::Continue\lGameOrNot" alt="" coords="251,5,431,47"/>
+<area shape="rect" id="node3" href="$classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="479,13,649,39"/>
+</map>

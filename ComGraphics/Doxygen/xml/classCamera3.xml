@@ -60,13 +60,13 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Camera3.h" line="16" column="1" bodyfile="ComGraphics/Source/Camera3.h" bodystart="16" bodyend="-1"/>
-        <referencedby refid="classSceneLevelOneB_1a2bfa4551ac0b1f099c42c2193b55df47" compoundref="SceneLevelOneBRenders_8cpp" startline="435" endline="455">SceneLevelOneB::attackCheck</referencedby>
-        <referencedby refid="classSceneLevelOneA_1acae5c28ab518704326877b73c6df4e55" compoundref="SceneLevelOneARenders_8cpp" startline="398" endline="407">SceneLevelOneA::AttackCheck</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a2bfa4551ac0b1f099c42c2193b55df47" compoundref="SceneLevelOneBRenders_8cpp" startline="429" endline="449">SceneLevelOneB::attackCheck</referencedby>
+        <referencedby refid="classSceneLevelOneA_1acae5c28ab518704326877b73c6df4e55" compoundref="SceneLevelOneARenders_8cpp" startline="390" endline="399">SceneLevelOneA::AttackCheck</referencedby>
         <referencedby refid="classSceneEnd_1a31fef5d67de3a3dfd2ae15d4bbcea2b6" compoundref="SceneEndRenders_8cpp" startline="424" endline="456">SceneEnd::checkAttack</referencedby>
         <referencedby refid="classCamera3_1a021022df76481c9e9fd5c3cf5fe51cf7" compoundref="Camera3_8cpp" startline="67" endline="106">HumanControl</referencedby>
         <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="17" endline="30">Init</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a5c7b2f57a7e884e4beed73a4fcbdbbb7" compoundref="SceneLevelOneARenders_8cpp" startline="352" endline="369">SceneLevelOneA::RenderGhost</referencedby>
-        <referencedby refid="classSceneLevelOneB_1af05b4b11f0ad4afd0adf8883135e4136" compoundref="SceneLevelOneBRenders_8cpp" startline="374" endline="391">SceneLevelOneB::RenderGhost</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a5c7b2f57a7e884e4beed73a4fcbdbbb7" compoundref="SceneLevelOneARenders_8cpp" startline="344" endline="361">SceneLevelOneA::RenderGhost</referencedby>
+        <referencedby refid="classSceneLevelOneB_1af05b4b11f0ad4afd0adf8883135e4136" compoundref="SceneLevelOneBRenders_8cpp" startline="368" endline="385">SceneLevelOneB::RenderGhost</referencedby>
         <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="112" endline="155">Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classCamera3_1a99792d8c4ad637feee9162ae1a697e46" prot="public" static="no" mutable="no">
@@ -98,13 +98,13 @@
         </inbodydescription>
         <location file="ComGraphics/Source/Camera3.h" line="26" column="1" bodyfile="ComGraphics/Source/Camera3.h" bodystart="26" bodyend="-1"/>
         <referencedby refid="classCamera3_1a576422f8f2d0660f27eed0fc817b2ae5" compoundref="Camera3_8cpp" startline="32" endline="65">CameraRotation</referencedby>
-        <referencedby refid="classSceneLevelTwo_1a07e6440b5b6ca859dfda27ccb16d3129" compoundref="SceneLevelTwo_8cpp" startline="241" endline="253">SceneLevelTwo::Collision</referencedby>
         <referencedby refid="classSceneStart_1adb6da316beba5b19afe7fad5cc3887ce" compoundref="SceneStart_8cpp" startline="209" endline="221">SceneStart::Collision</referencedby>
-        <referencedby refid="classSceneLevelOneB_1ae689e8e0ff0bc56a3882d27ac0cb0b99" compoundref="SceneLevelOneB_8cpp" startline="292" endline="304">SceneLevelOneB::Collision</referencedby>
-        <referencedby refid="classSceneEnd_1ad14fa4bc25f557a3cd964a35c3b20d01" compoundref="SceneEnd_8cpp" startline="264" endline="276">SceneEnd::Collision</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a595fed7869b1c41878bb629e7994cad0" compoundref="SceneLevelOneA_8cpp" startline="298" endline="310">SceneLevelOneA::Collision</referencedby>
+        <referencedby refid="classSceneEnd_1ad14fa4bc25f557a3cd964a35c3b20d01" compoundref="SceneEnd_8cpp" startline="258" endline="270">SceneEnd::Collision</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a07e6440b5b6ca859dfda27ccb16d3129" compoundref="SceneLevelTwo_8cpp" startline="310" endline="322">SceneLevelTwo::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ae689e8e0ff0bc56a3882d27ac0cb0b99" compoundref="SceneLevelOneB_8cpp" startline="295" endline="307">SceneLevelOneB::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a595fed7869b1c41878bb629e7994cad0" compoundref="SceneLevelOneA_8cpp" startline="301" endline="313">SceneLevelOneA::Collision</referencedby>
         <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="17" endline="30">Init</referencedby>
-        <referencedby refid="classSceneLevelTwo_1ab1de6c7dd72b0416fdcc79040db55503" compoundref="SceneLevelTwo_8cpp" startline="255" endline="267">SceneLevelTwo::SpecialCollision</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ab1de6c7dd72b0416fdcc79040db55503" compoundref="SceneLevelTwo_8cpp" startline="324" endline="336">SceneLevelTwo::SpecialCollision</referencedby>
         <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="112" endline="155">Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classCamera3_1a23d57478d2dc937420e42708c926cfb3" prot="public" static="no" mutable="no">
@@ -120,14 +120,14 @@
         </inbodydescription>
         <location file="ComGraphics/Source/Camera3.h" line="27" column="1" bodyfile="ComGraphics/Source/Camera3.h" bodystart="27" bodyend="-1"/>
         <referencedby refid="classCamera3_1a576422f8f2d0660f27eed0fc817b2ae5" compoundref="Camera3_8cpp" startline="32" endline="65">CameraRotation</referencedby>
-        <referencedby refid="classSceneLevelTwo_1a07e6440b5b6ca859dfda27ccb16d3129" compoundref="SceneLevelTwo_8cpp" startline="241" endline="253">SceneLevelTwo::Collision</referencedby>
         <referencedby refid="classSceneStart_1adb6da316beba5b19afe7fad5cc3887ce" compoundref="SceneStart_8cpp" startline="209" endline="221">SceneStart::Collision</referencedby>
-        <referencedby refid="classSceneLevelOneB_1ae689e8e0ff0bc56a3882d27ac0cb0b99" compoundref="SceneLevelOneB_8cpp" startline="292" endline="304">SceneLevelOneB::Collision</referencedby>
-        <referencedby refid="classSceneEnd_1ad14fa4bc25f557a3cd964a35c3b20d01" compoundref="SceneEnd_8cpp" startline="264" endline="276">SceneEnd::Collision</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a595fed7869b1c41878bb629e7994cad0" compoundref="SceneLevelOneA_8cpp" startline="298" endline="310">SceneLevelOneA::Collision</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a07e6440b5b6ca859dfda27ccb16d3129" compoundref="SceneLevelTwo_8cpp" startline="310" endline="322">SceneLevelTwo::Collision</referencedby>
+        <referencedby refid="classSceneEnd_1ad14fa4bc25f557a3cd964a35c3b20d01" compoundref="SceneEnd_8cpp" startline="258" endline="270">SceneEnd::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ae689e8e0ff0bc56a3882d27ac0cb0b99" compoundref="SceneLevelOneB_8cpp" startline="295" endline="307">SceneLevelOneB::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a595fed7869b1c41878bb629e7994cad0" compoundref="SceneLevelOneA_8cpp" startline="301" endline="313">SceneLevelOneA::Collision</referencedby>
         <referencedby refid="classCamera3_1a021022df76481c9e9fd5c3cf5fe51cf7" compoundref="Camera3_8cpp" startline="67" endline="106">HumanControl</referencedby>
         <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="17" endline="30">Init</referencedby>
-        <referencedby refid="classSceneLevelTwo_1ab1de6c7dd72b0416fdcc79040db55503" compoundref="SceneLevelTwo_8cpp" startline="255" endline="267">SceneLevelTwo::SpecialCollision</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ab1de6c7dd72b0416fdcc79040db55503" compoundref="SceneLevelTwo_8cpp" startline="324" endline="336">SceneLevelTwo::SpecialCollision</referencedby>
         <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="112" endline="155">Update</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classCamera3_1ac4f9cb9f4eec7a994abd2a6689bc98e6" prot="public" static="no" mutable="no">
@@ -217,11 +217,11 @@
         <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
         <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
         <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
-        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
         <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
-        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
-        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="39" endline="229">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="36" endline="233">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="39" endline="239">SceneEnd::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="25" endline="231">SceneLevelOneB::Init</referencedby>
       </memberdef>
       <memberdef kind="function" id="classCamera3_1a021022df76481c9e9fd5c3cf5fe51cf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -267,7 +267,7 @@
         </inbodydescription>
         <location file="ComGraphics/Source/Camera3.h" line="23" column="1" bodyfile="ComGraphics/Source/Camera3.cpp" bodystart="112" bodyend="155"/>
         <references refid="classCamera3_1a576422f8f2d0660f27eed0fc817b2ae5" compoundref="Camera3_8cpp" startline="32" endline="65">CameraRotation</references>
-        <references refid="classExplorer_1afad219513d65c2efdc84490bd8c06bde" compoundref="Explorer_8cpp" startline="62" endline="68">Explorer::checkDead</references>
+        <references refid="classExplorer_1afad219513d65c2efdc84490bd8c06bde" compoundref="Explorer_8cpp" startline="64" endline="70">Explorer::checkDead</references>
         <references refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" compoundref="Vector3_8cpp" startline="319" endline="322">Vector3::Cross</references>
         <references refid="classCamera3_1a089366725666df811a969aca24168cb6" compoundref="Camera3_8h" startline="15">defaultUp</references>
         <references refid="namespaceMath_1ac04b987cc6c574a059e68cb58f58c09a" compoundref="MyMath_8h" startline="49" endline="52">Math::DegreeToRadian</references>
@@ -289,11 +289,11 @@
         <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
         <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
         <referencedby refid="classSceneOpening_1af3ca641709d7608947d8ae81b273b089" compoundref="SceneOpening_8cpp" startline="175" endline="192">SceneOpening::Update</referencedby>
-        <referencedby refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" compoundref="SceneLevelTwo_8cpp" startline="665" endline="706">SceneLevelTwo::Update</referencedby>
-        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="579" endline="660">SceneLevelOneA::Update</referencedby>
         <referencedby refid="classSceneStart_1a2c3705b248156c1c352880af1be8049c" compoundref="SceneStart_8cpp" startline="430" endline="465">SceneStart::Update</referencedby>
-        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="724" endline="820">SceneLevelOneB::Update</referencedby>
-        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="555" endline="630">SceneEnd::Update</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" compoundref="SceneLevelTwo_8cpp" startline="932" endline="1011">SceneLevelTwo::Update</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="554" endline="637">SceneLevelOneA::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="544" endline="633">SceneEnd::Update</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="717" endline="816">SceneLevelOneB::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classCamera3_1a4b10106bcd89f21e3cf3e39f04d8c1cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>

@@ -6,6 +6,71 @@
     <includes refid="CIrrKlangAudioStreamMP3_8h" local="yes">CIrrKlangAudioStreamMP3.h</includes>
     <includes local="no">string.h</includes>
     <incdepgraph>
+      <node id="4765">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="4760" relation="include">
+        </childnode>
+        <childnode refid="4766" relation="include">
+        </childnode>
+      </node>
+      <node id="4758">
+        <label>CIrrKlangAudioStreamLoaderMP3.h</label>
+        <link refid="CIrrKlangAudioStreamLoaderMP3_8h"/>
+        <childnode refid="4759" relation="include">
+        </childnode>
+      </node>
+      <node id="4760">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="4761" relation="include">
+        </childnode>
+      </node>
+      <node id="4757">
+        <label>ComGraphics/irrKlang/plugins/ikpMP3/CIrrKlangAudioStreamLoaderMP3.cpp</label>
+        <link refid="CIrrKlangAudioStreamLoaderMP3.cpp"/>
+        <childnode refid="4758" relation="include">
+        </childnode>
+        <childnode refid="4764" relation="include">
+        </childnode>
+        <childnode refid="4769" relation="include">
+        </childnode>
+      </node>
+      <node id="4761">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="4762" relation="include">
+        </childnode>
+      </node>
+      <node id="4766">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="4760" relation="include">
+        </childnode>
+      </node>
+      <node id="4763">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="4760" relation="include">
+        </childnode>
+      </node>
+      <node id="4759">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="4760" relation="include">
+        </childnode>
+        <childnode refid="4763" relation="include">
+        </childnode>
+      </node>
+      <node id="4762">
+        <label>wchar.h</label>
+      </node>
+      <node id="4769">
+        <label>string.h</label>
+      </node>
+      <node id="4767">
+        <label>vector</label>
+      </node>
       <node id="4764">
         <label>CIrrKlangAudioStreamMP3.h</label>
         <link refid="CIrrKlangAudioStreamMP3_8h"/>
@@ -18,74 +83,9 @@
         <childnode refid="4768" relation="include">
         </childnode>
       </node>
-      <node id="4766">
-        <label>ik_SAudioStreamFormat.h</label>
-        <link refid="ik__SAudioStreamFormat_8h"/>
-        <childnode refid="4760" relation="include">
-        </childnode>
-      </node>
-      <node id="4759">
-        <label>ik_IAudioStreamLoader.h</label>
-        <link refid="ik__IAudioStreamLoader_8h"/>
-        <childnode refid="4760" relation="include">
-        </childnode>
-        <childnode refid="4763" relation="include">
-        </childnode>
-      </node>
-      <node id="4758">
-        <label>CIrrKlangAudioStreamLoaderMP3.h</label>
-        <link refid="CIrrKlangAudioStreamLoaderMP3_8h"/>
-        <childnode refid="4759" relation="include">
-        </childnode>
-      </node>
-      <node id="4765">
-        <label>ik_IAudioStream.h</label>
-        <link refid="ik__IAudioStream_8h"/>
-        <childnode refid="4760" relation="include">
-        </childnode>
-        <childnode refid="4766" relation="include">
-        </childnode>
-      </node>
-      <node id="4763">
-        <label>ik_IFileReader.h</label>
-        <link refid="ik__IFileReader_8h"/>
-        <childnode refid="4760" relation="include">
-        </childnode>
-      </node>
-      <node id="4762">
-        <label>wchar.h</label>
-      </node>
-      <node id="4769">
-        <label>string.h</label>
-      </node>
-      <node id="4757">
-        <label>ComGraphics/irrKlang/plugins/ikpMP3/CIrrKlangAudioStreamLoaderMP3.cpp</label>
-        <link refid="CIrrKlangAudioStreamLoaderMP3.cpp"/>
-        <childnode refid="4758" relation="include">
-        </childnode>
-        <childnode refid="4764" relation="include">
-        </childnode>
-        <childnode refid="4769" relation="include">
-        </childnode>
-      </node>
-      <node id="4767">
-        <label>vector</label>
-      </node>
       <node id="4768">
         <label>decoder/mpaudec.h</label>
         <link refid="mpaudec_8h"/>
-      </node>
-      <node id="4760">
-        <label>ik_IRefCounted.h</label>
-        <link refid="ik__IRefCounted_8h"/>
-        <childnode refid="4761" relation="include">
-        </childnode>
-      </node>
-      <node id="4761">
-        <label>ik_irrKlangTypes.h</label>
-        <link refid="ik__irrKlangTypes_8h"/>
-        <childnode refid="4762" relation="include">
-        </childnode>
       </node>
     </incdepgraph>
     <innernamespace refid="namespaceirrklang">irrklang</innernamespace>

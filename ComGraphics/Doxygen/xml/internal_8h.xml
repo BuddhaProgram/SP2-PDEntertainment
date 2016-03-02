@@ -20,12 +20,6 @@
       <node id="4819">
         <label>stdlib.h</label>
       </node>
-      <node id="4824">
-        <label>stddef.h</label>
-      </node>
-      <node id="4821">
-        <label>string.h</label>
-      </node>
       <node id="4818">
         <label>ComGraphics/irrKlang/plugins/ikpMP3/decoder/internal.h</label>
         <link refid="internal.h"/>
@@ -48,15 +42,21 @@
         <childnode refid="4827" relation="include">
         </childnode>
       </node>
+      <node id="4824">
+        <label>stddef.h</label>
+      </node>
+      <node id="4821">
+        <label>string.h</label>
+      </node>
       <node id="4823">
         <label>math.h</label>
+      </node>
+      <node id="4822">
+        <label>ctype.h</label>
       </node>
       <node id="4825">
         <label>mpaudec.h</label>
         <link refid="mpaudec_8h"/>
-      </node>
-      <node id="4822">
-        <label>ctype.h</label>
       </node>
       <node id="4820">
         <label>stdio.h</label>
@@ -74,13 +74,13 @@
         <childnode refid="4830" relation="include">
         </childnode>
       </node>
-      <node id="4830">
-        <label>ComGraphics/irrKlang/plugins/ikpMP3/decoder/mpaudec.c</label>
-        <link refid="mpaudec_8c"/>
-      </node>
       <node id="4829">
         <label>ComGraphics/irrKlang/plugins/ikpMP3/decoder/bits.c</label>
         <link refid="bits_8c"/>
+      </node>
+      <node id="4830">
+        <label>ComGraphics/irrKlang/plugins/ikpMP3/decoder/mpaudec.c</label>
+        <link refid="mpaudec_8c"/>
       </node>
     </invincdepgraph>
     <innerclass refid="structGetBitContext" prot="public">GetBitContext</innerclass>

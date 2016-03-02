@@ -1,17 +1,19 @@
 <map id="SceneLevelTwo::RenderMesh" name="SceneLevelTwo::RenderMesh">
 <area shape="rect" id="node2" href="$classSceneLevelTwo.html#a7fbbc97680820a7ab4e28faf387eec1b" title="SceneLevelTwo::RenderDownWall" alt="" coords="245,5,464,32"/>
-<area shape="rect" id="node3" href="$classSceneLevelTwo.html#ad511ad540839c9ec9ab03c02784f1949" title="SceneLevelTwo::RenderScene" alt="" coords="517,224,715,251"/>
+<area shape="rect" id="node3" href="$classSceneLevelTwo.html#ad511ad540839c9ec9ab03c02784f1949" title="SceneLevelTwo::RenderScene" alt="" coords="517,216,715,243"/>
 <area shape="rect" id="node5" href="$classSceneLevelTwo.html#a456521f01cc4591eb657a48101da5da2" title="SceneLevelTwo::RenderFloor\lCeiling" alt="" coords="260,107,449,149"/>
 <area shape="rect" id="node6" href="$classSceneLevelTwo.html#aa7e87d5b47b85f9208e817c4fcff6099" title="SceneLevelTwo::RenderGhost1" alt="" coords="253,173,456,200"/>
 <area shape="rect" id="node7" href="$classSceneLevelTwo.html#a56a6414283cce6579dfc4c9a169ee0d1" title="SceneLevelTwo::RenderLeftWall" alt="" coords="251,224,458,251"/>
 <area shape="rect" id="node8" href="$classSceneLevelTwo.html#a1706f3fc9d25d4742e3fcbb88eba787e" title="SceneLevelTwo::RenderModel\lOnScreen" alt="" coords="257,427,452,469"/>
-<area shape="rect" id="node13" href="$classSceneLevelTwo.html#a074c9645a580e92f2a91c247cca45389" title="SceneLevelTwo::RenderRightWall" alt="" coords="247,275,463,301"/>
-<area shape="rect" id="node14" href="$classSceneLevelTwo.html#ac845d423ca7bf0e6fc46e9c09ae60913" title="SceneLevelTwo::RenderSwitches" alt="" coords="248,325,461,352"/>
-<area shape="rect" id="node15" href="$classSceneLevelTwo.html#aec8641f628d14477f301d4ab5244f185" title="SceneLevelTwo::RenderTraps" alt="" coords="520,575,712,601"/>
-<area shape="rect" id="node16" href="$classSceneLevelTwo.html#ad92d905b69e500752b705ac03a97b377" title="SceneLevelTwo::RenderUpWall" alt="" coords="253,376,456,403"/>
-<area shape="rect" id="node4" href="$classSceneLevelTwo.html#a63a16f9a1a71dd298d6e45edaa5efef4" title="SceneLevelTwo::Render" alt="" coords="768,392,928,419"/>
-<area shape="rect" id="node9" href="$classSceneLevelTwo.html#a66bd889c75f1be5353890c7b52867372" title="SceneLevelTwo::ToolSelection\lMouseScroll" alt="" coords="517,326,715,367"/>
-<area shape="rect" id="node10" href="$classSceneLevelTwo.html#ae32156c2a1654c8fecbbef68ec7acd25" title="SceneLevelTwo::RenderToolIcon" alt="" coords="512,392,720,419"/>
-<area shape="rect" id="node11" href="$classSceneLevelTwo.html#a8d7121cab8a18887aa6758bc0261adda" title="SceneLevelTwo::RenderMouse\lScrollToolSlot" alt="" coords="517,443,715,485"/>
-<area shape="rect" id="node12" href="$classSceneLevelTwo.html#adaa0eed551db1c3d36f574296f37317c" title="SceneLevelTwo::RenderPlayer\lDiesInteraction" alt="" coords="517,509,715,550"/>
+<area shape="rect" id="node13" href="$classSceneLevelTwo.html#a9336f122cef8eecd28522192505fd677" title="SceneLevelTwo::RenderPuzzle" alt="" coords="255,567,455,593"/>
+<area shape="rect" id="node15" href="$classSceneLevelTwo.html#a074c9645a580e92f2a91c247cca45389" title="SceneLevelTwo::RenderRightWall" alt="" coords="247,275,463,301"/>
+<area shape="rect" id="node16" href="$classSceneLevelTwo.html#ac845d423ca7bf0e6fc46e9c09ae60913" title="SceneLevelTwo::RenderSwitches" alt="" coords="248,325,461,352"/>
+<area shape="rect" id="node17" href="$classSceneLevelTwo.html#aec8641f628d14477f301d4ab5244f185" title="SceneLevelTwo::RenderTraps" alt="" coords="520,668,712,695"/>
+<area shape="rect" id="node18" href="$classSceneLevelTwo.html#ad92d905b69e500752b705ac03a97b377" title="SceneLevelTwo::RenderUpWall" alt="" coords="253,376,456,403"/>
+<area shape="rect" id="node4" href="$classSceneLevelTwo.html#a63a16f9a1a71dd298d6e45edaa5efef4" title="SceneLevelTwo::Render" alt="" coords="768,413,928,440"/>
+<area shape="rect" id="node9" href="$classSceneLevelTwo.html#a66bd889c75f1be5353890c7b52867372" title="SceneLevelTwo::ToolSelection\lMouseScroll" alt="" coords="517,318,715,359"/>
+<area shape="rect" id="node10" href="$classSceneLevelTwo.html#ae32156c2a1654c8fecbbef68ec7acd25" title="SceneLevelTwo::RenderToolIcon" alt="" coords="512,384,720,411"/>
+<area shape="rect" id="node11" href="$classSceneLevelTwo.html#a8d7121cab8a18887aa6758bc0261adda" title="SceneLevelTwo::RenderMouse\lScrollToolSlot" alt="" coords="517,435,715,477"/>
+<area shape="rect" id="node12" href="$classSceneLevelTwo.html#adaa0eed551db1c3d36f574296f37317c" title="SceneLevelTwo::RenderPlayer\lDiesInteraction" alt="" coords="517,501,715,542"/>
+<area shape="rect" id="node14" href="$classSceneLevelTwo.html#a51b7e15c60d59ae388400a420efbbae5" title="SceneLevelTwo::Update" alt="" coords="536,617,696,644"/>
 </map>

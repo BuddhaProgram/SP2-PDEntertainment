@@ -17,13 +17,13 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="23" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="23" bodyend="-1"/>
-        <referencedby refid="classSceneLevelTwo_1ae34719e5f70b4f972919c50497070ef7" compoundref="SceneLevelTwo_8cpp" startline="377" endline="398">SceneLevelTwo::MouseScrollToolSlot</referencedby>
         <referencedby refid="classSceneStart_1ab57d50dda55864e8489d8887c0ce7f0e" compoundref="SceneStart_8cpp" startline="237" endline="258">SceneStart::MouseScrollToolSlot</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a6d794cec16ef4bd57e6f066dc9462cc8" compoundref="SceneLevelOneA_8cpp" startline="424" endline="445">SceneLevelOneA::MouseScrollToolSlot</referencedby>
-        <referencedby refid="classSceneLevelOneB_1aede4cec07c3f4dd58fe4cd30b4996e3e" compoundref="SceneLevelOneB_8cpp" startline="442" endline="463">SceneLevelOneB::MouseScrollToolSlot</referencedby>
-        <referencedby refid="classSceneEnd_1a2665f4f2c8e7800edf9b6fc04d6940ac" compoundref="SceneEnd_8cpp" startline="299" endline="320">SceneEnd::MouseScrollToolSlot</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ae34719e5f70b4f972919c50497070ef7" compoundref="SceneLevelTwo_8cpp" startline="446" endline="467">SceneLevelTwo::MouseScrollToolSlot</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a6d794cec16ef4bd57e6f066dc9462cc8" compoundref="SceneLevelOneA_8cpp" startline="427" endline="448">SceneLevelOneA::MouseScrollToolSlot</referencedby>
+        <referencedby refid="classSceneEnd_1a2665f4f2c8e7800edf9b6fc04d6940ac" compoundref="SceneEnd_8cpp" startline="326" endline="347">SceneEnd::MouseScrollToolSlot</referencedby>
+        <referencedby refid="classSceneLevelOneB_1aede4cec07c3f4dd58fe4cd30b4996e3e" compoundref="SceneLevelOneB_8cpp" startline="445" endline="466">SceneLevelOneB::MouseScrollToolSlot</referencedby>
         <referencedby refid="classSceneOpening_1a0d6b8c548b24b6378459f447f8e09048" compoundref="SceneOpening_8cpp" startline="125" endline="145">SceneOpening::OptionChange</referencedby>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
         <referencedby refid="Application_8cpp_1a8228304ff2488b0ad4dec518fc8a77d9" compoundref="Application_8cpp" startline="74" endline="77">scroll_callback</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classApplication_1abf70af746e708ec070d0132e810955e0" prot="public" static="yes" mutable="no">
@@ -38,7 +38,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="37" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="37" bodyend="-1"/>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" prot="public" static="yes" mutable="no">
         <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
@@ -52,18 +52,18 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="39" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="39" bodyend="-1"/>
-        <referencedby refid="classApplication_1a9b60b70359c959d4f7cd1d8ffe4ab7a0" compoundref="Application_8cpp" startline="256" endline="260">End_Credits</referencedby>
-        <referencedby refid="classApplication_1a13c9b7e48999e988dce3c88912d08974" compoundref="Application_8cpp" startline="250" endline="254">EndingCutScene</referencedby>
-        <referencedby refid="classApplication_1ac90b614d3d19e689017ff91142f3b271" compoundref="Application_8cpp" startline="232" endline="236">EndingScene</referencedby>
-        <referencedby refid="classApplication_1a41920db676f4ab014b9ee32c2043ff9b" compoundref="Application_8cpp" startline="209" endline="213">FirstCutScene</referencedby>
-        <referencedby refid="classApplication_1a9417ed2dddc2277e1989cc8614e3d0c9" compoundref="Application_8cpp" startline="238" endline="242">OpenCutScene</referencedby>
-        <referencedby refid="classApplication_1abf06415c31de1aed7b2f93c6c6c7f636" compoundref="Application_8cpp" startline="244" endline="248">OpenCutScene2</referencedby>
-        <referencedby refid="classApplication_1adeed1a6fea5cbe66da30dfe5b9651b7e" compoundref="Application_8cpp" startline="197" endline="201">OpenGame</referencedby>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
-        <referencedby refid="classApplication_1a56085045bcb5006289240a263f1bab4b" compoundref="Application_8cpp" startline="214" endline="218">SceneLevel1A</referencedby>
-        <referencedby refid="classApplication_1a9871855d65ba1cba5a67647c58ce1eb1" compoundref="Application_8cpp" startline="220" endline="224">SceneLevel1B</referencedby>
-        <referencedby refid="classApplication_1a71151e291360fac88840aa230e9adcd1" compoundref="Application_8cpp" startline="226" endline="230">SceneLevel2</referencedby>
-        <referencedby refid="classApplication_1a06a51f73e8d25ad6a4cf668957d52096" compoundref="Application_8cpp" startline="203" endline="207">StartingScene</referencedby>
+        <referencedby refid="classApplication_1a9b60b70359c959d4f7cd1d8ffe4ab7a0" compoundref="Application_8cpp" startline="261" endline="265">End_Credits</referencedby>
+        <referencedby refid="classApplication_1a13c9b7e48999e988dce3c88912d08974" compoundref="Application_8cpp" startline="255" endline="259">EndingCutScene</referencedby>
+        <referencedby refid="classApplication_1ac90b614d3d19e689017ff91142f3b271" compoundref="Application_8cpp" startline="237" endline="241">EndingScene</referencedby>
+        <referencedby refid="classApplication_1a41920db676f4ab014b9ee32c2043ff9b" compoundref="Application_8cpp" startline="214" endline="218">FirstCutScene</referencedby>
+        <referencedby refid="classApplication_1a9417ed2dddc2277e1989cc8614e3d0c9" compoundref="Application_8cpp" startline="243" endline="247">OpenCutScene</referencedby>
+        <referencedby refid="classApplication_1abf06415c31de1aed7b2f93c6c6c7f636" compoundref="Application_8cpp" startline="249" endline="253">OpenCutScene2</referencedby>
+        <referencedby refid="classApplication_1adeed1a6fea5cbe66da30dfe5b9651b7e" compoundref="Application_8cpp" startline="202" endline="206">OpenGame</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
+        <referencedby refid="classApplication_1a56085045bcb5006289240a263f1bab4b" compoundref="Application_8cpp" startline="219" endline="223">SceneLevel1A</referencedby>
+        <referencedby refid="classApplication_1a9871855d65ba1cba5a67647c58ce1eb1" compoundref="Application_8cpp" startline="225" endline="229">SceneLevel1B</referencedby>
+        <referencedby refid="classApplication_1a71151e291360fac88840aa230e9adcd1" compoundref="Application_8cpp" startline="231" endline="235">SceneLevel2</referencedby>
+        <referencedby refid="classApplication_1a06a51f73e8d25ad6a4cf668957d52096" compoundref="Application_8cpp" startline="208" endline="212">StartingScene</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classApplication_1a78d4ff8f31ed85a5f678895bdf033010" prot="public" static="yes" mutable="no">
         <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
@@ -77,8 +77,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="40" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="40" bodyend="-1"/>
-        <referencedby refid="classApplication_1a9417ed2dddc2277e1989cc8614e3d0c9" compoundref="Application_8cpp" startline="238" endline="242">OpenCutScene</referencedby>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
+        <referencedby refid="classApplication_1a9417ed2dddc2277e1989cc8614e3d0c9" compoundref="Application_8cpp" startline="243" endline="247">OpenCutScene</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classApplication_1a9c7242d477d27afd976d36dfbf32e8ed" prot="public" static="yes" mutable="no">
         <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
@@ -92,8 +92,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="41" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="41" bodyend="-1"/>
-        <referencedby refid="classApplication_1abf06415c31de1aed7b2f93c6c6c7f636" compoundref="Application_8cpp" startline="244" endline="248">OpenCutScene2</referencedby>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
+        <referencedby refid="classApplication_1abf06415c31de1aed7b2f93c6c6c7f636" compoundref="Application_8cpp" startline="249" endline="253">OpenCutScene2</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classApplication_1a70f137bc91d7ea94620f308955df3488" prot="public" static="yes" mutable="no">
         <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
@@ -107,8 +107,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="42" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="42" bodyend="-1"/>
-        <referencedby refid="classApplication_1adeed1a6fea5cbe66da30dfe5b9651b7e" compoundref="Application_8cpp" startline="197" endline="201">OpenGame</referencedby>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
+        <referencedby refid="classApplication_1adeed1a6fea5cbe66da30dfe5b9651b7e" compoundref="Application_8cpp" startline="202" endline="206">OpenGame</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classApplication_1a9e4d6b83b53c49be398826e54e4e302b" prot="public" static="yes" mutable="no">
         <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
@@ -122,8 +122,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="43" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="43" bodyend="-1"/>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
-        <referencedby refid="classApplication_1a06a51f73e8d25ad6a4cf668957d52096" compoundref="Application_8cpp" startline="203" endline="207">StartingScene</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
+        <referencedby refid="classApplication_1a06a51f73e8d25ad6a4cf668957d52096" compoundref="Application_8cpp" startline="208" endline="212">StartingScene</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classApplication_1acb29e9d3a26d0f49362fcb36e817c7a2" prot="public" static="yes" mutable="no">
         <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
@@ -137,8 +137,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="44" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="44" bodyend="-1"/>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
-        <referencedby refid="classApplication_1a56085045bcb5006289240a263f1bab4b" compoundref="Application_8cpp" startline="214" endline="218">SceneLevel1A</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
+        <referencedby refid="classApplication_1a56085045bcb5006289240a263f1bab4b" compoundref="Application_8cpp" startline="219" endline="223">SceneLevel1A</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classApplication_1a5f146343c64158b5d853c0c04de34f23" prot="public" static="yes" mutable="no">
         <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
@@ -152,8 +152,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="45" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="45" bodyend="-1"/>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
-        <referencedby refid="classApplication_1a9871855d65ba1cba5a67647c58ce1eb1" compoundref="Application_8cpp" startline="220" endline="224">SceneLevel1B</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
+        <referencedby refid="classApplication_1a9871855d65ba1cba5a67647c58ce1eb1" compoundref="Application_8cpp" startline="225" endline="229">SceneLevel1B</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classApplication_1a5ae3483e72f7ba85c4f11175f3d303ba" prot="public" static="yes" mutable="no">
         <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
@@ -167,8 +167,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="46" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="46" bodyend="-1"/>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
-        <referencedby refid="classApplication_1a71151e291360fac88840aa230e9adcd1" compoundref="Application_8cpp" startline="226" endline="230">SceneLevel2</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
+        <referencedby refid="classApplication_1a71151e291360fac88840aa230e9adcd1" compoundref="Application_8cpp" startline="231" endline="235">SceneLevel2</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classApplication_1a2ba9a04cbc014df1460af205eb84d44c" prot="public" static="yes" mutable="no">
         <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
@@ -182,8 +182,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="47" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="47" bodyend="-1"/>
-        <referencedby refid="classApplication_1ac90b614d3d19e689017ff91142f3b271" compoundref="Application_8cpp" startline="232" endline="236">EndingScene</referencedby>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
+        <referencedby refid="classApplication_1ac90b614d3d19e689017ff91142f3b271" compoundref="Application_8cpp" startline="237" endline="241">EndingScene</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classApplication_1aa8746ce1082d87c92cf5b4d02a4704e6" prot="public" static="yes" mutable="no">
         <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
@@ -197,8 +197,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="48" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="48" bodyend="-1"/>
-        <referencedby refid="classApplication_1a41920db676f4ab014b9ee32c2043ff9b" compoundref="Application_8cpp" startline="209" endline="213">FirstCutScene</referencedby>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
+        <referencedby refid="classApplication_1a41920db676f4ab014b9ee32c2043ff9b" compoundref="Application_8cpp" startline="214" endline="218">FirstCutScene</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classApplication_1a1dd1dd46dd3fdd34c33974fa696aa21e" prot="public" static="yes" mutable="no">
         <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
@@ -212,8 +212,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="49" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="49" bodyend="-1"/>
-        <referencedby refid="classApplication_1a13c9b7e48999e988dce3c88912d08974" compoundref="Application_8cpp" startline="250" endline="254">EndingCutScene</referencedby>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
+        <referencedby refid="classApplication_1a13c9b7e48999e988dce3c88912d08974" compoundref="Application_8cpp" startline="255" endline="259">EndingCutScene</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classApplication_1a3b85ac1e471c03bea8aa973cefcb5746" prot="public" static="yes" mutable="no">
         <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
@@ -227,8 +227,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="50" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="50" bodyend="-1"/>
-        <referencedby refid="classApplication_1a9b60b70359c959d4f7cd1d8ffe4ab7a0" compoundref="Application_8cpp" startline="256" endline="260">End_Credits</referencedby>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
+        <referencedby refid="classApplication_1a9b60b70359c959d4f7cd1d8ffe4ab7a0" compoundref="Application_8cpp" startline="261" endline="265">End_Credits</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -244,7 +244,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="54" column="1" bodyfile="ComGraphics/Source/Application.h" bodystart="54" bodyend="-1"/>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -285,7 +285,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ComGraphics/Source/Application.h" line="19" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="79" bodyend="131"/>
+        <location file="ComGraphics/Source/Application.h" line="19" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="79" bodyend="135"/>
         <references refid="Application_8cpp_1a6e6d1771a9242858811be0a3569838fa" compoundref="Application_8cpp" startline="29" endline="33">error_callback</references>
         <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="25">m_window</references>
         <references refid="Application_8cpp_1aadcee9765075e232ca0720f80a76ad37" compoundref="Application_8cpp" startline="69" endline="72">resize_callback</references>
@@ -303,7 +303,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ComGraphics/Source/Application.h" line="20" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="133" bodyend="187"/>
+        <location file="ComGraphics/Source/Application.h" line="20" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="137" bodyend="192"/>
         <references refid="classApplication_1aa8746ce1082d87c92cf5b4d02a4704e6" compoundref="Application_8h" startline="48">CutScene1</references>
         <references refid="classApplication_1a2ba9a04cbc014df1460af205eb84d44c" compoundref="Application_8h" startline="47">End</references>
         <references refid="classApplication_1a3b85ac1e471c03bea8aa973cefcb5746" compoundref="Application_8h" startline="50">EndCredits</references>
@@ -344,7 +344,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ComGraphics/Source/Application.h" line="21" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="189" bodyend="195"/>
+        <location file="ComGraphics/Source/Application.h" line="21" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="194" bodyend="200"/>
         <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="25">m_window</references>
         <referencedby refid="classSceneOpening_1a9465ec79972cc4feca2008cc2dfa1510" compoundref="SceneOpening_8cpp" startline="166" endline="173">SceneOpening::ChangeScene</referencedby>
         <referencedby refid="main_8cpp_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8cpp" startline="5" endline="11">main</referencedby>
@@ -367,31 +367,32 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.h" line="22" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="42" bodyend="45"/>
-        <referencedby refid="classSceneLevelOneB_1a2bfa4551ac0b1f099c42c2193b55df47" compoundref="SceneLevelOneBRenders_8cpp" startline="435" endline="455">SceneLevelOneB::attackCheck</referencedby>
-        <referencedby refid="classSceneLevelOneA_1acae5c28ab518704326877b73c6df4e55" compoundref="SceneLevelOneARenders_8cpp" startline="398" endline="407">SceneLevelOneA::AttackCheck</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a2bfa4551ac0b1f099c42c2193b55df47" compoundref="SceneLevelOneBRenders_8cpp" startline="429" endline="449">SceneLevelOneB::attackCheck</referencedby>
+        <referencedby refid="classSceneLevelOneA_1acae5c28ab518704326877b73c6df4e55" compoundref="SceneLevelOneARenders_8cpp" startline="390" endline="399">SceneLevelOneA::AttackCheck</referencedby>
         <referencedby refid="classSceneStart_1afbbd413201db9a36d22e7ac627b25283" compoundref="SceneStart_8cpp" startline="410" endline="428">SceneStart::ChangeFirstCutScene</referencedby>
         <referencedby refid="classSceneOpening_1a9465ec79972cc4feca2008cc2dfa1510" compoundref="SceneOpening_8cpp" startline="166" endline="173">SceneOpening::ChangeScene</referencedby>
         <referencedby refid="classSceneEnd_1a31fef5d67de3a3dfd2ae15d4bbcea2b6" compoundref="SceneEndRenders_8cpp" startline="424" endline="456">SceneEnd::checkAttack</referencedby>
-        <referencedby refid="classSceneLevelOneB_1a3177b86100055be275d4f9738af818fa" compoundref="SceneLevelOneBRenders_8cpp" startline="254" endline="280">SceneLevelOneB::checkDoor1</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a60782020f72e2e1a287b1ef4b9d82646" compoundref="SceneLevelOneARenders_8cpp" startline="141" endline="202">SceneLevelOneA::checkDoor1</referencedby>
-        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="204" endline="252">SceneLevelOneA::checkDoor2</referencedby>
-        <referencedby refid="classSceneLevelOneB_1af76b3c4469afe2cbf2349095fede55e2" compoundref="SceneLevelOneBRenders_8cpp" startline="297" endline="342">SceneLevelOneB::checkDoor3</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a129c37f8bf3cc7ba4ea8411c6a27b46e" compoundref="SceneLevelOneARenders_8cpp" startline="254" endline="290">SceneLevelOneA::checkDoor3</referencedby>
-        <referencedby refid="classSceneLevelOneB_1a0319f20e60159cf5eb74489bff0860bc" compoundref="SceneLevelOneBRenders_8cpp" startline="344" endline="372">SceneLevelOneB::checkDoor4</referencedby>
-        <referencedby refid="classSceneLevelTwo_1acb34d2e8f029102a0cbcc4a2818f0e55" compoundref="SceneLevelTwo_8cpp" startline="460" endline="502">SceneLevelTwo::ContinueGameOrNot</referencedby>
-        <referencedby refid="classSceneLevelOneB_1ac92af3bf7c49f02f6e444af93d940150" compoundref="SceneLevelOneB_8cpp" startline="675" endline="710">SceneLevelOneB::ContinueGameOrNot</referencedby>
-        <referencedby refid="classSceneEnd_1ad27d89ab1ad40e1b57a307e4a27c2683" compoundref="SceneEnd_8cpp" startline="468" endline="504">SceneEnd::ContinueGameOrNot</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a972ee40bd5b9481a464e3028f4d496b5" compoundref="SceneLevelOneA_8cpp" startline="528" endline="565">SceneLevelOneA::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a3177b86100055be275d4f9738af818fa" compoundref="SceneLevelOneBRenders_8cpp" startline="248" endline="274">SceneLevelOneB::checkDoor1</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a60782020f72e2e1a287b1ef4b9d82646" compoundref="SceneLevelOneARenders_8cpp" startline="133" endline="194">SceneLevelOneA::checkDoor1</referencedby>
+        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="196" endline="244">SceneLevelOneA::checkDoor2</referencedby>
+        <referencedby refid="classSceneLevelOneB_1af76b3c4469afe2cbf2349095fede55e2" compoundref="SceneLevelOneBRenders_8cpp" startline="291" endline="336">SceneLevelOneB::checkDoor3</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a129c37f8bf3cc7ba4ea8411c6a27b46e" compoundref="SceneLevelOneARenders_8cpp" startline="246" endline="282">SceneLevelOneA::checkDoor3</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a0319f20e60159cf5eb74489bff0860bc" compoundref="SceneLevelOneBRenders_8cpp" startline="338" endline="366">SceneLevelOneB::checkDoor4</referencedby>
+        <referencedby refid="classSceneLevelTwo_1acb34d2e8f029102a0cbcc4a2818f0e55" compoundref="SceneLevelTwo_8cpp" startline="529" endline="555">SceneLevelTwo::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneEnd_1ad27d89ab1ad40e1b57a307e4a27c2683" compoundref="SceneEnd_8cpp" startline="293" endline="324">SceneEnd::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ac92af3bf7c49f02f6e444af93d940150" compoundref="SceneLevelOneB_8cpp" startline="678" endline="703">SceneLevelOneB::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a972ee40bd5b9481a464e3028f4d496b5" compoundref="SceneLevelOneA_8cpp" startline="515" endline="540">SceneLevelOneA::ContinueGameOrNot</referencedby>
         <referencedby refid="classSceneLevelOneB_1a9276588fd0ebaa37abfc2cf4048f5abd" compoundref="SceneLevelOneBRenders_8cpp" startline="38" endline="52">SceneLevelOneB::ElevatorCheck</referencedby>
         <referencedby refid="classCamera3_1a021022df76481c9e9fd5c3cf5fe51cf7" compoundref="Camera3_8cpp" startline="67" endline="106">Camera3::HumanControl</referencedby>
-        <referencedby refid="classSceneLevelTwo_1a32ed99f6099b6c0273f4c17200148496" compoundref="SceneLevelTwo_8cpp" startline="418" endline="448">SceneLevelTwo::MouseClickFunction</referencedby>
         <referencedby refid="classSceneStart_1abbd7450cbedda11ad8b03a0b30d85f51" compoundref="SceneStart_8cpp" startline="367" endline="397">SceneStart::MouseClickFunction</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a6557be92037519a0cb4af0deb6340fb1" compoundref="SceneLevelOneA_8cpp" startline="465" endline="500">SceneLevelOneA::MouseClickFunction</referencedby>
-        <referencedby refid="classSceneLevelOneB_1af248f8f3063609e573e6c695898e91e8" compoundref="SceneLevelOneB_8cpp" startline="465" endline="500">SceneLevelOneB::MouseClickFunction</referencedby>
-        <referencedby refid="classSceneEnd_1ad6c2d9939a867eb0ced3ee2c02d9d33f" compoundref="SceneEnd_8cpp" startline="432" endline="466">SceneEnd::MouseClickFunction</referencedby>
-        <referencedby refid="classSceneLevelOneB_1a51da5bf853a804052fe9f04d4d3abba5" compoundref="SceneLevelOneB_8cpp" startline="507" endline="600">SceneLevelOneB::PuzzleOneSwitchCheck</referencedby>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Run</referencedby>
-        <referencedby refid="classSceneLevelTwo_1a57e4fa45b2b3e694d0742e631bfd7d45" compoundref="SceneLevelTwo_8cpp" startline="511" endline="663">SceneLevelTwo::SomeUpdates</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a32ed99f6099b6c0273f4c17200148496" compoundref="SceneLevelTwo_8cpp" startline="487" endline="517">SceneLevelTwo::MouseClickFunction</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a6557be92037519a0cb4af0deb6340fb1" compoundref="SceneLevelOneA_8cpp" startline="468" endline="503">SceneLevelOneA::MouseClickFunction</referencedby>
+        <referencedby refid="classSceneEnd_1ad6c2d9939a867eb0ced3ee2c02d9d33f" compoundref="SceneEnd_8cpp" startline="459" endline="493">SceneEnd::MouseClickFunction</referencedby>
+        <referencedby refid="classSceneLevelOneB_1af248f8f3063609e573e6c695898e91e8" compoundref="SceneLevelOneB_8cpp" startline="468" endline="503">SceneLevelOneB::MouseClickFunction</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a51da5bf853a804052fe9f04d4d3abba5" compoundref="SceneLevelOneB_8cpp" startline="510" endline="603">SceneLevelOneB::PuzzleOneSwitchCheck</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a7da7cacb42d3f3779de4ce534ace1286" compoundref="SceneLevelTwo_8cpp" startline="729" endline="847">SceneLevelTwo::PuzzleTwoSwitchCheck</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Run</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a57e4fa45b2b3e694d0742e631bfd7d45" compoundref="SceneLevelTwo_8cpp" startline="564" endline="722">SceneLevelTwo::SomeUpdates</referencedby>
         <referencedby refid="classSceneLevelTwo_1ab2eac71e880e3d6044cd6a42e4dbcfe2" compoundref="SceneLevelTwoRenders_8cpp" startline="316" endline="360">SceneLevelTwo::SwitchCheck</referencedby>
         <referencedby refid="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6" compoundref="Camera_8cpp" startline="28" endline="47">Camera::Update</referencedby>
         <referencedby refid="classCutSceneOne_1a3bde2eed67da74e3c33e3b4e10542438" compoundref="CutSceneOne_8cpp" startline="125" endline="180">CutSceneOne::Update</referencedby>
@@ -400,12 +401,11 @@
         <referencedby refid="classCredits_1aac9dbb74267d8870c07139e33b75eca4" compoundref="Credits_8cpp" startline="346" endline="364">Credits::Update</referencedby>
         <referencedby refid="classOpeningCutScene2_1ad228d3ddd1fc4564382de47e85cad2dc" compoundref="OpeningCutScene2_8cpp" startline="151" endline="259">OpeningCutScene2::Update</referencedby>
         <referencedby refid="classSceneEndCutScene_1a47f7840540cca37d431a5702cafc357a" compoundref="SceneEndCutScene_8cpp" startline="192" endline="252">SceneEndCutScene::Update</referencedby>
-        <referencedby refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" compoundref="SceneLevelTwo_8cpp" startline="665" endline="706">SceneLevelTwo::Update</referencedby>
-        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="579" endline="660">SceneLevelOneA::Update</referencedby>
         <referencedby refid="classSceneStart_1a2c3705b248156c1c352880af1be8049c" compoundref="SceneStart_8cpp" startline="430" endline="465">SceneStart::Update</referencedby>
-        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="724" endline="820">SceneLevelOneB::Update</referencedby>
-        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="555" endline="630">SceneEnd::Update</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a8cdf4a86b4d9e080f1a6f70d5061c3d5" compoundref="SceneLevelOneA_8cpp" startline="502" endline="508">SceneLevelOneA::UpdateSavePoint</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" compoundref="SceneLevelTwo_8cpp" startline="932" endline="1011">SceneLevelTwo::Update</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="554" endline="637">SceneLevelOneA::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="544" endline="633">SceneEnd::Update</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="717" endline="816">SceneLevelOneB::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classApplication_1a9417ed2dddc2277e1989cc8614e3d0c9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -418,7 +418,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ComGraphics/Source/Application.h" line="25" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="238" bodyend="242"/>
+        <location file="ComGraphics/Source/Application.h" line="25" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="243" bodyend="247"/>
         <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
         <references refid="classApplication_1a78d4ff8f31ed85a5f678895bdf033010" compoundref="Application_8h" startline="40">IntroScene</references>
         <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="39">scene</references>
@@ -435,7 +435,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ComGraphics/Source/Application.h" line="26" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="244" bodyend="248"/>
+        <location file="ComGraphics/Source/Application.h" line="26" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="249" bodyend="253"/>
         <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
         <references refid="classApplication_1a9c7242d477d27afd976d36dfbf32e8ed" compoundref="Application_8h" startline="41">IntroScene2</references>
         <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="39">scene</references>
@@ -452,19 +452,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ComGraphics/Source/Application.h" line="27" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="197" bodyend="201"/>
+        <location file="ComGraphics/Source/Application.h" line="27" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="202" bodyend="206"/>
         <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
         <references refid="classApplication_1a70f137bc91d7ea94620f308955df3488" compoundref="Application_8h" startline="42">Opening</references>
         <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="39">scene</references>
-        <referencedby refid="classSceneLevelTwo_1acb34d2e8f029102a0cbcc4a2818f0e55" compoundref="SceneLevelTwo_8cpp" startline="460" endline="502">SceneLevelTwo::ContinueGameOrNot</referencedby>
-        <referencedby refid="classSceneLevelOneB_1ac92af3bf7c49f02f6e444af93d940150" compoundref="SceneLevelOneB_8cpp" startline="675" endline="710">SceneLevelOneB::ContinueGameOrNot</referencedby>
-        <referencedby refid="classSceneEnd_1ad27d89ab1ad40e1b57a307e4a27c2683" compoundref="SceneEnd_8cpp" startline="468" endline="504">SceneEnd::ContinueGameOrNot</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a972ee40bd5b9481a464e3028f4d496b5" compoundref="SceneLevelOneA_8cpp" startline="528" endline="565">SceneLevelOneA::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelTwo_1acb34d2e8f029102a0cbcc4a2818f0e55" compoundref="SceneLevelTwo_8cpp" startline="529" endline="555">SceneLevelTwo::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneEnd_1ad27d89ab1ad40e1b57a307e4a27c2683" compoundref="SceneEnd_8cpp" startline="293" endline="324">SceneEnd::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a972ee40bd5b9481a464e3028f4d496b5" compoundref="SceneLevelOneA_8cpp" startline="515" endline="540">SceneLevelOneA::ContinueGameOrNot</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ac92af3bf7c49f02f6e444af93d940150" compoundref="SceneLevelOneB_8cpp" startline="678" endline="703">SceneLevelOneB::ContinueGameOrNot</referencedby>
         <referencedby refid="classCredits_1a5bd03d117e7f95ba4d83394fcb821030" compoundref="Credits_8cpp" startline="190" endline="344">Credits::RenderMovingCredits</referencedby>
-        <referencedby refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" compoundref="SceneLevelTwo_8cpp" startline="665" endline="706">SceneLevelTwo::Update</referencedby>
-        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="579" endline="660">SceneLevelOneA::Update</referencedby>
-        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="724" endline="820">SceneLevelOneB::Update</referencedby>
-        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="555" endline="630">SceneEnd::Update</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" compoundref="SceneLevelTwo_8cpp" startline="932" endline="1011">SceneLevelTwo::Update</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="554" endline="637">SceneLevelOneA::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="544" endline="633">SceneEnd::Update</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="717" endline="816">SceneLevelOneB::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classApplication_1a56085045bcb5006289240a263f1bab4b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -477,7 +477,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ComGraphics/Source/Application.h" line="28" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="214" bodyend="218"/>
+        <location file="ComGraphics/Source/Application.h" line="28" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="219" bodyend="223"/>
         <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
         <references refid="classApplication_1acb29e9d3a26d0f49362fcb36e817c7a2" compoundref="Application_8h" startline="44">LevelOneA</references>
         <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="39">scene</references>
@@ -494,11 +494,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ComGraphics/Source/Application.h" line="29" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="220" bodyend="224"/>
+        <location file="ComGraphics/Source/Application.h" line="29" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="225" bodyend="229"/>
         <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
         <references refid="classApplication_1a5f146343c64158b5d853c0c04de34f23" compoundref="Application_8h" startline="45">LevelOneB</references>
         <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="39">scene</references>
-        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="579" endline="660">SceneLevelOneA::Update</referencedby>
+        <referencedby refid="classSceneLevelOneA_1ab862a65fd43b0fdb56187f7dedb917b8" compoundref="SceneLevelOneA_8cpp" startline="554" endline="637">SceneLevelOneA::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classApplication_1a71151e291360fac88840aa230e9adcd1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -511,7 +511,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ComGraphics/Source/Application.h" line="30" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="226" bodyend="230"/>
+        <location file="ComGraphics/Source/Application.h" line="30" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="231" bodyend="235"/>
         <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
         <references refid="classApplication_1a5ae3483e72f7ba85c4f11175f3d303ba" compoundref="Application_8h" startline="46">LevelTwo</references>
         <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="39">scene</references>
@@ -528,7 +528,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ComGraphics/Source/Application.h" line="31" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="209" bodyend="213"/>
+        <location file="ComGraphics/Source/Application.h" line="31" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="214" bodyend="218"/>
         <references refid="classApplication_1aa8746ce1082d87c92cf5b4d02a4704e6" compoundref="Application_8h" startline="48">CutScene1</references>
         <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
         <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="39">scene</references>
@@ -545,7 +545,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ComGraphics/Source/Application.h" line="32" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="203" bodyend="207"/>
+        <location file="ComGraphics/Source/Application.h" line="32" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="208" bodyend="212"/>
         <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
         <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="39">scene</references>
         <references refid="classApplication_1a9e4d6b83b53c49be398826e54e4e302b" compoundref="Application_8h" startline="43">Start</references>
@@ -563,11 +563,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ComGraphics/Source/Application.h" line="33" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="232" bodyend="236"/>
+        <location file="ComGraphics/Source/Application.h" line="33" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="237" bodyend="241"/>
         <references refid="classApplication_1a2ba9a04cbc014df1460af205eb84d44c" compoundref="Application_8h" startline="47">End</references>
         <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
         <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="39">scene</references>
-        <referencedby refid="classSceneLevelTwo_1a57e4fa45b2b3e694d0742e631bfd7d45" compoundref="SceneLevelTwo_8cpp" startline="511" endline="663">SceneLevelTwo::SomeUpdates</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a57e4fa45b2b3e694d0742e631bfd7d45" compoundref="SceneLevelTwo_8cpp" startline="564" endline="722">SceneLevelTwo::SomeUpdates</referencedby>
       </memberdef>
       <memberdef kind="function" id="classApplication_1a13c9b7e48999e988dce3c88912d08974" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -580,11 +580,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ComGraphics/Source/Application.h" line="34" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="250" bodyend="254"/>
+        <location file="ComGraphics/Source/Application.h" line="34" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="255" bodyend="259"/>
         <references refid="classApplication_1a1dd1dd46dd3fdd34c33974fa696aa21e" compoundref="Application_8h" startline="49">EndScene</references>
         <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
         <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="39">scene</references>
-        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="555" endline="630">SceneEnd::Update</referencedby>
+        <referencedby refid="classSceneEnd_1a638ba63a5146825811e7c701c254e1ea" compoundref="SceneEnd_8cpp" startline="544" endline="633">SceneEnd::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classApplication_1a9b60b70359c959d4f7cd1d8ffe4ab7a0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -597,7 +597,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ComGraphics/Source/Application.h" line="35" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="256" bodyend="260"/>
+        <location file="ComGraphics/Source/Application.h" line="35" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="261" bodyend="265"/>
         <references refid="classApplication_1a3b85ac1e471c03bea8aa973cefcb5746" compoundref="Application_8h" startline="50">EndCredits</references>
         <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
         <references refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" compoundref="Application_8h" startline="39">scene</references>
@@ -645,6 +645,7 @@
         <label>GlobalVariables</label>
         <link refid="classGlobalVariables"/>
         <childnode refid="647" relation="usage">
+          <edgelabel>f_SwitchRotateFour</edgelabel>
           <edgelabel>f_SwitchRotateTwo</edgelabel>
           <edgelabel>f_redScreenTimer</edgelabel>
           <edgelabel>f_SwitchRotateOne</edgelabel>
@@ -653,8 +654,7 @@
           <edgelabel>RotateX</edgelabel>
           <edgelabel>f_rotatingTool</edgelabel>
           <edgelabel>f_Worldspin</edgelabel>
-          <edgelabel>f_SuitcaseRotateY</edgelabel>
-          <edgelabel>f_SwitchDebounce</edgelabel>
+          <edgelabel>f_SwitchRotateFive</edgelabel>
           <edgelabel>...</edgelabel>
         </childnode>
         <childnode refid="645" relation="usage">

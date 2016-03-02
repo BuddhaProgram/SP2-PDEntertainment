@@ -4,15 +4,15 @@
     <compoundname>SwitchLightPuzzle.cpp</compoundname>
     <includes refid="SwitchLightPuzzle_8h" local="yes">SwitchLightPuzzle.h</includes>
     <incdepgraph>
+      <node id="7565">
+        <label>SwitchLightPuzzle.h</label>
+        <link refid="SwitchLightPuzzle_8h"/>
+      </node>
       <node id="7564">
         <label>ComGraphics/Source/SwitchLightPuzzle.cpp</label>
         <link refid="SwitchLightPuzzle.cpp"/>
         <childnode refid="7565" relation="include">
         </childnode>
-      </node>
-      <node id="7565">
-        <label>SwitchLightPuzzle.h</label>
-        <link refid="SwitchLightPuzzle_8h"/>
       </node>
     </incdepgraph>
     <briefdescription>

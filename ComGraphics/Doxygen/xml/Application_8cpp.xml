@@ -17,42 +17,38 @@
     <includes refid="SceneEndCutScene_8h" local="yes">SceneEndCutScene.h</includes>
     <includes refid="Credits_8h" local="yes">Credits.h</includes>
     <incdepgraph>
-      <node id="4927">
-        <label>ik_IFileFactory.h</label>
-        <link refid="ik__IFileFactory_8h"/>
-        <childnode refid="4917" relation="include">
-        </childnode>
-      </node>
       <node id="4897">
         <label>list</label>
       </node>
-      <node id="4959">
-        <label>OpeningCutScene.h</label>
-        <link refid="OpeningCutScene_8h"/>
-        <childnode refid="4891" relation="include">
-        </childnode>
-        <childnode refid="4942" relation="include">
-        </childnode>
-        <childnode refid="4898" relation="include">
-        </childnode>
-        <childnode refid="4938" relation="include">
-        </childnode>
-        <childnode refid="4944" relation="include">
-        </childnode>
-        <childnode refid="4947" relation="include">
-        </childnode>
-        <childnode refid="4951" relation="include">
-        </childnode>
-        <childnode refid="4892" relation="include">
-        </childnode>
+      <node id="4895">
+        <label>ToolUI.h</label>
+        <link refid="ToolUI_8h"/>
         <childnode refid="4896" relation="include">
         </childnode>
-        <childnode refid="4960" relation="include">
+        <childnode refid="4897" relation="include">
         </childnode>
       </node>
-      <node id="4963">
-        <label>Credits.h</label>
-        <link refid="Credits_8h"/>
+      <node id="4910">
+        <label>Music.h</label>
+        <link refid="Music_8h"/>
+        <childnode refid="4896" relation="include">
+        </childnode>
+        <childnode refid="4911" relation="include">
+        </childnode>
+        <childnode refid="4912" relation="include">
+        </childnode>
+      </node>
+      <node id="4939">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+      </node>
+      <node id="4936">
+        <label>SceneOpening.h</label>
+        <link refid="SceneOpening_8h"/>
+        <childnode refid="4888" relation="include">
+        </childnode>
+        <childnode refid="4937" relation="include">
+        </childnode>
         <childnode refid="4891" relation="include">
         </childnode>
         <childnode refid="4942" relation="include">
@@ -65,17 +61,61 @@
         </childnode>
         <childnode refid="4947" relation="include">
         </childnode>
-        <childnode refid="4951" relation="include">
+        <childnode refid="4948" relation="include">
         </childnode>
-        <childnode refid="4892" relation="include">
+        <childnode refid="4949" relation="include">
         </childnode>
-        <childnode refid="4896" relation="include">
+      </node>
+      <node id="4929">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="4917" relation="include">
         </childnode>
-        <childnode refid="4960" relation="include">
+        <childnode refid="4922" relation="include">
         </childnode>
       </node>
       <node id="4954">
         <label>iomanip</label>
+      </node>
+      <node id="4920">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="4893">
+        <label>SwitchLightPuzzle.h</label>
+        <link refid="SwitchLightPuzzle_8h"/>
+      </node>
+      <node id="4887">
+        <label>ComGraphics/Source/Application.cpp</label>
+        <link refid="Application.cpp"/>
+        <childnode refid="4888" relation="include">
+        </childnode>
+        <childnode refid="4935" relation="include">
+        </childnode>
+        <childnode refid="4908" relation="include">
+        </childnode>
+        <childnode refid="4936" relation="include">
+        </childnode>
+        <childnode refid="4950" relation="include">
+        </childnode>
+        <childnode refid="4952" relation="include">
+        </childnode>
+        <childnode refid="4955" relation="include">
+        </childnode>
+        <childnode refid="4956" relation="include">
+        </childnode>
+        <childnode refid="4957" relation="include">
+        </childnode>
+        <childnode refid="4958" relation="include">
+        </childnode>
+        <childnode refid="4959" relation="include">
+        </childnode>
+        <childnode refid="4961" relation="include">
+        </childnode>
+        <childnode refid="4962" relation="include">
+        </childnode>
+        <childnode refid="4963" relation="include">
+        </childnode>
       </node>
       <node id="4932">
         <label>ik_ISoundStopEventReceiver.h</label>
@@ -87,6 +127,165 @@
       </node>
       <node id="4890">
         <label>windows.h</label>
+      </node>
+      <node id="4924">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="4918" relation="include">
+        </childnode>
+        <childnode refid="4915" relation="include">
+        </childnode>
+        <childnode refid="4921" relation="include">
+        </childnode>
+        <childnode refid="4922" relation="include">
+        </childnode>
+      </node>
+      <node id="4962">
+        <label>SceneEndCutScene.h</label>
+        <link refid="SceneEndCutScene_8h"/>
+        <childnode refid="4891" relation="include">
+        </childnode>
+        <childnode refid="4942" relation="include">
+        </childnode>
+        <childnode refid="4898" relation="include">
+        </childnode>
+        <childnode refid="4938" relation="include">
+        </childnode>
+        <childnode refid="4944" relation="include">
+        </childnode>
+        <childnode refid="4947" relation="include">
+        </childnode>
+        <childnode refid="4951" relation="include">
+        </childnode>
+        <childnode refid="4896" relation="include">
+        </childnode>
+        <childnode refid="4960" relation="include">
+        </childnode>
+      </node>
+      <node id="4917">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="4913" relation="include">
+        </childnode>
+      </node>
+      <node id="4956">
+        <label>SceneLevelOneA.h</label>
+        <link refid="SceneLevelOneA_8h"/>
+        <childnode refid="4891" relation="include">
+        </childnode>
+        <childnode refid="4942" relation="include">
+        </childnode>
+        <childnode refid="4898" relation="include">
+        </childnode>
+        <childnode refid="4938" relation="include">
+        </childnode>
+        <childnode refid="4944" relation="include">
+        </childnode>
+        <childnode refid="4947" relation="include">
+        </childnode>
+        <childnode refid="4951" relation="include">
+        </childnode>
+        <childnode refid="4949" relation="include">
+        </childnode>
+      </node>
+      <node id="4908">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4899">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="4900" relation="include">
+        </childnode>
+        <childnode refid="4901" relation="include">
+        </childnode>
+        <childnode refid="4902" relation="include">
+        </childnode>
+        <childnode refid="4903" relation="include">
+        </childnode>
+      </node>
+      <node id="4918">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="4913" relation="include">
+        </childnode>
+      </node>
+      <node id="4943">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="4898" relation="include">
+        </childnode>
+      </node>
+      <node id="4900">
+        <label>cmath</label>
+      </node>
+      <node id="4961">
+        <label>OpeningCutScene2.h</label>
+        <link refid="OpeningCutScene2_8h"/>
+        <childnode refid="4891" relation="include">
+        </childnode>
+        <childnode refid="4942" relation="include">
+        </childnode>
+        <childnode refid="4898" relation="include">
+        </childnode>
+        <childnode refid="4938" relation="include">
+        </childnode>
+        <childnode refid="4905" relation="include">
+        </childnode>
+        <childnode refid="4944" relation="include">
+        </childnode>
+        <childnode refid="4947" relation="include">
+        </childnode>
+        <childnode refid="4951" relation="include">
+        </childnode>
+        <childnode refid="4948" relation="include">
+        </childnode>
+        <childnode refid="4949" relation="include">
+        </childnode>
+      </node>
+      <node id="4942">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="4943" relation="include">
+        </childnode>
+      </node>
+      <node id="4911">
+        <label>string</label>
+      </node>
+      <node id="4906">
+        <label>GL/glew.h</label>
+      </node>
+      <node id="4913">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="4914" relation="include">
+        </childnode>
+      </node>
+      <node id="4907">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="4898">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="4899" relation="include">
+        </childnode>
+        <childnode refid="4904" relation="include">
+        </childnode>
+      </node>
+      <node id="4892">
+        <label>GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+      </node>
+      <node id="4931">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="4917" relation="include">
+        </childnode>
+      </node>
+      <node id="4922">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="4917" relation="include">
+        </childnode>
       </node>
       <node id="4891">
         <label>Scene.h</label>
@@ -100,70 +299,111 @@
         <childnode refid="4905" relation="include">
         </childnode>
       </node>
-      <node id="4910">
-        <label>Music.h</label>
-        <link refid="Music_8h"/>
-        <childnode refid="4896" relation="include">
+      <node id="4901">
+        <label>exception</label>
+      </node>
+      <node id="4960">
+        <label>fstream</label>
+      </node>
+      <node id="4927">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="4917" relation="include">
         </childnode>
-        <childnode refid="4911" relation="include">
+      </node>
+      <node id="4930">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="4917" relation="include">
         </childnode>
-        <childnode refid="4912" relation="include">
+        <childnode refid="4931" relation="include">
+        </childnode>
+      </node>
+      <node id="4957">
+        <label>SceneLevelOneB.h</label>
+        <link refid="SceneLevelOneB_8h"/>
+        <childnode refid="4891" relation="include">
+        </childnode>
+        <childnode refid="4942" relation="include">
+        </childnode>
+        <childnode refid="4898" relation="include">
+        </childnode>
+        <childnode refid="4938" relation="include">
+        </childnode>
+        <childnode refid="4944" relation="include">
+        </childnode>
+        <childnode refid="4947" relation="include">
+        </childnode>
+        <childnode refid="4951" relation="include">
+        </childnode>
+        <childnode refid="4949" relation="include">
+        </childnode>
+        <childnode refid="4953" relation="include">
+        </childnode>
+      </node>
+      <node id="4894">
+        <label>Explorer.h</label>
+        <link refid="Explorer_8h"/>
+        <childnode refid="4895" relation="include">
+        </childnode>
+        <childnode refid="4898" relation="include">
+        </childnode>
+      </node>
+      <node id="4888">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="4889" relation="include">
+        </childnode>
+        <childnode refid="4891" relation="include">
+        </childnode>
+        <childnode refid="4906" relation="include">
+        </childnode>
+        <childnode refid="4907" relation="include">
+        </childnode>
+        <childnode refid="4908" relation="include">
+        </childnode>
+        <childnode refid="4909" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+      </node>
+      <node id="4925">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="4918" relation="include">
+        </childnode>
+        <childnode refid="4926" relation="include">
+        </childnode>
+        <childnode refid="4915" relation="include">
+        </childnode>
+      </node>
+      <node id="4944">
+        <label>MatrixStack.h</label>
+        <link refid="MatrixStack_8h"/>
+        <childnode refid="4945" relation="include">
+        </childnode>
+        <childnode refid="4946" relation="include">
+        </childnode>
+      </node>
+      <node id="4914">
+        <label>wchar.h</label>
+      </node>
+      <node id="4947">
+        <label>Light.h</label>
+        <link refid="Light_8h"/>
+        <childnode refid="4940" relation="include">
+        </childnode>
+      </node>
+      <node id="4905">
+        <label>Misc.h</label>
+        <link refid="Misc_8h"/>
+        <childnode refid="4898" relation="include">
         </childnode>
       </node>
       <node id="4889">
         <label>timer.h</label>
         <link refid="timer_8h"/>
         <childnode refid="4890" relation="include">
-        </childnode>
-      </node>
-      <node id="4922">
-        <label>ik_SAudioStreamFormat.h</label>
-        <link refid="ik__SAudioStreamFormat_8h"/>
-        <childnode refid="4917" relation="include">
-        </childnode>
-      </node>
-      <node id="4908">
-        <label>stdlib.h</label>
-      </node>
-      <node id="4898">
-        <label>Vector3.h</label>
-        <link refid="Vector3_8h"/>
-        <childnode refid="4899" relation="include">
-        </childnode>
-        <childnode refid="4904" relation="include">
-        </childnode>
-      </node>
-      <node id="4939">
-        <label>Material.h</label>
-        <link refid="Material_8h"/>
-      </node>
-      <node id="4943">
-        <label>Camera.h</label>
-        <link refid="Camera_8h"/>
-        <childnode refid="4898" relation="include">
-        </childnode>
-      </node>
-      <node id="4941">
-        <label>LoadOBJ.h</label>
-        <link refid="LoadOBJ_8h"/>
-        <childnode refid="4896" relation="include">
-        </childnode>
-        <childnode refid="4940" relation="include">
-        </childnode>
-        <childnode refid="4898" relation="include">
-        </childnode>
-      </node>
-      <node id="4919">
-        <label>ik_ESoundOutputDrivers.h</label>
-        <link refid="ik__ESoundOutputDrivers_8h"/>
-      </node>
-      <node id="4900">
-        <label>cmath</label>
-      </node>
-      <node id="4942">
-        <label>Camera3.h</label>
-        <link refid="Camera3_8h"/>
-        <childnode refid="4943" relation="include">
         </childnode>
       </node>
       <node id="4952">
@@ -189,6 +429,9 @@
         </childnode>
         <childnode refid="4954" relation="include">
         </childnode>
+      </node>
+      <node id="4902">
+        <label>ctime</label>
       </node>
       <node id="4912">
         <label>../irrKlang/include/irrKlang.h</label>
@@ -234,11 +477,19 @@
         <childnode refid="4928" relation="include">
         </childnode>
       </node>
-      <node id="4905">
-        <label>Misc.h</label>
-        <link refid="Misc_8h"/>
-        <childnode refid="4898" relation="include">
+      <node id="4915">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="4916" relation="include">
         </childnode>
+        <childnode refid="4913" relation="include">
+        </childnode>
+      </node>
+      <node id="4945">
+        <label>stack</label>
+      </node>
+      <node id="4896">
+        <label>vector</label>
       </node>
       <node id="4928">
         <label>ik_ISoundMixedOutputReceiver.h</label>
@@ -248,8 +499,63 @@
         <childnode refid="4922" relation="include">
         </childnode>
       </node>
-      <node id="4911">
-        <label>string</label>
+      <node id="4909">
+        <label>crtdbg.h</label>
+      </node>
+      <node id="4937">
+        <label>MeshBuilder.h</label>
+        <link refid="MeshBuilder_8h"/>
+        <childnode refid="4938" relation="include">
+        </childnode>
+        <childnode refid="4940" relation="include">
+        </childnode>
+        <childnode refid="4899" relation="include">
+        </childnode>
+        <childnode refid="4941" relation="include">
+        </childnode>
+      </node>
+      <node id="4923">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="4917" relation="include">
+        </childnode>
+        <childnode refid="4915" relation="include">
+        </childnode>
+        <childnode refid="4924" relation="include">
+        </childnode>
+        <childnode refid="4925" relation="include">
+        </childnode>
+        <childnode refid="4921" relation="include">
+        </childnode>
+        <childnode refid="4927" relation="include">
+        </childnode>
+        <childnode refid="4928" relation="include">
+        </childnode>
+      </node>
+      <node id="4921">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="4941">
+        <label>LoadOBJ.h</label>
+        <link refid="LoadOBJ_8h"/>
+        <childnode refid="4896" relation="include">
+        </childnode>
+        <childnode refid="4940" relation="include">
+        </childnode>
+        <childnode refid="4898" relation="include">
+        </childnode>
+      </node>
+      <node id="4946">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="4899" relation="include">
+        </childnode>
+        <childnode refid="4898" relation="include">
+        </childnode>
+      </node>
+      <node id="4916">
+        <label>math.h</label>
       </node>
       <node id="4958">
         <label>SceneLevelTwo.h</label>
@@ -271,209 +577,6 @@
         <childnode refid="4949" relation="include">
         </childnode>
       </node>
-      <node id="4906">
-        <label>GL/glew.h</label>
-      </node>
-      <node id="4888">
-        <label>Application.h</label>
-        <link refid="Application_8h"/>
-        <childnode refid="4889" relation="include">
-        </childnode>
-        <childnode refid="4891" relation="include">
-        </childnode>
-        <childnode refid="4906" relation="include">
-        </childnode>
-        <childnode refid="4907" relation="include">
-        </childnode>
-        <childnode refid="4908" relation="include">
-        </childnode>
-        <childnode refid="4909" relation="include">
-        </childnode>
-        <childnode refid="4910" relation="include">
-        </childnode>
-      </node>
-      <node id="4930">
-        <label>ik_IAudioStreamLoader.h</label>
-        <link refid="ik__IAudioStreamLoader_8h"/>
-        <childnode refid="4917" relation="include">
-        </childnode>
-        <childnode refid="4931" relation="include">
-        </childnode>
-      </node>
-      <node id="4907">
-        <label>GLFW/glfw3.h</label>
-      </node>
-      <node id="4938">
-        <label>Mesh.h</label>
-        <link refid="Mesh_8h"/>
-        <childnode refid="4939" relation="include">
-        </childnode>
-        <childnode refid="4911" relation="include">
-        </childnode>
-      </node>
-      <node id="4901">
-        <label>exception</label>
-      </node>
-      <node id="4960">
-        <label>fstream</label>
-      </node>
-      <node id="4953">
-        <label>MobBossOne.h</label>
-        <link refid="MobBossOne_8h"/>
-        <childnode refid="4948" relation="include">
-        </childnode>
-      </node>
-      <node id="4955">
-        <label>CutSceneOne.h</label>
-        <link refid="CutSceneOne_8h"/>
-        <childnode refid="4891" relation="include">
-        </childnode>
-        <childnode refid="4942" relation="include">
-        </childnode>
-        <childnode refid="4898" relation="include">
-        </childnode>
-        <childnode refid="4938" relation="include">
-        </childnode>
-        <childnode refid="4944" relation="include">
-        </childnode>
-        <childnode refid="4947" relation="include">
-        </childnode>
-        <childnode refid="4951" relation="include">
-        </childnode>
-        <childnode refid="4892" relation="include">
-        </childnode>
-      </node>
-      <node id="4934">
-        <label>ik_IAudioRecorder.h</label>
-        <link refid="ik__IAudioRecorder_8h"/>
-        <childnode refid="4917" relation="include">
-        </childnode>
-        <childnode refid="4924" relation="include">
-        </childnode>
-      </node>
-      <node id="4924">
-        <label>ik_ISoundSource.h</label>
-        <link refid="ik__ISoundSource_8h"/>
-        <childnode refid="4918" relation="include">
-        </childnode>
-        <childnode refid="4915" relation="include">
-        </childnode>
-        <childnode refid="4921" relation="include">
-        </childnode>
-        <childnode refid="4922" relation="include">
-        </childnode>
-      </node>
-      <node id="4929">
-        <label>ik_IAudioStream.h</label>
-        <link refid="ik__IAudioStream_8h"/>
-        <childnode refid="4917" relation="include">
-        </childnode>
-        <childnode refid="4922" relation="include">
-        </childnode>
-      </node>
-      <node id="4931">
-        <label>ik_IFileReader.h</label>
-        <link refid="ik__IFileReader_8h"/>
-        <childnode refid="4917" relation="include">
-        </childnode>
-      </node>
-      <node id="4936">
-        <label>SceneOpening.h</label>
-        <link refid="SceneOpening_8h"/>
-        <childnode refid="4888" relation="include">
-        </childnode>
-        <childnode refid="4937" relation="include">
-        </childnode>
-        <childnode refid="4891" relation="include">
-        </childnode>
-        <childnode refid="4942" relation="include">
-        </childnode>
-        <childnode refid="4898" relation="include">
-        </childnode>
-        <childnode refid="4938" relation="include">
-        </childnode>
-        <childnode refid="4944" relation="include">
-        </childnode>
-        <childnode refid="4947" relation="include">
-        </childnode>
-        <childnode refid="4948" relation="include">
-        </childnode>
-        <childnode refid="4949" relation="include">
-        </childnode>
-      </node>
-      <node id="4914">
-        <label>wchar.h</label>
-      </node>
-      <node id="4915">
-        <label>ik_vec3d.h</label>
-        <link refid="ik__vec3d_8h"/>
-        <childnode refid="4916" relation="include">
-        </childnode>
-        <childnode refid="4913" relation="include">
-        </childnode>
-      </node>
-      <node id="4923">
-        <label>ik_ISoundEngine.h</label>
-        <link refid="ik__ISoundEngine_8h"/>
-        <childnode refid="4917" relation="include">
-        </childnode>
-        <childnode refid="4915" relation="include">
-        </childnode>
-        <childnode refid="4924" relation="include">
-        </childnode>
-        <childnode refid="4925" relation="include">
-        </childnode>
-        <childnode refid="4921" relation="include">
-        </childnode>
-        <childnode refid="4927" relation="include">
-        </childnode>
-        <childnode refid="4928" relation="include">
-        </childnode>
-      </node>
-      <node id="4902">
-        <label>ctime</label>
-      </node>
-      <node id="4956">
-        <label>SceneLevelOneA.h</label>
-        <link refid="SceneLevelOneA_8h"/>
-        <childnode refid="4891" relation="include">
-        </childnode>
-        <childnode refid="4942" relation="include">
-        </childnode>
-        <childnode refid="4898" relation="include">
-        </childnode>
-        <childnode refid="4938" relation="include">
-        </childnode>
-        <childnode refid="4944" relation="include">
-        </childnode>
-        <childnode refid="4947" relation="include">
-        </childnode>
-        <childnode refid="4951" relation="include">
-        </childnode>
-        <childnode refid="4949" relation="include">
-        </childnode>
-      </node>
-      <node id="4918">
-        <label>ik_IVirtualRefCounted.h</label>
-        <link refid="ik__IVirtualRefCounted_8h"/>
-        <childnode refid="4913" relation="include">
-        </childnode>
-      </node>
-      <node id="4945">
-        <label>stack</label>
-      </node>
-      <node id="4896">
-        <label>vector</label>
-      </node>
-      <node id="4940">
-        <label>Vertex.h</label>
-        <link refid="Vertex_8h"/>
-        <childnode refid="4898" relation="include">
-        </childnode>
-      </node>
-      <node id="4909">
-        <label>crtdbg.h</label>
-      </node>
       <node id="4948">
         <label>HostileMob.h</label>
         <link refid="HostileMob_8h"/>
@@ -482,194 +585,14 @@
         <childnode refid="4898" relation="include">
         </childnode>
       </node>
-      <node id="4892">
-        <label>GlobalVariables.h</label>
-        <link refid="GlobalVariables_8h"/>
-      </node>
-      <node id="4920">
-        <label>ik_ESoundEngineOptions.h</label>
-        <link refid="ik__ESoundEngineOptions_8h"/>
-      </node>
-      <node id="4937">
-        <label>MeshBuilder.h</label>
-        <link refid="MeshBuilder_8h"/>
-        <childnode refid="4938" relation="include">
-        </childnode>
-        <childnode refid="4940" relation="include">
-        </childnode>
-        <childnode refid="4899" relation="include">
-        </childnode>
-        <childnode refid="4941" relation="include">
-        </childnode>
-      </node>
-      <node id="4949">
-        <label>MobGhost.h</label>
-        <link refid="MobGhost_8h"/>
-        <childnode refid="4948" relation="include">
-        </childnode>
-      </node>
-      <node id="4946">
-        <label>Mtx44.h</label>
-        <link refid="Mtx44_8h"/>
-        <childnode refid="4899" relation="include">
-        </childnode>
-        <childnode refid="4898" relation="include">
-        </childnode>
-      </node>
-      <node id="4962">
-        <label>SceneEndCutScene.h</label>
-        <link refid="SceneEndCutScene_8h"/>
-        <childnode refid="4891" relation="include">
-        </childnode>
-        <childnode refid="4942" relation="include">
-        </childnode>
-        <childnode refid="4898" relation="include">
-        </childnode>
-        <childnode refid="4938" relation="include">
-        </childnode>
-        <childnode refid="4944" relation="include">
-        </childnode>
-        <childnode refid="4947" relation="include">
-        </childnode>
-        <childnode refid="4951" relation="include">
-        </childnode>
-        <childnode refid="4896" relation="include">
-        </childnode>
-        <childnode refid="4960" relation="include">
-        </childnode>
-      </node>
-      <node id="4916">
-        <label>math.h</label>
-      </node>
-      <node id="4933">
-        <label>ik_ISoundDeviceList.h</label>
-        <link refid="ik__ISoundDeviceList_8h"/>
-        <childnode refid="4917" relation="include">
-        </childnode>
-      </node>
-      <node id="4887">
-        <label>ComGraphics/Source/Application.cpp</label>
-        <link refid="Application.cpp"/>
-        <childnode refid="4888" relation="include">
-        </childnode>
-        <childnode refid="4935" relation="include">
-        </childnode>
-        <childnode refid="4908" relation="include">
-        </childnode>
-        <childnode refid="4936" relation="include">
-        </childnode>
-        <childnode refid="4950" relation="include">
-        </childnode>
-        <childnode refid="4952" relation="include">
-        </childnode>
-        <childnode refid="4955" relation="include">
-        </childnode>
-        <childnode refid="4956" relation="include">
-        </childnode>
-        <childnode refid="4957" relation="include">
-        </childnode>
-        <childnode refid="4958" relation="include">
-        </childnode>
-        <childnode refid="4959" relation="include">
-        </childnode>
-        <childnode refid="4961" relation="include">
-        </childnode>
-        <childnode refid="4962" relation="include">
-        </childnode>
-        <childnode refid="4963" relation="include">
-        </childnode>
-      </node>
       <node id="4903">
         <label>cstdlib</label>
-      </node>
-      <node id="4925">
-        <label>ik_ISound.h</label>
-        <link refid="ik__ISound_8h"/>
-        <childnode refid="4918" relation="include">
-        </childnode>
-        <childnode refid="4926" relation="include">
-        </childnode>
-        <childnode refid="4915" relation="include">
-        </childnode>
-      </node>
-      <node id="4904">
-        <label>iostream</label>
-      </node>
-      <node id="4947">
-        <label>Light.h</label>
-        <link refid="Light_8h"/>
-        <childnode refid="4940" relation="include">
-        </childnode>
-      </node>
-      <node id="4957">
-        <label>SceneLevelOneB.h</label>
-        <link refid="SceneLevelOneB_8h"/>
-        <childnode refid="4891" relation="include">
-        </childnode>
-        <childnode refid="4942" relation="include">
-        </childnode>
-        <childnode refid="4898" relation="include">
-        </childnode>
-        <childnode refid="4938" relation="include">
-        </childnode>
-        <childnode refid="4944" relation="include">
-        </childnode>
-        <childnode refid="4947" relation="include">
-        </childnode>
-        <childnode refid="4951" relation="include">
-        </childnode>
-        <childnode refid="4949" relation="include">
-        </childnode>
-        <childnode refid="4953" relation="include">
-        </childnode>
-      </node>
-      <node id="4944">
-        <label>MatrixStack.h</label>
-        <link refid="MatrixStack_8h"/>
-        <childnode refid="4945" relation="include">
-        </childnode>
-        <childnode refid="4946" relation="include">
-        </childnode>
-      </node>
-      <node id="4894">
-        <label>Explorer.h</label>
-        <link refid="Explorer_8h"/>
-        <childnode refid="4895" relation="include">
-        </childnode>
-        <childnode refid="4898" relation="include">
-        </childnode>
-      </node>
-      <node id="4895">
-        <label>ToolUI.h</label>
-        <link refid="ToolUI_8h"/>
-        <childnode refid="4896" relation="include">
-        </childnode>
-        <childnode refid="4897" relation="include">
-        </childnode>
-      </node>
-      <node id="4926">
-        <label>ik_ISoundEffectControl.h</label>
-        <link refid="ik__ISoundEffectControl_8h"/>
-        <childnode refid="4918" relation="include">
-        </childnode>
-        <childnode refid="4915" relation="include">
-        </childnode>
-      </node>
-      <node id="4917">
-        <label>ik_IRefCounted.h</label>
-        <link refid="ik__IRefCounted_8h"/>
-        <childnode refid="4913" relation="include">
-        </childnode>
       </node>
       <node id="4951">
         <label>OBJAnimation.h</label>
         <link refid="OBJAnimation_8h"/>
         <childnode refid="4942" relation="include">
         </childnode>
-      </node>
-      <node id="4893">
-        <label>SwitchLightPuzzle.h</label>
-        <link refid="SwitchLightPuzzle_8h"/>
       </node>
       <node id="4950">
         <label>SceneStart.h</label>
@@ -695,18 +618,30 @@
         <childnode refid="4949" relation="include">
         </childnode>
       </node>
-      <node id="4913">
-        <label>ik_irrKlangTypes.h</label>
-        <link refid="ik__irrKlangTypes_8h"/>
-        <childnode refid="4914" relation="include">
+      <node id="4904">
+        <label>iostream</label>
+      </node>
+      <node id="4949">
+        <label>MobGhost.h</label>
+        <link refid="MobGhost_8h"/>
+        <childnode refid="4948" relation="include">
         </childnode>
       </node>
-      <node id="4935">
-        <label>stdio.h</label>
+      <node id="4919">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
       </node>
-      <node id="4961">
-        <label>OpeningCutScene2.h</label>
-        <link refid="OpeningCutScene2_8h"/>
+      <node id="4934">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="4917" relation="include">
+        </childnode>
+        <childnode refid="4924" relation="include">
+        </childnode>
+      </node>
+      <node id="4955">
+        <label>CutSceneOne.h</label>
+        <link refid="CutSceneOne_8h"/>
         <childnode refid="4891" relation="include">
         </childnode>
         <childnode refid="4942" relation="include">
@@ -715,7 +650,33 @@
         </childnode>
         <childnode refid="4938" relation="include">
         </childnode>
-        <childnode refid="4905" relation="include">
+        <childnode refid="4944" relation="include">
+        </childnode>
+        <childnode refid="4947" relation="include">
+        </childnode>
+        <childnode refid="4951" relation="include">
+        </childnode>
+        <childnode refid="4892" relation="include">
+        </childnode>
+      </node>
+      <node id="4938">
+        <label>Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="4939" relation="include">
+        </childnode>
+        <childnode refid="4911" relation="include">
+        </childnode>
+      </node>
+      <node id="4959">
+        <label>OpeningCutScene.h</label>
+        <link refid="OpeningCutScene_8h"/>
+        <childnode refid="4891" relation="include">
+        </childnode>
+        <childnode refid="4942" relation="include">
+        </childnode>
+        <childnode refid="4898" relation="include">
+        </childnode>
+        <childnode refid="4938" relation="include">
         </childnode>
         <childnode refid="4944" relation="include">
         </childnode>
@@ -723,25 +684,64 @@
         </childnode>
         <childnode refid="4951" relation="include">
         </childnode>
+        <childnode refid="4892" relation="include">
+        </childnode>
+        <childnode refid="4896" relation="include">
+        </childnode>
+        <childnode refid="4960" relation="include">
+        </childnode>
+      </node>
+      <node id="4933">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="4917" relation="include">
+        </childnode>
+      </node>
+      <node id="4963">
+        <label>Credits.h</label>
+        <link refid="Credits_8h"/>
+        <childnode refid="4891" relation="include">
+        </childnode>
+        <childnode refid="4942" relation="include">
+        </childnode>
+        <childnode refid="4898" relation="include">
+        </childnode>
+        <childnode refid="4938" relation="include">
+        </childnode>
+        <childnode refid="4944" relation="include">
+        </childnode>
+        <childnode refid="4947" relation="include">
+        </childnode>
+        <childnode refid="4951" relation="include">
+        </childnode>
+        <childnode refid="4892" relation="include">
+        </childnode>
+        <childnode refid="4896" relation="include">
+        </childnode>
+        <childnode refid="4960" relation="include">
+        </childnode>
+      </node>
+      <node id="4953">
+        <label>MobBossOne.h</label>
+        <link refid="MobBossOne_8h"/>
         <childnode refid="4948" relation="include">
         </childnode>
-        <childnode refid="4949" relation="include">
+      </node>
+      <node id="4935">
+        <label>stdio.h</label>
+      </node>
+      <node id="4926">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="4918" relation="include">
+        </childnode>
+        <childnode refid="4915" relation="include">
         </childnode>
       </node>
-      <node id="4921">
-        <label>ik_EStreamModes.h</label>
-        <link refid="ik__EStreamModes_8h"/>
-      </node>
-      <node id="4899">
-        <label>MyMath.h</label>
-        <link refid="MyMath_8h"/>
-        <childnode refid="4900" relation="include">
-        </childnode>
-        <childnode refid="4901" relation="include">
-        </childnode>
-        <childnode refid="4902" relation="include">
-        </childnode>
-        <childnode refid="4903" relation="include">
+      <node id="4940">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="4898" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -773,7 +773,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.cpp" line="24" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="24" bodyend="-1"/>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Application::Run</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Application::Run</referencedby>
       </memberdef>
       <memberdef kind="variable" id="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" prot="public" static="no" mutable="no">
         <type>GLFWwindow *</type>
@@ -788,10 +788,10 @@
         </inbodydescription>
         <location file="ComGraphics/Source/Application.cpp" line="25" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="25" bodyend="-1"/>
         <referencedby refid="classCamera3_1a576422f8f2d0660f27eed0fc817b2ae5" compoundref="Camera3_8cpp" startline="32" endline="65">Camera3::CameraRotation</referencedby>
-        <referencedby refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" compoundref="Application_8cpp" startline="189" endline="195">Application::Exit</referencedby>
-        <referencedby refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="79" endline="131">Application::Init</referencedby>
+        <referencedby refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" compoundref="Application_8cpp" startline="194" endline="200">Application::Exit</referencedby>
+        <referencedby refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="79" endline="135">Application::Init</referencedby>
         <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="17" endline="30">Camera3::Init</referencedby>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Application::Run</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Application::Run</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -815,7 +815,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.cpp" line="29" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="29" bodyend="33"/>
-        <referencedby refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="79" endline="131">Application::Init</referencedby>
+        <referencedby refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="79" endline="135">Application::Init</referencedby>
       </memberdef>
       <memberdef kind="function" id="Application_8cpp_1a6d1a8981b70f74fc60c1428f080da820" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -874,7 +874,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Application.cpp" line="69" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="69" bodyend="72"/>
-        <referencedby refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="79" endline="131">Application::Init</referencedby>
+        <referencedby refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="79" endline="135">Application::Init</referencedby>
       </memberdef>
       <memberdef kind="function" id="Application_8cpp_1a8228304ff2488b0ad4dec518fc8a77d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -901,8 +901,8 @@
         </inbodydescription>
         <location file="ComGraphics/Source/Application.cpp" line="74" column="1" bodyfile="ComGraphics/Source/Application.cpp" bodystart="74" bodyend="77"/>
         <references refid="classApplication_1aa3c321afd7560255872564024a9204a4" compoundref="Application_8h" startline="23">Application::mouse_scroll</references>
-        <referencedby refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="79" endline="131">Application::Init</referencedby>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Application::Run</referencedby>
+        <referencedby refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" compoundref="Application_8cpp" startline="79" endline="135">Application::Init</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Application::Run</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1006,170 +1006,175 @@
 <codeline lineno="94"><highlight class="normal"></highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Create<sp/>a<sp/>window<sp/>and<sp/>create<sp/>its<sp/>OpenGL<sp/>context</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref><sp/>=<sp/>glfwCreateWindow(1920,<sp/>1080,<sp/></highlight><highlight class="stringliteral">&quot;Computer<sp/>Graphics&quot;</highlight><highlight class="normal">,<sp/>glfwGetPrimaryMonitor(),<sp/>NULL);</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//m_window<sp/>=<sp/>glfwCreateWindow(1920,<sp/>1080,<sp/>&quot;Computer<sp/>Graphics&quot;,<sp/>NULL,<sp/>NULL);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//m_window<sp/>=<sp/>glfwCreateWindow(800,<sp/>600,<sp/>&quot;Computer<sp/>Graphics&quot;,<sp/>NULL,<sp/>NULL);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwSetScrollCallback(<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>,<sp/><ref refid="Application_8cpp_1a8228304ff2488b0ad4dec518fc8a77d9" kindref="member">scroll_callback</ref>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//m_window<sp/>=<sp/>glfwCreateWindow(1920,<sp/>1080,<sp/>&quot;Computer<sp/>Graphics&quot;,<sp/>glfwGetPrimaryMonitor(),<sp/>NULL);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref><sp/>=<sp/>glfwCreateWindow(1920,<sp/>1080,<sp/></highlight><highlight class="stringliteral">&quot;Computer<sp/>Graphics&quot;</highlight><highlight class="normal">,<sp/>glfwGetPrimaryMonitor(),<sp/>NULL);</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>the<sp/>window<sp/>couldn&apos;t<sp/>be<sp/>created</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>)</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(<sp/>stderr,<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>open<sp/>GLFW<sp/>window.\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwTerminate();</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//This<sp/>function<sp/>makes<sp/>the<sp/>context<sp/>of<sp/>the<sp/>specified<sp/>window<sp/>current<sp/>on<sp/>the<sp/>calling<sp/>thread.<sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwMakeContextCurrent(<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>);</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Sets<sp/>the<sp/>key<sp/>callback</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//glfwSetKeyCallback(m_window,<sp/>key_callback);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glewExperimental<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>Needed<sp/>for<sp/>core<sp/>profile</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Initialize<sp/>GLEW</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GLenum<sp/>err<sp/>=<sp/>glewInit();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//m_window<sp/>=<sp/>glfwCreateWindow(1920,<sp/>1080,<sp/>&quot;Computer<sp/>Graphics&quot;,<sp/>NULL,<sp/>NULL);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref><sp/>=<sp/>glfwCreateWindow(800,<sp/>600,<sp/></highlight><highlight class="stringliteral">&quot;Computer<sp/>Graphics&quot;</highlight><highlight class="normal">,<sp/>NULL,<sp/>NULL);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwSetScrollCallback(<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>,<sp/><ref refid="Application_8cpp_1a8228304ff2488b0ad4dec518fc8a77d9" kindref="member">scroll_callback</ref>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>the<sp/>window<sp/>couldn&apos;t<sp/>be<sp/>created</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(<sp/>stderr,<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>open<sp/>GLFW<sp/>window.\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwTerminate();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//This<sp/>function<sp/>makes<sp/>the<sp/>context<sp/>of<sp/>the<sp/>specified<sp/>window<sp/>current<sp/>on<sp/>the<sp/>calling<sp/>thread.<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwMakeContextCurrent(<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Sets<sp/>the<sp/>key<sp/>callback</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//glfwSetKeyCallback(m_window,<sp/>key_callback);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>GLEW<sp/>hasn&apos;t<sp/>initialized</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(err<sp/>!=<sp/>GLEW_OK)<sp/></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Error:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>glewGetErrorString(err));</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//return<sp/>-1;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwSetWindowSizeCallback(<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>,<sp/><ref refid="Application_8cpp_1aadcee9765075e232ca0720f80a76ad37" kindref="member">resize_callback</ref>);</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"></highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Set<sp/>the<sp/>error<sp/>callback</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwSetErrorCallback(<ref refid="Application_8cpp_1a6e6d1771a9242858811be0a3569838fa" kindref="member">error_callback</ref>);</highlight></codeline>
-<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glewExperimental<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>Needed<sp/>for<sp/>core<sp/>profile</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Initialize<sp/>GLEW</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GLenum<sp/>err<sp/>=<sp/>glewInit();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>GLEW<sp/>hasn&apos;t<sp/>initialized</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(err<sp/>!=<sp/>GLEW_OK)<sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Error:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>glewGetErrorString(err));</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//return<sp/>-1;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwSetWindowSizeCallback(<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>,<sp/><ref refid="Application_8cpp_1aadcee9765075e232ca0720f80a76ad37" kindref="member">resize_callback</ref>);</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"></highlight></codeline>
-<codeline lineno="133" refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" kindref="member">Application::Run</ref>()</highlight></codeline>
-<codeline lineno="134"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1abf70af746e708ec070d0132e810955e0" kindref="member">musics</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classMusic" kindref="compound">Music</ref>();</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1abf70af746e708ec070d0132e810955e0" kindref="member">musics</ref>-&gt;<ref refid="classMusic_1a791549e6c481f309ec3a41642f2bbd47" kindref="member">init</ref>();</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*musics-&gt;OpeningMusic();*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a70f137bc91d7ea94620f308955df3488" kindref="member">Opening</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSceneOpening" kindref="compound">SceneOpening</ref>();</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a78d4ff8f31ed85a5f678895bdf033010" kindref="member">IntroScene</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene" kindref="compound">OpeningCutScene</ref>();</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a9c7242d477d27afd976d36dfbf32e8ed" kindref="member">IntroScene2</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2" kindref="compound">OpeningCutScene2</ref>();</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a9e4d6b83b53c49be398826e54e4e302b" kindref="member">Start</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSceneStart" kindref="compound">SceneStart</ref>();</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1aa8746ce1082d87c92cf5b4d02a4704e6" kindref="member">CutScene1</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classCutSceneOne" kindref="compound">CutSceneOne</ref>();</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1acb29e9d3a26d0f49362fcb36e817c7a2" kindref="member">LevelOneA</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSceneLevelOneA" kindref="compound">SceneLevelOneA</ref>();</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1a5f146343c64158b5d853c0c04de34f23" kindref="member">LevelOneB</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSceneLevelOneB" kindref="compound">SceneLevelOneB</ref>();</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1a5ae3483e72f7ba85c4f11175f3d303ba" kindref="member">LevelTwo</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSceneLevelTwo" kindref="compound">SceneLevelTwo</ref>();</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a2ba9a04cbc014df1460af205eb84d44c" kindref="member">End</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSceneEnd" kindref="compound">SceneEnd</ref>();</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a1dd1dd46dd3fdd34c33974fa696aa21e" kindref="member">EndScene</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSceneEndCutScene" kindref="compound">SceneEndCutScene</ref>();</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a3b85ac1e471c03bea8aa973cefcb5746" kindref="member">EndCredits</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classCredits" kindref="compound">Credits</ref>();</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"></highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a70f137bc91d7ea94620f308955df3488" kindref="member">Opening</ref>;</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal"></highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" kindref="member">m_timer</ref>.<ref refid="classStopWatch_1a23301f735a2e3190435e39c9fd70cdf2" kindref="member">startTimer</ref>();<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>timer<sp/>to<sp/>calculate<sp/>how<sp/>long<sp/>it<sp/>takes<sp/>to<sp/>render<sp/>this<sp/>frame</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!glfwWindowShouldClose(<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>)<sp/>&amp;&amp;<sp/>!<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">IsKeyPressed</ref>(VK_ESCAPE))</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91" kindref="member">Update</ref>(<ref refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" kindref="member">m_timer</ref>.<ref refid="classStopWatch_1ac8be1626396d1a5ca414f74349d59eb2" kindref="member">getElapsedTime</ref>());</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ae24d21e12b34839994ad265662ea24d7" kindref="member">Render</ref>();</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Swap<sp/>buffers</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwSwapBuffers(<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>);</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"></highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(WM_MOUSEWHEEL))</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwSetScrollCallback(<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>,<sp/><ref refid="Application_8cpp_1a8228304ff2488b0ad4dec518fc8a77d9" kindref="member">scroll_callback</ref>);</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"></highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1aa3c321afd7560255872564024a9204a4" kindref="member">Application::mouse_scroll</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"></highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Get<sp/>and<sp/>organize<sp/>events,<sp/>like<sp/>keyboard<sp/>and<sp/>mouse<sp/>input,<sp/>window<sp/>resizing,<sp/>etc...</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwPollEvents();</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" kindref="member">m_timer</ref>.<ref refid="classStopWatch_1a2cd0856fc87a40038edfd66d784be8b4" kindref="member">waitUntil</ref>(<ref refid="Application_8cpp_1ae228418b33873657fa31313fb4189a8f" kindref="member">frameTime</ref>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Frame<sp/>rate<sp/>limiter.<sp/>Limits<sp/>each<sp/>frame<sp/>to<sp/>a<sp/>specified<sp/>time<sp/>in<sp/>ms.<sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="172"><highlight class="normal"></highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//Check<sp/>if<sp/>the<sp/>ESC<sp/>key<sp/>had<sp/>been<sp/>pressed<sp/>or<sp/>if<sp/>the<sp/>window<sp/>had<sp/>been<sp/>closed</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1aae8e24654ef98c79961c2b804b12852c" kindref="member">Exit</ref>();</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"></highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1abf70af746e708ec070d0132e810955e0" kindref="member">musics</ref>;</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a78d4ff8f31ed85a5f678895bdf033010" kindref="member">IntroScene</ref>;</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9c7242d477d27afd976d36dfbf32e8ed" kindref="member">IntroScene2</ref>;</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a70f137bc91d7ea94620f308955df3488" kindref="member">Opening</ref>;</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9e4d6b83b53c49be398826e54e4e302b" kindref="member">Start</ref>;</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a2ba9a04cbc014df1460af205eb84d44c" kindref="member">End</ref>;</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1aa8746ce1082d87c92cf5b4d02a4704e6" kindref="member">CutScene1</ref>;</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1acb29e9d3a26d0f49362fcb36e817c7a2" kindref="member">LevelOneA</ref>;</highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a5f146343c64158b5d853c0c04de34f23" kindref="member">LevelOneB</ref>;</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a1dd1dd46dd3fdd34c33974fa696aa21e" kindref="member">EndScene</ref>;</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a3b85ac1e471c03bea8aa973cefcb5746" kindref="member">EndCredits</ref>;</highlight></codeline>
-<codeline lineno="187"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"></highlight></codeline>
-<codeline lineno="189" refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" kindref="member">Application::Exit</ref>()</highlight></codeline>
-<codeline lineno="190"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Close<sp/>OpenGL<sp/>window<sp/>and<sp/>terminate<sp/>GLFW</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwDestroyWindow(<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>);</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Finalize<sp/>and<sp/>clean<sp/>up<sp/>GLFW</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwTerminate();</highlight></codeline>
-<codeline lineno="195"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"></highlight></codeline>
-<codeline lineno="197" refid="classApplication_1adeed1a6fea5cbe66da30dfe5b9651b7e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1adeed1a6fea5cbe66da30dfe5b9651b7e" kindref="member">Application::OpenGame</ref>()</highlight></codeline>
-<codeline lineno="198"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a70f137bc91d7ea94620f308955df3488" kindref="member">Opening</ref>;</highlight></codeline>
-<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
-<codeline lineno="201"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="202"><highlight class="normal"></highlight></codeline>
-<codeline lineno="203" refid="classApplication_1a06a51f73e8d25ad6a4cf668957d52096" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a06a51f73e8d25ad6a4cf668957d52096" kindref="member">Application::StartingScene</ref>()</highlight></codeline>
-<codeline lineno="204"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a9e4d6b83b53c49be398826e54e4e302b" kindref="member">Start</ref>;</highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
-<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"></highlight></codeline>
-<codeline lineno="209" refid="classApplication_1a41920db676f4ab014b9ee32c2043ff9b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a41920db676f4ab014b9ee32c2043ff9b" kindref="member">Application::FirstCutScene</ref>()</highlight></codeline>
-<codeline lineno="210"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1aa8746ce1082d87c92cf5b4d02a4704e6" kindref="member">CutScene1</ref>;</highlight></codeline>
-<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
-<codeline lineno="213"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="214" refid="classApplication_1a56085045bcb5006289240a263f1bab4b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a56085045bcb5006289240a263f1bab4b" kindref="member">Application::SceneLevel1A</ref>()</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Set<sp/>the<sp/>error<sp/>callback</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwSetErrorCallback(<ref refid="Application_8cpp_1a6e6d1771a9242858811be0a3569838fa" kindref="member">error_callback</ref>);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" kindref="member">Application::Run</ref>()</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1abf70af746e708ec070d0132e810955e0" kindref="member">musics</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classMusic" kindref="compound">Music</ref>();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1abf70af746e708ec070d0132e810955e0" kindref="member">musics</ref>-&gt;<ref refid="classMusic_1a791549e6c481f309ec3a41642f2bbd47" kindref="member">init</ref>();</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*musics-&gt;OpeningMusic();*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a70f137bc91d7ea94620f308955df3488" kindref="member">Opening</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSceneOpening" kindref="compound">SceneOpening</ref>();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a78d4ff8f31ed85a5f678895bdf033010" kindref="member">IntroScene</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene" kindref="compound">OpeningCutScene</ref>();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a9c7242d477d27afd976d36dfbf32e8ed" kindref="member">IntroScene2</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classOpeningCutScene2" kindref="compound">OpeningCutScene2</ref>();</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a9e4d6b83b53c49be398826e54e4e302b" kindref="member">Start</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSceneStart" kindref="compound">SceneStart</ref>();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1aa8746ce1082d87c92cf5b4d02a4704e6" kindref="member">CutScene1</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classCutSceneOne" kindref="compound">CutSceneOne</ref>();</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1acb29e9d3a26d0f49362fcb36e817c7a2" kindref="member">LevelOneA</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSceneLevelOneA" kindref="compound">SceneLevelOneA</ref>();</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1a5f146343c64158b5d853c0c04de34f23" kindref="member">LevelOneB</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSceneLevelOneB" kindref="compound">SceneLevelOneB</ref>();</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1a5ae3483e72f7ba85c4f11175f3d303ba" kindref="member">LevelTwo</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSceneLevelTwo" kindref="compound">SceneLevelTwo</ref>();</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a2ba9a04cbc014df1460af205eb84d44c" kindref="member">End</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSceneEnd" kindref="compound">SceneEnd</ref>();</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a1dd1dd46dd3fdd34c33974fa696aa21e" kindref="member">EndScene</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSceneEndCutScene" kindref="compound">SceneEndCutScene</ref>();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a3b85ac1e471c03bea8aa973cefcb5746" kindref="member">EndCredits</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classCredits" kindref="compound">Credits</ref>();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a5ae3483e72f7ba85c4f11175f3d303ba" kindref="member">LevelTwo</ref>;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" kindref="member">m_timer</ref>.<ref refid="classStopWatch_1a23301f735a2e3190435e39c9fd70cdf2" kindref="member">startTimer</ref>();<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>timer<sp/>to<sp/>calculate<sp/>how<sp/>long<sp/>it<sp/>takes<sp/>to<sp/>render<sp/>this<sp/>frame</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!glfwWindowShouldClose(<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>)<sp/>&amp;&amp;<sp/>!<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">IsKeyPressed</ref>(VK_ESCAPE))</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91" kindref="member">Update</ref>(<ref refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" kindref="member">m_timer</ref>.<ref refid="classStopWatch_1ac8be1626396d1a5ca414f74349d59eb2" kindref="member">getElapsedTime</ref>());</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ae24d21e12b34839994ad265662ea24d7" kindref="member">Render</ref>();</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Swap<sp/>buffers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwSwapBuffers(<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" kindref="member">Application::IsKeyPressed</ref>(WM_MOUSEWHEEL))</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwSetScrollCallback(<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>,<sp/><ref refid="Application_8cpp_1a8228304ff2488b0ad4dec518fc8a77d9" kindref="member">scroll_callback</ref>);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1aa3c321afd7560255872564024a9204a4" kindref="member">Application::mouse_scroll</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Get<sp/>and<sp/>organize<sp/>events,<sp/>like<sp/>keyboard<sp/>and<sp/>mouse<sp/>input,<sp/>window<sp/>resizing,<sp/>etc...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwPollEvents();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" kindref="member">m_timer</ref>.<ref refid="classStopWatch_1a2cd0856fc87a40038edfd66d784be8b4" kindref="member">waitUntil</ref>(<ref refid="Application_8cpp_1ae228418b33873657fa31313fb4189a8f" kindref="member">frameTime</ref>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Frame<sp/>rate<sp/>limiter.<sp/>Limits<sp/>each<sp/>frame<sp/>to<sp/>a<sp/>specified<sp/>time<sp/>in<sp/>ms.<sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//Check<sp/>if<sp/>the<sp/>ESC<sp/>key<sp/>had<sp/>been<sp/>pressed<sp/>or<sp/>if<sp/>the<sp/>window<sp/>had<sp/>been<sp/>closed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1aae8e24654ef98c79961c2b804b12852c" kindref="member">Exit</ref>();</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1abf70af746e708ec070d0132e810955e0" kindref="member">musics</ref>;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a78d4ff8f31ed85a5f678895bdf033010" kindref="member">IntroScene</ref>;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9c7242d477d27afd976d36dfbf32e8ed" kindref="member">IntroScene2</ref>;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a70f137bc91d7ea94620f308955df3488" kindref="member">Opening</ref>;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9e4d6b83b53c49be398826e54e4e302b" kindref="member">Start</ref>;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a2ba9a04cbc014df1460af205eb84d44c" kindref="member">End</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1aa8746ce1082d87c92cf5b4d02a4704e6" kindref="member">CutScene1</ref>;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1acb29e9d3a26d0f49362fcb36e817c7a2" kindref="member">LevelOneA</ref>;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a5f146343c64158b5d853c0c04de34f23" kindref="member">LevelOneB</ref>;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a1dd1dd46dd3fdd34c33974fa696aa21e" kindref="member">EndScene</ref>;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a3b85ac1e471c03bea8aa973cefcb5746" kindref="member">EndCredits</ref>;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194" refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" kindref="member">Application::Exit</ref>()</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Close<sp/>OpenGL<sp/>window<sp/>and<sp/>terminate<sp/>GLFW</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwDestroyWindow(<ref refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" kindref="member">m_window</ref>);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Finalize<sp/>and<sp/>clean<sp/>up<sp/>GLFW</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glfwTerminate();</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202" refid="classApplication_1adeed1a6fea5cbe66da30dfe5b9651b7e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1adeed1a6fea5cbe66da30dfe5b9651b7e" kindref="member">Application::OpenGame</ref>()</highlight></codeline>
+<codeline lineno="203"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a70f137bc91d7ea94620f308955df3488" kindref="member">Opening</ref>;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208" refid="classApplication_1a06a51f73e8d25ad6a4cf668957d52096" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a06a51f73e8d25ad6a4cf668957d52096" kindref="member">Application::StartingScene</ref>()</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a9e4d6b83b53c49be398826e54e4e302b" kindref="member">Start</ref>;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214" refid="classApplication_1a41920db676f4ab014b9ee32c2043ff9b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a41920db676f4ab014b9ee32c2043ff9b" kindref="member">Application::FirstCutScene</ref>()</highlight></codeline>
 <codeline lineno="215"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1acb29e9d3a26d0f49362fcb36e817c7a2" kindref="member">LevelOneA</ref>;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1aa8746ce1082d87c92cf5b4d02a4704e6" kindref="member">CutScene1</ref>;</highlight></codeline>
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
 <codeline lineno="218"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="219"><highlight class="normal"></highlight></codeline>
-<codeline lineno="220" refid="classApplication_1a9871855d65ba1cba5a67647c58ce1eb1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9871855d65ba1cba5a67647c58ce1eb1" kindref="member">Application::SceneLevel1B</ref>()</highlight></codeline>
-<codeline lineno="221"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a5f146343c64158b5d853c0c04de34f23" kindref="member">LevelOneB</ref>;</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
-<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="225"><highlight class="normal"></highlight></codeline>
-<codeline lineno="226" refid="classApplication_1a71151e291360fac88840aa230e9adcd1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a71151e291360fac88840aa230e9adcd1" kindref="member">Application::SceneLevel2</ref>()</highlight></codeline>
-<codeline lineno="227"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a5ae3483e72f7ba85c4f11175f3d303ba" kindref="member">LevelTwo</ref>;</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
-<codeline lineno="230"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="231"><highlight class="normal"></highlight></codeline>
-<codeline lineno="232" refid="classApplication_1ac90b614d3d19e689017ff91142f3b271" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1ac90b614d3d19e689017ff91142f3b271" kindref="member">Application::EndingScene</ref>()</highlight></codeline>
-<codeline lineno="233"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a2ba9a04cbc014df1460af205eb84d44c" kindref="member">End</ref>;</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
-<codeline lineno="236"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="237"><highlight class="normal"></highlight></codeline>
-<codeline lineno="238" refid="classApplication_1a9417ed2dddc2277e1989cc8614e3d0c9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9417ed2dddc2277e1989cc8614e3d0c9" kindref="member">Application::OpenCutScene</ref>()</highlight></codeline>
-<codeline lineno="239"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a78d4ff8f31ed85a5f678895bdf033010" kindref="member">IntroScene</ref>;</highlight></codeline>
-<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
-<codeline lineno="242"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="243"><highlight class="normal"></highlight></codeline>
-<codeline lineno="244" refid="classApplication_1abf06415c31de1aed7b2f93c6c6c7f636" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1abf06415c31de1aed7b2f93c6c6c7f636" kindref="member">Application::OpenCutScene2</ref>()</highlight></codeline>
-<codeline lineno="245"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a9c7242d477d27afd976d36dfbf32e8ed" kindref="member">IntroScene2</ref>;</highlight></codeline>
-<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
-<codeline lineno="248"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="249"><highlight class="normal"></highlight></codeline>
-<codeline lineno="250" refid="classApplication_1a13c9b7e48999e988dce3c88912d08974" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a13c9b7e48999e988dce3c88912d08974" kindref="member">Application::EndingCutScene</ref>()</highlight></codeline>
-<codeline lineno="251"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a1dd1dd46dd3fdd34c33974fa696aa21e" kindref="member">EndScene</ref>;</highlight></codeline>
-<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
-<codeline lineno="254"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="255"><highlight class="normal"></highlight></codeline>
-<codeline lineno="256" refid="classApplication_1a9b60b70359c959d4f7cd1d8ffe4ab7a0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9b60b70359c959d4f7cd1d8ffe4ab7a0" kindref="member">Application::End_Credits</ref>()</highlight></codeline>
-<codeline lineno="257"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a3b85ac1e471c03bea8aa973cefcb5746" kindref="member">EndCredits</ref>;</highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
-<codeline lineno="260"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219" refid="classApplication_1a56085045bcb5006289240a263f1bab4b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a56085045bcb5006289240a263f1bab4b" kindref="member">Application::SceneLevel1A</ref>()</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1acb29e9d3a26d0f49362fcb36e817c7a2" kindref="member">LevelOneA</ref>;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225" refid="classApplication_1a9871855d65ba1cba5a67647c58ce1eb1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9871855d65ba1cba5a67647c58ce1eb1" kindref="member">Application::SceneLevel1B</ref>()</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a5f146343c64158b5d853c0c04de34f23" kindref="member">LevelOneB</ref>;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231" refid="classApplication_1a71151e291360fac88840aa230e9adcd1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a71151e291360fac88840aa230e9adcd1" kindref="member">Application::SceneLevel2</ref>()</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a5ae3483e72f7ba85c4f11175f3d303ba" kindref="member">LevelTwo</ref>;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="235"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237" refid="classApplication_1ac90b614d3d19e689017ff91142f3b271" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1ac90b614d3d19e689017ff91142f3b271" kindref="member">Application::EndingScene</ref>()</highlight></codeline>
+<codeline lineno="238"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a2ba9a04cbc014df1460af205eb84d44c" kindref="member">End</ref>;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243" refid="classApplication_1a9417ed2dddc2277e1989cc8614e3d0c9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9417ed2dddc2277e1989cc8614e3d0c9" kindref="member">Application::OpenCutScene</ref>()</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a78d4ff8f31ed85a5f678895bdf033010" kindref="member">IntroScene</ref>;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="247"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249" refid="classApplication_1abf06415c31de1aed7b2f93c6c6c7f636" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1abf06415c31de1aed7b2f93c6c6c7f636" kindref="member">Application::OpenCutScene2</ref>()</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a9c7242d477d27afd976d36dfbf32e8ed" kindref="member">IntroScene2</ref>;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="253"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255" refid="classApplication_1a13c9b7e48999e988dce3c88912d08974" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a13c9b7e48999e988dce3c88912d08974" kindref="member">Application::EndingCutScene</ref>()</highlight></codeline>
+<codeline lineno="256"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a1dd1dd46dd3fdd34c33974fa696aa21e" kindref="member">EndScene</ref>;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261" refid="classApplication_1a9b60b70359c959d4f7cd1d8ffe4ab7a0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a9b60b70359c959d4f7cd1d8ffe4ab7a0" kindref="member">Application::End_Credits</ref>()</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref><sp/>=<sp/><ref refid="classApplication_1a3b85ac1e471c03bea8aa973cefcb5746" kindref="member">EndCredits</ref>;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication_1a4e944cb9dcc9ea439ab9db643d09864e" kindref="member">scene</ref>-&gt;<ref refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478" kindref="member">Init</ref>();</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="ComGraphics/Source/Application.cpp"/>
   </compounddef>

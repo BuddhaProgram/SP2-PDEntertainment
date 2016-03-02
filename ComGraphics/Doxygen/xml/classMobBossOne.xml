@@ -19,7 +19,7 @@
         <location file="ComGraphics/Source/MobBossOne.h" line="20" column="1" bodyfile="ComGraphics/Source/MobBossOne.h" bodystart="20" bodyend="-1"/>
         <referencedby refid="classMobBossOne_1a15cf315a37065c7e00aecd2f03ca9823" compoundref="MobBossOne_8cpp" startline="45" endline="71">checkAttack</referencedby>
         <referencedby refid="classMobBossOne_1a809cec43b2d7469fab972572fce295a3" compoundref="MobBossOne_8cpp" startline="3" endline="24">MobBossOne</referencedby>
-        <referencedby refid="classSceneLevelOneB_1adf19187831a508b5541fdb085bfef099" compoundref="SceneLevelOneBRenders_8cpp" startline="393" endline="428">SceneLevelOneB::RenderBoss</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf19187831a508b5541fdb085bfef099" compoundref="SceneLevelOneBRenders_8cpp" startline="387" endline="422">SceneLevelOneB::RenderBoss</referencedby>
         <referencedby refid="classSceneEnd_1aa7eb2cf11f655cf77cc1c854c26e6f57" compoundref="SceneEndRenders_8cpp" startline="385" endline="423">SceneEnd::RenderBoss</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classMobBossOne_1a57ef694c85ac174d3a884b5ffb0a4eda" prot="public" static="no" mutable="no">
@@ -35,7 +35,7 @@
         </inbodydescription>
         <location file="ComGraphics/Source/MobBossOne.h" line="21" column="1" bodyfile="ComGraphics/Source/MobBossOne.h" bodystart="21" bodyend="-1"/>
         <referencedby refid="classMobBossOne_1a9c3de91039994e9339c3f5a14f093a27" compoundref="MobBossOne_8cpp" startline="73" endline="94">move</referencedby>
-        <referencedby refid="classSceneLevelOneB_1adf19187831a508b5541fdb085bfef099" compoundref="SceneLevelOneBRenders_8cpp" startline="393" endline="428">SceneLevelOneB::RenderBoss</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf19187831a508b5541fdb085bfef099" compoundref="SceneLevelOneBRenders_8cpp" startline="387" endline="422">SceneLevelOneB::RenderBoss</referencedby>
         <referencedby refid="classSceneEnd_1aa7eb2cf11f655cf77cc1c854c26e6f57" compoundref="SceneEndRenders_8cpp" startline="385" endline="423">SceneEnd::RenderBoss</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classMobBossOne_1a4eec5b91c1b01cde6298c308cfb8e7bc" prot="public" static="no" mutable="no">
@@ -52,7 +52,7 @@
         <location file="ComGraphics/Source/MobBossOne.h" line="23" column="1" bodyfile="ComGraphics/Source/MobBossOne.h" bodystart="23" bodyend="-1"/>
         <referencedby refid="classMobBossOne_1aecb3709f09de4706becf6754b1744682" compoundref="MobBossOne_8cpp" startline="107" endline="117">attack</referencedby>
         <referencedby refid="classMobBossOne_1a809cec43b2d7469fab972572fce295a3" compoundref="MobBossOne_8cpp" startline="3" endline="24">MobBossOne</referencedby>
-        <referencedby refid="classSceneLevelOneB_1a417bbb3831728aad7ab5ebee0ffe1355" compoundref="SceneLevelOneBRenders_8cpp" startline="632" endline="655">SceneLevelOneB::RenderPickUpPickTools</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a417bbb3831728aad7ab5ebee0ffe1355" compoundref="SceneLevelOneBRenders_8cpp" startline="626" endline="649">SceneLevelOneB::RenderPickUpPickTools</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -147,10 +147,10 @@
         <location file="ComGraphics/Source/MobBossOne.h" line="13" column="1" bodyfile="ComGraphics/Source/MobBossOne.cpp" bodystart="96" bodyend="100"/>
         <references refid="classHostileMob_1a69583918c6c28c058dd00507c43b98a9" compoundref="HostileMob_8h" startline="24">HostileMob::MobPosX</references>
         <references refid="classHostileMob_1acc619c612d504bd707abb1e2d74e66bf" compoundref="HostileMob_8h" startline="26">HostileMob::MobPosZ</references>
-        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
-        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="39" endline="239">SceneEnd::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="25" endline="231">SceneLevelOneB::Init</referencedby>
         <referencedby refid="classSceneEnd_1ab29fc3e6d0e1ac757a922f7592141bd4" compoundref="SceneEndRenders_8cpp" startline="527" endline="545">SceneEnd::ResetMobs</referencedby>
-        <referencedby refid="classSceneLevelOneB_1a7d2a46122596c3f7040c275a1b5e8b23" compoundref="SceneLevelOneB_8cpp" startline="233" endline="274">SceneLevelOneB::ResetSameScene</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a7d2a46122596c3f7040c275a1b5e8b23" compoundref="SceneLevelOneB_8cpp" startline="236" endline="277">SceneLevelOneB::ResetSameScene</referencedby>
       </memberdef>
       <memberdef kind="function" id="classMobBossOne_1a9c3de91039994e9339c3f5a14f093a27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -183,7 +183,7 @@
         <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
         <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
         <referencedby refid="classSceneEnd_1ab7bfa2bfcb6149aecb24f587a8d1e462" compoundref="SceneEndRenders_8cpp" startline="506" endline="525">SceneEnd::moveMob</referencedby>
-        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="724" endline="820">SceneLevelOneB::Update</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ad0b96b7c994521cb8df95ee2a7998a38" compoundref="SceneLevelOneB_8cpp" startline="717" endline="816">SceneLevelOneB::Update</referencedby>
       </memberdef>
       <memberdef kind="function" id="classMobBossOne_1aecb3709f09de4706becf6754b1744682" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -205,7 +205,7 @@
         <references refid="classMobBossOne_1a4eec5b91c1b01cde6298c308cfb8e7bc" compoundref="MobBossOne_8h" startline="23">BossDies</references>
         <references refid="classHostileMob_1af38e5a0ff2f970620b1ed34c1ca37b19" compoundref="HostileMob_8h" startline="20">HostileMob::health</references>
         <references refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" compoundref="Explorer_8h" startline="10" endline="10">Explorer::instance</references>
-        <references refid="classExplorer_1a6827c0db7864e0bfb1716cc2767dec2d" compoundref="Explorer_8cpp" startline="50" endline="60">Explorer::MinusHP</references>
+        <references refid="classExplorer_1a6827c0db7864e0bfb1716cc2767dec2d" compoundref="Explorer_8cpp" startline="52" endline="62">Explorer::MinusHP</references>
         <references refid="classHostileMob_1ad3df732f04e4701cc0ee6efc98b7f9bb" compoundref="HostileMob_8h" startline="18">HostileMob::Spawn</references>
         <referencedby refid="classMobBossOne_1a15cf315a37065c7e00aecd2f03ca9823" compoundref="MobBossOne_8cpp" startline="45" endline="71">checkAttack</referencedby>
       </memberdef>
@@ -240,7 +240,7 @@
         </inbodydescription>
         <location file="ComGraphics/Source/MobBossOne.h" line="17" column="1" bodyfile="ComGraphics/Source/MobBossOne.cpp" bodystart="101" bodyend="105"/>
         <references refid="classHostileMob_1af38e5a0ff2f970620b1ed34c1ca37b19" compoundref="HostileMob_8h" startline="20">HostileMob::health</references>
-        <referencedby refid="classSceneLevelOneB_1a2bfa4551ac0b1f099c42c2193b55df47" compoundref="SceneLevelOneBRenders_8cpp" startline="435" endline="455">SceneLevelOneB::attackCheck</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a2bfa4551ac0b1f099c42c2193b55df47" compoundref="SceneLevelOneBRenders_8cpp" startline="429" endline="449">SceneLevelOneB::attackCheck</referencedby>
         <referencedby refid="classSceneEnd_1a31fef5d67de3a3dfd2ae15d4bbcea2b6" compoundref="SceneEndRenders_8cpp" startline="424" endline="456">SceneEnd::checkAttack</referencedby>
       </memberdef>
       <memberdef kind="function" id="classMobBossOne_1a15cf315a37065c7e00aecd2f03ca9823" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">

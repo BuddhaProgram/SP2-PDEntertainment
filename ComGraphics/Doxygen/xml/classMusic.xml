@@ -101,7 +101,7 @@
         <references refid="classMusic_1ae9d0d9625f1aa68028d6c98039f0ca00" compoundref="Music_8h" startline="19">BackgroundMusic</references>
         <references refid="classMusic_1ab2a51561d3c251004e31d3cddde35b47" compoundref="Music_8h" startline="17">engine</references>
         <references refid="classirrklang_1_1ISoundSource_1a52accb16b3a554558f12f99d16f57a7d">irrklang::ISoundSource::setDefaultVolume</references>
-        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="133" endline="187">Application::Run</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="137" endline="192">Application::Run</referencedby>
       </memberdef>
       <memberdef kind="function" id="classMusic_1a93464811272d740f0d2cfcff2ce6c703" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

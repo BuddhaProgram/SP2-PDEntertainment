@@ -5,18 +5,6 @@
     <includedby refid="CIrrKlangAudioStreamMP3_8h" local="yes">ComGraphics/irrKlang/plugins/ikpMP3/CIrrKlangAudioStreamMP3.h</includedby>
     <includedby refid="internal_8h" local="yes">ComGraphics/irrKlang/plugins/ikpMP3/decoder/internal.h</includedby>
     <invincdepgraph>
-      <node id="4847">
-        <label>ComGraphics/irrKlang/plugins/ikpMP3/CIrrKlangAudioStreamMP3.h</label>
-        <link refid="CIrrKlangAudioStreamMP3_8h"/>
-        <childnode refid="4848" relation="include">
-        </childnode>
-        <childnode refid="4849" relation="include">
-        </childnode>
-      </node>
-      <node id="4849">
-        <label>ComGraphics/irrKlang/plugins/ikpMP3/CIrrKlangAudioStreamMP3.cpp</label>
-        <link refid="CIrrKlangAudioStreamMP3_8cpp"/>
-      </node>
       <node id="4850">
         <label>ComGraphics/irrKlang/plugins/ikpMP3/decoder/internal.h</label>
         <link refid="internal_8h"/>
@@ -28,6 +16,18 @@
       <node id="4848">
         <label>ComGraphics/irrKlang/plugins/ikpMP3/CIrrKlangAudioStreamLoaderMP3.cpp</label>
         <link refid="CIrrKlangAudioStreamLoaderMP3_8cpp"/>
+      </node>
+      <node id="4851">
+        <label>ComGraphics/irrKlang/plugins/ikpMP3/decoder/bits.c</label>
+        <link refid="bits_8c"/>
+      </node>
+      <node id="4847">
+        <label>ComGraphics/irrKlang/plugins/ikpMP3/CIrrKlangAudioStreamMP3.h</label>
+        <link refid="CIrrKlangAudioStreamMP3_8h"/>
+        <childnode refid="4848" relation="include">
+        </childnode>
+        <childnode refid="4849" relation="include">
+        </childnode>
       </node>
       <node id="4852">
         <label>ComGraphics/irrKlang/plugins/ikpMP3/decoder/mpaudec.c</label>
@@ -41,9 +41,9 @@
         <childnode refid="4850" relation="include">
         </childnode>
       </node>
-      <node id="4851">
-        <label>ComGraphics/irrKlang/plugins/ikpMP3/decoder/bits.c</label>
-        <link refid="bits_8c"/>
+      <node id="4849">
+        <label>ComGraphics/irrKlang/plugins/ikpMP3/CIrrKlangAudioStreamMP3.cpp</label>
+        <link refid="CIrrKlangAudioStreamMP3_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="structMPAuDecContext" prot="public">MPAuDecContext</innerclass>

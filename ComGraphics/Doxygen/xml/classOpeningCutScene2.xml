@@ -922,7 +922,7 @@
         <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
         <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
         <references refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" compoundref="Light_8h" startline="26">Light::spotDirection</references>
-        <references refid="classApplication_1a06a51f73e8d25ad6a4cf668957d52096" compoundref="Application_8cpp" startline="203" endline="207">Application::StartingScene</references>
+        <references refid="classApplication_1a06a51f73e8d25ad6a4cf668957d52096" compoundref="Application_8cpp" startline="208" endline="212">Application::StartingScene</references>
         <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
         <references refid="classOpeningCutScene2_1a1f2690b5cafbffff0a108a107338b82e" compoundref="OpeningCutScene2_8h" startline="146">text1</references>
         <references refid="classOpeningCutScene2_1a306610418c0b8f30271df1c18d8aa9ce" compoundref="OpeningCutScene2_8h" startline="147">text2</references>
@@ -1617,6 +1617,7 @@
         <label>GlobalVariables</label>
         <link refid="classGlobalVariables"/>
         <childnode refid="949" relation="usage">
+          <edgelabel>f_SwitchRotateFour</edgelabel>
           <edgelabel>f_SwitchRotateTwo</edgelabel>
           <edgelabel>f_redScreenTimer</edgelabel>
           <edgelabel>f_SwitchRotateOne</edgelabel>
@@ -1625,8 +1626,7 @@
           <edgelabel>RotateX</edgelabel>
           <edgelabel>f_rotatingTool</edgelabel>
           <edgelabel>f_Worldspin</edgelabel>
-          <edgelabel>f_SuitcaseRotateY</edgelabel>
-          <edgelabel>f_SwitchDebounce</edgelabel>
+          <edgelabel>f_SwitchRotateFive</edgelabel>
           <edgelabel>...</edgelabel>
         </childnode>
         <childnode refid="947" relation="usage">

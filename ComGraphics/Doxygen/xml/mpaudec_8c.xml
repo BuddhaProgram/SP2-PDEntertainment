@@ -6,21 +6,11 @@
     <includes refid="mpegaudio_8h" local="yes">mpegaudio.h</includes>
     <includes refid="mpaudectab_8h" local="yes">mpaudectab.h</includes>
     <incdepgraph>
-      <node id="4842">
-        <label>mpegaudio.h</label>
-        <link refid="mpegaudio_8h"/>
-      </node>
       <node id="4841">
         <label>assert.h</label>
       </node>
       <node id="4833">
         <label>stdlib.h</label>
-      </node>
-      <node id="4838">
-        <label>stddef.h</label>
-      </node>
-      <node id="4835">
-        <label>string.h</label>
       </node>
       <node id="4832">
         <label>internal.h</label>
@@ -44,12 +34,21 @@
         <childnode refid="4841" relation="include">
         </childnode>
       </node>
-      <node id="4843">
-        <label>mpaudectab.h</label>
-        <link refid="mpaudectab_8h"/>
+      <node id="4838">
+        <label>stddef.h</label>
+      </node>
+      <node id="4842">
+        <label>mpegaudio.h</label>
+        <link refid="mpegaudio_8h"/>
+      </node>
+      <node id="4835">
+        <label>string.h</label>
       </node>
       <node id="4837">
         <label>math.h</label>
+      </node>
+      <node id="4836">
+        <label>ctype.h</label>
       </node>
       <node id="4831">
         <label>ComGraphics/irrKlang/plugins/ikpMP3/decoder/mpaudec.c</label>
@@ -65,8 +64,9 @@
         <label>mpaudec.h</label>
         <link refid="mpaudec_8h"/>
       </node>
-      <node id="4836">
-        <label>ctype.h</label>
+      <node id="4843">
+        <label>mpaudectab.h</label>
+        <link refid="mpaudectab_8h"/>
       </node>
       <node id="4834">
         <label>stdio.h</label>

@@ -195,6 +195,7 @@ private:
 	MS modelStack, viewStack, projectionStack;
 
 	Light light[1];
+	void FlickeringLight(double dt);
 
 	//float PlanetRotate;
 	//float AsteroidRotate;

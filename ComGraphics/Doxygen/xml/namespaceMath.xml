@@ -138,11 +138,11 @@
         <referencedby refid="classCamera3_1a576422f8f2d0660f27eed0fc817b2ae5" compoundref="Camera3_8cpp" startline="32" endline="65">Camera3::CameraRotation</referencedby>
         <referencedby refid="MeshBuilder_8cpp_1a452206fa7621781c2b35fcd17b816239" compoundref="MeshBuilder_8cpp" startline="83" endline="86">CircleX</referencedby>
         <referencedby refid="MeshBuilder_8cpp_1aede6465b0e45fc027ae0e8ec50d68ffb" compoundref="MeshBuilder_8cpp" startline="88" endline="91">CircleZ</referencedby>
-        <referencedby refid="classSceneLevelTwo_1a07e6440b5b6ca859dfda27ccb16d3129" compoundref="SceneLevelTwo_8cpp" startline="241" endline="253">SceneLevelTwo::Collision</referencedby>
         <referencedby refid="classSceneStart_1adb6da316beba5b19afe7fad5cc3887ce" compoundref="SceneStart_8cpp" startline="209" endline="221">SceneStart::Collision</referencedby>
-        <referencedby refid="classSceneLevelOneB_1ae689e8e0ff0bc56a3882d27ac0cb0b99" compoundref="SceneLevelOneB_8cpp" startline="292" endline="304">SceneLevelOneB::Collision</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a595fed7869b1c41878bb629e7994cad0" compoundref="SceneLevelOneA_8cpp" startline="298" endline="310">SceneLevelOneA::Collision</referencedby>
-        <referencedby refid="classSceneEnd_1ad14fa4bc25f557a3cd964a35c3b20d01" compoundref="SceneEnd_8cpp" startline="264" endline="276">SceneEnd::Collision</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a07e6440b5b6ca859dfda27ccb16d3129" compoundref="SceneLevelTwo_8cpp" startline="310" endline="322">SceneLevelTwo::Collision</referencedby>
+        <referencedby refid="classSceneEnd_1ad14fa4bc25f557a3cd964a35c3b20d01" compoundref="SceneEnd_8cpp" startline="258" endline="270">SceneEnd::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneB_1ae689e8e0ff0bc56a3882d27ac0cb0b99" compoundref="SceneLevelOneB_8cpp" startline="295" endline="307">SceneLevelOneB::Collision</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a595fed7869b1c41878bb629e7994cad0" compoundref="SceneLevelOneA_8cpp" startline="301" endline="313">SceneLevelOneA::Collision</referencedby>
         <referencedby refid="classMeshBuilder_1aa0fd7de9ef15dbc113a3f84b859ebe95" compoundref="MeshBuilder_8cpp" startline="402" endline="450">MeshBuilder::GenerateTorus</referencedby>
         <referencedby refid="classCamera3_1a021022df76481c9e9fd5c3cf5fe51cf7" compoundref="Camera3_8cpp" startline="67" endline="106">Camera3::HumanControl</referencedby>
         <referencedby refid="classCutSceneOne_1af39ea65e0e56831019520e7d583d4250" compoundref="CutSceneOne_8cpp" startline="24" endline="114">CutSceneOne::Init</referencedby>
@@ -151,12 +151,12 @@
         <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
         <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
         <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
-        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
         <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
-        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
-        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
-        <referencedby refid="classSceneLevelTwo_1ab1de6c7dd72b0416fdcc79040db55503" compoundref="SceneLevelTwo_8cpp" startline="255" endline="267">SceneLevelTwo::SpecialCollision</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="39" endline="229">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="36" endline="233">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="39" endline="239">SceneEnd::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="25" endline="231">SceneLevelOneB::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ab1de6c7dd72b0416fdcc79040db55503" compoundref="SceneLevelTwo_8cpp" startline="324" endline="336">SceneLevelTwo::SpecialCollision</referencedby>
         <referencedby refid="MeshBuilder_8cpp_1aef75a362a1bdb0980ed4abcf8241da69" compoundref="MeshBuilder_8cpp" startline="171" endline="174">SphereX</referencedby>
         <referencedby refid="MeshBuilder_8cpp_1af7655f1bbe33f114c8c2457bb80d8d56" compoundref="MeshBuilder_8cpp" startline="176" endline="179">SphereY</referencedby>
         <referencedby refid="MeshBuilder_8cpp_1a635e807e82196e114ec59993fe28838a" compoundref="MeshBuilder_8cpp" startline="181" endline="184">SphereZ</referencedby>
@@ -197,10 +197,10 @@
         <location file="Common/Source/MyMath.h" line="64" column="1" bodyfile="Common/Source/MyMath.h" bodystart="64" bodyend="67"/>
         <references refid="namespaceMath_1af8c064b6b688407b9999ee677efd715d" compoundref="MyMath_8h" startline="28">PI</references>
         <referencedby refid="Misc_8cpp_1a15f09d45e07d38822b5ecf228e503e36" compoundref="Misc_8cpp" startline="11" endline="20">getAngle</referencedby>
-        <referencedby refid="classSceneLevelOneB_1adf19187831a508b5541fdb085bfef099" compoundref="SceneLevelOneBRenders_8cpp" startline="393" endline="428">SceneLevelOneB::RenderBoss</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf19187831a508b5541fdb085bfef099" compoundref="SceneLevelOneBRenders_8cpp" startline="387" endline="422">SceneLevelOneB::RenderBoss</referencedby>
         <referencedby refid="classSceneEnd_1aa7eb2cf11f655cf77cc1c854c26e6f57" compoundref="SceneEndRenders_8cpp" startline="385" endline="423">SceneEnd::RenderBoss</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a5c7b2f57a7e884e4beed73a4fcbdbbb7" compoundref="SceneLevelOneARenders_8cpp" startline="352" endline="369">SceneLevelOneA::RenderGhost</referencedby>
-        <referencedby refid="classSceneLevelOneB_1af05b4b11f0ad4afd0adf8883135e4136" compoundref="SceneLevelOneBRenders_8cpp" startline="374" endline="391">SceneLevelOneB::RenderGhost</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a5c7b2f57a7e884e4beed73a4fcbdbbb7" compoundref="SceneLevelOneARenders_8cpp" startline="344" endline="361">SceneLevelOneA::RenderGhost</referencedby>
+        <referencedby refid="classSceneLevelOneB_1af05b4b11f0ad4afd0adf8883135e4136" compoundref="SceneLevelOneBRenders_8cpp" startline="368" endline="385">SceneLevelOneB::RenderGhost</referencedby>
         <referencedby refid="classSceneEnd_1a9d9231ad28d1067c1c951cf37ef16db6" compoundref="SceneEndRenders_8cpp" startline="363" endline="383">SceneEnd::RenderMobs</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespaceMath_1a6cc12fd546c2f3dbebade9e4234b5f7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">

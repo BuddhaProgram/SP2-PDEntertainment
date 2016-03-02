@@ -1,9 +1,11 @@
 <map id="MobGhost::setSpawnGhost" name="MobGhost::setSpawnGhost">
 <area shape="rect" id="node2" href="$classSceneLevelOneA.html#a7336a77a93113ea8d9d5f722229bb020" title="SceneLevelOneA::Init" alt="" coords="261,5,408,32"/>
-<area shape="rect" id="node3" href="$classSceneLevelOneB.html#a49faf352ee609e184dd144b12f6b5c5e" title="SceneLevelOneB::Init" alt="" coords="261,56,408,83"/>
-<area shape="rect" id="node4" href="$classSceneEnd.html#a3b35476550d40f16fc4398dc1e954c9c" title="SceneEnd::Init" alt="" coords="281,107,388,133"/>
+<area shape="rect" id="node3" href="$classSceneEnd.html#a3b35476550d40f16fc4398dc1e954c9c" title="SceneEnd::Init" alt="" coords="281,56,388,83"/>
+<area shape="rect" id="node4" href="$classSceneLevelOneB.html#a49faf352ee609e184dd144b12f6b5c5e" title="SceneLevelOneB::Init" alt="" coords="261,107,408,133"/>
 <area shape="rect" id="node5" href="$classSceneEnd.html#ab29fc3e6d0e1ac757a922f7592141bd4" title="SceneEnd::ResetMobs" alt="" coords="257,157,413,184"/>
 <area shape="rect" id="node8" href="$classSceneLevelOneB.html#a7d2a46122596c3f7040c275a1b5e8b23" title="SceneLevelOneB::ResetSame\lScene" alt="" coords="236,209,433,250"/>
-<area shape="rect" id="node6" href="$classSceneEnd.html#a19e0e73278da683f838974d2f40f55e6" title="SceneEnd::MobCheck" alt="" coords="481,157,633,184"/>
-<area shape="rect" id="node7" href="$classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="681,157,812,184"/>
+<area shape="rect" id="node6" href="$classSceneEnd.html#a19e0e73278da683f838974d2f40f55e6" title="SceneEnd::MobCheck" alt="" coords="495,157,647,184"/>
+<area shape="rect" id="node7" href="$classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="729,157,860,184"/>
+<area shape="rect" id="node9" href="$classSceneLevelOneB.html#ac92af3bf7c49f02f6e444af93d940150" title="SceneLevelOneB::Continue\lGameOrNot" alt="" coords="481,209,661,250"/>
+<area shape="rect" id="node10" href="$classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="709,216,880,243"/>
 </map>

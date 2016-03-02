@@ -4,15 +4,15 @@
     <compoundname>GlobalVariables.cpp</compoundname>
     <includes refid="GlobalVariables_8h" local="yes">GlobalVariables.h</includes>
     <incdepgraph>
+      <node id="5531">
+        <label>GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+      </node>
       <node id="5530">
         <label>ComGraphics/Source/GlobalVariables.cpp</label>
         <link refid="GlobalVariables.cpp"/>
         <childnode refid="5531" relation="include">
         </childnode>
-      </node>
-      <node id="5531">
-        <label>GlobalVariables.h</label>
-        <link refid="GlobalVariables_8h"/>
       </node>
     </incdepgraph>
     <briefdescription>
@@ -36,21 +36,23 @@
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a9cfbae7b5e9bb6764b6ebd6b815bc482" kindref="member">f_SwitchRotateOne</ref><sp/>=<sp/>0.0f;</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a0d47efa9693f6eeec3cdffe7ad479bd4" kindref="member">f_SwitchRotateTwo</ref><sp/>=<sp/>0.0f;</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a8970d821ca7c3e5a72db6992a1fc9210" kindref="member">f_SwitchRotateThree</ref><sp/>=<sp/>0.0f;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>++i)</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1aee2b21c3601cb02595c635d50d714667" kindref="member">b_SwitchAnimate</ref>[i]<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a5f9907e937b1bb9b3723e7525837964e" kindref="member">f_redScreenTimer</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a77e4e7b28e32abe7c891dbb712ad0c67" kindref="member">f_SwitchRotateFour</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a1e131bce5d58bb8cd79cf2bb811b9bb0" kindref="member">f_SwitchRotateFive</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>++i)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1aee2b21c3601cb02595c635d50d714667" kindref="member">b_SwitchAnimate</ref>[i]<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a91cf38ffb1ec77fe9c7267826d9250f1" kindref="member">f_SuitcaseRotateY</ref><sp/>=<sp/>0.0f;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28" refid="classGlobalVariables_1ae39d8e11c0dcc06db7bfde5d8772aae2" refkind="member"><highlight class="normal"><ref refid="classGlobalVariables_1ae39d8e11c0dcc06db7bfde5d8772aae2" kindref="member">GlobalVariables::~GlobalVariables</ref>()</highlight></codeline>
-<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a5f9907e937b1bb9b3723e7525837964e" kindref="member">f_redScreenTimer</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGlobalVariables_1a91cf38ffb1ec77fe9c7267826d9250f1" kindref="member">f_SuitcaseRotateY</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classGlobalVariables_1ae39d8e11c0dcc06db7bfde5d8772aae2" refkind="member"><highlight class="normal"><ref refid="classGlobalVariables_1ae39d8e11c0dcc06db7bfde5d8772aae2" kindref="member">GlobalVariables::~GlobalVariables</ref>()</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="ComGraphics/Source/GlobalVariables.cpp"/>
   </compounddef>

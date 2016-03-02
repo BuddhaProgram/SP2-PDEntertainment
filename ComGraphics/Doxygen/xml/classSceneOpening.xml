@@ -918,9 +918,9 @@
         </inbodydescription>
         <location file="ComGraphics/Source/SceneOpening.h" line="89" column="1" bodyfile="ComGraphics/Source/SceneOpening.cpp" bodystart="166" bodyend="173"/>
         <references refid="classSceneOpening_1a2f845d53bb355f86ba3f82d8cc9f73ea" compoundref="SceneOpening_8h" startline="91">App</references>
-        <references refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" compoundref="Application_8cpp" startline="189" endline="195">Application::Exit</references>
+        <references refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" compoundref="Application_8cpp" startline="194" endline="200">Application::Exit</references>
         <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="42" endline="45">Application::IsKeyPressed</references>
-        <references refid="classApplication_1a9417ed2dddc2277e1989cc8614e3d0c9" compoundref="Application_8cpp" startline="238" endline="242">Application::OpenCutScene</references>
+        <references refid="classApplication_1a9417ed2dddc2277e1989cc8614e3d0c9" compoundref="Application_8cpp" startline="243" endline="247">Application::OpenCutScene</references>
         <references refid="classSceneOpening_1ac2e0ebde790965ac1b903c9ef7603505" compoundref="SceneOpening_8h" startline="84">ui_ChooseOption</references>
         <referencedby refid="classSceneOpening_1af3ca641709d7608947d8ae81b273b089" compoundref="SceneOpening_8cpp" startline="175" endline="192">Update</referencedby>
       </memberdef>
@@ -1022,6 +1022,7 @@
         <label>GlobalVariables</label>
         <link refid="classGlobalVariables"/>
         <childnode refid="1156" relation="usage">
+          <edgelabel>f_SwitchRotateFour</edgelabel>
           <edgelabel>f_SwitchRotateTwo</edgelabel>
           <edgelabel>f_redScreenTimer</edgelabel>
           <edgelabel>f_SwitchRotateOne</edgelabel>
@@ -1030,8 +1031,7 @@
           <edgelabel>RotateX</edgelabel>
           <edgelabel>f_rotatingTool</edgelabel>
           <edgelabel>f_Worldspin</edgelabel>
-          <edgelabel>f_SuitcaseRotateY</edgelabel>
-          <edgelabel>f_SwitchDebounce</edgelabel>
+          <edgelabel>f_SwitchRotateFive</edgelabel>
           <edgelabel>...</edgelabel>
         </childnode>
         <childnode refid="1154" relation="usage">

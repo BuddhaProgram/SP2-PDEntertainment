@@ -1222,7 +1222,7 @@
         <references refid="classCredits_1ab9308fc4697c492c91dc7c564942386e" compoundref="Credits_8h" startline="111">move4</references>
         <references refid="classCredits_1a7c98096976139db4b17a94e533b243c8" compoundref="Credits_8h" startline="112">move5</references>
         <references refid="classCredits_1a23183acd1f85cb522c9ccf853e281014" compoundref="Credits_8h" startline="113">move6</references>
-        <references refid="classApplication_1adeed1a6fea5cbe66da30dfe5b9651b7e" compoundref="Application_8cpp" startline="197" endline="201">Application::OpenGame</references>
+        <references refid="classApplication_1adeed1a6fea5cbe66da30dfe5b9651b7e" compoundref="Application_8cpp" startline="202" endline="206">Application::OpenGame</references>
         <references refid="classCredits_1a7258889a122ff5a8a4d1a1c70b981805" compoundref="Credits_8h" startline="115">second</references>
         <references refid="classCredits_1a2c2534bb184553454dbe40d089f0682c" compoundref="Credits_8h" startline="102">secondcredits</references>
         <references refid="classCredits_1adfbe632c46670dc94eecd2139dae7b0b" compoundref="Credits_8h" startline="116">third</references>
@@ -1338,6 +1338,7 @@
         <label>GlobalVariables</label>
         <link refid="classGlobalVariables"/>
         <childnode refid="698" relation="usage">
+          <edgelabel>f_SwitchRotateFour</edgelabel>
           <edgelabel>f_SwitchRotateTwo</edgelabel>
           <edgelabel>f_redScreenTimer</edgelabel>
           <edgelabel>f_SwitchRotateOne</edgelabel>
@@ -1346,8 +1347,7 @@
           <edgelabel>RotateX</edgelabel>
           <edgelabel>f_rotatingTool</edgelabel>
           <edgelabel>f_Worldspin</edgelabel>
-          <edgelabel>f_SuitcaseRotateY</edgelabel>
-          <edgelabel>f_SwitchDebounce</edgelabel>
+          <edgelabel>f_SwitchRotateFive</edgelabel>
           <edgelabel>...</edgelabel>
         </childnode>
         <childnode refid="696" relation="usage">

@@ -7,6 +7,14 @@
       <node id="7608">
         <label>list</label>
       </node>
+      <node id="7606">
+        <label>ToolUI.h</label>
+        <link refid="ToolUI_8h"/>
+        <childnode refid="7607" relation="include">
+        </childnode>
+        <childnode refid="7608" relation="include">
+        </childnode>
+      </node>
       <node id="7605">
         <label>ComGraphics/Source/ToolUI.cpp</label>
         <link refid="ToolUI.cpp"/>
@@ -15,14 +23,6 @@
       </node>
       <node id="7607">
         <label>vector</label>
-      </node>
-      <node id="7606">
-        <label>ToolUI.h</label>
-        <link refid="ToolUI_8h"/>
-        <childnode refid="7607" relation="include">
-        </childnode>
-        <childnode refid="7608" relation="include">
-        </childnode>
       </node>
     </incdepgraph>
     <briefdescription>

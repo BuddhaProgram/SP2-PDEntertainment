@@ -1,0 +1,4 @@
+<map id="SceneLevelTwo::RenderPuzzle" name="SceneLevelTwo::RenderPuzzle">
+<area shape="rect" id="node2" href="$classSceneLevelTwo.html#a63a16f9a1a71dd298d6e45edaa5efef4" title="SceneLevelTwo::Render" alt="" coords="253,5,413,32"/>
+<area shape="rect" id="node3" href="$classSceneLevelTwo.html#a51b7e15c60d59ae388400a420efbbae5" title="SceneLevelTwo::Update" alt="" coords="253,56,413,83"/>
+</map>
