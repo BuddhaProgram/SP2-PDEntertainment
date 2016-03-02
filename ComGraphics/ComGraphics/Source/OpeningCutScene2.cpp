@@ -150,9 +150,11 @@ void OpeningCutScene2::Reset()
 
 void OpeningCutScene2::Update(double dt)
 {
+	Variables.f_Worldspin += (float)(dt);
+
+	//camera.Update(dt);
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
-	Variables.f_Worldspin += (float)(dt);
 
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);

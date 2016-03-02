@@ -15,7 +15,10 @@
 
 SceneLevelOneB::SceneLevelOneB()
 {
+	countdown = 0;
     CrosshairHit = false;
+	JumpScare = false;
+	timer = false;
 }
 
 SceneLevelOneB::~SceneLevelOneB()
@@ -225,6 +228,7 @@ void SceneLevelOneB::Init()
 
     PuzzleGhost1.setSpawnGhost(24, 31);
     PuzzleGhost2.setSpawnGhost(30, 31);
+	ScareGhost.setSpawnGhost(-18.5, 38.75);
     BossOne.setSpawnBossOne(-30, 55);
 
 	Explorer::instance()->SavePoint = camera.position;
@@ -268,12 +272,19 @@ void SceneLevelOneB::ResetSameScene()
     PuzzleGhost1.health = 8;
     PuzzleGhost2.health = 8;
     BossOne.health = 32;
+	ScareGhost.health = 8;
+	ScareGhost.setSpawnGhost(-18.5, 38.75);
     PuzzleGhost1.setSpawnGhost(24, 31);
     PuzzleGhost2.setSpawnGhost(30, 31);
     BossOne.setSpawnBossOne(-30, 55);
     PuzzleGhost1.Spawn = false;
     PuzzleGhost2.Spawn = false;
     BossOne.Spawn = false;
+	ScareGhost.Spawn = false;
+
+	countdown = 0;
+	JumpScare = false;
+	timer = false;
 }
 
 void SceneLevelOneB::ResetAll()
@@ -731,11 +742,17 @@ void SceneLevelOneB::Update(double dt)
     if (Application::IsKeyPressed('4'))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
-    camera.Update(dt);
+	if (!JumpScare)
+	{
+		camera.Update(dt);
+	}
+
+
     checkPlayerPosMisc();
 	checkDoor1();
 	checkDoor2();
     ElevatorCheck();
+	RenderJumpScare();
 
 	//checkDoor3();
 	PuzzleOneSwitchCheck(dt);
@@ -790,9 +807,10 @@ void SceneLevelOneB::Update(double dt)
    
 	PickUpSuitcaseInteraction();
 
-    PuzzleGhost1.checkPlayerPos(dt, 1,1,camera.position.x, camera.position.z);
-    PuzzleGhost2.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);
-    BossOne.checkPlayerPos(dt, 1, 1, camera.position.x, camera.position.z);
+    PuzzleGhost1.checkPlayerPos(dt, 3,1,camera.position.x, camera.position.z);
+    PuzzleGhost2.checkPlayerPos(dt, 3, 1, camera.position.x, camera.position.z);
+	ScareGhost.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
+    BossOne.checkPlayerPos(dt, 3, 1, camera.position.x, camera.position.z);
 
     if (PuzzleGhost1.Spawn)
     {
@@ -808,7 +826,10 @@ void SceneLevelOneB::Update(double dt)
         BossOne.move(dt, 15);
         Collision(BossOne.MobPosX - 20, BossOne.MobPosX + 20, BossOne.MobPosZ - 20, BossOne.MobPosZ + 20);
     }
-
+	if (ScareGhost.Spawn)
+	{
+		ScareGhost.move(dt, 25);
+	}
    /* std::cout << "Ghost1: " << PuzzleGhost1.Spawn << std::endl;
     std::cout << "Ghost2: " << PuzzleGhost2.Spawn << std::endl;*/
 
@@ -1022,6 +1043,10 @@ void SceneLevelOneB::Render()
     {
         RenderBoss(BossOne.MobPosX, BossOne.MobPosZ);
     }
+	if (ScareGhost.Spawn)
+	{
+		RenderGhost(ScareGhost.MobPosX, ScareGhost.MobPosZ);
+	}
 
 	if (Explorer::instance()->isDead == false)
 	{
@@ -1046,6 +1071,13 @@ void SceneLevelOneB::Render()
         RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(1.0f, 0.0f, 0.0f), 4, 9.8f, 7);
 
     }
+
+	if (JumpScare)
+	{
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_GHOST1], 50, 50, 50, -90, 0, 1, 0, 0.8f, 0, 0, false);
+		modelStack.PopMatrix();
+	}
 
 	for (float i = 0; i < Explorer::instance()->PlayerLife; ++i)
 		RenderModelOnScreen(meshList[GEO_HEALTHICON], 3.f, 3.f, 3.f, 90, 1, 0, 0, (22.f + i), 18.5f, 1.0f, false);

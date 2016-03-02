@@ -30,6 +30,10 @@ SceneLevelTwo::SceneLevelTwo()
 	puzzling = false;
 	transSpikeWall2 = 0;
 	hitWall = false;
+
+	countdown = 0;
+	JumpScare = false;
+	timer = false;
 }
 
 SceneLevelTwo::~SceneLevelTwo()
@@ -181,6 +185,9 @@ void SceneLevelTwo::Init()
     meshList[GEO_PORTRAIT] = MeshBuilder::GenerateOBJ("Portrait", "OBJ//Portrait.obj");
     meshList[GEO_PORTRAIT]->textureID = LoadTGA("Image//Scream.tga");
 
+	meshList[GEO_GHOST1] = MeshBuilder::GenerateOBJ("Alien", "OBJ//AlienOne.obj");
+	meshList[GEO_GHOST1]->textureID = LoadTGA("Image//Alien1.tga");
+
     // Tools Interface and It's Icons
 
     meshList[GEO_FACILITYFLOOR] = MeshBuilder::GenerateQuad("Facility Floor", Color(1, 1, 1));
@@ -226,6 +233,7 @@ void SceneLevelTwo::Init()
     //scene changer inits.............
     //scene changer init end.............
 	Explorer::instance()->SavePoint = camera.position;
+	ScareGhost.setSpawnGhost(20, 45);
 }
 
 static float LSPEED = 10.f;
@@ -291,6 +299,14 @@ void SceneLevelTwo::Reset()
 	}
 
 	activateDoor1 = false;
+
+	ScareGhost.setSpawnGhost(20, 45);
+	ScareGhost.health = 8;
+	ScareGhost.Spawn = false;
+
+	countdown = 0;
+	JumpScare = false;
+	timer = false;
 }
 
 void SceneLevelTwo::ResetAll()
@@ -1000,13 +1016,21 @@ void SceneLevelTwo::Update(double dt)
 	SwitchCollisionChecker();
 	RenderPuzzle();
 	Switches.SwitchPuzzleTwo();
-
+	ScareGhost.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
 	SomeUpdates(dt);
-	camera.Update(dt);
+	RenderJumpScare();
+	if (!JumpScare)
+	{
+		camera.Update(dt);
+	}
 
 	if (Application::IsKeyPressed('Z'))
 	{
 		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
+	}
+	if (ScareGhost.Spawn)
+	{
+		ScareGhost.move(dt, 25);
 	}
 }
 
@@ -1194,6 +1218,10 @@ void SceneLevelTwo::Render()
 	RenderTraps();
 
 	RenderPuzzle();
+	if (ScareGhost.Spawn)
+	{
+		RenderGhost1();
+	}
 
     RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
     RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
@@ -1226,6 +1254,13 @@ void SceneLevelTwo::Render()
 
 	for (float i = 0; i < Explorer::instance()->PlayerLife; ++i)
 		RenderModelOnScreen(meshList[GEO_HEALTHICON], 3.f, 3.f, 3.f, 90, 1, 0, 0, (22.f + i), 18.5f, 1.0f, false);
+
+	if (JumpScare)
+	{
+		modelStack.PushMatrix();
+		RenderModelOnScreen(meshList[GEO_GHOST1], 50, 50, 50, -90, 0, 1, 0, 0.8f, 0, 0, false);
+		modelStack.PopMatrix();
+	}
 }
 
 void SceneLevelTwo::Exit()

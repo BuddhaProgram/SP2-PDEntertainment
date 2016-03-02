@@ -175,15 +175,17 @@ void SceneLevelOneA::checkDoor1(double dt)
 		{
 			Key_1 = true;
 		}
-		if (Key1Active)
-		{
-			displayInteract1 = false;
-		}
+		
 	}
 	else
 	{
 		Key1Active = false;
 	}
+	if (Key_1)
+	{
+		Key1Active = false;
+	}
+
     if (Key_1)
     {
         if (SwitchRot < 135.f)
