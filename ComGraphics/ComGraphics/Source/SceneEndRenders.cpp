@@ -394,9 +394,6 @@ void SceneEnd::RenderBoss(float xpos, float zpos)
     {
         rotGhost = Math::RadianToDegree(atan(view.x / view.z));
     }
-   
-        std::cout << "Boss" << std::endl;
-        //std::cout << BossOne.MobPosX << BossOne.MobPosZ << std::endl;
         modelStack.PushMatrix();
         modelStack.Translate(xpos, 5, zpos);
         modelStack.Scale(6, 6, 6);

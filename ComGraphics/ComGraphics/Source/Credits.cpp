@@ -338,9 +338,6 @@ void Credits::RenderMovingCredits(double dt)
 			}
 		}
 	}
-
-	std::cout << countdown << std::endl;
-
 }
 
 void Credits::Update(double dt)

@@ -30,7 +30,6 @@ bool misc::hitting(float distance, float mobx, float mobz, float AOA, float camX
 		if ((getAngle(view, Vector3(mobx,10,mobz) - position)) <= AOA) 
 		{
 			result = true;
-            std::cout << "target" << std::endl;
 		}
 	}
 
