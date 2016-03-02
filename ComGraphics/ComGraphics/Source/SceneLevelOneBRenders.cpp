@@ -465,8 +465,7 @@ void SceneLevelOneB::MobsSpawn()
     {
         std::cout << "boss" << std::endl;
         BossOne.Spawn = true;
-    }
-        
+    }   
 }
 
 void SceneLevelOneB::AnimationCheck(double dt)
