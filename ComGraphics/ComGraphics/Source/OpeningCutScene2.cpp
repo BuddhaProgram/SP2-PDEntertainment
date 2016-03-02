@@ -137,6 +137,23 @@ void OpeningCutScene2::Init()
 	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
+	 rotateCamX = false;
+	 MoveCamera1 = 0;
+	 camera_check1 = true;
+	 camera_check2 = false;
+	 camera_check3 = false;
+	 rotateCamY = false;
+	 RotateCamera = 0;
+
+	 wokeUp = true;
+	 check1 = true;
+	 check2 = false;
+	 check3 = false;
+	 eyeOpening = 0;
+
+	 text1 = false;
+	 text2 = false;
+
 	// All Switches Debounce Key
 }
 

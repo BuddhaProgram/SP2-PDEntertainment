@@ -231,7 +231,7 @@ void Credits::RenderMovingCredits(double dt)
 			{
 				timer = false;
 				move1 = true;
-				if (firstcredits <= -10)
+				if (firstcredits <= -11)
 				{
 					first = false;
 					second = true;
