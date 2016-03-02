@@ -1,4 +1,5 @@
 <map id="SceneLevelTwo::Collision" name="SceneLevelTwo::Collision">
-<area shape="rect" id="node2" href="$classSceneLevelTwo.html#a57e4fa45b2b3e694d0742e631bfd7d45" title="SceneLevelTwo::SomeUpdates" alt="" coords="221,5,423,32"/>
-<area shape="rect" id="node3" href="$classSceneLevelTwo.html#a51b7e15c60d59ae388400a420efbbae5" title="SceneLevelTwo::Update" alt="" coords="471,31,631,57"/>
+<area shape="rect" id="node2" href="$classSceneLevelTwo.html#a57e4fa45b2b3e694d0742e631bfd7d45" title="SceneLevelTwo::SomeUpdates" alt="" coords="224,5,425,32"/>
+<area shape="rect" id="node3" href="$classSceneLevelTwo.html#a51b7e15c60d59ae388400a420efbbae5" title="SceneLevelTwo::Update" alt="" coords="476,56,636,83"/>
+<area shape="rect" id="node4" href="$classSceneLevelTwo.html#ab3329960ed032b40f42203698342a945" title="SceneLevelTwo::SwitchCollision\lChecker" alt="" coords="221,107,428,149"/>
 </map>

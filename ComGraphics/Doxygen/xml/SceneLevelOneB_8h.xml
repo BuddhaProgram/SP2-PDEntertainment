@@ -19,29 +19,33 @@
       <node id="6991">
         <label>list</label>
       </node>
-      <node id="6985">
-        <label>Scene.h</label>
-        <link refid="Scene_8h"/>
-        <childnode refid="6986" relation="include">
+      <node id="6989">
+        <label>ToolUI.h</label>
+        <link refid="ToolUI_8h"/>
+        <childnode refid="6990" relation="include">
         </childnode>
-        <childnode refid="6987" relation="include">
-        </childnode>
-        <childnode refid="6988" relation="include">
-        </childnode>
-        <childnode refid="6999" relation="include">
-        </childnode>
-      </node>
-      <node id="6992">
-        <label>Vector3.h</label>
-        <link refid="Vector3_8h"/>
-        <childnode refid="6993" relation="include">
-        </childnode>
-        <childnode refid="6998" relation="include">
+        <childnode refid="6991" relation="include">
         </childnode>
       </node>
       <node id="7003">
         <label>Material.h</label>
         <link refid="Material_8h"/>
+      </node>
+      <node id="6987">
+        <label>SwitchLightPuzzle.h</label>
+        <link refid="SwitchLightPuzzle_8h"/>
+      </node>
+      <node id="6993">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="6994" relation="include">
+        </childnode>
+        <childnode refid="6995" relation="include">
+        </childnode>
+        <childnode refid="6996" relation="include">
+        </childnode>
+        <childnode refid="6997" relation="include">
+        </childnode>
       </node>
       <node id="7001">
         <label>Camera.h</label>
@@ -58,84 +62,35 @@
         <childnode refid="7001" relation="include">
         </childnode>
       </node>
-      <node id="6999">
-        <label>Misc.h</label>
-        <link refid="Misc_8h"/>
-        <childnode refid="6992" relation="include">
-        </childnode>
-      </node>
       <node id="7004">
         <label>string</label>
       </node>
-      <node id="7002">
-        <label>Mesh.h</label>
-        <link refid="Mesh_8h"/>
-        <childnode refid="7003" relation="include">
+      <node id="6992">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="6993" relation="include">
         </childnode>
-        <childnode refid="7004" relation="include">
-        </childnode>
-      </node>
-      <node id="6995">
-        <label>exception</label>
-      </node>
-      <node id="7013">
-        <label>MobBossOne.h</label>
-        <link refid="MobBossOne_8h"/>
-        <childnode refid="7012" relation="include">
-        </childnode>
-      </node>
-      <node id="6996">
-        <label>ctime</label>
-      </node>
-      <node id="7006">
-        <label>stack</label>
-      </node>
-      <node id="6990">
-        <label>vector</label>
-      </node>
-      <node id="7009">
-        <label>Vertex.h</label>
-        <link refid="Vertex_8h"/>
-        <childnode refid="6992" relation="include">
-        </childnode>
-      </node>
-      <node id="7012">
-        <label>HostileMob.h</label>
-        <link refid="HostileMob_8h"/>
-        <childnode refid="6988" relation="include">
-        </childnode>
-        <childnode refid="6992" relation="include">
+        <childnode refid="6998" relation="include">
         </childnode>
       </node>
       <node id="6986">
         <label>GlobalVariables.h</label>
         <link refid="GlobalVariables_8h"/>
       </node>
-      <node id="7011">
-        <label>MobGhost.h</label>
-        <link refid="MobGhost_8h"/>
-        <childnode refid="7012" relation="include">
+      <node id="6985">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+        <childnode refid="6986" relation="include">
+        </childnode>
+        <childnode refid="6987" relation="include">
+        </childnode>
+        <childnode refid="6988" relation="include">
+        </childnode>
+        <childnode refid="6999" relation="include">
         </childnode>
       </node>
-      <node id="7007">
-        <label>Mtx44.h</label>
-        <link refid="Mtx44_8h"/>
-        <childnode refid="6993" relation="include">
-        </childnode>
-        <childnode refid="6992" relation="include">
-        </childnode>
-      </node>
-      <node id="6997">
-        <label>cstdlib</label>
-      </node>
-      <node id="6998">
-        <label>iostream</label>
-      </node>
-      <node id="7008">
-        <label>Light.h</label>
-        <link refid="Light_8h"/>
-        <childnode refid="7009" relation="include">
-        </childnode>
+      <node id="6995">
+        <label>exception</label>
       </node>
       <node id="6984">
         <label>ComGraphics/Source/SceneLevelOneB.h</label>
@@ -159,14 +114,6 @@
         <childnode refid="7013" relation="include">
         </childnode>
       </node>
-      <node id="7005">
-        <label>MatrixStack.h</label>
-        <link refid="MatrixStack_8h"/>
-        <childnode refid="7006" relation="include">
-        </childnode>
-        <childnode refid="7007" relation="include">
-        </childnode>
-      </node>
       <node id="6988">
         <label>Explorer.h</label>
         <link refid="Explorer_8h"/>
@@ -175,13 +122,53 @@
         <childnode refid="6992" relation="include">
         </childnode>
       </node>
-      <node id="6989">
-        <label>ToolUI.h</label>
-        <link refid="ToolUI_8h"/>
-        <childnode refid="6990" relation="include">
+      <node id="7005">
+        <label>MatrixStack.h</label>
+        <link refid="MatrixStack_8h"/>
+        <childnode refid="7006" relation="include">
         </childnode>
-        <childnode refid="6991" relation="include">
+        <childnode refid="7007" relation="include">
         </childnode>
+      </node>
+      <node id="7008">
+        <label>Light.h</label>
+        <link refid="Light_8h"/>
+        <childnode refid="7009" relation="include">
+        </childnode>
+      </node>
+      <node id="6999">
+        <label>Misc.h</label>
+        <link refid="Misc_8h"/>
+        <childnode refid="6992" relation="include">
+        </childnode>
+      </node>
+      <node id="6996">
+        <label>ctime</label>
+      </node>
+      <node id="7006">
+        <label>stack</label>
+      </node>
+      <node id="6990">
+        <label>vector</label>
+      </node>
+      <node id="7007">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="6993" relation="include">
+        </childnode>
+        <childnode refid="6992" relation="include">
+        </childnode>
+      </node>
+      <node id="7012">
+        <label>HostileMob.h</label>
+        <link refid="HostileMob_8h"/>
+        <childnode refid="6988" relation="include">
+        </childnode>
+        <childnode refid="6992" relation="include">
+        </childnode>
+      </node>
+      <node id="6997">
+        <label>cstdlib</label>
       </node>
       <node id="7010">
         <label>OBJAnimation.h</label>
@@ -189,39 +176,48 @@
         <childnode refid="7000" relation="include">
         </childnode>
       </node>
-      <node id="6987">
-        <label>SwitchLightPuzzle.h</label>
-        <link refid="SwitchLightPuzzle_8h"/>
+      <node id="6998">
+        <label>iostream</label>
       </node>
-      <node id="6993">
-        <label>MyMath.h</label>
-        <link refid="MyMath_8h"/>
-        <childnode refid="6994" relation="include">
+      <node id="7011">
+        <label>MobGhost.h</label>
+        <link refid="MobGhost_8h"/>
+        <childnode refid="7012" relation="include">
         </childnode>
-        <childnode refid="6995" relation="include">
+      </node>
+      <node id="7002">
+        <label>Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="7003" relation="include">
         </childnode>
-        <childnode refid="6996" relation="include">
+        <childnode refid="7004" relation="include">
         </childnode>
-        <childnode refid="6997" relation="include">
+      </node>
+      <node id="7013">
+        <label>MobBossOne.h</label>
+        <link refid="MobBossOne_8h"/>
+        <childnode refid="7012" relation="include">
+        </childnode>
+      </node>
+      <node id="7009">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="6992" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="7018">
-        <label>ComGraphics/Source/SceneLevelOneBRenders.cpp</label>
-        <link refid="SceneLevelOneBRenders_8cpp"/>
-      </node>
-      <node id="7017">
-        <label>ComGraphics/Source/SceneLevelOneB.cpp</label>
-        <link refid="SceneLevelOneB_8cpp"/>
+      <node id="7015">
+        <label>ComGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
       </node>
       <node id="7016">
         <label>ComGraphics/Source/MapRender.cpp</label>
         <link refid="MapRender_8cpp"/>
       </node>
-      <node id="7015">
-        <label>ComGraphics/Source/Application.cpp</label>
-        <link refid="Application_8cpp"/>
+      <node id="7018">
+        <label>ComGraphics/Source/SceneLevelOneBRenders.cpp</label>
+        <link refid="SceneLevelOneBRenders_8cpp"/>
       </node>
       <node id="7014">
         <label>ComGraphics/Source/SceneLevelOneB.h</label>
@@ -234,6 +230,10 @@
         </childnode>
         <childnode refid="7018" relation="include">
         </childnode>
+      </node>
+      <node id="7017">
+        <label>ComGraphics/Source/SceneLevelOneB.cpp</label>
+        <link refid="SceneLevelOneB_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classSceneLevelOneB" prot="public">SceneLevelOneB</innerclass>
@@ -474,7 +474,7 @@
 <codeline lineno="230" refid="classSceneLevelOneB_1a47e3f7ab5477f2a570e6bf8c47c4cf6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMobGhost" kindref="compound">MobGhost</ref><sp/><ref refid="classSceneLevelOneB_1a47e3f7ab5477f2a570e6bf8c47c4cf6f" kindref="member">ElevatorGhost2</ref>;</highlight></codeline>
 <codeline lineno="231" refid="classSceneLevelOneB_1a64164f80d860c125be60da40cfa96661" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMobGhost" kindref="compound">MobGhost</ref><sp/><ref refid="classSceneLevelOneB_1a64164f80d860c125be60da40cfa96661" kindref="member">ElevatorGhost3</ref>;</highlight></codeline>
 <codeline lineno="232" refid="classSceneLevelOneB_1a464ad9fd3c9eb5a5038abcd5ecc67a29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMobBossOne" kindref="compound">MobBossOne</ref><sp/><ref refid="classSceneLevelOneB_1a464ad9fd3c9eb5a5038abcd5ecc67a29" kindref="member">BossOne</ref>;</highlight></codeline>
-<codeline lineno="233" refid="classSceneLevelOneB_1a50c225c9d8ab7a71f23382334125eb82" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSceneLevelOneB_1a50c225c9d8ab7a71f23382334125eb82" kindref="member">CrosshairHit</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="233" refid="classSceneLevelOneB_1a50c225c9d8ab7a71f23382334125eb82" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSceneLevelOneB_1a50c225c9d8ab7a71f23382334125eb82" kindref="member">CrosshairHit</ref>;</highlight></codeline>
 <codeline lineno="234"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"></highlight></codeline>
 <codeline lineno="236"><highlight class="normal"></highlight></codeline>

@@ -61,7 +61,7 @@ Collaboration diagram for Explorer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classExplorer__coll__graph.png" border="0" usemap="#Explorer_coll__map" alt="Collaboration graph"/></div>
 <map name="Explorer_coll__map" id="Explorer_coll__map">
-<area shape="rect" id="node4" href="structVector3.html" title="Defines a 3D vector and its methods. " alt="" coords="261,133,328,159"/>
+<area shape="rect" id="node4" href="structVector3.html" title="Defines a 3D vector and its methods. " alt="" coords="275,140,341,167"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -85,8 +85,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a227a8dd80aa001ea416b4ed403281198"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afad219513d65c2efdc84490bd8c06bde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExplorer.html#afad219513d65c2efdc84490bd8c06bde">checkDead</a> ()</td></tr>
 <tr class="separator:afad219513d65c2efdc84490bd8c06bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae12def922703559f8098a0ac04b6d2d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExplorer.html#ae12def922703559f8098a0ac04b6d2d1">ExplorerSavePoint</a> (<a class="el" href="structVector3.html">Vector3</a> pos)</td></tr>
-<tr class="separator:ae12def922703559f8098a0ac04b6d2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -121,6 +119,8 @@ Data Fields</h2></td></tr>
 <tr class="separator:a5793bc8fed71824443022babd625f0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5e4808c3e1bcdce10820358b9a51ae9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExplorer.html#ab5e4808c3e1bcdce10820358b9a51ae9">SavePoint</a></td></tr>
 <tr class="separator:ab5e4808c3e1bcdce10820358b9a51ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a088f9e9af165f504ca418f591e44088e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExplorer.html#a088f9e9af165f504ca418f591e44088e">f_FlickeringLight</a></td></tr>
+<tr class="separator:a088f9e9af165f504ca418f591e44088e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -154,7 +154,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00003">3</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
 
-<p>References <a class="el" href="Explorer_8h_source.html#l00033">b_pickUpSuitCase</a>, <a class="el" href="Explorer_8h_source.html#l00030">b_PickUpTool</a>, <a class="el" href="Explorer_8h_source.html#l00037">checkSavePoint</a>, <a class="el" href="ToolUI_8h_source.html#l00016">ToolUI::Empty</a>, <a class="el" href="Explorer_8h_source.html#l00020">f_hpBarScaleX</a>, <a class="el" href="ToolUI_8h_source.html#l00015">ToolUI::Hand</a>, <a class="el" href="Explorer_8h_source.html#l00019">hp</a>, <a class="el" href="Explorer_8h_source.html#l00022">i_SlotIndex</a>, <a class="el" href="Explorer_8h_source.html#l00032">i_SuitcaseCount</a>, <a class="el" href="Explorer_8h_source.html#l00010">instance()</a>, <a class="el" href="Explorer_8h_source.html#l00036">isDead</a>, <a class="el" href="Explorer_8h_source.html#l00024">itemAttack</a>, <a class="el" href="Explorer_8h_source.html#l00035">PlayerLife</a>, <a class="el" href="Explorer_8h_source.html#l00041">SavePoint</a>, <a class="el" href="Explorer_8h_source.html#l00018">stamina</a>, and <a class="el" href="Explorer_8h_source.html#l00029">TotalTools</a>.</p>
+<p>References <a class="el" href="Explorer_8h_source.html#l00033">b_pickUpSuitCase</a>, <a class="el" href="Explorer_8h_source.html#l00030">b_PickUpTool</a>, <a class="el" href="Explorer_8h_source.html#l00037">checkSavePoint</a>, <a class="el" href="ToolUI_8h_source.html#l00016">ToolUI::Empty</a>, <a class="el" href="Explorer_8h_source.html#l00042">f_FlickeringLight</a>, <a class="el" href="Explorer_8h_source.html#l00020">f_hpBarScaleX</a>, <a class="el" href="ToolUI_8h_source.html#l00015">ToolUI::Hand</a>, <a class="el" href="Explorer_8h_source.html#l00019">hp</a>, <a class="el" href="Explorer_8h_source.html#l00022">i_SlotIndex</a>, <a class="el" href="Explorer_8h_source.html#l00032">i_SuitcaseCount</a>, <a class="el" href="Explorer_8h_source.html#l00010">instance()</a>, <a class="el" href="Explorer_8h_source.html#l00036">isDead</a>, <a class="el" href="Explorer_8h_source.html#l00024">itemAttack</a>, <a class="el" href="Explorer_8h_source.html#l00035">PlayerLife</a>, <a class="el" href="Explorer_8h_source.html#l00040">SavePoint</a>, <a class="el" href="Explorer_8h_source.html#l00018">stamina</a>, and <a class="el" href="Explorer_8h_source.html#l00029">TotalTools</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -182,11 +182,11 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00062">62</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00064">64</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
 
 <p>References <a class="el" href="Explorer_8h_source.html#l00019">hp</a>, <a class="el" href="Explorer_8h_source.html#l00010">instance()</a>, and <a class="el" href="Explorer_8h_source.html#l00036">isDead</a>.</p>
 
-<p>Referenced by <a class="el" href="Camera3_8cpp_source.html#l00112">Camera3::Update()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00665">SceneLevelTwo::Update()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00430">SceneStart::Update()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00579">SceneLevelOneA::Update()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00724">SceneLevelOneB::Update()</a>, and <a class="el" href="SceneEnd_8cpp_source.html#l00555">SceneEnd::Update()</a>.</p>
+<p>Referenced by <a class="el" href="Camera3_8cpp_source.html#l00112">Camera3::Update()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00430">SceneStart::Update()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00932">SceneLevelTwo::Update()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00554">SceneLevelOneA::Update()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00544">SceneEnd::Update()</a>, and <a class="el" href="SceneLevelOneB_8cpp_source.html#l00717">SceneLevelOneB::Update()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -204,11 +204,11 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classExplorer_afad219513d65c2efdc84490bd8c06bde_icgraph.png" border="0" usemap="#classExplorer_afad219513d65c2efdc84490bd8c06bde_icgraph" alt=""/></div>
 <map name="classExplorer_afad219513d65c2efdc84490bd8c06bde_icgraph" id="classExplorer_afad219513d65c2efdc84490bd8c06bde_icgraph">
 <area shape="rect" id="node2" href="classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="Camera3::Update" alt="" coords="196,107,319,133"/>
-<area shape="rect" id="node4" href="classSceneLevelTwo.html#a51b7e15c60d59ae388400a420efbbae5" title="SceneLevelTwo::Update" alt="" coords="372,5,532,32"/>
-<area shape="rect" id="node5" href="classSceneLevelOneA.html#ab862a65fd43b0fdb56187f7dedb917b8" title="SceneLevelOneA::Update" alt="" coords="367,56,537,83"/>
-<area shape="rect" id="node6" href="classSceneStart.html#a2c3705b248156c1c352880af1be8049c" title="SceneStart::Update" alt="" coords="384,157,520,184"/>
-<area shape="rect" id="node7" href="classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="367,208,537,235"/>
-<area shape="rect" id="node8" href="classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="387,259,517,285"/>
+<area shape="rect" id="node4" href="classSceneStart.html#a2c3705b248156c1c352880af1be8049c" title="SceneStart::Update" alt="" coords="384,5,520,32"/>
+<area shape="rect" id="node5" href="classSceneLevelTwo.html#a51b7e15c60d59ae388400a420efbbae5" title="SceneLevelTwo::Update" alt="" coords="372,56,532,83"/>
+<area shape="rect" id="node6" href="classSceneLevelOneA.html#ab862a65fd43b0fdb56187f7dedb917b8" title="SceneLevelOneA::Update" alt="" coords="367,157,537,184"/>
+<area shape="rect" id="node7" href="classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="387,208,517,235"/>
+<area shape="rect" id="node8" href="classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="367,259,537,285"/>
 <area shape="rect" id="node3" href="classSceneOpening.html#af3ca641709d7608947d8ae81b273b089" title="SceneOpening::Update" alt="" coords="374,107,530,133"/>
 </map>
 </div>
@@ -230,56 +230,24 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00100">100</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00102">102</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
 
 <p>References <a class="el" href="Explorer_8h_source.html#l00029">TotalTools</a>.</p>
 
-<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00085">InsertToolSlot()</a>.</p>
+<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00087">InsertToolSlot()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classExplorer_a227a8dd80aa001ea416b4ed403281198_icgraph.png" border="0" usemap="#classExplorer_a227a8dd80aa001ea416b4ed403281198_icgraph" alt=""/></div>
 <map name="classExplorer_a227a8dd80aa001ea416b4ed403281198_icgraph" id="classExplorer_a227a8dd80aa001ea416b4ed403281198_icgraph">
-<area shape="rect" id="node2" href="classExplorer.html#a2314ec87110e38517fe9c2952bcb0b31" title="Explorer::InsertToolSlot" alt="" coords="252,56,409,83"/>
+<area shape="rect" id="node2" href="classExplorer.html#a2314ec87110e38517fe9c2952bcb0b31" title="Explorer::InsertToolSlot" alt="" coords="252,81,409,108"/>
 <area shape="rect" id="node3" href="classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="478,5,609,32"/>
 <area shape="rect" id="node4" href="classSceneLevelOneA.html#aafc92d0bb482c6182f12873f0001ef7d" title="SceneLevelOneA::ToolsUI" alt="" coords="457,56,629,83"/>
 <area shape="rect" id="node6" href="classSceneLevelOneB.html#abc979783622fe908a8bb929429da8141" title="SceneLevelOneB::ToolsUI" alt="" coords="457,107,629,133"/>
+<area shape="rect" id="node8" href="classSceneLevelTwo.html#a51b7e15c60d59ae388400a420efbbae5" title="SceneLevelTwo::Update" alt="" coords="463,157,623,184"/>
 <area shape="rect" id="node5" href="classSceneLevelOneA.html#ab862a65fd43b0fdb56187f7dedb917b8" title="SceneLevelOneA::Update" alt="" coords="677,56,848,83"/>
 <area shape="rect" id="node7" href="classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="677,107,848,133"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ae12def922703559f8098a0ac04b6d2d1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Explorer::ExplorerSavePoint </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structVector3.html">Vector3</a>&#160;</td>
-          <td class="paramname"><em>pos</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00200">200</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
-
-<p>References <a class="el" href="Explorer_8h_source.html#l00041">SavePoint</a>.</p>
-
-<p>Referenced by <a class="el" href="SceneLevelOneA_8cpp_source.html#l00502">SceneLevelOneA::UpdateSavePoint()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classExplorer_ae12def922703559f8098a0ac04b6d2d1_icgraph.png" border="0" usemap="#classExplorer_ae12def922703559f8098a0ac04b6d2d1_icgraph" alt=""/></div>
-<map name="classExplorer_ae12def922703559f8098a0ac04b6d2d1_icgraph" id="classExplorer_ae12def922703559f8098a0ac04b6d2d1_icgraph">
-<area shape="rect" id="node2" href="classSceneLevelOneA.html#a8cdf4a86b4d9e080f1a6f70d5061c3d5" title="SceneLevelOneA::UpdateSave\lPoint" alt="" coords="237,5,436,47"/>
-<area shape="rect" id="node3" href="classSceneLevelOneA.html#ab862a65fd43b0fdb56187f7dedb917b8" title="SceneLevelOneA::Update" alt="" coords="484,13,655,39"/>
 </map>
 </div>
 </p>
@@ -307,7 +275,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00045">45</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00047">47</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
 
 <p>References <a class="el" href="Explorer_8h_source.html#l00019">hp</a>, and <a class="el" href="Explorer_8h_source.html#l00010">instance()</a>.</p>
 
@@ -344,7 +312,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00070">70</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00072">72</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
 
 <p>References <a class="el" href="Explorer_8h_source.html#l00010">instance()</a>, and <a class="el" href="Explorer_8h_source.html#l00018">stamina</a>.</p>
 
@@ -374,11 +342,11 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00113">113</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00115">115</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
 
 <p>References <a class="el" href="ToolUI_8h_source.html#l00013">ToolUI::BaseballBat</a>, <a class="el" href="ToolUI_8h_source.html#l00016">ToolUI::Empty</a>, <a class="el" href="ToolUI_8h_source.html#l00015">ToolUI::Hand</a>, <a class="el" href="Explorer_8h_source.html#l00010">instance()</a>, <a class="el" href="Explorer_8h_source.html#l00024">itemAttack</a>, <a class="el" href="ToolUI_8h_source.html#l00012">ToolUI::Pickaxe</a>, <a class="el" href="ToolUI_8h_source.html#l00014">ToolUI::Sword</a>, and <a class="el" href="Explorer_8h_source.html#l00029">TotalTools</a>.</p>
 
-<p>Referenced by <a class="el" href="SceneEnd_8cpp_source.html#l00506">SceneEnd::UpdateRepairs()</a>.</p>
+<p>Referenced by <a class="el" href="SceneEnd_8cpp_source.html#l00495">SceneEnd::UpdateRepairs()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -417,11 +385,11 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00085">85</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00087">87</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
 
-<p>References <a class="el" href="Explorer_8cpp_source.html#l00100">CheckForDoubleTool()</a>, <a class="el" href="ToolUI_8h_source.html#l00016">ToolUI::Empty</a>, and <a class="el" href="Explorer_8h_source.html#l00029">TotalTools</a>.</p>
+<p>References <a class="el" href="Explorer_8cpp_source.html#l00102">CheckForDoubleTool()</a>, <a class="el" href="ToolUI_8h_source.html#l00016">ToolUI::Empty</a>, and <a class="el" href="Explorer_8h_source.html#l00029">TotalTools</a>.</p>
 
-<p>Referenced by <a class="el" href="SceneLevelOneA_8cpp_source.html#l00323">SceneLevelOneA::ToolsUI()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00317">SceneLevelOneB::ToolsUI()</a>, and <a class="el" href="SceneEnd_8cpp_source.html#l00555">SceneEnd::Update()</a>.</p>
+<p>Referenced by <a class="el" href="SceneLevelOneA_8cpp_source.html#l00326">SceneLevelOneA::ToolsUI()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00320">SceneLevelOneB::ToolsUI()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00932">SceneLevelTwo::Update()</a>, and <a class="el" href="SceneEnd_8cpp_source.html#l00544">SceneEnd::Update()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -440,7 +408,8 @@ Here is the caller graph for this function:</div>
 <map name="classExplorer_a2314ec87110e38517fe9c2952bcb0b31_icgraph" id="classExplorer_a2314ec87110e38517fe9c2952bcb0b31_icgraph">
 <area shape="rect" id="node2" href="classSceneLevelOneA.html#aafc92d0bb482c6182f12873f0001ef7d" title="SceneLevelOneA::ToolsUI" alt="" coords="211,5,383,32"/>
 <area shape="rect" id="node4" href="classSceneLevelOneB.html#abc979783622fe908a8bb929429da8141" title="SceneLevelOneB::ToolsUI" alt="" coords="211,56,383,83"/>
-<area shape="rect" id="node6" href="classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="231,107,362,133"/>
+<area shape="rect" id="node6" href="classSceneLevelTwo.html#a51b7e15c60d59ae388400a420efbbae5" title="SceneLevelTwo::Update" alt="" coords="217,107,377,133"/>
+<area shape="rect" id="node7" href="classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="231,157,362,184"/>
 <area shape="rect" id="node3" href="classSceneLevelOneA.html#ab862a65fd43b0fdb56187f7dedb917b8" title="SceneLevelOneA::Update" alt="" coords="431,5,601,32"/>
 <area shape="rect" id="node5" href="classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="431,56,601,83"/>
 </map>
@@ -472,103 +441,106 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="Explorer_8h_source.html#l00010">10</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
 
-<p>Referenced by <a class="el" href="MobBossOne_8cpp_source.html#l00107">MobBossOne::attack()</a>, <a class="el" href="MobGhost_8cpp_source.html#l00049">MobGhost::attack()</a>, <a class="el" href="SceneLevelOneBRenders_8cpp_source.html#l00435">SceneLevelOneB::attackCheck()</a>, <a class="el" href="SceneLevelOneARenders_8cpp_source.html#l00398">SceneLevelOneA::AttackCheck()</a>, <a class="el" href="SceneEndRenders_8cpp_source.html#l00424">SceneEnd::checkAttack()</a>, <a class="el" href="Explorer_8cpp_source.html#l00062">checkDead()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00460">SceneLevelTwo::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00675">SceneLevelOneB::ContinueGameOrNot()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00468">SceneEnd::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00528">SceneLevelOneA::ContinueGameOrNot()</a>, <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="Explorer_8cpp_source.html#l00045">getHP()</a>, <a class="el" href="Explorer_8cpp_source.html#l00070">getStamina()</a>, <a class="el" href="Explorer_8cpp_source.html#l00113">GetToolType()</a>, <a class="el" href="Camera3_8cpp_source.html#l00067">Camera3::HumanControl()</a>, <a class="el" href="Explorer_8cpp_source.html#l00050">MinusHP()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00418">SceneLevelTwo::MouseClickFunction()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00367">SceneStart::MouseClickFunction()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00465">SceneLevelOneA::MouseClickFunction()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00465">SceneLevelOneB::MouseClickFunction()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00432">SceneEnd::MouseClickFunction()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00377">SceneLevelTwo::MouseScrollToolSlot()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00237">SceneStart::MouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00424">SceneLevelOneA::MouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00442">SceneLevelOneB::MouseScrollToolSlot()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00299">SceneEnd::MouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00712">SceneLevelOneB::PickUpSuitcaseInteraction()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00567">SceneLevelOneA::PickUpSuitcaseInteraction()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00849">SceneLevelTwo::Render()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00803">SceneLevelOneA::Render()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00608">SceneStart::Render()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00963">SceneLevelOneB::Render()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00773">SceneEnd::Render()</a>, <a class="el" href="SceneEndRenders_8cpp_source.html#l00201">SceneEnd::RenderMineText()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00400">SceneLevelTwo::RenderMouseScrollToolSlot()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00260">SceneStart::RenderMouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00447">SceneLevelOneA::RenderMouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00332">SceneLevelOneB::RenderMouseScrollToolSlot()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00322">SceneEnd::RenderMouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneARenders_8cpp_source.html#l00471">SceneLevelOneA::RenderPickUpPickAxe()</a>, <a class="el" href="SceneLevelOneBRenders_8cpp_source.html#l00632">SceneLevelOneB::RenderPickUpPickTools()</a>, <a class="el" href="SceneLevelOneBRenders_8cpp_source.html#l00657">SceneLevelOneB::RenderPickUpSuitcaseText()</a>, <a class="el" href="SceneLevelOneARenders_8cpp_source.html#l00485">SceneLevelOneA::RenderPickUpSuitcaseText()</a>, <a class="el" href="SceneLevelTwoRenders_8cpp_source.html#l00369">SceneLevelTwo::RenderPlayerDiesInteraction()</a>, <a class="el" href="SceneLevelOneBRenders_8cpp_source.html#l00598">SceneLevelOneB::RenderPlayerDiesInteraction()</a>, <a class="el" href="SceneEndRenders_8cpp_source.html#l00098">SceneEnd::RenderPlayerDiesInteraction()</a>, <a class="el" href="SceneLevelOneARenders_8cpp_source.html#l00437">SceneLevelOneA::RenderPlayerDiesInteraction()</a>, <a class="el" href="SceneEndRenders_8cpp_source.html#l00222">SceneEnd::RenderRepairText()</a>, <a class="el" href="SceneLevelOneBRenders_8cpp_source.html#l00055">SceneLevelOneB::RenderScene()</a>, <a class="el" href="SceneLevelOneARenders_8cpp_source.html#l00024">SceneLevelOneA::RenderSuitCase()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00318">SceneLevelTwo::RenderToolIcon()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00311">SceneStart::RenderToolIcon()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00365">SceneLevelOneA::RenderToolIcon()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00383">SceneLevelOneB::RenderToolIcon()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00373">SceneEnd::RenderToolIcon()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00212">SceneLevelTwo::Reset()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00250">SceneEnd::Reset()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00284">SceneLevelOneA::ResetAll()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00276">SceneLevelOneB::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00235">SceneLevelOneA::ResetSameScene()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00233">SceneLevelOneB::ResetSameScene()</a>, <a class="el" href="Explorer_8cpp_source.html#l00075">setHP()</a>, <a class="el" href="Explorer_8cpp_source.html#l00080">setStamina()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00511">SceneLevelTwo::SomeUpdates()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00285">SceneLevelTwo::ToolSelectionMouseScroll()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00278">SceneStart::ToolSelectionMouseScroll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00332">SceneLevelOneA::ToolSelectionMouseScroll()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00350">SceneLevelOneB::ToolSelectionMouseScroll()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00340">SceneEnd::ToolSelectionMouseScroll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00323">SceneLevelOneA::ToolsUI()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00317">SceneLevelOneB::ToolsUI()</a>, <a class="el" href="Camera3_8cpp_source.html#l00112">Camera3::Update()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00665">SceneLevelTwo::Update()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00430">SceneStart::Update()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00579">SceneLevelOneA::Update()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00724">SceneLevelOneB::Update()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00555">SceneEnd::Update()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00450">SceneLevelTwo::UpdatePlayerDiesInteraction()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00665">SceneLevelOneB::UpdatePlayerDiesInteraction()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00289">SceneEnd::UpdatePlayerDiesInteraction()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00518">SceneLevelOneA::UpdatePlayerDiesInteraction()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00506">SceneEnd::UpdateRepairs()</a>, and <a class="el" href="SceneLevelOneA_8cpp_source.html#l00502">SceneLevelOneA::UpdateSavePoint()</a>.</p>
+<p>Referenced by <a class="el" href="MobBossOne_8cpp_source.html#l00107">MobBossOne::attack()</a>, <a class="el" href="MobGhost_8cpp_source.html#l00049">MobGhost::attack()</a>, <a class="el" href="SceneLevelOneBRenders_8cpp_source.html#l00429">SceneLevelOneB::attackCheck()</a>, <a class="el" href="SceneLevelOneARenders_8cpp_source.html#l00390">SceneLevelOneA::AttackCheck()</a>, <a class="el" href="SceneEndRenders_8cpp_source.html#l00424">SceneEnd::checkAttack()</a>, <a class="el" href="Explorer_8cpp_source.html#l00064">checkDead()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00529">SceneLevelTwo::ContinueGameOrNot()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00293">SceneEnd::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00515">SceneLevelOneA::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00678">SceneLevelOneB::ContinueGameOrNot()</a>, <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="Explorer_8cpp_source.html#l00047">getHP()</a>, <a class="el" href="Explorer_8cpp_source.html#l00072">getStamina()</a>, <a class="el" href="Explorer_8cpp_source.html#l00115">GetToolType()</a>, <a class="el" href="Camera3_8cpp_source.html#l00067">Camera3::HumanControl()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00039">SceneLevelTwo::Init()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00036">SceneLevelOneA::Init()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00025">SceneLevelOneB::Init()</a>, <a class="el" href="Explorer_8cpp_source.html#l00052">MinusHP()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00367">SceneStart::MouseClickFunction()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00487">SceneLevelTwo::MouseClickFunction()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00468">SceneLevelOneA::MouseClickFunction()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00459">SceneEnd::MouseClickFunction()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00468">SceneLevelOneB::MouseClickFunction()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00237">SceneStart::MouseScrollToolSlot()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00446">SceneLevelTwo::MouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00427">SceneLevelOneA::MouseScrollToolSlot()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00326">SceneEnd::MouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00445">SceneLevelOneB::MouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00542">SceneLevelOneA::PickUpSuitcaseInteraction()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00705">SceneLevelOneB::PickUpSuitcaseInteraction()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00608">SceneStart::Render()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l01154">SceneLevelTwo::Render()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00780">SceneLevelOneA::Render()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00776">SceneEnd::Render()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00959">SceneLevelOneB::Render()</a>, <a class="el" href="SceneEndRenders_8cpp_source.html#l00201">SceneEnd::RenderMineText()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00260">SceneStart::RenderMouseScrollToolSlot()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00469">SceneLevelTwo::RenderMouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00450">SceneLevelOneA::RenderMouseScrollToolSlot()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00349">SceneEnd::RenderMouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00335">SceneLevelOneB::RenderMouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneARenders_8cpp_source.html#l00463">SceneLevelOneA::RenderPickUpPickAxe()</a>, <a class="el" href="SceneLevelOneBRenders_8cpp_source.html#l00626">SceneLevelOneB::RenderPickUpPickTools()</a>, <a class="el" href="SceneLevelOneBRenders_8cpp_source.html#l00651">SceneLevelOneB::RenderPickUpSuitcaseText()</a>, <a class="el" href="SceneLevelOneARenders_8cpp_source.html#l00477">SceneLevelOneA::RenderPickUpSuitcaseText()</a>, <a class="el" href="SceneLevelTwoRenders_8cpp_source.html#l00369">SceneLevelTwo::RenderPlayerDiesInteraction()</a>, <a class="el" href="SceneEndRenders_8cpp_source.html#l00098">SceneEnd::RenderPlayerDiesInteraction()</a>, <a class="el" href="SceneLevelOneARenders_8cpp_source.html#l00429">SceneLevelOneA::RenderPlayerDiesInteraction()</a>, <a class="el" href="SceneLevelOneBRenders_8cpp_source.html#l00592">SceneLevelOneB::RenderPlayerDiesInteraction()</a>, <a class="el" href="SceneEndRenders_8cpp_source.html#l00222">SceneEnd::RenderRepairText()</a>, <a class="el" href="SceneLevelOneBRenders_8cpp_source.html#l00055">SceneLevelOneB::RenderScene()</a>, <a class="el" href="SceneLevelOneARenders_8cpp_source.html#l00024">SceneLevelOneA::RenderSuitCase()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00311">SceneStart::RenderToolIcon()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00387">SceneLevelTwo::RenderToolIcon()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00368">SceneLevelOneA::RenderToolIcon()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00400">SceneEnd::RenderToolIcon()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00386">SceneLevelOneB::RenderToolIcon()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00233">SceneLevelTwo::Reset()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00244">SceneEnd::Reset()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00296">SceneLevelTwo::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00287">SceneLevelOneA::ResetAll()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00279">SceneLevelOneB::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00238">SceneLevelOneA::ResetSameScene()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00236">SceneLevelOneB::ResetSameScene()</a>, <a class="el" href="Explorer_8cpp_source.html#l00077">setHP()</a>, <a class="el" href="Explorer_8cpp_source.html#l00082">setStamina()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00564">SceneLevelTwo::SomeUpdates()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00278">SceneStart::ToolSelectionMouseScroll()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00354">SceneLevelTwo::ToolSelectionMouseScroll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00335">SceneLevelOneA::ToolSelectionMouseScroll()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00367">SceneEnd::ToolSelectionMouseScroll()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00353">SceneLevelOneB::ToolSelectionMouseScroll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00326">SceneLevelOneA::ToolsUI()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00320">SceneLevelOneB::ToolsUI()</a>, <a class="el" href="Camera3_8cpp_source.html#l00112">Camera3::Update()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00430">SceneStart::Update()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00932">SceneLevelTwo::Update()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00554">SceneLevelOneA::Update()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00544">SceneEnd::Update()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00717">SceneLevelOneB::Update()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00519">SceneLevelTwo::UpdatePlayerDiesInteraction()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00283">SceneEnd::UpdatePlayerDiesInteraction()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00668">SceneLevelOneB::UpdatePlayerDiesInteraction()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00505">SceneLevelOneA::UpdatePlayerDiesInteraction()</a>, and <a class="el" href="SceneEnd_8cpp_source.html#l00495">SceneEnd::UpdateRepairs()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classExplorer_afc5637a94d6f094b796d80abf42d930b_icgraph.png" border="0" usemap="#classExplorer_afc5637a94d6f094b796d80abf42d930b_icgraph" alt=""/></div>
 <map name="classExplorer_afc5637a94d6f094b796d80abf42d930b_icgraph" id="classExplorer_afc5637a94d6f094b796d80abf42d930b_icgraph">
-<area shape="rect" id="node2" href="classMobBossOne.html#aecb3709f09de4706becf6754b1744682" title="MobBossOne::attack" alt="" coords="487,1377,633,1403"/>
-<area shape="rect" id="node6" href="classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="1516,882,1647,909"/>
-<area shape="rect" id="node7" href="classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="1278,618,1449,645"/>
-<area shape="rect" id="node8" href="classMobGhost.html#a682a34b867af027921633a1a7f007070" title="MobGhost::attack" alt="" coords="497,1427,623,1454"/>
-<area shape="rect" id="node11" href="classSceneLevelOneA.html#ab862a65fd43b0fdb56187f7dedb917b8" title="SceneLevelOneA::Update" alt="" coords="1278,1987,1449,2014"/>
-<area shape="rect" id="node12" href="classSceneLevelOneB.html#a2bfa4551ac0b1f099c42c2193b55df47" title="SceneLevelOneB::attackCheck" alt="" coords="190,679,393,706"/>
-<area shape="rect" id="node13" href="classSceneLevelOneB.html#af248f8f3063609e573e6c695898e91e8" title="SceneLevelOneB::MouseClick\lFunction" alt="" coords="461,661,659,703"/>
-<area shape="rect" id="node14" href="classSceneLevelOneA.html#acae5c28ab518704326877b73c6df4e55" title="SceneLevelOneA::AttackCheck" alt="" coords="189,1946,393,1973"/>
-<area shape="rect" id="node15" href="classSceneLevelOneA.html#a6557be92037519a0cb4af0deb6340fb1" title="SceneLevelOneA::MouseClick\lFunction" alt="" coords="461,1980,659,2021"/>
-<area shape="rect" id="node16" href="classSceneEnd.html#a31fef5d67de3a3dfd2ae15d4bbcea2b6" title="SceneEnd::checkAttack" alt="" coords="210,1135,373,1162"/>
-<area shape="rect" id="node17" href="classSceneEnd.html#ad6c2d9939a867eb0ced3ee2c02d9d33f" title="SceneEnd::MouseClickFunction" alt="" coords="456,933,664,959"/>
-<area shape="rect" id="node18" href="classExplorer.html#afad219513d65c2efdc84490bd8c06bde" title="Explorer::checkDead" alt="" coords="220,1287,363,1314"/>
-<area shape="rect" id="node19" href="classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="Camera3::Update" alt="" coords="499,1034,621,1061"/>
-<area shape="rect" id="node21" href="classSceneLevelTwo.html#a51b7e15c60d59ae388400a420efbbae5" title="SceneLevelTwo::Update" alt="" coords="749,1574,909,1601"/>
-<area shape="rect" id="node22" href="classSceneStart.html#a2c3705b248156c1c352880af1be8049c" title="SceneStart::Update" alt="" coords="761,781,897,807"/>
-<area shape="rect" id="node23" href="classSceneLevelTwo.html#acb34d2e8f029102a0cbcc4a2818f0e55" title="SceneLevelTwo::ContinueGame\lOrNot" alt="" coords="457,1713,663,1755"/>
-<area shape="rect" id="node24" href="classSceneLevelOneB.html#ac92af3bf7c49f02f6e444af93d940150" title="SceneLevelOneB::Continue\lGameOrNot" alt="" coords="739,435,919,476"/>
-<area shape="rect" id="node25" href="classSceneEnd.html#ad27d89ab1ad40e1b57a307e4a27c2683" title="SceneEnd::ContinueGameOrNot" alt="" coords="455,63,665,90"/>
-<area shape="rect" id="node26" href="classSceneLevelOneA.html#a972ee40bd5b9481a464e3028f4d496b5" title="SceneLevelOneA::Continue\lGameOrNot" alt="" coords="1009,1904,1189,1945"/>
-<area shape="rect" id="node27" href="classExplorer.html#acbedef0262785b6983d1fe9b4f2c6242" title="Explorer::Explorer" alt="" coords="228,983,355,1010"/>
-<area shape="rect" id="node28" href="classExplorer.html#a980cc6c17454f75fa042c46247b93a9d" title="Explorer::getHP" alt="" coords="234,1034,349,1061"/>
-<area shape="rect" id="node29" href="classExplorer.html#ab13dc4924a6abfd05e29c1cf4c927c70" title="Explorer::getStamina" alt="" coords="219,1085,363,1111"/>
-<area shape="rect" id="node30" href="classExplorer.html#a3689518b92695ed7af8c35f1c88764e1" title="Explorer::GetToolType" alt="" coords="216,165,367,191"/>
-<area shape="rect" id="node31" href="classSceneEnd.html#a48eddb41d1eff6f332eeef2b95e1e4fb" title="SceneEnd::UpdateRepairs" alt="" coords="473,165,647,191"/>
-<area shape="rect" id="node32" href="classCamera3.html#a021022df76481c9e9fd5c3cf5fe51cf7" title="Camera3::HumanControl" alt="" coords="209,1186,373,1213"/>
-<area shape="rect" id="node33" href="classExplorer.html#a6827c0db7864e0bfb1716cc2767dec2d" title="Explorer::MinusHP" alt="" coords="226,1389,357,1415"/>
-<area shape="rect" id="node34" href="classSceneLevelTwo.html#a32ed99f6099b6c0273f4c17200148496" title="SceneLevelTwo::MouseClick\lFunction" alt="" coords="467,1779,653,1820"/>
-<area shape="rect" id="node35" href="classSceneStart.html#abbd7450cbedda11ad8b03a0b30d85f51" title="SceneStart::MouseClickFunction" alt="" coords="453,831,667,858"/>
-<area shape="rect" id="node36" href="classSceneLevelTwo.html#ae34719e5f70b4f972919c50497070ef7" title="SceneLevelTwo::MouseScroll\lToolSlot" alt="" coords="465,1596,655,1637"/>
-<area shape="rect" id="node37" href="classSceneStart.html#ab57d50dda55864e8489d8887c0ce7f0e" title="SceneStart::MouseScrollToolSlot" alt="" coords="453,781,667,807"/>
-<area shape="rect" id="node38" href="classSceneLevelOneA.html#a6d794cec16ef4bd57e6f066dc9462cc8" title="SceneLevelOneA::MouseScroll\lToolSlot" alt="" coords="999,2315,1200,2356"/>
-<area shape="rect" id="node39" href="classSceneLevelOneB.html#aede4cec07c3f4dd58fe4cd30b4996e3e" title="SceneLevelOneB::MouseScroll\lToolSlot" alt="" coords="999,496,1200,537"/>
-<area shape="rect" id="node40" href="classSceneEnd.html#a2665f4f2c8e7800edf9b6fc04d6940ac" title="SceneEnd::MouseScrollToolSlot" alt="" coords="1259,287,1468,314"/>
-<area shape="rect" id="node41" href="classSceneLevelOneB.html#a147d7c92d2b42363f3c378f7492c30cb" title="SceneLevelOneB::PickUpSuitcase\lInteraction" alt="" coords="717,317,940,359"/>
-<area shape="rect" id="node42" href="classSceneLevelOneA.html#ab344d7ebfab7631145e0665914cc4819" title="SceneLevelOneA::PickUpSuitcase\lInteraction" alt="" coords="988,3975,1211,4016"/>
-<area shape="rect" id="node43" href="classSceneLevelTwo.html#a63a16f9a1a71dd298d6e45edaa5efef4" title="SceneLevelTwo::Render" alt="" coords="480,2173,640,2199"/>
-<area shape="rect" id="node44" href="classSceneLevelOneA.html#adb83e3122dc7ac3a5d5b85add1c771bb" title="SceneLevelOneA::Render" alt="" coords="743,4121,914,4147"/>
-<area shape="rect" id="node45" href="classSceneStart.html#a09a1444c2c592ed917229e5853db6db5" title="SceneStart::Render" alt="" coords="492,2443,628,2470"/>
-<area shape="rect" id="node46" href="classSceneLevelOneB.html#a5c7f4cef0669b49cd80c284d9c9864ce" title="SceneLevelOneB::Render" alt="" coords="475,2906,645,2933"/>
-<area shape="rect" id="node47" href="classSceneEnd.html#a06fac012bd3a1df369c5722c8cf662b0" title="SceneEnd::Render" alt="" coords="495,3398,625,3425"/>
-<area shape="rect" id="node48" href="classSceneEnd.html#a8e3e53fce369d27d432d2c162deecb72" title="SceneEnd::RenderMineText" alt="" coords="199,3901,383,3927"/>
-<area shape="rect" id="node49" href="classSceneLevelTwo.html#a8d7121cab8a18887aa6758bc0261adda" title="SceneLevelTwo::RenderMouse\lScrollToolSlot" alt="" coords="192,2165,391,2207"/>
-<area shape="rect" id="node50" href="classSceneStart.html#ae9753fedb906b42ab3789dd54780a141" title="SceneStart::RenderMouseScroll\lToolSlot" alt="" coords="187,2348,395,2389"/>
-<area shape="rect" id="node51" href="classSceneLevelOneA.html#ac500d7cd98333f53a749ff472e1d49ed" title="SceneLevelOneA::RenderMouse\lScrollToolSlot" alt="" coords="455,4081,665,4123"/>
-<area shape="rect" id="node52" href="classSceneLevelOneB.html#ad4d85604b9366950b231b3d462da5812" title="SceneLevelOneB::RenderMouse\lScrollToolSlot" alt="" coords="187,2735,396,2776"/>
-<area shape="rect" id="node53" href="classSceneEnd.html#a60474abf07183e63810d76f25a9f8c9b" title="SceneEnd::RenderMouseScroll\lToolSlot" alt="" coords="190,3216,393,3257"/>
-<area shape="rect" id="node54" href="classSceneLevelOneA.html#a315e8941ccd057ea4c5e7a23d9919b6c" title="SceneLevelOneA::RenderPick\lUpPickAxe" alt="" coords="462,4147,658,4188"/>
-<area shape="rect" id="node55" href="classSceneLevelOneB.html#a417bbb3831728aad7ab5ebee0ffe1355" title="SceneLevelOneB::RenderPick\lUpPickTools" alt="" coords="193,2800,389,2841"/>
-<area shape="rect" id="node56" href="classSceneLevelOneB.html#a3a43488434df2dd9fcef0b606e6147ab" title="SceneLevelOneB::RenderPick\lUpSuitcaseText" alt="" coords="193,2865,389,2907"/>
-<area shape="rect" id="node57" href="classSceneLevelOneA.html#a227176473f59ddd7142977da8382249d" title="SceneLevelOneA::RenderPick\lUpSuitcaseText" alt="" coords="462,4212,658,4253"/>
-<area shape="rect" id="node58" href="classSceneLevelTwo.html#adaa0eed551db1c3d36f574296f37317c" title="SceneLevelTwo::RenderPlayer\lDiesInteraction" alt="" coords="193,2283,390,2324"/>
-<area shape="rect" id="node59" href="classSceneLevelOneB.html#a59ee1de931ecf1cb4b5a2089b7907583" title="SceneLevelOneB::RenderPlayer\lDiesInteraction" alt="" coords="188,2931,395,2972"/>
-<area shape="rect" id="node60" href="classSceneEnd.html#a9b50e6b7daac08e79d1f95ea821e5369" title="SceneEnd::RenderPlayerDies\lInteraction" alt="" coords="194,3281,389,3323"/>
-<area shape="rect" id="node61" href="classSceneLevelOneA.html#af11f423226d8db27352ac20fcc607dc3" title="SceneLevelOneA::RenderPlayer\lDiesInteraction" alt="" coords="457,4277,663,4319"/>
-<area shape="rect" id="node62" href="classSceneEnd.html#ab32854734562ab2433617b145a1971f7" title="SceneEnd::RenderRepairText" alt="" coords="195,3347,388,3374"/>
-<area shape="rect" id="node63" href="classSceneLevelOneB.html#aeb0e17f18c4dae4a1892b99f33d37aa2" title="SceneLevelOneB::RenderScene" alt="" coords="188,2997,395,3023"/>
-<area shape="rect" id="node64" href="classSceneLevelOneA.html#aceeccd0f5b17920a57b27be2a4f51719" title="SceneLevelOneA::RenderSuitCase" alt="" coords="180,4334,403,4361"/>
-<area shape="rect" id="node66" href="classSceneLevelTwo.html#ae32156c2a1654c8fecbbef68ec7acd25" title="SceneLevelTwo::RenderToolIcon" alt="" coords="187,2231,395,2258"/>
-<area shape="rect" id="node67" href="classSceneStart.html#a23e3dffbbc678a8b5e3577d86fefcb42" title="SceneStart::RenderToolIcon" alt="" coords="199,2414,383,2441"/>
-<area shape="rect" id="node68" href="classSceneLevelOneA.html#ac020bc6859e21440301c194b4e4be904" title="SceneLevelOneA::RenderToolIcon" alt="" coords="451,3913,669,3939"/>
-<area shape="rect" id="node69" href="classSceneLevelOneB.html#a3cf48f20516d5d102e2fc21a2a3d66a2" title="SceneLevelOneB::RenderToolIcon" alt="" coords="182,3047,401,3074"/>
-<area shape="rect" id="node70" href="classSceneEnd.html#abf2862ad581c4bb92e99475e9c7f107b" title="SceneEnd::RenderToolIcon" alt="" coords="202,3398,381,3425"/>
-<area shape="rect" id="node71" href="classSceneLevelTwo.html#a7bd16fca7a3be47979729845b65d6378" title="SceneLevelTwo::Reset" alt="" coords="215,1693,368,1719"/>
-<area shape="rect" id="node72" href="classSceneEnd.html#a66f3a2b7bde576f0c81b963ef42dbc94" title="SceneEnd::Reset" alt="" coords="229,63,353,90"/>
-<area shape="rect" id="node73" href="classSceneLevelOneA.html#a8b1264a7ebd899a35840a89e6c5152b1" title="SceneLevelOneA::ResetAll" alt="" coords="202,3449,381,3475"/>
-<area shape="rect" id="node74" href="classSceneLevelOneB.html#a1555bb03c6b2d5badb3589626267adac" title="SceneLevelOneB::ResetAll" alt="" coords="202,3499,381,3526"/>
-<area shape="rect" id="node75" href="classSceneLevelOneA.html#a75a094598e69e8f307c291956f85a7a4" title="SceneLevelOneA::ResetSame\lScene" alt="" coords="193,3551,390,3592"/>
-<area shape="rect" id="node76" href="classSceneLevelOneB.html#a7d2a46122596c3f7040c275a1b5e8b23" title="SceneLevelOneB::ResetSame\lScene" alt="" coords="193,3616,390,3657"/>
-<area shape="rect" id="node77" href="classExplorer.html#a152031dbfe83b09c3c292a8b8edae6e5" title="Explorer::setHP" alt="" coords="234,3682,349,3709"/>
-<area shape="rect" id="node78" href="classExplorer.html#a9d134304afaf635d4b3c97f465711e49" title="Explorer::setStamina" alt="" coords="219,3733,363,3759"/>
-<area shape="rect" id="node79" href="classSceneLevelTwo.html#a57e4fa45b2b3e694d0742e631bfd7d45" title="SceneLevelTwo::SomeUpdates" alt="" coords="459,1662,661,1689"/>
-<area shape="rect" id="node80" href="classSceneLevelTwo.html#a66bd889c75f1be5353890c7b52867372" title="SceneLevelTwo::ToolSelection\lMouseScroll" alt="" coords="193,2048,390,2089"/>
-<area shape="rect" id="node81" href="classSceneStart.html#a6192586ef4a24beef41be68a7daf2aab" title="SceneStart::ToolSelection\lMouseScroll" alt="" coords="205,2465,378,2507"/>
-<area shape="rect" id="node82" href="classSceneLevelOneA.html#adee75bb072dabc1f1b07f3dbaeea7aa0" title="SceneLevelOneA::ToolSelection\lMouseScroll" alt="" coords="457,3964,663,4005"/>
-<area shape="rect" id="node83" href="classSceneLevelOneB.html#a062f461de2a83a33b292bf692a90f0d8" title="SceneLevelOneB::ToolSelection\lMouseScroll" alt="" coords="188,3099,395,3140"/>
-<area shape="rect" id="node84" href="classSceneEnd.html#a0cec4a5dc38e55660f06a335a8ee2c43" title="SceneEnd::ToolSelectionMouse\lScroll" alt="" coords="188,3784,395,3825"/>
-<area shape="rect" id="node85" href="classSceneLevelOneA.html#aafc92d0bb482c6182f12873f0001ef7d" title="SceneLevelOneA::ToolsUI" alt="" coords="1013,2507,1185,2534"/>
-<area shape="rect" id="node86" href="classSceneLevelOneB.html#abc979783622fe908a8bb929429da8141" title="SceneLevelOneB::ToolsUI" alt="" coords="1013,387,1185,414"/>
-<area shape="rect" id="node87" href="classSceneLevelTwo.html#afa7cb6178d4a7f338def67f91fdce07d" title="SceneLevelTwo::UpdatePlayer\lDiesInteraction" alt="" coords="461,1479,659,1520"/>
-<area shape="rect" id="node88" href="classSceneLevelOneB.html#aacabdc244496e67cdc2ad550345489b1" title="SceneLevelOneB::UpdatePlayer\lDiesInteraction" alt="" coords="725,552,932,593"/>
-<area shape="rect" id="node89" href="classSceneEnd.html#a1c9e2436a373a954a6214f469432459d" title="SceneEnd::UpdatePlayerDies\lInteraction" alt="" coords="1266,409,1461,451"/>
-<area shape="rect" id="node90" href="classSceneLevelOneA.html#a78a2543bfeb822922fc6ff3bf61519b3" title="SceneLevelOneA::UpdatePlayer\lDiesInteraction" alt="" coords="725,4291,932,4332"/>
-<area shape="rect" id="node91" href="classSceneLevelOneA.html#a8cdf4a86b4d9e080f1a6f70d5061c3d5" title="SceneLevelOneA::UpdateSave\lPoint" alt="" coords="1000,2859,1199,2900"/>
-<area shape="rect" id="node3" href="classMobBossOne.html#a15cf315a37065c7e00aecd2f03ca9823" title="MobBossOne::checkAttack" alt="" coords="737,1186,920,1213"/>
-<area shape="rect" id="node4" href="classMobBossOne.html#a9c3de91039994e9339c3f5a14f093a27" title="MobBossOne::move" alt="" coords="1030,1135,1169,1162"/>
-<area shape="rect" id="node5" href="classSceneEnd.html#ab7bfa2bfcb6149aecb24f587a8d1e462" title="SceneEnd::moveMob" alt="" coords="1291,1135,1436,1162"/>
-<area shape="rect" id="node9" href="classMobGhost.html#ac91ee578e6e4ecbb26ea3c95044c7335" title="MobGhost::checkAttack" alt="" coords="747,1287,910,1314"/>
-<area shape="rect" id="node10" href="classMobGhost.html#a60251190be4ba35ceb50a726ddbebf51" title="MobGhost::move" alt="" coords="1039,1237,1159,1263"/>
-<area shape="rect" id="node20" href="classSceneOpening.html#af3ca641709d7608947d8ae81b273b089" title="SceneOpening::Update" alt="" coords="751,983,907,1010"/>
-<area shape="rect" id="node65" href="classSceneLevelOneA.html#a49d61bf7336b6b25a20d607d01e79e71" title="SceneLevelOneA::RenderScene" alt="" coords="457,4343,663,4370"/>
+<area shape="rect" id="node2" href="classMobBossOne.html#aecb3709f09de4706becf6754b1744682" title="MobBossOne::attack" alt="" coords="487,885,633,912"/>
+<area shape="rect" id="node6" href="classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="1495,891,1625,917"/>
+<area shape="rect" id="node7" href="classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="1257,625,1427,652"/>
+<area shape="rect" id="node8" href="classMobGhost.html#a682a34b867af027921633a1a7f007070" title="MobGhost::attack" alt="" coords="497,936,623,963"/>
+<area shape="rect" id="node11" href="classSceneLevelOneA.html#ab862a65fd43b0fdb56187f7dedb917b8" title="SceneLevelOneA::Update" alt="" coords="1257,1400,1427,1427"/>
+<area shape="rect" id="node12" href="classSceneLevelOneB.html#a2bfa4551ac0b1f099c42c2193b55df47" title="SceneLevelOneB::attackCheck" alt="" coords="190,697,393,724"/>
+<area shape="rect" id="node13" href="classSceneLevelOneB.html#af248f8f3063609e573e6c695898e91e8" title="SceneLevelOneB::MouseClick\lFunction" alt="" coords="461,706,659,747"/>
+<area shape="rect" id="node14" href="classSceneLevelOneA.html#acae5c28ab518704326877b73c6df4e55" title="SceneLevelOneA::AttackCheck" alt="" coords="189,1204,393,1231"/>
+<area shape="rect" id="node15" href="classSceneLevelOneA.html#a6557be92037519a0cb4af0deb6340fb1" title="SceneLevelOneA::MouseClick\lFunction" alt="" coords="461,1225,659,1266"/>
+<area shape="rect" id="node16" href="classSceneEnd.html#a31fef5d67de3a3dfd2ae15d4bbcea2b6" title="SceneEnd::checkAttack" alt="" coords="210,124,373,151"/>
+<area shape="rect" id="node17" href="classSceneEnd.html#ad6c2d9939a867eb0ced3ee2c02d9d33f" title="SceneEnd::MouseClickFunction" alt="" coords="456,124,664,151"/>
+<area shape="rect" id="node18" href="classExplorer.html#afad219513d65c2efdc84490bd8c06bde" title="Explorer::checkDead" alt="" coords="220,1676,363,1703"/>
+<area shape="rect" id="node19" href="classCamera3.html#acc5d4103826cda6d20b80a0d35eacdbe" title="Camera3::Update" alt="" coords="499,1727,621,1753"/>
+<area shape="rect" id="node21" href="classSceneStart.html#a2c3705b248156c1c352880af1be8049c" title="SceneStart::Update" alt="" coords="750,1879,886,1905"/>
+<area shape="rect" id="node22" href="classSceneLevelTwo.html#a51b7e15c60d59ae388400a420efbbae5" title="SceneLevelTwo::Update" alt="" coords="738,2163,898,2189"/>
+<area shape="rect" id="node23" href="classSceneLevelTwo.html#acb34d2e8f029102a0cbcc4a2818f0e55" title="SceneLevelTwo::ContinueGame\lOrNot" alt="" coords="457,2382,663,2423"/>
+<area shape="rect" id="node24" href="classSceneEnd.html#ad27d89ab1ad40e1b57a307e4a27c2683" title="SceneEnd::ContinueGameOrNot" alt="" coords="455,212,665,239"/>
+<area shape="rect" id="node25" href="classSceneLevelOneA.html#a972ee40bd5b9481a464e3028f4d496b5" title="SceneLevelOneA::Continue\lGameOrNot" alt="" coords="470,1290,650,1331"/>
+<area shape="rect" id="node26" href="classSceneLevelOneB.html#ac92af3bf7c49f02f6e444af93d940150" title="SceneLevelOneB::Continue\lGameOrNot" alt="" coords="470,314,650,355"/>
+<area shape="rect" id="node27" href="classExplorer.html#acbedef0262785b6983d1fe9b4f2c6242" title="Explorer::Explorer" alt="" coords="228,2385,355,2412"/>
+<area shape="rect" id="node28" href="classExplorer.html#a980cc6c17454f75fa042c46247b93a9d" title="Explorer::getHP" alt="" coords="234,2436,349,2463"/>
+<area shape="rect" id="node29" href="classExplorer.html#ab13dc4924a6abfd05e29c1cf4c927c70" title="Explorer::getStamina" alt="" coords="219,2487,363,2513"/>
+<area shape="rect" id="node30" href="classExplorer.html#a3689518b92695ed7af8c35f1c88764e1" title="Explorer::GetToolType" alt="" coords="216,849,367,876"/>
+<area shape="rect" id="node31" href="classSceneEnd.html#a48eddb41d1eff6f332eeef2b95e1e4fb" title="SceneEnd::UpdateRepairs" alt="" coords="473,835,647,861"/>
+<area shape="rect" id="node32" href="classCamera3.html#a021022df76481c9e9fd5c3cf5fe51cf7" title="Camera3::HumanControl" alt="" coords="209,1777,373,1804"/>
+<area shape="rect" id="node33" href="classSceneLevelTwo.html#a6b80b4345b5398ef898bdceedf583696" title="SceneLevelTwo::Init" alt="" coords="223,2537,359,2564"/>
+<area shape="rect" id="node34" href="classSceneLevelOneA.html#a7336a77a93113ea8d9d5f722229bb020" title="SceneLevelOneA::Init" alt="" coords="218,2588,365,2615"/>
+<area shape="rect" id="node35" href="classSceneLevelOneB.html#a49faf352ee609e184dd144b12f6b5c5e" title="SceneLevelOneB::Init" alt="" coords="218,2639,365,2665"/>
+<area shape="rect" id="node36" href="classExplorer.html#a6827c0db7864e0bfb1716cc2767dec2d" title="Explorer::MinusHP" alt="" coords="226,951,357,977"/>
+<area shape="rect" id="node37" href="classSceneStart.html#abbd7450cbedda11ad8b03a0b30d85f51" title="SceneStart::MouseClickFunction" alt="" coords="453,1828,667,1855"/>
+<area shape="rect" id="node38" href="classSceneLevelTwo.html#a32ed99f6099b6c0273f4c17200148496" title="SceneLevelTwo::MouseClick\lFunction" alt="" coords="467,2031,653,2073"/>
+<area shape="rect" id="node39" href="classSceneStart.html#ab57d50dda55864e8489d8887c0ce7f0e" title="SceneStart::MouseScrollToolSlot" alt="" coords="453,1879,667,1905"/>
+<area shape="rect" id="node40" href="classSceneLevelTwo.html#ae34719e5f70b4f972919c50497070ef7" title="SceneLevelTwo::MouseScroll\lToolSlot" alt="" coords="465,2097,655,2138"/>
+<area shape="rect" id="node41" href="classSceneLevelOneA.html#a6d794cec16ef4bd57e6f066dc9462cc8" title="SceneLevelOneA::MouseScroll\lToolSlot" alt="" coords="977,1393,1179,1434"/>
+<area shape="rect" id="node42" href="classSceneEnd.html#a2665f4f2c8e7800edf9b6fc04d6940ac" title="SceneEnd::MouseScrollToolSlot" alt="" coords="1237,992,1447,1019"/>
+<area shape="rect" id="node43" href="classSceneLevelOneB.html#aede4cec07c3f4dd58fe4cd30b4996e3e" title="SceneLevelOneB::MouseScroll\lToolSlot" alt="" coords="717,429,919,470"/>
+<area shape="rect" id="node44" href="classSceneLevelOneA.html#ab344d7ebfab7631145e0665914cc4819" title="SceneLevelOneA::PickUpSuitcase\lInteraction" alt="" coords="967,1575,1189,1617"/>
+<area shape="rect" id="node45" href="classSceneLevelOneB.html#a147d7c92d2b42363f3c378f7492c30cb" title="SceneLevelOneB::PickUpSuitcase\lInteraction" alt="" coords="967,479,1189,521"/>
+<area shape="rect" id="node46" href="classSceneStart.html#a09a1444c2c592ed917229e5853db6db5" title="SceneStart::Render" alt="" coords="492,2777,628,2804"/>
+<area shape="rect" id="node47" href="classSceneLevelTwo.html#a63a16f9a1a71dd298d6e45edaa5efef4" title="SceneLevelTwo::Render" alt="" coords="480,3048,640,3075"/>
+<area shape="rect" id="node48" href="classSceneLevelOneA.html#adb83e3122dc7ac3a5d5b85add1c771bb" title="SceneLevelOneA::Render" alt="" coords="733,3397,903,3424"/>
+<area shape="rect" id="node49" href="classSceneEnd.html#a06fac012bd3a1df369c5722c8cf662b0" title="SceneEnd::Render" alt="" coords="495,3812,625,3839"/>
+<area shape="rect" id="node50" href="classSceneLevelOneB.html#a5c7f4cef0669b49cd80c284d9c9864ce" title="SceneLevelOneB::Render" alt="" coords="475,4240,645,4267"/>
+<area shape="rect" id="node51" href="classSceneEnd.html#a8e3e53fce369d27d432d2c162deecb72" title="SceneEnd::RenderMineText" alt="" coords="199,3629,383,3656"/>
+<area shape="rect" id="node52" href="classSceneStart.html#ae9753fedb906b42ab3789dd54780a141" title="SceneStart::RenderMouseScroll\lToolSlot" alt="" coords="187,2858,395,2899"/>
+<area shape="rect" id="node53" href="classSceneLevelTwo.html#a8d7121cab8a18887aa6758bc0261adda" title="SceneLevelTwo::RenderMouse\lScrollToolSlot" alt="" coords="192,3158,391,3199"/>
+<area shape="rect" id="node54" href="classSceneLevelOneA.html#ac500d7cd98333f53a749ff472e1d49ed" title="SceneLevelOneA::RenderMouse\lScrollToolSlot" alt="" coords="455,3165,665,3206"/>
+<area shape="rect" id="node55" href="classSceneEnd.html#a60474abf07183e63810d76f25a9f8c9b" title="SceneEnd::RenderMouseScroll\lToolSlot" alt="" coords="190,3681,393,3722"/>
+<area shape="rect" id="node56" href="classSceneLevelOneB.html#ad4d85604b9366950b231b3d462da5812" title="SceneLevelOneB::RenderMouse\lScrollToolSlot" alt="" coords="187,4199,396,4241"/>
+<area shape="rect" id="node57" href="classSceneLevelOneA.html#a315e8941ccd057ea4c5e7a23d9919b6c" title="SceneLevelOneA::RenderPick\lUpPickAxe" alt="" coords="462,3230,658,3271"/>
+<area shape="rect" id="node58" href="classSceneLevelOneB.html#a417bbb3831728aad7ab5ebee0ffe1355" title="SceneLevelOneB::RenderPick\lUpPickTools" alt="" coords="193,4265,389,4306"/>
+<area shape="rect" id="node59" href="classSceneLevelOneB.html#a3a43488434df2dd9fcef0b606e6147ab" title="SceneLevelOneB::RenderPick\lUpSuitcaseText" alt="" coords="193,4330,389,4371"/>
+<area shape="rect" id="node60" href="classSceneLevelOneA.html#a227176473f59ddd7142977da8382249d" title="SceneLevelOneA::RenderPick\lUpSuitcaseText" alt="" coords="462,3295,658,3337"/>
+<area shape="rect" id="node61" href="classSceneLevelTwo.html#adaa0eed551db1c3d36f574296f37317c" title="SceneLevelTwo::RenderPlayer\lDiesInteraction" alt="" coords="193,2923,390,2965"/>
+<area shape="rect" id="node62" href="classSceneEnd.html#a9b50e6b7daac08e79d1f95ea821e5369" title="SceneEnd::RenderPlayerDies\lInteraction" alt="" coords="194,3746,389,3787"/>
+<area shape="rect" id="node63" href="classSceneLevelOneA.html#af11f423226d8db27352ac20fcc607dc3" title="SceneLevelOneA::RenderPlayer\lDiesInteraction" alt="" coords="457,3361,663,3402"/>
+<area shape="rect" id="node64" href="classSceneLevelOneB.html#a59ee1de931ecf1cb4b5a2089b7907583" title="SceneLevelOneB::RenderPlayer\lDiesInteraction" alt="" coords="188,4395,395,4437"/>
+<area shape="rect" id="node65" href="classSceneEnd.html#ab32854734562ab2433617b145a1971f7" title="SceneEnd::RenderRepairText" alt="" coords="195,3812,388,3839"/>
+<area shape="rect" id="node66" href="classSceneLevelOneB.html#aeb0e17f18c4dae4a1892b99f33d37aa2" title="SceneLevelOneB::RenderScene" alt="" coords="188,4461,395,4488"/>
+<area shape="rect" id="node67" href="classSceneLevelOneA.html#aceeccd0f5b17920a57b27be2a4f51719" title="SceneLevelOneA::RenderSuitCase" alt="" coords="180,3427,403,3453"/>
+<area shape="rect" id="node69" href="classSceneStart.html#a23e3dffbbc678a8b5e3577d86fefcb42" title="SceneStart::RenderToolIcon" alt="" coords="199,2689,383,2716"/>
+<area shape="rect" id="node70" href="classSceneLevelTwo.html#ae32156c2a1654c8fecbbef68ec7acd25" title="SceneLevelTwo::RenderToolIcon" alt="" coords="187,2989,395,3016"/>
+<area shape="rect" id="node71" href="classSceneLevelOneA.html#ac020bc6859e21440301c194b4e4be904" title="SceneLevelOneA::RenderToolIcon" alt="" coords="451,3477,669,3504"/>
+<area shape="rect" id="node72" href="classSceneEnd.html#abf2862ad581c4bb92e99475e9c7f107b" title="SceneEnd::RenderToolIcon" alt="" coords="202,3863,381,3889"/>
+<area shape="rect" id="node73" href="classSceneLevelOneB.html#a3cf48f20516d5d102e2fc21a2a3d66a2" title="SceneLevelOneB::RenderToolIcon" alt="" coords="182,4031,401,4057"/>
+<area shape="rect" id="node74" href="classSceneLevelTwo.html#a7bd16fca7a3be47979729845b65d6378" title="SceneLevelTwo::Reset" alt="" coords="215,2335,368,2361"/>
+<area shape="rect" id="node75" href="classSceneEnd.html#a66f3a2b7bde576f0c81b963ef42dbc94" title="SceneEnd::Reset" alt="" coords="229,225,353,252"/>
+<area shape="rect" id="node76" href="classSceneLevelTwo.html#a91e1373bd5d7570304248405ffd8e38d" title="SceneLevelTwo::ResetAll" alt="" coords="476,2163,644,2189"/>
+<area shape="rect" id="node77" href="classSceneLevelOneA.html#a8b1264a7ebd899a35840a89e6c5152b1" title="SceneLevelOneA::ResetAll" alt="" coords="202,1423,381,1449"/>
+<area shape="rect" id="node78" href="classSceneLevelOneB.html#a1555bb03c6b2d5badb3589626267adac" title="SceneLevelOneB::ResetAll" alt="" coords="202,393,381,420"/>
+<area shape="rect" id="node79" href="classSceneLevelOneA.html#a75a094598e69e8f307c291956f85a7a4" title="SceneLevelOneA::ResetSame\lScene" alt="" coords="193,1357,390,1398"/>
+<area shape="rect" id="node80" href="classSceneLevelOneB.html#a7d2a46122596c3f7040c275a1b5e8b23" title="SceneLevelOneB::ResetSame\lScene" alt="" coords="193,277,390,318"/>
+<area shape="rect" id="node81" href="classExplorer.html#a152031dbfe83b09c3c292a8b8edae6e5" title="Explorer::setHP" alt="" coords="234,4512,349,4539"/>
+<area shape="rect" id="node82" href="classExplorer.html#a9d134304afaf635d4b3c97f465711e49" title="Explorer::setStamina" alt="" coords="219,4563,363,4589"/>
+<area shape="rect" id="node83" href="classSceneLevelTwo.html#a57e4fa45b2b3e694d0742e631bfd7d45" title="SceneLevelTwo::SomeUpdates" alt="" coords="459,2213,661,2240"/>
+<area shape="rect" id="node84" href="classSceneStart.html#a6192586ef4a24beef41be68a7daf2aab" title="SceneStart::ToolSelection\lMouseScroll" alt="" coords="205,2741,378,2782"/>
+<area shape="rect" id="node85" href="classSceneLevelTwo.html#a66bd889c75f1be5353890c7b52867372" title="SceneLevelTwo::ToolSelection\lMouseScroll" alt="" coords="193,3041,390,3082"/>
+<area shape="rect" id="node86" href="classSceneLevelOneA.html#adee75bb072dabc1f1b07f3dbaeea7aa0" title="SceneLevelOneA::ToolSelection\lMouseScroll" alt="" coords="457,3529,663,3570"/>
+<area shape="rect" id="node87" href="classSceneEnd.html#a0cec4a5dc38e55660f06a335a8ee2c43" title="SceneEnd::ToolSelectionMouse\lScroll" alt="" coords="188,3914,395,3955"/>
+<area shape="rect" id="node88" href="classSceneLevelOneB.html#a062f461de2a83a33b292bf692a90f0d8" title="SceneLevelOneB::ToolSelection\lMouseScroll" alt="" coords="188,4082,395,4123"/>
+<area shape="rect" id="node89" href="classSceneLevelOneA.html#aafc92d0bb482c6182f12873f0001ef7d" title="SceneLevelOneA::ToolsUI" alt="" coords="992,1189,1164,1216"/>
+<area shape="rect" id="node90" href="classSceneLevelOneB.html#abc979783622fe908a8bb929429da8141" title="SceneLevelOneB::ToolsUI" alt="" coords="732,596,904,623"/>
+<area shape="rect" id="node91" href="classSceneLevelTwo.html#afa7cb6178d4a7f338def67f91fdce07d" title="SceneLevelTwo::UpdatePlayer\lDiesInteraction" alt="" coords="461,2265,659,2306"/>
+<area shape="rect" id="node92" href="classSceneEnd.html#a1c9e2436a373a954a6214f469432459d" title="SceneEnd::UpdatePlayerDies\lInteraction" alt="" coords="1245,1087,1439,1129"/>
+<area shape="rect" id="node93" href="classSceneLevelOneB.html#aacabdc244496e67cdc2ad550345489b1" title="SceneLevelOneB::UpdatePlayer\lDiesInteraction" alt="" coords="975,647,1181,689"/>
+<area shape="rect" id="node94" href="classSceneLevelOneA.html#a78a2543bfeb822922fc6ff3bf61519b3" title="SceneLevelOneA::UpdatePlayer\lDiesInteraction" alt="" coords="975,1458,1181,1499"/>
+<area shape="rect" id="node3" href="classMobBossOne.html#a15cf315a37065c7e00aecd2f03ca9823" title="MobBossOne::checkAttack" alt="" coords="727,885,909,912"/>
+<area shape="rect" id="node4" href="classMobBossOne.html#a9c3de91039994e9339c3f5a14f093a27" title="MobBossOne::move" alt="" coords="1009,916,1147,943"/>
+<area shape="rect" id="node5" href="classSceneEnd.html#ab7bfa2bfcb6149aecb24f587a8d1e462" title="SceneEnd::moveMob" alt="" coords="1269,916,1415,943"/>
+<area shape="rect" id="node9" href="classMobGhost.html#ac91ee578e6e4ecbb26ea3c95044c7335" title="MobGhost::checkAttack" alt="" coords="737,936,899,963"/>
+<area shape="rect" id="node10" href="classMobGhost.html#a60251190be4ba35ceb50a726ddbebf51" title="MobGhost::move" alt="" coords="1018,967,1138,993"/>
+<area shape="rect" id="node20" href="classSceneOpening.html#af3ca641709d7608947d8ae81b273b089" title="SceneOpening::Update" alt="" coords="740,1777,896,1804"/>
+<area shape="rect" id="node68" href="classSceneLevelOneA.html#a49d61bf7336b6b25a20d607d01e79e71" title="SceneLevelOneA::RenderScene" alt="" coords="457,3427,663,3453"/>
 </map>
 </div>
 </p>
@@ -597,7 +569,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00050">50</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00052">52</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
 
 <p>References <a class="el" href="Explorer_8h_source.html#l00019">hp</a>, and <a class="el" href="Explorer_8h_source.html#l00010">instance()</a>.</p>
 
@@ -656,7 +628,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00075">75</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00077">77</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
 
 <p>References <a class="el" href="Explorer_8h_source.html#l00019">hp</a>, and <a class="el" href="Explorer_8h_source.html#l00010">instance()</a>.</p>
 
@@ -694,7 +666,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00080">80</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Explorer_8cpp_source.html#l00082">82</a> of file <a class="el" href="Explorer_8cpp_source.html">Explorer.cpp</a>.</p>
 
 <p>References <a class="el" href="Explorer_8h_source.html#l00010">instance()</a>, and <a class="el" href="Explorer_8h_source.html#l00018">stamina</a>.</p>
 
@@ -723,7 +695,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="Explorer_8h_source.html#l00033">33</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00712">SceneLevelOneB::PickUpSuitcaseInteraction()</a>, and <a class="el" href="SceneLevelOneA_8cpp_source.html#l00567">SceneLevelOneA::PickUpSuitcaseInteraction()</a>.</p>
+<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00705">SceneLevelOneB::PickUpSuitcaseInteraction()</a>, and <a class="el" href="SceneLevelOneA_8cpp_source.html#l00542">SceneLevelOneA::PickUpSuitcaseInteraction()</a>.</p>
 
 </div>
 </div>
@@ -739,7 +711,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="Explorer_8h_source.html#l00030">30</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00323">SceneLevelOneA::ToolsUI()</a>, and <a class="el" href="SceneLevelOneB_8cpp_source.html#l00317">SceneLevelOneB::ToolsUI()</a>.</p>
+<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00326">SceneLevelOneA::ToolsUI()</a>, and <a class="el" href="SceneLevelOneB_8cpp_source.html#l00320">SceneLevelOneB::ToolsUI()</a>.</p>
 
 </div>
 </div>
@@ -755,7 +727,23 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="Explorer_8h_source.html#l00037">37</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00212">SceneLevelTwo::Reset()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00250">SceneEnd::Reset()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00284">SceneLevelOneA::ResetAll()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00276">SceneLevelOneB::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00235">SceneLevelOneA::ResetSameScene()</a>, and <a class="el" href="SceneLevelOneB_8cpp_source.html#l00233">SceneLevelOneB::ResetSameScene()</a>.</p>
+<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00233">SceneLevelTwo::Reset()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00244">SceneEnd::Reset()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00296">SceneLevelTwo::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00287">SceneLevelOneA::ResetAll()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00279">SceneLevelOneB::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00238">SceneLevelOneA::ResetSameScene()</a>, and <a class="el" href="SceneLevelOneB_8cpp_source.html#l00236">SceneLevelOneB::ResetSameScene()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a088f9e9af165f504ca418f591e44088e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Explorer::f_FlickeringLight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Explorer_8h_source.html#l00042">42</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
+
+<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, and <a class="el" href="SceneLevelTwo_8cpp_source.html#l00932">SceneLevelTwo::Update()</a>.</p>
 
 </div>
 </div>
@@ -787,7 +775,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="Explorer_8h_source.html#l00019">19</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00062">checkDead()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00460">SceneLevelTwo::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00675">SceneLevelOneB::ContinueGameOrNot()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00468">SceneEnd::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00528">SceneLevelOneA::ContinueGameOrNot()</a>, <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="Explorer_8cpp_source.html#l00045">getHP()</a>, <a class="el" href="Explorer_8cpp_source.html#l00050">MinusHP()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00212">SceneLevelTwo::Reset()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00250">SceneEnd::Reset()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00284">SceneLevelOneA::ResetAll()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00276">SceneLevelOneB::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00235">SceneLevelOneA::ResetSameScene()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00233">SceneLevelOneB::ResetSameScene()</a>, <a class="el" href="Explorer_8cpp_source.html#l00075">setHP()</a>, and <a class="el" href="SceneLevelOneA_8cpp_source.html#l00579">SceneLevelOneA::Update()</a>.</p>
+<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00064">checkDead()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00529">SceneLevelTwo::ContinueGameOrNot()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00293">SceneEnd::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00515">SceneLevelOneA::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00678">SceneLevelOneB::ContinueGameOrNot()</a>, <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="Explorer_8cpp_source.html#l00047">getHP()</a>, <a class="el" href="Explorer_8cpp_source.html#l00052">MinusHP()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00233">SceneLevelTwo::Reset()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00244">SceneEnd::Reset()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00296">SceneLevelTwo::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00287">SceneLevelOneA::ResetAll()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00279">SceneLevelOneB::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00238">SceneLevelOneA::ResetSameScene()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00236">SceneLevelOneB::ResetSameScene()</a>, <a class="el" href="Explorer_8cpp_source.html#l00077">setHP()</a>, and <a class="el" href="SceneLevelOneA_8cpp_source.html#l00554">SceneLevelOneA::Update()</a>.</p>
 
 </div>
 </div>
@@ -803,7 +791,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="Explorer_8h_source.html#l00022">22</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00377">SceneLevelTwo::MouseScrollToolSlot()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00237">SceneStart::MouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00424">SceneLevelOneA::MouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00442">SceneLevelOneB::MouseScrollToolSlot()</a>, and <a class="el" href="SceneEnd_8cpp_source.html#l00299">SceneEnd::MouseScrollToolSlot()</a>.</p>
+<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00237">SceneStart::MouseScrollToolSlot()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00446">SceneLevelTwo::MouseScrollToolSlot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00427">SceneLevelOneA::MouseScrollToolSlot()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00326">SceneEnd::MouseScrollToolSlot()</a>, and <a class="el" href="SceneLevelOneB_8cpp_source.html#l00445">SceneLevelOneB::MouseScrollToolSlot()</a>.</p>
 
 </div>
 </div>
@@ -819,7 +807,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="Explorer_8h_source.html#l00032">32</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00712">SceneLevelOneB::PickUpSuitcaseInteraction()</a>, and <a class="el" href="SceneLevelOneA_8cpp_source.html#l00567">SceneLevelOneA::PickUpSuitcaseInteraction()</a>.</p>
+<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00705">SceneLevelOneB::PickUpSuitcaseInteraction()</a>, and <a class="el" href="SceneLevelOneA_8cpp_source.html#l00542">SceneLevelOneA::PickUpSuitcaseInteraction()</a>.</p>
 
 </div>
 </div>
@@ -835,7 +823,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="Explorer_8h_source.html#l00036">36</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00062">checkDead()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00460">SceneLevelTwo::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00675">SceneLevelOneB::ContinueGameOrNot()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00468">SceneEnd::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00528">SceneLevelOneA::ContinueGameOrNot()</a>, <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="Camera3_8cpp_source.html#l00067">Camera3::HumanControl()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00212">SceneLevelTwo::Reset()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00250">SceneEnd::Reset()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00284">SceneLevelOneA::ResetAll()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00276">SceneLevelOneB::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00235">SceneLevelOneA::ResetSameScene()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00233">SceneLevelOneB::ResetSameScene()</a>, and <a class="el" href="SceneLevelTwo_8cpp_source.html#l00511">SceneLevelTwo::SomeUpdates()</a>.</p>
+<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00064">checkDead()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00529">SceneLevelTwo::ContinueGameOrNot()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00293">SceneEnd::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00515">SceneLevelOneA::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00678">SceneLevelOneB::ContinueGameOrNot()</a>, <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="Camera3_8cpp_source.html#l00067">Camera3::HumanControl()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00233">SceneLevelTwo::Reset()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00244">SceneEnd::Reset()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00296">SceneLevelTwo::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00287">SceneLevelOneA::ResetAll()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00279">SceneLevelOneB::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00238">SceneLevelOneA::ResetSameScene()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00236">SceneLevelOneB::ResetSameScene()</a>, and <a class="el" href="SceneLevelTwo_8cpp_source.html#l00564">SceneLevelTwo::SomeUpdates()</a>.</p>
 
 </div>
 </div>
@@ -851,7 +839,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="Explorer_8h_source.html#l00024">24</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, and <a class="el" href="Explorer_8cpp_source.html#l00113">GetToolType()</a>.</p>
+<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, and <a class="el" href="Explorer_8cpp_source.html#l00115">GetToolType()</a>.</p>
 
 </div>
 </div>
@@ -867,7 +855,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="Explorer_8h_source.html#l00035">35</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
 
-<p>Referenced by <a class="el" href="SceneLevelTwo_8cpp_source.html#l00460">SceneLevelTwo::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00675">SceneLevelOneB::ContinueGameOrNot()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00468">SceneEnd::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00528">SceneLevelOneA::ContinueGameOrNot()</a>, <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00849">SceneLevelTwo::Render()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00608">SceneStart::Render()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00803">SceneLevelOneA::Render()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00963">SceneLevelOneB::Render()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00773">SceneEnd::Render()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00250">SceneEnd::Reset()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00284">SceneLevelOneA::ResetAll()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00276">SceneLevelOneB::ResetAll()</a>, and <a class="el" href="SceneLevelOneA_8cpp_source.html#l00235">SceneLevelOneA::ResetSameScene()</a>.</p>
+<p>Referenced by <a class="el" href="SceneLevelTwo_8cpp_source.html#l00529">SceneLevelTwo::ContinueGameOrNot()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00293">SceneEnd::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00678">SceneLevelOneB::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00515">SceneLevelOneA::ContinueGameOrNot()</a>, <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00608">SceneStart::Render()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l01154">SceneLevelTwo::Render()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00780">SceneLevelOneA::Render()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00776">SceneEnd::Render()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00959">SceneLevelOneB::Render()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00244">SceneEnd::Reset()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00296">SceneLevelTwo::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00287">SceneLevelOneA::ResetAll()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00279">SceneLevelOneB::ResetAll()</a>, and <a class="el" href="SceneLevelOneA_8cpp_source.html#l00238">SceneLevelOneA::ResetSameScene()</a>.</p>
 
 </div>
 </div>
@@ -881,9 +869,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Explorer_8h_source.html#l00041">41</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
+<p>Definition at line <a class="el" href="Explorer_8h_source.html#l00040">40</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
 
-<p>Referenced by <a class="el" href="SceneLevelTwo_8cpp_source.html#l00460">SceneLevelTwo::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00675">SceneLevelOneB::ContinueGameOrNot()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00468">SceneEnd::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00528">SceneLevelOneA::ContinueGameOrNot()</a>, <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="Explorer_8cpp_source.html#l00200">ExplorerSavePoint()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00212">SceneLevelTwo::Reset()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00250">SceneEnd::Reset()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00284">SceneLevelOneA::ResetAll()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00276">SceneLevelOneB::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00235">SceneLevelOneA::ResetSameScene()</a>, and <a class="el" href="SceneLevelOneB_8cpp_source.html#l00233">SceneLevelOneB::ResetSameScene()</a>.</p>
+<p>Referenced by <a class="el" href="SceneLevelTwo_8cpp_source.html#l00529">SceneLevelTwo::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00678">SceneLevelOneB::ContinueGameOrNot()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00515">SceneLevelOneA::ContinueGameOrNot()</a>, <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00039">SceneLevelTwo::Init()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00036">SceneLevelOneA::Init()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00025">SceneLevelOneB::Init()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00233">SceneLevelTwo::Reset()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00244">SceneEnd::Reset()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00296">SceneLevelTwo::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00287">SceneLevelOneA::ResetAll()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00279">SceneLevelOneB::ResetAll()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00238">SceneLevelOneA::ResetSameScene()</a>, and <a class="el" href="SceneLevelOneB_8cpp_source.html#l00236">SceneLevelOneB::ResetSameScene()</a>.</p>
 
 </div>
 </div>
@@ -899,7 +887,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="Explorer_8h_source.html#l00018">18</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="Explorer_8cpp_source.html#l00070">getStamina()</a>, <a class="el" href="Camera3_8cpp_source.html#l00067">Camera3::HumanControl()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00418">SceneLevelTwo::MouseClickFunction()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00367">SceneStart::MouseClickFunction()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00465">SceneLevelOneA::MouseClickFunction()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00465">SceneLevelOneB::MouseClickFunction()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00432">SceneEnd::MouseClickFunction()</a>, <a class="el" href="Explorer_8cpp_source.html#l00080">setStamina()</a>, and <a class="el" href="Camera3_8cpp_source.html#l00112">Camera3::Update()</a>.</p>
+<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="Explorer_8cpp_source.html#l00072">getStamina()</a>, <a class="el" href="Camera3_8cpp_source.html#l00067">Camera3::HumanControl()</a>, <a class="el" href="SceneStart_8cpp_source.html#l00367">SceneStart::MouseClickFunction()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00487">SceneLevelTwo::MouseClickFunction()</a>, <a class="el" href="SceneLevelOneA_8cpp_source.html#l00468">SceneLevelOneA::MouseClickFunction()</a>, <a class="el" href="SceneEnd_8cpp_source.html#l00459">SceneEnd::MouseClickFunction()</a>, <a class="el" href="SceneLevelOneB_8cpp_source.html#l00468">SceneLevelOneB::MouseClickFunction()</a>, <a class="el" href="SceneLevelTwo_8cpp_source.html#l00233">SceneLevelTwo::Reset()</a>, <a class="el" href="Explorer_8cpp_source.html#l00082">setStamina()</a>, and <a class="el" href="Camera3_8cpp_source.html#l00112">Camera3::Update()</a>.</p>
 
 </div>
 </div>
@@ -915,7 +903,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="Explorer_8h_source.html#l00029">29</a> of file <a class="el" href="Explorer_8h_source.html">Explorer.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00100">CheckForDoubleTool()</a>, <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="Explorer_8cpp_source.html#l00113">GetToolType()</a>, and <a class="el" href="Explorer_8cpp_source.html#l00085">InsertToolSlot()</a>.</p>
+<p>Referenced by <a class="el" href="Explorer_8cpp_source.html#l00102">CheckForDoubleTool()</a>, <a class="el" href="Explorer_8cpp_source.html#l00003">Explorer()</a>, <a class="el" href="Explorer_8cpp_source.html#l00115">GetToolType()</a>, and <a class="el" href="Explorer_8cpp_source.html#l00087">InsertToolSlot()</a>.</p>
 
 </div>
 </div>

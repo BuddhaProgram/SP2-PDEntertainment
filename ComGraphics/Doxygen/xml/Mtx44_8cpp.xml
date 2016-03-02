@@ -4,6 +4,21 @@
     <compoundname>Mtx44.cpp</compoundname>
     <includes refid="Mtx44_8h" local="yes">Mtx44.h</includes>
     <incdepgraph>
+      <node id="7798">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="7799" relation="include">
+        </childnode>
+        <childnode refid="7800" relation="include">
+        </childnode>
+        <childnode refid="7801" relation="include">
+        </childnode>
+        <childnode refid="7802" relation="include">
+        </childnode>
+      </node>
+      <node id="7799">
+        <label>cmath</label>
+      </node>
       <node id="7803">
         <label>Vector3.h</label>
         <link refid="Vector3_8h"/>
@@ -11,9 +26,6 @@
         </childnode>
         <childnode refid="7804" relation="include">
         </childnode>
-      </node>
-      <node id="7799">
-        <label>cmath</label>
       </node>
       <node id="7800">
         <label>exception</label>
@@ -40,18 +52,6 @@
       </node>
       <node id="7804">
         <label>iostream</label>
-      </node>
-      <node id="7798">
-        <label>MyMath.h</label>
-        <link refid="MyMath_8h"/>
-        <childnode refid="7799" relation="include">
-        </childnode>
-        <childnode refid="7800" relation="include">
-        </childnode>
-        <childnode refid="7801" relation="include">
-        </childnode>
-        <childnode refid="7802" relation="include">
-        </childnode>
       </node>
     </incdepgraph>
       <sectiondef kind="func">

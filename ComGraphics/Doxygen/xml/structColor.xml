@@ -19,21 +19,21 @@
         <referencedby refid="classSceneOpening_1a93454bd9301e90ead9ed60e1b71e9ac2" compoundref="SceneOpening_8cpp" startline="238" endline="266">SceneOpening::RenderText</referencedby>
         <referencedby refid="classOpeningCutScene2_1a856f20c24206e8d026e0e6bdce83104c" compoundref="OpeningCutScene2_8cpp" startline="305" endline="333">OpeningCutScene2::RenderText</referencedby>
         <referencedby refid="classSceneEndCutScene_1a5c19c9e86847c46c4477a20aac678314" compoundref="SceneEndCutScene_8cpp" startline="298" endline="326">SceneEndCutScene::RenderText</referencedby>
-        <referencedby refid="classSceneLevelTwo_1ad5a0a70915867709bf2673815f58bd27" compoundref="SceneLevelTwo_8cpp" startline="752" endline="780">SceneLevelTwo::RenderText</referencedby>
         <referencedby refid="classSceneStart_1a6a2004f792d5d2614b66ff652cbc75b0" compoundref="SceneStart_8cpp" startline="511" endline="539">SceneStart::RenderText</referencedby>
-        <referencedby refid="classSceneLevelOneB_1a5a1d4a86aa863a059256b66ea455c646" compoundref="SceneLevelOneB_8cpp" startline="866" endline="894">SceneLevelOneB::RenderText</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a9c16bae4dc5f368f63ecb982a6467761" compoundref="SceneLevelOneA_8cpp" startline="706" endline="734">SceneLevelOneA::RenderText</referencedby>
-        <referencedby refid="classSceneEnd_1aff54dc44893981eb88a8195f40e2ad59" compoundref="SceneEnd_8cpp" startline="676" endline="704">SceneEnd::RenderText</referencedby>
+        <referencedby refid="classSceneEnd_1aff54dc44893981eb88a8195f40e2ad59" compoundref="SceneEnd_8cpp" startline="679" endline="707">SceneEnd::RenderText</referencedby>
+        <referencedby refid="classSceneLevelTwo_1ad5a0a70915867709bf2673815f58bd27" compoundref="SceneLevelTwo_8cpp" startline="1057" endline="1085">SceneLevelTwo::RenderText</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a5a1d4a86aa863a059256b66ea455c646" compoundref="SceneLevelOneB_8cpp" startline="862" endline="890">SceneLevelOneB::RenderText</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a9c16bae4dc5f368f63ecb982a6467761" compoundref="SceneLevelOneA_8cpp" startline="683" endline="711">SceneLevelOneA::RenderText</referencedby>
         <referencedby refid="classSceneOpening_1af355362f561fb7ab578eaea5ef9ef95e" compoundref="SceneOpening_8cpp" startline="268" endline="312">SceneOpening::RenderTextOnScreen</referencedby>
         <referencedby refid="classOpeningCutScene_1aba42fcde4e25e6471e06eda32a91fa28" compoundref="OpeningCutScene_8cpp" startline="287" endline="331">OpeningCutScene::RenderTextOnScreen</referencedby>
         <referencedby refid="classCredits_1a503d0a6fa97621c1159c4e30e08762e0" compoundref="Credits_8cpp" startline="410" endline="454">Credits::RenderTextOnScreen</referencedby>
         <referencedby refid="classOpeningCutScene2_1a60fabd28a592ad6e30d73aa5fb96a046" compoundref="OpeningCutScene2_8cpp" startline="335" endline="379">OpeningCutScene2::RenderTextOnScreen</referencedby>
         <referencedby refid="classSceneEndCutScene_1af0915a6256d28f24ea931f3fd8cf02cd" compoundref="SceneEndCutScene_8cpp" startline="328" endline="372">SceneEndCutScene::RenderTextOnScreen</referencedby>
-        <referencedby refid="classSceneLevelTwo_1a0bbb9f8b9f7fb8fe962650bfba9d01ab" compoundref="SceneLevelTwo_8cpp" startline="782" endline="826">SceneLevelTwo::RenderTextOnScreen</referencedby>
         <referencedby refid="classSceneStart_1acce20705335dfbe0fa9a0b7d1067de44" compoundref="SceneStart_8cpp" startline="541" endline="585">SceneStart::RenderTextOnScreen</referencedby>
-        <referencedby refid="classSceneLevelOneB_1a52cc78f045ce29215584ca209e8cf95d" compoundref="SceneLevelOneB_8cpp" startline="896" endline="940">SceneLevelOneB::RenderTextOnScreen</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a217e965ac3b4964b262dd93ba6b43920" compoundref="SceneLevelOneA_8cpp" startline="736" endline="780">SceneLevelOneA::RenderTextOnScreen</referencedby>
-        <referencedby refid="classSceneEnd_1a9fe9e8fbec51e7a36494f1b4a195db6d" compoundref="SceneEnd_8cpp" startline="706" endline="750">SceneEnd::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSceneEnd_1a9fe9e8fbec51e7a36494f1b4a195db6d" compoundref="SceneEnd_8cpp" startline="709" endline="753">SceneEnd::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a0bbb9f8b9f7fb8fe962650bfba9d01ab" compoundref="SceneLevelTwo_8cpp" startline="1087" endline="1131">SceneLevelTwo::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a52cc78f045ce29215584ca209e8cf95d" compoundref="SceneLevelOneB_8cpp" startline="892" endline="936">SceneLevelOneB::RenderTextOnScreen</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a217e965ac3b4964b262dd93ba6b43920" compoundref="SceneLevelOneA_8cpp" startline="713" endline="757">SceneLevelOneA::RenderTextOnScreen</referencedby>
         <referencedby refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="29" endline="29">Set</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structColor_1a5defbb21620e480e556181772d665f34" prot="public" static="no" mutable="no">
@@ -130,11 +130,11 @@
         <referencedby refid="classCredits_1aa0119304dd0fbe68d2d6827333411721" compoundref="Credits_8cpp" startline="30" endline="131">Credits::Init</referencedby>
         <referencedby refid="classOpeningCutScene2_1adda87568b9dd0bb57e3e45bf49fbfa9a" compoundref="OpeningCutScene2_8cpp" startline="22" endline="141">OpeningCutScene2::Init</referencedby>
         <referencedby refid="classSceneEndCutScene_1adda42eba4567d774064b795dcd450ff2" compoundref="SceneEndCutScene_8cpp" startline="29" endline="158">SceneEndCutScene::Init</referencedby>
-        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="24" endline="208">SceneLevelTwo::Init</referencedby>
         <referencedby refid="classSceneStart_1a738dcb24a23f6cf752998573ac25c1b6" compoundref="SceneStart_8cpp" startline="23" endline="199">SceneStart::Init</referencedby>
-        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="34" endline="230">SceneLevelOneA::Init</referencedby>
-        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="24" endline="228">SceneLevelOneB::Init</referencedby>
-        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="34" endline="245">SceneEnd::Init</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a6b80b4345b5398ef898bdceedf583696" compoundref="SceneLevelTwo_8cpp" startline="39" endline="229">SceneLevelTwo::Init</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a7336a77a93113ea8d9d5f722229bb020" compoundref="SceneLevelOneA_8cpp" startline="36" endline="233">SceneLevelOneA::Init</referencedby>
+        <referencedby refid="classSceneEnd_1a3b35476550d40f16fc4398dc1e954c9c" compoundref="SceneEnd_8cpp" startline="39" endline="239">SceneEnd::Init</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a49faf352ee609e184dd144b12f6b5c5e" compoundref="SceneLevelOneB_8cpp" startline="25" endline="231">SceneLevelOneB::Init</referencedby>
         <referencedby refid="structLight_1aeb5df09a25a32f19fdffa761268ba24f" compoundref="Light_8h" startline="11" endline="17">Light::Light</referencedby>
       </memberdef>
       </sectiondef>

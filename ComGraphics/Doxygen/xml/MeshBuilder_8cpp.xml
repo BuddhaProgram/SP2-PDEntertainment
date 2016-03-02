@@ -6,6 +6,25 @@
     <includes local="no">GL\glew.h</includes>
     <includes local="no">vector</includes>
     <incdepgraph>
+      <node id="5904">
+        <label>Material.h</label>
+        <link refid="Material_8h"/>
+      </node>
+      <node id="5908">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="5909" relation="include">
+        </childnode>
+        <childnode refid="5910" relation="include">
+        </childnode>
+        <childnode refid="5911" relation="include">
+        </childnode>
+        <childnode refid="5912" relation="include">
+        </childnode>
+      </node>
+      <node id="5909">
+        <label>cmath</label>
+      </node>
       <node id="5901">
         <label>ComGraphics/Source/MeshBuilder.cpp</label>
         <link refid="MeshBuilder.cpp"/>
@@ -16,43 +35,18 @@
         <childnode refid="5915" relation="include">
         </childnode>
       </node>
-      <node id="5907">
-        <label>Vector3.h</label>
-        <link refid="Vector3_8h"/>
-        <childnode refid="5908" relation="include">
-        </childnode>
-        <childnode refid="5913" relation="include">
-        </childnode>
-      </node>
-      <node id="5904">
-        <label>Material.h</label>
-        <link refid="Material_8h"/>
-      </node>
-      <node id="5914">
-        <label>LoadOBJ.h</label>
-        <link refid="LoadOBJ_8h"/>
-        <childnode refid="5915" relation="include">
-        </childnode>
-        <childnode refid="5906" relation="include">
-        </childnode>
-        <childnode refid="5907" relation="include">
-        </childnode>
-      </node>
-      <node id="5909">
-        <label>cmath</label>
-      </node>
       <node id="5916">
         <label>GL\glew.h</label>
       </node>
       <node id="5905">
         <label>string</label>
       </node>
-      <node id="5903">
-        <label>Mesh.h</label>
-        <link refid="Mesh_8h"/>
-        <childnode refid="5904" relation="include">
+      <node id="5907">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5908" relation="include">
         </childnode>
-        <childnode refid="5905" relation="include">
+        <childnode refid="5913" relation="include">
         </childnode>
       </node>
       <node id="5910">
@@ -63,12 +57,6 @@
       </node>
       <node id="5915">
         <label>vector</label>
-      </node>
-      <node id="5906">
-        <label>Vertex.h</label>
-        <link refid="Vertex_8h"/>
-        <childnode refid="5907" relation="include">
-        </childnode>
       </node>
       <node id="5902">
         <label>MeshBuilder.h</label>
@@ -82,22 +70,34 @@
         <childnode refid="5914" relation="include">
         </childnode>
       </node>
+      <node id="5914">
+        <label>LoadOBJ.h</label>
+        <link refid="LoadOBJ_8h"/>
+        <childnode refid="5915" relation="include">
+        </childnode>
+        <childnode refid="5906" relation="include">
+        </childnode>
+        <childnode refid="5907" relation="include">
+        </childnode>
+      </node>
       <node id="5912">
         <label>cstdlib</label>
       </node>
       <node id="5913">
         <label>iostream</label>
       </node>
-      <node id="5908">
-        <label>MyMath.h</label>
-        <link refid="MyMath_8h"/>
-        <childnode refid="5909" relation="include">
+      <node id="5903">
+        <label>Mesh.h</label>
+        <link refid="Mesh_8h"/>
+        <childnode refid="5904" relation="include">
         </childnode>
-        <childnode refid="5910" relation="include">
+        <childnode refid="5905" relation="include">
         </childnode>
-        <childnode refid="5911" relation="include">
-        </childnode>
-        <childnode refid="5912" relation="include">
+      </node>
+      <node id="5906">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="5907" relation="include">
         </childnode>
       </node>
     </incdepgraph>

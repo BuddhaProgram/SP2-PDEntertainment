@@ -16,10 +16,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Misc.h" line="15" column="1" bodyfile="ComGraphics/Source/Misc.h" bodystart="15" bodyend="-1"/>
-        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="204" endline="252">SceneLevelOneA::checkDoor2</referencedby>
-        <referencedby refid="classSceneLevelTwo_1af756d75e45a09234a01aa03de6670cd6" compoundref="SceneLevelTwo_8cpp" startline="504" endline="509">SceneLevelTwo::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="196" endline="244">SceneLevelOneA::checkDoor2</referencedby>
         <referencedby refid="classSceneStart_1a2c33e692fa8ba05e7a5e081b2d1688e2" compoundref="SceneStart_8cpp" startline="225" endline="230">SceneStart::checkPlayerPosMisc</referencedby>
-        <referencedby refid="classSceneLevelOneB_1adf46e437e991dca443d91b0ff689768d" compoundref="SceneLevelOneBRenders_8cpp" startline="510" endline="515">SceneLevelOneB::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelTwo_1af756d75e45a09234a01aa03de6670cd6" compoundref="SceneLevelTwo_8cpp" startline="557" endline="562">SceneLevelTwo::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf46e437e991dca443d91b0ff689768d" compoundref="SceneLevelOneBRenders_8cpp" startline="504" endline="509">SceneLevelOneB::checkPlayerPosMisc</referencedby>
         <referencedby refid="classSceneLevelTwo_1ad511ad540839c9ec9ab03c02784f1949" compoundref="SceneLevelTwoRenders_8cpp" startline="27" endline="193">SceneLevelTwo::RenderScene</referencedby>
         <referencedby refid="classmisc_1a0f8d72dfe38a0284899586da142daf8a" compoundref="Misc_8cpp" startline="40" endline="46">WithinArea</referencedby>
       </memberdef>
@@ -35,10 +35,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Misc.h" line="15" column="1" bodyfile="ComGraphics/Source/Misc.h" bodystart="15" bodyend="-1"/>
-        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="204" endline="252">SceneLevelOneA::checkDoor2</referencedby>
-        <referencedby refid="classSceneLevelTwo_1af756d75e45a09234a01aa03de6670cd6" compoundref="SceneLevelTwo_8cpp" startline="504" endline="509">SceneLevelTwo::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="196" endline="244">SceneLevelOneA::checkDoor2</referencedby>
         <referencedby refid="classSceneStart_1a2c33e692fa8ba05e7a5e081b2d1688e2" compoundref="SceneStart_8cpp" startline="225" endline="230">SceneStart::checkPlayerPosMisc</referencedby>
-        <referencedby refid="classSceneLevelOneB_1adf46e437e991dca443d91b0ff689768d" compoundref="SceneLevelOneBRenders_8cpp" startline="510" endline="515">SceneLevelOneB::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelTwo_1af756d75e45a09234a01aa03de6670cd6" compoundref="SceneLevelTwo_8cpp" startline="557" endline="562">SceneLevelTwo::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf46e437e991dca443d91b0ff689768d" compoundref="SceneLevelOneBRenders_8cpp" startline="504" endline="509">SceneLevelOneB::checkPlayerPosMisc</referencedby>
         <referencedby refid="classSceneLevelTwo_1ad511ad540839c9ec9ab03c02784f1949" compoundref="SceneLevelTwoRenders_8cpp" startline="27" endline="193">SceneLevelTwo::RenderScene</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmisc_1a65813e82056f0e24ccf36088618001f1" prot="public" static="no" mutable="no">
@@ -53,10 +53,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="ComGraphics/Source/Misc.h" line="15" column="1" bodyfile="ComGraphics/Source/Misc.h" bodystart="15" bodyend="-1"/>
-        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="204" endline="252">SceneLevelOneA::checkDoor2</referencedby>
-        <referencedby refid="classSceneLevelTwo_1af756d75e45a09234a01aa03de6670cd6" compoundref="SceneLevelTwo_8cpp" startline="504" endline="509">SceneLevelTwo::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" compoundref="SceneLevelOneARenders_8cpp" startline="196" endline="244">SceneLevelOneA::checkDoor2</referencedby>
         <referencedby refid="classSceneStart_1a2c33e692fa8ba05e7a5e081b2d1688e2" compoundref="SceneStart_8cpp" startline="225" endline="230">SceneStart::checkPlayerPosMisc</referencedby>
-        <referencedby refid="classSceneLevelOneB_1adf46e437e991dca443d91b0ff689768d" compoundref="SceneLevelOneBRenders_8cpp" startline="510" endline="515">SceneLevelOneB::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelTwo_1af756d75e45a09234a01aa03de6670cd6" compoundref="SceneLevelTwo_8cpp" startline="557" endline="562">SceneLevelTwo::checkPlayerPosMisc</referencedby>
+        <referencedby refid="classSceneLevelOneB_1adf46e437e991dca443d91b0ff689768d" compoundref="SceneLevelOneBRenders_8cpp" startline="504" endline="509">SceneLevelOneB::checkPlayerPosMisc</referencedby>
         <referencedby refid="classSceneLevelTwo_1ad511ad540839c9ec9ab03c02784f1949" compoundref="SceneLevelTwoRenders_8cpp" startline="27" endline="193">SceneLevelTwo::RenderScene</referencedby>
         <referencedby refid="classmisc_1a0f8d72dfe38a0284899586da142daf8a" compoundref="Misc_8cpp" startline="40" endline="46">WithinArea</referencedby>
       </memberdef>
@@ -118,10 +118,10 @@
         <location file="ComGraphics/Source/Misc.h" line="12" column="1" bodyfile="ComGraphics/Source/Misc.cpp" bodystart="40" bodyend="46"/>
         <references refid="classmisc_1afd385934888e7e21a9c3c178b7fd465d" compoundref="Misc_8h" startline="15">camX</references>
         <references refid="classmisc_1a65813e82056f0e24ccf36088618001f1" compoundref="Misc_8h" startline="15">camZ</references>
-        <referencedby refid="classSceneLevelOneA_1a60782020f72e2e1a287b1ef4b9d82646" compoundref="SceneLevelOneARenders_8cpp" startline="141" endline="202">SceneLevelOneA::checkDoor1</referencedby>
+        <referencedby refid="classSceneLevelOneA_1a60782020f72e2e1a287b1ef4b9d82646" compoundref="SceneLevelOneARenders_8cpp" startline="133" endline="194">SceneLevelOneA::checkDoor1</referencedby>
         <referencedby refid="classSceneLevelOneB_1a9276588fd0ebaa37abfc2cf4048f5abd" compoundref="SceneLevelOneBRenders_8cpp" startline="38" endline="52">SceneLevelOneB::ElevatorCheck</referencedby>
-        <referencedby refid="classSceneLevelOneB_1a51da5bf853a804052fe9f04d4d3abba5" compoundref="SceneLevelOneB_8cpp" startline="507" endline="600">SceneLevelOneB::PuzzleOneSwitchCheck</referencedby>
-        <referencedby refid="classSceneLevelTwo_1a57e4fa45b2b3e694d0742e631bfd7d45" compoundref="SceneLevelTwo_8cpp" startline="511" endline="663">SceneLevelTwo::SomeUpdates</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a51da5bf853a804052fe9f04d4d3abba5" compoundref="SceneLevelOneB_8cpp" startline="510" endline="603">SceneLevelOneB::PuzzleOneSwitchCheck</referencedby>
+        <referencedby refid="classSceneLevelTwo_1a57e4fa45b2b3e694d0742e631bfd7d45" compoundref="SceneLevelTwo_8cpp" startline="564" endline="722">SceneLevelTwo::SomeUpdates</referencedby>
         <referencedby refid="classSceneLevelTwo_1ab2eac71e880e3d6044cd6a42e4dbcfe2" compoundref="SceneLevelTwoRenders_8cpp" startline="316" endline="360">SceneLevelTwo::SwitchCheck</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmisc_1af425955855ed4c3d4f09621afdf11785" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -169,8 +169,8 @@
         </inbodydescription>
         <location file="ComGraphics/Source/Misc.h" line="13" column="1" bodyfile="ComGraphics/Source/Misc.cpp" bodystart="22" bodyend="38"/>
         <references refid="Misc_8cpp_1a15f09d45e07d38822b5ecf228e503e36" compoundref="Misc_8cpp" startline="11" endline="20">getAngle</references>
-        <referencedby refid="classSceneLevelOneB_1a2bfa4551ac0b1f099c42c2193b55df47" compoundref="SceneLevelOneBRenders_8cpp" startline="435" endline="455">SceneLevelOneB::attackCheck</referencedby>
-        <referencedby refid="classSceneLevelOneA_1acae5c28ab518704326877b73c6df4e55" compoundref="SceneLevelOneARenders_8cpp" startline="398" endline="407">SceneLevelOneA::AttackCheck</referencedby>
+        <referencedby refid="classSceneLevelOneB_1a2bfa4551ac0b1f099c42c2193b55df47" compoundref="SceneLevelOneBRenders_8cpp" startline="429" endline="449">SceneLevelOneB::attackCheck</referencedby>
+        <referencedby refid="classSceneLevelOneA_1acae5c28ab518704326877b73c6df4e55" compoundref="SceneLevelOneARenders_8cpp" startline="390" endline="399">SceneLevelOneA::AttackCheck</referencedby>
         <referencedby refid="classSceneEnd_1a31fef5d67de3a3dfd2ae15d4bbcea2b6" compoundref="SceneEndRenders_8cpp" startline="424" endline="456">SceneEnd::checkAttack</referencedby>
       </memberdef>
       </sectiondef>

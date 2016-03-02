@@ -10,6 +10,12 @@
     <includedby refid="ik__ISoundEngine_8h" local="yes">ComGraphics/irrKlang/include/ik_ISoundEngine.h</includedby>
     <includedby refid="irrKlang_8h" local="yes">ComGraphics/irrKlang/include/irrKlang.h</includedby>
     <incdepgraph>
+      <node id="4676">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="4677" relation="include">
+        </childnode>
+      </node>
       <node id="4677">
         <label>wchar.h</label>
       </node>
@@ -24,30 +30,8 @@
       <node id="4675">
         <label>math.h</label>
       </node>
-      <node id="4676">
-        <label>ik_irrKlangTypes.h</label>
-        <link refid="ik__irrKlangTypes_8h"/>
-        <childnode refid="4677" relation="include">
-        </childnode>
-      </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="4694">
-        <label>ComGraphics/Source/OpeningCutScene2.cpp</label>
-        <link refid="OpeningCutScene2_8cpp"/>
-      </node>
-      <node id="4703">
-        <label>ComGraphics/Source/SceneLevelTwoRenders.cpp</label>
-        <link refid="SceneLevelTwoRenders_8cpp"/>
-      </node>
-      <node id="4697">
-        <label>ComGraphics/Source/SceneEndRenders.cpp</label>
-        <link refid="SceneEndRenders_8cpp"/>
-      </node>
-      <node id="4692">
-        <label>ComGraphics/Source/main.cpp</label>
-        <link refid="main_8cpp"/>
-      </node>
       <node id="4683">
         <label>ComGraphics/Source/Music.h</label>
         <link refid="Music_8h"/>
@@ -56,29 +40,51 @@
         <childnode refid="4705" relation="include">
         </childnode>
       </node>
+      <node id="4686">
+        <label>ComGraphics/Source/SceneOpening.h</label>
+        <link refid="SceneOpening_8h"/>
+        <childnode refid="4685" relation="include">
+        </childnode>
+        <childnode refid="4687" relation="include">
+        </childnode>
+      </node>
+      <node id="4692">
+        <label>ComGraphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="4703">
+        <label>ComGraphics/Source/SceneLevelTwoRenders.cpp</label>
+        <link refid="SceneLevelTwoRenders_8cpp"/>
+      </node>
+      <node id="4685">
+        <label>ComGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="4704">
+        <label>ComGraphics/Source/SceneStart.cpp</label>
+        <link refid="SceneStart_8cpp"/>
+      </node>
+      <node id="4679">
+        <label>ComGraphics/irrKlang/include/ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="4680" relation="include">
+        </childnode>
+        <childnode refid="4706" relation="include">
+        </childnode>
+        <childnode refid="4681" relation="include">
+        </childnode>
+      </node>
+      <node id="4705">
+        <label>ComGraphics/Source/Music.cpp</label>
+        <link refid="Music_8cpp"/>
+      </node>
+      <node id="4690">
+        <label>ComGraphics/Source/Credits.cpp</label>
+        <link refid="Credits_8cpp"/>
+      </node>
       <node id="4701">
         <label>ComGraphics/Source/SceneLevelOneBRenders.cpp</label>
         <link refid="SceneLevelOneBRenders_8cpp"/>
-      </node>
-      <node id="4689">
-        <label>ComGraphics/Source/Camera3.cpp</label>
-        <link refid="Camera3_8cpp"/>
-      </node>
-      <node id="4682">
-        <label>ComGraphics/irrKlang/plugins/ikpMP3/ikpMP3.cpp</label>
-        <link refid="ikpMP3_8cpp"/>
-      </node>
-      <node id="4693">
-        <label>ComGraphics/Source/OpeningCutScene.cpp</label>
-        <link refid="OpeningCutScene_8cpp"/>
-      </node>
-      <node id="4681">
-        <label>ComGraphics/irrKlang/include/irrKlang.h</label>
-        <link refid="irrKlang_8h"/>
-        <childnode refid="4682" relation="include">
-        </childnode>
-        <childnode refid="4683" relation="include">
-        </childnode>
       </node>
       <node id="4684">
         <label>ComGraphics/Source/Application.h</label>
@@ -122,44 +128,32 @@
         <childnode refid="4704" relation="include">
         </childnode>
       </node>
-      <node id="4690">
-        <label>ComGraphics/Source/Credits.cpp</label>
-        <link refid="Credits_8cpp"/>
+      <node id="4691">
+        <label>ComGraphics/Source/CutSceneOne.cpp</label>
+        <link refid="CutSceneOne_8cpp"/>
       </node>
-      <node id="4699">
-        <label>ComGraphics/Source/SceneLevelOneARenders.cpp</label>
-        <link refid="SceneLevelOneARenders_8cpp"/>
-      </node>
-      <node id="4695">
-        <label>ComGraphics/Source/SceneEnd.cpp</label>
-        <link refid="SceneEnd_8cpp"/>
-      </node>
-      <node id="4680">
-        <label>ComGraphics/irrKlang/include/ik_IAudioRecorder.h</label>
-        <link refid="ik__IAudioRecorder_8h"/>
-        <childnode refid="4681" relation="include">
-        </childnode>
-      </node>
-      <node id="4679">
-        <label>ComGraphics/irrKlang/include/ik_ISoundSource.h</label>
-        <link refid="ik__ISoundSource_8h"/>
-        <childnode refid="4680" relation="include">
-        </childnode>
+      <node id="4708">
+        <label>ComGraphics/irrKlang/include/ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
         <childnode refid="4706" relation="include">
         </childnode>
         <childnode refid="4681" relation="include">
         </childnode>
       </node>
-      <node id="4702">
-        <label>ComGraphics/Source/SceneLevelTwo.cpp</label>
-        <link refid="SceneLevelTwo_8cpp"/>
+      <node id="4693">
+        <label>ComGraphics/Source/OpeningCutScene.cpp</label>
+        <link refid="OpeningCutScene_8cpp"/>
       </node>
-      <node id="4686">
-        <label>ComGraphics/Source/SceneOpening.h</label>
-        <link refid="SceneOpening_8h"/>
-        <childnode refid="4685" relation="include">
+      <node id="4699">
+        <label>ComGraphics/Source/SceneLevelOneARenders.cpp</label>
+        <link refid="SceneLevelOneARenders_8cpp"/>
+      </node>
+      <node id="4681">
+        <label>ComGraphics/irrKlang/include/irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="4682" relation="include">
         </childnode>
-        <childnode refid="4687" relation="include">
+        <childnode refid="4683" relation="include">
         </childnode>
       </node>
       <node id="4678">
@@ -176,43 +170,53 @@
         <childnode refid="4681" relation="include">
         </childnode>
       </node>
+      <node id="4682">
+        <label>ComGraphics/irrKlang/plugins/ikpMP3/ikpMP3.cpp</label>
+        <link refid="ikpMP3_8cpp"/>
+      </node>
       <node id="4706">
         <label>ComGraphics/irrKlang/include/ik_ISoundEngine.h</label>
         <link refid="ik__ISoundEngine_8h"/>
         <childnode refid="4681" relation="include">
         </childnode>
       </node>
-      <node id="4688">
-        <label>ComGraphics/Source/Camera.cpp</label>
-        <link refid="Camera_8cpp"/>
-      </node>
       <node id="4700">
         <label>ComGraphics/Source/SceneLevelOneB.cpp</label>
         <link refid="SceneLevelOneB_8cpp"/>
+      </node>
+      <node id="4697">
+        <label>ComGraphics/Source/SceneEndRenders.cpp</label>
+        <link refid="SceneEndRenders_8cpp"/>
+      </node>
+      <node id="4695">
+        <label>ComGraphics/Source/SceneEnd.cpp</label>
+        <link refid="SceneEnd_8cpp"/>
       </node>
       <node id="4696">
         <label>ComGraphics/Source/SceneEndCutScene.cpp</label>
         <link refid="SceneEndCutScene_8cpp"/>
       </node>
-      <node id="4685">
-        <label>ComGraphics/Source/Application.cpp</label>
-        <link refid="Application_8cpp"/>
+      <node id="4680">
+        <label>ComGraphics/irrKlang/include/ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="4681" relation="include">
+        </childnode>
+      </node>
+      <node id="4702">
+        <label>ComGraphics/Source/SceneLevelTwo.cpp</label>
+        <link refid="SceneLevelTwo_8cpp"/>
+      </node>
+      <node id="4687">
+        <label>ComGraphics/Source/SceneOpening.cpp</label>
+        <link refid="SceneOpening_8cpp"/>
       </node>
       <node id="4698">
         <label>ComGraphics/Source/SceneLevelOneA.cpp</label>
         <link refid="SceneLevelOneA_8cpp"/>
       </node>
-      <node id="4708">
-        <label>ComGraphics/irrKlang/include/ik_ISound.h</label>
-        <link refid="ik__ISound_8h"/>
-        <childnode refid="4706" relation="include">
-        </childnode>
-        <childnode refid="4681" relation="include">
-        </childnode>
-      </node>
-      <node id="4687">
-        <label>ComGraphics/Source/SceneOpening.cpp</label>
-        <link refid="SceneOpening_8cpp"/>
+      <node id="4689">
+        <label>ComGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
       </node>
       <node id="4707">
         <label>ComGraphics/irrKlang/include/ik_ISoundEffectControl.h</label>
@@ -222,17 +226,13 @@
         <childnode refid="4681" relation="include">
         </childnode>
       </node>
-      <node id="4704">
-        <label>ComGraphics/Source/SceneStart.cpp</label>
-        <link refid="SceneStart_8cpp"/>
+      <node id="4694">
+        <label>ComGraphics/Source/OpeningCutScene2.cpp</label>
+        <link refid="OpeningCutScene2_8cpp"/>
       </node>
-      <node id="4705">
-        <label>ComGraphics/Source/Music.cpp</label>
-        <link refid="Music_8cpp"/>
-      </node>
-      <node id="4691">
-        <label>ComGraphics/Source/CutSceneOne.cpp</label>
-        <link refid="CutSceneOne_8cpp"/>
+      <node id="4688">
+        <label>ComGraphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classirrklang_1_1vec3d" prot="public">irrklang::vec3d</innerclass>

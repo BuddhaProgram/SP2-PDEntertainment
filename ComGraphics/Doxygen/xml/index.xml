@@ -364,6 +364,7 @@
     <member refid="classExplorer_1adadd4225520dd41a45ab5a02f3526e5f" kind="variable"><name>isDead</name></member>
     <member refid="classExplorer_1a5793bc8fed71824443022babd625f0ef" kind="variable"><name>checkSavePoint</name></member>
     <member refid="classExplorer_1ab5e4808c3e1bcdce10820358b9a51ae9" kind="variable"><name>SavePoint</name></member>
+    <member refid="classExplorer_1a088f9e9af165f504ca418f591e44088e" kind="variable"><name>f_FlickeringLight</name></member>
     <member refid="classExplorer_1afc5637a94d6f094b796d80abf42d930b" kind="function"><name>instance</name></member>
     <member refid="classExplorer_1a152031dbfe83b09c3c292a8b8edae6e5" kind="function"><name>setHP</name></member>
     <member refid="classExplorer_1a9d134304afaf635d4b3c97f465711e49" kind="function"><name>setStamina</name></member>
@@ -374,7 +375,6 @@
     <member refid="classExplorer_1a2314ec87110e38517fe9c2952bcb0b31" kind="function"><name>InsertToolSlot</name></member>
     <member refid="classExplorer_1a227a8dd80aa001ea416b4ed403281198" kind="function"><name>CheckForDoubleTool</name></member>
     <member refid="classExplorer_1afad219513d65c2efdc84490bd8c06bde" kind="function"><name>checkDead</name></member>
-    <member refid="classExplorer_1ae12def922703559f8098a0ac04b6d2d1" kind="function"><name>ExplorerSavePoint</name></member>
     <member refid="classExplorer_1acbedef0262785b6983d1fe9b4f2c6242" kind="function"><name>Explorer</name></member>
   </compound>
   <compound refid="structGetBitContext" kind="struct"><name>GetBitContext</name>
@@ -392,6 +392,8 @@
     <member refid="classGlobalVariables_1a9cfbae7b5e9bb6764b6ebd6b815bc482" kind="variable"><name>f_SwitchRotateOne</name></member>
     <member refid="classGlobalVariables_1a0d47efa9693f6eeec3cdffe7ad479bd4" kind="variable"><name>f_SwitchRotateTwo</name></member>
     <member refid="classGlobalVariables_1a8970d821ca7c3e5a72db6992a1fc9210" kind="variable"><name>f_SwitchRotateThree</name></member>
+    <member refid="classGlobalVariables_1a77e4e7b28e32abe7c891dbb712ad0c67" kind="variable"><name>f_SwitchRotateFour</name></member>
+    <member refid="classGlobalVariables_1a1e131bce5d58bb8cd79cf2bb811b9bb0" kind="variable"><name>f_SwitchRotateFive</name></member>
     <member refid="classGlobalVariables_1aee2b21c3601cb02595c635d50d714667" kind="variable"><name>b_SwitchAnimate</name></member>
     <member refid="classGlobalVariables_1a5f9907e937b1bb9b3723e7525837964e" kind="variable"><name>f_redScreenTimer</name></member>
     <member refid="classGlobalVariables_1a44efb7e5f198bf3890f216c1827f8236" kind="variable"><name>f_rotatingTool</name></member>
@@ -1016,11 +1018,6 @@
     <member refid="classSceneEnd_1ab3c74540c972155e4c4d3531412f1b12aaab0c06897fc02ba44ad34c276a4fce3" kind="enumvalue"><name>GEO_LIGHTBALL</name></member>
     <member refid="classSceneEnd_1ab3c74540c972155e4c4d3531412f1b12a7a0d9ba165f3de866fd3ac1fdd065b1c" kind="enumvalue"><name>GEO_TEXT</name></member>
     <member refid="classSceneEnd_1ab3c74540c972155e4c4d3531412f1b12a4c1ba75ebad7f1da7517d9cb145764ef" kind="enumvalue"><name>GEO_MOUNTTEXT</name></member>
-    <member refid="classSceneEnd_1ab3c74540c972155e4c4d3531412f1b12ab1a7dc16158864cc2ba7e28f0348826e" kind="enumvalue"><name>GEO_EARTH</name></member>
-    <member refid="classSceneEnd_1ab3c74540c972155e4c4d3531412f1b12a70e52dfd0a9837aa7df5f3c2eca99093" kind="enumvalue"><name>GEO_MOON</name></member>
-    <member refid="classSceneEnd_1ab3c74540c972155e4c4d3531412f1b12a5d6735852d6ab01cc283da0bb2fd637d" kind="enumvalue"><name>GEO_PLANET</name></member>
-    <member refid="classSceneEnd_1ab3c74540c972155e4c4d3531412f1b12ab682a70b2c8bc7f0a0bc336cd86d7418" kind="enumvalue"><name>GEO_ASTEROID1</name></member>
-    <member refid="classSceneEnd_1ab3c74540c972155e4c4d3531412f1b12a896bc41424796f959e9400f323999249" kind="enumvalue"><name>GEO_ASTEROID2</name></member>
     <member refid="classSceneEnd_1ab3c74540c972155e4c4d3531412f1b12a2ba9da8fc0bb993e4fe7dea72c211bd5" kind="enumvalue"><name>GEO_MAINDOORLEFT</name></member>
     <member refid="classSceneEnd_1ab3c74540c972155e4c4d3531412f1b12a8e082aaa4683a6a34dad3aa51e494dbf" kind="enumvalue"><name>GEO_MAINDOORRIGHT</name></member>
     <member refid="classSceneEnd_1ab3c74540c972155e4c4d3531412f1b12a9c458767e5f3544cfb05aa6bb593cae3" kind="enumvalue"><name>GEO_RUBBLE</name></member>
@@ -1109,8 +1106,8 @@
     <member refid="classSceneEnd_1aec8f665ec0c93b812942ac4123bf6483" kind="variable"><name>spawnWaveOne</name></member>
     <member refid="classSceneEnd_1ab192898ceacd68c736cdc52615797c5f" kind="variable"><name>killCounter</name></member>
     <member refid="classSceneEnd_1a64ecbffee1f0e4db9101ca2216b87a7e" kind="variable"><name>waveCounter</name></member>
-    <member refid="classSceneEnd_1ab2eb51ee02a5643e278bcb1ed208b519" kind="variable"><name>MobMS</name></member>
-    <member refid="classSceneEnd_1a7b96b86966de9f69b1512043db7c8d23" kind="variable"><name>BossMS</name></member>
+    <member refid="classSceneEnd_1af7dab8a71d8156a89bd60bb49962723f" kind="variable"><name>MobMS</name></member>
+    <member refid="classSceneEnd_1a839ccd4f7b5063c94656870fb4c2ee09" kind="variable"><name>BossMS</name></member>
     <member refid="classSceneEnd_1a351735a0225a25cef4f6d816a8370e1b" kind="variable"><name>CrosshairHit</name></member>
     <member refid="classSceneEnd_1a83e60d74d2e63e674b964b900b321884" kind="function"><name>SceneEnd</name></member>
     <member refid="classSceneEnd_1a8ce4d065f4d754edd285e1b95bfb0d56" kind="function"><name>~SceneEnd</name></member>
@@ -1167,11 +1164,6 @@
     <member refid="classSceneEndCutScene_1a8ae4e503498a035546820498251c872ba39a52b71a941bb0e5b93cba134984e03" kind="enumvalue"><name>GEO_LIGHTBALL</name></member>
     <member refid="classSceneEndCutScene_1a8ae4e503498a035546820498251c872ba69298cec19b3e2b22664b9175308b4a2" kind="enumvalue"><name>GEO_TEXT</name></member>
     <member refid="classSceneEndCutScene_1a8ae4e503498a035546820498251c872bacf49727029963beb0dd05ba09623b1f1" kind="enumvalue"><name>GEO_MOUNTTEXT</name></member>
-    <member refid="classSceneEndCutScene_1a8ae4e503498a035546820498251c872ba29c135ec0f13e4e4cbf2ad72be43f052" kind="enumvalue"><name>GEO_EARTH</name></member>
-    <member refid="classSceneEndCutScene_1a8ae4e503498a035546820498251c872ba6f5e5bb5119888bbda3ba018260ba8de" kind="enumvalue"><name>GEO_MOON</name></member>
-    <member refid="classSceneEndCutScene_1a8ae4e503498a035546820498251c872ba03f020392649e14789ec827fbbfcffac" kind="enumvalue"><name>GEO_PLANET</name></member>
-    <member refid="classSceneEndCutScene_1a8ae4e503498a035546820498251c872ba8dc12748bc2e048cc1f18ad917316a85" kind="enumvalue"><name>GEO_ASTEROID1</name></member>
-    <member refid="classSceneEndCutScene_1a8ae4e503498a035546820498251c872ba900669b0258e62e485bc7b031a700a63" kind="enumvalue"><name>GEO_ASTEROID2</name></member>
     <member refid="classSceneEndCutScene_1a8ae4e503498a035546820498251c872baa49ed7f9fa8662b93e0ca14614fb054d" kind="enumvalue"><name>GEO_MAINDOORLEFT</name></member>
     <member refid="classSceneEndCutScene_1a8ae4e503498a035546820498251c872ba91644afd2eab2ce9000d9b0d336c9e2d" kind="enumvalue"><name>GEO_MAINDOORRIGHT</name></member>
     <member refid="classSceneEndCutScene_1a8ae4e503498a035546820498251c872ba06543c4a8ebf10bd1bc160c53cd200b5" kind="enumvalue"><name>GEO_RUBBLE</name></member>
@@ -1406,8 +1398,6 @@
     <member refid="classSceneLevelOneA_1ac020bc6859e21440301c194b4e4be904" kind="function"><name>RenderToolIcon</name></member>
     <member refid="classSceneLevelOneA_1a6557be92037519a0cb4af0deb6340fb1" kind="function"><name>MouseClickFunction</name></member>
     <member refid="classSceneLevelOneA_1a315e8941ccd057ea4c5e7a23d9919b6c" kind="function"><name>RenderPickUpPickAxe</name></member>
-    <member refid="classSceneLevelOneA_1a8cdf4a86b4d9e080f1a6f70d5061c3d5" kind="function"><name>UpdateSavePoint</name></member>
-    <member refid="classSceneLevelOneA_1a6cdedb4f21d64c4f85ca5d8ae1bc4bcc" kind="function"><name>RenderSavePointText</name></member>
     <member refid="classSceneLevelOneA_1a9d569863371f766599660dd6f78cdc47" kind="function"><name>checkRubbleFall</name></member>
     <member refid="classSceneLevelOneA_1a60782020f72e2e1a287b1ef4b9d82646" kind="function"><name>checkDoor1</name></member>
     <member refid="classSceneLevelOneA_1aa8769150f2225cc0a8ddb059a91e9e0d" kind="function"><name>checkDoor2</name></member>
@@ -1626,6 +1616,8 @@
     <member refid="classSceneLevelTwo_1a4d134441964b858a4a485931f79647e6ae4dcde9325b1a1e6f6436f87e94bfe6a" kind="enumvalue"><name>GEO_SPAWNPOINT</name></member>
     <member refid="classSceneLevelTwo_1a4d134441964b858a4a485931f79647e6a284df23de39e4c5b8d7ed363fe8983d2" kind="enumvalue"><name>GEO_SLIDEDOORTOP</name></member>
     <member refid="classSceneLevelTwo_1a4d134441964b858a4a485931f79647e6ae8470d8e72d15698c7d7f1afb7c2e039" kind="enumvalue"><name>GEO_SLIDEDOORBTM</name></member>
+    <member refid="classSceneLevelTwo_1a4d134441964b858a4a485931f79647e6a7173755aa46b9c3c20379e5eab41a4f1" kind="enumvalue"><name>GEO_LIGHTGREEN</name></member>
+    <member refid="classSceneLevelTwo_1a4d134441964b858a4a485931f79647e6a333043d08d15dcfbe5bf8002ec50ed07" kind="enumvalue"><name>GEO_LIGHTRED</name></member>
     <member refid="classSceneLevelTwo_1a4d134441964b858a4a485931f79647e6a5551f81ae325c25df39f6e5db06476d8" kind="enumvalue"><name>GEO_LEVER</name></member>
     <member refid="classSceneLevelTwo_1a4d134441964b858a4a485931f79647e6a2d1f5dbec283d12d8a76e9feaf8fc33e" kind="enumvalue"><name>GEO_DEADCOLOR</name></member>
     <member refid="classSceneLevelTwo_1a4d134441964b858a4a485931f79647e6a07f3a366d90840456399c7c7586c65b1" kind="enumvalue"><name>GEO_DEADBLACKSCREEN</name></member>
@@ -1700,6 +1692,7 @@
     <member refid="classSceneLevelTwo_1a51b7e15c60d59ae388400a420efbbae5" kind="function"><name>Update</name></member>
     <member refid="classSceneLevelTwo_1a63a16f9a1a71dd298d6e45edaa5efef4" kind="function"><name>Render</name></member>
     <member refid="classSceneLevelTwo_1a7bd16fca7a3be47979729845b65d6378" kind="function"><name>Reset</name></member>
+    <member refid="classSceneLevelTwo_1a91e1373bd5d7570304248405ffd8e38d" kind="function"><name>ResetAll</name></member>
     <member refid="classSceneLevelTwo_1ac4002d40b3fcf8c314287a9ae0fe59b1" kind="function"><name>Exit</name></member>
     <member refid="classSceneLevelTwo_1af14e331600762d2db65f6a954ecade58" kind="function"><name>RenderMesh</name></member>
     <member refid="classSceneLevelTwo_1a57e4fa45b2b3e694d0742e631bfd7d45" kind="function"><name>SomeUpdates</name></member>
@@ -1720,7 +1713,10 @@
     <member refid="classSceneLevelTwo_1ab1de6c7dd72b0416fdcc79040db55503" kind="function"><name>SpecialCollision</name></member>
     <member refid="classSceneLevelTwo_1a95ede72b1fd4719998405977356a3592" kind="function"><name>proximitycheck</name></member>
     <member refid="classSceneLevelTwo_1ab2eac71e880e3d6044cd6a42e4dbcfe2" kind="function"><name>SwitchCheck</name></member>
-    <member refid="classSceneLevelTwo_1a24f3d38e626290b3b7a9d50e59b8b183" kind="function"><name>PuzzleOneSwitchCheck</name></member>
+    <member refid="classSceneLevelTwo_1a7da7cacb42d3f3779de4ce534ace1286" kind="function"><name>PuzzleTwoSwitchCheck</name></member>
+    <member refid="classSceneLevelTwo_1a0caf4b6eaeebc594d8e0a5685a05dcd0" kind="function"><name>LogicAnimationSwitches</name></member>
+    <member refid="classSceneLevelTwo_1ab3329960ed032b40f42203698342a945" kind="function"><name>SwitchCollisionChecker</name></member>
+    <member refid="classSceneLevelTwo_1a9336f122cef8eecd28522192505fd677" kind="function"><name>RenderPuzzle</name></member>
     <member refid="classSceneLevelTwo_1a0c8d8577f843e49d6d06420cfd1d55d4" kind="function"><name>ToolsUI</name></member>
     <member refid="classSceneLevelTwo_1ae34719e5f70b4f972919c50497070ef7" kind="function"><name>MouseScrollToolSlot</name></member>
     <member refid="classSceneLevelTwo_1a8d7121cab8a18887aa6758bc0261adda" kind="function"><name>RenderMouseScrollToolSlot</name></member>
@@ -1803,11 +1799,6 @@
     <member refid="classSceneStart_1a7c32dd00f7255def634117eeb91338cfa8d76250204ca8828780e13951f038105" kind="enumvalue"><name>GEO_LIGHTBALL</name></member>
     <member refid="classSceneStart_1a7c32dd00f7255def634117eeb91338cfa97fec2239186e9233b6154dd99e46a48" kind="enumvalue"><name>GEO_TEXT</name></member>
     <member refid="classSceneStart_1a7c32dd00f7255def634117eeb91338cfaa62d39e4f119b8999123f10869b4f6d8" kind="enumvalue"><name>GEO_MOUNTTEXT</name></member>
-    <member refid="classSceneStart_1a7c32dd00f7255def634117eeb91338cfacdd013d42e4cb17495c73d36dc637d4f" kind="enumvalue"><name>GEO_EARTH</name></member>
-    <member refid="classSceneStart_1a7c32dd00f7255def634117eeb91338cfa89fa4e4fd849095e4260de9d3f33e498" kind="enumvalue"><name>GEO_MOON</name></member>
-    <member refid="classSceneStart_1a7c32dd00f7255def634117eeb91338cfaa02d8adc93803235d3dc9aa75bde0bac" kind="enumvalue"><name>GEO_PLANET</name></member>
-    <member refid="classSceneStart_1a7c32dd00f7255def634117eeb91338cfaee35556b7520dab206b53fe19c5c33c8" kind="enumvalue"><name>GEO_ASTEROID1</name></member>
-    <member refid="classSceneStart_1a7c32dd00f7255def634117eeb91338cfaef0fb80dadd16f43b11564a2ac5afd81" kind="enumvalue"><name>GEO_ASTEROID2</name></member>
     <member refid="classSceneStart_1a7c32dd00f7255def634117eeb91338cfa82e2eb990ca94a3db07d70a2d597b33f" kind="enumvalue"><name>GEO_MAINDOORLEFT</name></member>
     <member refid="classSceneStart_1a7c32dd00f7255def634117eeb91338cfa1134f65e729984508277dfe024347429" kind="enumvalue"><name>GEO_MAINDOORRIGHT</name></member>
     <member refid="classSceneStart_1a7c32dd00f7255def634117eeb91338cfaa490d86d72cf5a7feb9c8531688d01e9" kind="enumvalue"><name>GEO_RUBBLE</name></member>

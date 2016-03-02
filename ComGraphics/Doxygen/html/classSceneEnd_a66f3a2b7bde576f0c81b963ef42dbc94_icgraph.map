@@ -1,4 +1,4 @@
 <map id="SceneEnd::Reset" name="SceneEnd::Reset">
 <area shape="rect" id="node2" href="$classSceneEnd.html#ad27d89ab1ad40e1b57a307e4a27c2683" title="SceneEnd::ContinueGameOrNot" alt="" coords="177,5,388,32"/>
-<area shape="rect" id="node3" href="$classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="436,5,567,32"/>
+<area shape="rect" id="node3" href="$classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="436,31,567,57"/>
 </map>

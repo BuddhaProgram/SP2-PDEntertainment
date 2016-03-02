@@ -54,6 +54,7 @@ void SceneStart::Init()
 	m_parameters[U_MATERIAL_DIFFUSE] = glGetUniformLocation(m_programID, "material.kDiffuse");
 	m_parameters[U_MATERIAL_SPECULAR] = glGetUniformLocation(m_programID, "material.kSpecular");
 	m_parameters[U_MATERIAL_SHININESS] = glGetUniformLocation(m_programID, "material.kShininess");
+
 	m_parameters[U_LIGHT0_POSITION] = glGetUniformLocation(m_programID, "lights[0].position_cameraspace");
 	m_parameters[U_LIGHT0_COLOR] = glGetUniformLocation(m_programID, "lights[0].color");
 	m_parameters[U_LIGHT0_POWER] = glGetUniformLocation(m_programID, "lights[0].power");
@@ -65,6 +66,7 @@ void SceneStart::Init()
 	m_parameters[U_LIGHT0_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[0].cosCutoff");
 	m_parameters[U_LIGHT0_COSINNER] = glGetUniformLocation(m_programID, "lights[0].cosInner");
 	m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
+
 	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
 	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
 	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
@@ -81,8 +83,8 @@ void SceneStart::Init()
 	light[0].kC = 1.f;
 	light[0].kL = 0.01f;
 	light[0].kQ = 0.001f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(30));
-	light[0].cosInner = cos(Math::DegreeToRadian(15));
+	light[0].cosCutoff = cos(Math::DegreeToRadian(20));
+	light[0].cosInner = cos(Math::DegreeToRadian(1));
 	light[0].exponent = 3.f;
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 
@@ -290,21 +292,21 @@ void SceneStart::ToolSelectionMouseScroll()
 		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe)
 		{
 			modelStack.PushMatrix();
-			RenderModelOnScreen(meshList[GEO_PICKAXE], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
+			RenderModelOnScreen(meshList[GEO_PICKAXE], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, false);
 			modelStack.PopMatrix();
 		}
 
 		else if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::BaseballBat)
 		{
 			modelStack.PushMatrix();
-			RenderModelOnScreen(meshList[GEO_BAT], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
+			RenderModelOnScreen(meshList[GEO_BAT], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, false);
 			modelStack.PopMatrix();
 		}
 
 		else if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Sword)
 		{
 			modelStack.PushMatrix();
-			RenderModelOnScreen(meshList[GEO_SWORD], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, true);
+			RenderModelOnScreen(meshList[GEO_SWORD], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, false);
 			modelStack.PopMatrix();
 		}
 	}
@@ -351,12 +353,12 @@ void SceneStart::RenderToolIcon()
 
 		if (Explorer::instance()->GetToolType(4) == ToolUI::Pickaxe)
 		{
-			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+			RenderModelOnScreen(meshList[GEO_PICKAXEICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.275f, 0.775f, 1.0f, false);
 		}
 
 		else if (Explorer::instance()->GetToolType(4) == ToolUI::BaseballBat)
 		{
-			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.725f, 0.775f, 1.0f, false);
+			RenderModelOnScreen(meshList[GEO_BATICON], 4.5f, 4.5f, 4.5f, 90, 1, 0, 0, 11.275f, 0.775f, 1.0f, false);
 		}
 
 		else if (Explorer::instance()->GetToolType(4) == ToolUI::Sword)
@@ -429,10 +431,29 @@ void SceneStart::ChangeFirstCutScene()
     }
 }
 
+void SceneStart::FlickeringLight(double dt)
+{
+	Explorer::instance()->f_FlickeringLight += (float)dt;
+	if (static_cast<int>(Explorer::instance()->f_FlickeringLight) < 1.0f)
+	{
+		light[0].power = 2.0f;
+		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
+	}
+
+	else if (Explorer::instance()->f_FlickeringLight < 1.2f)
+	{
+		light[0].power = 0.0f;
+		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
+	}
+
+	else if (Explorer::instance()->f_FlickeringLight > 1.2f)
+	{
+		Explorer::instance()->f_FlickeringLight = 0.0f;
+	}
+}
+
 void SceneStart::Update(double dt)
 {
-	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
-	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 	FPS = 1.f / (float)dt;	
 	checkPlayerPosMisc();
 	Variables.f_Worldspin += (float)(dt);
@@ -461,9 +482,19 @@ void SceneStart::Update(double dt)
 	if (Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 
+	FlickeringLight(dt);
 	camera.Update(dt);
+	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
+	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 
 	rotate += (float)(200 * dt);
+
+	if (Application::IsKeyPressed('Z'))
+	{
+		Explorer::instance()->InsertToolSlot(ToolUI::Pickaxe);
+		Explorer::instance()->InsertToolSlot(ToolUI::Sword);
+		Explorer::instance()->InsertToolSlot(ToolUI::BaseballBat);
+	}
 
 	if (timer)
 	{

@@ -11,40 +11,6 @@
       <node id="5479">
         <label>list</label>
       </node>
-      <node id="5480">
-        <label>Vector3.h</label>
-        <link refid="Vector3_8h"/>
-        <childnode refid="5481" relation="include">
-        </childnode>
-        <childnode refid="5486" relation="include">
-        </childnode>
-      </node>
-      <node id="5482">
-        <label>cmath</label>
-      </node>
-      <node id="5483">
-        <label>exception</label>
-      </node>
-      <node id="5484">
-        <label>ctime</label>
-      </node>
-      <node id="5478">
-        <label>vector</label>
-      </node>
-      <node id="5485">
-        <label>cstdlib</label>
-      </node>
-      <node id="5486">
-        <label>iostream</label>
-      </node>
-      <node id="5476">
-        <label>ComGraphics/Source/Explorer.h</label>
-        <link refid="Explorer.h"/>
-        <childnode refid="5477" relation="include">
-        </childnode>
-        <childnode refid="5480" relation="include">
-        </childnode>
-      </node>
       <node id="5477">
         <label>ToolUI.h</label>
         <link refid="ToolUI_8h"/>
@@ -65,43 +31,117 @@
         <childnode refid="5485" relation="include">
         </childnode>
       </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="5519">
-        <label>ComGraphics/Source/OpeningCutScene.h</label>
-        <link refid="OpeningCutScene_8h"/>
-        <childnode refid="5490" relation="include">
+      <node id="5482">
+        <label>cmath</label>
+      </node>
+      <node id="5480">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="5481" relation="include">
         </childnode>
-        <childnode refid="5498" relation="include">
+        <childnode refid="5486" relation="include">
         </childnode>
       </node>
-      <node id="5499">
-        <label>ComGraphics/Source/OpeningCutScene2.cpp</label>
-        <link refid="OpeningCutScene2_8cpp"/>
+      <node id="5483">
+        <label>exception</label>
+      </node>
+      <node id="5476">
+        <label>ComGraphics/Source/Explorer.h</label>
+        <link refid="Explorer.h"/>
+        <childnode refid="5477" relation="include">
+        </childnode>
+        <childnode refid="5480" relation="include">
+        </childnode>
+      </node>
+      <node id="5484">
+        <label>ctime</label>
+      </node>
+      <node id="5478">
+        <label>vector</label>
+      </node>
+      <node id="5485">
+        <label>cstdlib</label>
+      </node>
+      <node id="5486">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5515">
+        <label>ComGraphics/Source/CutSceneOneRenders.cpp</label>
+        <link refid="CutSceneOneRenders_8cpp"/>
+      </node>
+      <node id="5491">
+        <label>ComGraphics/Source/SceneOpening.h</label>
+        <link refid="SceneOpening_8h"/>
+        <childnode refid="5490" relation="include">
+        </childnode>
+        <childnode refid="5492" relation="include">
+        </childnode>
+      </node>
+      <node id="5497">
+        <label>ComGraphics/Source/main.cpp</label>
+        <link refid="main_8cpp"/>
       </node>
       <node id="5508">
         <label>ComGraphics/Source/SceneLevelTwoRenders.cpp</label>
         <link refid="SceneLevelTwoRenders_8cpp"/>
       </node>
-      <node id="5522">
-        <label>ComGraphics/Source/Credits.h</label>
-        <link refid="Credits_8h"/>
+      <node id="5490">
+        <label>ComGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5509">
+        <label>ComGraphics/Source/SceneStart.cpp</label>
+        <link refid="SceneStart_8cpp"/>
+      </node>
+      <node id="5521">
+        <label>ComGraphics/Source/SceneEndCutScene.h</label>
+        <link refid="SceneEndCutScene_8h"/>
         <childnode refid="5490" relation="include">
         </childnode>
-        <childnode refid="5495" relation="include">
+        <childnode refid="5501" relation="include">
+        </childnode>
+        <childnode refid="5502" relation="include">
         </childnode>
       </node>
-      <node id="5511">
-        <label>ComGraphics/Source/SceneStartRenders.cpp</label>
-        <link refid="SceneStartRenders_8cpp"/>
+      <node id="5516">
+        <label>ComGraphics/Source/SceneLevelOneA.h</label>
+        <link refid="SceneLevelOneA_8h"/>
+        <childnode refid="5490" relation="include">
+        </childnode>
+        <childnode refid="5513" relation="include">
+        </childnode>
+        <childnode refid="5503" relation="include">
+        </childnode>
+        <childnode refid="5504" relation="include">
+        </childnode>
       </node>
-      <node id="5502">
-        <label>ComGraphics/Source/SceneEndRenders.cpp</label>
-        <link refid="SceneEndRenders_8cpp"/>
+      <node id="5513">
+        <label>ComGraphics/Source/MapRender.cpp</label>
+        <link refid="MapRender_8cpp"/>
       </node>
-      <node id="5497">
-        <label>ComGraphics/Source/main.cpp</label>
-        <link refid="main_8cpp"/>
+      <node id="5520">
+        <label>ComGraphics/Source/OpeningCutScene2.h</label>
+        <link refid="OpeningCutScene2_8h"/>
+        <childnode refid="5490" relation="include">
+        </childnode>
+        <childnode refid="5499" relation="include">
+        </childnode>
+        <childnode refid="5511" relation="include">
+        </childnode>
+      </node>
+      <node id="5528">
+        <label>ComGraphics/Source/HostileMob.cpp</label>
+        <link refid="HostileMob_8cpp"/>
+      </node>
+      <node id="5495">
+        <label>ComGraphics/Source/Credits.cpp</label>
+        <link refid="Credits_8cpp"/>
+      </node>
+      <node id="5506">
+        <label>ComGraphics/Source/SceneLevelOneBRenders.cpp</label>
+        <link refid="SceneLevelOneBRenders_8cpp"/>
       </node>
       <node id="5488">
         <label>ComGraphics/Source/Scene.h</label>
@@ -131,45 +171,31 @@
         <childnode refid="5522" relation="include">
         </childnode>
       </node>
-      <node id="5506">
-        <label>ComGraphics/Source/SceneLevelOneBRenders.cpp</label>
-        <link refid="SceneLevelOneBRenders_8cpp"/>
-      </node>
-      <node id="5527">
-        <label>ComGraphics/Source/MobBossOne.cpp</label>
-        <link refid="MobBossOne_8cpp"/>
-      </node>
-      <node id="5494">
-        <label>ComGraphics/Source/Camera3.cpp</label>
-        <link refid="Camera3_8cpp"/>
-      </node>
-      <node id="5498">
-        <label>ComGraphics/Source/OpeningCutScene.cpp</label>
-        <link refid="OpeningCutScene_8cpp"/>
-      </node>
-      <node id="5512">
-        <label>ComGraphics/Source/SceneEnd.h</label>
-        <link refid="SceneEnd_8h"/>
+      <node id="5517">
+        <label>ComGraphics/Source/SceneLevelOneB.h</label>
+        <link refid="SceneLevelOneB_8h"/>
         <childnode refid="5490" relation="include">
         </childnode>
         <childnode refid="5513" relation="include">
         </childnode>
-        <childnode refid="5500" relation="include">
+        <childnode refid="5505" relation="include">
         </childnode>
-        <childnode refid="5502" relation="include">
+        <childnode refid="5506" relation="include">
         </childnode>
       </node>
-      <node id="5518">
-        <label>ComGraphics/Source/SceneLevelTwo.h</label>
-        <link refid="SceneLevelTwo_8h"/>
-        <childnode refid="5490" relation="include">
+      <node id="5487">
+        <label>ComGraphics/Source/Explorer.h</label>
+        <link refid="Explorer.h"/>
+        <childnode refid="5488" relation="include">
         </childnode>
-        <childnode refid="5513" relation="include">
+        <childnode refid="5523" relation="include">
         </childnode>
-        <childnode refid="5507" relation="include">
+        <childnode refid="5529" relation="include">
         </childnode>
-        <childnode refid="5508" relation="include">
-        </childnode>
+      </node>
+      <node id="5529">
+        <label>ComGraphics/Source/Explorer.cpp</label>
+        <link refid="Explorer_8cpp"/>
       </node>
       <node id="5489">
         <label>ComGraphics/Source/Application.h</label>
@@ -213,69 +239,45 @@
         <childnode refid="5509" relation="include">
         </childnode>
       </node>
-      <node id="5495">
-        <label>ComGraphics/Source/Credits.cpp</label>
-        <link refid="Credits_8cpp"/>
+      <node id="5496">
+        <label>ComGraphics/Source/CutSceneOne.cpp</label>
+        <link refid="CutSceneOne_8cpp"/>
+      </node>
+      <node id="5498">
+        <label>ComGraphics/Source/OpeningCutScene.cpp</label>
+        <link refid="OpeningCutScene_8cpp"/>
+      </node>
+      <node id="5512">
+        <label>ComGraphics/Source/SceneEnd.h</label>
+        <link refid="SceneEnd_8h"/>
+        <childnode refid="5490" relation="include">
+        </childnode>
+        <childnode refid="5513" relation="include">
+        </childnode>
+        <childnode refid="5500" relation="include">
+        </childnode>
+        <childnode refid="5502" relation="include">
+        </childnode>
       </node>
       <node id="5504">
         <label>ComGraphics/Source/SceneLevelOneARenders.cpp</label>
         <link refid="SceneLevelOneARenders_8cpp"/>
       </node>
-      <node id="5500">
-        <label>ComGraphics/Source/SceneEnd.cpp</label>
-        <link refid="SceneEnd_8cpp"/>
+      <node id="5505">
+        <label>ComGraphics/Source/SceneLevelOneB.cpp</label>
+        <link refid="SceneLevelOneB_8cpp"/>
       </node>
-      <node id="5529">
-        <label>ComGraphics/Source/Explorer.cpp</label>
-        <link refid="Explorer_8cpp"/>
-      </node>
-      <node id="5526">
-        <label>ComGraphics/Source/MobBossOne.h</label>
-        <link refid="MobBossOne_8h"/>
-        <childnode refid="5512" relation="include">
-        </childnode>
-        <childnode refid="5517" relation="include">
-        </childnode>
-        <childnode refid="5527" relation="include">
-        </childnode>
-      </node>
-      <node id="5514">
-        <label>ComGraphics/Source/CutSceneOne.h</label>
-        <link refid="CutSceneOne_8h"/>
-        <childnode refid="5490" relation="include">
-        </childnode>
-        <childnode refid="5496" relation="include">
-        </childnode>
-        <childnode refid="5515" relation="include">
-        </childnode>
-      </node>
-      <node id="5507">
-        <label>ComGraphics/Source/SceneLevelTwo.cpp</label>
-        <link refid="SceneLevelTwo_8cpp"/>
-      </node>
-      <node id="5491">
-        <label>ComGraphics/Source/SceneOpening.h</label>
-        <link refid="SceneOpening_8h"/>
-        <childnode refid="5490" relation="include">
-        </childnode>
-        <childnode refid="5492" relation="include">
-        </childnode>
-      </node>
-      <node id="5516">
-        <label>ComGraphics/Source/SceneLevelOneA.h</label>
-        <link refid="SceneLevelOneA_8h"/>
+      <node id="5518">
+        <label>ComGraphics/Source/SceneLevelTwo.h</label>
+        <link refid="SceneLevelTwo_8h"/>
         <childnode refid="5490" relation="include">
         </childnode>
         <childnode refid="5513" relation="include">
         </childnode>
-        <childnode refid="5503" relation="include">
+        <childnode refid="5507" relation="include">
         </childnode>
-        <childnode refid="5504" relation="include">
+        <childnode refid="5508" relation="include">
         </childnode>
-      </node>
-      <node id="5493">
-        <label>ComGraphics/Source/Camera.cpp</label>
-        <link refid="Camera_8cpp"/>
       </node>
       <node id="5523">
         <label>ComGraphics/Source/HostileMob.h</label>
@@ -293,9 +295,29 @@
         <childnode refid="5528" relation="include">
         </childnode>
       </node>
-      <node id="5505">
-        <label>ComGraphics/Source/SceneLevelOneB.cpp</label>
-        <link refid="SceneLevelOneB_8cpp"/>
+      <node id="5502">
+        <label>ComGraphics/Source/SceneEndRenders.cpp</label>
+        <link refid="SceneEndRenders_8cpp"/>
+      </node>
+      <node id="5510">
+        <label>ComGraphics/Source/SceneStart.h</label>
+        <link refid="SceneStart_8h"/>
+        <childnode refid="5490" relation="include">
+        </childnode>
+        <childnode refid="5494" relation="include">
+        </childnode>
+        <childnode refid="5509" relation="include">
+        </childnode>
+        <childnode refid="5511" relation="include">
+        </childnode>
+      </node>
+      <node id="5525">
+        <label>ComGraphics/Source/MobGhost.cpp</label>
+        <link refid="MobGhost_8cpp"/>
+      </node>
+      <node id="5500">
+        <label>ComGraphics/Source/SceneEnd.cpp</label>
+        <link refid="SceneEnd_8cpp"/>
       </node>
       <node id="5524">
         <label>ComGraphics/Source/MobGhost.h</label>
@@ -317,99 +339,77 @@
         <childnode refid="5525" relation="include">
         </childnode>
       </node>
-      <node id="5521">
-        <label>ComGraphics/Source/SceneEndCutScene.h</label>
-        <link refid="SceneEndCutScene_8h"/>
-        <childnode refid="5490" relation="include">
-        </childnode>
-        <childnode refid="5501" relation="include">
-        </childnode>
-        <childnode refid="5502" relation="include">
-        </childnode>
+      <node id="5527">
+        <label>ComGraphics/Source/MobBossOne.cpp</label>
+        <link refid="MobBossOne_8cpp"/>
       </node>
       <node id="5501">
         <label>ComGraphics/Source/SceneEndCutScene.cpp</label>
         <link refid="SceneEndCutScene_8cpp"/>
       </node>
-      <node id="5513">
-        <label>ComGraphics/Source/MapRender.cpp</label>
-        <link refid="MapRender_8cpp"/>
+      <node id="5514">
+        <label>ComGraphics/Source/CutSceneOne.h</label>
+        <link refid="CutSceneOne_8h"/>
+        <childnode refid="5490" relation="include">
+        </childnode>
+        <childnode refid="5496" relation="include">
+        </childnode>
+        <childnode refid="5515" relation="include">
+        </childnode>
       </node>
-      <node id="5528">
-        <label>ComGraphics/Source/HostileMob.cpp</label>
-        <link refid="HostileMob_8cpp"/>
+      <node id="5507">
+        <label>ComGraphics/Source/SceneLevelTwo.cpp</label>
+        <link refid="SceneLevelTwo_8cpp"/>
       </node>
-      <node id="5490">
-        <label>ComGraphics/Source/Application.cpp</label>
-        <link refid="Application_8cpp"/>
+      <node id="5511">
+        <label>ComGraphics/Source/SceneStartRenders.cpp</label>
+        <link refid="SceneStartRenders_8cpp"/>
       </node>
-      <node id="5503">
-        <label>ComGraphics/Source/SceneLevelOneA.cpp</label>
-        <link refid="SceneLevelOneA_8cpp"/>
+      <node id="5519">
+        <label>ComGraphics/Source/OpeningCutScene.h</label>
+        <link refid="OpeningCutScene_8h"/>
+        <childnode refid="5490" relation="include">
+        </childnode>
+        <childnode refid="5498" relation="include">
+        </childnode>
+      </node>
+      <node id="5522">
+        <label>ComGraphics/Source/Credits.h</label>
+        <link refid="Credits_8h"/>
+        <childnode refid="5490" relation="include">
+        </childnode>
+        <childnode refid="5495" relation="include">
+        </childnode>
       </node>
       <node id="5492">
         <label>ComGraphics/Source/SceneOpening.cpp</label>
         <link refid="SceneOpening_8cpp"/>
       </node>
-      <node id="5517">
-        <label>ComGraphics/Source/SceneLevelOneB.h</label>
-        <link refid="SceneLevelOneB_8h"/>
-        <childnode refid="5490" relation="include">
+      <node id="5526">
+        <label>ComGraphics/Source/MobBossOne.h</label>
+        <link refid="MobBossOne_8h"/>
+        <childnode refid="5512" relation="include">
         </childnode>
-        <childnode refid="5513" relation="include">
+        <childnode refid="5517" relation="include">
         </childnode>
-        <childnode refid="5505" relation="include">
-        </childnode>
-        <childnode refid="5506" relation="include">
+        <childnode refid="5527" relation="include">
         </childnode>
       </node>
-      <node id="5487">
-        <label>ComGraphics/Source/Explorer.h</label>
-        <link refid="Explorer.h"/>
-        <childnode refid="5488" relation="include">
-        </childnode>
-        <childnode refid="5523" relation="include">
-        </childnode>
-        <childnode refid="5529" relation="include">
-        </childnode>
+      <node id="5503">
+        <label>ComGraphics/Source/SceneLevelOneA.cpp</label>
+        <link refid="SceneLevelOneA_8cpp"/>
       </node>
-      <node id="5525">
-        <label>ComGraphics/Source/MobGhost.cpp</label>
-        <link refid="MobGhost_8cpp"/>
+      <node id="5494">
+        <label>ComGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
       </node>
-      <node id="5509">
-        <label>ComGraphics/Source/SceneStart.cpp</label>
-        <link refid="SceneStart_8cpp"/>
+      <node id="5499">
+        <label>ComGraphics/Source/OpeningCutScene2.cpp</label>
+        <link refid="OpeningCutScene2_8cpp"/>
       </node>
-      <node id="5510">
-        <label>ComGraphics/Source/SceneStart.h</label>
-        <link refid="SceneStart_8h"/>
-        <childnode refid="5490" relation="include">
-        </childnode>
-        <childnode refid="5494" relation="include">
-        </childnode>
-        <childnode refid="5509" relation="include">
-        </childnode>
-        <childnode refid="5511" relation="include">
-        </childnode>
-      </node>
-      <node id="5520">
-        <label>ComGraphics/Source/OpeningCutScene2.h</label>
-        <link refid="OpeningCutScene2_8h"/>
-        <childnode refid="5490" relation="include">
-        </childnode>
-        <childnode refid="5499" relation="include">
-        </childnode>
-        <childnode refid="5511" relation="include">
-        </childnode>
-      </node>
-      <node id="5496">
-        <label>ComGraphics/Source/CutSceneOne.cpp</label>
-        <link refid="CutSceneOne_8cpp"/>
-      </node>
-      <node id="5515">
-        <label>ComGraphics/Source/CutSceneOneRenders.cpp</label>
-        <link refid="CutSceneOneRenders_8cpp"/>
+      <node id="5493">
+        <label>ComGraphics/Source/Camera.cpp</label>
+        <link refid="Camera_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classExplorer" prot="public">Explorer</innerclass>
@@ -457,14 +457,15 @@
 <codeline lineno="37" refid="classExplorer_1a5793bc8fed71824443022babd625f0ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1a5793bc8fed71824443022babd625f0ef" kindref="member">checkSavePoint</ref>[4];</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1afad219513d65c2efdc84490bd8c06bde" kindref="member">checkDead</ref>();</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1ae12def922703559f8098a0ac04b6d2d1" kindref="member">ExplorerSavePoint</ref>(<ref refid="structVector3" kindref="compound">Vector3</ref><sp/>pos);</highlight></codeline>
-<codeline lineno="41" refid="classExplorer_1ab5e4808c3e1bcdce10820358b9a51ae9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classExplorer_1ab5e4808c3e1bcdce10820358b9a51ae9" kindref="member">SavePoint</ref>;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1acbedef0262785b6983d1fe9b4f2c6242" kindref="member">Explorer</ref>();</highlight></codeline>
-<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="40" refid="classExplorer_1ab5e4808c3e1bcdce10820358b9a51ae9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classExplorer_1ab5e4808c3e1bcdce10820358b9a51ae9" kindref="member">SavePoint</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="classExplorer_1a088f9e9af165f504ca418f591e44088e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classExplorer_1a088f9e9af165f504ca418f591e44088e" kindref="member">f_FlickeringLight</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classExplorer_1acbedef0262785b6983d1fe9b4f2c6242" kindref="member">Explorer</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="ComGraphics/Source/Explorer.h"/>
   </compounddef>

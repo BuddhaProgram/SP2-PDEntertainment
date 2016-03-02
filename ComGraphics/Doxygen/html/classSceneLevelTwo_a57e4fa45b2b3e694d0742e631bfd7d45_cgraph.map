@@ -11,7 +11,8 @@
 <area shape="rect" id="node13" href="$classAnimation.html#a4a153b5ee2aa52af33e750c24c311944" title="Animation::OpenQPDOOR5" alt="" coords="269,461,451,488"/>
 <area shape="rect" id="node14" href="$classSceneLevelTwo.html#a95ede72b1fd4719998405977356a3592" title="SceneLevelTwo::proximitycheck" alt="" coords="257,512,463,539"/>
 <area shape="rect" id="node15" href="$classSceneLevelTwo.html#ab1de6c7dd72b0416fdcc79040db55503" title="SceneLevelTwo::SpecialCollision" alt="" coords="255,563,465,589"/>
-<area shape="rect" id="node16" href="$classmisc.html#a0f8d72dfe38a0284899586da142daf8a" title="misc::WithinArea" alt="" coords="299,613,421,640"/>
+<area shape="rect" id="node16" href="$classSwitchLightPuzzle.html#ae77b2d6d69c31231cefcee2b18070d06" title="SwitchLightPuzzle::\lSwitchPuzzleTwo" alt="" coords="291,614,429,655"/>
+<area shape="rect" id="node17" href="$classmisc.html#a0f8d72dfe38a0284899586da142daf8a" title="misc::WithinArea" alt="" coords="299,680,421,707"/>
 <area shape="rect" id="node4" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="513,335,668,361"/>
 <area shape="rect" id="node6" href="$classScene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478" title="Scene::Init" alt="" coords="549,56,633,83"/>
 </map>

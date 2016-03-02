@@ -186,6 +186,7 @@ private:
     MS modelStack, viewStack, projectionStack;
 
     Light light[1];
+	void FlickeringLight(double dt);
 
     Vector3 start;
     Vector3 end;

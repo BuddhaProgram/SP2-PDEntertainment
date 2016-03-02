@@ -7,11 +7,28 @@
       <node id="6009">
         <label>list</label>
       </node>
-      <node id="6003">
-        <label>ComGraphics/Source/MobBossOne.cpp</label>
-        <link refid="MobBossOne.cpp"/>
-        <childnode refid="6004" relation="include">
+      <node id="6007">
+        <label>ToolUI.h</label>
+        <link refid="ToolUI_8h"/>
+        <childnode refid="6008" relation="include">
         </childnode>
+        <childnode refid="6009" relation="include">
+        </childnode>
+      </node>
+      <node id="6011">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="6012" relation="include">
+        </childnode>
+        <childnode refid="6013" relation="include">
+        </childnode>
+        <childnode refid="6014" relation="include">
+        </childnode>
+        <childnode refid="6015" relation="include">
+        </childnode>
+      </node>
+      <node id="6012">
+        <label>cmath</label>
       </node>
       <node id="6010">
         <label>Vector3.h</label>
@@ -21,16 +38,15 @@
         <childnode refid="6016" relation="include">
         </childnode>
       </node>
-      <node id="6012">
-        <label>cmath</label>
-      </node>
       <node id="6013">
         <label>exception</label>
       </node>
-      <node id="6004">
-        <label>MobBossOne.h</label>
-        <link refid="MobBossOne_8h"/>
-        <childnode refid="6005" relation="include">
+      <node id="6006">
+        <label>Explorer.h</label>
+        <link refid="Explorer_8h"/>
+        <childnode refid="6007" relation="include">
+        </childnode>
+        <childnode refid="6010" relation="include">
         </childnode>
       </node>
       <node id="6014">
@@ -53,32 +69,16 @@
       <node id="6016">
         <label>iostream</label>
       </node>
-      <node id="6006">
-        <label>Explorer.h</label>
-        <link refid="Explorer_8h"/>
-        <childnode refid="6007" relation="include">
-        </childnode>
-        <childnode refid="6010" relation="include">
+      <node id="6003">
+        <label>ComGraphics/Source/MobBossOne.cpp</label>
+        <link refid="MobBossOne.cpp"/>
+        <childnode refid="6004" relation="include">
         </childnode>
       </node>
-      <node id="6007">
-        <label>ToolUI.h</label>
-        <link refid="ToolUI_8h"/>
-        <childnode refid="6008" relation="include">
-        </childnode>
-        <childnode refid="6009" relation="include">
-        </childnode>
-      </node>
-      <node id="6011">
-        <label>MyMath.h</label>
-        <link refid="MyMath_8h"/>
-        <childnode refid="6012" relation="include">
-        </childnode>
-        <childnode refid="6013" relation="include">
-        </childnode>
-        <childnode refid="6014" relation="include">
-        </childnode>
-        <childnode refid="6015" relation="include">
+      <node id="6004">
+        <label>MobBossOne.h</label>
+        <link refid="MobBossOne_8h"/>
+        <childnode refid="6005" relation="include">
         </childnode>
       </node>
     </incdepgraph>

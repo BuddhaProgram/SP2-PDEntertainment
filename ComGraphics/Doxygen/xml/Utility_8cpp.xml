@@ -4,56 +4,11 @@
     <compoundname>Utility.cpp</compoundname>
     <includes refid="Utility_8h" local="yes">Utility.h</includes>
     <incdepgraph>
-      <node id="7661">
-        <label>Vector3.h</label>
-        <link refid="Vector3_8h"/>
-        <childnode refid="7662" relation="include">
-        </childnode>
-        <childnode refid="7667" relation="include">
-        </childnode>
-      </node>
-      <node id="7663">
-        <label>cmath</label>
-      </node>
-      <node id="7664">
-        <label>exception</label>
-      </node>
       <node id="7658">
         <label>ComGraphics/Source/Utility.cpp</label>
         <link refid="Utility.cpp"/>
         <childnode refid="7659" relation="include">
         </childnode>
-      </node>
-      <node id="7665">
-        <label>ctime</label>
-      </node>
-      <node id="7660">
-        <label>Vertex.h</label>
-        <link refid="Vertex_8h"/>
-        <childnode refid="7661" relation="include">
-        </childnode>
-      </node>
-      <node id="7668">
-        <label>Mtx44.h</label>
-        <link refid="Mtx44_8h"/>
-        <childnode refid="7662" relation="include">
-        </childnode>
-        <childnode refid="7661" relation="include">
-        </childnode>
-      </node>
-      <node id="7659">
-        <label>Utility.h</label>
-        <link refid="Utility_8h"/>
-        <childnode refid="7660" relation="include">
-        </childnode>
-        <childnode refid="7668" relation="include">
-        </childnode>
-      </node>
-      <node id="7666">
-        <label>cstdlib</label>
-      </node>
-      <node id="7667">
-        <label>iostream</label>
       </node>
       <node id="7662">
         <label>MyMath.h</label>
@@ -65,6 +20,51 @@
         <childnode refid="7665" relation="include">
         </childnode>
         <childnode refid="7666" relation="include">
+        </childnode>
+      </node>
+      <node id="7659">
+        <label>Utility.h</label>
+        <link refid="Utility_8h"/>
+        <childnode refid="7660" relation="include">
+        </childnode>
+        <childnode refid="7668" relation="include">
+        </childnode>
+      </node>
+      <node id="7663">
+        <label>cmath</label>
+      </node>
+      <node id="7661">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="7662" relation="include">
+        </childnode>
+        <childnode refid="7667" relation="include">
+        </childnode>
+      </node>
+      <node id="7664">
+        <label>exception</label>
+      </node>
+      <node id="7665">
+        <label>ctime</label>
+      </node>
+      <node id="7668">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="7662" relation="include">
+        </childnode>
+        <childnode refid="7661" relation="include">
+        </childnode>
+      </node>
+      <node id="7666">
+        <label>cstdlib</label>
+      </node>
+      <node id="7667">
+        <label>iostream</label>
+      </node>
+      <node id="7660">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="7661" relation="include">
         </childnode>
       </node>
     </incdepgraph>

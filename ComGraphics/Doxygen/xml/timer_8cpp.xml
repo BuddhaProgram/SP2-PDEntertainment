@@ -4,14 +4,14 @@
     <compoundname>timer.cpp</compoundname>
     <includes refid="timer_8h" local="yes">timer.h</includes>
     <incdepgraph>
+      <node id="7927">
+        <label>windows.h</label>
+      </node>
       <node id="7925">
         <label>Common/Source/timer.cpp</label>
         <link refid="timer.cpp"/>
         <childnode refid="7926" relation="include">
         </childnode>
-      </node>
-      <node id="7927">
-        <label>windows.h</label>
       </node>
       <node id="7926">
         <label>timer.h</label>

@@ -10,12 +10,6 @@
       <node id="4808">
         <label>stdlib.h</label>
       </node>
-      <node id="4813">
-        <label>stddef.h</label>
-      </node>
-      <node id="4810">
-        <label>string.h</label>
-      </node>
       <node id="4807">
         <label>internal.h</label>
         <link refid="internal_8h"/>
@@ -38,12 +32,8 @@
         <childnode refid="4816" relation="include">
         </childnode>
       </node>
-      <node id="4812">
-        <label>math.h</label>
-      </node>
-      <node id="4814">
-        <label>mpaudec.h</label>
-        <link refid="mpaudec_8h"/>
+      <node id="4813">
+        <label>stddef.h</label>
       </node>
       <node id="4806">
         <label>ComGraphics/irrKlang/plugins/ikpMP3/decoder/bits.c</label>
@@ -51,8 +41,18 @@
         <childnode refid="4807" relation="include">
         </childnode>
       </node>
+      <node id="4810">
+        <label>string.h</label>
+      </node>
+      <node id="4812">
+        <label>math.h</label>
+      </node>
       <node id="4811">
         <label>ctype.h</label>
+      </node>
+      <node id="4814">
+        <label>mpaudec.h</label>
+        <link refid="mpaudec_8h"/>
       </node>
       <node id="4809">
         <label>stdio.h</label>

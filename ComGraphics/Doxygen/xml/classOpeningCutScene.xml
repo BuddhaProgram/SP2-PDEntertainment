@@ -738,13 +738,13 @@
         <references refid="classOpeningCutScene_1a76c23ac9cf18c6b94eabf271f1ee114f" compoundref="OpeningCutScene_8h" startline="109">changeScene</references>
         <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="42" endline="45">Application::IsKeyPressed</references>
         <references refid="classOpeningCutScene_1a0450692c648383322b7cf4ec28e9e42c" compoundref="OpeningCutScene_8h" startline="93">light</references>
-        <references refid="classApplication_1abf06415c31de1aed7b2f93c6c6c7f636" compoundref="Application_8cpp" startline="244" endline="248">Application::OpenCutScene2</references>
+        <references refid="classApplication_1abf06415c31de1aed7b2f93c6c6c7f636" compoundref="Application_8cpp" startline="249" endline="253">Application::OpenCutScene2</references>
         <references refid="structLight_1afeb738db41e987719e359166ef93314f" compoundref="Light_8h" startline="7">Light::position</references>
         <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
         <references refid="structPosition_1a2919b2441baf7a2f799791d65a1cfc15" compoundref="Vertex_8h" startline="22" endline="22">Position::Set</references>
         <references refid="structVector3_1a9c25d604bd52b162cfcb56302ef032bb" compoundref="Vector3_8cpp" startline="67" endline="72">Vector3::Set</references>
         <references refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" compoundref="Light_8h" startline="26">Light::spotDirection</references>
-        <references refid="classApplication_1a06a51f73e8d25ad6a4cf668957d52096" compoundref="Application_8cpp" startline="203" endline="207">Application::StartingScene</references>
+        <references refid="classApplication_1a06a51f73e8d25ad6a4cf668957d52096" compoundref="Application_8cpp" startline="208" endline="212">Application::StartingScene</references>
         <references refid="classOpeningCutScene_1a340249ba567a295e758e0d21f6f4b086" compoundref="OpeningCutScene_8h" startline="106">startTimer</references>
         <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
         <references refid="classOpeningCutScene_1a55f0a0d09c0c8ba1ee0c212392346de9" compoundref="OpeningCutScene_8h" startline="99">TextMove</references>
@@ -1170,6 +1170,7 @@
         <label>GlobalVariables</label>
         <link refid="classGlobalVariables"/>
         <childnode refid="922" relation="usage">
+          <edgelabel>f_SwitchRotateFour</edgelabel>
           <edgelabel>f_SwitchRotateTwo</edgelabel>
           <edgelabel>f_redScreenTimer</edgelabel>
           <edgelabel>f_SwitchRotateOne</edgelabel>
@@ -1178,8 +1179,7 @@
           <edgelabel>RotateX</edgelabel>
           <edgelabel>f_rotatingTool</edgelabel>
           <edgelabel>f_Worldspin</edgelabel>
-          <edgelabel>f_SuitcaseRotateY</edgelabel>
-          <edgelabel>f_SwitchDebounce</edgelabel>
+          <edgelabel>f_SwitchRotateFive</edgelabel>
           <edgelabel>...</edgelabel>
         </childnode>
         <childnode refid="920" relation="usage">
