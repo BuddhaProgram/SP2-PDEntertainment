@@ -1020,16 +1020,14 @@ void SceneLevelTwo::Update(double dt)
 	FlickeringLight(dt);
 
 	SomeUpdates(dt);
-	camera.Update(dt);
-	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
-	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 	ScareGhost.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
-	SomeUpdates(dt);
 	RenderJumpScare();
 	if (!JumpScare)
 	{
 		camera.Update(dt);
 	}
+	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
+	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 
 	if (Application::IsKeyPressed('Z'))
 	{

@@ -331,7 +331,7 @@ void SceneEndCutScene::RenderFloor()
 			modelStack.PushMatrix();
 			modelStack.Translate((float)x, 0, (float)z);
 			modelStack.Scale(100, 1, 100);
-			RenderMesh(meshList[GEO_PLANETFLOOR], true);
+			RenderMesh(meshList[GEO_PLANETFLOOR], false);
 			modelStack.PopMatrix();
 		}
 	}
@@ -344,7 +344,7 @@ void SceneEndCutScene::RenderSceneEndCutScene(vector<string> Test)
 	modelStack.Translate(0, 0, 90);
 	modelStack.Rotate(180, 0, 1, 0);
 	modelStack.Scale(6, 6, 4);
-	RenderMesh(meshList[GEO_FACILITYOUT], true);
+	RenderMesh(meshList[GEO_FACILITYOUT], false);
 	modelStack.PopMatrix();
 	//object renders
 
@@ -355,7 +355,7 @@ void SceneEndCutScene::RenderShipAndPod()
 	modelStack.PushMatrix();
 	modelStack.Translate(anima.MovingShip2, anima.MovingShip, -200);
 	modelStack.Scale(15, 15, 15);
-	RenderMesh(meshList[GEO_SPACESHIP], true);
+	RenderMesh(meshList[GEO_SPACESHIP], false);
 	modelStack.PopMatrix();
 }
 

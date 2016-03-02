@@ -252,23 +252,11 @@ void SceneLevelOneA::checkDoor3()
 	//	activateDoor3_2 = true;
 	//}
 
-	if (proximitycheck(192, 217, 60, 64))
-	{
-		displayInteract3 = true;	
-		if (activateDoor3)
-		{
-			displayInteract3 = false;
-		}
-	}
-	else
-	{
-		displayInteract3 = false;
-	}
-	if (proximitycheck(192, 217, 60, 64) && (Application::IsKeyPressed('E')))
-	{
+	if (Explorer::instance()->b_pickUpSuitCase[0])
+	{ 
 		activateDoor3 = true;
 	}
-
+	
 
 	//if (/*!proximitycheck(192, 217, 60, 64)*/ camera.position.x <= 192 && camera.position.x >= 217 && camera.position.z >= 64)
 	//{
