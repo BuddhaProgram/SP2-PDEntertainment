@@ -108,7 +108,7 @@ void SceneOpening::Init()
 	meshList[GEO_TITLE]->textureID = LoadTGA("Image//Title.tga");
 
 
-	Application::MusicWillPlay(6, true);
+	Application::MusicWillPlay(0, true);
 	//Application::MusicWillPlay(0, true);
 
 	Mtx44 projection;

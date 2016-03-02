@@ -152,7 +152,7 @@ void Application::Run()
 	EndScene = new SceneEndCutScene();
 	EndCredits = new Credits();
 
-	scene = IntroScene;
+	scene = Opening;
 	scene->Init();
 
 
@@ -197,6 +197,7 @@ void Application::Exit()
 	glfwWindowShouldClose(m_window);
 	//Finalize and clean up GLFW
 	glfwTerminate();
+	exit(EXIT_FAILURE);
 }
 
 void Application::OpenGame()
