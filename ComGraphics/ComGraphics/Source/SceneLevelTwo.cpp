@@ -511,6 +511,11 @@ void SceneLevelTwo::MouseClickFunction(double dt)
 
     if (Variables.b_LockSwingDebounce == true)
     {
+        if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(30.f, ScareGhost.MobPosX, ScareGhost.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
+        {
+            ScareGhost.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);
+            CrosshairHit = true;
+        }
         Variables.RotateX -= 360.0f * (float)dt;
 
         if (Variables.RotateX <= -45.0f)
@@ -528,6 +533,7 @@ void SceneLevelTwo::MouseClickFunction(double dt)
         {
             Variables.RotateX = 0.0f;
             Variables.b_LockSwing = false;
+            CrosshairHit = false;
         }
     }
 }
@@ -1039,6 +1045,7 @@ void SceneLevelTwo::Update(double dt)
 	{
 		ScareGhost.move(dt, 25);
 	}
+   
 }
 
 void SceneLevelTwo::RenderMesh(Mesh*mesh, bool enableLight)
@@ -1232,7 +1239,15 @@ void SceneLevelTwo::Render()
 
     RenderTextOnScreen(meshList[GEO_TEXT], "FPS :" + std::to_string(FPS), Color(0, 1, 0), 2, 0, 1);
     RenderTextOnScreen(meshList[GEO_TEXT], "POS (" + std::to_string(camera.position.x) + "," + std::to_string(camera.position.y) + "," + std::to_string(camera.position.z) + ")", Color(1, 0, 0), 2, 0, 2);
-    RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
+    if (!CrosshairHit)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(0.25f, 0.9f, 0.82f), 4, 9.8f, 7);
+    }
+    if (CrosshairHit)
+    {
+        RenderTextOnScreen(meshList[GEO_TEXT], "+", Color(1.0f, 0.0f, 0.0f), 4, 9.8f, 7);
+
+    }
 
 	if (Explorer::instance()->isDead == false)
 	{

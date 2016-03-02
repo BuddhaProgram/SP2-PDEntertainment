@@ -253,6 +253,8 @@ void SceneEnd::Reset()
 	{
 		Explorer::instance()->checkSavePoint[i] = false;
 	}
+   
+
 }
 
 void SceneEnd::Collision(float smallx, float largex, float smallz, float largez)
@@ -313,6 +315,21 @@ void SceneEnd::ContinueGameOrNot()
 
 			f_RepairProcess = 0.0f;
 			f_rockY = 25.0f;
+
+            //
+            MobOne.health = 8;
+            MobTwo.health = 8;
+            MobThree.health = 8;
+            BossOne.health = 32;
+
+            MobMS = 25;
+            BossMS = 15;
+
+            MobOne.setSpawnGhost(25, -8);
+            MobTwo.setSpawnGhost(26, 73);
+            MobThree.setSpawnGhost(-22, 42);
+
+            BossOne.setSpawnBossOne(-36, -6);
 		}
 
 		else if (Application::IsKeyPressed('N'))

@@ -222,6 +222,7 @@ private:
 	bool timer;
 	float countdown;
 	bool JumpScare;
+    bool CrosshairHit;
 };
 
 
