@@ -14,6 +14,8 @@ float rotate;
 
 SceneStart::SceneStart()
 {
+	timer = true;
+	textTL = false;
 }
 
 SceneStart::~SceneStart()
@@ -290,7 +292,7 @@ void SceneStart::ToolSelectionMouseScroll()
 		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe)
 		{
 			modelStack.PushMatrix();
-			RenderModelOnScreen(meshList[GEO_PICKAXE], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, -1.0f, false);
+			RenderModelOnScreen(meshList[GEO_PICKAXE], 15.0f, 15.0f, 15.0f, Variables.RotateX, 1, 0, 0, 4.5f, 0.0f, 0.0f, false);
 			modelStack.PopMatrix();
 		}
 
@@ -493,7 +495,20 @@ void SceneStart::Update(double dt)
 		Explorer::instance()->InsertToolSlot(ToolUI::Sword);
 		Explorer::instance()->InsertToolSlot(ToolUI::BaseballBat);
 	}
-		
+
+	if (timer)
+	{
+		countdown += 1;
+		if (countdown > 200)
+		{
+			textTL = true;
+			if (countdown > 400)
+			{
+				timer = false;
+				textTL = false;
+			}
+		}
+	}
 }
 
 void SceneStart::RenderMesh(Mesh*mesh, bool enableLight)
@@ -698,6 +713,14 @@ void SceneStart::Render()
 
 	for (float i = 0; i < Explorer::instance()->PlayerLife; ++i)
 	RenderModelOnScreen(meshList[GEO_HEALTHICON], 3.f, 3.f, 3.f, 90, 1, 0, 0, (22.f + i), 18.5f, 1.0f, false);
+
+	if (textTL)
+	{
+		modelStack.PushMatrix();
+		RenderTextOnScreen(meshList[GEO_TEXT], "Look like the torchlight", Color(0, 1, 0), 4, 4.f, 3);
+		RenderTextOnScreen(meshList[GEO_TEXT], "isn't working well.", Color(0, 1, 0), 4, 5.5f, 2);
+		modelStack.PopMatrix();
+	}
 }
 	
 

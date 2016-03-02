@@ -186,6 +186,9 @@ private:
 	bool displayInteract;
 	float mobTimeCount;
 
+	bool timer;
+	float countdown;
+	bool textTL;
 };
 
 #endif

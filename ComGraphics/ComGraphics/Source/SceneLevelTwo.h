@@ -141,6 +141,7 @@ private:
     //mob renders
     void RenderGhost1();
 	void RenderTraps();
+	void RenderJumpScare();
 
     //render functions 
     void RenderText(Mesh* mesh, std::string text, Color color);
@@ -216,7 +217,11 @@ private:
 	bool puzzling;
 	float transSpikeWall2;
 	bool hitWall;
-    MobGhost Ghost;
+	MobGhost ScareGhost;
+
+	bool timer;
+	float countdown;
+	bool JumpScare;
 };
 
 
