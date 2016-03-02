@@ -27,8 +27,8 @@ SceneEnd::SceneEnd()
 	f_rockY = 25.0f;
 
     spawnWaveOne = false;
-    MobMS = 25.f;
-    BossMS = 15.f;
+    MobMS = 25;
+    BossMS = 15;
     killCounter = 0;
     waveCounter = 0;
     CrosshairHit = false;
@@ -851,17 +851,14 @@ void SceneEnd::Render()
     //mobs
     if (MobOne.Spawn)
     {
-        std::cout << "mob 1" << std::endl;
         RenderMobs(MobOne.MobPosX, MobOne.MobPosZ);
     }
     if (MobTwo.Spawn)
     {
-        std::cout << "mob 2" << std::endl;
         RenderMobs(MobTwo.MobPosX, MobTwo.MobPosZ);
     }
     if (MobThree.Spawn)
     {
-        std::cout << "mob 3" << std::endl;
         RenderMobs(MobThree.MobPosX, MobThree.MobPosZ);
     }
     if (BossOne.Spawn)

@@ -110,6 +110,18 @@ void OpeningCutScene::Init()
 	projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
+	 TextMove = 0;
+	 toMoveText = true;
+	 appearText = false;
+	 BGMove = 0;
+	 toMoveBG = true;
+	 appearBG = false;
+
+	 startTimer = false;
+	 timercount = 0;
+
+	 changeScene = false;
+
 	TestYou = ReadFromText("Intro.txt");
 }
 
@@ -215,8 +227,6 @@ void OpeningCutScene::Update(double dt)
 			changeScene = true;
 		}
 	}
-
-	std::cout << timercount << std::endl;
 
 	if (Application::IsKeyPressed(VK_BACK))
 	{

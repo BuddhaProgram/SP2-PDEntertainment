@@ -128,23 +128,23 @@ private:
 
 	misc Misc;
 
-	bool rotateCamX = false;
+	bool rotateCamX;
 	float MoveCamera1;
-	bool camera_check1 = true;
-	bool camera_check2 = false;
-	bool camera_check3 = false;
+	bool camera_check1;
+	bool camera_check2;
+	bool camera_check3;
 
-	bool rotateCamY = false;
+	bool rotateCamY;
 	float RotateCamera;
 
-	bool wokeUp = true;
-	bool check1 = true;
-	bool check2 = false;
-	bool check3 = false;
+	bool wokeUp;
+	bool check1;
+	bool check2;
+	bool check3;
 	float eyeOpening;
 
-	bool text1 = false;
-	bool text2 = false;
+	bool text1;
+	bool text2;
 
 };
 

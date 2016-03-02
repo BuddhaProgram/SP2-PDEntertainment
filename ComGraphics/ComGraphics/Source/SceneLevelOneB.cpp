@@ -781,8 +781,6 @@ void SceneLevelOneB::Update(double dt)
 	SwitchCollisionChecker();
 	Switches.SwitchPuzzleOne();
 
-	//std::cout << Switches.b_PuzzleOne[0] << " " << Switches.b_PuzzleOne[1] << " " << Switches.b_PuzzleOne[2] << std::endl;
-
 	checkDoor3();
 	checkDoor4();
 	AnimationCheck(dt);
@@ -854,10 +852,6 @@ void SceneLevelOneB::Update(double dt)
 	{
 		ScareGhost.move(dt, 25);
 	}
-   /* std::cout << "Ghost1: " << PuzzleGhost1.Spawn << std::endl;
-    std::cout << "Ghost2: " << PuzzleGhost2.Spawn << std::endl;*/
-
-
 }
 
 void SceneLevelOneB::RenderMesh(Mesh*mesh, bool enableLight)
@@ -1053,13 +1047,11 @@ void SceneLevelOneB::Render()
 
     if (PuzzleGhost1.Spawn)
     {
-        std::cout << "1" << std::endl;
         RenderGhost(PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ);
     }
 
     if (PuzzleGhost2.Spawn)
     {
-        std::cout << "2" << std::endl;
         RenderGhost(PuzzleGhost2.MobPosX, PuzzleGhost2.MobPosZ);
     }
     

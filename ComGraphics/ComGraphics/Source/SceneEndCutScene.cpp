@@ -15,11 +15,7 @@
 
 SceneEndCutScene::SceneEndCutScene()
 {
-	 CameraMove1 = false;
-	 CameraMove2 = false;
 
-	 MoveQuad = -0.5f;
-	 QuadMove = false;
 }
 
 SceneEndCutScene::~SceneEndCutScene()
@@ -152,6 +148,12 @@ void SceneEndCutScene::Init()
 	Mtx44 projection;
 	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
+
+	CameraMove1 = false;
+	CameraMove2 = false;
+
+	MoveQuad = -0.5f;
+	QuadMove = false;
 
 	//scene changer inits.............
 	//scene changer init end.............

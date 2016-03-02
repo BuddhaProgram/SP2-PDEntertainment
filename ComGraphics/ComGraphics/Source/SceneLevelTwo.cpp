@@ -307,6 +307,8 @@ void SceneLevelTwo::Reset()
 	countdown = 0;
 	JumpScare = false;
 	timer = false;
+
+	displayInteract1 = false;
 }
 
 void SceneLevelTwo::ResetAll()
@@ -613,10 +615,26 @@ void SceneLevelTwo::SomeUpdates(double dt)
 		anima.QP_BOTDOOR4 = true;
 		Collision(-20, 20, -305, -295);
 	}
-
+	if (Misc.WithinArea(-12, 12, -105, -95))
+	{
+		displayInteract1 = true;
+	}
+	else
+	{
+		displayInteract1 = false;
+	}
 	if (Misc.WithinArea(-12, 12, -105, -95) && Application::IsKeyPressed('E') && openDoor1 == true && openDoor2 == true)
 	{
 		invisWALLDisappear = true;
+	}
+
+	if (Misc.WithinArea(-12, 12, -105, -95) && invisWALLDisappear == false)
+	{
+		displayInteract3 = true;
+	}
+	else
+	{
+		displayInteract3 = false;
 	}
 
 	if (invisWALLDisappear == false)
@@ -680,14 +698,34 @@ void SceneLevelTwo::SomeUpdates(double dt)
 		Collision(320, 360, -30, -10);
 	}
 
-	if (openDoor1 == false && proximitycheck(-96, -80, -20, 22) && Application::IsKeyPressed('E'))
+	if (openDoor1 == false && proximitycheck(-80, -76, -20, 22) && Application::IsKeyPressed('E'))
 	{
 		openDoor1 = true;
+	}
+	if (proximitycheck(-80, -76, -20, 22) && openDoor1 == false)
+	{
+		std::cout << "HI" << std::endl;
+		displayInteract1 = true;
+	}
+	else
+	{
+		std::cout << "BYE" << std::endl;
+		displayInteract1 = false;
 	}
 
 	if (openDoor2 == false && proximitycheck(80, 96, -20, 22) && Application::IsKeyPressed('E'))
 	{
 		openDoor2 = true;
+	}
+	if (proximitycheck(80, 96, -20, 22) && openDoor2 == false)
+	{
+		std::cout << "HI" << std::endl;
+		displayInteract2 = true;
+	}
+	else
+	{
+		std::cout << "BYE" << std::endl;
+		displayInteract2 = false;
 	}
 
 	if (Misc.WithinArea(-76, 76, -272, -120) && timerDoor == 0)
@@ -1012,7 +1050,6 @@ void SceneLevelTwo::Update(double dt)
     MouseClickFunction(dt);
     /*-------------------------[End of Tool UI Functions]-------------------------------*/
 
-	std::cout << Explorer::instance()->f_FlickeringLight << std::endl;
 	checkPlayerPosMisc();
 
 	/*-------------------------[Switches Function]-------------------------------*/
@@ -1255,7 +1292,7 @@ void SceneLevelTwo::Render()
 		modelStack.PopMatrix();
 	}
 
-    if (displayInteract1 /*|| displayInteract2 || displayInteract3*/)
+    if (displayInteract1 || displayInteract2 || displayInteract3)
     {
         RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
     }

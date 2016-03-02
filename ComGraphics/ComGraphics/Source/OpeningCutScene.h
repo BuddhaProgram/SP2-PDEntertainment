@@ -96,17 +96,17 @@ private:
 	Vector3 end;
 	GlobalVariables Variables;
 
-	float TextMove = 0;
-	bool toMoveText = true;
-	bool appearText = false;
-	float BGMove = 0;
-	bool toMoveBG = true;
-	bool appearBG = false;
+	float TextMove;
+	bool toMoveText;
+	bool appearText;
+	float BGMove;
+	bool toMoveBG;
+	bool appearBG;
 
-	bool startTimer = false;
-	float timercount = 0;
+	bool startTimer;
+	float timercount;
 
-	bool changeScene = false;
+	bool changeScene;
 };
 
 

@@ -48,7 +48,6 @@ void MobGhost::knockback()
 
 void MobGhost::attack(float Damage)
 {
-    //std::cout << "attack" << std::endl;
 	this->AttackDamage = Damage;
 	Explorer::instance()->MinusHP((float)(AttackDamage));
     canHit = false;
@@ -82,7 +81,6 @@ void MobGhost::move(double dt, int movespeed)
     if (!canHit)
     {
         mobTimeCount2 += ((float)(1 * dt));
-        //std::cout << "test " << Ghost.mobTimeCount << std::endl;
         if (mobTimeCount2 >= 1.f)
         {
             canHit = true;
@@ -107,6 +105,5 @@ void MobGhost::setSpawnGhost(float xpos, float zpos)
 
 void MobGhost::TakeDamage(int damage)
 {
-    std::cout << "hit" << std::endl;
 	health -= damage;
 }

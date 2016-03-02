@@ -195,6 +195,8 @@ private:
 
     float FPS;
     bool displayInteract1;
+	bool displayInteract2;
+	bool displayInteract3;
     bool activateDoor1;
 
     float CollXLarge[60];

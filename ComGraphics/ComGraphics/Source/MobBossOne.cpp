@@ -100,7 +100,6 @@ void MobBossOne::setSpawnBossOne(float xpos, float zpos)
 }
 void MobBossOne::TakeDamage(int damage)
 {
-    std::cout << "Boss hit" << std::endl;
 	health -= damage;
 }
 
