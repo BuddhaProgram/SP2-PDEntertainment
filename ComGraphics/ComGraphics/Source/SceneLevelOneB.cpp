@@ -577,7 +577,15 @@ void SceneLevelOneB::MouseScrollToolSlot()
 		Explorer::instance()->i_SlotIndex = 4;
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+This Function controls the animation of the tool swing
 
+\param dt
+Delta time
+*/
+/****************************************************************************/
 void SceneLevelOneB::MouseClickFunction(double dt)
 {
 	if (Application::IsKeyPressed(VK_LBUTTON) && Variables.b_LockSwing == false && Variables.b_LockSwingDebounce == false && Explorer::instance()->stamina >= 20)
@@ -641,7 +649,15 @@ void SceneLevelOneB::MouseClickFunction(double dt)
         CrosshairHit = false;
     }
 }
+/****************************************************************************/
+/*!
+\brief
+This Function sets the collision for the switches on the switch puzzle
 
+\param dt
+Delta time
+*/
+/****************************************************************************/
 void SceneLevelOneB::SwitchCollisionChecker()
 {
 	Collision(305.0f, 320.0f, -180.0f, -100.0f);
@@ -804,7 +820,15 @@ void SceneLevelOneB::LogicAnimationSwitches(double dt)
 		}
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+This Function controls the animation of the death screen
 
+\param dt
+Delta time
+*/
+/****************************************************************************/
 void SceneLevelOneB::UpdatePlayerDiesInteraction(double dt)
 {
 	if (Explorer::instance()->isDead == true)
@@ -814,6 +838,13 @@ void SceneLevelOneB::UpdatePlayerDiesInteraction(double dt)
 		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+This Function controls the death screen and checks if the player wants to continue the game
+
+*/
+/****************************************************************************/
 
 void SceneLevelOneB::ContinueGameOrNot()
 {
@@ -841,6 +872,13 @@ void SceneLevelOneB::ContinueGameOrNot()
 		}
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+This Function controls the intercation with the suitcase
+
+*/
+/****************************************************************************/
 
 void SceneLevelOneB::PickUpSuitcaseInteraction()
 {
@@ -853,6 +891,15 @@ void SceneLevelOneB::PickUpSuitcaseInteraction()
 		}
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+This Function controls the flickering of the "torchlight"
+
+\param dt
+Delta time
+*/
+/****************************************************************************/
 
 void SceneLevelOneB::FlickeringLight(double dt)
 {

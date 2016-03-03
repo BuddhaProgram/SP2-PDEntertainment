@@ -1,3 +1,12 @@
+/*************************************************************/
+/*!
+\file       SceneEnd.cpp
+\author     Ng Jun Guo
+\par        email: my.puny.brain@gmail.com
+\brief
+Function definitions for SceneEnd
+*/
+/*************************************************************/
 #include "SceneEnd.h"
 #include "GL\glew.h"
 
@@ -12,6 +21,11 @@
 #include <sstream>
 #include "GlobalVariables.h"
 
+/****************************************************************************/
+/*!
+\brief	Default Constructor definitions for SceneEnd
+*/
+/****************************************************************************/
 
 SceneEnd::SceneEnd()
 {
@@ -33,10 +47,19 @@ SceneEnd::SceneEnd()
     waveCounter = 0;
     CrosshairHit = false;
 }
-
+/****************************************************************************/
+/*!
+\brief	Default destructor for SceneEnd
+*/
+/****************************************************************************/
 SceneEnd::~SceneEnd()
 {
 }
+/****************************************************************************/
+/*!
+\brief	Initializer definitions for SceneEnd, including light, camera positions etc.
+*/
+/****************************************************************************/
 
 void SceneEnd::Init()
 {
@@ -317,6 +340,15 @@ bool SceneEnd::proximitycheck(float smallx, float largex, float smallz, float la
 	if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez + 2.f) && (camera.position.z >= largez)){ result = true; }
 	return result;
 }
+/****************************************************************************/
+/*!
+\brief
+This Function controls the animation of the death screen
+
+\param dt
+Delta time
+*/
+/****************************************************************************/
 
 void SceneEnd::UpdatePlayerDiesInteraction(double dt)
 {
@@ -516,6 +548,15 @@ void SceneEnd::RenderToolIcon()
 		}
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+This Function controls the animation of the tool swing
+
+\param dt
+Delta time
+*/
+/****************************************************************************/
 
 void SceneEnd::MouseClickFunction(double dt)
 {
@@ -626,6 +667,15 @@ bool SceneEnd::b_ReadyToFly()
 
 	return true;
 }
+/****************************************************************************/
+/*!
+\brief
+This Function controls the flickering of the "torchlight"
+
+\param dt
+Delta time
+*/
+/****************************************************************************/
 
 void SceneEnd::FlickeringLight(double dt)
 {
@@ -647,6 +697,15 @@ void SceneEnd::FlickeringLight(double dt)
 		Explorer::instance()->f_FlickeringLight = 0.0f;
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+This Function is the main Update function of the Level, which houses all other functions.
+
+\param dt
+To slow down animations or other relevant variables
+*/
+/****************************************************************************/
 
 void SceneEnd::Update(double dt)
 {
@@ -739,6 +798,18 @@ void SceneEnd::Update(double dt)
     Collision(-500, 500, 95, 105);
 
 }
+/****************************************************************************/
+/*!
+\brief
+This Function renders the mesh of specified object with or without light
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param enableLight
+Whether to account for light
+*/
+/****************************************************************************/
 
 void SceneEnd::RenderMesh(Mesh*mesh, bool enableLight)
 {
@@ -783,6 +854,21 @@ void SceneEnd::RenderMesh(Mesh*mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on worldspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+*/
+/****************************************************************************/
 
 void SceneEnd::RenderText(Mesh* mesh, std::string text, Color color)
 {
@@ -813,6 +899,30 @@ void SceneEnd::RenderText(Mesh* mesh, std::string text, Color color)
 	glEnable(GL_DEPTH_TEST);
 
 }
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+
+\param size
+size of the text to render
+
+\param x
+x coordinate of text to render
+
+\param y
+y coordinate of text to render
+*/
+/****************************************************************************/
 
 void SceneEnd::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
@@ -859,6 +969,30 @@ void SceneEnd::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, flo
 
 	glEnable(GL_DEPTH_TEST);
 }
+/****************************************************************************/
+/*!
+\brief
+This Function renders an OBJ at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param Sx,Sy,Sz
+Scaling by x,y,z
+
+\param Rotate
+angle to rotate by
+
+\param rx,ry,rz
+rotation to be done on x,y,or z axis
+
+\param tx,ty,tz
+translation of model on the x,y,z axis
+
+\param LightYN
+to account for Light
+*/
+/****************************************************************************/
 
 void SceneEnd::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
@@ -880,6 +1014,12 @@ void SceneEnd::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, flo
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
+/****************************************************************************/
+/*!
+\brief
+This Function is the main function for all rendercalls
+*/
+/****************************************************************************/
 
 void SceneEnd::Render()
 {
@@ -975,6 +1115,12 @@ void SceneEnd::Render()
 		RenderModelOnScreen(meshList[GEO_HEALTHICON], 3.f, 3.f, 3.f, 90, 1, 0, 0, (22.f + i), 18.5f, 1.0f, false);
 
 }
+/****************************************************************************/
+/*!
+\brief
+This Function deletes openGL based stuff
+*/
+/****************************************************************************/
 
 void SceneEnd::Exit()
 {

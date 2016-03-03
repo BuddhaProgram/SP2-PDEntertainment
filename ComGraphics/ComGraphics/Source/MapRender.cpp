@@ -12,7 +12,21 @@ Function definitions for map rendering
 */
 /*************************************************************/
 
+/****************************************************************************/
+/*!
+\brief
+This is the function that Renders a positive Z facing wall and outputs the coordinates needed to set it's collision. Additionally, this function takes in graph paper coordinates and coverts it into world space 
 
+\param xPosLarge
+Takes in the larger x coordinate
+\param xPosSmall
+Takes in the smaller x coordinate
+\param zPos 
+Takes in the z position of the wall
+/param wll number
+Takes in the assigned number for the wall
+*/
+/****************************************************************************/
 //these codes use x and z coordinates according to GRAPH PAPER COORDINATES and not actual z,x coords.
 void SceneLevelOneA::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber)//positive Z facing wall
 {
@@ -69,10 +83,22 @@ void SceneLevelOneA::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int 
 
         modelStack.PopMatrix();
     }
-
-   
-
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that Renders a negative Z facing wall and outputs the coordinates needed to set it's collision. Additionally, this function takes in graph paper coordinates and coverts it into world space
+
+\param xPosLarge
+Takes in the larger x coordinate
+\param xPosSmall
+Takes in the smaller x coordinate
+\param zPos
+Takes in the z position of the wall
+/param wll number
+Takes in the assigned number for the wall
+*/
+/****************************************************************************/
 void SceneLevelOneA::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber)//negative Z facing Wall
 {
     zPos = -zPos;
@@ -130,6 +156,21 @@ void SceneLevelOneA::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wa
     }
  
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that Renders a positive x facing wall and outputs the coordinates needed to set it's collision. Additionally, this function takes in graph paper coordinates and coverts it into world space
+
+\param zPosLarge
+Takes in the larger z coordinate
+\param zPosSmall
+Takes in the smaller z coordinate
+\param xPos
+Takes in the x position of the wall
+/param wll number
+Takes in the assigned number for the wall
+*/
+/****************************************************************************/
 void SceneLevelOneA::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber)// positive X facing wall
 {
     
@@ -187,6 +228,21 @@ void SceneLevelOneA::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int
     }
    
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that Renders a negative x facing wall and outputs the coordinates needed to set it's collision. Additionally, this function takes in graph paper coordinates and coverts it into world space
+
+\param zPosLarge
+Takes in the larger z coordinate
+\param zPosSmall
+Takes in the smaller z coordinate
+\param xPos
+Takes in the x position of the wall
+/param wll number
+Takes in the assigned number for the wall
+*/
+/****************************************************************************/
 void SceneLevelOneA::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber)//negative X facing wall
 {
     int zMaxCount = zPosLarge - zPosSmall;
@@ -242,7 +298,21 @@ void SceneLevelOneA::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int 
         modelStack.PopMatrix();
     }
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that Renders a positive Z facing wall and outputs the coordinates needed to set it's collision. Additionally, this function takes in graph paper coordinates and coverts it into world space
 
+\param xPosLarge
+Takes in the larger x coordinate
+\param xPosSmall
+Takes in the smaller x coordinate
+\param zPos
+Takes in the z position of the wall
+/param wll number
+Takes in the assigned number for the wall
+*/
+/****************************************************************************/
 //these codes use x and z coordinates according to DRAWN COORDINATES and not actual z,x coords
 void SceneLevelOneB::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber)//positive Z facing wall
 {
@@ -299,10 +369,22 @@ void SceneLevelOneB::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int 
 
         modelStack.PopMatrix();
     }
-
-
-
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that Renders a negative Z facing wall and outputs the coordinates needed to set it's collision. Additionally, this function takes in graph paper coordinates and coverts it into world space
+
+\param xPosLarge
+Takes in the larger x coordinate
+\param xPosSmall
+Takes in the smaller x coordinate
+\param zPos
+Takes in the z position of the wall
+/param wll number
+Takes in the assigned number for the wall
+*/
+/****************************************************************************/
 void SceneLevelOneB::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber)//negative Z facing Wall
 {
     zPos = -zPos;
@@ -360,6 +442,22 @@ void SceneLevelOneB::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wa
     }
 
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that Renders a positive x facing wall and outputs the coordinates needed to set it's collision. Additionally, this function takes in graph paper coordinates and coverts it into world space
+
+\param zPosLarge
+Takes in the larger z coordinate
+\param zPosSmall
+Takes in the smaller z coordinate
+\param xPos
+Takes in the x position of the wall
+/param wll number
+Takes in the assigned number for the wall
+*/
+/****************************************************************************/
+
 void SceneLevelOneB::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber)// positive X facing wall
 {
 
@@ -417,6 +515,21 @@ void SceneLevelOneB::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int
     }
 
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that Renders a negative x facing wall and outputs the coordinates needed to set it's collision. Additionally, this function takes in graph paper coordinates and coverts it into world space
+
+\param zPosLarge
+Takes in the larger z coordinate
+\param zPosSmall
+Takes in the smaller z coordinate
+\param xPos
+Takes in the x position of the wall
+/param wll number
+Takes in the assigned number for the wall
+*/
+/****************************************************************************/
 void SceneLevelOneB::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber)//negative X facing wall
 {
     int zMaxCount = zPosLarge - zPosSmall;
@@ -472,6 +585,21 @@ void SceneLevelOneB::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int 
         modelStack.PopMatrix();
     }
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that Renders a positive Z facing wall and outputs the coordinates needed to set it's collision. Additionally, this function takes in graph paper coordinates and coverts it into world space
+
+\param xPosLarge
+Takes in the larger x coordinate
+\param xPosSmall
+Takes in the smaller x coordinate
+\param zPos
+Takes in the z position of the wall
+/param wll number
+Takes in the assigned number for the wall
+*/
+/****************************************************************************/
 
 //these codes use x and z coordinates according to DRAWN COORDINATES and not actual z,x coords
 void SceneLevelTwo::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber)//positive Z facing wall
@@ -529,10 +657,22 @@ void SceneLevelTwo::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int w
 
 		modelStack.PopMatrix();
 	}
-
-
-
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that Renders a negative Z facing wall and outputs the coordinates needed to set it's collision. Additionally, this function takes in graph paper coordinates and coverts it into world space
+
+\param xPosLarge
+Takes in the larger x coordinate
+\param xPosSmall
+Takes in the smaller x coordinate
+\param zPos
+Takes in the z position of the wall
+/param wll number
+Takes in the assigned number for the wall
+*/
+/****************************************************************************/
 void SceneLevelTwo::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber)//negative Z facing Wall
 {
 	zPos = -zPos;
@@ -590,6 +730,21 @@ void SceneLevelTwo::RenderUpWall(int xPosLarge, int xPosSmall, int zPos, int wal
 	}
 
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that Renders a positive x facing wall and outputs the coordinates needed to set it's collision. Additionally, this function takes in graph paper coordinates and coverts it into world space
+
+\param zPosLarge
+Takes in the larger z coordinate
+\param zPosSmall
+Takes in the smaller z coordinate
+\param xPos
+Takes in the x position of the wall
+/param wll number
+Takes in the assigned number for the wall
+*/
+/****************************************************************************/
 void SceneLevelTwo::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber)// positive X facing wall
 {
 
@@ -647,6 +802,21 @@ void SceneLevelTwo::RenderRightWall(int zPosLarge, int zPosSmall, int xPos, int 
 	}
 
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that Renders a negative x facing wall and outputs the coordinates needed to set it's collision. Additionally, this function takes in graph paper coordinates and coverts it into world space
+
+\param zPosLarge
+Takes in the larger z coordinate
+\param zPosSmall
+Takes in the smaller z coordinate
+\param xPos
+Takes in the x position of the wall
+/param wll number
+Takes in the assigned number for the wall
+*/
+/****************************************************************************/
 void SceneLevelTwo::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int wallNumber)//negative X facing wall
 {
 	int zMaxCount = zPosLarge - zPosSmall;
@@ -702,7 +872,18 @@ void SceneLevelTwo::RenderLeftWall(int zPosLarge, int zPosSmall, int xPos, int w
 		modelStack.PopMatrix();
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that Renders the single wall for the final level and sets its collision
 
+\param xpos
+Takes in the x position of the wall
+\param zpos
+Takes in the zpos of the wall
+
+*/
+/****************************************************************************/
 void SceneEnd::RenderDownWall(int xPos, int zPos)//positive Z facing wall
 {
     modelStack.PushMatrix();
