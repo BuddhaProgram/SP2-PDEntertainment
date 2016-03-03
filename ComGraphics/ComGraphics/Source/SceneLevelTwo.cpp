@@ -286,7 +286,7 @@ void SceneLevelTwo::Reset()
 	Explorer::instance()->hp = 100;
 	Explorer::instance()->stamina = 100;
 	Explorer::instance()->isDead = false;
-	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
+	Explorer::instance()->SavePoint = (0.0f, 10.0f, 400.0f);
 	Variables.f_redScreenTimer = 0.0f;
 	Switch1Int = false;
 	Switch2Int = false;
@@ -345,6 +345,12 @@ void SceneLevelTwo::Reset()
 	timer = false;
 
 	displayInteract1 = false;
+
+	for (int i = 0; i < 10; ++i)
+	{
+		Explorer::instance()->b_SoundEffect[i] = false;
+		Explorer::instance()->b_MonsterSound[i] = false;
+	}
 }
 
 /****************************************************************************/
@@ -357,8 +363,15 @@ void SceneLevelTwo::ResetAll()
 	Explorer::instance()->hp = 100;
 	Explorer::instance()->isDead = false;
 	Explorer::instance()->PlayerLife = 3;
-	//Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
+
+	for (int i = 0; i < 4; ++i)
+	{
+		Explorer::instance()->itemAttack[i] = 0;
+
+		if (Explorer::instance()->GetToolType(i + 1) != ToolUI::Hand)
+			Explorer::instance()->TotalTools.push_back(ToolUI(ToolUI::Empty));
+	}
 
 	Reset();
 }

@@ -360,8 +360,6 @@ void SceneLevelOneB::ResetAll()
 		Explorer::instance()->b_SoundEffect[i] = false;
 		Explorer::instance()->b_MonsterSound[i] = false;
 	}
-
-	ResetSameScene();
 }
 
 
@@ -866,6 +864,7 @@ void SceneLevelOneB::ContinueGameOrNot()
 		else if (Application::IsKeyPressed('N'))
 		{
 			ResetAll();
+			ResetSameScene();
 			Application::OpenGame();
 		}
 	}
