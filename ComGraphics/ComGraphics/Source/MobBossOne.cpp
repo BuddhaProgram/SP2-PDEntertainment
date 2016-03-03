@@ -8,6 +8,14 @@ Function definitions for MobBossOne
 */
 /*************************************************************/
 #include "MobBossOne.h"
+
+/*************************************************************/
+/*!
+\brief
+Default constructor for class MobBossOne
+*/
+/*************************************************************/
+
 MobBossOne::MobBossOne()
 {
     Spawn = false;
@@ -25,12 +33,15 @@ MobBossOne::MobBossOne()
 
     health = 32;
     AttackDamage = 3;
-    kenaWhack = false;
     AttackAnimation = true;
-
-	BossDies = false;
+    BossDies = false;
 }
-
+/*************************************************************/
+/*!
+\brief
+Destructor for class HostileMob
+*/
+/*************************************************************/
 MobBossOne::~MobBossOne()
 {
 
@@ -59,6 +70,7 @@ the smaller z value of the AABB bounding box
 the larger z value of the AABB bounding box
 */
 /****************************************************************************/
+>>>>>>> origin/master
 bool MobBossOne::proximitycheck(float smallx, float largex, float smallz, float largez)
 {
     //this function checks if the camera is close to a side of the object
@@ -121,6 +133,10 @@ void MobBossOne::move(double dt, int movespeed = 10)
         {
             Spawn = false;
             BossDies = true;
+        }
+        else
+        {
+            BossDies = false;
         }
     
 }

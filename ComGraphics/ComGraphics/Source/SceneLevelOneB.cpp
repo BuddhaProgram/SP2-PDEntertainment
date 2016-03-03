@@ -252,7 +252,6 @@ void SceneLevelOneB::Init()
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
 
-    PuzzleGhost1.setSpawnGhost(24, 31);
     PuzzleGhost2.setSpawnGhost(30, 31);
 	ScareGhost.setSpawnGhost(-18.5, 38.75);
     BossOne.setSpawnBossOne(-30, 55);
@@ -316,15 +315,12 @@ void SceneLevelOneB::ResetSameScene()
 	anima.ClosingDoorBtm4 = true;
 
     //mob variables
-    PuzzleGhost1.health = 8;
     PuzzleGhost2.health = 8;
     BossOne.health = 32;
 	ScareGhost.health = 8;
 	ScareGhost.setSpawnGhost(-18.5, 38.75);
-    PuzzleGhost1.setSpawnGhost(24, 31);
     PuzzleGhost2.setSpawnGhost(30, 31);
     BossOne.setSpawnBossOne(-30, 55);
-    PuzzleGhost1.Spawn = false;
     PuzzleGhost2.Spawn = false;
     BossOne.Spawn = false;
 	ScareGhost.Spawn = false;
@@ -353,6 +349,7 @@ void SceneLevelOneB::ResetAll()
 	}
 }
 
+
 /****************************************************************************/
 /*!
 \brief
@@ -371,6 +368,7 @@ the smaller z value of the AABB bounding box
 the larger z value of the AABB bounding box
 */
 /****************************************************************************/
+
 void SceneLevelOneB::Collision(float smallx, float largex, float smallz, float largez)
 {
     if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz) && (camera.position.z <= smallz + 3.f)){ camera.position.z = smallz; }
@@ -844,7 +842,6 @@ To slow down animations or other relevant variables
 /****************************************************************************/
 void SceneLevelOneB::Update(double dt)
 {
-    std::cout << BossOne.health << std::endl;
     FPS = 1.f / (float)dt;
 	Variables.f_rotatingTool += (float)(180 * dt);
     //worldspin += (float)(dt);
@@ -896,9 +893,6 @@ void SceneLevelOneB::Update(double dt)
     }
     Collision(-352,-336, -488,-376);
 
-    //mob collision
-    PuzzleGhost1.MobCollision(PuzzleGhost2.MobPosX - 4, PuzzleGhost2.MobPosX + 4, PuzzleGhost2.MobPosZ - 4, PuzzleGhost2.MobPosZ + 4);
-    PuzzleGhost2.MobCollision(PuzzleGhost1.MobPosX - 4, PuzzleGhost1.MobPosX + 4, PuzzleGhost1.MobPosZ - 4, PuzzleGhost1.MobPosZ + 4);
 
 	/*-------------------------[Death of the Explorer]-------------------------------*/
 	Explorer::instance()->checkDead();
@@ -926,15 +920,9 @@ void SceneLevelOneB::Update(double dt)
    
 	PickUpSuitcaseInteraction();
 
-    PuzzleGhost1.checkPlayerPos(dt, 3,1,camera.position.x, camera.position.z);
     PuzzleGhost2.checkPlayerPos(dt, 3, 1, camera.position.x, camera.position.z);
 	ScareGhost.checkPlayerPos(dt, 5, 1, camera.position.x, camera.position.z);
     BossOne.checkPlayerPos(dt, 3, 1, camera.position.x, camera.position.z);
-
-    if (PuzzleGhost1.Spawn)
-    {
-        PuzzleGhost1.move(dt, 25);
-    }
 
     if (PuzzleGhost2.Spawn)
     {
@@ -1222,11 +1210,6 @@ void SceneLevelOneB::Render()
 	{
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press E to interact", Color(1, 0, 0), 3, 8.75f, 8);
 	}
-
-    if (PuzzleGhost1.Spawn)
-    {
-        RenderGhost(PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ);
-    }
 
     if (PuzzleGhost2.Spawn)
     {
