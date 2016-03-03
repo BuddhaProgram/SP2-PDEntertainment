@@ -110,7 +110,7 @@ void CutSceneOne::Init()
 	projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
-   
+	Application::MusicWillPlay(2, false);
 }
 
 static float LSPEED = 10.f;

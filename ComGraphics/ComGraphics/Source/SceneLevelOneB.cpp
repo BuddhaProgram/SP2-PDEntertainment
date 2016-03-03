@@ -244,12 +244,6 @@ void SceneLevelOneB::ResetSameScene()
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
 
-	for (int i = 0; i < 4; ++i)
-	{
-		Explorer::instance()->checkSavePoint[i] = false;
-	}
-
-
 	activateDoor1 = false;
 	activateDoor2 = false;
 	activateDoor3_1 = false;
@@ -295,11 +289,10 @@ void SceneLevelOneB::ResetAll()
     Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
     Variables.f_redScreenTimer = 0.0f;
 
-    for (int i = 0; i < 4; ++i)
-    {
-        Explorer::instance()->checkSavePoint[i] = false;
-    }
-
+	for (int i = 0; i < 10; ++i)
+	{
+		Explorer::instance()->b_ActivateMusic[i] = false;
+	}
 }
 
 

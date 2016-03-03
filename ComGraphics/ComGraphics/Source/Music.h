@@ -16,6 +16,7 @@ class Music
 
 		void init();
 		void OpeningMusic(int index, bool loop);
+		void DropMusic();
 		std::vector<std::string>MusicReadFromText(std::string link);
 
 		irrklang::ISoundEngine *engine;
