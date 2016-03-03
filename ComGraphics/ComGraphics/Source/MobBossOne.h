@@ -35,6 +35,8 @@ public:
     bool AttackAnimation;
     float CrystalAnim;
     bool BossDies;
+	void knockback();
+	bool kenaWhack;
 private:
     
     float animtimer;

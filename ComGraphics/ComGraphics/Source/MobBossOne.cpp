@@ -70,7 +70,7 @@ the smaller z value of the AABB bounding box
 the larger z value of the AABB bounding box
 */
 /****************************************************************************/
->>>>>>> origin/master
+
 bool MobBossOne::proximitycheck(float smallx, float largex, float smallz, float largez)
 {
     //this function checks if the camera is close to a side of the object

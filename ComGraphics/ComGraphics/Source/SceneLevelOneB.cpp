@@ -279,6 +279,23 @@ void SceneLevelOneB::ResetSameScene()
 	activateDoor3_2 = false;
 	activateDoor4 = false;
 
+	anima.DoorSlideTop = 0;
+	anima.DoorSlideBtm = 0;
+	anima.toSlideDoorTop = true;
+	anima.toSlideDoorBtm = true;
+
+	anima.DoorSlideTop_2 = 0;
+	anima.DoorSlideBtm_2 = 0;
+	anima.toSlideDoorTop2 = true;
+	anima.toSlideDoorBtm2 = true;
+	anima.ClosingDoorTop2 = true;
+	anima.ClosingDoorBtm2 = true;
+
+	anima.DoorSlideTop_3 = 0;
+	anima.DoorSlideBtm_3 = 0;
+	anima.toSlideDoorTop3 = true;
+	anima.toSlideDoorBtm3 = true;
+
 	anima.DoorSlideTop_Boss = 0;
 	anima.DoorSlideBtm_Boss = 0;
 	anima.toSlideDoorTop_Boss = true;
@@ -290,6 +307,13 @@ void SceneLevelOneB::ResetSameScene()
 	anima.DoorSlideBtm_5 = -6;
 	anima.ClosingDoorTop5 = true;
 	anima.ClosingDoorBtm5 = true;
+
+	anima.DoorSlideTop_4 = 0;
+	anima.DoorSlideBtm_4 = 0;
+	anima.toSlideDoorTop4 = true;
+	anima.toSlideDoorBtm4 = true;
+	anima.ClosingDoorTop4 = true;
+	anima.ClosingDoorBtm4 = true;
 
     //mob variables
     PuzzleGhost2.health = 8;
