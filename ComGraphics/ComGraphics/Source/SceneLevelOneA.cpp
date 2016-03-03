@@ -4,7 +4,7 @@
 \author     Shem Ang Yi Ruey
 \par        email: shem0710@gmail.com
 \brief
-Function definitions for SceneLevelTwo
+Function definitions for SceneLevelOneA
 */
 /*************************************************************/
 #include "SceneLevelOneA.h"
@@ -311,6 +311,9 @@ void SceneLevelOneA::ResetSameScene()
 		Explorer::instance()->b_SoundEffect[i] = false;
 		Explorer::instance()->b_MonsterSound[i] = false;
 	}
+    Ghost.Spawn = false;
+    Ghost.health = 8;
+    Ghost.setSpawnGhost(-30, -15);
 }
 
 /****************************************************************************/
@@ -530,7 +533,15 @@ void SceneLevelOneA::RenderMouseScrollToolSlot()
 			RenderModelOnScreen(meshList[GEO_TOOLUIFOUR], 7.0f, 7.0f, 7.0f, 0.0f, 1, 0, 0, 5.75f, 0.0f, 0.0f, false);
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+This Function controls the animation of the tool swing
 
+\param dt
+Delta time
+*/
+/****************************************************************************/
 void SceneLevelOneA::MouseClickFunction(double dt)
 {
 	if (Application::IsKeyPressed(VK_LBUTTON) && Variables.b_LockSwing == false && Variables.b_LockSwingDebounce == false && Explorer::instance()->stamina >= 20)
@@ -594,6 +605,15 @@ void SceneLevelOneA::MouseClickFunction(double dt)
         CrosshairHit = false;
     }
 }
+/****************************************************************************/
+/*!
+\brief
+This Function controls the animation of the death screen
+
+\param dt
+Delta time
+*/
+/****************************************************************************/
 
 void SceneLevelOneA::UpdatePlayerDiesInteraction(double dt)
 {
@@ -604,7 +624,13 @@ void SceneLevelOneA::UpdatePlayerDiesInteraction(double dt)
 		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+This Function controls the death screen and checks if the player wants to continue the game
 
+*/
+/****************************************************************************/
 void SceneLevelOneA::ContinueGameOrNot()
 {
 	if (Explorer::instance()->PlayerLife > 0 && Variables.f_redScreenTimer > 4.0f)
@@ -631,6 +657,13 @@ void SceneLevelOneA::ContinueGameOrNot()
 		}
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+This Function controls the intercation with the suitcase
+
+*/
+/****************************************************************************/
 
 void SceneLevelOneA::PickUpSuitcaseInteraction()
 {
@@ -643,7 +676,15 @@ void SceneLevelOneA::PickUpSuitcaseInteraction()
 		}
 	}
 }
+/****************************************************************************/
+/*!
+\brief
+This Function controls the flickering of the "torchlight"
 
+\param dt
+Delta time
+*/
+/****************************************************************************/
 void SceneLevelOneA::FlickeringLight(double dt)
 {
 	Explorer::instance()->f_FlickeringLight += (float)dt;

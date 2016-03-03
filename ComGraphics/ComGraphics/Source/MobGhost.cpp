@@ -30,7 +30,6 @@ MobGhost::MobGhost()
     mobTimeCount2 = 0.f;
     AttackDamage = 10;
     health = 8;
-    kenaWhack = false;
     canHit = true;
 }
 
@@ -67,19 +66,29 @@ bool MobGhost::proximitycheck(float smallx, float largex, float smallz, float la
     if ((TargetDetectX >= smallx) && (TargetDetectX <= largex) && (TargetDetectZ <= largez + 2.f) && (TargetDetectZ >= largez)){ result = true; }
     return result;
 }
-void MobGhost::knockback()
-{
-    kenaWhack = true;
-}
 
+/****************************************************************************/
+/*!
+\brief
+This is the function that inflicts damage on the player's health
 
+\param Damage 
+Takes in the amount of damage to be dealt to the player's health
+*/
+/****************************************************************************/
 void MobGhost::attack(float Damage)
 {
 	this->AttackDamage = Damage;
 	Explorer::instance()->MinusHP((float)(AttackDamage));
     canHit = false;
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that checks if the player is within range of the mob's attack
 
+*/
+/****************************************************************************/
 void MobGhost::checkAttack()
 {
     if (proximitycheck(MobPosX - 5, MobPosX + 5, MobPosZ - 5, MobPosZ + 5) && canHit)
@@ -87,6 +96,18 @@ void MobGhost::checkAttack()
         attack(AttackDamage);
     }
 }
+/****************************************************************************/
+/*!
+\brief
+This function sets a target location for the mob to move towards and moves it towards the location by the specified movements speed
+
+\param dt
+Delta time
+\param movespeed
+The speed of the mob
+
+*/
+/****************************************************************************/
 void MobGhost::move(double dt, int movespeed)
 {
     //note: target detect x and y is player position, its function is in scene cpp file
@@ -122,13 +143,30 @@ void MobGhost::move(double dt, int movespeed)
    
 
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that takes in the spawn point of the mob in graph paper coordinates and converts it into world space
 
+\param xpos, zpos
+coordinates of spawn point in graph paper coordinates
+*/
+/****************************************************************************/
 
 void MobGhost::setSpawnGhost(float xpos, float zpos)
 {
     MobPosX = xpos * 8;
     MobPosZ = -(zpos * 8);
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that minuses the specified damage from the mob's health
+
+\param damage
+the amount of damage to be dealt to the mob
+*/
+/****************************************************************************/
 
 void MobGhost::TakeDamage(int damage)
 {

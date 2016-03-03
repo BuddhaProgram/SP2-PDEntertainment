@@ -81,6 +81,15 @@ bool MobBossOne::proximitycheck(float smallx, float largex, float smallz, float 
     if ((TargetDetectX >= smallx) && (TargetDetectX <= largex) && (TargetDetectZ <= largez + 2.f) && (TargetDetectZ >= largez)){ result = true; }
     return result;
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that controls the boss attack cycle and checks if teh player is within the range of the boss's attack
+
+\param dt
+Delta time
+*/
+/****************************************************************************/
 void MobBossOne::checkAttack(double dt)
 {
     if (proximitycheck(MobPosX - 20, MobPosX + 20, MobPosZ - 20, MobPosZ + 20) && AttackAnimation)
@@ -108,7 +117,18 @@ void MobBossOne::checkAttack(double dt)
         }
     }
 }
+/****************************************************************************/
+/*!
+\brief
+This function sets a target location for the mob to move towards and moves it towards the location by the specified movements speed
 
+\param dt
+Delta time
+\param movespeed
+The speed of the mob
+
+*/
+/****************************************************************************/
 void MobBossOne::move(double dt, int movespeed = 10)
 {
    
@@ -140,17 +160,42 @@ void MobBossOne::move(double dt, int movespeed = 10)
         }
     
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that takes in the spawn point of the mob in graph paper coordinates and converts it into world space
 
+\param xpos, zpos
+coordinates of spawn point in graph paper coordinates
+*/
+/****************************************************************************/
 void MobBossOne::setSpawnBossOne(float xpos, float zpos)
 {
     MobPosX = xpos * 8;
     MobPosZ = -(zpos * 8);
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that minuses the specified damage from the mob's health
+
+\param damage
+the amount of damage to be dealt to the mob
+*/
+/****************************************************************************/
 void MobBossOne::TakeDamage(int damage)
 {
 	health -= damage;
 }
+/****************************************************************************/
+/*!
+\brief
+This is the function that inflicts damage on the player's health
 
+\param Damage
+Takes in the amount of damage to be dealt to the player's health
+*/
+/****************************************************************************/
 void MobBossOne::attack(float damage)
 {
    
