@@ -690,6 +690,8 @@ void SceneLevelOneB::RenderBarrel()
 		modelStack.PopMatrix();
 	}
 
+	Collision(210, 320, -70, -50);
+
 	for (float x = 320; x >= 250; x -= 7)
 	{
 		modelStack.PushMatrix();
@@ -698,6 +700,7 @@ void SceneLevelOneB::RenderBarrel()
 		RenderMesh(meshList[GEO_BARREL], true);
 		modelStack.PopMatrix();
 	}
+	Collision(240, 330, -200, -180);
 
 	for (float x = 210; x >= 80; x -= 7)
 	{
@@ -707,6 +710,7 @@ void SceneLevelOneB::RenderBarrel()
 		RenderMesh(meshList[GEO_BARREL], true);
 		modelStack.PopMatrix();
 	}
+	Collision(70, 220, -200, -180);
 
 	for (float z = -56; z >= -94; z -= 7)
 	{
@@ -716,6 +720,7 @@ void SceneLevelOneB::RenderBarrel()
 		RenderMesh(meshList[GEO_BARREL], true);
 		modelStack.PopMatrix();
 	}
+	Collision(75, 95, -100, -46);
 
 	for (float x = -45; x >= -220; x -= 7)
 	{
@@ -725,6 +730,7 @@ void SceneLevelOneB::RenderBarrel()
 		RenderMesh(meshList[GEO_BARREL], true);
 		modelStack.PopMatrix();
 	}
+	Collision(-230, -35, -90, -70);
 
 	for (float z = -80; z >= -216; z -= 7)
 	{
@@ -734,4 +740,5 @@ void SceneLevelOneB::RenderBarrel()
 		RenderMesh(meshList[GEO_BARREL], true);
 		modelStack.PopMatrix();
 	}
+	Collision(-230, -210, -226, -70);
 }
