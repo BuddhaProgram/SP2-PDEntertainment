@@ -2,7 +2,18 @@
 #include "SceneLevelOneB.h"
 #include "SceneLevelTwo.h"
 #include "SceneEnd.h"
-//these codes use x and z coordinates according to DRAWN COORDINATES and not actual z,x coords
+/*************************************************************/
+/*!
+\file       MapRender.cpp
+\author     Shem Ang Yi Ruey
+\par        email: shem0710@gmail.com
+\brief
+Function definitions for map rendering
+*/
+/*************************************************************/
+
+
+//these codes use x and z coordinates according to GRAPH PAPER COORDINATES and not actual z,x coords.
 void SceneLevelOneA::RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber)//positive Z facing wall
 {
     zPos = -zPos;

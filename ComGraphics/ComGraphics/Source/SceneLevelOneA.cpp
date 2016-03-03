@@ -1,3 +1,12 @@
+/*************************************************************/
+/*!
+\file       SceneLevelOneA.cpp
+\author     Shem Ang Yi Ruey
+\par        email: shem0710@gmail.com
+\brief
+Function definitions for SceneLevelTwo
+*/
+/*************************************************************/
 #include "SceneLevelOneA.h"
 #include "GL\glew.h"
 
@@ -12,8 +21,11 @@
 #include <sstream>
 #include "GlobalVariables.h"
 
-
-
+/****************************************************************************/
+/*!
+\brief	Default Constructor definitions for SceneLevelOneA
+*/
+/****************************************************************************/
 SceneLevelOneA::SceneLevelOneA()
 {
 	 activateDoor1 = false;
@@ -29,10 +41,20 @@ SceneLevelOneA::SceneLevelOneA()
      SwitchRot = 45.f;
 }
 
+/****************************************************************************/
+/*!
+\brief	Default destructor for SceneLevelOneA
+*/
+/****************************************************************************/
 SceneLevelOneA::~SceneLevelOneA()
 {
 }
 
+/****************************************************************************/
+/*!
+\brief	Initializer definitions for SceneLevelOneA, including light, camera positions etc.
+*/
+/****************************************************************************/
 void SceneLevelOneA::Init()
 {
     // Init VBO here
@@ -238,7 +260,11 @@ void SceneLevelOneA::Init()
 
 static float LSPEED = 10.f;
 
-
+/****************************************************************************/
+/*!
+\brief	This Function resets all local variables to default values as listed in Init.
+*/
+/****************************************************************************/
 void SceneLevelOneA::ResetSameScene()
 {
 	Explorer::instance()->hp = 100;
@@ -288,6 +314,11 @@ void SceneLevelOneA::ResetSameScene()
 
 }
 
+/****************************************************************************/
+/*!
+\brief	This Function resets all GLOBAL variables to default values as listed in Init.
+*/
+/****************************************************************************/
 void SceneLevelOneA::ResetAll()
 {
     Explorer::instance()->hp = 100;
@@ -301,7 +332,24 @@ void SceneLevelOneA::ResetAll()
         Explorer::instance()->checkSavePoint[i] = false;
     }
 }
+/****************************************************************************/
+/*!
+\brief
+This Function checks for camera position and relative target and stops 'movement'
 
+\param smallx
+the smaller x value of the AABB bounding box
+
+\param largex
+the larger x value of the AABB bounding box
+
+\param smallz
+the smaller z value of the AABB bounding box
+
+\param largez
+the larger z value of the AABB bounding box
+*/
+/****************************************************************************/
 void SceneLevelOneA::Collision(float smallx, float largex, float smallz, float largez)
 {
     if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz) && (camera.position.z <= smallz + 3.f)){ camera.position.z = smallz; }
@@ -315,7 +363,25 @@ void SceneLevelOneA::Collision(float smallx, float largex, float smallz, float l
 		cos(Math::DegreeToRadian(camera.rotationX)) * cos(Math::DegreeToRadian(camera.rotationY)) + camera.position.z
 		);
 }
+/****************************************************************************/
+/*!
+\brief
+This Function checks for camera position being near the edges of a AABB bounding box
+, with a current allowance of 2.f.
 
+\param smallx
+the smaller x value of the AABB bounding box
+
+\param largex
+the larger x value of the AABB bounding box
+
+\param smallz
+the smaller z value of the AABB bounding box
+
+\param largez
+the larger z value of the AABB bounding box
+*/
+/****************************************************************************/
 bool SceneLevelOneA::proximitycheck(float smallx, float largex, float smallz, float largez)
 {
     //this function checks if the camera is close to a side of the object
@@ -576,6 +642,15 @@ void SceneLevelOneA::FlickeringLight(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function is the main Update function of the Level, which houses all other functions.
+
+\param dt
+To slow down animations or other relevant variables
+*/
+/****************************************************************************/
 void SceneLevelOneA::Update(double dt)
 {
 	FPS = 1.f / (float)dt;
@@ -662,6 +737,18 @@ void SceneLevelOneA::Update(double dt)
 	FlickeringLight(dt);
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders the mesh of specified object with or without light
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param enableLight
+Whether to account for light
+*/
+/****************************************************************************/
 void SceneLevelOneA::RenderMesh(Mesh*mesh, bool enableLight)
 {
     Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -706,6 +793,21 @@ void SceneLevelOneA::RenderMesh(Mesh*mesh, bool enableLight)
     }
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on worldspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+*/
+/****************************************************************************/
 void SceneLevelOneA::RenderText(Mesh* mesh, std::string text, Color color)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -736,6 +838,30 @@ void SceneLevelOneA::RenderText(Mesh* mesh, std::string text, Color color)
 
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+
+\param size
+size of the text to render
+
+\param x
+x coordinate of text to render
+
+\param y
+y coordinate of text to render
+*/
+/****************************************************************************/
 void SceneLevelOneA::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -782,6 +908,30 @@ void SceneLevelOneA::RenderTextOnScreen(Mesh* mesh, std::string text, Color colo
     glEnable(GL_DEPTH_TEST);
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders an OBJ at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param Sx,Sy,Sz
+Scaling by x,y,z
+
+\param Rotate
+angle to rotate by
+
+\param rx,ry,rz
+rotation to be done on x,y,or z axis
+
+\param tx,ty,tz
+translation of model on the x,y,z axis
+
+\param LightYN
+to account for Light
+*/
+/****************************************************************************/
 void SceneLevelOneA::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
 	Mtx44 ortho;
@@ -803,6 +953,12 @@ void SceneLevelOneA::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float S
 	modelStack.PopMatrix();
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function is the main function for all rendercalls
+*/
+/****************************************************************************/
 void SceneLevelOneA::Render()
 {
 	// Render VBO here
@@ -898,6 +1054,12 @@ void SceneLevelOneA::Render()
 		RenderModelOnScreen(meshList[GEO_HEALTHICON], 3.f, 3.f, 3.f, 90, 1, 0, 0, (22.f + i), 18.5f, 1.0f, false);
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function deletes openGL based stuff
+*/
+/****************************************************************************/
 void SceneLevelOneA::Exit()
 {
     glDeleteVertexArrays(1, &m_vertexArrayID);

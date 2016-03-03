@@ -1,5 +1,13 @@
+/*************************************************************/
+/*!
+\file       HostileMob.cpp
+\author     Shem Ang Yi Ruey
+\par        email: shem0710@gmail.com
+\brief
+Function definitions for MobBossOne
+*/
+/*************************************************************/
 #include "MobBossOne.h"
-
 MobBossOne::MobBossOne()
 {
     Spawn = false;
@@ -32,6 +40,25 @@ void MobBossOne::knockback()
 {
     kenaWhack = true;
 }
+/****************************************************************************/
+/*!
+\brief
+This Function checks for camera position being near the edges of a AABB bounding box
+, with a current allowance of 2.f.
+
+\param smallx
+the smaller x value of the AABB bounding box
+
+\param largex
+the larger x value of the AABB bounding box
+
+\param smallz
+the smaller z value of the AABB bounding box
+
+\param largez
+the larger z value of the AABB bounding box
+*/
+/****************************************************************************/
 bool MobBossOne::proximitycheck(float smallx, float largex, float smallz, float largez)
 {
     //this function checks if the camera is close to a side of the object
@@ -90,6 +117,11 @@ void MobBossOne::move(double dt, int movespeed = 10)
         checkAttack(dt);
 
         CrystalAnim += 200 * (float)(dt);
+        if (health <= 0)
+        {
+            Spawn = false;
+            BossDies = true;
+        }
     
 }
 
@@ -108,9 +140,5 @@ void MobBossOne::attack(float damage)
    
 	this->AttackDamage = damage;
 	Explorer::instance()->MinusHP((float)(AttackDamage));
-    if (health <= 0)
-    {
-        Spawn = false;
-		BossDies = true;
-    }
+    
 }

@@ -1,9 +1,22 @@
+/*************************************************************/
+/*!
+\file       HostileMob.cpp
+\author     Shem Ang Yi Ruey
+\par        email: shem0710@gmail.com
+\brief
+Function definitions for class HostileMob
+*/
+/*************************************************************/
 #include "HostileMob.h"
 
-
+/*************************************************************/
+/*!
+\brief 
+Default constructor for class HostileMob
+*/
+/*************************************************************/
 HostileMob::HostileMob()
 {
-    //global variables for use in entire project
     Spawn = false;
 
     //mob position variables
@@ -20,12 +33,23 @@ HostileMob::HostileMob()
 
     health = 1;
 }
+/*************************************************************/
+/*!
+\brief
+Destructor for class HostileMob
+*/
+/*************************************************************/
 
 HostileMob::~HostileMob()
 {
     
 }
-
+/*************************************************************/
+/*!
+\brief
+Checks the player position and 
+*/
+/*************************************************************/
 void HostileMob::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 1, float xpos = 0, float zpos = 0)
 {
     mobTimeCount += (((float)(dt)* checkRate) / lessenSpeed);
@@ -36,7 +60,24 @@ void HostileMob::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 
         mobTimeCount = 0;
     }
 }
+/****************************************************************************/
+/*!
+\brief
+This Function checks for camera position and relative target and stops 'movement'
 
+\param smallx
+the smaller x value of the AABB bounding box
+
+\param largex
+the larger x value of the AABB bounding box
+
+\param smallz
+the smaller z value of the AABB bounding box
+
+\param largez
+the larger z value of the AABB bounding box
+*/
+/****************************************************************************/
 void HostileMob::MobCollision(float smallx, float largex, float smallz, float largez)
 {
     if ((MobPosX >= smallx) && (MobPosX <= largex) && (MobPosZ >= smallz) && (MobPosZ <= smallz + 3.f)){ MobPosZ = smallz; }
