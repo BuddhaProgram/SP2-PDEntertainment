@@ -40,7 +40,8 @@ public:
 
 	float f_FlickeringLight;
 
-	bool b_ActivateMusic[10];
+	bool b_SoundEffect[10];
+	bool b_MonsterSound[10];
 
 private:
 	Explorer();

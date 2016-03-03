@@ -306,7 +306,6 @@ void SceneLevelOneA::ResetSameScene()
 	anima.DoorSlideBtm_3 = 0;
 	anima.toSlideDoorTop3 = true;
 	anima.toSlideDoorBtm3 = true;
-
 }
 
 /****************************************************************************/
@@ -324,7 +323,8 @@ void SceneLevelOneA::ResetAll()
 
 	for (int i = 0; i < 10; ++i)
 	{
-		Explorer::instance()->b_ActivateMusic[i] = false;
+		Explorer::instance()->b_SoundEffect[i] = false;
+		Explorer::instance()->b_MonsterSound[i] = false;
 	}
 }
 /****************************************************************************/
@@ -712,6 +712,12 @@ void SceneLevelOneA::Update(double dt)
 	if (proximitycheck(-226, -160, 210, 218) && !activateDoor1)
 	{
 		Ghost.Spawn = true;
+
+		if (Ghost.Spawn == true && Explorer::instance()->b_MonsterSound[0] == false)
+		{
+			Explorer::instance()->b_MonsterSound[0] = true;
+			Application::MusicWillPlay(3, false);
+		}
 	}
 
 
@@ -729,9 +735,9 @@ void SceneLevelOneA::Update(double dt)
         Application::SceneLevel1B();
     }
 
-	if (anima.Collapse && Explorer::instance()->b_ActivateMusic[1] == false)
+	if (anima.Collapse && Explorer::instance()->b_SoundEffect[0] == false)
 	{
-		Explorer::instance()->b_ActivateMusic[1] = true;
+		Explorer::instance()->b_SoundEffect[0] = true;
 		Application::MusicWillPlay(1, false);
 	}
 

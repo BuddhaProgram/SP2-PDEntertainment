@@ -230,7 +230,8 @@ void SceneLevelOneB::Init()
     meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
 
     meshList[GEO_ELEVATOR] = MeshBuilder::GenerateQuad("elevator doors", Color(1, 0, 0));
-    //meshList[GEO_ELEVATOR]->textureID = LoadTGA("Image//Elevator.tga");
+    meshList[GEO_ELEVATOR]->textureID = LoadTGA("Image//Elevator.tga");
+
     //puzzle inits
     meshList[GEO_LIGHTGREEN] = MeshBuilder::GenerateOBJ("green light", "OBJ//PuzzleLight.obj");
     meshList[GEO_LIGHTGREEN]->textureID = LoadTGA("Image//PuzzleLightGREEN.tga");
@@ -308,6 +309,15 @@ void SceneLevelOneB::ResetSameScene()
 	countdown = 0;
 	JumpScare = false;
 	timer = false;
+
+	for (int i = 0; i < 5; ++i)
+	{
+		Variables.b_SwitchAnimate[i] = 0;
+	}
+
+	Variables.f_SwitchRotateOne = 0.0f;
+	Variables.f_SwitchRotateTwo = 0.0f;
+	Variables.f_SwitchRotateThree = 0.0f;
 }
 
 /****************************************************************************/
@@ -840,6 +850,15 @@ void SceneLevelOneB::Update(double dt)
 		camera.Update(dt);
 	}
 
+	else
+	{
+		if (Explorer::instance()->b_ActivateMusic[3] == false)
+		{
+			Application::MusicWillPlay(3, false);
+			Explorer::instance()->b_ActivateMusic[3] = true;
+		}
+	}
+
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
 	light[0].spotDirection.Set(-(camera.target.x - camera.position.x), -(camera.target.y - camera.position.y), -(camera.target.z - camera.position.z));
 
@@ -918,9 +937,15 @@ void SceneLevelOneB::Update(double dt)
     }
     if (BossOne.Spawn)
     {
+		if (Explorer::instance()->b_ActivateMusic[3] == false)
+		{
+			Application::MusicWillPlay(3, false);
+			Explorer::instance()->b_ActivateMusic[3] = true;
+		}
         BossOne.move(dt, 15);
         Collision(BossOne.MobPosX - 20, BossOne.MobPosX + 20, BossOne.MobPosZ - 20, BossOne.MobPosZ + 20);
     }
+
 	if (ScareGhost.Spawn)
 	{
 		ScareGhost.move(dt, 25);

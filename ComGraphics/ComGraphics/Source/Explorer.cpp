@@ -44,7 +44,7 @@ Explorer::Explorer()
 
 	for (int i = 0; i < 10; ++i)
 	{
-		b_ActivateMusic[i] = false;
+		b_SoundEffect[i] = false;
 	}
 }
 
