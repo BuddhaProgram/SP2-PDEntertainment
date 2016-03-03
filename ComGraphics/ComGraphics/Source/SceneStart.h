@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file SceneStart.h
+\author Ng Jun Guo
+\par email: ng_junguo901@hotmail.com
+\brief
+header file for SceneStart
+*/
+/****************************************************************************/
 #ifndef SceneStart_H
 #define SceneStart_H
 
@@ -12,6 +21,13 @@
 #include "HostileMob.h"
 #include "MobGhost.h"
 
+/****************************************************************************/
+/*!
+Class SceneStart:
+\brief
+Defines stuff needed for SceneStart
+*/
+/****************************************************************************/
 class SceneStart : public Scene
 {
 	enum GEOMETRY_TYPE
@@ -150,7 +166,6 @@ private:
 	
 
 	// Tool UI functions
-	void ToolsUI();
 	void MouseScrollToolSlot();
 	void RenderMouseScrollToolSlot();
 	void ToolSelectionMouseScroll();

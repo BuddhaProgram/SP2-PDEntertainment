@@ -36,8 +36,6 @@ public:
 
 	static Music *musics;
 	static void MusicWillPlay(int index, bool loop);
-	static void DropOneMusic(int index);
-	static void DropAllMusic();
 
     static Scene *scene;
 	static Scene *IntroScene;

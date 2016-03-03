@@ -1,3 +1,12 @@
+/*************************************************************/
+/*!
+\file       SceneStart.h
+\author     Ng Jun Guo
+\par        email: ng_junguo901@hotmail.com
+\brief
+Function definitions for SceneOpening
+*/
+/*************************************************************/
 #include "SceneStart.h"
 #include "GL\glew.h"
 
@@ -12,16 +21,34 @@
 #include <sstream>
 float rotate;
 
+/****************************************************************************/
+/*!
+\brief
+Default Constructor definitions for SceneStart
+*/
+/****************************************************************************/
 SceneStart::SceneStart()
 {
 	timer = true;
 	textTL = false;
 }
 
+/****************************************************************************/
+/*!
+\brief
+Default destructor definitions for SceneStart
+*/
+/****************************************************************************/
 SceneStart::~SceneStart()
 {
 }
 
+/****************************************************************************/
+/*!
+\brief
+Initialize all the variables and objs inside Application when it runs
+*/
+/****************************************************************************/
 void SceneStart::Init()
 {
 	// Init VBO here
@@ -255,6 +282,12 @@ void SceneStart::checkPlayerPosMisc()
 	Misc.camZ = camera.position.z;
 }
 
+/****************************************************************************/
+/*!
+\brief
+Uses glfw function to sense for mousewheel and add or minus i_SlotIndex accordingly
+*/
+/****************************************************************************/
 void SceneStart::MouseScrollToolSlot()
 {
 	if (Application::mouse_scroll > 0)
@@ -278,6 +311,12 @@ void SceneStart::MouseScrollToolSlot()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Renders the tool inventory according to i_SlotIndex
+*/
+/****************************************************************************/
 void SceneStart::RenderMouseScrollToolSlot()
 {
 	if (Explorer::instance()->isDead == false)
@@ -296,6 +335,12 @@ void SceneStart::RenderMouseScrollToolSlot()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Renders the tool according to i_SlotIndex
+*/
+/****************************************************************************/
 void SceneStart::ToolSelectionMouseScroll()
 {
 	if (Explorer::instance()->isDead == false)
@@ -329,6 +374,13 @@ void SceneStart::ToolSelectionMouseScroll()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Renders the icon of the tool according to the tooltype in the list created
+in Explorer class
+*/
+/****************************************************************************/
 void SceneStart::RenderToolIcon()
 {
 	if (Explorer::instance()->isDead == false)
@@ -385,6 +437,14 @@ void SceneStart::RenderToolIcon()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function controls the animation of the tool swing
+\param double dt
+delta time used to check animations and some logic
+*/
+/****************************************************************************/
 void SceneStart::MouseClickFunction(double dt)
 {
 	if (Application::IsKeyPressed(VK_LBUTTON) && Variables.b_LockSwing == false && Variables.b_LockSwingDebounce == false && Explorer::instance()->stamina >= 20)
@@ -479,6 +539,12 @@ bool SceneStart::proximitycheck(float smallx, float largex, float smallz, float 
 	return result;
 }
 
+/****************************************************************************/
+/*!
+\brief
+Switches to the next scene when player is within an area
+*/
+/****************************************************************************/
 void SceneStart::ChangeFirstCutScene()
 {
 	if (proximitycheck(-13, 13, -105, -70))
@@ -499,6 +565,14 @@ void SceneStart::ChangeFirstCutScene()
     }
 }
 
+/****************************************************************************/
+/*!
+\brief
+Light flickering
+\param double dt
+delta time used to determine if light should be switched on or off
+*/
+/****************************************************************************/
 void SceneStart::FlickeringLight(double dt)
 {
 	Explorer::instance()->f_FlickeringLight += (float)dt;
@@ -520,6 +594,15 @@ void SceneStart::FlickeringLight(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function is the main Update function of the Level, which houses all other functions.
+
+\param double dt
+delta time used to count time for animation, interaction or other logic purposes
+*/
+/****************************************************************************/
 void SceneStart::Update(double dt)
 {
 	FPS = 1.f / (float)dt;	
@@ -537,7 +620,6 @@ void SceneStart::Update(double dt)
 	ChangeFirstCutScene();
 	Explorer::instance()->checkDead();
 
-	ToolsUI();
 	MouseScrollToolSlot();
 	MouseClickFunction(dt);
 
@@ -579,6 +661,18 @@ void SceneStart::Update(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders the mesh of specified object with or without light
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param enableLight
+Whether to account for light
+*/
+/****************************************************************************/
 void SceneStart::RenderMesh(Mesh*mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -623,6 +717,21 @@ void SceneStart::RenderMesh(Mesh*mesh, bool enableLight)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on worldspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+*/
+/****************************************************************************/
 void SceneStart::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -653,6 +762,30 @@ void SceneStart::RenderText(Mesh* mesh, std::string text, Color color)
 
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+
+\param size
+size of the text to render
+
+\param x
+x coordinate of text to render
+
+\param y
+y coordinate of text to render
+*/
+/****************************************************************************/
 void SceneStart::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -699,6 +832,30 @@ void SceneStart::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
 	glEnable(GL_DEPTH_TEST);
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders an OBJ at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param Sx,Sy,Sz
+Scaling by x,y,z
+
+\param Rotate
+angle to rotate by
+
+\param rx,ry,rz
+rotation to be done on x,y,or z axis
+
+\param tx,ty,tz
+translation of model on the x,y,z axis
+
+\param LightYN
+to account for Light
+*/
+/****************************************************************************/
 void SceneStart::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
 	Mtx44 ortho;
@@ -720,6 +877,12 @@ void SceneStart::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, f
 	modelStack.PopMatrix();
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function is the main function for all rendercalls
+*/
+/****************************************************************************/
 void SceneStart::Render()
 {
     // Render VBO here

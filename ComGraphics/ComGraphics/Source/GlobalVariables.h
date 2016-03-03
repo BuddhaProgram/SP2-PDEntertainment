@@ -1,7 +1,22 @@
+/*************************************************************/
+/*!
+\file       GlobalVariables.h
+\author     Ng Jun Guo
+\par        email: ng_junguo901@hotmail.com
+\brief
+Class created for all scenes to share variables.
+*/
+/*************************************************************/
 #ifndef GLOBALVARIABLES_H
 #define GLOBALVARIABLES_H
 
-
+/*************************************************************/
+/*!
+Class Explorer:
+\brief
+parent class for all variables in GlobalVariables
+*/
+/*************************************************************/
 class GlobalVariables
 {
 	public:

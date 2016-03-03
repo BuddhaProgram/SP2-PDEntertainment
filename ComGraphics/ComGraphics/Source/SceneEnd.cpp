@@ -2,7 +2,7 @@
 /*!
 \file       SceneEnd.cpp
 \author     Ng Jun Guo
-\par        email: my.puny.brain@gmail.com
+\par        email: ng_junguo901@hotmail.com
 \brief
 Function definitions for SceneEnd
 */
@@ -265,7 +265,11 @@ void SceneEnd::Init()
 
 static float LSPEED = 10.f;
 
-
+/****************************************************************************/
+/*!
+\brief	This Function resets all GLOBAL variables to default values as listed in Init.
+*/
+/****************************************************************************/
 void SceneEnd::Reset()
 {
 	Explorer::instance()->hp = 100;
@@ -356,7 +360,6 @@ This Function controls the animation of the death screen
 Delta time
 */
 /****************************************************************************/
-
 void SceneEnd::UpdatePlayerDiesInteraction(double dt)
 {
 	if (Explorer::instance()->isDead == true)
@@ -367,6 +370,13 @@ void SceneEnd::UpdatePlayerDiesInteraction(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function controls the death screen and checks if the player wants to continue the game
+
+*/
+/****************************************************************************/
 void SceneEnd::ContinueGameOrNot()
 {
 	if (Explorer::instance()->PlayerLife > 0 && Variables.f_redScreenTimer > 4.0f)
@@ -426,6 +436,12 @@ void SceneEnd::ContinueGameOrNot()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Uses glfw function to sense for mousewheel and add or minus i_SlotIndex accordingly
+*/
+/****************************************************************************/
 void SceneEnd::MouseScrollToolSlot()
 {
 	if (Application::mouse_scroll > 0)
@@ -449,6 +465,12 @@ void SceneEnd::MouseScrollToolSlot()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Uses glfw function to sense for mousewheel and add or minus i_SlotIndex accordingly
+*/
+/****************************************************************************/
 void SceneEnd::RenderMouseScrollToolSlot()
 {
 	if (Explorer::instance()->isDead == false)
@@ -467,6 +489,12 @@ void SceneEnd::RenderMouseScrollToolSlot()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Renders the tool according to i_SlotIndex
+*/
+/****************************************************************************/
 void SceneEnd::ToolSelectionMouseScroll()
 {
 	if (Explorer::instance()->isDead == false)
@@ -500,6 +528,13 @@ void SceneEnd::ToolSelectionMouseScroll()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Renders the icon of the tool according to the tooltype in the list created
+in Explorer class
+*/
+/****************************************************************************/
 void SceneEnd::RenderToolIcon()
 {
 	if (Explorer::instance()->isDead == false)
@@ -564,7 +599,7 @@ void SceneEnd::RenderToolIcon()
 This Function controls the animation of the tool swing
 
 \param dt
-Delta time
+delta time used to check animations and some logic
 */
 /****************************************************************************/
 
@@ -631,6 +666,16 @@ void SceneEnd::MouseClickFunction(double dt)
     }
 }
 
+/****************************************************************************/
+/*!
+\brief
+Used to check if the player is in the area as specified. If it is, then
+the spaceship will start repairing
+
+\param dt
+delta time used to check animations and some logic
+*/
+/****************************************************************************/
 void SceneEnd::UpdateRepairs(double dt)
 {
 	if (camera.position.x > -6.0f && camera.position.x < 6.0f && camera.position.z > -166.0f && camera.position.z < -154.0f)
@@ -664,6 +709,11 @@ void SceneEnd::UpdateRepairs(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Checks if all pre-requistics to complete the game is done or not
+/****************************************************************************/
 bool SceneEnd::b_ReadyToFly()
 {
 	for (int i = 0; i < 3; ++i)
@@ -680,13 +730,11 @@ bool SceneEnd::b_ReadyToFly()
 /****************************************************************************/
 /*!
 \brief
-This Function controls the flickering of the "torchlight"
-
-\param dt
-Delta time
+Light flickering
+\param double dt
+delta time used to determine if light should be switched on or off
 */
 /****************************************************************************/
-
 void SceneEnd::FlickeringLight(double dt)
 {
 	Explorer::instance()->f_FlickeringLight += (float)dt;

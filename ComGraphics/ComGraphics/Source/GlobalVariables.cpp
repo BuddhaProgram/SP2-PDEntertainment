@@ -1,5 +1,20 @@
+/*************************************************************/
+/*!
+\file       GlobalVariables.cpp
+\author     Ng Jun Guo
+\par        email: ng_junguo901@hotmail.com
+\brief
+Singleton class definition for class GlobalVariables.h
+*/
+/*************************************************************/
 #include "GlobalVariables.h"
 
+/*************************************************************/
+/*!
+\brief
+Default constructor for class GlobalVariables.h
+*/
+/*************************************************************/
 GlobalVariables::GlobalVariables()
 {
 	RotateX = 0.0f;
@@ -27,6 +42,12 @@ GlobalVariables::GlobalVariables()
 	f_SuitcaseRotateY = 0.0f;
 }
 
+/*************************************************************/
+/*!
+\brief
+Default destructor for class GlobalVariables.h
+*/
+/*************************************************************/
 GlobalVariables::~GlobalVariables()
 {
 

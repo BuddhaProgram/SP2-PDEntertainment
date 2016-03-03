@@ -393,6 +393,13 @@ bool SceneLevelOneA::proximitycheck(float smallx, float largex, float smallz, fl
     return result;
 }
 
+/****************************************************************************/
+/*!
+\brief
+Used to check if player is within the area and if item is not in the inventory,
+item will be picked up.
+*/
+/****************************************************************************/
 void SceneLevelOneA::ToolsUI()
 {
 	if (Explorer::instance()->b_PickUpTool[0] == false && camera.position.x > -5.0f && camera.position.x < 5.0f && camera.position.z > 350.0f && camera.position.z < 370.0f)
@@ -402,6 +409,12 @@ void SceneLevelOneA::ToolsUI()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Renders the tool according to i_SlotIndex
+*/
+/****************************************************************************/
 void SceneLevelOneA::ToolSelectionMouseScroll()
 {
 	if (Explorer::instance()->isDead == false)
@@ -435,6 +448,13 @@ void SceneLevelOneA::ToolSelectionMouseScroll()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Renders the icon of the tool according to the tooltype in the list created
+in Explorer class
+*/
+/****************************************************************************/
 void SceneLevelOneA::RenderToolIcon()
 {
 	if (Explorer::instance()->isDead == false)
@@ -494,6 +514,12 @@ void SceneLevelOneA::RenderToolIcon()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Uses glfw function to sense for mousewheel and add or minus i_SlotIndex accordingly
+*/
+/****************************************************************************/
 void SceneLevelOneA::MouseScrollToolSlot()
 {
 	if (Application::mouse_scroll > 0)
@@ -517,6 +543,12 @@ void SceneLevelOneA::MouseScrollToolSlot()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Renders the tool inventory according to i_SlotIndex
+*/
+/****************************************************************************/
 void SceneLevelOneA::RenderMouseScrollToolSlot()
 {
 	if (Explorer::instance()->isDead == false)
@@ -540,7 +572,7 @@ void SceneLevelOneA::RenderMouseScrollToolSlot()
 This Function controls the animation of the tool swing
 
 \param dt
-Delta time
+delta time used to check animations and some logic
 */
 /****************************************************************************/
 void SceneLevelOneA::MouseClickFunction(double dt)
@@ -653,6 +685,8 @@ void SceneLevelOneA::ContinueGameOrNot()
 
 		else if (Application::IsKeyPressed('N'))
 		{
+			Application::OpenGame();
+
 			ResetAll();
 			ResetSameScene();
 			for (int i = 0; i < 4; ++i)
@@ -661,8 +695,6 @@ void SceneLevelOneA::ContinueGameOrNot()
 			}
 
 			Explorer::instance()->RemoveToolSlot(ToolUI::Empty);
-
-			Application::OpenGame();
 		}
 	}
 }
@@ -688,10 +720,9 @@ void SceneLevelOneA::PickUpSuitcaseInteraction()
 /****************************************************************************/
 /*!
 \brief
-This Function controls the flickering of the "torchlight"
-
-\param dt
-Delta time
+Light flickering
+\param double dt
+delta time used to determine if light should be switched on or off
 */
 /****************************************************************************/
 void SceneLevelOneA::FlickeringLight(double dt)
@@ -815,8 +846,8 @@ void SceneLevelOneA::Update(double dt)
 
 	if (anima.Collapse && Explorer::instance()->b_SoundEffect[0] == false)
 	{
-		Explorer::instance()->b_SoundEffect[0] = true;
 		Application::MusicWillPlay(1, false);
+		Explorer::instance()->b_SoundEffect[0] = true;
 	}
 
 	FlickeringLight(dt);

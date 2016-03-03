@@ -469,6 +469,12 @@ bool SceneLevelTwo::proximitycheck(float smallx, float largex, float smallz, flo
     return result;
 }
 
+/****************************************************************************/
+/*!
+\brief
+Renders the tool according to i_SlotIndex
+*/
+/****************************************************************************/
 void SceneLevelTwo::ToolSelectionMouseScroll()
 {
 	if (Explorer::instance()->isDead == false)
@@ -502,6 +508,13 @@ void SceneLevelTwo::ToolSelectionMouseScroll()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Renders the icon of the tool according to the tooltype in the list created
+in Explorer class
+*/
+/****************************************************************************/
 void SceneLevelTwo::RenderToolIcon()
 {
 	if (Explorer::instance()->isDead == false)
@@ -561,6 +574,12 @@ void SceneLevelTwo::RenderToolIcon()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Uses glfw function to sense for mousewheel and add or minus i_SlotIndex accordingly
+*/
+/****************************************************************************/
 void SceneLevelTwo::MouseScrollToolSlot()
 {
     if (Application::mouse_scroll > 0)
@@ -584,6 +603,12 @@ void SceneLevelTwo::MouseScrollToolSlot()
     }
 }
 
+/****************************************************************************/
+/*!
+\brief
+Renders the tool inventory according to i_SlotIndex
+*/
+/****************************************************************************/
 void SceneLevelTwo::RenderMouseScrollToolSlot()
 {
 	if (Explorer::instance()->isDead == false)
@@ -602,6 +627,15 @@ void SceneLevelTwo::RenderMouseScrollToolSlot()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function controls the animation of the tool swing
+
+\param dt
+delta time used to check animations and some logic
+*/
+/****************************************************************************/
 void SceneLevelTwo::MouseClickFunction(double dt)
 {
     if (Application::IsKeyPressed(VK_LBUTTON) && Variables.b_LockSwing == false && Variables.b_LockSwingDebounce == false && Explorer::instance()->stamina >= 20)
@@ -667,6 +701,15 @@ void SceneLevelTwo::MouseClickFunction(double dt)
     }
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function controls the animation of the death screen
+
+\param dt
+Delta time
+*/
+/****************************************************************************/
 void SceneLevelTwo::UpdatePlayerDiesInteraction(double dt)
 {
 	if (Explorer::instance()->isDead == true)
@@ -677,6 +720,13 @@ void SceneLevelTwo::UpdatePlayerDiesInteraction(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function controls the death screen and checks if the player wants to continue the game
+
+*/
+/****************************************************************************/
 void SceneLevelTwo::ContinueGameOrNot()
 {
 	if (Explorer::instance()->PlayerLife > 0 && Variables.f_redScreenTimer > 4.0f)
@@ -916,11 +966,26 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function sets the collision for the switches on the switch puzzle
+*/
+/****************************************************************************/ 
 void SceneLevelTwo::SwitchCollisionChecker()
 {
 	Collision(252, 320, -50, -34);
 }
 
+/****************************************************************************/
+/*!
+\brief
+Used to determine if bool is true or not
+\param double dt
+delta time is used for switch debouncing to prevent double clicking due to
+fast input of the computer
+*/
+/****************************************************************************/
 void SceneLevelTwo::PuzzleTwoSwitchCheck(double dt)
 {
 	Variables.f_SwitchDebounce += (float)dt;
@@ -1041,6 +1106,14 @@ void SceneLevelTwo::PuzzleTwoSwitchCheck(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Logics on how the animation should work
+\param double dt
+delta time is used for animation through logic
+*/
+/****************************************************************************/
 void SceneLevelTwo::LogicAnimationSwitches(double dt)
 {
 	if (Variables.b_SwitchAnimate[0] == true)
@@ -1124,6 +1197,14 @@ void SceneLevelTwo::LogicAnimationSwitches(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Light flickering
+\param double dt
+delta time used to determine if light should be switched on or off
+*/
+/****************************************************************************/
 void SceneLevelTwo::FlickeringLight(double dt)
 {
 	Explorer::instance()->f_FlickeringLight += (float)dt;

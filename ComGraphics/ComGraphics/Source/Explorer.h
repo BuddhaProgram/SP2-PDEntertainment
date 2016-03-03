@@ -1,9 +1,24 @@
+/*************************************************************/
+/*!
+\file       Explorer.h
+\author     Ng Jun Guo
+\par        email: ng_junguo901@hotmail.com
+\brief
+Singleton class for all scenes.
+*/
+/*************************************************************/
 #ifndef EXPLORER_H
 #define EXPLORER_H
 #include "ToolUI.h"
 #include "Vector3.h"
 
-
+/*************************************************************/
+/*!
+Class Explorer:
+\brief
+parent class for all variables with singleton
+*/
+/*************************************************************/
 class Explorer
 {
 public:
@@ -21,6 +36,8 @@ public:
 	int i_SlotIndex;
 
 	int itemAttack[4];
+
+	// Inventory for player
 	ToolUI::ToolType GetToolType(int SlotNumber);
 	void InsertToolSlot(ToolUI::ToolType ChooseTools);
 	void RemoveToolSlot(ToolUI::ToolType RemoveTools);
@@ -44,7 +61,7 @@ public:
 	bool b_MonsterSound[10];
 
 private:
-	Explorer();
+	Explorer(); // Default constructor
 };
 
 #endif

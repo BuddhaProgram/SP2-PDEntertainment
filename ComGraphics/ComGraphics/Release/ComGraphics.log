@@ -1,0 +1,54 @@
+﻿Build started 3/3/2016 6:12:49 PM.
+     1>Project "C:\Users\ng\Documents\SP2-PDEntertainment.git\ComGraphics\ComGraphics\ComGraphics.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\ng\Documents\SP2-PDEntertainment.git\ComGraphics\\Common\Source" /I"C:\Users\ng\Documents\SP2-PDEntertainment.git\ComGraphics\\glfw\include" /I"C:\Users\ng\Documents\SP2-PDEntertainment.git\ComGraphics\\glew\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Application.cpp source\SceneLevelOneA.cpp
+         Application.cpp
+         SceneLevelOneA.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ng\Documents\SP2-PDEntertainment.git\ComGraphics\Release\ComGraphics.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\ng\Documents\SP2-PDEntertainment.git\ComGraphics\Release" /LIBPATH:"C:\Users\ng\Documents\SP2-PDEntertainment.git\ComGraphics\\glfw\lib-msvc120" /LIBPATH:"C:\Users\ng\Documents\SP2-PDEntertainment.git\ComGraphics\\glew\lib" /LIBPATH:"C:\Users\ng\Documents\SP2-PDEntertainment.git\ComGraphics\\irrKlang" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ng\Documents\SP2-PDEntertainment.git\ComGraphics\Release\ComGraphics.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ng\Documents\SP2-PDEntertainment.git\ComGraphics\Release\ComGraphics.lib" /MACHINE:X86 /SAFESEH Release\Application.obj
+         Release\Credits.obj
+         Release\CutSceneOneRenders.obj
+         Release\GlobalVariables.obj
+         Release\MapRender.obj
+         Release\MobBossOne.obj
+         Release\MobGhost.obj
+         Release\Music.obj
+         Release\OpeningCutScene.obj
+         Release\OpeningCutScene2.obj
+         Release\SceneEndCutScene.obj
+         Release\SceneLevelOneARenders.obj
+         Release\SceneEndRenders.obj
+         Release\SceneLevelOneA.obj
+         Release\SceneLevelOneB.obj
+         Release\SceneLevelOneBRenders.obj
+         Release\SceneLevelTwo.obj
+         Release\SceneLevelTwoRenders.obj
+         Release\SceneOpening.obj
+         Release\SceneStart.obj
+         Release\Camera.obj
+         Release\Camera3.obj
+         Release\LoadOBJ.obj
+         Release\LoadTGA.obj
+         Release\main.obj
+         Release\Mesh.obj
+         Release\MeshBuilder.obj
+         Release\OBJAnimation.obj
+         Release\HostileMob.obj
+         Release\Explorer.obj
+         Release\SceneStartRenders.obj
+         Release\shader.obj
+         Release\Misc.obj
+         Release\SceneEnd.obj
+         Release\CutSceneOne.obj
+         Release\spawnPoints.obj
+         Release\SwitchLightPuzzle.obj
+         Release\ToolUI.obj
+         Release\Utility.obj
+         Generating code
+         Finished generating code
+         ComGraphics.vcxproj -> C:\Users\ng\Documents\SP2-PDEntertainment.git\ComGraphics\Release\ComGraphics.exe
+     1>Done Building Project "C:\Users\ng\Documents\SP2-PDEntertainment.git\ComGraphics\ComGraphics\ComGraphics.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:15.25

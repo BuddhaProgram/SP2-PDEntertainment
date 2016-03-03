@@ -1,3 +1,12 @@
+/*************************************************************/
+/*!
+\file       SceneOpening.h
+\author     Ng Jun Guo
+\par        email: ng_junguo901@hotmail.com
+\brief
+Function definitions for SceneOpening
+*/
+/*************************************************************/
 #include "SceneOpening.h"
 #include "GL\glew.h"
 
@@ -8,16 +17,33 @@
 #include "Utility.h"
 #include <sstream>
 
-
+/****************************************************************************/
+/*!
+\brief
+Default Constructor definitions for SceneOpening
+*/
+/****************************************************************************/
 SceneOpening::SceneOpening()
 {
 	ui_ChooseOption = 1;
 }
 
+/****************************************************************************/
+/*!
+\brief
+Default destructor definitions for SceneOpening
+*/
+/****************************************************************************/
 SceneOpening::~SceneOpening()
 {
 }
 
+/****************************************************************************/
+/*!
+\brief
+Initialize all the variables and objs inside Application when it runs
+*/
+/****************************************************************************/
 void SceneOpening::Init()
 {
 	// Init VBO here
@@ -116,11 +142,14 @@ void SceneOpening::Init()
 
 static float LSPEED = 10.f;
 
-void SceneOpening::Reset()
-{
-
-}
-
+/****************************************************************************/
+/*!
+\brief
+Function used to check with WM_MOUSEWHEEL(mmouse_scroll)
+\param delta time
+delta time used to count the time
+*/
+/****************************************************************************/
 void SceneOpening::OptionChange(double dt)
 {
 	ChooseOptionDebounce += (float)dt;
@@ -143,6 +172,12 @@ void SceneOpening::OptionChange(double dt)
 		ui_ChooseOption = 1;
 }
 
+/****************************************************************************/
+/*!
+\brief
+Function used to render GEO_TEXT
+*/
+/****************************************************************************/
 void SceneOpening::RenderOptionChange()
 {
 	if (ui_ChooseOption == 1)
@@ -162,6 +197,12 @@ void SceneOpening::RenderOptionChange()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Function used check if player wants to start game or quit application
+*/
+/****************************************************************************/
 void SceneOpening::ChangeScene()
 {
 	if (Application::IsKeyPressed(VK_RETURN) && ui_ChooseOption == 1)
@@ -171,6 +212,15 @@ void SceneOpening::ChangeScene()
 		App.Exit();
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function is the main Update function of the Level, which houses all other functions.
+
+\param double dt
+delta time used to count time for animation purposes
+*/
+/****************************************************************************/
 void SceneOpening::Update(double dt)
 {
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
@@ -190,6 +240,18 @@ void SceneOpening::Update(double dt)
 	camera.Update(dt);
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders the mesh of specified object with or without light
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param enableLight
+Whether to account for light
+*/
+/****************************************************************************/
 void SceneOpening::RenderMesh(Mesh*mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -234,6 +296,21 @@ void SceneOpening::RenderMesh(Mesh*mesh, bool enableLight)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on worldspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+*/
+/****************************************************************************/
 void SceneOpening::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -264,6 +341,30 @@ void SceneOpening::RenderText(Mesh* mesh, std::string text, Color color)
 
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+
+\param size
+size of the text to render
+
+\param x
+x coordinate of text to render
+
+\param y
+y coordinate of text to render
+*/
+/****************************************************************************/
 void SceneOpening::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -310,6 +411,30 @@ void SceneOpening::RenderTextOnScreen(Mesh* mesh, std::string text, Color color,
 	glEnable(GL_DEPTH_TEST);
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders an OBJ at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param Sx,Sy,Sz
+Scaling by x,y,z
+
+\param Rotate
+angle to rotate by
+
+\param rx,ry,rz
+rotation to be done on x,y,or z axis
+
+\param tx,ty,tz
+translation of model on the x,y,z axis
+
+\param LightYN
+to account for Light
+*/
+/****************************************************************************/
 void SceneOpening::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
 	Mtx44 ortho;
@@ -331,6 +456,12 @@ void SceneOpening::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz,
 	modelStack.PopMatrix();
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function is the main function for all rendercalls
+*/
+/****************************************************************************/
 void SceneOpening::Render()
 {
 	// Render VBO here

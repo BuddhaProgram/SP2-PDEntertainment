@@ -1,3 +1,12 @@
+/*************************************************************/
+/*!
+\file       ToolUI.h
+\author     Ng Jun Guo
+\par        email: ng_junguo901@hotmail.com
+\brief
+Class for Tools
+*/
+/*************************************************************/
 #ifndef TOOLUI_H
 #define TOOLUI_H
 

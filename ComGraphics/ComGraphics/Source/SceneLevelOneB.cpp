@@ -434,6 +434,13 @@ bool SceneLevelOneB::proximitycheck(float smallx, float largex, float smallz, fl
     return result;
 }
 
+/****************************************************************************/
+/*!
+\brief
+Used to check if player is within the area and if item is not in the inventory,
+item will be picked up.
+*/
+/****************************************************************************/
 void SceneLevelOneB::ToolsUI()
 {
 	if (Explorer::instance()->b_PickUpTool[1] == false && camera.position.x > 90.0f && camera.position.x < 110.0f && camera.position.z > -170.0f && camera.position.z < -150.0f)
@@ -449,6 +456,12 @@ void SceneLevelOneB::ToolsUI()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Renders the tool inventory according to i_SlotIndex
+*/
+/****************************************************************************/
 void SceneLevelOneB::RenderMouseScrollToolSlot()
 {
 	if (Explorer::instance()->isDead == false)
@@ -467,6 +480,12 @@ void SceneLevelOneB::RenderMouseScrollToolSlot()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Renders the tool according to i_SlotIndex
+*/
+/****************************************************************************/
 void SceneLevelOneB::ToolSelectionMouseScroll()
 {
 	if (Explorer::instance()->isDead == false)
@@ -500,6 +519,13 @@ void SceneLevelOneB::ToolSelectionMouseScroll()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Renders the icon of the tool according to the tooltype in the list created
+in Explorer class
+*/
+/****************************************************************************/
 void SceneLevelOneB::RenderToolIcon()
 {
 	if (Explorer::instance()->isDead == false)
@@ -559,6 +585,12 @@ void SceneLevelOneB::RenderToolIcon()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Uses glfw function to sense for mousewheel and add or minus i_SlotIndex accordingly
+*/
+/****************************************************************************/
 void SceneLevelOneB::MouseScrollToolSlot()
 {
 	if (Application::mouse_scroll > 0)
@@ -587,7 +619,7 @@ void SceneLevelOneB::MouseScrollToolSlot()
 This Function controls the animation of the tool swing
 
 \param dt
-Delta time
+delta time used to check animations and some logic
 */
 /****************************************************************************/
 void SceneLevelOneB::MouseClickFunction(double dt)
@@ -657,9 +689,6 @@ void SceneLevelOneB::MouseClickFunction(double dt)
 /*!
 \brief
 This Function sets the collision for the switches on the switch puzzle
-
-\param dt
-Delta time
 */
 /****************************************************************************/
 void SceneLevelOneB::SwitchCollisionChecker()
@@ -667,6 +696,15 @@ void SceneLevelOneB::SwitchCollisionChecker()
 	Collision(305.0f, 320.0f, -180.0f, -100.0f);
 }
 
+/****************************************************************************/
+/*!
+\brief
+Used to determine if bool is true or not
+\param double dt
+delta time is used for switch debouncing to prevent double clicking due to
+fast input of the computer
+*/
+/****************************************************************************/
 void SceneLevelOneB::PuzzleOneSwitchCheck(double dt)
 {
 	Variables.f_SwitchDebounce += (float)dt;
@@ -762,6 +800,14 @@ void SceneLevelOneB::PuzzleOneSwitchCheck(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+Logics on how the animation should work
+\param double dt
+delta time is used for animation through logic
+*/
+/****************************************************************************/
 void SceneLevelOneB::LogicAnimationSwitches(double dt)
 {
 	if (Variables.b_SwitchAnimate[0] == true)
@@ -849,7 +895,6 @@ This Function controls the death screen and checks if the player wants to contin
 
 */
 /****************************************************************************/
-
 void SceneLevelOneB::ContinueGameOrNot()
 {
 	if (Explorer::instance()->PlayerLife > 0 && Variables.f_redScreenTimer > 4.0f)
@@ -877,6 +922,7 @@ void SceneLevelOneB::ContinueGameOrNot()
 		}
 	}
 }
+
 /****************************************************************************/
 /*!
 \brief
@@ -884,7 +930,6 @@ This Function controls the intercation with the suitcase
 
 */
 /****************************************************************************/
-
 void SceneLevelOneB::PickUpSuitcaseInteraction()
 {
 	if (camera.position.x > 0.0f && camera.position.x < 15.0f && camera.position.z > -130.0f && camera.position.z < -115.0f)
@@ -896,16 +941,15 @@ void SceneLevelOneB::PickUpSuitcaseInteraction()
 		}
 	}
 }
+
 /****************************************************************************/
 /*!
 \brief
-This Function controls the flickering of the "torchlight"
-
-\param dt
-Delta time
+Light flickering
+\param double dt
+delta time used to determine if light should be switched on or off
 */
 /****************************************************************************/
-
 void SceneLevelOneB::FlickeringLight(double dt)
 {
 	Explorer::instance()->f_FlickeringLight += (float)dt;

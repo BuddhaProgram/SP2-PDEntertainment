@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file SceneOpening.h
+\author Ng Jun Guo
+\par email: ng_junguo901@hotmail.com
+\brief
+header file for SceneOpening
+*/
+/****************************************************************************/
 #ifndef SCENEOPENING_H
 #define SCENEOPENING_H
 
@@ -12,6 +21,13 @@
 #include "HostileMob.h"
 #include "MobGhost.h"
 
+/****************************************************************************/
+/*!
+Class SceneLevelTwo:
+\brief
+Defines stuff needed for SceneOpening
+*/
+/****************************************************************************/
 class SceneOpening : public Scene
 {
 	enum GEOMETRY_TYPE
@@ -60,7 +76,6 @@ public:
 	virtual void Init();
 	virtual void Update(double dt);
 	virtual void Render();
-	virtual void Reset();
 	virtual void Exit();
 
 	Camera3 camera;

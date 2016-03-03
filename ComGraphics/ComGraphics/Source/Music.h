@@ -1,3 +1,12 @@
+/*************************************************************/
+/*!
+\file       Music.h
+\author     Ng Jun Guo
+\par        email: ng_junguo901@hotmail.com
+\brief
+Class created for Music
+*/
+/*************************************************************/
 #ifndef MUSIC_H
 #define MUSIC_H
 
@@ -8,6 +17,13 @@
 
 #include "../irrKlang/include/irrKlang.h"
 
+/*************************************************************/
+/*!
+Class Music:
+\brief
+parent class for Music
+*/
+/*************************************************************/
 class Music
 {
 	public:
@@ -16,7 +32,6 @@ class Music
 
 		void init();
 		void OpeningMusic(int index, bool loop);
-		void DropMusic();
 		std::vector<std::string>MusicReadFromText(std::string link);
 
 		irrklang::ISoundEngine *engine;

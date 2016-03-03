@@ -1,3 +1,11 @@
+/****************************************************************************/
+/*!
+\file SceneStartRenders.cpp
+
+\brief
+Used for all rendering inside SceneStart
+*/
+/****************************************************************************/
 #include "SceneStart.h"
 #include "OpeningCutScene2.h"
 #include "OBJAnimation.h"
@@ -143,16 +151,6 @@ void SceneStart::RenderSceneStart()
 		modelStack.PopMatrix();
 	}
 	RenderSkyBox();
-
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(86.9, 5, 0);
-	//modelStack.Rotate(90, 0, 0, 1);
-	//modelStack.Scale(40, 1, 90);
-	//RenderMesh(meshList[GEO_BLOOD1], true);
-	//modelStack.PopMatrix();
-
-    //object renders
 }
 
 //renders the default sky box
@@ -287,16 +285,6 @@ void OpeningCutScene2::RenderSceneStart()
 		modelStack.PopMatrix();
 	}
 	RenderSkyBox();
-
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(86.9, 5, 0);
-	//modelStack.Rotate(90, 0, 0, 1);
-	//modelStack.Scale(40, 1, 90);
-	//RenderMesh(meshList[GEO_BLOOD1], true);
-	//modelStack.PopMatrix();
-
-	//object renders
 }
 
 

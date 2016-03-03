@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file SceneEnd.h
+\author Ng Jun Guo
+\par email: ng_junguo901@hotmail.com
+\brief
+header file for SceneEnd
+*/
+/****************************************************************************/
 #ifndef SCENEEND_H
 #define SCENEEND_H
 
@@ -12,6 +21,13 @@
 #include "OBJAnimation.h"
 #include <iomanip>
 
+/****************************************************************************/
+/*!
+Class SceneEnd:
+\brief
+Defines stuff needed for SceneEnd
+*/
+/****************************************************************************/
 class SceneEnd : public Scene
 {
 	enum GEOMETRY_TYPE
