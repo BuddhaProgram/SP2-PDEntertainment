@@ -47,7 +47,14 @@ HostileMob::~HostileMob()
 /*************************************************************/
 /*!
 \brief
-Checks the player position and 
+Checks for player position and updates TargetDetectX and TargetDetectZ accordingly
+
+\param double dt
+Delta time
+\param int checkRate, lessenspeed
+variables that adjust the Frequency of checks 
+\param xpos,zpos 
+takes in the camera position on the x and z axis
 */
 /*************************************************************/
 void HostileMob::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 1, float xpos = 0, float zpos = 0)
@@ -60,7 +67,24 @@ void HostileMob::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 
         mobTimeCount = 0;
     }
 }
+/*************************************************************/
+/*!
+\brief
+Sets collision of the mob from specified area.
 
+\param smallx
+Smaller  x value of AABB bounding box
+
+\param largex
+Larger x value of AABB bounding box
+
+\param smallz
+smaller Z value of AABB bounding box
+
+\param largez
+larger z value of AABB bounding box
+*/
+/*************************************************************/
 void HostileMob::MobCollision(float smallx, float largex, float smallz, float largez)
 {
     if ((MobPosX >= smallx) && (MobPosX <= largex) && (MobPosZ >= smallz) && (MobPosZ <= smallz + 3.f)){ MobPosZ = smallz; }

@@ -449,12 +449,6 @@ void SceneLevelOneB::attackCheck()
 {
     //Ghost combat checker
 
-    if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(30.f, PuzzleGhost1.MobPosX, PuzzleGhost1.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
-    {
-		PuzzleGhost1.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);
-        CrosshairHit = true;
-    }
-
     if (Application::IsKeyPressed(VK_LBUTTON) && Misc.hitting(30.f, PuzzleGhost2.MobPosX, PuzzleGhost2.MobPosZ, 180, camera.position.x, camera.position.z, camera.view, camera.position))
     {
 		PuzzleGhost2.TakeDamage(Explorer::instance()->itemAttack[Explorer::instance()->i_SlotIndex - 1]);
@@ -475,10 +469,6 @@ void SceneLevelOneB::attackCheck()
 void SceneLevelOneB::MobsSpawn()
 {
     
-    if (proximitycheck(216, 240, -256, -248) && PuzzleGhost1.health >0)
-    {
-        PuzzleGhost1.Spawn = true;
-    }
     if (proximitycheck(216, 240, -256, -248) && PuzzleGhost2.health >0)
     {
         PuzzleGhost2.Spawn = true;
