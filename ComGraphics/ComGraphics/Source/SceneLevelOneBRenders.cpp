@@ -312,22 +312,24 @@ void SceneLevelOneB::checkDoor3()
 		activateDoor3_1 = false;
 		activateDoor3_2 = true;
 		displayInteract2 = false;
-		if (activateDoor3_2)
+		anima.toSlideDoorTop_Boss = true;
+		anima.toSlideDoorBtm_Boss = true;
+		Collision(-350, -250, -375, -355);
+	}
+
+	if (BossOne.health <= 0)
+	{
+		activateDoor3_1 = true;
+		activateDoor3_2 = false;
+		BossOne.Spawn = false;
+		if (activateDoor3_1)
 		{
-			Collision(-350, -250, -375, -355);
-		}
-		if (BossOne.health <= 0)
-		{
-			activateDoor3_1 = true;
-			activateDoor3_2 = false;
-			if (activateDoor3_1)
-			{
-				anima.toSlideDoorTop_Boss = true;
-				anima.toSlideDoorBtm_Boss = true;
-				displayInteract2 = false;
-			}
+			displayInteract2 = false;
 		}
 	}
+
+
+	std::cout << anima.toSlideDoorTop_Boss << std::endl;
 
 	if (anima.toSlideDoorBtm_Boss)
 	{
@@ -499,7 +501,7 @@ void SceneLevelOneB::AnimationCheck(double dt)
 		anima.CloseSlideDoor_Boss(dt);
 	}
 
-	if (!BossOne.Spawn && activateDoor3_1)
+	if (BossOne.health <= 0 && activateDoor3_1)
 	{
 		anima.OpenSlideDoor_Boss(dt);
 	}
