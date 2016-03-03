@@ -658,10 +658,9 @@ void SceneLevelOneA::ContinueGameOrNot()
 			for (int i = 0; i < 4; ++i)
 			{
 				Explorer::instance()->itemAttack[i] = 0;
-
-				if (Explorer::instance()->GetToolType(i + 1) != ToolUI::Hand)
-				Explorer::instance()->TotalTools.push_back(ToolUI(ToolUI::Empty));
 			}
+
+			Explorer::instance()->RemoveToolSlot(ToolUI::Empty);
 
 			Application::OpenGame();
 		}

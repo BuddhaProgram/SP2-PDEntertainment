@@ -102,6 +102,17 @@ void Explorer::InsertToolSlot(ToolUI::ToolType ChooseTools)
 	}
 }
 
+void Explorer::RemoveToolSlot(ToolUI::ToolType RemoveTool)
+{
+	for (std::list<ToolUI>::iterator TS = TotalTools.begin(); TS != TotalTools.end(); ++TS)
+	{
+		if (TS->tool != ToolUI::Hand)
+		{
+			TS->tool = RemoveTool;
+		}
+	}
+}
+
 bool Explorer::CheckForDoubleTool(ToolUI::ToolType DoubleTool)
 {
 	for (std::list<ToolUI>::iterator TS = TotalTools.begin(); TS != TotalTools.end(); ++TS)

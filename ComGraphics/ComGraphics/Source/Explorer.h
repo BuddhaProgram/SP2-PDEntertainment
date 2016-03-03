@@ -23,6 +23,7 @@ public:
 	int itemAttack[4];
 	ToolUI::ToolType GetToolType(int SlotNumber);
 	void InsertToolSlot(ToolUI::ToolType ChooseTools);
+	void RemoveToolSlot(ToolUI::ToolType RemoveTools);
 	bool CheckForDoubleTool(ToolUI::ToolType DoubleTool);
 
 	std::list<ToolUI> TotalTools;

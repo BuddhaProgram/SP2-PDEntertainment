@@ -255,11 +255,6 @@ void SceneStart::checkPlayerPosMisc()
 	Misc.camZ = camera.position.z;
 }
 
-void SceneStart::ToolsUI()
-{
-
-}
-
 void SceneStart::MouseScrollToolSlot()
 {
 	if (Application::mouse_scroll > 0)
