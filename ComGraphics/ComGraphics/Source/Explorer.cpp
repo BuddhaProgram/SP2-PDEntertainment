@@ -44,7 +44,8 @@ Explorer::Explorer()
 
 	for (int i = 0; i < 10; ++i)
 	{
-		b_SoundEffect[i] = false;
+		Explorer::instance()->b_SoundEffect[i] = false;
+		Explorer::instance()->b_MonsterSound[i] = false;
 	}
 }
 

@@ -47,6 +47,22 @@ SceneLevelTwo::SceneLevelTwo()
 	countdown = 0;
 	JumpScare = false;
 	timer = false;
+
+	for (int i = 0; i < 5; ++i)
+	{
+		Variables.b_SwitchAnimate[i] = 0;
+	}
+
+	Variables.f_SwitchRotateOne = 0.0f;
+	Variables.f_SwitchRotateTwo = 0.0f;
+	Variables.f_SwitchRotateThree = 0.0f;
+	Variables.f_SwitchRotateFour = 0.0f;
+
+	for (int i = 0; i < 10; ++i)
+	{
+		Explorer::instance()->b_SoundEffect[i] = false;
+		Explorer::instance()->b_MonsterSound[i] = false;
+	}
 }
 
 /****************************************************************************/
@@ -343,11 +359,6 @@ void SceneLevelTwo::ResetAll()
 	Explorer::instance()->PlayerLife = 3;
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
-
-	for (int i = 0; i < 10; ++i)
-	{
-		Explorer::instance()->b_ActivateMusic[i] = false;
-	}
 }
 
 /****************************************************************************/
@@ -583,6 +594,33 @@ void SceneLevelTwo::MouseClickFunction(double dt)
         Variables.b_LockSwing = true;
         Variables.b_LockSwingDebounce = true;
         Explorer::instance()->stamina -= 20;
+
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe)
+		{
+			if (Explorer::instance()->b_SoundEffect[5] == false)
+			{
+				Application::MusicWillPlay(7, false);
+				Explorer::instance()->b_SoundEffect[5] = true;
+			}
+		}
+
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::BaseballBat)
+		{
+			if (Explorer::instance()->b_SoundEffect[5] == false)
+			{
+				Application::MusicWillPlay(8, false);
+				Explorer::instance()->b_SoundEffect[5] = true;
+			}
+		}
+
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Sword)
+		{
+			if (Explorer::instance()->b_SoundEffect[5] == false)
+			{
+				Application::MusicWillPlay(9, false);
+				Explorer::instance()->b_SoundEffect[5] = true;
+			}
+		}
     }
 
     if (Variables.b_LockSwingDebounce == true)
@@ -635,9 +673,6 @@ void SceneLevelTwo::ContinueGameOrNot()
 			Explorer::instance()->hp = 100;
 			Explorer::instance()->isDead = false;
 
-			Explorer::instance()->b_ActivateMusic[4] = false;
-			Explorer::instance()->b_ActivateMusic[5] = false;
-
 			Variables.f_redScreenTimer = 0.0f;
 
 			light[0].power = 1.0f;
@@ -683,13 +718,6 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	if (hitWall == true)
 	{
 		Explorer::instance()->isDead = true;
-
-		if (Explorer::instance()->b_ActivateMusic[4] == false)
-		{
-			Explorer::instance()->b_ActivateMusic[4] = true;
-			Application::MusicWillPlay(4, false);
-		}
-
 	}
 	//stuff
 	if (openDoor1 == true)
@@ -1184,10 +1212,22 @@ void SceneLevelTwo::Update(double dt)
 		ScareGhost.move(dt, 25);
 	}
 
-	if (JumpScare == true && Explorer::instance()->b_ActivateMusic[5] == false)
+	if (JumpScare == true && Explorer::instance()->b_SoundEffect[3] == false)
 	{
-		Explorer::instance()->b_ActivateMusic[5] = true;
+		Explorer::instance()->b_SoundEffect[3] = true;
 		Application::MusicWillPlay(5, false);
+	}
+
+	if (hitWall && Explorer::instance()->b_SoundEffect[2] == false)
+		{
+			Application::MusicWillPlay(4, false);
+			Explorer::instance()->b_SoundEffect[2] = true;
+		}
+
+	if (hitWall && Explorer::instance()->b_SoundEffect[4] == false)
+	{
+		Application::MusicWillPlay(4, false);
+		Explorer::instance()->b_SoundEffect[4] = true;
 	}
 }
 

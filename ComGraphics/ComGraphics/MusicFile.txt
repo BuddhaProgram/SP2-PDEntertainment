@@ -5,3 +5,6 @@ Music//03GhostScreamSE.mp3
 Music//04Wallhit.mp3
 Music//05SCREAM.mp3
 Music//06ZombieSE.mp3
+Music//07pickaxe.mp3
+Music//08bat.mp3
+Music//09sword.mp3

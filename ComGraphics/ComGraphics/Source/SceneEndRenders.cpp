@@ -502,6 +502,12 @@ void SceneEnd::MobCheck()
 
 void SceneEnd::moveMob(double dt)
 {
+	if (Explorer::instance()->b_MonsterSound[3] == false)
+	{
+		Application::MusicWillPlay(3, false);
+		Explorer::instance()->b_MonsterSound[3] = true;
+	}
+
     if (MobOne.Spawn)
     {
         MobOne.move(dt, MobMS);
@@ -518,6 +524,11 @@ void SceneEnd::moveMob(double dt)
     if (BossOne.Spawn)
     {
         BossOne.move(dt, BossMS);
+		if (Explorer::instance()->b_MonsterSound[4] == false)
+		{
+			Application::MusicWillPlay(3, false);
+			Explorer::instance()->b_MonsterSound[4] = true;
+		}
     }
 }
 
@@ -538,4 +549,9 @@ void SceneEnd::ResetMobs()
     MobThree.setSpawnGhost(-22, 42);
 
     BossOne.setSpawnBossOne(-36, -6);
+
+	for (int i = 3; i < 5; ++i)
+	{
+		Explorer::instance()->b_MonsterSound[i] = false;
+	}
 }

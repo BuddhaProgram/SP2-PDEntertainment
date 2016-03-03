@@ -335,6 +335,12 @@ void SceneLevelOneB::ResetSameScene()
 		Variables.b_SwitchAnimate[i] = 0;
 	}
 
+	for (int i = 0; i < 10; ++i)
+	{
+		Explorer::instance()->b_SoundEffect[i] = false;
+		Explorer::instance()->b_MonsterSound[i] = false;
+	}
+
 	Variables.f_SwitchRotateOne = 0.0f;
 	Variables.f_SwitchRotateTwo = 0.0f;
 	Variables.f_SwitchRotateThree = 0.0f;
@@ -355,7 +361,8 @@ void SceneLevelOneB::ResetAll()
 
 	for (int i = 0; i < 10; ++i)
 	{
-		Explorer::instance()->b_ActivateMusic[i] = false;
+		Explorer::instance()->b_SoundEffect[i] = false;
+		Explorer::instance()->b_MonsterSound[i] = false;
 	}
 }
 
@@ -578,6 +585,33 @@ void SceneLevelOneB::MouseClickFunction(double dt)
 		Variables.b_LockSwing = true;
 		Variables.b_LockSwingDebounce = true;
 		Explorer::instance()->stamina -= 20;
+
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe)
+		{
+			if (Explorer::instance()->b_SoundEffect[5] == false)
+			{
+				Application::MusicWillPlay(7, false);
+				Explorer::instance()->b_SoundEffect[5] = true;
+			}
+		}
+
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::BaseballBat)
+		{
+			if (Explorer::instance()->b_SoundEffect[5] == false)
+			{
+				Application::MusicWillPlay(8, false);
+				Explorer::instance()->b_SoundEffect[5] = true;
+			}
+		}
+
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Sword)
+		{
+			if (Explorer::instance()->b_SoundEffect[5] == false)
+			{
+				Application::MusicWillPlay(9, false);
+				Explorer::instance()->b_SoundEffect[5] = true;
+			}
+		}
 	}
 
 	if (Variables.b_LockSwingDebounce == true)
@@ -873,10 +907,10 @@ void SceneLevelOneB::Update(double dt)
 
 	else
 	{
-		if (Explorer::instance()->b_ActivateMusic[3] == false)
+		if (Explorer::instance()->b_SoundEffect[1] == false)
 		{
-			Application::MusicWillPlay(3, false);
-			Explorer::instance()->b_ActivateMusic[3] = true;
+			Application::MusicWillPlay(5, false);
+			Explorer::instance()->b_SoundEffect[1] = true;
 		}
 	}
 
@@ -946,13 +980,19 @@ void SceneLevelOneB::Update(double dt)
     if (PuzzleGhost2.Spawn)
     {
         PuzzleGhost2.move(dt, 25);
+
+		if (Explorer::instance()->b_MonsterSound[1] == false)
+		{
+			Application::MusicWillPlay(3, false);
+			Explorer::instance()->b_MonsterSound[1] = true;
+		}
     }
     if (BossOne.Spawn)
     {
-		if (Explorer::instance()->b_ActivateMusic[3] == false)
+		if (Explorer::instance()->b_MonsterSound[2] == false)
 		{
 			Application::MusicWillPlay(3, false);
-			Explorer::instance()->b_ActivateMusic[3] = true;
+			Explorer::instance()->b_MonsterSound[2] = true;
 		}
         BossOne.move(dt, 15);
         Collision(BossOne.MobPosX - 20, BossOne.MobPosX + 20, BossOne.MobPosZ - 20, BossOne.MobPosZ + 20);

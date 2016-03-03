@@ -208,6 +208,11 @@ bool start_Animation = false;
 
 void SceneStart::Reset()
 {
+	for (int i = 0; i < 10; ++i)
+	{
+		Explorer::instance()->b_SoundEffect[i] = false;
+		Explorer::instance()->b_MonsterSound[i] = false;
+	}
 }
 /****************************************************************************/
 /*!
@@ -392,6 +397,34 @@ void SceneStart::MouseClickFunction(double dt)
 		Variables.b_LockSwing = true;
 		Variables.b_LockSwingDebounce = true;
 		Explorer::instance()->stamina -= 20;
+
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe)
+		{
+			if (Explorer::instance()->b_SoundEffect[5] == false)
+			{
+				Application::MusicWillPlay(7, false);
+				Explorer::instance()->b_SoundEffect[5] = true;
+			}
+		}
+
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::BaseballBat)
+		{
+			if (Explorer::instance()->b_SoundEffect[5] == false)
+			{
+				Application::MusicWillPlay(8, false);
+				Explorer::instance()->b_SoundEffect[5] = true;
+			}
+		}
+
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Sword)
+		{
+			if (Explorer::instance()->b_SoundEffect[5] == false)
+			{
+				Application::MusicWillPlay(9, false);
+				Explorer::instance()->b_SoundEffect[5] = true;
+			}
+		}
+
 	}
 
 	if (Variables.b_LockSwingDebounce == true)
@@ -413,6 +446,11 @@ void SceneStart::MouseClickFunction(double dt)
 		{
 			Variables.RotateX = 0.0f;
 			Variables.b_LockSwing = false;
+		}
+
+		for (int i = 5; i < 8; ++i)
+		{
+			Explorer::instance()->b_SoundEffect[i] = false;
 		}
 	}
 }

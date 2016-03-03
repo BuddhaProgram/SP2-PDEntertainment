@@ -306,6 +306,12 @@ void SceneLevelOneA::ResetSameScene()
 	anima.DoorSlideBtm_3 = 0;
 	anima.toSlideDoorTop3 = true;
 	anima.toSlideDoorBtm3 = true;
+
+	for (int i = 0; i < 10; ++i)
+	{
+		Explorer::instance()->b_SoundEffect[i] = false;
+		Explorer::instance()->b_MonsterSound[i] = false;
+	}
 }
 
 /****************************************************************************/
@@ -537,6 +543,33 @@ void SceneLevelOneA::MouseClickFunction(double dt)
 		Variables.b_LockSwing = true;
 		Variables.b_LockSwingDebounce = true;
 		Explorer::instance()->stamina -= 20;
+
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Pickaxe)
+		{
+			if (Explorer::instance()->b_SoundEffect[5] == false)
+			{
+				Application::MusicWillPlay(7, false);
+				Explorer::instance()->b_SoundEffect[5] = true;
+			}
+		}
+
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::BaseballBat)
+		{
+			if (Explorer::instance()->b_SoundEffect[5] == false)
+			{
+				Application::MusicWillPlay(8, false);
+				Explorer::instance()->b_SoundEffect[5] = true;
+			}
+		}
+
+		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Sword)
+		{
+			if (Explorer::instance()->b_SoundEffect[5] == false)
+			{
+				Application::MusicWillPlay(9, false);
+				Explorer::instance()->b_SoundEffect[5] = true;
+			}
+		}
 	}
 
 	if (Variables.b_LockSwingDebounce == true)
