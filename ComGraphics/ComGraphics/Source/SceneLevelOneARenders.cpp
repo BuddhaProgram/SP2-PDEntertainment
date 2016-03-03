@@ -247,23 +247,10 @@ void SceneLevelOneA::checkDoor2()
 
 void SceneLevelOneA::checkDoor3()
 {
-	//if (!activateDoor3_1)
-	//{
-	//	activateDoor3_2 = true;
-	//}
-
 	if (Explorer::instance()->b_pickUpSuitCase[0])
 	{ 
 		activateDoor3 = true;
 	}
-	
-
-	//if (/*!proximitycheck(192, 217, 60, 64)*/ camera.position.x <= 192 && camera.position.x >= 217 && camera.position.z >= 64)
-	//{
-	//	activateDoor3_1 = false;
-	//	activateDoor3_2 = true;
-	//}
-
 	if (anima.toSlideDoorBtm3)
 	{
 		Collision(150, 250, 58, 64);
@@ -405,10 +392,6 @@ void SceneLevelOneA::AnimationCheck(double dt)
 	}
 	if (activateDoor3) { anima.OpenSlideDoor3(dt); }
 
-	/*if (!(proximitycheck(192, 217, 60, 64)))
-	{
-		anima.CloseSlideDoor3(dt);
-	}*/
 	if (willDrop)
 	{
 		anima.Portraits(dt);

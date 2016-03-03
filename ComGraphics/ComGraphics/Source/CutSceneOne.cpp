@@ -120,8 +120,6 @@ void CutSceneOne::Reset()
 {
 }
 
-
-
 void CutSceneOne::Update(double dt)
 {
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
@@ -174,9 +172,6 @@ void CutSceneOne::Update(double dt)
 	{
 		camera.position.z -= 0.1f;
 	}
-
-
-
 }
 
 void CutSceneOne::RenderMesh(Mesh*mesh, bool enableLight)
