@@ -1,3 +1,13 @@
+/**************************************************************************/
+/*!
+\file			SceneEndCutScene.cpp
+\author			Matsuda Kenichi
+\par			email: 150450F\@mymail.nyp.edu.sg
+\brief
+File containing function to make the ending cutscene work
+*/
+/**************************************************************************/
+
 #include "SceneEndCutScene.h"
 #include "GL\glew.h"
 
@@ -13,14 +23,33 @@
 #include "GlobalVariables.h"
 
 
+/****************************************************************************/
+/*!
+\brief	Default Constructor definitions for SceneEndCutScene
+*/
+/****************************************************************************/
+
 SceneEndCutScene::SceneEndCutScene()
 {
 
 }
 
+
+/****************************************************************************/
+/*!
+\brief	Default destructor for SceneEndCutScene
+*/
+/****************************************************************************/
+
 SceneEndCutScene::~SceneEndCutScene()
 {
 }
+
+/****************************************************************************/
+/*!
+\brief	Initializer definitions for SceneLevelOneA, including light, camera positions etc.
+*/
+/****************************************************************************/
 
 void SceneEndCutScene::Init()
 {
@@ -166,30 +195,15 @@ void SceneEndCutScene::Reset()
 {
 }
 
-vector<string> SceneEndCutScene::ReadFromText(string link)
-{
-	ifstream txtData;
-	txtData.open(link, std::ifstream::in);
+/****************************************************************************/
+/*!
+\brief
+This Function is the main Update function of the Level, which houses all other functions.
 
-	if (!txtData)
-	{
-		std::cout << "Error Opening" << link << std::endl;
-		exit(1);
-	}
-
-	if (txtData.good())
-	{
-		while (txtData.good())
-		{
-			string data;
-			std::getline(txtData, data);
-			readText.push_back(data);
-		}
-	}
-
-	txtData.close();
-	return readText;
-}
+\param dt
+To slow down animations or other relevant variables
+*/
+/****************************************************************************/
 
 void SceneEndCutScene::Update(double dt)
 {
@@ -253,6 +267,19 @@ void SceneEndCutScene::Update(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders the mesh of specified object with or without light
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param enableLight
+Whether to account for light
+*/
+/****************************************************************************/
+
 void SceneEndCutScene::RenderMesh(Mesh*mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -297,6 +324,22 @@ void SceneEndCutScene::RenderMesh(Mesh*mesh, bool enableLight)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on worldspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+*/
+/****************************************************************************/
+
 void SceneEndCutScene::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -326,6 +369,31 @@ void SceneEndCutScene::RenderText(Mesh* mesh, std::string text, Color color)
 	glEnable(GL_DEPTH_TEST);
 
 }
+
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+
+\param size
+size of the text to render
+
+\param x
+x coordinate of text to render
+
+\param y
+y coordinate of text to render
+*/
+/****************************************************************************/
 
 void SceneEndCutScene::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
@@ -373,6 +441,31 @@ void SceneEndCutScene::RenderTextOnScreen(Mesh* mesh, std::string text, Color co
 	glEnable(GL_DEPTH_TEST);
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders an OBJ at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param Sx,Sy,Sz
+Scaling by x,y,z
+
+\param Rotate
+angle to rotate by
+
+\param rx,ry,rz
+rotation to be done on x,y,or z axis
+
+\param tx,ty,tz
+translation of model on the x,y,z axis
+
+\param LightYN
+to account for Light
+*/
+/****************************************************************************/
+
 void SceneEndCutScene::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
 	Mtx44 ortho;
@@ -393,7 +486,12 @@ void SceneEndCutScene::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
-
+/****************************************************************************/
+/*!
+\brief
+This Function is the main function for all rendercalls
+*/
+/****************************************************************************/
 void SceneEndCutScene::Render()
 {
 	// Render VBO here
@@ -432,7 +530,7 @@ void SceneEndCutScene::Render()
 	}
 
 	RenderSkyBox();
-	RenderSceneEndCutScene(TestYou);
+	RenderSceneEndCutScene();
 	RenderFloor();
 	RenderShipAndPod();
 
@@ -441,6 +539,13 @@ void SceneEndCutScene::Render()
 	modelStack.PopMatrix();
 
 }
+
+/****************************************************************************/
+/*!
+\brief
+This Function deletes openGL based stuff
+*/
+/****************************************************************************/
 
 void SceneEndCutScene::Exit()
 {

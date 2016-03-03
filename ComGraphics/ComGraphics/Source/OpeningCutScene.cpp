@@ -1,3 +1,13 @@
+/**************************************************************************/
+/*!
+\file			OpeningCutScene.cpp
+\author			Matsuda Kenichi
+\par			email: 150450F@mymail.nyp.edu.sg
+\brief
+File containing function to make the first opening cutscene work
+*/
+/**************************************************************************/
+
 #include "OpeningCutScene.h"
 #include "GL\glew.h"
 
@@ -12,14 +22,31 @@
 #include <sstream>
 #include "GlobalVariables.h"
 
+/****************************************************************************/
+/*!
+\brief	Default Constructor definitions for OpeningCutScene
+*/
+/****************************************************************************/
 
 OpeningCutScene::OpeningCutScene()
 {
 }
 
+/****************************************************************************/
+/*!
+\brief	Default destructor for OpeningCutScene
+*/
+/****************************************************************************/
+
 OpeningCutScene::~OpeningCutScene()
 {
 }
+
+/****************************************************************************/
+/*!
+\brief	Initializer definitions for OpeningCutScene, including light, camera positions etc.
+*/
+/****************************************************************************/
 
 void OpeningCutScene::Init()
 {
@@ -132,6 +159,18 @@ void OpeningCutScene::Reset()
 {
 }
 
+/**************************************************************************/
+/*!
+\brief
+Function for reading text from file
+\param link
+	point to read text
+\return
+	Resulting text from file
+
+*/
+/**************************************************************************/
+
 vector<string> OpeningCutScene::ReadFromText(string link)
 {
 	ifstream txtData;
@@ -157,6 +196,16 @@ vector<string> OpeningCutScene::ReadFromText(string link)
 	return readText;
 }
 
+/**************************************************************************/
+/*!
+\brief
+Function to render the opening scene
+\param Test
+point to read text from ReadFromText
+\bool toMoveBG, startTimer
+	if true, the text will be rendered
+*/
+/**************************************************************************/
 
 void OpeningCutScene::RenderOpeningCutScene(vector<string> Test)
 {
@@ -190,6 +239,16 @@ void OpeningCutScene::RenderOpeningCutScene(vector<string> Test)
 	}
 
 }
+
+/****************************************************************************/
+/*!
+\brief
+This Function is the main Update function of the Level, which houses all other functions.
+
+\param dt
+To slow down animations or other relevant variables
+*/
+/****************************************************************************/
 
 void OpeningCutScene::Update(double dt)
 {
@@ -250,6 +309,19 @@ void OpeningCutScene::Update(double dt)
 
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders the mesh of specified object with or without light
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param enableLight
+Whether to account for light
+*/
+/****************************************************************************/
+
 void OpeningCutScene::RenderMesh(Mesh*mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -293,6 +365,31 @@ void OpeningCutScene::RenderMesh(Mesh*mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
+
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+
+\param size
+size of the text to render
+
+\param x
+x coordinate of text to render
+
+\param y
+y coordinate of text to render
+*/
+/****************************************************************************/
 
 void OpeningCutScene::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
@@ -340,6 +437,31 @@ void OpeningCutScene::RenderTextOnScreen(Mesh* mesh, std::string text, Color col
 	glEnable(GL_DEPTH_TEST);
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders an OBJ at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param Sx,Sy,Sz
+Scaling by x,y,z
+
+\param Rotate
+angle to rotate by
+
+\param rx,ry,rz
+rotation to be done on x,y,or z axis
+
+\param tx,ty,tz
+translation of model on the x,y,z axis
+
+\param LightYN
+to account for Light
+*/
+/****************************************************************************/
+
 void OpeningCutScene::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
 	Mtx44 ortho;
@@ -360,6 +482,13 @@ void OpeningCutScene::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float 
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
+
+/****************************************************************************/
+/*!
+\brief
+This Function is the main function for all rendercalls
+*/
+/****************************************************************************/
 
 void OpeningCutScene::Render()
 {
@@ -399,6 +528,12 @@ void OpeningCutScene::Render()
 	RenderOpeningCutScene(TestYou);
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function deletes openGL based stuff
+*/
+/****************************************************************************/
 void OpeningCutScene::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);

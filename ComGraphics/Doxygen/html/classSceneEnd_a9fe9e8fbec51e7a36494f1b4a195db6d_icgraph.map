@@ -1,6 +1,0 @@
-<map id="SceneEnd::RenderTextOnScreen" name="SceneEnd::RenderTextOnScreen">
-<area shape="rect" id="node2" href="$classSceneEnd.html#a06fac012bd3a1df369c5722c8cf662b0" title="SceneEnd::Render" alt="" coords="511,60,641,86"/>
-<area shape="rect" id="node3" href="$classSceneEnd.html#a8e3e53fce369d27d432d2c162deecb72" title="SceneEnd::RenderMineText" alt="" coords="273,30,457,57"/>
-<area shape="rect" id="node4" href="$classSceneEnd.html#a9b50e6b7daac08e79d1f95ea821e5369" title="SceneEnd::RenderPlayerDies\lInteraction" alt="" coords="268,82,463,123"/>
-<area shape="rect" id="node5" href="$classSceneEnd.html#ab32854734562ab2433617b145a1971f7" title="SceneEnd::RenderRepairText" alt="" coords="269,148,462,174"/>
-</map>

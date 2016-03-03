@@ -1,3 +1,12 @@
+/*************************************************************/
+/*!
+\file       SceneLevelOneB.cpp
+\author     Zheng Qingping
+\par        email: qingping1998@gmail.com
+\brief
+Function definitions for SceneLevelOneB
+*/
+/*************************************************************/
 #include "SceneLevelOneB.h"
 #include "GL\glew.h"
 
@@ -12,7 +21,11 @@
 #include <sstream>
 #include "GlobalVariables.h"
 
-
+/****************************************************************************/
+/*!
+\brief	Default Constructor definitions for SceneLevelOneB
+*/
+/****************************************************************************/
 SceneLevelOneB::SceneLevelOneB()
 {
 	countdown = 0;
@@ -21,10 +34,20 @@ SceneLevelOneB::SceneLevelOneB()
 	timer = false;
 }
 
+/****************************************************************************/
+/*!
+\brief	Default destructor for SceneLevelOneB
+*/
+/****************************************************************************/
 SceneLevelOneB::~SceneLevelOneB()
 {
 }
 
+/****************************************************************************/
+/*!
+\brief	Initializer definitions for SceneLevelOneB, including light, camera positions etc.
+*/
+/****************************************************************************/
 void SceneLevelOneB::Init()
 {
     // Init VBO here
@@ -207,7 +230,7 @@ void SceneLevelOneB::Init()
     meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
 
     meshList[GEO_ELEVATOR] = MeshBuilder::GenerateQuad("elevator doors", Color(1, 0, 0));
-    meshList[GEO_ELEVATOR]->textureID = LoadTGA("Image//Elevator.tga");
+    //meshList[GEO_ELEVATOR]->textureID = LoadTGA("Image//Elevator.tga");
     //puzzle inits
     meshList[GEO_LIGHTGREEN] = MeshBuilder::GenerateOBJ("green light", "OBJ//PuzzleLight.obj");
     meshList[GEO_LIGHTGREEN]->textureID = LoadTGA("Image//PuzzleLightGREEN.tga");
@@ -222,6 +245,9 @@ void SceneLevelOneB::Init()
 	meshList[GEO_DEADCOLOR] = MeshBuilder::GenerateQuad("DeadScreen", Color(1, 0, 0));
 	meshList[GEO_DEADBLACKSCREEN] = MeshBuilder::GenerateQuad("DeadSCreenTwo", Color(0, 0, 0));
 
+	meshList[GEO_BARREL] = MeshBuilder::GenerateOBJ("Barrel", "OBJ//Barrel.obj");
+	meshList[GEO_BARREL]->textureID = LoadTGA("Image//Barrel.tga");
+
     Mtx44 projection;
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
     projectionStack.LoadMatrix(projection);
@@ -234,20 +260,17 @@ void SceneLevelOneB::Init()
 }
 
 static float LSPEED = 10.f;
-
-
+/****************************************************************************/
+/*!
+\brief	This Function resets all local variables to default values as listed in Init.
+*/
+/****************************************************************************/
 void SceneLevelOneB::ResetSameScene()
 {
 	Explorer::instance()->hp = 100;
 	Explorer::instance()->isDead = false;
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
-
-	for (int i = 0; i < 4; ++i)
-	{
-		Explorer::instance()->checkSavePoint[i] = false;
-	}
-
 
 	activateDoor1 = false;
 	activateDoor2 = false;
@@ -283,6 +306,11 @@ void SceneLevelOneB::ResetSameScene()
 	timer = false;
 }
 
+/****************************************************************************/
+/*!
+\brief	This Function resets all GLOBAL variables to default values as listed in Init.
+*/
+/****************************************************************************/
 void SceneLevelOneB::ResetAll()
 {
     Explorer::instance()->hp = 100;
@@ -291,12 +319,31 @@ void SceneLevelOneB::ResetAll()
     Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
     Variables.f_redScreenTimer = 0.0f;
 
-    for (int i = 0; i < 4; ++i)
-    {
-        Explorer::instance()->checkSavePoint[i] = false;
-    }
-
+	for (int i = 0; i < 10; ++i)
+	{
+		Explorer::instance()->b_ActivateMusic[i] = false;
+	}
 }
+
+
+/****************************************************************************/
+/*!
+\brief
+This Function checks for camera position and relative target and stops 'movement'
+
+\param smallx
+the smaller x value of the AABB bounding box
+
+\param largex
+the larger x value of the AABB bounding box
+
+\param smallz
+the smaller z value of the AABB bounding box
+
+\param largez
+the larger z value of the AABB bounding box
+*/
+/****************************************************************************/
 
 void SceneLevelOneB::Collision(float smallx, float largex, float smallz, float largez)
 {
@@ -312,6 +359,25 @@ void SceneLevelOneB::Collision(float smallx, float largex, float smallz, float l
 		);
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function checks for camera position being near the edges of a AABB bounding box
+, with a current allowance of 2.f.
+
+\param smallx
+the smaller x value of the AABB bounding box
+
+\param largex
+the larger x value of the AABB bounding box
+
+\param smallz
+the smaller z value of the AABB bounding box
+
+\param largez
+the larger z value of the AABB bounding box
+*/
+/****************************************************************************/
 bool SceneLevelOneB::proximitycheck(float smallx, float largex, float smallz, float largez)
 {
     //this function checks if the camera is close to a side of the object
@@ -710,7 +776,7 @@ void SceneLevelOneB::ContinueGameOrNot()
 
 void SceneLevelOneB::PickUpSuitcaseInteraction()
 {
-	if (camera.position.x > -210.0f && camera.position.x < -190.0f && camera.position.z > -130.0f && camera.position.z < -110.0f)
+	if (camera.position.x > 0.0f && camera.position.x < 15.0f && camera.position.z > -130.0f && camera.position.z < -115.0f)
 	{
 		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand && Explorer::instance()->b_pickUpSuitCase[1] == false)
 		{
@@ -741,6 +807,15 @@ void SceneLevelOneB::FlickeringLight(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function is the main Update function of the Level, which houses all other functions.
+
+\param dt
+To slow down animations or other relevant variables
+*/
+/****************************************************************************/
 void SceneLevelOneB::Update(double dt)
 {
     FPS = 1.f / (float)dt;
@@ -840,6 +915,18 @@ void SceneLevelOneB::Update(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders the mesh of specified object with or without light
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param enableLight
+Whether to account for light
+*/
+/****************************************************************************/
 void SceneLevelOneB::RenderMesh(Mesh*mesh, bool enableLight)
 {
     Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -884,6 +971,21 @@ void SceneLevelOneB::RenderMesh(Mesh*mesh, bool enableLight)
     }
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on worldspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+*/
+/****************************************************************************/
 void SceneLevelOneB::RenderText(Mesh* mesh, std::string text, Color color)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -914,6 +1016,30 @@ void SceneLevelOneB::RenderText(Mesh* mesh, std::string text, Color color)
 
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+
+\param size
+size of the text to render
+
+\param x
+x coordinate of text to render
+
+\param y
+y coordinate of text to render
+*/
+/****************************************************************************/
 void SceneLevelOneB::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -960,6 +1086,30 @@ void SceneLevelOneB::RenderTextOnScreen(Mesh* mesh, std::string text, Color colo
     glEnable(GL_DEPTH_TEST);
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders an OBJ at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param Sx,Sy,Sz
+Scaling by x,y,z
+
+\param Rotate
+angle to rotate by
+
+\param rx,ry,rz
+rotation to be done on x,y,or z axis
+
+\param tx,ty,tz
+translation of model on the x,y,z axis
+
+\param LightYN
+to account for Light
+*/
+/****************************************************************************/
 void SceneLevelOneB::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
 	Mtx44 ortho;
@@ -981,6 +1131,12 @@ void SceneLevelOneB::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float S
 	modelStack.PopMatrix();
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function is the main function for all rendercalls
+*/
+/****************************************************************************/
 void SceneLevelOneB::Render()
 {
     // Render VBO here
@@ -1021,7 +1177,7 @@ void SceneLevelOneB::Render()
 
     RenderScene();
 	RenderDoor();
-
+	RenderBarrel();
 
 
 
@@ -1080,6 +1236,12 @@ void SceneLevelOneB::Render()
 		RenderModelOnScreen(meshList[GEO_HEALTHICON], 3.f, 3.f, 3.f, 90, 1, 0, 0, (22.f + i), 18.5f, 1.0f, false);
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function deletes openGL based stuff
+*/
+/****************************************************************************/
 void SceneLevelOneB::Exit()
 {
     glDeleteVertexArrays(1, &m_vertexArrayID);

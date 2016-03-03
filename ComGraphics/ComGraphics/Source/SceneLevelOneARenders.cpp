@@ -111,6 +111,20 @@ void SceneLevelOneA::RenderScene()
 	RenderMesh(meshList[GEO_TV], true);
 	modelStack.PopMatrix();
 
+
+	modelStack.PushMatrix();
+	modelStack.Translate(-160, 4, 185);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Scale(15, 3.5f, 15);
+	RenderMesh(meshList[GEO_DEADBODY], true);
+	modelStack.PopMatrix();
+	modelStack.PushMatrix();
+	modelStack.Translate(-260, 4, 185);
+	modelStack.Rotate(180, 0, 1, 0);
+	modelStack.Scale(15, 3.5f, 15);
+	RenderMesh(meshList[GEO_DEADBODY], true);
+	modelStack.PopMatrix();
+
 }
 
 void SceneLevelOneA::checkRubbleFall()
@@ -247,23 +261,10 @@ void SceneLevelOneA::checkDoor2()
 
 void SceneLevelOneA::checkDoor3()
 {
-	//if (!activateDoor3_1)
-	//{
-	//	activateDoor3_2 = true;
-	//}
-
 	if (Explorer::instance()->b_pickUpSuitCase[0])
 	{ 
 		activateDoor3 = true;
 	}
-	
-
-	//if (/*!proximitycheck(192, 217, 60, 64)*/ camera.position.x <= 192 && camera.position.x >= 217 && camera.position.z >= 64)
-	//{
-	//	activateDoor3_1 = false;
-	//	activateDoor3_2 = true;
-	//}
-
 	if (anima.toSlideDoorBtm3)
 	{
 		Collision(150, 250, 58, 64);
@@ -405,10 +406,6 @@ void SceneLevelOneA::AnimationCheck(double dt)
 	}
 	if (activateDoor3) { anima.OpenSlideDoor3(dt); }
 
-	/*if (!(proximitycheck(192, 217, 60, 64)))
-	{
-		anima.CloseSlideDoor3(dt);
-	}*/
 	if (willDrop)
 	{
 		anima.Portraits(dt);
@@ -473,4 +470,49 @@ void SceneLevelOneA::RenderPickUpSuitcaseText()
 			RenderTextOnScreen(meshList[GEO_TEXT], "Use your hands!", Color(0, 0.5f, 1.0f), 5.0f, 4.f, 5.0f);
 		}
 	}
+}
+
+void SceneLevelOneA::RenderBarrel()
+{
+	for (float z = 400; z >= 324; z -= 7)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(60, 0, z);
+		modelStack.Scale(5, 4, 5);
+		RenderMesh(meshList[GEO_BARREL], true);
+		modelStack.PopMatrix();
+	}
+	Collision(45, 65, 315, 405);
+
+	for (float z = 400; z >= 324; z -= 7)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(-60, 0, z);
+		modelStack.Scale(5, 4, 5);
+		RenderMesh(meshList[GEO_BARREL], true);
+		modelStack.PopMatrix();
+	}
+	Collision(-65, -50, 315, 405);
+	
+	for (float z = 183; z >= 64; z -= 7)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(100, 0, z);
+		modelStack.Scale(5, 4, 5);
+		RenderMesh(meshList[GEO_BARREL], true);
+		modelStack.PopMatrix();
+	}
+	Collision(90, 110, 69, 195);
+
+	for (float z = 183; z >= 64; z -= 7)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(316, 0, z);
+		modelStack.Scale(5, 4, 5);
+		RenderMesh(meshList[GEO_BARREL], true);
+		modelStack.PopMatrix();
+	}
+	Collision(306, 326, 69, 195);
+
+
 }

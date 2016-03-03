@@ -1,9 +1,0 @@
-<map id="MobGhost::move" name="MobGhost::move">
-<area shape="rect" id="node2" href="$classMobGhost.html#ac91ee578e6e4ecbb26ea3c95044c7335" title="MobGhost::checkAttack" alt="" coords="173,56,336,83"/>
-<area shape="rect" id="node7" href="$structVector3.html#aaef4f25a38878a640ab4a48002a7eff8" title="Normalize this vector and return a reference to it. " alt="" coords="188,107,321,133"/>
-<area shape="rect" id="node3" href="$classMobGhost.html#a682a34b867af027921633a1a7f007070" title="MobGhost::attack" alt="" coords="410,5,537,32"/>
-<area shape="rect" id="node6" href="$classMobGhost.html#a80bf2d32c1b8c2550160d36ec79f8f84" title="MobGhost::proximitycheck" alt="" coords="384,56,563,83"/>
-<area shape="rect" id="node4" href="$classExplorer.html#afc5637a94d6f094b796d80abf42d930b" title="Explorer::instance" alt="" coords="789,5,916,32"/>
-<area shape="rect" id="node5" href="$classExplorer.html#a6827c0db7864e0bfb1716cc2767dec2d" title="Explorer::MinusHP" alt="" coords="611,31,741,57"/>
-<area shape="rect" id="node8" href="$structVector3.html#a200024a8442329de9a625ed58ffe7075" title="Return length of vector. " alt="" coords="416,107,531,133"/>
-</map>

@@ -67,24 +67,26 @@ void HostileMob::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 
         mobTimeCount = 0;
     }
 }
-/*************************************************************/
+
+/****************************************************************************/
 /*!
 \brief
-Sets collision of the mob from specified area.
+This Function checks for camera position and relative target and stops 'movement'
 
 \param smallx
-Smaller  x value of AABB bounding box
+the smaller x value of the AABB bounding box
 
 \param largex
-Larger x value of AABB bounding box
+the larger x value of the AABB bounding box
 
 \param smallz
-smaller Z value of AABB bounding box
+the smaller z value of the AABB bounding box
 
 \param largez
-larger z value of AABB bounding box
+the larger z value of the AABB bounding box
 */
-/*************************************************************/
+/****************************************************************************/
+>>>>>>> origin/master
 void HostileMob::MobCollision(float smallx, float largex, float smallz, float largez)
 {
     if ((MobPosX >= smallx) && (MobPosX <= largex) && (MobPosZ >= smallz) && (MobPosZ <= smallz + 3.f)){ MobPosZ = smallz; }

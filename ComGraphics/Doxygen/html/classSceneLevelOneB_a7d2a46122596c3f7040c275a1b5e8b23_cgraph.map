@@ -1,5 +1,0 @@
-<map id="SceneLevelOneB::ResetSameScene" name="SceneLevelOneB::ResetSameScene">
-<area shape="rect" id="node2" href="$classExplorer.html#afc5637a94d6f094b796d80abf42d930b" title="Explorer::instance" alt="" coords="297,5,424,32"/>
-<area shape="rect" id="node3" href="$classMobBossOne.html#a291a94db26b9cd068da3c41ea013a16a" title="MobBossOne::setSpawnBossOne" alt="" coords="251,56,471,83"/>
-<area shape="rect" id="node4" href="$classMobGhost.html#afe5cf062e0887acb5e610c63a721e24c" title="MobGhost::setSpawnGhost" alt="" coords="269,107,452,133"/>
-</map>

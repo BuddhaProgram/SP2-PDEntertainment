@@ -1,3 +1,13 @@
+/*************************************************************/
+/*!
+\file       CutSceneOne.cpp
+\author     Matsuda Kenichi
+\par        email: 150450F@mymail.nyp.edu.sg
+\brief
+Function definitions for CutSceneOne
+*/
+/*************************************************************/
+
 #include "CutSceneOne.h"
 #include "GL\glew.h"
 
@@ -12,14 +22,32 @@
 #include <sstream>
 #include "GlobalVariables.h"
 
+/****************************************************************************/
+/*!
+\brief	Default Constructor definitions for CutSceneOne
+*/
+/****************************************************************************/
 
 CutSceneOne::CutSceneOne()
 {
 }
 
+
+/****************************************************************************/
+/*!
+\brief	Default destructor for CutSceneOne
+*/
+/****************************************************************************/
+
 CutSceneOne::~CutSceneOne()
 {
 }
+
+/****************************************************************************/
+/*!
+\brief	Initializer definitions for CutSceneOne, including light, camera positions etc.
+*/
+/****************************************************************************/
 
 void CutSceneOne::Init()
 {
@@ -110,17 +138,24 @@ void CutSceneOne::Init()
 	projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
-   
+	Application::MusicWillPlay(2, false);
 }
 
 static float LSPEED = 10.f;
-
 
 void CutSceneOne::Reset()
 {
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function is the main Update function of the Level, which houses all other functions.
 
+\param dt
+To slow down animations or other relevant variables
+*/
+/****************************************************************************/
 
 void CutSceneOne::Update(double dt)
 {
@@ -174,10 +209,20 @@ void CutSceneOne::Update(double dt)
 	{
 		camera.position.z -= 0.1f;
 	}
-
-
-
 }
+
+/****************************************************************************/
+/*!
+\brief
+This Function renders the mesh of specified object with or without light
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param enableLight
+Whether to account for light
+*/
+/****************************************************************************/
 
 void CutSceneOne::RenderMesh(Mesh*mesh, bool enableLight)
 {
@@ -223,6 +268,13 @@ void CutSceneOne::RenderMesh(Mesh*mesh, bool enableLight)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function is the main function for all rendercalls
+*/
+/****************************************************************************/
+
 void CutSceneOne::Render()
 {
 	// Render VBO here
@@ -260,6 +312,13 @@ void CutSceneOne::Render()
 
 	RenderCutSceneOne();
 }
+
+/****************************************************************************/
+/*!
+\brief
+This Function deletes openGL based stuff
+*/
+/****************************************************************************/
 
 void CutSceneOne::Exit()
 {

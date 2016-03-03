@@ -1,3 +1,13 @@
+/**************************************************************************/
+/*!
+\file			CutSceneOne.h
+\author			Matsuda Kenichi
+\par			email: 150450F\@mymail.nyp.edu.sg
+\brief
+Class to define OpeningCutScene
+
+/**************************************************************************/
+
 #ifndef CUTSCENEONE_H
 #define CUTSCENEONE_H
 
@@ -9,6 +19,14 @@
 #include "Light.h"
 #include "OBJAnimation.h"
 #include "GlobalVariables.h"
+
+/**************************************************************************/
+/*!
+Class CutSceneOne:
+\brief
+Define CutSceneOne and its method to make the opening door cutscene
+*/
+/**************************************************************************/
 
 class CutSceneOne : public Scene
 {

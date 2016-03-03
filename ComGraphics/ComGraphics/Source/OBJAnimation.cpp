@@ -2,7 +2,7 @@
 /*!
 \file			OBJAnimation.cpp
 \author			Matsuda Kenichi
-\par			email: 150450F\@mymail.nyp.edu.sg
+\par			email: 150450F@mymail.nyp.edu.sg
 \brief
 File containing function to make animation work
 */
@@ -88,6 +88,19 @@ Animation::~Animation()
 {
 }
 
+/**************************************************************************/
+/*!
+\brief
+Function for Rubble Collapsing animation
+\param dt
+	dt = delta time
+\bool Collapse
+	If true , rubble falling animation will activate.
+\float RubbleCollapse
+	speed of the rubble falling animation
+*/
+/**************************************************************************/
+
 void Animation::Collapsing(double dt)
 {
 	//Rubble Falling~
@@ -97,6 +110,19 @@ void Animation::Collapsing(double dt)
 	}
 	
 }
+
+/**************************************************************************/
+/*!
+\brief
+Function for Opening Main Door animation on the first cutscene
+\param dt
+	dt = delta time
+\bool OpenDoorL, OpenDoorR
+	If true , door opening animation willa activate
+\float toOpenDoorL, toOpenDoorR
+	speed of the door opening animation
+*/
+/**************************************************************************/
 
 void Animation::OpenMainDoor(double dt)
 {
@@ -144,6 +170,19 @@ void Animation::OpenMainDoor(double dt)
 	}
 }
 
+/**************************************************************************/
+/*!
+\brief
+Function for Falling Portraits animation
+\param dt
+	dt = delta time
+\bool b_toPortraitDrop, b_toPortraitFall
+	If true , the portrait falling and dropping animation will activate
+\float f_PortraitDrop, f_PortraitFall
+	speed of the portrait dropping and falling animation
+*/
+/**************************************************************************/
+
 void Animation::Portraits(double dt)
 {
 	if (f_PortraitDrop >= 6)
@@ -173,6 +212,34 @@ void Animation::Portraits(double dt)
 		b_toPortraitFall = false;
 	}
 }
+
+/**************************************************************************/
+/*!
+\author			Matsuda Kenichi , Zheng QingPing
+\brief
+Functions for Slide Door animation
+\param dt
+	dt = delta time
+\bool 
+	toSlideDoorTop, to SlideDoorBtm, toSlideDoorTop2, toSlideDoorBtm2, ClosingDoorTop2, 
+	ClosingDoorBtm2, toSlideDoorTop3 ,toSlideDoorBtm3, ClosingDoorTop3, ClosingDoorBtm3,
+	toSlideDoorTop_Boss, toSlideDoorBtm_Boss, ClosingDoorTop_Boss, ClosingDoorBtm_Boss,
+	toSlideDoorTop4, toSlideDoorBtm4, ClosingDoorTop4, ClosingDoorBtm4, ClosingDoorTop5, ClosingDoorBtm5,
+	QP_TOPDOOR1, QP_BTMDOOR1, QP_TOPDOOR2, QP_BTMDOOR2, QP_TOPDOOR3, QP_BTMDOOR3, QP_TOPDOOR4, QP_BTMDOOR4, 
+	QP_TOPDOOR5, QP_BTMDOOR5,
+	
+	If true , the animation for Door to Open and Close will activate.
+
+\float 
+	DoorSlideTop, DoorSlideBtm, DoorSlideTop_2, DoorSlideBtm_2, DoorSlideTop_3, DoorSlideBtm_3,
+	oorSlideTop_Boss, DoorSlideBtm_Boss, DoorSlideTop_4, DoorSlideBtm_4, DoorSlideTop_5, DoorSlideBtm_5,
+	QPDOOR1_TOP, QPDOOR1_BTM, QPDOOR2_TOP, QPDOOR2_BTM,  QPDOOR3_TOP, QPDOOR3_BTM, QPDOOR4_TOP, QPDOOR4_BTM,
+	QPDOOR5_TOP, QPDOOR5_BTM
+
+	speed of the door opening and closing animation
+*/
+/**************************************************************************/
+
 
 void Animation::OpenSlideDoor1(double dt)
 {
@@ -508,6 +575,19 @@ bool Animation::WithinArea(float smallx, float largex, float smallz, float large
 
 	return result;
 }
+
+/**************************************************************************/
+/*!
+\brief
+Function for Ship taking off animation
+\param dt
+	dt = delta time
+\bool shipCheck1, shipCheck2
+	If true , the ship translation animation will activate.
+\float MovingShip, MovingShip2
+	speed of the ship translate animation.
+*/
+/**************************************************************************/
 
 void Animation::ShipTakeOff(double dt)
 {

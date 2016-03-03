@@ -250,15 +250,25 @@ void SceneEnd::Reset()
 	Explorer::instance()->PlayerLife = 3;
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
-
-	for (int i = 0; i < 4; ++i)
-	{
-		Explorer::instance()->checkSavePoint[i] = false;
-	}
-   
-
 }
+/****************************************************************************/
+/*!
+\brief
+This Function checks for camera position and relative target and stops 'movement'
 
+\param smallx
+the smaller x value of the AABB bounding box
+
+\param largex
+the larger x value of the AABB bounding box
+
+\param smallz
+the smaller z value of the AABB bounding box
+
+\param largez
+the larger z value of the AABB bounding box
+*/
+/****************************************************************************/
 void SceneEnd::Collision(float smallx, float largex, float smallz, float largez)
 {
 	if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz) && (camera.position.z <= smallz + 3.f)){ camera.position.z = smallz; }
@@ -272,7 +282,25 @@ void SceneEnd::Collision(float smallx, float largex, float smallz, float largez)
 		cos(Math::DegreeToRadian(camera.rotationX)) * cos(Math::DegreeToRadian(camera.rotationY)) + camera.position.z
 		);
 }
+/****************************************************************************/
+/*!
+\brief
+This Function checks for camera position being near the edges of a AABB bounding box
+, with a current allowance of 2.f.
 
+\param smallx
+the smaller x value of the AABB bounding box
+
+\param largex
+the larger x value of the AABB bounding box
+
+\param smallz
+the smaller z value of the AABB bounding box
+
+\param largez
+the larger z value of the AABB bounding box
+*/
+/****************************************************************************/
 bool SceneEnd::proximitycheck(float smallx, float largex, float smallz, float largez)
 {
 	//this function checks if the camera is close to a side of the object
@@ -334,6 +362,11 @@ void SceneEnd::ContinueGameOrNot()
             MobThree.setSpawnGhost(-22, 42);
 
             BossOne.setSpawnBossOne(-36, -6);
+
+			for (int i = 0; i < 10; ++i)
+			{
+				Explorer::instance()->b_ActivateMusic[i] = false;
+			}
 		}
 
 		else if (Application::IsKeyPressed('N'))

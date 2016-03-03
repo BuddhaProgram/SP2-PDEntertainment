@@ -1,4 +1,0 @@
-<map id="SceneLevelTwo::SwitchCheck" name="SceneLevelTwo::SwitchCheck">
-<area shape="rect" id="node2" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="248,5,423,32"/>
-<area shape="rect" id="node3" href="$classmisc.html#a0f8d72dfe38a0284899586da142daf8a" title="misc::WithinArea" alt="" coords="274,56,397,83"/>
-</map>

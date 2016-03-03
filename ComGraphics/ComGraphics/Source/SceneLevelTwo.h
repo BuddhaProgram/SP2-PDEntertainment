@@ -1,3 +1,13 @@
+/****************************************************************************/
+/*!
+\file SceneLevelTwo.h
+\author Zheng Qingping
+\par email: qingping1998@gmail.com
+\brief
+header file for SceneLevelTwo
+*/
+/****************************************************************************/
+
 #ifndef SCENELEVELTWO_H
 #define SCENELEVELTWO_H
 
@@ -9,7 +19,12 @@
 #include "Light.h"
 #include "OBJAnimation.h"
 #include "MobGhost.h"
-
+/****************************************************************************/
+/*!
+Class SceneLevelTwo:
+\brief Defines stuff needed for LevelTwo and their methods
+*/
+/****************************************************************************/
 class SceneLevelTwo : public Scene
 {
     enum GEOMETRY_TYPE
@@ -161,7 +176,6 @@ private:
 	void RenderPuzzle();
 
     // Tool UI functions
-    void ToolsUI();
     void MouseScrollToolSlot();
     void RenderMouseScrollToolSlot();
     void ToolSelectionMouseScroll();

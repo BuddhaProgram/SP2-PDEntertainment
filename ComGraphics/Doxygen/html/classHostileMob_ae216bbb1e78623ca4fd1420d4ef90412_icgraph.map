@@ -1,5 +1,0 @@
-<map id="HostileMob::checkPlayerPos" name="HostileMob::checkPlayerPos">
-<area shape="rect" id="node2" href="$classSceneLevelOneA.html#ab862a65fd43b0fdb56187f7dedb917b8" title="SceneLevelOneA::Update" alt="" coords="244,5,415,32"/>
-<area shape="rect" id="node3" href="$classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="264,56,395,83"/>
-<area shape="rect" id="node4" href="$classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="244,107,415,133"/>
-</map>

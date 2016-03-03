@@ -1,9 +1,0 @@
-<map id="MobBossOne::move" name="MobBossOne::move">
-<area shape="rect" id="node2" href="$classMobBossOne.html#a15cf315a37065c7e00aecd2f03ca9823" title="MobBossOne::checkAttack" alt="" coords="192,56,375,83"/>
-<area shape="rect" id="node7" href="$structVector3.html#aaef4f25a38878a640ab4a48002a7eff8" title="Normalize this vector and return a reference to it. " alt="" coords="217,107,350,133"/>
-<area shape="rect" id="node3" href="$classMobBossOne.html#aecb3709f09de4706becf6754b1744682" title="MobBossOne::attack" alt="" coords="449,5,594,32"/>
-<area shape="rect" id="node6" href="$classMobBossOne.html#af5c21d147c9507ecdb5c2ca4b530a21b" title="MobBossOne::proximitycheck" alt="" coords="423,56,620,83"/>
-<area shape="rect" id="node4" href="$classExplorer.html#afc5637a94d6f094b796d80abf42d930b" title="Explorer::instance" alt="" coords="847,5,973,32"/>
-<area shape="rect" id="node5" href="$classExplorer.html#a6827c0db7864e0bfb1716cc2767dec2d" title="Explorer::MinusHP" alt="" coords="668,31,799,57"/>
-<area shape="rect" id="node8" href="$structVector3.html#a200024a8442329de9a625ed58ffe7075" title="Return length of vector. " alt="" coords="464,107,579,133"/>
-</map>

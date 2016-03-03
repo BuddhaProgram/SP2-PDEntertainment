@@ -1,6 +1,0 @@
-<map id="MobBossOne::checkAttack" name="MobBossOne::checkAttack">
-<area shape="rect" id="node2" href="$classMobBossOne.html#aecb3709f09de4706becf6754b1744682" title="MobBossOne::attack" alt="" coords="262,5,407,32"/>
-<area shape="rect" id="node5" href="$classMobBossOne.html#af5c21d147c9507ecdb5c2ca4b530a21b" title="MobBossOne::proximitycheck" alt="" coords="236,56,433,83"/>
-<area shape="rect" id="node3" href="$classExplorer.html#afc5637a94d6f094b796d80abf42d930b" title="Explorer::instance" alt="" coords="660,5,787,32"/>
-<area shape="rect" id="node4" href="$classExplorer.html#a6827c0db7864e0bfb1716cc2767dec2d" title="Explorer::MinusHP" alt="" coords="481,31,612,57"/>
-</map>

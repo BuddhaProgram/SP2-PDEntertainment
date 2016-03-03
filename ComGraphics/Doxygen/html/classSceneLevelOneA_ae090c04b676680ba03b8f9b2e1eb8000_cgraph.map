@@ -1,7 +1,0 @@
-<map id="SceneLevelOneA::AnimationCheck" name="SceneLevelOneA::AnimationCheck">
-<area shape="rect" id="node2" href="$classAnimation.html#a34c2d89eecbc58b115174fd9f5a31346" title="Animation::CloseSlideDoor2" alt="" coords="240,5,424,32"/>
-<area shape="rect" id="node3" href="$classAnimation.html#a62d995267b5aad0480edb98f2ccecd20" title="Animation::OpenSlideDoor1" alt="" coords="241,56,423,83"/>
-<area shape="rect" id="node4" href="$classAnimation.html#a62932edc6c94a6875c71953457c375d8" title="Animation::OpenSlideDoor2" alt="" coords="241,107,423,133"/>
-<area shape="rect" id="node5" href="$classAnimation.html#ae899456275cfec205bb45f8f248650f2" title="Animation::OpenSlideDoor3" alt="" coords="241,157,423,184"/>
-<area shape="rect" id="node6" href="$classAnimation.html#a54468d8bfd3e86e6f7138b87d09a74e4" title="Animation::Portraits" alt="" coords="263,208,401,235"/>
-</map>

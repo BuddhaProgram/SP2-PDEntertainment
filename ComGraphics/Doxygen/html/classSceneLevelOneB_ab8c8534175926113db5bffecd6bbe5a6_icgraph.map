@@ -1,7 +1,0 @@
-<map id="SceneLevelOneB::proximitycheck" name="SceneLevelOneB::proximitycheck">
-<area shape="rect" id="node2" href="$classSceneLevelOneB.html#a3177b86100055be275d4f9738af818fa" title="SceneLevelOneB::checkDoor1" alt="" coords="271,5,470,32"/>
-<area shape="rect" id="node4" href="$classSceneLevelOneB.html#af76b3c4469afe2cbf2349095fede55e2" title="SceneLevelOneB::checkDoor3" alt="" coords="271,56,470,83"/>
-<area shape="rect" id="node5" href="$classSceneLevelOneB.html#a0319f20e60159cf5eb74489bff0860bc" title="SceneLevelOneB::checkDoor4" alt="" coords="271,107,470,133"/>
-<area shape="rect" id="node6" href="$classSceneLevelOneB.html#a7213352e416ca0f5e3b920a46048147a" title="SceneLevelOneB::MobsSpawn" alt="" coords="271,157,471,184"/>
-<area shape="rect" id="node3" href="$classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="519,81,689,108"/>
-</map>

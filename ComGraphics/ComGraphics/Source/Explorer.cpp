@@ -12,7 +12,6 @@ Explorer::Explorer()
 	for (int i = 0; i < 4; ++i)
 	{
 		Explorer::instance()->itemAttack[i] = 0;
-		Explorer::instance()->checkSavePoint[i] = false;
 		Explorer::instance()->TotalTools.push_back(ToolUI(ToolUI::Empty));
 	}
 
@@ -42,6 +41,11 @@ Explorer::Explorer()
 	}
 
 	Explorer::instance()->f_FlickeringLight = 0.0f;
+
+	for (int i = 0; i < 10; ++i)
+	{
+		b_ActivateMusic[i] = false;
+	}
 }
 
 float Explorer::getHP()
