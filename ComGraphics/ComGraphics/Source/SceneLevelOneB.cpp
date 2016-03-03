@@ -748,6 +748,7 @@ void SceneLevelOneB::FlickeringLight(double dt)
 
 void SceneLevelOneB::Update(double dt)
 {
+    std::cout << BossOne.health << std::endl;
     FPS = 1.f / (float)dt;
 	Variables.f_rotatingTool += (float)(180 * dt);
     //worldspin += (float)(dt);

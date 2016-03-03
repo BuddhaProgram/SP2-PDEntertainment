@@ -1,9 +1,22 @@
+/*************************************************************/
+/*!
+\file       HostileMob.cpp
+\author     Shem Ang Yi Ruey
+\par        email: shem0710@gmail.com
+\brief
+Function definitions for class HostileMob
+*/
+/*************************************************************/
 #include "HostileMob.h"
 
-
+/*************************************************************/
+/*!
+\brief 
+Default constructor for class HostileMob
+*/
+/*************************************************************/
 HostileMob::HostileMob()
 {
-    //global variables for use in entire project
     Spawn = false;
 
     //mob position variables
@@ -20,12 +33,23 @@ HostileMob::HostileMob()
 
     health = 1;
 }
+/*************************************************************/
+/*!
+\brief
+Destructor for class HostileMob
+*/
+/*************************************************************/
 
 HostileMob::~HostileMob()
 {
     
 }
-
+/*************************************************************/
+/*!
+\brief
+Checks the player position and 
+*/
+/*************************************************************/
 void HostileMob::checkPlayerPos(double dt, int checkRate = 1, int lessenSpeed = 1, float xpos = 0, float zpos = 0)
 {
     mobTimeCount += (((float)(dt)* checkRate) / lessenSpeed);
