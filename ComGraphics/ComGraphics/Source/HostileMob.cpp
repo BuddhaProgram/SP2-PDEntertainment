@@ -86,7 +86,7 @@ the smaller z value of the AABB bounding box
 the larger z value of the AABB bounding box
 */
 /****************************************************************************/
->>>>>>> origin/master
+
 void HostileMob::MobCollision(float smallx, float largex, float smallz, float largez)
 {
     if ((MobPosX >= smallx) && (MobPosX <= largex) && (MobPosZ >= smallz) && (MobPosZ <= smallz + 3.f)){ MobPosZ = smallz; }
