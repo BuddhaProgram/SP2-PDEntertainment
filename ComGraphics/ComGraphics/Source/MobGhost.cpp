@@ -1,3 +1,12 @@
+/*************************************************************/
+/*!
+\file       HostileMob.cpp
+\author     Shem Ang Yi Ruey
+\par        email: shem0710@gmail.com
+\brief
+Function definitions for class MobGhost
+*/
+/*************************************************************/
 #include "MobGhost.h"
 
 #include "Misc.h"

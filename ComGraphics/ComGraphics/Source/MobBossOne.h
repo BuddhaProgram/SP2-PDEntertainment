@@ -1,8 +1,24 @@
+/*************************************************************/
+/*!
+\file       MobBossOne.h
+\author     Shem Ang Yi Ruey
+\par        email: shem0710@gmail.com
+\brief
+Class for "Boss" type enemy
+*/
+/*************************************************************/
+
 #ifndef MOBBOSSONE_H
 #define MOBBOSSONE_H
 
 #include "HostileMob.h"
-
+/*************************************************************/
+/*!
+Class MobBossOne:
+\brief
+Class for "Boss" type enemy
+*/
+/*************************************************************/
 
 class MobBossOne : public HostileMob
 {

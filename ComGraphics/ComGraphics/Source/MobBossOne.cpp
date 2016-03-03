@@ -1,3 +1,12 @@
+/*************************************************************/
+/*!
+\file       HostileMob.cpp
+\author     Shem Ang Yi Ruey
+\par        email: shem0710@gmail.com
+\brief
+Function definitions for MobBossOne
+*/
+/*************************************************************/
 #include "MobBossOne.h"
 
 MobBossOne::MobBossOne()
@@ -90,6 +99,11 @@ void MobBossOne::move(double dt, int movespeed = 10)
         checkAttack(dt);
 
         CrystalAnim += 200 * (float)(dt);
+        if (health <= 0)
+        {
+            Spawn = false;
+            BossDies = true;
+        }
     
 }
 
@@ -108,9 +122,5 @@ void MobBossOne::attack(float damage)
    
 	this->AttackDamage = damage;
 	Explorer::instance()->MinusHP((float)(AttackDamage));
-    if (health <= 0)
-    {
-        Spawn = false;
-		BossDies = true;
-    }
+    
 }

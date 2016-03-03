@@ -1,14 +1,29 @@
+/*************************************************************/
+/*!
+\file       HostileMob.h
+\author     Shem Ang Yi Ruey
+\par        email: shem0710@gmail.com
+\brief
+Parent class for enemy units
+*/
+/*************************************************************/
 #ifndef HOSTILEMOB_H
 #define HOSTILEMOB_H
 
 #include "Explorer.h"
 #include "Vector3.h"
-
+/*************************************************************/
+/*!
+Class HostileMob:
+\brief
+parent class for all enemy units
+*/
+/*************************************************************/
 class HostileMob
 {
 public:
-    HostileMob();
-    ~HostileMob();
+    HostileMob();//Default constructor
+    ~HostileMob();//Destructor
 
     //functions
     void checkPlayerPos(double dt, int checkRate, int lessenSpeed, float xpos, float zpos);
