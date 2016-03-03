@@ -41,6 +41,8 @@ class SceneLevelOneA : public Scene
         GEO_FACILITYWALLS,
         GEO_FACILITYCEILINGS,
 		GEO_TV,
+		GEO_BARREL,
+		GEO_DEADBODY,
 
         GEO_SPAWNPOINT,
 
@@ -133,6 +135,7 @@ private:
     void RenderCutSceneOne();
     void RenderSuitCase();
     void RenderInteract();
+	void RenderBarrel();
 
     //map rendering
     void RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber);//positive Z facing wall

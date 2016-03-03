@@ -72,7 +72,7 @@ void SceneLevelOneB::RenderScene()
 	if (Explorer::instance()->b_pickUpSuitCase[1] == false)
 	{
 		modelStack.PushMatrix();
-			modelStack.Translate(-200, 5, -120);
+			modelStack.Translate(5, 5, -128);
 			modelStack.Rotate(Variables.f_SuitcaseRotateY, 0, 1, 0);
 			modelStack.Scale(4, 4, 4);
 			RenderMesh(meshList[GEO_SUITCASE], true);
@@ -670,11 +670,68 @@ void SceneLevelOneB::RenderPickUpPickTools()
 
 void SceneLevelOneB::RenderPickUpSuitcaseText()
 {
-	if (camera.position.x > -215.0f && camera.position.x < -185.0f && camera.position.z > -135.0f && camera.position.z < -105.0f)
+	if (camera.position.x > 0.0f && camera.position.x < 15.0f && camera.position.z > -130.0f && camera.position.z < -115.0f)
 	{
 		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) != ToolUI::Hand && Explorer::instance()->b_pickUpSuitCase[1] == false)
 		{
 			RenderTextOnScreen(meshList[GEO_TEXT], "Use your hands!", Color(0, 0.5f, 1.0f), 5.0f, 4.f, 5.0f);
 		}
+	}
+}
+
+void SceneLevelOneB::RenderBarrel()
+{
+	for (float x = 310; x >= 220; x -= 7)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(x, 0, -60);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_BARREL], true);
+		modelStack.PopMatrix();
+	}
+
+	for (float x = 320; x >= 250; x -= 7)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(x, 0, -190);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_BARREL], true);
+		modelStack.PopMatrix();
+	}
+
+	for (float x = 210; x >= 80; x -= 7)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(x, 0, -190);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_BARREL], true);
+		modelStack.PopMatrix();
+	}
+
+	for (float z = -56; z >= -94; z -= 7)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(85, 0, z);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_BARREL], true);
+		modelStack.PopMatrix();
+	}
+
+	for (float x = -45; x >= -220; x -= 7)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(x, 0, -80);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_BARREL], true);
+		modelStack.PopMatrix();
+	}
+
+	for (float z = -80; z >= -216; z -= 7)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(-220, 0, z);
+		modelStack.Scale(5, 5, 5);
+		RenderMesh(meshList[GEO_BARREL], true);
+		modelStack.PopMatrix();
 	}
 }

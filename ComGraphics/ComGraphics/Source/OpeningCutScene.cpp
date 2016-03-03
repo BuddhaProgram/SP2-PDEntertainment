@@ -1,3 +1,13 @@
+/**************************************************************************/
+/*!
+\file			OpeningCutScene.cpp
+\author			Matsuda Kenichi
+\par			email: 150450F\@mymail.nyp.edu.sg
+\brief
+File containing function to make the first opening cutscene work
+*/
+/**************************************************************************/
+
 #include "OpeningCutScene.h"
 #include "GL\glew.h"
 
@@ -132,6 +142,18 @@ void OpeningCutScene::Reset()
 {
 }
 
+/**************************************************************************/
+/*!
+\brief
+Function for reading text from file
+\param link
+	point to read text
+\return
+	Resulting text from file
+
+*/
+/**************************************************************************/
+
 vector<string> OpeningCutScene::ReadFromText(string link)
 {
 	ifstream txtData;
@@ -157,6 +179,16 @@ vector<string> OpeningCutScene::ReadFromText(string link)
 	return readText;
 }
 
+/**************************************************************************/
+/*!
+\brief
+Function to render the opening scene
+\param Test
+point to read text from ReadFromText
+\bool toMoveBG, startTimer
+	if true, the text will be rendered
+*/
+/**************************************************************************/
 
 void OpeningCutScene::RenderOpeningCutScene(vector<string> Test)
 {

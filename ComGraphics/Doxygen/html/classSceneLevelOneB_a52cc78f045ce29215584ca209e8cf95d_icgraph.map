@@ -1,5 +1,0 @@
-<map id="SceneLevelOneB::RenderTextOnScreen" name="SceneLevelOneB::RenderTextOnScreen">
-<area shape="rect" id="node2" href="$classSceneLevelOneB.html#a5c7f4cef0669b49cd80c284d9c9864ce" title="SceneLevelOneB::Render" alt="" coords="503,34,673,60"/>
-<area shape="rect" id="node3" href="$classSceneLevelOneB.html#a3a43488434df2dd9fcef0b606e6147ab" title="SceneLevelOneB::RenderPick\lUpSuitcaseText" alt="" coords="253,26,449,68"/>
-<area shape="rect" id="node4" href="$classSceneLevelOneB.html#a59ee1de931ecf1cb4b5a2089b7907583" title="SceneLevelOneB::RenderPlayer\lDiesInteraction" alt="" coords="248,92,455,133"/>
-</map>

@@ -1,3 +1,14 @@
+/**************************************************************************/
+/*!
+\file			OpeningCutScene2.h
+\author			Matsuda Kenichi
+\par			email: 150450F\@mymail.nyp.edu.sg
+\brief
+Class to define OpeningCutScene2
+*/
+/**************************************************************************/
+
+
 #ifndef OPENINGCUTSCENE2_H
 #define OPENINGCUTSCENE2_H
 
@@ -11,6 +22,14 @@
 #include "OBJAnimation.h"
 #include "HostileMob.h"
 #include "MobGhost.h"
+
+/**************************************************************************/
+/*!
+Class OpeningCutScene2:
+\brief
+Define OpeningCutScene2 and its method to make the 1st opening cutscene
+*/
+/**************************************************************************/
 
 class OpeningCutScene2 : public Scene
 {

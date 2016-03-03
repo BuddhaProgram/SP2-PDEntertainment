@@ -1,4 +1,0 @@
-<map id="Music::init" name="Music::init">
-<area shape="rect" id="node2" href="$classirrklang_1_1ISoundEngine.html#a4eed0fa6712872e55003b26462e21005" title="Adds sound source into the sound engine as file. " alt="" coords="136,5,316,47"/>
-<area shape="rect" id="node3" href="$classirrklang_1_1ISoundSource.html#a52accb16b3a554558f12f99d16f57a7d" title="Sets the default volume for a sound played from this source. " alt="" coords="149,71,303,112"/>
-</map>

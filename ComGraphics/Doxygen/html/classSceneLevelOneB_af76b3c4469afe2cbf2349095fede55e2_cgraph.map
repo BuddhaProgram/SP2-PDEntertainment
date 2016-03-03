@@ -1,6 +1,0 @@
-<map id="SceneLevelOneB::checkDoor3" name="SceneLevelOneB::checkDoor3">
-<area shape="rect" id="node2" href="$classSceneLevelOneB.html#ae689e8e0ff0bc56a3882d27ac0cb0b99" title="SceneLevelOneB::Collision" alt="" coords="271,5,450,32"/>
-<area shape="rect" id="node4" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="273,56,448,83"/>
-<area shape="rect" id="node5" href="$classSceneLevelOneB.html#ab8c8534175926113db5bffecd6bbe5a6" title="SceneLevelOneB::proximitycheck" alt="" coords="252,107,469,133"/>
-<area shape="rect" id="node3" href="$namespaceMath.html#ac04b987cc6c574a059e68cb58f58c09a" title="Converts from degrees to radians. " alt="" coords="517,5,672,32"/>
-</map>

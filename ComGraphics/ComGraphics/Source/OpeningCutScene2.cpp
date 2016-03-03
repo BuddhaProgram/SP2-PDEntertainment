@@ -1,3 +1,13 @@
+/**************************************************************************/
+/*!
+\file			OpeningCutScene2.cpp
+\author			Matsuda Kenichi
+\par			email: 150450F\@mymail.nyp.edu.sg
+\brief
+File containing function to make part 2 of opening cutscene work
+*/
+/**************************************************************************/
+
 #include "OpeningCutScene2.h"
 #include "GL\glew.h"
 
@@ -417,6 +427,17 @@ void OpeningCutScene2::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
+
+/**************************************************************************/
+/*!
+\brief
+Function for rendering text
+
+\bool text1, text2
+if True, text will render.
+
+*/
+/**************************************************************************/
 
 void OpeningCutScene2::RenderTextWord()
 {

@@ -1,3 +1,13 @@
+/**************************************************************************/
+/*!
+\file			SceneEndCutScene.cpp
+\author			Matsuda Kenichi
+\par			email: 150450F\@mymail.nyp.edu.sg
+\brief
+File containing function to make the ending cutscene work
+*/
+/**************************************************************************/
+
 #include "SceneEndCutScene.h"
 #include "GL\glew.h"
 
@@ -164,31 +174,6 @@ static float LSPEED = 10.f;
 
 void SceneEndCutScene::Reset()
 {
-}
-
-vector<string> SceneEndCutScene::ReadFromText(string link)
-{
-	ifstream txtData;
-	txtData.open(link, std::ifstream::in);
-
-	if (!txtData)
-	{
-		std::cout << "Error Opening" << link << std::endl;
-		exit(1);
-	}
-
-	if (txtData.good())
-	{
-		while (txtData.good())
-		{
-			string data;
-			std::getline(txtData, data);
-			readText.push_back(data);
-		}
-	}
-
-	txtData.close();
-	return readText;
 }
 
 void SceneEndCutScene::Update(double dt)
@@ -432,7 +417,7 @@ void SceneEndCutScene::Render()
 	}
 
 	RenderSkyBox();
-	RenderSceneEndCutScene(TestYou);
+	RenderSceneEndCutScene();
 	RenderFloor();
 	RenderShipAndPod();
 

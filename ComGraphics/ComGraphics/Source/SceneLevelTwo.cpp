@@ -1,3 +1,12 @@
+/*************************************************************/
+/*!
+\file       SceneLevelTwo.cpp
+\author     Zheng Qingping
+\par        email: qingping1998@gmail.com
+\brief
+Function definitions for SceneLevelTwo
+*/
+/*************************************************************/
 #include "SceneLevelTwo.h"
 #include "GL\glew.h"
 
@@ -12,7 +21,11 @@
 #include <sstream>
 #include "GlobalVariables.h"
 
-
+/****************************************************************************/
+/*!
+\brief	Default Constructor definitions for SceneLevelTwo
+*/
+/****************************************************************************/
 SceneLevelTwo::SceneLevelTwo()
 {
 	Switch1Int = false;
@@ -36,10 +49,20 @@ SceneLevelTwo::SceneLevelTwo()
 	timer = false;
 }
 
+/****************************************************************************/
+/*!
+\brief	Default destructor for SceneLevelTwo
+*/
+/****************************************************************************/
 SceneLevelTwo::~SceneLevelTwo()
 {
 }
 
+/****************************************************************************/
+/*!
+\brief	Initializer definitions for SceneLevelTwo, including light, camera positions etc.
+*/
+/****************************************************************************/
 void SceneLevelTwo::Init()
 {
     // Init VBO here
@@ -237,7 +260,11 @@ void SceneLevelTwo::Init()
 }
 
 static float LSPEED = 10.f;
-
+/****************************************************************************/
+/*!
+\brief	This Function resets all local variables to default values as listed in Init.
+*/
+/****************************************************************************/
 void SceneLevelTwo::Reset()
 {
 	Explorer::instance()->hp = 100;
@@ -304,6 +331,11 @@ void SceneLevelTwo::Reset()
 	displayInteract1 = false;
 }
 
+/****************************************************************************/
+/*!
+\brief	This Function resets all GLOBAL variables to default values as listed in Init.
+*/
+/****************************************************************************/
 void SceneLevelTwo::ResetAll()
 {
 	Explorer::instance()->hp = 100;
@@ -318,6 +350,24 @@ void SceneLevelTwo::ResetAll()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function checks for camera position and relative target and stops 'movement'
+
+\param smallx
+the smaller x value of the AABB bounding box
+
+\param largex
+the larger x value of the AABB bounding box
+
+\param smallz
+the smaller z value of the AABB bounding box
+
+\param largez
+the larger z value of the AABB bounding box
+*/
+/****************************************************************************/
 void SceneLevelTwo::Collision(float smallx, float largex, float smallz, float largez)
 {
     if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 5.f)){ camera.position.z = smallz; }
@@ -331,7 +381,25 @@ void SceneLevelTwo::Collision(float smallx, float largex, float smallz, float la
 		cos(Math::DegreeToRadian(camera.rotationX)) * cos(Math::DegreeToRadian(camera.rotationY)) + camera.position.z
 		);
 }
+/****************************************************************************/
+/*!
+\brief
+This Function checks for camera position and relative target and stops 'movement'
+, used ONLY for spikeWall object, setting hitting collision to true together.
 
+\param smallx
+the smaller x value of the AABB bounding box of the spikewall
+
+\param largex
+the larger x value of the AABB bounding box of the spikewall
+
+\param smallz
+the smaller z value of the AABB bounding box of the spikewall
+
+\param largez
+the larger z value of the AABB bounding box of the spikewall
+*/
+/****************************************************************************/
 void SceneLevelTwo::SpecialCollision(float smallx, float largex, float smallz, float largez)
 {
 	if ((camera.position.x > smallx) && (camera.position.x < largex) && (camera.position.z > smallz) && (camera.position.z < smallz + 5.f)){ camera.position.z = smallz; hitWall = true; }
@@ -345,7 +413,25 @@ void SceneLevelTwo::SpecialCollision(float smallx, float largex, float smallz, f
 		cos(Math::DegreeToRadian(camera.rotationX)) * cos(Math::DegreeToRadian(camera.rotationY)) + camera.position.z
 		);
 }
+/****************************************************************************/
+/*!
+\brief
+This Function checks for camera position being near the edges of a AABB bounding box
+, with a current allowance of 2.f.
 
+\param smallx
+the smaller x value of the AABB bounding box
+
+\param largex
+the larger x value of the AABB bounding box
+
+\param smallz
+the smaller z value of the AABB bounding box
+
+\param largez
+the larger z value of the AABB bounding box
+*/
+/****************************************************************************/
 bool SceneLevelTwo::proximitycheck(float smallx, float largex, float smallz, float largez)
 {
     //this function checks if the camera is close to a side of the object
@@ -355,11 +441,6 @@ bool SceneLevelTwo::proximitycheck(float smallx, float largex, float smallz, flo
     if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz - 2.f) && (camera.position.z <= smallz)){ result = true; }
     if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z <= largez + 2.f) && (camera.position.z >= largez)){ result = true; }
     return result;
-}
-
-void SceneLevelTwo::ToolsUI()
-{
-
 }
 
 void SceneLevelTwo::ToolSelectionMouseScroll()
@@ -575,13 +656,27 @@ void SceneLevelTwo::ContinueGameOrNot()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function checks for camera position and updates in the MISC class.
+*/
+/****************************************************************************/
 void SceneLevelTwo::checkPlayerPosMisc()
 {
 	Misc.camX = camera.position.x;
 	Misc.camY = camera.position.y;
 	Misc.camZ = camera.position.z;
 }
+/****************************************************************************/
+/*!
+\brief
+This Function sets all INTERACTIONS LevelTwo, from spikeWall to doors
 
+\param dt
+To slow down animations or other relevant variables
+*/
+/****************************************************************************/
 void SceneLevelTwo::SomeUpdates(double dt)
 {
 	//check if touch wall
@@ -1010,6 +1105,15 @@ void SceneLevelTwo::FlickeringLight(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function is the main Update function of the Level, which houses all other functions.
+
+\param dt
+To slow down animations or other relevant variables
+*/
+/****************************************************************************/
 void SceneLevelTwo::Update(double dt)
 {
     FPS = 1.f / (float)dt;
@@ -1045,7 +1149,6 @@ void SceneLevelTwo::Update(double dt)
 	/*-------------------------[End of Death Functions]-------------------------------*/
 
     /*-------------------------[Tool UI Functions]-------------------------------*/
-    ToolsUI();
     MouseScrollToolSlot();
     MouseClickFunction(dt);
     /*-------------------------[End of Tool UI Functions]-------------------------------*/
@@ -1088,6 +1191,18 @@ void SceneLevelTwo::Update(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders the mesh of specified object with or without light
+
+\param Mesh* mesh
+	pointer to mesh to render
+
+\param enableLight
+	Whether to account for light
+*/
+/****************************************************************************/
 void SceneLevelTwo::RenderMesh(Mesh*mesh, bool enableLight)
 {
     Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -1132,6 +1247,21 @@ void SceneLevelTwo::RenderMesh(Mesh*mesh, bool enableLight)
     }
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on worldspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+*/
+/****************************************************************************/
 void SceneLevelTwo::RenderText(Mesh* mesh, std::string text, Color color)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -1162,6 +1292,30 @@ void SceneLevelTwo::RenderText(Mesh* mesh, std::string text, Color color)
 
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+
+\param size
+size of the text to render
+
+\param x
+x coordinate of text to render
+
+\param y
+y coordinate of text to render
+*/
+/****************************************************************************/
 void SceneLevelTwo::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
     if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -1208,6 +1362,30 @@ void SceneLevelTwo::RenderTextOnScreen(Mesh* mesh, std::string text, Color color
     glEnable(GL_DEPTH_TEST);
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders an OBJ at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param Sx,Sy,Sz
+Scaling by x,y,z
+
+\param Rotate
+angle to rotate by
+
+\param rx,ry,rz
+rotation to be done on x,y,or z axis
+
+\param tx,ty,tz
+translation of model on the x,y,z axis
+
+\param LightYN
+to account for Light
+*/
+/****************************************************************************/
 void SceneLevelTwo::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
     Mtx44 ortho;
@@ -1229,6 +1407,12 @@ void SceneLevelTwo::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz
     modelStack.PopMatrix();
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function is the main function for all rendercalls
+*/
+/****************************************************************************/
 void SceneLevelTwo::Render()
 {
     // Render VBO here
@@ -1325,6 +1509,12 @@ void SceneLevelTwo::Render()
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function deletes openGL based stuff
+*/
+/****************************************************************************/
 void SceneLevelTwo::Exit()
 {
     glDeleteVertexArrays(1, &m_vertexArrayID);

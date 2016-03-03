@@ -251,7 +251,24 @@ void SceneEnd::Reset()
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
 }
+/****************************************************************************/
+/*!
+\brief
+This Function checks for camera position and relative target and stops 'movement'
 
+\param smallx
+the smaller x value of the AABB bounding box
+
+\param largex
+the larger x value of the AABB bounding box
+
+\param smallz
+the smaller z value of the AABB bounding box
+
+\param largez
+the larger z value of the AABB bounding box
+*/
+/****************************************************************************/
 void SceneEnd::Collision(float smallx, float largex, float smallz, float largez)
 {
 	if ((camera.position.x >= smallx) && (camera.position.x <= largex) && (camera.position.z >= smallz) && (camera.position.z <= smallz + 3.f)){ camera.position.z = smallz; }
@@ -265,7 +282,25 @@ void SceneEnd::Collision(float smallx, float largex, float smallz, float largez)
 		cos(Math::DegreeToRadian(camera.rotationX)) * cos(Math::DegreeToRadian(camera.rotationY)) + camera.position.z
 		);
 }
+/****************************************************************************/
+/*!
+\brief
+This Function checks for camera position being near the edges of a AABB bounding box
+, with a current allowance of 2.f.
 
+\param smallx
+the smaller x value of the AABB bounding box
+
+\param largex
+the larger x value of the AABB bounding box
+
+\param smallz
+the smaller z value of the AABB bounding box
+
+\param largez
+the larger z value of the AABB bounding box
+*/
+/****************************************************************************/
 bool SceneEnd::proximitycheck(float smallx, float largex, float smallz, float largez)
 {
 	//this function checks if the camera is close to a side of the object

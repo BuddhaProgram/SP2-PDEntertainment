@@ -1,3 +1,13 @@
+/**************************************************************************/
+/*!
+\file			Credits.h
+\author			Matsuda Kenichi
+\par			email: 150450F\@mymail.nyp.edu.sg
+\brief
+Class to define Credits
+
+/**************************************************************************/
+
 #ifndef CREDITS_H
 #define CREDITS_H
 
@@ -15,6 +25,14 @@
 using std::vector;
 using std::ifstream;
 using std::string;
+
+/**************************************************************************/
+/*!
+Class Credits:
+\brief
+Define Credits and its method to make the credits scene
+*/
+/**************************************************************************/
 
 class Credits : public Scene
 {

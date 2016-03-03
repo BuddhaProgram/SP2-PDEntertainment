@@ -337,7 +337,7 @@ void SceneEndCutScene::RenderFloor()
 	}
 }
 
-void SceneEndCutScene::RenderSceneEndCutScene(vector<string> Test)
+void SceneEndCutScene::RenderSceneEndCutScene()
 {
 	//structure renders
 	modelStack.PushMatrix();

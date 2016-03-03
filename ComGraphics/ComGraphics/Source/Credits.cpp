@@ -1,3 +1,13 @@
+/**************************************************************************/
+/*!
+\file			Credits.cpp
+\author			Matsuda Kenichi
+\par			email: 150450F\@mymail.nyp.edu.sg
+\brief
+File containing function to make animation of the Credits
+*/
+/**************************************************************************/
+
 #include "Credits.h"
 #include "GL\glew.h"
 
@@ -137,6 +147,16 @@ void Credits::Reset()
 {
 }
 
+/**************************************************************************/
+/*!
+\brief
+Function for reading credits text and image
+
+\bool first, second, third, fourth, fifth, last
+	if True, text and image will render.
+
+*/
+/**************************************************************************/
 
 void Credits::RenderCredits()
 {
@@ -186,6 +206,24 @@ void Credits::RenderCredits()
 	}
 
 }
+
+/**************************************************************************/
+/*!
+\brief
+Function for setting speed for variable to be use foranimation
+\param dt
+	dt = delta time
+\bool
+	timer, move1, move2, move3, move4, move5, move6
+
+	if true, function will run.
+
+\float countdown, firstcredits, secondcredits, thirdcredits, fourthcredits, fifthcredits, lastcredits
+
+	variable to hold speed for animation.
+
+*/
+/**************************************************************************/
 
 void Credits::RenderMovingCredits(double dt)
 {
