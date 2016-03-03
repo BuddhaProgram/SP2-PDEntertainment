@@ -22,6 +22,11 @@ File containing function to make animation of the Credits
 #include <sstream>
 #include "GlobalVariables.h"
 
+/****************************************************************************/
+/*!
+\brief	Default Constructor definitions for Credits
+*/
+/****************************************************************************/
 
 Credits::Credits()
 {
@@ -33,9 +38,22 @@ Credits::Credits()
 	bool timer = false;
 }
 
+
+/****************************************************************************/
+/*!
+\brief	Default destructor for Credits
+*/
+/****************************************************************************/
+
 Credits::~Credits()
 {
 }
+
+/****************************************************************************/
+/*!
+\brief	Initializer definitions for Credits, including light, camera positions etc.
+*/
+/****************************************************************************/
 
 void Credits::Init()
 {
@@ -378,6 +396,16 @@ void Credits::RenderMovingCredits(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function is the main Update function of the Level, which houses all other functions.
+
+\param dt
+To slow down animations or other relevant variables
+*/
+/****************************************************************************/
+
 void Credits::Update(double dt)
 {
 	light[0].position.Set(camera.position.x, camera.position.y, camera.position.z);
@@ -397,6 +425,20 @@ void Credits::Update(double dt)
 
 	RenderMovingCredits(dt);
 }
+
+/****************************************************************************/
+/*!
+\brief
+This Function renders the mesh of specified object with or without light
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param enableLight
+Whether to account for light
+*/
+/****************************************************************************/
+
 
 void Credits::RenderMesh(Mesh*mesh, bool enableLight)
 {
@@ -441,6 +483,31 @@ void Credits::RenderMesh(Mesh*mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
+
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+
+\param size
+size of the text to render
+
+\param x
+x coordinate of text to render
+
+\param y
+y coordinate of text to render
+*/
+/****************************************************************************/
 
 void Credits::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
@@ -488,6 +555,31 @@ void Credits::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, floa
 	glEnable(GL_DEPTH_TEST);
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders an OBJ at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param Sx,Sy,Sz
+Scaling by x,y,z
+
+\param Rotate
+angle to rotate by
+
+\param rx,ry,rz
+rotation to be done on x,y,or z axis
+
+\param tx,ty,tz
+translation of model on the x,y,z axis
+
+\param LightYN
+to account for Light
+*/
+/****************************************************************************/
+
 void Credits::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
 	Mtx44 ortho;
@@ -508,6 +600,13 @@ void Credits::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, floa
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 }
+
+/****************************************************************************/
+/*!
+\brief
+This Function is the main function for all rendercalls
+*/
+/****************************************************************************/
 
 void Credits::Render()
 {
@@ -546,6 +645,13 @@ void Credits::Render()
 
 	RenderCredits();
 }
+
+/****************************************************************************/
+/*!
+\brief
+This Function deletes openGL based stuff
+*/
+/****************************************************************************/
 
 void Credits::Exit()
 {

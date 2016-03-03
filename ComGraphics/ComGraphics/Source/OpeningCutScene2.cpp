@@ -2,7 +2,7 @@
 /*!
 \file			OpeningCutScene2.cpp
 \author			Matsuda Kenichi
-\par			email: 150450F\@mymail.nyp.edu.sg
+\par			email: 150450F@mymail.nyp.edu.sg
 \brief
 File containing function to make part 2 of opening cutscene work
 */
@@ -21,13 +21,32 @@ File containing function to make part 2 of opening cutscene work
 #include "Utility.h"
 #include <sstream>
 
+/****************************************************************************/
+/*!
+\brief	Default Constructor definitions for OpeningCutScene2
+*/
+/****************************************************************************/
+
 OpeningCutScene2::OpeningCutScene2()
 {
 }
 
+
+/****************************************************************************/
+/*!
+\brief	Default destructor for OpeningCutScene2
+*/
+/****************************************************************************/
+
 OpeningCutScene2::~OpeningCutScene2()
 {
 }
+
+/****************************************************************************/
+/*!
+\brief	Initializer definitions for OpeningCutScene2, including light, camera positions etc.
+*/
+/****************************************************************************/
 
 void OpeningCutScene2::Init()
 {
@@ -175,6 +194,17 @@ void OpeningCutScene2::Reset()
 
 //accounts for possible velocity of objects and clipping through camera.
 
+
+/****************************************************************************/
+/*!
+\brief
+This Function is the main Update function of the Level, which houses all other functions.
+
+\param dt
+To slow down animations or other relevant variables
+*/
+/****************************************************************************/
+
 void OpeningCutScene2::Update(double dt)
 {
 	Variables.f_Worldspin += (float)(dt);
@@ -287,6 +317,19 @@ void OpeningCutScene2::Update(double dt)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders the mesh of specified object with or without light
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param enableLight
+Whether to account for light
+*/
+/****************************************************************************/
+
 void OpeningCutScene2::RenderMesh(Mesh*mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -331,6 +374,22 @@ void OpeningCutScene2::RenderMesh(Mesh*mesh, bool enableLight)
 	}
 }
 
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on worldspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+*/
+/****************************************************************************/
+
 void OpeningCutScene2::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
@@ -360,6 +419,31 @@ void OpeningCutScene2::RenderText(Mesh* mesh, std::string text, Color color)
 	glEnable(GL_DEPTH_TEST);
 
 }
+
+/****************************************************************************/
+/*!
+\brief
+This Function renders text at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param text
+text to render
+
+\param color
+color of the text to render
+
+\param size
+size of the text to render
+
+\param x
+x coordinate of text to render
+
+\param y
+y coordinate of text to render
+*/
+/****************************************************************************/
 
 void OpeningCutScene2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
@@ -406,6 +490,31 @@ void OpeningCutScene2::RenderTextOnScreen(Mesh* mesh, std::string text, Color co
 
 	glEnable(GL_DEPTH_TEST);
 }
+
+/****************************************************************************/
+/*!
+\brief
+This Function renders an OBJ at a coordinate on cameraspace
+
+\param Mesh* mesh
+pointer to mesh to render
+
+\param Sx,Sy,Sz
+Scaling by x,y,z
+
+\param Rotate
+angle to rotate by
+
+\param rx,ry,rz
+rotation to be done on x,y,or z axis
+
+\param tx,ty,tz
+translation of model on the x,y,z axis
+
+\param LightYN
+to account for Light
+*/
+/****************************************************************************/
 
 void OpeningCutScene2::RenderModelOnScreen(Mesh* mesh, float Sx, float Sy, float Sz, float Rotate, float rX, float rY, float rZ, float Tx, float Ty, float Tz, bool LightYN)
 {
@@ -454,6 +563,13 @@ void OpeningCutScene2::RenderTextWord()
 		modelStack.PopMatrix();
 	}
 }
+
+/****************************************************************************/
+/*!
+\brief
+This Function is the main function for all rendercalls
+*/
+/****************************************************************************/
 
 void OpeningCutScene2::Render()
 {
@@ -513,7 +629,12 @@ void OpeningCutScene2::Render()
 }
 
 
-
+/****************************************************************************/
+/*!
+\brief
+This Function deletes openGL based stuff
+*/
+/****************************************************************************/
 void OpeningCutScene2::Exit()
 {
 	glDeleteVertexArrays(1, &m_vertexArrayID);
