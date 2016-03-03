@@ -42,6 +42,11 @@ Explorer::Explorer()
 	}
 
 	Explorer::instance()->f_FlickeringLight = 0.0f;
+
+	for (int i = 0; i < 10; ++i)
+	{
+		b_ActivateMusic[i] = false;
+	}
 }
 
 float Explorer::getHP()

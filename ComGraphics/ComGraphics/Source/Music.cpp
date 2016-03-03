@@ -8,6 +8,7 @@ Music::Music()
 Music::~Music()
 {
 	engine->drop();
+	engine = 0;
 }
 
 void Music::init()
@@ -29,6 +30,15 @@ void Music::init()
 void Music::OpeningMusic(int index, bool loop)
 {
 	engine->play2D(BackGround[index], loop);
+}
+
+void Music::DropMusic()
+{
+	int i = 0;
+	for (std::vector<std::string>::iterator it = BackgroundMusic.begin(); it != BackgroundMusic.end(); ++it)
+	{
+		engine->drop();
+	}
 }
 
 std::vector<std::string> Music::MusicReadFromText(std::string link)

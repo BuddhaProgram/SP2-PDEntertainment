@@ -250,13 +250,6 @@ void SceneEnd::Reset()
 	Explorer::instance()->PlayerLife = 3;
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
-
-	for (int i = 0; i < 4; ++i)
-	{
-		Explorer::instance()->checkSavePoint[i] = false;
-	}
-   
-
 }
 /****************************************************************************/
 /*!
@@ -369,6 +362,11 @@ void SceneEnd::ContinueGameOrNot()
             MobThree.setSpawnGhost(-22, 42);
 
             BossOne.setSpawnBossOne(-36, -6);
+
+			for (int i = 0; i < 10; ++i)
+			{
+				Explorer::instance()->b_ActivateMusic[i] = false;
+			}
 		}
 
 		else if (Application::IsKeyPressed('N'))

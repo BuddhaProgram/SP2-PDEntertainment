@@ -153,7 +153,7 @@ void Application::Run()
 	EndCredits = new Credits();
 
 
-	scene = LevelOneA;
+	scene = Opening;
 	scene->Init();
 
 
@@ -269,4 +269,10 @@ void Application::End_Credits()
 void Application::MusicWillPlay(int index, bool loop)
 {
 	musics->OpeningMusic(index, loop);
+}
+
+void Application::DropOneMusic(int index)
+{
+	musics->BackGround[index]->drop();
+	musics->BackGround[index] = 0;
 }

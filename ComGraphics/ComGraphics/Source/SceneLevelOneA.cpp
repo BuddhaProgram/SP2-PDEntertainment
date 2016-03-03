@@ -273,11 +273,6 @@ void SceneLevelOneA::ResetSameScene()
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
 
-	for (int i = 0; i < 4; ++i)
-	{
-		Explorer::instance()->checkSavePoint[i] = false;
-	}
-
 	activateDoor1 = false;
 	activateDoor2_1 = false;
 	activateDoor2_2 = false;
@@ -327,10 +322,10 @@ void SceneLevelOneA::ResetAll()
     Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
     Variables.f_redScreenTimer = 0.0f;
 
-    for (int i = 0; i < 4; ++i)
-    {
-        Explorer::instance()->checkSavePoint[i] = false;
-    }
+	for (int i = 0; i < 10; ++i)
+	{
+		Explorer::instance()->b_ActivateMusic[i] = false;
+	}
 }
 /****************************************************************************/
 /*!
@@ -733,6 +728,12 @@ void SceneLevelOneA::Update(double dt)
     {
         Application::SceneLevel1B();
     }
+
+	if (anima.Collapse && Explorer::instance()->b_ActivateMusic[1] == false)
+	{
+		Explorer::instance()->b_ActivateMusic[1] = true;
+		Application::MusicWillPlay(1, false);
+	}
 
 	FlickeringLight(dt);
 }

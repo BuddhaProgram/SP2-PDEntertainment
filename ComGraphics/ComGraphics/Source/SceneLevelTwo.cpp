@@ -288,8 +288,6 @@ void SceneLevelTwo::Reset()
 	transSpikeWall2 = 0;
 	hitWall = false;
 
-
-
 	anima.QPDOOR1_BOT = 0;
 	anima.QPDOOR1_TOP = 0;
 	anima.QP_TOPDOOR1 = false;
@@ -320,11 +318,6 @@ void SceneLevelTwo::Reset()
 	anima.ClosingDoorTop5 = true;
 	anima.ClosingDoorBtm5 = true;
 
-	for (int i = 0; i < 4; ++i)
-	{
-		Explorer::instance()->checkSavePoint[i] = false;
-	}
-
 	activateDoor1 = false;
 
 	ScareGhost.setSpawnGhost(20, 45);
@@ -351,9 +344,9 @@ void SceneLevelTwo::ResetAll()
 	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
 
-	for (int i = 0; i < 4; ++i)
+	for (int i = 0; i < 10; ++i)
 	{
-		Explorer::instance()->checkSavePoint[i] = false;
+		Explorer::instance()->b_ActivateMusic[i] = false;
 	}
 }
 
@@ -641,6 +634,10 @@ void SceneLevelTwo::ContinueGameOrNot()
 			--Explorer::instance()->PlayerLife;
 			Explorer::instance()->hp = 100;
 			Explorer::instance()->isDead = false;
+
+			Explorer::instance()->b_ActivateMusic[4] = false;
+			Explorer::instance()->b_ActivateMusic[5] = false;
+
 			Variables.f_redScreenTimer = 0.0f;
 
 			light[0].power = 1.0f;
@@ -686,6 +683,13 @@ void SceneLevelTwo::SomeUpdates(double dt)
 	if (hitWall == true)
 	{
 		Explorer::instance()->isDead = true;
+
+		if (Explorer::instance()->b_ActivateMusic[4] == false)
+		{
+			Explorer::instance()->b_ActivateMusic[4] = true;
+			Application::MusicWillPlay(4, false);
+		}
+
 	}
 	//stuff
 	if (openDoor1 == true)
@@ -1178,6 +1182,12 @@ void SceneLevelTwo::Update(double dt)
 	if (ScareGhost.Spawn)
 	{
 		ScareGhost.move(dt, 25);
+	}
+
+	if (JumpScare == true && Explorer::instance()->b_ActivateMusic[5] == false)
+	{
+		Explorer::instance()->b_ActivateMusic[5] = true;
+		Application::MusicWillPlay(5, false);
 	}
 }
 

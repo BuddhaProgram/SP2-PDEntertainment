@@ -107,9 +107,7 @@ void SceneOpening::Init()
 	meshList[GEO_TITLE] = MeshBuilder::GenerateQuad("Title", Color(1, 1, 1));
 	meshList[GEO_TITLE]->textureID = LoadTGA("Image//Title.tga");
 
-
 	Application::MusicWillPlay(0, true);
-	//Application::MusicWillPlay(0, true);
 
 	Mtx44 projection;
 	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);

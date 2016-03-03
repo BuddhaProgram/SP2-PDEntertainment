@@ -34,12 +34,13 @@ public:
 
 	unsigned int PlayerLife;
 	bool isDead;
-	bool checkSavePoint[4];
 
 	void checkDead();
 	Vector3 SavePoint;
 
 	float f_FlickeringLight;
+
+	bool b_ActivateMusic[10];
 
 private:
 	Explorer();
