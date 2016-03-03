@@ -870,7 +870,6 @@ void SceneLevelOneB::Update(double dt)
     ElevatorCheck();
 	RenderJumpScare();
 
-	//checkDoor3();
 	PuzzleOneSwitchCheck(dt);
 	SwitchCollisionChecker();
 	Switches.SwitchPuzzleOne();
