@@ -360,14 +360,13 @@ void SceneLevelOneB::ResetAll()
 		Explorer::instance()->b_SoundEffect[i] = false;
 		Explorer::instance()->b_MonsterSound[i] = false;
 	}
+
 	for (int i = 0; i < 4; ++i)
 	{
 		Explorer::instance()->itemAttack[i] = 0;
 	}
 
 	Explorer::instance()->RemoveToolSlot(ToolUI::Empty);
-
-
 	ResetSameScene();
 }
 
@@ -873,6 +872,7 @@ void SceneLevelOneB::ContinueGameOrNot()
 		else if (Application::IsKeyPressed('N'))
 		{
 			ResetAll();
+			ResetSameScene();
 			Application::OpenGame();
 		}
 	}

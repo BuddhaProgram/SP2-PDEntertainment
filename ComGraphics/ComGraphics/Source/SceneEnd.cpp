@@ -795,6 +795,10 @@ void SceneEnd::Update(double dt)
     Collision(-40, 40, 70, 110);
     //unending wall collision
     Collision(-500, 500, 95, 105);
+    //world bound
+    Collision(495, 505, -500, 500);
+    Collision(-505, -495, -500, 500);
+    Collision(-500, 500, -505, -495);
 
 }
 /****************************************************************************/
