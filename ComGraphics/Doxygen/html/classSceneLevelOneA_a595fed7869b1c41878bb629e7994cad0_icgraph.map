@@ -1,9 +1,0 @@
-<map id="SceneLevelOneA::Collision" name="SceneLevelOneA::Collision">
-<area shape="rect" id="node2" href="$classSceneLevelOneA.html#a60782020f72e2e1a287b1ef4b9d82646" title="SceneLevelOneA::checkDoor1" alt="" coords="245,5,444,32"/>
-<area shape="rect" id="node3" href="$classSceneLevelOneA.html#ab862a65fd43b0fdb56187f7dedb917b8" title="SceneLevelOneA::Update" alt="" coords="505,107,676,133"/>
-<area shape="rect" id="node4" href="$classSceneLevelOneA.html#aa8769150f2225cc0a8ddb059a91e9e0d" title="SceneLevelOneA::checkDoor2" alt="" coords="245,107,444,133"/>
-<area shape="rect" id="node5" href="$classSceneLevelOneA.html#a129c37f8bf3cc7ba4ea8411c6a27b46e" title="SceneLevelOneA::checkDoor3" alt="" coords="245,157,444,184"/>
-<area shape="rect" id="node6" href="$classSceneLevelOneA.html#a9d569863371f766599660dd6f78cdc47" title="SceneLevelOneA::checkRubbleFall" alt="" coords="232,208,457,235"/>
-<area shape="rect" id="node7" href="$classSceneLevelOneA.html#a49d61bf7336b6b25a20d607d01e79e71" title="SceneLevelOneA::RenderScene" alt="" coords="241,259,448,285"/>
-<area shape="rect" id="node8" href="$classSceneLevelOneA.html#adb83e3122dc7ac3a5d5b85add1c771bb" title="SceneLevelOneA::Render" alt="" coords="505,259,676,285"/>
-</map>

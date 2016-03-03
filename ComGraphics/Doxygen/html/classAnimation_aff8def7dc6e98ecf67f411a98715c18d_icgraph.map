@@ -1,4 +1,0 @@
-<map id="Animation::OpenSlideDoor_Boss" name="Animation::OpenSlideDoor_Boss">
-<area shape="rect" id="node2" href="$classSceneLevelOneB.html#ab1bba86d23948ef21b989a4ff319d65e" title="SceneLevelOneB::Animation\lCheck" alt="" coords="265,5,452,47"/>
-<area shape="rect" id="node3" href="$classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="500,13,671,39"/>
-</map>

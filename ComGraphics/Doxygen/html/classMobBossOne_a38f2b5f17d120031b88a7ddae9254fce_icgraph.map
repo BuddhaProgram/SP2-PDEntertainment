@@ -1,8 +1,0 @@
-<map id="MobBossOne::TakeDamage" name="MobBossOne::TakeDamage">
-<area shape="rect" id="node2" href="$classSceneLevelOneB.html#a2bfa4551ac0b1f099c42c2193b55df47" title="SceneLevelOneB::attackCheck" alt="" coords="239,15,441,42"/>
-<area shape="rect" id="node5" href="$classSceneEnd.html#a31fef5d67de3a3dfd2ae15d4bbcea2b6" title="SceneEnd::checkAttack" alt="" coords="259,67,421,94"/>
-<area shape="rect" id="node3" href="$classSceneLevelOneB.html#af248f8f3063609e573e6c695898e91e8" title="SceneLevelOneB::MouseClick\lFunction" alt="" coords="495,5,692,47"/>
-<area shape="rect" id="node4" href="$classSceneLevelOneB.html#ad0b96b7c994521cb8df95ee2a7998a38" title="SceneLevelOneB::Update" alt="" coords="745,13,916,39"/>
-<area shape="rect" id="node6" href="$classSceneEnd.html#ad6c2d9939a867eb0ced3ee2c02d9d33f" title="SceneEnd::MouseClickFunction" alt="" coords="489,71,697,98"/>
-<area shape="rect" id="node7" href="$classSceneEnd.html#a638ba63a5146825811e7c701c254e1ea" title="SceneEnd::Update" alt="" coords="765,71,896,98"/>
-</map>

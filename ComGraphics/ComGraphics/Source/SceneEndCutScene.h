@@ -1,3 +1,13 @@
+/**************************************************************************/
+/*!
+\file			SceneEndCutScene.h
+\author			Matsuda Kenichi
+\par			email: 150450F\@mymail.nyp.edu.sg
+\brief
+Class to define cutscene for the ending of the game
+*/
+/**************************************************************************/
+
 #ifndef SCENEENDCUTSCENE_H
 #define SCENEENDCUTSCENE_H
 
@@ -14,6 +24,14 @@
 using std::vector;
 using std::ifstream;
 using std::string;
+
+/**************************************************************************/
+/*!
+Class SceneEndCutScene:
+\brief
+Define SceneEndCutScene and its method make the ending cutscene
+*/
+/**************************************************************************/
 
 class SceneEndCutScene : public Scene
 {
@@ -86,8 +104,8 @@ class SceneEndCutScene : public Scene
 		U_TOTAL,
 	};
 public:
-	SceneEndCutScene();
-	~SceneEndCutScene();
+	SceneEndCutScene(); //Default constructor
+	~SceneEndCutScene(); //Destructor
 
 	virtual void Init();
 	virtual void Update(double dt);
@@ -97,10 +115,6 @@ public:
 
 	Camera3 camera;
 
-	vector<string> readText;
-	vector<string> ReadFromText(string link);
-	vector<string> TestYou;
-	vector<string>::iterator its = readText.begin();
 private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 
@@ -108,7 +122,7 @@ private:
 	void RenderLevel1();
 	void RenderFloor();
 	void RenderSkyBox();
-	void RenderSceneEndCutScene(vector<string> Test);
+	void RenderSceneEndCutScene();
 
 	//render functions 
 	void RenderText(Mesh* mesh, std::string text, Color color);
@@ -135,12 +149,6 @@ private:
 	MS modelStack, viewStack, projectionStack;
 
 	Light light[1];
-
-	//float PlanetRotate;
-	//float AsteroidRotate;
-	//float AsteroidRotateF;
-	//float AsteroidMove;
-	//float AsteroidMoveS;
 
 	float worldspin;
 

@@ -1,6 +1,0 @@
-<map id="SceneLevelOneB::ElevatorCheck" name="SceneLevelOneB::ElevatorCheck">
-<area shape="rect" id="node2" href="$classApplication.html#a72cc9bba26506a7c0f54c346dfbd5cfe" title="Application::IsKeyPressed" alt="" coords="228,5,403,32"/>
-<area shape="rect" id="node3" href="$classApplication.html#a71151e291360fac88840aa230e9adcd1" title="Application::SceneLevel2" alt="" coords="232,56,399,83"/>
-<area shape="rect" id="node5" href="$classmisc.html#a0f8d72dfe38a0284899586da142daf8a" title="misc::WithinArea" alt="" coords="254,107,377,133"/>
-<area shape="rect" id="node4" href="$classScene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478" title="Scene::Init" alt="" coords="451,56,535,83"/>
-</map>

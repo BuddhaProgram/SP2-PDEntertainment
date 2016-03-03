@@ -1,3 +1,13 @@
+/**************************************************************************/
+/*!
+\file			OpeningCutScene.h
+\author			Matsuda Kenichi
+\par			email: 150450F\@mymail.nyp.edu.sg
+\brief
+Class to define OpeningCutScene
+
+/**************************************************************************/
+
 #ifndef OPENINGCUTSCENE_H
 #define OPENINGCUTSCENE_H
 
@@ -15,6 +25,14 @@
 using std::vector;
 using std::ifstream;
 using std::string;
+
+/**************************************************************************/
+/*!
+Class OpeningCutScene:
+\brief
+Define OpeningCutScene and its method to make the 1st opening cutscene
+*/
+/**************************************************************************/
 
 class OpeningCutScene : public Scene
 {
@@ -67,6 +85,7 @@ public:
 
 	Camera3 camera;
 
+	//Function to read text from notepad file
 	vector<string> readText;
 	vector<string> ReadFromText(string link);
 	vector<string> TestYou;

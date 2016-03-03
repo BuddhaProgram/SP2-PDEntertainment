@@ -38,6 +38,7 @@ class SceneLevelOneB : public Scene
         GEO_FACILITYOUTWALL,
         GEO_FACILITYWALLS,
         GEO_FACILITYCEILINGS,
+		GEO_BARREL,
 
         GEO_LHAND,
         GEO_RHAND,
@@ -133,6 +134,7 @@ private:
     //scene renders
     void RenderScene();
     void RenderFloorCeiling();
+	void RenderBarrel();
 
     //map rendering
     void RenderDownWall(int xPosLarge, int xPosSmall, int zPos, int wallNumber);//positive Z facing wall

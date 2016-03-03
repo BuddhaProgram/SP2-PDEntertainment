@@ -1,7 +1,0 @@
-<map id="irrklang::IRefCounted::drop" name="irrklang::IRefCounted::drop">
-<area shape="rect" id="node2" href="$classirrklang_1_1CIrrKlangAudioStreamMP3.html#aa0525477376ae287275da88a17f4825d" title="irrklang::CIrrKlangAudio\lStreamMP3::CIrrKlangAudioStreamMP3" alt="" coords="200,5,455,47"/>
-<area shape="rect" id="node3" href="$classirrklang_1_1CIrrKlangAudioStreamLoaderMP3.html#aa2abcfd3b38eb8bb49e782678aac3ab2" title="Creates an audio file input stream from a file. " alt="" coords="224,71,431,127"/>
-<area shape="rect" id="node4" href="$ikpMP3_8cpp.html#ac6ed931d442f71e992a96cdc08e58142" title="irrKlangPluginInit" alt="" coords="268,151,387,178"/>
-<area shape="rect" id="node5" href="$classirrklang_1_1CIrrKlangAudioStreamMP3.html#ae223aa810305f5a13e3aba97b525e048" title="irrklang::CIrrKlangAudio\lStreamMP3::~CIrrKlangAudioStreamMP3" alt="" coords="196,203,459,244"/>
-<area shape="rect" id="node6" href="$classMusic.html#a0b4f3b9a018207e0c08003505f1f87fe" title="Music::~Music" alt="" coords="273,269,381,295"/>
-</map>

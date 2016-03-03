@@ -207,7 +207,7 @@ void SceneLevelOneB::Init()
     meshList[GEO_STAMINABAR] = MeshBuilder::GenerateQuad("STAMINABAR", Color(0, 1, 0));
 
     meshList[GEO_ELEVATOR] = MeshBuilder::GenerateQuad("elevator doors", Color(1, 0, 0));
-    meshList[GEO_ELEVATOR]->textureID = LoadTGA("Image//Elevator.tga");
+    //meshList[GEO_ELEVATOR]->textureID = LoadTGA("Image//Elevator.tga");
     //puzzle inits
     meshList[GEO_LIGHTGREEN] = MeshBuilder::GenerateOBJ("green light", "OBJ//PuzzleLight.obj");
     meshList[GEO_LIGHTGREEN]->textureID = LoadTGA("Image//PuzzleLightGREEN.tga");
@@ -221,6 +221,9 @@ void SceneLevelOneB::Init()
 	/*--------------------[Used as a background for Dead Scene]--------------------*/
 	meshList[GEO_DEADCOLOR] = MeshBuilder::GenerateQuad("DeadScreen", Color(1, 0, 0));
 	meshList[GEO_DEADBLACKSCREEN] = MeshBuilder::GenerateQuad("DeadSCreenTwo", Color(0, 0, 0));
+
+	meshList[GEO_BARREL] = MeshBuilder::GenerateOBJ("Barrel", "OBJ//Barrel.obj");
+	meshList[GEO_BARREL]->textureID = LoadTGA("Image//Barrel.tga");
 
     Mtx44 projection;
     projection.SetToPerspective(45.0f, 16.f / 9.f, 0.1f, 10000.f);
@@ -715,7 +718,7 @@ void SceneLevelOneB::ContinueGameOrNot()
 
 void SceneLevelOneB::PickUpSuitcaseInteraction()
 {
-	if (camera.position.x > -210.0f && camera.position.x < -190.0f && camera.position.z > -130.0f && camera.position.z < -110.0f)
+	if (camera.position.x > 0.0f && camera.position.x < 15.0f && camera.position.z > -130.0f && camera.position.z < -115.0f)
 	{
 		if (Explorer::instance()->GetToolType(Explorer::instance()->i_SlotIndex) == ToolUI::Hand && Explorer::instance()->b_pickUpSuitCase[1] == false)
 		{
@@ -1035,7 +1038,7 @@ void SceneLevelOneB::Render()
 
     RenderScene();
 	RenderDoor();
-
+	RenderBarrel();
 
 
 

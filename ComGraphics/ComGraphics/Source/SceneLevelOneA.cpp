@@ -178,6 +178,10 @@ void SceneLevelOneA::Init()
     meshList[GEO_PORTRAIT]->textureID = LoadTGA("Image//Scream.tga");
 	meshList[GEO_TV] = MeshBuilder::GenerateOBJ("TV", "OBJ//TV.obj");
 	meshList[GEO_TV]->textureID = LoadTGA("Image//TV.tga");
+	meshList[GEO_BARREL] = MeshBuilder::GenerateOBJ("Barrel", "OBJ//Barrel.obj");
+	meshList[GEO_BARREL]->textureID = LoadTGA("Image//Barrel.tga");
+	meshList[GEO_DEADBODY] = MeshBuilder::GenerateOBJ("Pile of dead body", "OBJ//DeadBody.obj");
+	meshList[GEO_DEADBODY]->textureID = LoadTGA("Image//DeadBody.tga");
 
 	meshList[GEO_BLOOD] = MeshBuilder::GenerateOBJ("ToolUI", "OBJ//v2ToolUI.obj");
 	meshList[GEO_BLOOD]->textureID = LoadTGA("Image//Blood.tga");
@@ -838,6 +842,7 @@ void SceneLevelOneA::Render()
 	TestDoorRender();
 	CollapseRubble();
 	DropPortrait();
+	RenderBarrel();
 
 	ToolSelectionMouseScroll();
 	RenderMouseScrollToolSlot();

@@ -1,9 +1,0 @@
-<map id="MeshBuilder::GenerateAxes" name="MeshBuilder::GenerateAxes">
-<area shape="rect" id="node2" href="$classOpeningCutScene2.html#adda87568b9dd0bb57e3e45bf49fbfa9a" title="OpeningCutScene2::Init" alt="" coords="241,5,400,32"/>
-<area shape="rect" id="node3" href="$classSceneEndCutScene.html#adda42eba4567d774064b795dcd450ff2" title="SceneEndCutScene::Init" alt="" coords="239,56,403,83"/>
-<area shape="rect" id="node4" href="$classSceneStart.html#a738dcb24a23f6cf752998573ac25c1b6" title="SceneStart::Init" alt="" coords="265,107,377,133"/>
-<area shape="rect" id="node5" href="$classSceneLevelTwo.html#a6b80b4345b5398ef898bdceedf583696" title="SceneLevelTwo::Init" alt="" coords="253,157,389,184"/>
-<area shape="rect" id="node6" href="$classSceneLevelOneA.html#a7336a77a93113ea8d9d5f722229bb020" title="SceneLevelOneA::Init" alt="" coords="247,208,394,235"/>
-<area shape="rect" id="node7" href="$classSceneEnd.html#a3b35476550d40f16fc4398dc1e954c9c" title="SceneEnd::Init" alt="" coords="267,259,374,285"/>
-<area shape="rect" id="node8" href="$classSceneLevelOneB.html#a49faf352ee609e184dd144b12f6b5c5e" title="SceneLevelOneB::Init" alt="" coords="247,309,394,336"/>
-</map>
