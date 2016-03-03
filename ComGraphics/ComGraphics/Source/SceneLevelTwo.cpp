@@ -365,6 +365,14 @@ void SceneLevelTwo::ResetAll()
 	Explorer::instance()->PlayerLife = 3;
 	Variables.f_redScreenTimer = 0.0f;
 
+	for (int i = 0; i < 4; ++i)
+	{
+		Explorer::instance()->itemAttack[i] = 0;
+
+		if (Explorer::instance()->GetToolType(i + 1) != ToolUI::Hand)
+			Explorer::instance()->TotalTools.push_back(ToolUI(ToolUI::Empty));
+	}
+
 	Reset();
 }
 

@@ -360,6 +360,14 @@ void SceneLevelOneB::ResetAll()
 		Explorer::instance()->b_SoundEffect[i] = false;
 		Explorer::instance()->b_MonsterSound[i] = false;
 	}
+	for (int i = 0; i < 4; ++i)
+	{
+		Explorer::instance()->itemAttack[i] = 0;
+
+		if (Explorer::instance()->GetToolType(i + 1) != ToolUI::Hand)
+			Explorer::instance()->TotalTools.push_back(ToolUI(ToolUI::Empty));
+	}
+
 
 	ResetSameScene();
 }
