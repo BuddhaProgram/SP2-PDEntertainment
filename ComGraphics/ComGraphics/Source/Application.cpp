@@ -153,7 +153,7 @@ void Application::Run()
 	EndCredits = new Credits();
 
 
-	scene = LevelTwo;
+	scene = End;
 	scene->Init();
 
 
