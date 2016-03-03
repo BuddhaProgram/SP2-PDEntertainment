@@ -179,7 +179,7 @@ void SceneLevelOneA::checkDoor1(double dt)
 	}
 	if (anima.toSlideDoorBtm)
 	{
-	    //Collision(140, 210, 180, 200);
+	    Collision(140, 210, 180, 200);
 	}
 
 	if (MiscA.WithinArea(-235, -220, 98, 110) && !activateDoor1)
@@ -482,6 +482,8 @@ void SceneLevelOneA::RenderBarrel()
 		RenderMesh(meshList[GEO_BARREL], true);
 		modelStack.PopMatrix();
 	}
+	Collision(45, 65, 315, 405);
+
 	for (float z = 400; z >= 324; z -= 7)
 	{
 		modelStack.PushMatrix();
@@ -490,6 +492,7 @@ void SceneLevelOneA::RenderBarrel()
 		RenderMesh(meshList[GEO_BARREL], true);
 		modelStack.PopMatrix();
 	}
+	Collision(-65, -50, 315, 405);
 	
 	for (float z = 183; z >= 64; z -= 7)
 	{
@@ -499,6 +502,8 @@ void SceneLevelOneA::RenderBarrel()
 		RenderMesh(meshList[GEO_BARREL], true);
 		modelStack.PopMatrix();
 	}
+	Collision(90, 110, 69, 195);
+
 	for (float z = 183; z >= 64; z -= 7)
 	{
 		modelStack.PushMatrix();
@@ -507,6 +512,7 @@ void SceneLevelOneA::RenderBarrel()
 		RenderMesh(meshList[GEO_BARREL], true);
 		modelStack.PopMatrix();
 	}
+	Collision(306, 326, 69, 195);
 
 
 }
