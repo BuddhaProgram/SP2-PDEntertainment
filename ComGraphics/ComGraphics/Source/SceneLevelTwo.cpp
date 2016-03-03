@@ -357,8 +357,10 @@ void SceneLevelTwo::ResetAll()
 	Explorer::instance()->hp = 100;
 	Explorer::instance()->isDead = false;
 	Explorer::instance()->PlayerLife = 3;
-	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
+	//Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
 	Variables.f_redScreenTimer = 0.0f;
+
+	Reset();
 }
 
 /****************************************************************************/
@@ -682,10 +684,7 @@ void SceneLevelTwo::ContinueGameOrNot()
 
 		else if (Application::IsKeyPressed('N'))
 		{
-			Explorer::instance()->hp = 100;
-			Explorer::instance()->isDead = false;
-			Explorer::instance()->PlayerLife = 3;
-			Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
+			ResetAll();
 			Application::OpenGame();
 		}
 	}
