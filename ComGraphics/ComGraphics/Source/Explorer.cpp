@@ -5,14 +5,21 @@ Explorer::Explorer()
 	Explorer::instance()->hp = 100;
 	Explorer::instance()->stamina = 100;
 
-	Explorer::instance()->f_hpBarScaleX = 10.f;
-
 	Explorer::instance()->i_SlotIndex = 1;
 
 	for (int i = 0; i < 4; ++i)
 	{
 		Explorer::instance()->itemAttack[i] = 0;
 		Explorer::instance()->TotalTools.push_back(ToolUI(ToolUI::Empty));
+	}
+
+	for (std::list<ToolUI>::iterator TS = TotalTools.begin(); TS != TotalTools.end(); ++TS)
+	{
+		if (TS->tool == ToolUI::Empty)
+		{
+			TS->tool = ToolUI::Hand;
+			break;
+		}
 	}
 
 	Explorer::instance()->SavePoint = (0.f, 0.f, 0.f);
@@ -23,15 +30,6 @@ Explorer::Explorer()
 	for (int i = 0; i < 4; ++i)
 	{
 		Explorer::instance()->b_PickUpTool[i] = false;
-	}
-
-	for (std::list<ToolUI>::iterator TS = TotalTools.begin(); TS != TotalTools.end(); ++TS)
-	{
-		if (TS->tool == ToolUI::Empty)
-		{
-			TS->tool = ToolUI::Hand;
-			break;
-		}
 	}
 
 	i_SuitcaseCount = 0;

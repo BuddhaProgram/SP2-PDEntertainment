@@ -311,6 +311,7 @@ void SceneLevelOneA::ResetSameScene()
 		Explorer::instance()->b_SoundEffect[i] = false;
 		Explorer::instance()->b_MonsterSound[i] = false;
 	}
+
     Ghost.Spawn = false;
     Ghost.health = 8;
     Ghost.setSpawnGhost(-30, -15);
@@ -653,6 +654,13 @@ void SceneLevelOneA::ContinueGameOrNot()
 		else if (Application::IsKeyPressed('N'))
 		{
 			ResetAll();
+			ResetSameScene();
+			for (int i = 0; i < 4; ++i)
+			{
+				Explorer::instance()->itemAttack[i] = 0;
+				Explorer::instance()->TotalTools.push_back(ToolUI(ToolUI::Empty));
+			}
+
 			Application::OpenGame();
 		}
 	}

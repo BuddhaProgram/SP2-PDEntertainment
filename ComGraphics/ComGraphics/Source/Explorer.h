@@ -17,7 +17,6 @@ public:
 
 	float stamina;
 	float hp;
-	float f_hpBarScaleX;
 
 	int i_SlotIndex;
 
