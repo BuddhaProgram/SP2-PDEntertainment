@@ -2,7 +2,7 @@
 /*!
 \file			OBJAnimation.cpp
 \author			Matsuda Kenichi
-\par			email: 150450F\@mymail.nyp.edu.sg
+\par			email: 150450F@mymail.nyp.edu.sg
 \brief
 File containing function to make animation work
 */
