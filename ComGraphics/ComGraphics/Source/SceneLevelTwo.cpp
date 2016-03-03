@@ -1145,7 +1145,6 @@ void SceneLevelTwo::Update(double dt)
 	/*-------------------------[End of Death Functions]-------------------------------*/
 
     /*-------------------------[Tool UI Functions]-------------------------------*/
-    ToolsUI();
     MouseScrollToolSlot();
     MouseClickFunction(dt);
     /*-------------------------[End of Tool UI Functions]-------------------------------*/

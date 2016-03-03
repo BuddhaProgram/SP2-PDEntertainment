@@ -176,7 +176,6 @@ private:
 	void RenderPuzzle();
 
     // Tool UI functions
-    void ToolsUI();
     void MouseScrollToolSlot();
     void RenderMouseScrollToolSlot();
     void ToolSelectionMouseScroll();
