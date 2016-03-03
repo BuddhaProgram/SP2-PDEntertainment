@@ -286,7 +286,7 @@ void SceneLevelTwo::Reset()
 	Explorer::instance()->hp = 100;
 	Explorer::instance()->stamina = 100;
 	Explorer::instance()->isDead = false;
-	Explorer::instance()->SavePoint = (0.0f, 0.0f, 0.0f);
+	Explorer::instance()->SavePoint = (0.0f, 10.0f, 400.0f);
 	Variables.f_redScreenTimer = 0.0f;
 	Switch1Int = false;
 	Switch2Int = false;
